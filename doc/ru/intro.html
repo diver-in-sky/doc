@@ -25,9 +25,6 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_config = function(){
-        this.page.language   = "ru";
-      };
       var disqus_developer = 1;
     </script>
     <script id="dsq-count-scr"
@@ -37,7 +34,6 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <script type="text/javascript" src="_static/disqus.js"></script>
     <script type="text/javascript" src="_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="_static/headers.js"></script>
     <link rel="stylesheet" href="/theme/design.css">
@@ -238,7 +234,7 @@
 <p><strong>Дисковый движок</strong> (<a class="reference internal" href="book/app/d_vinyl/index.html#index-vinyl"><span class="std std-ref">vinyl</span></a>) совмещает в себе подходы, заимствованные из современных файловых систем, журналируемых merge-деверьев (log-structured merge trees) и классических B-деревьев. Все данные в этом движке разбиты по забегам (runs), где каждый забег представляет собой файл на диске. Максимальный размер забега обычно равен 64МБ, и его можно настраивать. Каждый забег -- это набор страниц, которые нужны для каких-то целей. Если забег полностью смержен, то диапазоны ключей на его страницах не пересекаются. Если же диапазоны ключей в забеге в какой-то момент сильно изменялись, то мы имеем дело с частично смерженным забегом. В этом случае на некоторых страницах появились новые ключи и значения, которых ранее не было в данном забеге. Дисковый движок обновляет данные по принципу дописывания в конец: новые данные никогда не затирают старые.</p>
 <p>Tarantool поддерживает работу с <strong>составными ключами в индексах</strong>. Возможные типы ключей: HASH, TREE, BITSET и RTREE.</p>
 <p>Tarantool также поддерживает <strong>асинхронную репликацию</strong> -- как локальную, так и на удаленных серверах. При этом репликацию можно настроить по принципу <strong>мастер-мастер</strong>, когда несколько узлов могут не только обрабатывать входящую нагрузку, но и получать данные от других узлов.</p>
-<div data-disqus-identifier="Overview" data-disqus-shortname="tarantooldb" id="disqus_thread"></div></div>
+</div>
 </div>
 
 
@@ -277,6 +273,35 @@
   <script>
   </script>
 
+        <div id="disqus_thread"></div>
+        <script>
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES:
+          *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
+          *  FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+          *  https://disqus.com/admin/universalcode/#configuration-variables
+          */
+          var disqus_config = function () {
+              // Replace PAGE_URL with your page's canonical URL variable
+              // this.page.url = PAGE_URL;
+              // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              this.page.identifier = "intro";
+              this.page.language = "ru"
+          };
+          (function() {  // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = '//tarantooldb.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+            comments powered by Disqus.
+          </a>
+        </noscript>
       </div>
     </div>
 

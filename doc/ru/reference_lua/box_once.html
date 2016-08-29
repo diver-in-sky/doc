@@ -25,9 +25,6 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_config = function(){
-        this.page.language   = "ru";
-      };
       var disqus_developer = 1;
     </script>
     <script id="dsq-count-scr"
@@ -37,7 +34,6 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
-    <script type="text/javascript" src="../_static/disqus.js"></script>
     <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="../_static/headers.js"></script>
     <link rel="stylesheet" href="/theme/design.css">
@@ -274,7 +270,7 @@ the section <a class="reference internal" href="../book/replication/index.html#i
 </table>
 </dd></dl>
 
-<div data-disqus-identifier="Function box.once" data-disqus-shortname="tarantooldb" id="disqus_thread"></div></div>
+</div>
 
 
   
@@ -312,6 +308,35 @@ the section <a class="reference internal" href="../book/replication/index.html#i
   <script>
   </script>
 
+        <div id="disqus_thread"></div>
+        <script>
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES:
+          *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
+          *  FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+          *  https://disqus.com/admin/universalcode/#configuration-variables
+          */
+          var disqus_config = function () {
+              // Replace PAGE_URL with your page's canonical URL variable
+              // this.page.url = PAGE_URL;
+              // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              this.page.identifier = "reference_lua/box_once";
+              this.page.language = "ru"
+          };
+          (function() {  // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = '//tarantooldb.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+            comments powered by Disqus.
+          </a>
+        </noscript>
       </div>
     </div>
 

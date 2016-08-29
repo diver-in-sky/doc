@@ -25,9 +25,6 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_config = function(){
-        this.page.language   = "ru";
-      };
       var disqus_developer = 1;
     </script>
     <script id="dsq-count-scr"
@@ -37,7 +34,6 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/translations.js"></script>
-    <script type="text/javascript" src="../../_static/disqus.js"></script>
     <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="../../_static/headers.js"></script>
     <link rel="stylesheet" href="/theme/design.css">
@@ -762,7 +758,7 @@ kill -HUP <em>process_id</em>
 <p>Это означает, что второй экземпляр готов заменить первый, если тот выйдет из строя.</p>
 <p>Режим горячего резервирования подразумевает, что на одном компьютере запущены два экземпляра Tarantool-сервера с одинаковой конфигурацией. Первый запущенный экземпляр является &quot;главным&quot; (primary), а второй -- &quot;резервным&quot; (standby). Резервный экземпляр при запуске попытается установить соединение на порту для прослушивания, но у него не получится это сделать, поскольку адрес уже занят главным экземпляром. Таким образом, резервный экземпляр повторяет в цикле следующие действия: зачитывает данные из WAL-файла, который обновляется главным экземпляром (и благодаря этому оба экземпляра всегда синхронизированы между собой) и пытается установить соединение на порту для прослушивания. Если по какой-либо причине главный сервер выходит из строя, то порт для прослушивания освобождается, резервный экземпляр устанавливает на нем соединение и становится главным. Таким образом, время недоступности в случае сбоя оказывается почти незаметным.</p>
 <p>При использовании горячего резервирования (значение параметра <code class="docutils literal"><span class="pre">local_hot_standby</span></code> равно &quot;true&quot;) значение параметра <code class="docutils literal"><span class="pre">wal_mode</span></code> не должно быть равно &quot;none&quot;.</p>
-<div data-disqus-identifier="Configuration reference" data-disqus-shortname="tarantooldb" id="disqus_thread"></div></div>
+</div>
 </div>
 
 
@@ -801,6 +797,35 @@ kill -HUP <em>process_id</em>
   <script>
   </script>
 
+        <div id="disqus_thread"></div>
+        <script>
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES:
+          *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
+          *  FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+          *  https://disqus.com/admin/universalcode/#configuration-variables
+          */
+          var disqus_config = function () {
+              // Replace PAGE_URL with your page's canonical URL variable
+              // this.page.url = PAGE_URL;
+              // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              this.page.identifier = "book/configuration/index";
+              this.page.language = "ru"
+          };
+          (function() {  // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = '//tarantooldb.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+            comments powered by Disqus.
+          </a>
+        </noscript>
       </div>
     </div>
 

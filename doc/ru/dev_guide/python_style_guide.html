@@ -25,9 +25,6 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_config = function(){
-        this.page.language   = "ru";
-      };
       var disqus_developer = 1;
     </script>
     <script id="dsq-count-scr"
@@ -37,7 +34,6 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
-    <script type="text/javascript" src="../_static/disqus.js"></script>
     <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="../_static/headers.js"></script>
     <link rel="stylesheet" href="/theme/design.css">
@@ -972,7 +968,7 @@ advanced callers.</p>
 <li>Guido van Rossum &lt;<a class="reference external" href="mailto:guido&#37;&#52;&#48;python&#46;org">guido<span>&#64;</span>python<span>&#46;</span>org</a>&gt;</li>
 <li>Barry Warsaw &lt;<a class="reference external" href="mailto:barry&#37;&#52;&#48;python&#46;org">barry<span>&#64;</span>python<span>&#46;</span>org</a>&gt;</li>
 </ul>
-<div data-disqus-identifier="Python Style Guide" data-disqus-shortname="tarantooldb" id="disqus_thread"></div></div>
+</div>
 </div>
 
 
@@ -1011,6 +1007,35 @@ advanced callers.</p>
   <script>
   </script>
 
+        <div id="disqus_thread"></div>
+        <script>
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES:
+          *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
+          *  FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+          *  https://disqus.com/admin/universalcode/#configuration-variables
+          */
+          var disqus_config = function () {
+              // Replace PAGE_URL with your page's canonical URL variable
+              // this.page.url = PAGE_URL;
+              // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              this.page.identifier = "dev_guide/python_style_guide";
+              this.page.language = "ru"
+          };
+          (function() {  // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = '//tarantooldb.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+            comments powered by Disqus.
+          </a>
+        </noscript>
       </div>
     </div>
 
