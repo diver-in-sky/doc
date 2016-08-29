@@ -9,10 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>3. Database</title>
-    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="/theme/favicon/favicon-16x16.png">
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -21,10 +25,18 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
+      var disqus_config = function(){
+        this.page.language   = "en";
+      };
+      var disqus_developer = 1;
+    </script>
+    <script id="dsq-count-scr"
+            src="//tarantooldb.disqus.com/count.js" async/>
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/disqus.js"></script>
     <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="../../_static/headers.js"></script>
     <link rel="stylesheet" href="/theme/design.css">
@@ -648,7 +660,7 @@ and so on -- so '2345' is less than '500'.</p>
 <li><p class="first">There may be more than one field.</p>
 <pre class="highlight literal-block">
 <code class="extsamp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:create_index('</span><em><span class="pre">index-name</span></em><span class="pre">',</span> <span class="pre">{</span>
-&#160;&#160;&#160; <span class="pre">parts</span> <span class="pre">=</span> <span class="pre">{3,</span> <span class="pre">'unsigned',</span> <span class="pre">2,</span> <span class="pre">'string'}</span>
+&nbsp;&nbsp;&nbsp; <span class="pre">parts</span> <span class="pre">=</span> <span class="pre">{3,</span> <span class="pre">'unsigned',</span> <span class="pre">2,</span> <span class="pre">'string'}</span>
 <span class="pre">})</span></code>
 </pre>
 <p>For an ordinary index, the maximum number of parts is 255. The specification
@@ -880,7 +892,7 @@ for all <a class="reference internal" href="vinyl_diff.html#vinyl-diff"><span cl
 <li class="toctree-l1"><a class="reference internal" href="vinyl_diff.html">3.4.12. Differences between memtx and vinyl storage engines</a></li>
 </ul>
 </div>
-</div>
+<div data-disqus-identifier="Database" data-disqus-shortname="tarantooldb" id="disqus_thread"></div></div>
 </div>
 
 
@@ -916,6 +928,8 @@ for all <a class="reference internal" href="vinyl_diff.html#vinyl-diff"><span cl
       </div>
     </div>
   
+  <script>
+  </script>
 
       </div>
     </div>

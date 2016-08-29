@@ -9,10 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>2. Начало работы</title>
-    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="/theme/favicon/favicon-16x16.png">
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -21,11 +25,19 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
+      var disqus_config = function(){
+        this.page.language   = "ru";
+      };
+      var disqus_developer = 1;
+    </script>
+    <script id="dsq-count-scr"
+            src="//tarantooldb.disqus.com/count.js" async/>
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/disqus.js"></script>
     <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="../_static/headers.js"></script>
     <link rel="stylesheet" href="/theme/design.css">
@@ -361,7 +373,7 @@ tarantool&gt; {<strong>{box.space.tester:select{2}}</strong>}
 </div>
 <p>Вы можете повторно вводить команды <code class="code docutils literal"><span class="pre">box.space...:insert{}</span></code> и <code class="code docutils literal"><span class="pre">box.space...:select{}</span></code> сколько угодно раз, на любом экземпляре Tarantool'а. В конце тестирования воспользуйтесь следующими командами. Чтобы удалить спейс: <code class="code docutils literal"><span class="pre">s:drop()</span></code>. Чтобы остановить  <code class="docutils literal"><span class="pre">tarantoolctl</span></code>: Ctrl+C или Ctrl+D. Чтобы остановить Tarantool (альтернативный вариант): <a class="reference internal" href="../reference_lua/os.html#os-exit"><span class="std std-ref">os.exit()</span></a>. Чтобы остановить Tarantool (с другого терминала): <code class="code docutils literal"><span class="pre">sudo</span> <span class="pre">pkill</span> <span class="pre">-f</span> <span class="pre">tarantool</span></code>. Чтобы удалить тестовую базу: <code class="code docutils literal"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">~/tarantool_sandbox</span></code>.</p>
 <p>Если вы выполнили все инструкции из этой главы, то к данному моменту вы уже установили Tarantool (из бинарного пакета, либо из исходных файлов), запустили Tarantool-сервер, а также выполнили вставку и выборку таплов.</p>
-</div>
+<div data-disqus-identifier="Getting started" data-disqus-shortname="tarantooldb" id="disqus_thread"></div></div>
 </div>
 
 
@@ -397,6 +409,8 @@ tarantool&gt; {<strong>{box.space.tester:select{2}}</strong>}
       </div>
     </div>
   
+  <script>
+  </script>
 
       </div>
     </div>

@@ -9,10 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>5. Справочник по конфигурированию</title>
-    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="/theme/favicon/favicon-16x16.png">
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -21,11 +25,19 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
+      var disqus_config = function(){
+        this.page.language   = "ru";
+      };
+      var disqus_developer = 1;
+    </script>
+    <script id="dsq-count-scr"
+            src="//tarantooldb.disqus.com/count.js" async/>
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/disqus.js"></script>
     <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="../../_static/headers.js"></script>
     <link rel="stylesheet" href="/theme/design.css">
@@ -750,7 +762,7 @@ kill -HUP <em>process_id</em>
 <p>Это означает, что второй экземпляр готов заменить первый, если тот выйдет из строя.</p>
 <p>Режим горячего резервирования подразумевает, что на одном компьютере запущены два экземпляра Tarantool-сервера с одинаковой конфигурацией. Первый запущенный экземпляр является &quot;главным&quot; (primary), а второй -- &quot;резервным&quot; (standby). Резервный экземпляр при запуске попытается установить соединение на порту для прослушивания, но у него не получится это сделать, поскольку адрес уже занят главным экземпляром. Таким образом, резервный экземпляр повторяет в цикле следующие действия: зачитывает данные из WAL-файла, который обновляется главным экземпляром (и благодаря этому оба экземпляра всегда синхронизированы между собой) и пытается установить соединение на порту для прослушивания. Если по какой-либо причине главный сервер выходит из строя, то порт для прослушивания освобождается, резервный экземпляр устанавливает на нем соединение и становится главным. Таким образом, время недоступности в случае сбоя оказывается почти незаметным.</p>
 <p>При использовании горячего резервирования (значение параметра <code class="docutils literal"><span class="pre">local_hot_standby</span></code> равно &quot;true&quot;) значение параметра <code class="docutils literal"><span class="pre">wal_mode</span></code> не должно быть равно &quot;none&quot;.</p>
-</div>
+<div data-disqus-identifier="Configuration reference" data-disqus-shortname="tarantooldb" id="disqus_thread"></div></div>
 </div>
 
 
@@ -786,6 +798,8 @@ kill -HUP <em>process_id</em>
       </div>
     </div>
   
+  <script>
+  </script>
 
       </div>
     </div>

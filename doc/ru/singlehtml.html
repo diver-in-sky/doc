@@ -9,10 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Документация Tarantool 1.7.1</title>
-    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="/theme/favicon/favicon-16x16.png">
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -21,6 +25,13 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
+      var disqus_config = function(){
+        this.page.language   = "ru";
+      };
+      var disqus_developer = 1;
+    </script>
+    <script id="dsq-count-scr"
+            src="//tarantooldb.disqus.com/count.js" async/>
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
@@ -224,6 +235,49 @@
 <span id="document-faq"></span><div class="section" id="faq">
 <h2>Вопросы и ответы<a class="headerlink" href="#faq" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="table container">
+<table border="1" class="left-align-column-1 left-align-column-2 top-align-column-1 border-0-column-1 border-0-column-2 docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first last">Вопрос: <br /> Ответ: <br /></p>
+</td>
+<td><p class="first last">Почему Tarantool? <br /> Tarantool -- это in-memory сервер баз данных последнего поколения, предназначенный для работы с веб-приложениями. Разработка ведется с учетом многолетнего опыта использования Tarantool'а в стенах Mail.Ru. Первый релиз состоялся в 2008 году.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first last">Вопрос: <br /> Ответ: <br /></p>
+</td>
+<td><p class="first last">Почему Lua? <br /> Lua -- это легкий, быстрый и расширяемый язык, позволяющий использовать различные парадигмы программирования. Lua также легко встраивается в различные приложения. Ко-рутины (coroutines) в Lua близко соотносятся с файберами (fibers) в Tarantool'е, а вся Lua-архитектура гладко ложится на его внутреннюю реализацию. Lua -- это первый язык, на котором можно писать хранимые процедуры для Tarantool'а. В будущем список поддерживаемых языков планируется расширить.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first last">Вопрос: <br /> Ответ: <br /></p>
+</td>
+<td><p class="first last">В чем состоит главное преимущество Tarantool'а? <br /> Tarantool предоставляет богатый набор функций по работе с базами данных (HASH, TREE, RTREE, BitSet-индексы, вторичные индексы, составные индексы, транзакции, триггеры, асинхронная репликация), и всё это -- в гибкой среде Lua-интерпретатора. <br /> Эти два обстоятельства делают Tarantool быстрым и надежным in-memory сервером баз данных с атомарными операциями и сложной логикой на стороне сервера. Преимуществом Tarantool'а по сравнению с традиционными SQL СУБД является его высокая производительность: низкие накладные расходы и безблокировочная архитектура позволяют Tarantool'у обрабатывать на порядок больше запросов в секунду на аналогичном оборудовании. Преимущество же перед другими NoSQL СУБД заключается в большей гибкости Tarantool'а: язык Lua позволяет гибко обрабатывать данные, хранящиеся в компактном, ненормализованном формате.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first last">Вопрос: <br /> Ответ: <br /></p>
+</td>
+<td><p class="first last">Каковы ваши планы по развитию? <br /> Мы постоянно улучшаем производительность серверной части. Наши главные цели на 2016-2018 год -- это автоматический шардинг и синхронная репликация, а также частичная поддержка SQL. План работ находится в открытом доступе, и все желающие могут оставлять запросы на добавление функционала.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first last">Вопрос: <br /> Ответ: <br /></p>
+</td>
+<td><p class="first last">Кто разрабатывает Tarantool? <br /> Во-первых, этим занимается команда разработки в Mail.Ru -- см. историю коммитов на github.com/tarantool. Вся разработка ведется открытым образом. Кроме того, активную роль играют члены сообщества разработчиков Tarantool'а. Их силами было создано большинство коннекторов и ведутся доработки под разные дистрибутивы.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first last">Вопрос: <br /> Ответ: <br /></p>
+</td>
+<td><p class="first last">Насколько серьезны планы Mail.Ru в отношении Tarantool'а? <br /> Tarantool -- это проект с открытым кодом, распространяемый под лицензией BSD, поэтому он не зависит от внешних спонсоров. В то же время, Tarantool -- это часть технологического &quot;костяка&quot; Mail.Ru, и поэтому он пользуется сильной поддержкой со стороны Mail.Ru.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first last">Вопрос: <br /> Ответ: <br /></p>
+</td>
+<td><p class="first last">Возникают ли проблемы из-за того, что Tarantool является in-memory решением? <br /> Основной движок баз данных в Tarantool'е работает с оперативной памятью, но при этом он гарантирует сохранность данных благодаря механизму WAL (write ahead log), т.е. журналу упреждающей записи. Также в Tarantool'е используются технологии сжатия и распределения данных, которые позволяют использовать все виды памяти наиболее эффективно. Если Tarantool сталкивается с нехваткой оперативной памяти, то он приостанавливает прием запросов на изменение данных до тех пор, пока не появится свободная память, но при этом с успехом продолжает обработку запросов на чтение и удаление данных. А для больших баз, где объем данных значительно превосходит имеющийся объем оперативной памяти, у Tarantool'а есть второй движок, чьи возможности ограничены лишь размером жесткого диска.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <span id="document-book/index"></span><div class="section" id="user-guide">
@@ -676,7 +730,7 @@ tarantool&gt; {<strong>{box.space.tester:select{2}}</strong>}
 <li><p class="first">Индекс может строиться по нескольким полям.</p>
 <pre class="highlight literal-block">
 <code class="extsamp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:create_index('</span><em><span class="pre">index-name</span></em><span class="pre">',</span> <span class="pre">{</span>
-&#160;&#160;&#160; <span class="pre">parts</span> <span class="pre">=</span> <span class="pre">{3,</span> <span class="pre">'unsigned',</span> <span class="pre">2,</span> <span class="pre">'string'}</span>
+&nbsp;&nbsp;&nbsp; <span class="pre">parts</span> <span class="pre">=</span> <span class="pre">{3,</span> <span class="pre">'unsigned',</span> <span class="pre">2,</span> <span class="pre">'string'}</span>
 <span class="pre">})</span></code>
 </pre>
 <p>В обычном индексе может быть максимум 255 частей. Каждая часть характеризуется номером поля и его типом.</p>
@@ -17294,7 +17348,7 @@ int <code class="descname">box_update</code><big>(</big>uint32_t<em>&nbsp;space_
 <li><strong>char*      key</strong> (<em>const</em>) -- encoded key in MsgPack Array format ([ field1, field2, ...])</li>
 <li><strong>char*  key_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">key</span></code></li>
 <li><strong>char*      ops</strong> (<em>const</em>) -- encoded operations in MsgPack Arrat format, e.g.
-<code class="docutils literal"><span class="pre">[[</span> <span class="pre">'=',</span> <span class="pre">field_id,</span>&#160; <span class="pre">value</span> <span class="pre">],</span> <span class="pre">['!',</span> <span class="pre">2,</span> <span class="pre">'xxx']]</span></code></li>
+<code class="docutils literal"><span class="pre">[[</span> <span class="pre">'=',</span> <span class="pre">field_id,</span>&nbsp; <span class="pre">value</span> <span class="pre">],</span> <span class="pre">['!',</span> <span class="pre">2,</span> <span class="pre">'xxx']]</span></code></li>
 <li><strong>char*  ops_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">ops</span></code></li>
 <li><strong>index_base</strong> (<em>int</em>) -- 0 if field_ids in update operation are zero-based
 indexed (like C) or 1 if for one-based indexed
@@ -17329,7 +17383,7 @@ int <code class="descname">box_upsert</code><big>(</big>uint32_t<em>&nbsp;space_
 <li><strong>char*     tuple</strong> (<em>const</em>) -- encoded tuple in MsgPack Array format ([ field1, field2, ...])</li>
 <li><strong>char* tuple_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">tuple</span></code></li>
 <li><strong>char*       ops</strong> (<em>const</em>) -- encoded operations in MsgPack Arrat format, e.g.
-<code class="docutils literal"><span class="pre">[[</span> <span class="pre">'=',</span> <span class="pre">field_id,</span>&#160; <span class="pre">value</span> <span class="pre">],</span> <span class="pre">['!',</span> <span class="pre">2,</span> <span class="pre">'xxx']]</span></code></li>
+<code class="docutils literal"><span class="pre">[[</span> <span class="pre">'=',</span> <span class="pre">field_id,</span>&nbsp; <span class="pre">value</span> <span class="pre">],</span> <span class="pre">['!',</span> <span class="pre">2,</span> <span class="pre">'xxx']]</span></code></li>
 <li><strong>char*   ops_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">ops</span></code></li>
 <li><strong>index_base</strong> (<em>int</em>) -- 0 if field_ids in update operation are zero-based
 indexed (like C) or 1 if for one-based indexed
@@ -22473,6 +22527,8 @@ Alert the driver to target bugs and blueprints to the new milestone.</p>
       </div>
     </div>
   
+  <script>
+  </script>
 
       </div>
     </div>

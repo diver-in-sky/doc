@@ -11,7 +11,7 @@
         .. rst-class:: border-0-column-2
 
         +---------+--------------------------------------------------------------------------------------+
-        | Q: |br| | Why Tarrantool? |br|                                                                  |
+        | Q: |br| | Why Tarantool? |br|                                                                  |
         | A: |br| | Tarantool is the latest generation of a family of in-memory data servers             |
         |         | developed for web applications. It is the result of practical experience             |
         |         | and trials within Mail.Ru since development began in 2008.                           |

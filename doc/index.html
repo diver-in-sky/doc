@@ -9,10 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Documentation</title>
-    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="/theme/favicon/favicon-16x16.png">
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -21,10 +25,18 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
+      var disqus_config = function(){
+        this.page.language   = "en";
+      };
+      var disqus_developer = 1;
+    </script>
+    <script id="dsq-count-scr"
+            src="//tarantooldb.disqus.com/count.js" async/>
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/disqus.js"></script>
     <script type="text/javascript" src="_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="_static/headers.js"></script>
     <link rel="stylesheet" href="/theme/design.css">
@@ -160,7 +172,7 @@
   
     <section class="b-block b-documentation">
       <div class="b-block-wrapper">
-        
+         
 <form id="searchbox" role="search" class="search b-search" action="search.html" method="get">
   <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
   <input class="b-search-but" type="submit" />
@@ -272,12 +284,14 @@
 <p class="last">For one page HTML documentation, please,
 use <a class="reference external" href="/doc/singlehtml.html">this link</a>.</p>
 </div>
-</div>
+<div data-disqus-identifier="Documentation" data-disqus-shortname="tarantooldb" id="disqus_thread"></div></div>
 
 
       </div>
     </section>
   
+  <script>
+  </script>
 
       </div>
     </div>
