@@ -1,0 +1,1072 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Module fio</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Module fio">
+        Module fio
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_lua/fio.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_lua/fio.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_lua/fio">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">Руководство пользователя</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Справочник по Lua API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Модуль <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Модуль <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">Модуль <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="digest.html">Модуль <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_error.html">Вложенный модуль <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber.html">Модуль <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber_ipc.html">Модуль <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="msgpack.html">Модуль <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="net_box.html">Модуль <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_once.html">Функция <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">Модуль <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">Модуль <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="strict.html">Модуль <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarantool.html">Модуль <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Разное</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Справочник по Lua API
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Module <cite>fio</cite>" class="b-path_current b-ellipsis">
+          Module <cite>fio</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="module-fio">
+<span id="fio-module"></span><h1>Module <cite>fio</cite><a class="headerlink" href="#module-fio" title="Ссылка на этот заголовок">¶</a></h1>
+<p id="fio-section">Tarantool supports file input/output with an API that is similar to POSIX
+syscalls. All operations are performed asynchronously. Multiple fibers can
+access the same file simultaneously.</p>
+<span class="target" id="lua-module.fio"></span><div class="section" id="common-pathname-manipulations">
+<h2>Common pathname manipulations<a class="headerlink" href="#common-pathname-manipulations" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="function">
+<dt id="lua-функция.fio.pathjoin">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">pathjoin</code><big>(</big><em>partial-string</em><span class="optional">[</span>, <em>partial-string ...</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.fio.pathjoin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Concatenate partial string, separated by '/' to form a path name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>partial-string</strong> (<em>string</em>) -- one or more strings to be concatenated.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">path name</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">pathjoin</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/etc&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">default&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">myfile&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/etc/default/myfile</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.basename">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">basename</code><big>(</big><em>path-name</em><span class="optional">[</span>, <em>suffix</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.fio.basename" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Given a full path name, remove all but the final part (the file name).
+Also remove the suffix, if it is passed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path-name</strong> (<em>string</em>) -- path name</li>
+<li><strong>suffix</strong> (<em>string</em>) -- suffix</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">file name</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/path/to/my.lua&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">.lua&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">my</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.dirname">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">dirname</code><big>(</big><em>path-name</em><big>)</big><a class="headerlink" href="#lua-функция.fio.dirname" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Given a full path name, remove the final part (the file name).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path-name</strong> (<em>string</em>) -- path name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">directory name, that is, path name except for file name.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">path/to/my.lua&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="s">&#39;path/to/&#39;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="common-file-manipulations">
+<h2>Common file manipulations<a class="headerlink" href="#common-file-manipulations" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="function">
+<dt id="lua-функция.fio.umask">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">umask</code><big>(</big><em>mask-bits</em><big>)</big><a class="headerlink" href="#lua-функция.fio.umask" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Set the mask bits used when creating files or directories. For a detailed
+description type &quot;man 2 umask&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>mask-bits</strong> (<em>number</em>) -- mask bits.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">previous mask bits.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">number</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">umask</span><span class="p">(</span><span class="nb">tonumber</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">755&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">493</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.lstat">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">lstat</code><big>(</big><em>path-name</em><big>)</big><a class="headerlink" href="#lua-функция.fio.lstat" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.fio.stat">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">stat</code><big>(</big><em>path-name</em><big>)</big><a class="headerlink" href="#lua-функция.fio.stat" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns information about a file object. For details type &quot;man 2 lstat&quot; or
+&quot;man 2 stat&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path-name</strong> (<em>string</em>) -- path name of file.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">fields which describe the file's block size, creation time, size,
+and other attributes.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">table</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">lstat</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/etc&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">inode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1048577</span>
+  <span class="l l-Scalar l-Scalar-Plain">rdev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+  <span class="l l-Scalar l-Scalar-Plain">size</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12288</span>
+  <span class="l l-Scalar l-Scalar-Plain">atime</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1421340698</span>
+  <span class="l l-Scalar l-Scalar-Plain">mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">16877</span>
+  <span class="l l-Scalar l-Scalar-Plain">mtime</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1424615337</span>
+  <span class="l l-Scalar l-Scalar-Plain">nlink</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">160</span>
+  <span class="l l-Scalar l-Scalar-Plain">uid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+  <span class="l l-Scalar l-Scalar-Plain">blksize</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4096</span>
+  <span class="l l-Scalar l-Scalar-Plain">gid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+  <span class="l l-Scalar l-Scalar-Plain">ctime</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1424615337</span>
+  <span class="l l-Scalar l-Scalar-Plain">dev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2049</span>
+  <span class="l l-Scalar l-Scalar-Plain">blocks</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">24</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.mkdir">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">mkdir</code><big>(</big><em>path-name</em><span class="optional">[</span>, <em>mode</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.fio.mkdir" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.fio.rmdir">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">rmdir</code><big>(</big><em>path-name</em><big>)</big><a class="headerlink" href="#lua-функция.fio.rmdir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Create or delete a directory. For details type
+&quot;man 2 mkdir&quot; or &quot;man 2 rmdir&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path-name</strong> (<em>string</em>) -- path of directory.</li>
+<li><strong>mode</strong> (<em>number</em>) -- Mode bits can be passed as a number or as string
+constants, for example ''<cite>S_IWUSR</cite>&quot;. Mode bits can be
+combined by enclosing them in braces.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true if success, false if failure.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/etc&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.glob">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">glob</code><big>(</big><em>path-name</em><big>)</big><a class="headerlink" href="#lua-функция.fio.glob" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Return a list of files that match an input string. The list is constructed
+with a single flag that controls the behavior of the function: GLOB_NOESCAPE.
+For details type &quot;man 3 glob&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path-name</strong> (<em>string</em>) -- path-name, which may contain wildcard characters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">list of files whose names match the input string</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">table</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: nil.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/etc/x*&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/etc/xdg</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/etc/xml</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/etc/xul-ext</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.tempdir">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">tempdir</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.fio.tempdir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Return the name of a directory that can be used to store temporary files.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">tempdir</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/tmp/lG31e7</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.cwd">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">cwd</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.fio.cwd" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Return the name of the current working directory.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">cwd</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/home/username/tarantool_sandbox</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.link">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">link</code><big>(</big><em>src</em>, <em>dst</em><big>)</big><a class="headerlink" href="#lua-функция.fio.link" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.fio.symlink">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">symlink</code><big>(</big><em>src</em>, <em>dst</em><big>)</big><a class="headerlink" href="#lua-функция.fio.symlink" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.fio.readlink">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">readlink</code><big>(</big><em>src</em><big>)</big><a class="headerlink" href="#lua-функция.fio.readlink" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.fio.unlink">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">unlink</code><big>(</big><em>src</em><big>)</big><a class="headerlink" href="#lua-функция.fio.unlink" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Functions to create and delete links. For details type &quot;man readlink&quot;,
+&quot;man 2 link&quot;, &quot;man 2 symlink&quot;, &quot;man 2 unlink&quot;..</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>src</strong> (<em>string</em>) -- existing file name.</li>
+<li><strong>dst</strong> (<em>string</em>) -- linked name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">fio.link</span></code> and <code class="docutils literal"><span class="pre">fio.symlink</span></code> and <code class="docutils literal"><span class="pre">fio.unlink</span></code> return true if
+success, false if failure. <code class="docutils literal"><span class="pre">fio.readlink</span></code> returns the link value
+if success, nil if failure.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">link</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/home/username/tmp.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">/home/username/tmp.txt2&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">unlink</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/home/username/tmp.txt2&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.rename">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">rename</code><big>(</big><em>path-name</em>, <em>new-path-name</em><big>)</big><a class="headerlink" href="#lua-функция.fio.rename" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Rename a file or directory. For details type &quot;man 2 rename&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path-name</strong> (<em>string</em>) -- original name.</li>
+<li><strong>new-path-name</strong> (<em>string</em>) -- new name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true if success, false if failure.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/home/username/tmp.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">/home/username/tmp.txt2&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.chown">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">chown</code><big>(</big><em>path-name</em>, <em>owner-user</em>, <em>owner-group</em><big>)</big><a class="headerlink" href="#lua-функция.fio.chown" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.fio.chmod">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">chmod</code><big>(</big><em>path-name</em>, <em>new-rights</em><big>)</big><a class="headerlink" href="#lua-функция.fio.chmod" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Manage the rights to file objects, or ownership of file objects.
+For details type &quot;man 2 chown&quot; or &quot;man 2 chmod&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>owner-user</strong> (<em>string</em>) -- new user uid.</li>
+<li><strong>owner-group</strong> (<em>string</em>) -- new group uid.</li>
+<li><strong>new-rights</strong> (<em>number</em>) -- new permissions</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">chmod</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/home/username/tmp.txt&#39;</span><span class="p">,</span> <span class="nb">tonumber</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">0755&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">chown</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/home/username/tmp.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">username&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">username&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.truncate">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">truncate</code><big>(</big><em>path-name</em>, <em>new-size</em><big>)</big><a class="headerlink" href="#lua-функция.fio.truncate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Reduce file size to a specified value. For details type &quot;man 2 truncate&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path-name</strong> (<em>string</em>) -- </li>
+<li><strong>new-size</strong> (<em>number</em>) -- </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true if success, false if failure.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">truncate</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/home/username/tmp.txt&#39;</span><span class="p">,</span> <span class="mi">99999</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.sync">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">sync</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.fio.sync" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ensure that changes are written to disk. For details type &quot;man 2 sync&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">true if success, false if failure.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fio</span><span class="p">.</span><span class="n">sync</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.fio.open">
+<em class="property"> </em><code class="descclassname">fio.</code><code class="descname">open</code><big>(</big><em>path-name</em><span class="optional">[</span>, <em>flags</em><span class="optional">[</span>, <em>mode</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.fio.open" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Open a file in preparation for reading or writing or seeking.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path-name</strong> (<em>string</em>) -- </li>
+<li><strong>flags</strong> (<em>number</em>) -- Flags can be passed as a number or as string
+constants, for example '<code class="docutils literal"><span class="pre">O_RDONLY</span></code>',
+'<code class="docutils literal"><span class="pre">O_WRONLY</span></code>', '<code class="docutils literal"><span class="pre">O_RDWR</span></code>'. Flags can be
+combined by enclosing them in braces.</li>
+<li><strong>mode</strong> (<em>number</em>) -- Mode bits can be passed as a number or as string
+constants, for example ''<cite>S_IWUSR</cite>&quot;. Mode bits
+are significant if flags include <cite>O_CREATE</cite> or
+<cite>O_TMPFILE</cite>. Mode bits can be
+combined by enclosing them in braces.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">file handle (later - fh)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">userdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: nil.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fh</span> <span class="o">=</span> <span class="n">fio</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">/home/username/tmp.txt&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;</span><span class="s">O_RDWR&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">O_APPEND&#39;</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fh</span> <span class="c1">-- display file handle returned by fio.open</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fh</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">11</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="lua-объект.fio.file-handle">
+<em class="property">объект </em><code class="descclassname">fio.</code><code class="descname">file-handle</code><a class="headerlink" href="#lua-объект.fio.file-handle" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="method">
+<dt id="lua-функция.file-handle.close">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">close</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.file-handle.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Close a file that was opened with <code class="docutils literal"><span class="pre">fio.open</span></code>. For details type &quot;man 2 close&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>fh</strong> (<em>userdata</em>) -- file-handle as returned by <code class="docutils literal"><span class="pre">fio.open()</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true if success, false on failure.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fh</span><span class="p">:</span><span class="n">close</span><span class="p">()</span> <span class="c1">-- where fh = file-handle</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.file-handle.pread">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">pread</code><big>(</big><em>count</em>, <em>offset</em><big>)</big><a class="headerlink" href="#lua-функция.file-handle.pread" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.file-handle.pwrite">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">pwrite</code><big>(</big><em>new-string</em>, <em>offset</em><big>)</big><a class="headerlink" href="#lua-функция.file-handle.pwrite" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Perform read/write random-access operation on a file, without affecting
+the current seek position of the file.
+For details type &quot;man 2 pread&quot; or &quot;man 2 pwrite&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>fh</strong> (<em>userdata</em>) -- file-handle as returned by <code class="docutils literal"><span class="pre">fio.open()</span></code>.</li>
+<li><strong>count</strong> (<em>number</em>) -- number of bytes to read</li>
+<li><strong>new-string</strong> (<em>string</em>) -- value to write</li>
+<li><strong>offset</strong> (<em>number</em>) -- offset within file where reading or writing begins</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">fh:pwrite</span></code> returns true if success, false if failure.
+<code class="docutils literal"><span class="pre">fh:pread</span></code> returns the data that was read, or nil if failure.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fh</span><span class="p">:</span><span class="n">pread</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">|</span>
+  <span class="no">elete from t8//</span>
+  <span class="no">insert in</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.file-handle.read">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">read</code><big>(</big><em>count</em><big>)</big><a class="headerlink" href="#lua-функция.file-handle.read" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.file-handle.write">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">write</code><big>(</big><em>new-string</em><big>)</big><a class="headerlink" href="#lua-функция.file-handle.write" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Perform non-random-access read or write on a file. For details type
+&quot;man 2 read&quot; or &quot;man 2 write&quot;.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last"><code class="docutils literal"><span class="pre">fh:read</span></code> and <code class="docutils literal"><span class="pre">fh:write</span></code> affect the seek position within the
+file, and this must be taken into account when working on the same
+file from multiple fibers. It is possible to limit or prevent file
+access from other fibers with <code class="docutils literal"><span class="pre">fiber.ipc</span></code>.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>fh</strong> (<em>userdata</em>) -- file-handle as returned by <code class="docutils literal"><span class="pre">fio.open()</span></code>.</li>
+<li><strong>count</strong> (<em>number</em>) -- number of bytes to read</li>
+<li><strong>new-string</strong> (<em>string</em>) -- value to write</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last"><code class="docutils literal"><span class="pre">fh:write</span></code> returns true if success, false if failure.
+<code class="docutils literal"><span class="pre">fh:read</span></code> returns the data that was read, or nil if failure.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fh</span><span class="p">:</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">new data&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.file-handle.truncate">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">truncate</code><big>(</big><em>new-size</em><big>)</big><a class="headerlink" href="#lua-функция.file-handle.truncate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Change the size of an open file. Differs from <code class="docutils literal"><span class="pre">fio.truncate</span></code>, which
+changes the size of a closed file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>fh</strong> (<em>userdata</em>) -- file-handle as returned by <code class="docutils literal"><span class="pre">fio.open()</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true if success, false if failure.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fh</span><span class="p">:</span><span class="n">truncate</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.file-handle.seek">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">seek</code><big>(</big><em>position</em><span class="optional">[</span>, <em>offset-from</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.file-handle.seek" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Shift position in the file to the specified position. For details type
+&quot;man 2 seek&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>fh</strong> (<em>userdata</em>) -- file-handle as returned by <code class="docutils literal"><span class="pre">fio.open()</span></code>.</li>
+<li><strong>position</strong> (<em>number</em>) -- position to seek to</li>
+<li><strong>offset-from</strong> (<em>string</em>) -- '<code class="docutils literal"><span class="pre">SEEK_END</span></code>' = end of file, '<code class="docutils literal"><span class="pre">SEEK_CUR</span></code>'
+= current position, '<code class="docutils literal"><span class="pre">SEEK_SET</span></code>' = start of file.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">the new position if success</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">number</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: nil.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fh</span><span class="p">:</span><span class="n">seek</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">SEEK_SET&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">20</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.file-handle.stat">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">stat</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.file-handle.stat" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Return statistics about an open file. This differs from <code class="docutils literal"><span class="pre">fio.stat</span></code>
+which return statistics about a closed file. For details type &quot;man 2 stat&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>fh</strong> (<em>userdata</em>) -- file-handle as returned by <code class="docutils literal"><span class="pre">fio.open()</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">details about the file.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">table</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fh</span><span class="p">:</span><span class="n">stat</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">inode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">729866</span>
+  <span class="l l-Scalar l-Scalar-Plain">rdev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+  <span class="l l-Scalar l-Scalar-Plain">size</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
+  <span class="l l-Scalar l-Scalar-Plain">atime</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">140942855</span>
+  <span class="l l-Scalar l-Scalar-Plain">mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">33261</span>
+  <span class="l l-Scalar l-Scalar-Plain">mtime</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1409430660</span>
+  <span class="l l-Scalar l-Scalar-Plain">nlink</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="l l-Scalar l-Scalar-Plain">uid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+  <span class="l l-Scalar l-Scalar-Plain">blksize</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4096</span>
+  <span class="l l-Scalar l-Scalar-Plain">gid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+  <span class="l l-Scalar l-Scalar-Plain">ctime</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1409430660</span>
+  <span class="l l-Scalar l-Scalar-Plain">dev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2049</span>
+  <span class="l l-Scalar l-Scalar-Plain">blocks</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.file-handle.fsync">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">fsync</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.file-handle.fsync" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.file-handle.fdatasync">
+<em class="property"> </em><code class="descclassname">file-handle:</code><code class="descname">fdatasync</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.file-handle.fdatasync" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ensure that file changes are written to disk, for an open file.
+Compare <code class="docutils literal"><span class="pre">fio.sync</span></code>, which is for all files. For details type
+&quot;man 2 fsync&quot; or &quot;man 2 fdatasync&quot;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>fh</strong> (<em>userdata</em>) -- file-handle as returned by <code class="docutils literal"><span class="pre">fio.open()</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">true if success, false if failure.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fh</span><span class="p">:</span><span class="n">fsync</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="fiber_ipc.html"
+           class="b-prev b-ellipsis"
+           title="Модуль &lt;cite&gt;fiber-ipc&lt;/cite&gt;">Модуль <cite>fiber-ipc</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_lua/fio.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="fun.html"
+           class="b-next b-ellipsis"
+           title="Module &lt;cite&gt;fun&lt;/cite&gt;">Module <cite>fun</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

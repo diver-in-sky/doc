@@ -1,0 +1,1132 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C Style Guide</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="C Style Guide">
+        C Style Guide
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../dev_guide/c_style_guide.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/dev_guide/c_style_guide.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-dev_guide/c_style_guide">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Lua reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contributing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">What documentation there is</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_from_source.html">Building from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_documentation.html">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_guidelines.html">Developer guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_protocol.html">IProto Protocol</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">C Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_style_guide.html">Python Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_management.html">Release management</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Contributing
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="C Style Guide" class="b-path_current b-ellipsis">
+          C Style Guide
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="c-style-guide">
+<h1>C Style Guide<a class="headerlink" href="#c-style-guide" title="Permalink to this headline">¶</a></h1>
+<p>The project's coding style is based on a version of the Linux kernel coding style.</p>
+<p>The latest version of the Linux style can be found at:
+<a class="reference external" href="http://www.kernel.org/doc/Documentation/CodingStyle">http://www.kernel.org/doc/Documentation/CodingStyle</a></p>
+<p>Since it is open for changes, the version of style that we follow,
+one from 2007-July-13, will be also copied later in this document.</p>
+<p>There are a few additional guidelines, either unique
+to Tarantool or deviating from the Kernel guidelines.</p>
+<ol class="upperalpha simple">
+<li>Chapters 10 &quot;Kconfig configuration files&quot;, 11 &quot;Data structures&quot;,
+13 &quot;Printing kernel messages&quot;, 14 &quot;Allocating memory&quot; and 17
+&quot;Don't re-invent the kernel macros&quot; do not apply, since they are
+specific to Linux kernel programming environment.</li>
+<li>The rest of Linux Kernel Coding Style is amended as follows:</li>
+</ol>
+<div class="section" id="general-guidelines">
+<h2>General guidelines<a class="headerlink" href="#general-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>We use Git for revision control. The latest development is happening in the
+'master' branch. Our git repository is hosted on github, and can be checked
+out with git clone git://github.com/tarantool/tarantool.git # anonymous read-only access</p>
+<p>If you have any questions about Tarantool internals, please post them on the
+developer discussion list, <a class="reference external" href="https://groups.google.com/forum/#!forum/tarantool">https://groups.google.com/forum/#!forum/tarantool</a>. However,
+please be warned: Launchpad silently deletes posts from non-subscribed members,
+thus please be sure to have subscribed to the list prior to posting. Additionally,
+some engineers are always present on #tarantool channel on irc.freenode.net.</p>
+<div class="section" id="commenting-style">
+<h3>Commenting style<a class="headerlink" href="#commenting-style" title="Permalink to this headline">¶</a></h3>
+<p>Use Doxygen comment format, Javadoc flavor, i.e. <cite>&#64;tag</cite> rather than <cite>tag</cite>.
+The main tags in use are &#64;param, &#64;retval, &#64;return, &#64;see, &#64;note and &#64;todo.</p>
+<p>Every function, except perhaps a very short and obvious one, should have a
+comment. A sample function comment may look like below:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>/** Write all data to a descriptor.
+ *
+ * This function is equivalent to &#39;write&#39;, except it would ensure
+ * that all data is written to the file unless a non-ignorable
+ * error occurs.
+ *
+ * @retval 0  Success
+ *
+ * @reval  1  An error occurred (not EINTR)
+ * /
+static int
+write_all(int fd, void \*data, size_t len);
+</pre></div>
+</div>
+<p>Public structures and important structure members should be commented as well.</p>
+</div>
+<div class="section" id="header-files">
+<h3>Header files<a class="headerlink" href="#header-files" title="Permalink to this headline">¶</a></h3>
+<p>Use header guards. Put the header guard in the first line in the header,
+before the copyright or declarations. Use all-uppercase name for the header
+guard. Derive the header guard name from the file name, and append _INCLUDED
+to get a macro name. For example, core/log_io.h -&gt; CORE_LOG_IO_H_INCLUDED. In
+<code class="docutils literal"><span class="pre">.c</span></code> (implementation) file, include the respective declaration header before all
+other headers, to ensure that the header is self- sufficient. Header &quot;header.h&quot;
+is self-sufficient if the following compiles without errors:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;header.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="allocating-memory">
+<h3>Allocating memory<a class="headerlink" href="#allocating-memory" title="Permalink to this headline">¶</a></h3>
+<p>Prefer the supplied slab (salloc) and pool (palloc) allocators to malloc()/free()
+for any performance-intensive or large  memory allocations. Repetitive use of
+malloc()/free() can lead to memory fragmentation and should therefore be avoided.</p>
+<p>Always free all allocated memory, even allocated  at start-up. We aim at being
+valgrind leak-check clean, and in most cases it's just as easy to free() the
+allocated memory as it is to write a valgrind suppression. Freeing all allocated
+memory is also dynamic-load friendly: assuming a plug-in can be dynamically loaded
+and unloaded multiple times, reload should not lead to a memory leak.</p>
+</div>
+<div class="section" id="other">
+<h3>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h3>
+<p>Select GNU C99 extensions are acceptable. It's OK to mix declarations and statements,
+use true and false.</p>
+<p>The not-so-current list of all GCC C extensions can be found at:
+<a class="reference external" href="http://gcc.gnu.org/onlinedocs/gcc-4.3.5/gcc/C-Extensions.html">http://gcc.gnu.org/onlinedocs/gcc-4.3.5/gcc/C-Extensions.html</a></p>
+</div>
+</div>
+<div class="section" id="linux-kernel-coding-style">
+<h2>Linux kernel coding style<a class="headerlink" href="#linux-kernel-coding-style" title="Permalink to this headline">¶</a></h2>
+<p>This is a short document describing the preferred coding style for the
+linux kernel.  Coding style is very personal, and I won't _force_ my
+views on anybody, but this is what goes for anything that I have to be
+able to maintain, and I'd prefer it for most other things too.  Please
+at least consider the points made here.</p>
+<p>First off, I'd suggest printing out a copy of the GNU coding standards,
+and NOT read it.  Burn them, it's a great symbolic gesture.</p>
+<p>Anyway, here goes:</p>
+<div class="section" id="chapter-1-indentation">
+<h3>Chapter 1: Indentation<a class="headerlink" href="#chapter-1-indentation" title="Permalink to this headline">¶</a></h3>
+<p>Tabs are 8 characters, and thus indentations are also 8 characters.
+There are heretic movements that try to make indentations 4 (or even 2!)
+characters deep, and that is akin to trying to define the value of PI to
+be 3.</p>
+<p>Rationale: The whole idea behind indentation is to clearly define where
+a block of control starts and ends.  Especially when you've been looking
+at your screen for 20 straight hours, you'll find it a lot easier to see
+how the indentation works if you have large indentations.</p>
+<p>Now, some people will claim that having 8-character indentations makes
+the code move too far to the right, and makes it hard to read on a
+80-character terminal screen.  The answer to that is that if you need
+more than 3 levels of indentation, you're screwed anyway, and should fix
+your program.</p>
+<p>In short, 8-char indents make things easier to read, and have the added
+benefit of warning you when you're nesting your functions too deep.
+Heed that warning.</p>
+<p>The preferred way to ease multiple indentation levels in a switch statement is
+to align the &quot;switch&quot; and its subordinate &quot;case&quot; labels in the same column
+instead of &quot;double-indenting&quot; the &quot;case&quot; labels. e.g.:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">suffix</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">case</span> <span class="sc">&#39;G&#39;</span><span class="o">:</span>
+<span class="k">case</span> <span class="sc">&#39;g&#39;</span><span class="o">:</span>
+    <span class="n">mem</span> <span class="o">&lt;&lt;=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="k">case</span> <span class="sc">&#39;M&#39;</span><span class="o">:</span>
+<span class="k">case</span> <span class="sc">&#39;m&#39;</span><span class="o">:</span>
+    <span class="n">mem</span> <span class="o">&lt;&lt;=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="k">case</span> <span class="sc">&#39;K&#39;</span><span class="o">:</span>
+<span class="k">case</span> <span class="sc">&#39;k&#39;</span><span class="o">:</span>
+    <span class="n">mem</span> <span class="o">&lt;&lt;=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="cm">/* fall through */</span>
+<span class="k">default</span><span class="o">:</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Don't put multiple statements on a single line unless you have
+something to hide:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>if (condition) do_this;
+  do_something_everytime;
+</pre></div>
+</div>
+<p>Don't put multiple assignments on a single line either. Kernel coding style
+is super simple. Avoid tricky expressions.</p>
+<p>Outside of comments, documentation and except in Kconfig, spaces are never
+used for indentation, and the above example is deliberately broken.</p>
+<p>Get a decent editor and don't leave whitespace at the end of lines.</p>
+</div>
+<div class="section" id="chapter-2-breaking-long-lines-and-strings">
+<h3>Chapter 2: Breaking long lines and strings<a class="headerlink" href="#chapter-2-breaking-long-lines-and-strings" title="Permalink to this headline">¶</a></h3>
+<p>Coding style is all about readability and maintainability using commonly
+available tools.</p>
+<p>The limit on the length of lines is 80 columns and this is a strongly
+preferred limit.</p>
+<p>Statements longer than 80 columns will be broken into sensible chunks.
+Descendants are always substantially shorter than the parent and are placed
+substantially to the right. The same applies to function headers with a long
+argument list. Long strings are as well broken into shorter strings. The
+only exception to this is where exceeding 80 columns significantly increases
+readability and does not hide information.</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+        <span class="n">printk</span><span class="p">(</span><span class="n">KERN_WARNING</span> <span class="s">&quot;Warning this is a long printk with &quot;</span>
+                        <span class="s">&quot;3 parameters a: %u b: %u &quot;</span>
+                        <span class="s">&quot;c: %u </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="n">next_statement</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chapter-3-placing-braces-and-spaces">
+<h3>Chapter 3: Placing Braces and Spaces<a class="headerlink" href="#chapter-3-placing-braces-and-spaces" title="Permalink to this headline">¶</a></h3>
+<p>The other issue that always comes up in C styling is the placement of
+braces.  Unlike the indent size, there are few technical reasons to
+choose one placement strategy over the other, but the preferred way, as
+shown to us by the prophets Kernighan and Ritchie, is to put the opening
+brace last on the line, and put the closing brace first, thusly:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>if (x is true) {
+    we do y
+}
+</pre></div>
+</div>
+<p>This applies to all non-function statement blocks (if, switch, for,
+while, do). e.g.:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">case</span> <span class="nl">KOBJ_ADD</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">&quot;add&quot;</span><span class="p">;</span>
+<span class="k">case</span> <span class="nl">KOBJ_REMOVE</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">&quot;remove&quot;</span><span class="p">;</span>
+<span class="k">case</span> <span class="nl">KOBJ_CHANGE</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">&quot;change&quot;</span><span class="p">;</span>
+<span class="k">default</span><span class="o">:</span>
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>However, there is one special case, namely functions: they have the
+opening brace at the beginning of the next line, thus:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">function</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">body</span> <span class="n">of</span> <span class="n">function</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Heretic people all over the world have claimed that this inconsistency
+is ...  well ...  inconsistent, but all right-thinking people know that
+(a) K&amp;R are _right_ and (b) K&amp;R are right.  Besides, functions are
+special anyway (you can't nest them in C).</p>
+<p>Note that the closing brace is empty on a line of its own, _except_ in
+the cases where it is followed by a continuation of the same statement,
+ie a &quot;while&quot; in a do-statement or an &quot;else&quot; in an if-statement, like
+this:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">do</span> <span class="p">{</span>
+    <span class="n">body</span> <span class="n">of</span> <span class="k">do</span><span class="o">-</span><span class="n">loop</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">condition</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">..</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="p">....</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Rationale: K&amp;R.</p>
+<p>Also, note that this brace-placement also minimizes the number of empty
+(or almost empty) lines, without any loss of readability.  Thus, as the
+supply of new-lines on your screen is not a renewable resource (think
+25-line terminal screens here), you have more empty lines to put
+comments on.</p>
+<p>Do not unnecessarily use braces where a single statement will do.</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+    <span class="n">action</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>This does not apply if one branch of a conditional statement is a single
+statement. Use braces in both branches.</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">do_this</span><span class="p">();</span>
+    <span class="n">do_that</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">otherwise</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chapter-3-1-spaces">
+<h3>Chapter 3.1:  Spaces<a class="headerlink" href="#chapter-3-1-spaces" title="Permalink to this headline">¶</a></h3>
+<p>Linux kernel style for use of spaces depends (mostly) on
+function-versus-keyword usage.  Use a space after (most) keywords.  The
+notable exceptions are sizeof, typeof, alignof, and __attribute__, which look
+somewhat like functions (and are usually used with parentheses in Linux,
+although they are not required in the language, as in: &quot;sizeof info&quot; after
+&quot;struct fileinfo info;&quot; is declared).</p>
+<p>So use a space after these keywords: if, switch, case, for, do, while
+but not with sizeof, typeof, alignof, or __attribute__.  E.g.,</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">file</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Do not add spaces around (inside) parenthesized expressions. This example is
+<strong>bad</strong>:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span> <span class="k">struct</span> <span class="n">file</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>When declaring pointer data or a function that returns a pointer type, the
+preferred use of '*' is adjacent to the data name or function name and not
+adjacent to the type name.  Examples:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">linux_banner</span><span class="p">;</span>
+<span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="nf">memparse</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">retptr</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span><span class="nf">match_strdup</span><span class="p">(</span><span class="n">substring_t</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Use one space around (on each side of) most binary and ternary operators,
+such as any of these:</p>
+<blockquote>
+<div>=  +  -  &lt;  &gt;  *  /  %  |  &amp;  ^  &lt;=  &gt;=  ==  !=  ?  :</div></blockquote>
+<p>but no space after unary operators:</p>
+<blockquote>
+<div>&amp;  *  +  -  ~  !  sizeof  typeof  alignof  __attribute__  defined</div></blockquote>
+<p>no space before the postfix increment &amp; decrement unary operators:</p>
+<blockquote>
+<div>++  --</div></blockquote>
+<p>no space after the prefix increment &amp; decrement unary operators:</p>
+<blockquote>
+<div>++  --</div></blockquote>
+<p>and no space around the '.' and &quot;-&gt;&quot; structure member operators.</p>
+<p>Do not leave trailing whitespace at the ends of lines.  Some editors with
+&quot;smart&quot; indentation will insert whitespace at the beginning of new lines as
+appropriate, so you can start typing the next line of code right away.
+However, some such editors do not remove the whitespace if you end up not
+putting a line of code there, such as if you leave a blank line.  As a result,
+you end up with lines containing trailing whitespace.</p>
+<p>Git will warn you about patches that introduce trailing whitespace, and can
+optionally strip the trailing whitespace for you; however, if applying a series
+of patches, this may make later patches in the series fail by changing their
+context lines.</p>
+</div>
+<div class="section" id="chapter-4-naming">
+<h3>Chapter 4: Naming<a class="headerlink" href="#chapter-4-naming" title="Permalink to this headline">¶</a></h3>
+<p>C is a Spartan language, and so should your naming be.  Unlike Modula-2
+and Pascal programmers, C programmers do not use cute names like
+ThisVariableIsATemporaryCounter.  A C programmer would call that
+variable &quot;tmp&quot;, which is much easier to write, and not the least more
+difficult to understand.</p>
+<p>HOWEVER, while mixed-case names are frowned upon, descriptive names for
+global variables are a must.  To call a global function &quot;foo&quot; is a
+shooting offense.</p>
+<p>GLOBAL variables (to be used only if you _really_ need them) need to
+have descriptive names, as do global functions.  If you have a function
+that counts the number of active users, you should call that
+&quot;count_active_users()&quot; or similar, you should _not_ call it &quot;cntusr()&quot;.</p>
+<p>Encoding the type of a function into the name (so-called Hungarian
+notation) is brain damaged - the compiler knows the types anyway and can
+check those, and it only confuses the programmer.  No wonder MicroSoft
+makes buggy programs.</p>
+<p>LOCAL variable names should be short, and to the point.  If you have
+some random integer loop counter, it should probably be called &quot;i&quot;.
+Calling it &quot;loop_counter&quot; is non-productive, if there is no chance of it
+being mis-understood.  Similarly, &quot;tmp&quot; can be just about any type of
+variable that is used to hold a temporary value.</p>
+<p>If you are afraid to mix up your local variable names, you have another
+problem, which is called the function-growth-hormone-imbalance syndrome.
+See chapter 6 (Functions).</p>
+</div>
+<div class="section" id="chapter-5-typedefs">
+<h3>Chapter 5: Typedefs<a class="headerlink" href="#chapter-5-typedefs" title="Permalink to this headline">¶</a></h3>
+<p>Please don't use things like &quot;vps_t&quot;.</p>
+<p>It's a _mistake_ to use typedef for structures and pointers. When you see a</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">vps_t</span> <span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>in the source, what does it mean?</p>
+<p>In contrast, if it says</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">virtual_container</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>you can actually tell what &quot;a&quot; is.</p>
+<p>Lots of people think that typedefs &quot;help readability&quot;. Not so. They are
+useful only for:</p>
+<ol class="loweralpha">
+<li><p class="first">totally opaque objects (where the typedef is actively used to _hide_
+what the object is).</p>
+<p>Example: &quot;pte_t&quot; etc. opaque objects that you can only access using
+the proper accessor functions.</p>
+<p>NOTE! Opaqueness and &quot;accessor functions&quot; are not good in themselves.
+The reason we have them for things like pte_t etc. is that there
+really is absolutely _zero_ portably accessible information there.</p>
+</li>
+<li><p class="first">Clear integer types, where the abstraction _helps_ avoid confusion
+whether it is &quot;int&quot; or &quot;long&quot;.</p>
+<p>u8/u16/u32 are perfectly fine typedefs, although they fit into
+category (d) better than here.</p>
+<p>NOTE! Again - there needs to be a _reason_ for this. If something is
+&quot;unsigned long&quot;, then there's no reason to do</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">myflags_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>but if there is a clear reason for why it under certain circumstances
+might be an &quot;unsigned int&quot; and under other configurations might be
+&quot;unsigned long&quot;, then by all means go ahead and use a typedef.</p>
+</li>
+<li><p class="first">when you use sparse to literally create a _new_ type for
+type-checking.</p>
+</li>
+<li><p class="first">New types which are identical to standard C99 types, in certain
+exceptional circumstances.</p>
+<p>Although it would only take a short amount of time for the eyes and
+brain to become accustomed to the standard types like 'uint32_t',
+some people object to their use anyway.</p>
+<p>Therefore, the Linux-specific 'u8/u16/u32/u64' types and their
+signed equivalents which are identical to standard types are
+permitted -- although they are not mandatory in new code of your
+own.</p>
+<p>When editing existing code which already uses one or the other set
+of types, you should conform to the existing choices in that code.</p>
+</li>
+<li><p class="first">Types safe for use in userspace.</p>
+<p>In certain structures which are visible to userspace, we cannot
+require C99 types and cannot use the 'u32' form above. Thus, we
+use __u32 and similar types in all structures which are shared
+with userspace.</p>
+</li>
+</ol>
+<p>Maybe there are other cases too, but the rule should basically be to NEVER
+EVER use a typedef unless you can clearly match one of those rules.</p>
+<p>In general, a pointer, or a struct that has elements that can reasonably
+be directly accessed should <strong>never</strong> be a typedef.</p>
+</div>
+<div class="section" id="chapter-6-functions">
+<h3>Chapter 6: Functions<a class="headerlink" href="#chapter-6-functions" title="Permalink to this headline">¶</a></h3>
+<p>Functions should be short and sweet, and do just one thing.  They should
+fit on one or two screenfuls of text (the ISO/ANSI screen size is 80x24,
+as we all know), and do one thing and do that well.</p>
+<p>The maximum length of a function is inversely proportional to the
+complexity and indentation level of that function.  So, if you have a
+conceptually simple function that is just one long (but simple)
+case-statement, where you have to do lots of small things for a lot of
+different cases, it's OK to have a longer function.</p>
+<p>However, if you have a complex function, and you suspect that a
+less-than-gifted first-year high-school student might not even
+understand what the function is all about, you should adhere to the
+maximum limits all the more closely.  Use helper functions with
+descriptive names (you can ask the compiler to in-line them if you think
+it's performance-critical, and it will probably do a better job of it
+than you would have done).</p>
+<p>Another measure of the function is the number of local variables.  They
+shouldn't exceed 5-10, or you're doing something wrong.  Re-think the
+function, and split it into smaller pieces.  A human brain can
+generally easily keep track of about 7 different things, anything more
+and it gets confu/sed.  You know you're brilliant, but maybe you'd like
+to understand what you did 2 weeks from now.</p>
+<p>In source files, separate functions with one blank line.  If the function is
+exported, the EXPORT* macro for it should follow immediately after the closing
+function brace line.  E.g.:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">system_is_up</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">system_state</span> <span class="o">==</span> <span class="n">SYSTEM_RUNNING</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">EXPORT_SYMBOL</span><span class="p">(</span><span class="n">system_is_up</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In function prototypes, include parameter names with their data types.
+Although this is not required by the C language, it is preferred in Linux
+because it is a simple way to add valuable information for the reader.</p>
+</div>
+<div class="section" id="chapter-7-centralized-exiting-of-functions">
+<h3>Chapter 7: Centralized exiting of functions<a class="headerlink" href="#chapter-7-centralized-exiting-of-functions" title="Permalink to this headline">¶</a></h3>
+<p>Albeit deprecated by some people, the equivalent of the goto statement is
+used frequently by compilers in form of the unconditional jump instruction.</p>
+<p>The goto statement comes in handy when a function exits from multiple
+locations and some common work such as cleanup has to be done.</p>
+<p>The rationale is:</p>
+<ul class="simple">
+<li>unconditional statements are easier to understand and follow</li>
+<li>nesting is reduced</li>
+<li>errors by not updating individual exit points when making
+modifications are prevented</li>
+<li>saves the compiler work to optimize redundant code away ;)</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">kmalloc</span><span class="p">(</span><span class="n">SIZE</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">buffer</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">ENOMEM</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">loop1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">...</span>
+        <span class="p">}</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">goto</span> <span class="n">out</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+<span class="nl">out</span><span class="p">:</span>
+    <span class="n">kfree</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chapter-8-commenting">
+<h3>Chapter 8: Commenting<a class="headerlink" href="#chapter-8-commenting" title="Permalink to this headline">¶</a></h3>
+<p>Comments are good, but there is also a danger of over-commenting. NEVER
+try to explain HOW your code works in a comment: it's much better to
+write the code so that the _working_ is obvious, and it's a waste of
+time to explain badly written code.
+с
+Generally, you want your comments to tell WHAT your code does, not HOW.
+Also, try to avoid putting comments inside a function body: if the
+function is so complex that you need to separately comment parts of it,
+you should probably go back to chapter 6 for a while.  You can make
+small comments to note or warn about something particularly clever (or
+ugly), but try to avoid excess.  Instead, put the comments at the head
+of the function, telling people what it does, and possibly WHY it does
+it.</p>
+<p>When commenting the kernel API functions, please use the kernel-doc format.
+See the files Documentation/kernel-doc-nano-HOWTO.txt and scripts/kernel-doc
+for details.</p>
+<p>Linux style for comments is the C89 <code class="docutils literal"><span class="pre">&quot;/\*</span> <span class="pre">...</span> <span class="pre">\*/&quot;</span></code> style.
+Don't use C99-style <code class="docutils literal"><span class="pre">&quot;//</span> <span class="pre">...&quot;</span></code> comments.</p>
+<p>The preferred style for long (multi-line) comments is:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * This is the preferred style for multi-line</span>
+<span class="cm"> * comments in the Linux kernel source code.</span>
+<span class="cm"> * Please use it consistently.</span>
+<span class="cm"> *</span>
+<span class="cm"> * Description:  A column of asterisks on the left side,</span>
+<span class="cm"> * with beginning and ending almost-blank lines.</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+<p>It's also important to comment data, whether they are basic types or derived
+types.  To this end, use just one data declaration per line (no commas for
+multiple data declarations).  This leaves you room for a small comment on each
+item, explaining its use.</p>
+</div>
+<div class="section" id="chapter-9-you-ve-made-a-mess-of-it">
+<h3>Chapter 9: You've made a mess of it<a class="headerlink" href="#chapter-9-you-ve-made-a-mess-of-it" title="Permalink to this headline">¶</a></h3>
+<p>That's OK, we all do.  You've probably been told by your long-time Unix
+user helper that &quot;GNU emacs&quot; automatically formats the C sources for
+you, and you've noticed that yes, it does do that, but the defaults it
+uses are less than desirable (in fact, they are worse than random
+typing - an infinite number of monkeys typing into GNU emacs would never
+make a good program).</p>
+<p>So, you can either get rid of GNU emacs, or change it to use saner
+values.  To do the latter, you can stick the following in your .emacs file:</p>
+<div class="highlight-lisp"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">c-lineup-arglist-tabs-only</span> <span class="p">(</span><span class="nv">ignored</span><span class="p">)</span>
+<span class="s">&quot;Line up argument lists by tabs, not spaces&quot;</span>
+<span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">anchor</span> <span class="p">(</span><span class="nv">c-langelem-pos</span> <span class="nv">c-syntactic-element</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">column</span> <span class="p">(</span><span class="nv">c-langelem-2nd-pos</span> <span class="nv">c-syntactic-element</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">offset</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">1+</span> <span class="nv">column</span><span class="p">)</span> <span class="nv">anchor</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">steps</span> <span class="p">(</span><span class="nb">floor</span> <span class="nv">offset</span> <span class="nv">c-basic-offset</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">*</span> <span class="p">(</span><span class="nb">max</span> <span class="nv">steps</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nv">c-basic-offset</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;c-mode-common-hook</span>
+        <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+            <span class="c1">;; Add kernel style</span>
+            <span class="p">(</span><span class="nv">c-add-style</span>
+            <span class="s">&quot;linux-tabs-only&quot;</span>
+            <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;linux&quot;</span> <span class="p">(</span><span class="nv">c-offsets-alist</span>
+                        <span class="p">(</span><span class="nv">arglist-cont-nonempty</span>
+                        <span class="nv">c-lineup-gcc-asm-reg</span>
+                        <span class="nv">c-lineup-arglist-tabs-only</span><span class="p">))))))</span>
+
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;c-mode-hook</span>
+        <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+            <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">filename</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">)))</span>
+            <span class="c1">;; Enable kernel mode for the appropriate files</span>
+            <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">filename</span>
+                        <span class="p">(</span><span class="nv">string-match</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">&quot;~/src/linux-trees&quot;</span><span class="p">)</span>
+                                    <span class="nv">filename</span><span class="p">))</span>
+                <span class="p">(</span><span class="k">setq</span> <span class="nv">indent-tabs-mode</span> <span class="no">t</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">c-set-style</span> <span class="s">&quot;linux-tabs-only&quot;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+<p>This will make emacs go better with the kernel coding style for C
+files below ~/src/linux-trees.</p>
+<p>But even if you fail in getting emacs to do sane formatting, not
+everything is lost: use &quot;indent&quot;.</p>
+<p>Now, again, GNU indent has the same brain-dead settings that GNU emacs
+has, which is why you need to give it a few command line options.
+However, that's not too bad, because even the makers of GNU indent
+recognize the authority of K&amp;R (the GNU people aren't evil, they are
+just severely misguided in this matter), so you just give indent the
+options &quot;-kr -i8&quot; (stands for &quot;K&amp;R, 8 character indents&quot;), or use
+&quot;scripts/Lindent&quot;, which indents in the latest style.</p>
+<p>&quot;indent&quot; has a lot of options, and especially when it comes to comment
+re-formatting you may want to take a look at the man page.  But
+remember: &quot;indent&quot; is not a fix for bad programming.</p>
+</div>
+<div class="section" id="chapter-10-kconfig-configuration-files">
+<h3>Chapter 10: Kconfig configuration files<a class="headerlink" href="#chapter-10-kconfig-configuration-files" title="Permalink to this headline">¶</a></h3>
+<p>For all of the Kconfig* configuration files throughout the source tree,
+the indentation is somewhat different.  Lines under a &quot;config&quot; definition
+are indented with one tab, while help text is indented an additional two
+spaces. Example:</p>
+<div class="highlight-kconfig"><div class="highlight"><pre><span></span><span class="k">config</span> AUDIT
+    <span class="nb">bool</span> <span class="s2">&quot;Auditing support&quot;</span>
+    <span class="k">depends on</span> NET
+    <span class="k">help</span>
+    Enable auditing infrastructure that can be used with another
+    kernel subsystem, such as SELinux <span class="p">(</span>which requires this for
+    logging of avc messages output).  Does not do system-call
+    auditing without CONFIG_AUDITSYSCALL.
+</pre></div>
+</div>
+<p>Features that might still be considered unstable should be defined as
+dependent on &quot;EXPERIMENTAL&quot;:</p>
+<div class="highlight-kconfig"><div class="highlight"><pre><span></span><span class="k">config</span> SLUB
+    <span class="k">depends on</span> EXPERIMENTAL <span class="o">&amp;&amp;</span> <span class="o">!</span>ARCH_USES_SLAB_PAGE_STRUCT
+    <span class="nb">bool</span> <span class="s2">&quot;SLUB (Unqueued Allocator)&quot;</span>
+    ...
+</pre></div>
+</div>
+<p>while seriously dangerous features (such as write support for certain
+filesystems) should advertise this prominently in their prompt string:</p>
+<div class="highlight-kconfig"><div class="highlight"><pre><span></span><span class="k">config</span> ADFS_FS_RW
+    <span class="nb">bool</span> <span class="s2">&quot;ADFS write support (DANGEROUS)&quot;</span>
+    <span class="k">depends on</span> ADFS_FS
+    ...
+</pre></div>
+</div>
+<p>For full documentation on the configuration files, see the file
+Documentation/kbuild/kconfig-language.txt.</p>
+</div>
+<div class="section" id="chapter-11-data-structures">
+<h3>Chapter 11: Data structures<a class="headerlink" href="#chapter-11-data-structures" title="Permalink to this headline">¶</a></h3>
+<p>Data structures that have visibility outside the single-threaded
+environment they are created and destroyed in should always have
+reference counts.  In the kernel, garbage collection doesn't exist (and
+outside the kernel garbage collection is slow and inefficient), which
+means that you absolutely _have_ to reference count all your uses.</p>
+<p>Reference counting means that you can avoid locking, and allows multiple
+users to have access to the data structure in parallel - and not having
+to worry about the structure suddenly going away from under them just
+because they slept or did something else for a while.</p>
+<p>Note that locking is _not_ a replacement for reference counting.
+Locking is used to keep data structures coherent, while reference
+counting is a memory management technique.  Usually both are needed, and
+they are not to be confused with each other.</p>
+<p>Many data structures can indeed have two levels of reference counting,
+when there are users of different &quot;classes&quot;.  The subclass count counts
+the number of subclass users, and decrements the global count just once
+when the subclass count goes to zero.</p>
+<p>Examples of this kind of &quot;multi-level-reference-counting&quot; can be found in
+memory management (&quot;struct mm_struct&quot;: mm_users and mm_count), and in
+filesystem code (&quot;struct super_block&quot;: s_count and s_active).</p>
+<p>Remember: if another thread can find your data structure, and you don't
+have a reference count on it, you almost certainly have a bug.</p>
+</div>
+<div class="section" id="chapter-12-macros-enums-and-rtl">
+<h3>Chapter 12: Macros, Enums and RTL<a class="headerlink" href="#chapter-12-macros-enums-and-rtl" title="Permalink to this headline">¶</a></h3>
+<p>Names of macros defining constants and labels in enums are capitalized.</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#define CONSTANT 0x12345</span>
+</pre></div>
+</div>
+<p>Enums are preferred when defining several related constants.</p>
+<p>CAPITALIZED macro names are appreciated but macros resembling functions
+may be named in lower case.</p>
+<p>Generally, inline functions are preferable to macros resembling functions.</p>
+<p>Macros with multiple statements should be enclosed in a do - while block:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#define macrofun(a, b, c)   \</span>
+<span class="cp">    do {                    \</span>
+<span class="cp">        if (a == 5)         \</span>
+<span class="cp">            do_this(b, c);  \</span>
+<span class="cp">    } while (0)</span>
+</pre></div>
+</div>
+<p>Things to avoid when using macros:</p>
+<ol class="arabic">
+<li><p class="first">macros that affect control flow:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#define FOO(x)                  \</span>
+<span class="cp">    do {                        \</span>
+<span class="cp">        if (blah(x) &lt; 0)        \</span>
+<span class="cp">            return -EBUGGERED;  \</span>
+<span class="cp">    } while(0)</span>
+</pre></div>
+</div>
+<p>is a _very_ bad idea.  It looks like a function call but exits the &quot;calling&quot;
+function; don't break the internal parsers of those who will read the code.</p>
+</li>
+<li><p class="first">macros that depend on having a local variable with a magic name:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#define FOO(val) bar(index, val)</span>
+</pre></div>
+</div>
+<p>might look like a good thing, but it's confusing as hell when one reads the
+code and it's prone to breakage from seemingly innocent changes.</p>
+</li>
+<li><p class="first">macros with arguments that are used as l-values: FOO(x) = y; will
+bite you if somebody e.g. turns FOO into an inline function.</p>
+</li>
+<li><p class="first">forgetting about precedence: macros defining constants using expressions
+must enclose the expression in parentheses. Beware of similar issues with
+macros using parameters.</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#define CONSTANT 0x4000</span>
+<span class="cp">#define CONSTEXP (CONSTANT | 3)</span>
+</pre></div>
+</div>
+<p>The cpp manual deals with macros exhaustively. The gcc internals manual also
+covers RTL which is used frequently with assembly language in the kernel.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="chapter-13-printing-kernel-messages">
+<h3>Chapter 13: Printing kernel messages<a class="headerlink" href="#chapter-13-printing-kernel-messages" title="Permalink to this headline">¶</a></h3>
+<p>Kernel developers like to be seen as literate. Do mind the spelling
+of kernel messages to make a good impression. Do not use crippled
+words like &quot;dont&quot;; use &quot;do not&quot; or &quot;don't&quot; instead.  Make the messages
+concise, clear, and unambiguous.</p>
+<p>Kernel messages do not have to be terminated with a period.</p>
+<p>Printing numbers in parentheses (%d) adds no value and should be avoided.</p>
+<p>There are a number of driver model diagnostic macros in &lt;linux/device.h&gt;
+which you should use to make sure messages are matched to the right device
+and driver, and are tagged with the right level:  dev_err(), dev_warn(),
+dev_info(), and so forth.  For messages that aren't associated with a
+particular device, &lt;linux/kernel.h&gt; defines pr_debug() and pr_info().</p>
+<p>Coming up with good debugging messages can be quite a challenge; and once
+you have them, they can be a huge help for remote troubleshooting.  Such
+messages should be compiled out when the DEBUG symbol is not defined (that
+is, by default they are not included).  When you use dev_dbg() or pr_debug(),
+that's automatic.  Many subsystems have Kconfig options to turn on -DDEBUG.
+A related convention uses VERBOSE_DEBUG to add dev_vdbg() messages to the
+ones already enabled by DEBUG.</p>
+</div>
+<div class="section" id="chapter-14-allocating-memory">
+<h3>Chapter 14: Allocating memory<a class="headerlink" href="#chapter-14-allocating-memory" title="Permalink to this headline">¶</a></h3>
+<p>The kernel provides the following general purpose memory allocators:
+kmalloc(), kzalloc(), kcalloc(), and vmalloc().  Please refer to the API
+documentation for further information about them.</p>
+<p>The preferred form for passing a size of a struct is the following:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">kmalloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">),</span> <span class="p">...);</span>
+</pre></div>
+</div>
+<p>The alternative form where struct name is spelled out hurts readability and
+introduces an opportunity for a bug when the pointer variable type is changed
+but the corresponding sizeof that is passed to a memory allocator is not.</p>
+<p>Casting the return value which is a void pointer is redundant. The conversion
+from void pointer to any other pointer type is guaranteed by the C programming
+language.</p>
+</div>
+<div class="section" id="chapter-15-the-inline-disease">
+<h3>Chapter 15: The inline disease<a class="headerlink" href="#chapter-15-the-inline-disease" title="Permalink to this headline">¶</a></h3>
+<p>There appears to be a common misperception that gcc has a magic &quot;make me
+faster&quot; speedup option called &quot;inline&quot;. While the use of inlines can be
+appropriate (for example as a means of replacing macros, see Chapter 12), it
+very often is not. Abundant use of the inline keyword leads to a much bigger
+kernel, which in turn slows the system as a whole down, due to a bigger
+icache footprint for the CPU and simply because there is less memory
+available for the pagecache. Just think about it; a pagecache miss causes a
+disk seek, which easily takes 5 milliseconds. There are a LOT of cpu cycles
+that can go into these 5 milliseconds.</p>
+<p>A reasonable rule of thumb is to not put inline at functions that have more
+than 3 lines of code in them. An exception to this rule are the cases where
+a parameter is known to be a compiletime constant, and as a result of this
+constantness you <em>know</em> the compiler will be able to optimize most of your
+function away at compile time. For a good example of this later case, see
+the kmalloc() inline function.</p>
+<p>Often people argue that adding inline to functions that are static and used
+only once is always a win since there is no space tradeoff. While this is
+technically correct, gcc is capable of inlining these automatically without
+help, and the maintenance issue of removing the inline when a second user
+appears outweighs the potential value of the hint that tells gcc to do
+something it would have done anyway.</p>
+</div>
+<div class="section" id="chapter-16-function-return-values-and-names">
+<h3>Chapter 16: Function return values and names<a class="headerlink" href="#chapter-16-function-return-values-and-names" title="Permalink to this headline">¶</a></h3>
+<p>Functions can return values of many different kinds, and one of the
+most common is a value indicating whether the function succeeded or
+failed.  Such a value can be represented as an error-code integer
+(-Exxx = failure, 0 = success) or a &quot;succeeded&quot; boolean (0 = failure,
+non-zero = success).</p>
+<p>Mixing up these two sorts of representations is a fertile source of
+difficult-to-find bugs.  If the C language included a strong distinction
+between integers and booleans then the compiler would find these mistakes
+for us... but it doesn't.  To help prevent such bugs, always follow this
+convention:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">action</span> <span class="ow">or</span> <span class="n">an</span> <span class="n">imperative</span> <span class="n">command</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">function</span> <span class="n">should</span> <span class="k">return</span> <span class="n">an</span> <span class="n">error</span><span class="o">-</span><span class="n">code</span> <span class="n">integer</span><span class="o">.</span>  <span class="n">If</span> <span class="n">the</span> <span class="n">name</span>
+<span class="ow">is</span> <span class="n">a</span> <span class="n">predicate</span><span class="p">,</span> <span class="n">the</span> <span class="n">function</span> <span class="n">should</span> <span class="k">return</span> <span class="n">a</span> <span class="s2">&quot;succeeded&quot;</span> <span class="n">boolean</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>For example, &quot;add work&quot; is a command, and the add_work() function returns 0
+for success or -EBUSY for failure.  In the same way, &quot;PCI device present&quot; is
+a predicate, and the pci_dev_present() function returns 1 if it succeeds in
+finding a matching device or 0 if it doesn't.</p>
+<p>All EXPORTed functions must respect this convention, and so should all
+public functions.  Private (static) functions need not, but it is
+recommended that they do.</p>
+<p>Functions whose return value is the actual result of a computation, rather
+than an indication of whether the computation succeeded, are not subject to
+this rule.  Generally they indicate failure by returning some out-of-range
+result.  Typical examples would be functions that return pointers; they use
+NULL or the ERR_PTR mechanism to report failure.</p>
+</div>
+<div class="section" id="chapter-17-don-t-re-invent-the-kernel-macros">
+<h3>Chapter 17:  Don't re-invent the kernel macros<a class="headerlink" href="#chapter-17-don-t-re-invent-the-kernel-macros" title="Permalink to this headline">¶</a></h3>
+<p>The header file include/linux/kernel.h contains a number of macros that
+you should use, rather than explicitly coding some variant of them yourself.
+For example, if you need to calculate the length of an array, take advantage
+of the macro</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))</span>
+</pre></div>
+</div>
+<p>Similarly, if you need to calculate the size of some structure member, use</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#define FIELD_SIZEOF(t, f) (sizeof(((t*)0)-&gt;f))</span>
+</pre></div>
+</div>
+<p>There are also min() and max() macros that do strict type checking if you
+need them.  Feel free to peruse that header file to see what else is already
+defined that you shouldn't reproduce in your code.</p>
+</div>
+<div class="section" id="chapter-18-editor-modelines-and-other-cruft">
+<h3>Chapter 18:  Editor modelines and other cruft<a class="headerlink" href="#chapter-18-editor-modelines-and-other-cruft" title="Permalink to this headline">¶</a></h3>
+<p>Some editors can interpret configuration information embedded in source files,
+indicated with special markers.  For example, emacs interprets lines marked
+like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>-*- mode: c -*-
+</pre></div>
+</div>
+<p>Or like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>/*
+Local Variables:
+compile-command: &quot;gcc -DMAGIC_DEBUG_FLAG foo.c&quot;
+End:
+*/
+</pre></div>
+</div>
+<p>Vim interprets markers that look like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>/* vim:set sw=8 noet */
+</pre></div>
+</div>
+<p>Do not include any of these in source files.  People have their own personal
+editor configurations, and your source files should not override them.  This
+includes markers for indentation and mode configuration.  People may use their
+own custom mode, or may have some other magic method for making indentation
+work correctly.</p>
+</div>
+<div class="section" id="appendix-i-references">
+<h3>Appendix I: References<a class="headerlink" href="#appendix-i-references" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/The_C_Programming_Language">The C Programming Language, Second Edition</a>
+by Brian W. Kernighan and Dennis M. Ritchie. <br />
+Prentice Hall, Inc., 1988. <br />
+ISBN 0-13-110362-8 (paperback), 0-13-110370-9 (hardback).</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/The_Practice_of_Programming">The Practice of Programming</a>
+by Brian W. Kernighan and Rob Pike. <br />
+Addison-Wesley, Inc., 1999. <br />
+ISBN 0-201-61586-X.</li>
+<li><a class="reference external" href="http://www.gnu.org/manual/">GNU manuals</a> - where in compliance with K&amp;R and this text - for <strong>cpp</strong>, <strong>gcc</strong>,
+<strong>gcc internals</strong> and <strong>indent</strong></li>
+<li><a class="reference external" href="http://www.open-std.org/JTC1/SC22/WG14/">WG14 International standardization workgroup for the programming
+language C</a></li>
+<li><a class="reference external" href="http://www.kroah.com/linux/talks/ols_2002_kernel_codingstyle_talk/html/">Kernel CodingStyle, by greg&#64;kroah.com at OLS 2002</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="box_protocol.html"
+           class="b-prev b-ellipsis"
+           title="IProto Protocol">IProto Protocol</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/dev_guide/c_style_guide.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="python_style_guide.html"
+           class="b-next b-ellipsis"
+           title="Python Style Guide">Python Style Guide</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

@@ -1,0 +1,941 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>3.4.1. Submodule box.schema</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="3.4.1. Submodule box.schema">
+        3.4.1. Submodule box.schema
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../book/box/box_schema.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../ru/book/box/box_schema.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/box/box_schema">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference_lua/index.html">Lua reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference_lua/box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/clock.html">Module <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/console.html">Module <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/crypto.html">Module <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/digest.html">Module <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/box_error.html">Submodule <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fiber.html">Module <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fiber_ipc.html">Submodule <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/msgpack.html">Module <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/net_box.html">Module <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/box_once.html">Function <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/pickle.html">Module <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/socket.html">Module <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/strict.html">Module <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/tarantool.html">Module <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/other.html">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            User Guide
+          </a>
+        </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            3. Database
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="3.4.1. Submodule <cite>box.schema</cite>" class="b-path_current b-ellipsis">
+          3.4.1. Submodule <cite>box.schema</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="lua-module.box.schema">
+<span id="submodule-box-schema"></span><span id="box-schema"></span><h1>3.4.1. Submodule <cite>box.schema</cite><a class="headerlink" href="#lua-module.box.schema" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">box.schema</span></code> submodule has data-definition functions
+for spaces, users, roles, and function tuples.</p>
+<span class="target" id="box-schema-space-create"></span><dl class="function">
+<dt id="lua-function.box.schema.space.create">
+<em class="property"> </em><code class="descclassname">box.schema.space.</code><code class="descname">create</code><big>(</big><em>space-name</em><span class="optional">[</span>, <em>{options}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.box.schema.space.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a space.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>space-name</strong> (<em>string</em>) -- name of space, which should not be a number
+and should not contain special characters</li>
+<li><strong>options</strong> (<em>table</em>) -- see &quot;Options for box.schema.space.create&quot; chart, below</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">space object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">userdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="table container">
+<p><strong>Options for box.schema.space.create</strong></p>
+<table border="1" class="left-align-column-1 left-align-column-2 left-align-column-3 left-align-column-4 docutils">
+<colgroup>
+<col width="19%" />
+<col width="42%" />
+<col width="12%" />
+<col width="27%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Effect</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>temporary</td>
+<td>space is temporary</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td>unique identifier</td>
+<td>number</td>
+<td>last space's id, +1</td>
+</tr>
+<tr class="row-even"><td>field_count</td>
+<td>fixed field count</td>
+<td>number</td>
+<td>0 i.e. not fixed</td>
+</tr>
+<tr class="row-odd"><td>if_not_exists</td>
+<td>no error if
+duplicate name</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>engine</td>
+<td>storage engine =
+<a class="reference internal" href="index.html#index-two-storage-engines"><span class="std std-ref">'memtx' or 'vinyl'</span></a></td>
+<td>string</td>
+<td>'memtx'</td>
+</tr>
+<tr class="row-odd"><td>user</td>
+<td>user name</td>
+<td>string</td>
+<td>current user's name</td>
+</tr>
+<tr class="row-even"><td>format</td>
+<td>field names+types</td>
+<td>table</td>
+<td>(blank)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>space-id</strong> (<em>num</em>) -- the numeric identifier established by box.schema.space.create</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>There are five <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">syntax variations</span></a> for object references targeting
+space objects, for example <code class="samp docutils literal"><span class="pre">box.schema.space.drop(</span><em><span class="pre">space-id</span></em><span class="pre">)</span></code>
+will drop a space. However, the common approach is to use functions
+attached to the space objects, for example
+<a class="reference internal" href="box_space.html#box-space-drop"><span class="std std-ref">space_object:drop()</span></a>.</p>
+<p>Note re storage engine: vinyl does not support temporary spaces.</p>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>3.4.1.1. Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">space55&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">space55&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">id</span> <span class="o">=</span> <span class="mi">555</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">temporary</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">error</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Space &#39;space55&#39; already exists</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">space55&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">if_not_exists</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+</pre></div>
+</div>
+<p>For an illustration with the <code class="docutils literal"><span class="pre">format</span></code> clause, see
+<a class="reference internal" href="box_space.html#box-space-space"><span class="std std-ref">box.space._space</span></a> example.</p>
+<p>After a space is created, usually the next step is to
+<a class="reference internal" href="box_space.html#box-space-create-index"><span class="std std-ref">create an index</span></a> for it, and then it is
+available for insert, select, and all the other <a class="reference internal" href="box_space.html#box-space"><span class="std std-ref">box.space</span></a> functions.</p>
+<dl class="function">
+<dt id="lua-function.box.schema.user.create">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">create</code><big>(</big><em>user-name</em><span class="optional">[</span>, <em>{options}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.box.schema.user.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a user.
+For explanation of how Tarantool maintains user data, see
+section <a class="reference internal" href="authentication.html#authentication-users"><span class="std std-ref">Users and the _user space</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>user-name</strong> (<em>string</em>) -- name of user, which should not be a number
+and should not contain special characters</li>
+<li><strong>options</strong> (<em>table</em>) -- <code class="docutils literal"><span class="pre">if_not_exists</span></code>, <code class="docutils literal"><span class="pre">password</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">nil</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">X&#39;</span><span class="p">})</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">if_not_exists</span> <span class="o">=</span> <span class="kc">false</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.user.drop">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">drop</code><big>(</big><em>user-name</em><span class="optional">[</span>, <em>{options}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.box.schema.user.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drop a user.
+For explanation of how Tarantool maintains user data, see
+section <a class="reference internal" href="authentication.html#authentication-users"><span class="std std-ref">Users and the _user space</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user-name</strong> (<em>string</em>) -- the name of the user</li>
+<li><strong>options</strong> (<em>table</em>) -- <code class="docutils literal"><span class="pre">if_exists</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,{</span><span class="n">if_exists</span><span class="o">=</span><span class="kc">false</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.user.exists">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">exists</code><big>(</big><em>user-name</em><big>)</big><a class="headerlink" href="#lua-function.box.schema.user.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if a user exists; return false if a user does not exist.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>user-name</strong> (<em>string</em>) -- the name of the user</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-schema-user-grant"></span><dl class="function">
+<dt id="lua-function.box.schema.user.grant">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">grant</code><big>(</big><em>user-name</em>, <em>priveleges</em>, <em>object-type</em>, <em>object-name</em><span class="optional">[</span>, <em>{options}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.box.schema.user.grant" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">grant</code><big>(</big><em>user-name</em>, <em>priveleges</em>, <em>'universe'</em><span class="optional">[</span>, <em>nil</em>, <em>{options}</em><span class="optional">]</span><big>)</big></dt>
+<dt>
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">grant</code><big>(</big><em>user-name</em>, <em>role-name</em><span class="optional">[</span>, <em>nil</em>, <em>nil</em>, <em>{options}</em><span class="optional">]</span><big>)</big></dt>
+<dd><p>Grant <a class="reference internal" href="authentication.html#authentication-privileges"><span class="std std-ref">privileges</span></a> to a user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user-name</strong> (<em>string</em>) -- the name of the user</li>
+<li><strong>priveleges</strong> (<em>string</em>) -- 'read' or 'write' or 'execute' or a combination,</li>
+<li><strong>object-type</strong> (<em>string</em>) -- 'space' or 'function'.</li>
+<li><strong>object-name</strong> (<em>string</em>) -- name of object to grant permissions to</li>
+<li><strong>role-name</strong> (<em>string</em>) -- name of role to grant to user.</li>
+<li><strong>options</strong> (<em>table</em>) -- <code class="docutils literal"><span class="pre">grantor</span></code>, <code class="docutils literal"><span class="pre">if_not_exists</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="samp docutils literal"><span class="pre">'function','</span><em><span class="pre">object-name</span></em><span class="pre">'</span></code> is specified, then a _func tuple with
+that object-name must exist.</p>
+<p><strong>Variation:</strong> instead of <code class="docutils literal"><span class="pre">object-type,</span> <span class="pre">object-name</span></code> say 'universe' which
+means 'all object-types and all objects'.</p>
+<p><strong>Variation:</strong> instead of <code class="docutils literal"><span class="pre">privilege,</span> <span class="pre">object-type,</span> <span class="pre">object-name</span></code> say
+<code class="docutils literal"><span class="pre">role-name</span></code> (see section <a class="reference internal" href="authentication.html#authentication-roles"><span class="std std-ref">Roles</span></a>).</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">function&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">f&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read,write&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">universe&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read,write,execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">universe&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">X&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">universe&#39;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="p">{</span><span class="n">if_not_exists</span><span class="o">=</span><span class="kc">true</span><span class="p">}))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.user.revoke">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">revoke</code><big>(</big><em>user-name</em>, <em>privilege</em>, <em>object-type</em>, <em>object-name</em><big>)</big><a class="headerlink" href="#lua-function.box.schema.user.revoke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Revoke <a class="reference internal" href="authentication.html#authentication-privileges"><span class="std std-ref">privileges</span></a> from a user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user-name</strong> (<em>string</em>) -- the name of the user</li>
+<li><strong>privilege</strong> (<em>string</em>) -- 'read' or 'write' or 'execute' or a combination</li>
+<li><strong>object-type</strong> (<em>string</em>) -- 'space' or 'function'</li>
+<li><strong>object-name</strong> (<em>string</em>) -- the name of a function or space</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The user must exist, and the object must exist,
+but it is not an error if the user does not have the privilege.</p>
+<p><strong>Variation:</strong> instead of <code class="docutils literal"><span class="pre">object-type,</span> <span class="pre">object-name</span></code> say 'universe'
+which means 'all object-types and all objects'.</p>
+<p><strong>Variation:</strong> instead of <code class="docutils literal"><span class="pre">privilege,</span> <span class="pre">object-type,</span> <span class="pre">object-name</span></code> say
+<code class="docutils literal"><span class="pre">role-name</span></code> (see section <a class="reference internal" href="authentication.html#authentication-roles"><span class="std std-ref">Roles</span></a>).</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">function&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">f&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read,write&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">universe&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.user.password">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">password</code><big>(</big><em>password</em><big>)</big><a class="headerlink" href="#lua-function.box.schema.user.password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a hash of a password.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>password</strong> (<em>string</em>) -- password</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">password</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">ЛЕНА&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.user.passwd">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">passwd</code><big>(</big><span class="optional">[</span><em>user-name</em>, <span class="optional">]</span><em>password</em><big>)</big><a class="headerlink" href="#lua-function.box.schema.user.passwd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associate a password with the user who is currently logged in.
+or with another user.
+Users who wish to change their own passwords should
+use box.schema.user.passwd(password).
+Administrators who wish to change passwords of other users should
+use box.schema.user.passwd(user-name, password).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user-name</strong> (<em>string</em>) -- user-name</li>
+<li><strong>password</strong> (<em>string</em>) -- password</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">passwd</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">ЛЕНА&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">passwd</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">ЛЕНА&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.user.info">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">info</code><big>(</big><span class="optional">[</span><em>user-name</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.box.schema.user.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a description of a user's privileges.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user-name</strong> (<em>string</em>) -- the name of the user.
+This is optional; if it is not
+supplied, then the information
+will be for the user who is
+currently logged in.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.role.create">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">create</code><big>(</big><em>role-name</em><span class="optional">[</span>, <em>{options}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.box.schema.role.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a role.
+For explanation of how Tarantool maintains role data, see
+section <a class="reference internal" href="authentication.html#authentication-roles"><span class="std std-ref">Roles</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>role-name</strong> (<em>string</em>) -- name of role, which should not be a number
+and should not contain special characters</li>
+<li><strong>options</strong> (<em>table</em>) -- <code class="docutils literal"><span class="pre">if_not_exists</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">nil</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">if_not_exists</span> <span class="o">=</span> <span class="kc">false</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.role.drop">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">drop</code><big>(</big><em>role-name</em><big>)</big><a class="headerlink" href="#lua-function.box.schema.role.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drop a role.
+For explanation of how Tarantool maintains role data, see
+section <a class="reference internal" href="authentication.html#authentication-roles"><span class="std std-ref">Roles</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>role-name</strong> (<em>string</em>) -- the name of the role</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.role.exists">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">exists</code><big>(</big><em>role-name</em><big>)</big><a class="headerlink" href="#lua-function.box.schema.role.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if a role exists; return false if a role does not exist.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>role-name</strong> (<em>string</em>) -- the name of the role</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.role.grant">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">grant</code><big>(</big><em>user-name</em>, <em>privilege</em>, <em>object-type</em>, <em>object-name</em><span class="optional">[</span>, <em>option</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.box.schema.role.grant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grant <a class="reference internal" href="authentication.html#authentication-privileges"><span class="std std-ref">privileges</span></a> to a role.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user-name</strong> (<em>string</em>) -- the name of the role</li>
+<li><strong>privilege</strong> (<em>string</em>) -- 'read' or 'write' or 'execute' or a combination</li>
+<li><strong>object-type</strong> (<em>string</em>) -- 'space' or 'function'</li>
+<li><strong>object-name</strong> (<em>string</em>) -- the name of a function or space</li>
+<li><strong>option</strong> (<em>bool</em>) -- {if_not_exists=true} or {if_not_exists=false}</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The role must exist, and the object must exist.</p>
+<p><strong>Variation:</strong> instead of <code class="docutils literal"><span class="pre">object-type,</span> <span class="pre">object-name</span></code> say 'universe'
+which means 'all object-types and all objects'.</p>
+<p><strong>Variation:</strong> instead of <code class="docutils literal"><span class="pre">privilege,</span> <span class="pre">object-type,</span> <span class="pre">object-name</span></code> say
+<code class="docutils literal"><span class="pre">role-name</span></code> -- to grant a role to a role.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">function&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">f&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read,write&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">universe&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">public&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">role1&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">role2&#39;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="p">{</span><span class="n">if_not_exists</span><span class="o">=</span><span class="kc">false</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.role.revoke">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">revoke</code><big>(</big><em>user-name</em>, <em>privilege</em>, <em>object-type</em>, <em>object-name</em><big>)</big><a class="headerlink" href="#lua-function.box.schema.role.revoke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Revoke <a class="reference internal" href="authentication.html#authentication-privileges"><span class="std std-ref">privileges</span></a> from a role.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user-name</strong> (<em>string</em>) -- the name of the role</li>
+<li><strong>privilege</strong> (<em>string</em>) -- 'read' or 'write' or 'execute' or a combination</li>
+<li><strong>object-type</strong> (<em>string</em>) -- 'space' or 'function'</li>
+<li><strong>object-name</strong> (<em>string</em>) -- the name of a function or space</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The role must exist, and the object must exist,
+but it is not an error if the role does not have the privilege.</p>
+<p><strong>Variation:</strong> instead of <code class="docutils literal"><span class="pre">object-type,</span> <span class="pre">object-name</span></code> say 'universe'
+which means 'all object-types and all objects'.</p>
+<p><strong>Variation:</strong> instead of <code class="docutils literal"><span class="pre">privilege,</span> <span class="pre">object-type,</span> <span class="pre">object-name</span></code> say
+<code class="docutils literal"><span class="pre">role-name</span></code>.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">function&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">f&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read,write&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">universe&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">public&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.role.info">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">info</code><big>(</big><span class="optional">[</span><em>role-name</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.box.schema.role.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a description of a role's privileges.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>role-name</strong> (<em>string</em>) -- the name of the role.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Accountant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-schema-func-create"></span><dl class="function">
+<dt id="lua-function.box.schema.func.create">
+<em class="property"> </em><code class="descclassname">box.schema.func.</code><code class="descname">create</code><big>(</big><em>func-name</em><span class="optional">[</span>, <em>{options}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.box.schema.func.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a function tuple.
+This does not create the function itself -- that is done with Lua --
+but if it is necessary to grant privileges for a function,
+box.schema.func.create must be done first.
+For explanation of how Tarantool maintains function data, see
+section <a class="reference internal" href="authentication.html#authentication-funcs"><span class="std std-ref">Functions and the _func space</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>func-name</strong> (<em>string</em>) -- name of function, which should not be a number
+and should not contain special characters</li>
+<li><strong>options</strong> (<em>table</em>) -- <code class="docutils literal"><span class="pre">if_not_exists</span></code>, <code class="docutils literal"><span class="pre">setuid</span></code>, <code class="docutils literal"><span class="pre">language</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">nil</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">func</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">calculate&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">func</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">calculate&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">if_not_exists</span> <span class="o">=</span> <span class="kc">false</span><span class="p">})</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">func</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">calculate&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">setuid</span> <span class="o">=</span> <span class="kc">false</span><span class="p">})</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">func</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">calculate&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">LUA&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-schema-func-drop"></span><dl class="function">
+<dt id="lua-function.box.schema.func.drop">
+<em class="property"> </em><code class="descclassname">box.schema.func.</code><code class="descname">drop</code><big>(</big><em>func-name</em><big>)</big><a class="headerlink" href="#lua-function.box.schema.func.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drop a function tuple.
+For explanation of how Tarantool maintains function data, see
+section <a class="reference internal" href="authentication.html#authentication-funcs"><span class="std std-ref">Functions and the _func space</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func-name</strong> (<em>string</em>) -- the name of the function</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">func</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">calculate&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.box.schema.func.exists">
+<em class="property"> </em><code class="descclassname">box.schema.func.</code><code class="descname">exists</code><big>(</big><em>func-name</em><big>)</big><a class="headerlink" href="#lua-function.box.schema.func.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if a function tuple exists; return false if a function tuple does not exist.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>func-name</strong> (<em>string</em>) -- the name of the function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">func</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">calculate&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="index.html"
+           class="b-prev b-ellipsis"
+           title="3. Database">3. Database</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../_sources/book/box/box_schema.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="box_space.html"
+           class="b-next b-ellipsis"
+           title="3.4.2. Submodule &lt;cite&gt;box.space&lt;/cite&gt;">3.4.2. Submodule <cite>box.space</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

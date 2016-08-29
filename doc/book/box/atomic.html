@@ -1,0 +1,482 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>3.4.8. Atomic execution</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="3.4.8. Atomic execution">
+        3.4.8. Atomic execution
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../book/box/atomic.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../ru/book/box/atomic.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/box/atomic">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">1. Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide_getting_started.html">2. Getting started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">3. Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../replication/index.html">4. Replication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">5. Configuration reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administration.html">6. Server administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors/index.html">7. Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules.html">8. Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/a_errcodes.html">9. Appendix A. List of error codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/b_internals.html">10. Appendix B. Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/c_lua_tutorial.html">11. Appendix C. Lua tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/d_vinyl/index.html">12. Appendix D. Vinyl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/e_cookbook.html">13. Appendix E. Cookbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/f_c_tutorial.html">14. Appendix F. C tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Appendix G. Some significant changes in version 1.7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Lua reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            User Guide
+          </a>
+        </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            3. Database
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="3.4.8. Atomic execution" class="b-path_current b-ellipsis">
+          3.4.8. Atomic execution
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="atomic-execution">
+<span id="atomic-atomic-execution"></span><h1>3.4.8. Atomic execution<a class="headerlink" href="#atomic-execution" title="Permalink to this headline">¶</a></h1>
+<p>In several places in this manual it's been noted that Lua processes occur in
+fibers on a single thread. That is why there can be a guarantee of execution
+atomicity. That requires emphasis.</p>
+<div class="section" id="cooperative-multitasking-environment">
+<span id="atomic-cooperative-multitasking"></span><h2>3.4.8.1. Cooperative multitasking environment<a class="headerlink" href="#cooperative-multitasking-environment" title="Permalink to this headline">¶</a></h2>
+<p>Tarantool uses cooperative multitasking: unless a running fiber deliberately
+yields control, it is not preempted by some other fiber. But a running fiber
+will deliberately yield when it encounters a &quot;yield point&quot;: an explicit
+<cite>yield()</cite> request, or an implicit yield due to an operating-system call. Any
+system call which can block will be performed asynchronously, and any running
+fiber which must wait for a system call will be preempted so that another
+ready-to-run fiber takes its place and becomes the new running fiber. This model
+makes all programmatic locks unnecessary: cooperative multitasking ensures that
+there will be no concurrency around a resource, no race conditions, and
+no memory consistency issues.</p>
+<p>When requests are small, for example simple UPDATE or INSERT or DELETE or SELECT,
+fiber scheduling is fair: it takes only a little time to process the request,
+schedule a disk write, and yield to a fiber serving the next client.</p>
+<p>However, a function might perform complex computations or might be written in
+such a way that yields do not occur for a long time. This can lead to unfair
+scheduling, when a single client throttles the rest of the system, or to
+apparent stalls in request processing. Avoiding this situation is the
+responsibility of the function's author. For the default memtx storage engine
+some of the box calls, including the data-change requests
+<a class="reference internal" href="box_space.html#box-space-insert"><span class="std std-ref">box.space...insert</span></a> or
+<a class="reference internal" href="box_space.html#box-space-update"><span class="std std-ref">box.space...update</span></a> or
+<a class="reference internal" href="box_space.html#box-space-delete"><span class="std std-ref">box.space...delete</span></a>, will usually cause yielding;
+however, <a class="reference internal" href="box_space.html#box-space-select"><span class="std std-ref">box.space...select</span></a> will not. A fuller
+description will appear in section
+<a class="reference internal" href="#atomic-the-implicit-yield-rules"><span class="std std-ref">The Implicit Yield Rules</span></a>.</p>
+<p>Note re storage engine: vinyl has different rules:
+insert or update or delete will very rarely cause
+a yield, but select can cause a yield.</p>
+<p>In the absence of transactions, any function that contains yield points may see
+changes in the database state caused by fibers that preempt. Then the only safe
+atomic functions for memtx databases would be functions which contain only one
+database request, or functions which contain a select request followed by a
+data-change request.</p>
+<p>At this point an objection could arise: &quot;It's good that a single data-change
+request will commit and yield, but surely there are times when multiple
+data-change requests must happen without yielding.&quot; The standard example is the
+money-transfer, where $1 is withdrawn from account #1 and deposited into
+account #2. If something interrupted after the withdrawal, then the institution
+would be out of balance. For such cases, the <code class="docutils literal"><span class="pre">begin</span> <span class="pre">...</span> <span class="pre">commit|rollback</span></code>
+block was designed.</p>
+<span class="target" id="atomic-box-begin"></span><dl class="function">
+<dt id="lua-function.box.begin">
+<em class="property"> </em><code class="descclassname">box.</code><code class="descname">begin</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.box.begin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin the transaction. Disable implicit yields until the transaction ends.
+Signal that writes to the write-ahead log will be deferred until the transaction ends.
+In effect the fiber which executes <code class="docutils literal"><span class="pre">box.begin()</span></code> is starting an &quot;active
+multi-request transaction&quot;, blocking all other fibers.</p>
+</dd></dl>
+
+<span class="target" id="atomic-box-commit"></span><dl class="function">
+<dt id="lua-function.box.commit">
+<em class="property"> </em><code class="descclassname">box.</code><code class="descname">commit</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.box.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the transaction, and make all its data-change
+operations permanent.</p>
+</dd></dl>
+
+<span class="target" id="atomic-box-rollback"></span><dl class="function">
+<dt id="lua-function.box.rollback">
+<em class="property"> </em><code class="descclassname">box.</code><code class="descname">rollback</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.box.rollback" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the transaction, but cancel all its data-change
+operations. An explicit call to functions outside <code class="docutils literal"><span class="pre">box.space</span></code> that always
+yield, such as <code class="docutils literal"><span class="pre">fiber.yield</span></code> or <code class="docutils literal"><span class="pre">fiber.sleep</span></code>, will have the same effect.</p>
+</dd></dl>
+
+<p>The <strong>requests in a transaction must be sent to the server as a single block</strong>.
+It is not enough to enclose them between <code class="docutils literal"><span class="pre">begin</span></code> and <code class="docutils literal"><span class="pre">commit</span></code> or <code class="docutils literal"><span class="pre">rollback</span></code>.
+To ensure they are sent as a single block: put them in a function, or put them all
+on one line, or use a delimiter so that multi-line requests are handled together.</p>
+<p><strong>All database operations in a transaction should use the same storage engine</strong>.
+It is not safe to access tuple sets that are defined with <code class="docutils literal"><span class="pre">{engine='vinyl'}</span></code>
+and also access tuple sets that are defined with <code class="docutils literal"><span class="pre">{engine='memtx'}</span></code>,
+in the same transaction.</p>
+</div>
+<div class="section" id="example">
+<h2>3.4.8.2. Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Assuming that in tuple set 'tester' there are tuples in which the third field
+represents a positive dollar amount ... Start a transaction, withdraw from tuple#1,
+deposit in tuple#2, and end the transaction, making its effects permanent.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">txn_example</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">amount_of_money</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="n">box</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="gp">         &gt; </span>  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">-&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">amount_of_money</span><span class="p">}})</span>
+<span class="gp">         &gt; </span>  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">(</span><span class="n">to</span><span class="p">,</span>   <span class="p">{{</span><span class="s1">&#39;</span><span class="s">+&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">amount_of_money</span><span class="p">}})</span>
+<span class="gp">         &gt; </span>  <span class="n">box</span><span class="p">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="gp">         &gt; </span>  <span class="k">return</span> <span class="s2">&quot;</span><span class="s">ok&quot;</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">txn_example</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{</span><span class="mi">1000</span><span class="p">},</span> <span class="mf">1.00</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="s">&quot;ok&quot;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-implicit-yield-rules">
+<span id="atomic-the-implicit-yield-rules"></span><h2>3.4.8.3. The Implicit Yield Rules<a class="headerlink" href="#the-implicit-yield-rules" title="Permalink to this headline">¶</a></h2>
+<p>The only explicit yield requests are <a class="reference internal" href="../../reference_lua/fiber.html#fiber-sleep"><span class="std std-ref">fiber.sleep()</span></a> and
+<a class="reference internal" href="../../reference_lua/fiber.html#fiber-yield"><span class="std std-ref">fiber.yield()</span></a>, but many other requests &quot;imply&quot; yields
+because Tarantool is designed to avoid blocking.</p>
+<p>The implicit yield requests are: <a class="reference internal" href="box_space.html#box-space-insert"><span class="std std-ref">insert</span></a>
+<a class="reference internal" href="box_space.html#box-space-replace"><span class="std std-ref">replace</span></a> <a class="reference internal" href="box_space.html#box-space-update"><span class="std std-ref">update</span></a>
+<a class="reference internal" href="box_space.html#box-space-upsert"><span class="std std-ref">upsert</span></a> <a class="reference internal" href="box_space.html#box-space-delete"><span class="std std-ref">delete</span></a> (the
+&quot;data-change&quot; requests), and functions in module <a class="reference internal" href="../../reference_lua/fio.html#fio-section"><span class="std std-ref">fio</span></a>,
+<a class="reference internal" href="../../reference_lua/net_box.html#net-box-module"><span class="std std-ref">net_box</span></a>, <a class="reference internal" href="../../reference_lua/console.html#console-module"><span class="std std-ref">console</span></a>, or
+<a class="reference internal" href="../../reference_lua/socket.html#socket-module"><span class="std std-ref">socket</span></a> (the &quot;os&quot; and &quot;network&quot; requests).</p>
+<p>Note re storage engine: vinyl causes <a class="reference internal" href="box_space.html#box-space-select"><span class="std std-ref">select</span></a>
+to be an implicit yield request, but data-change requests may not be.</p>
+<p>The yield occurs just before a blocking syscall, such as a write to the
+Write-Ahead Log (WAL) or a network message reception.</p>
+<p>Implicit yield requests are disabled by <a class="reference internal" href="#atomic-box-begin"><span class="std std-ref">box.begin</span></a>,
+and enabled again by <a class="reference internal" href="#atomic-box-commit"><span class="std std-ref">commit</span></a>. Therefore the sequence</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">begin</span>
+<span class="n">implicit</span> <span class="k">yield</span> <span class="n">request</span> <span class="c1">#1</span>
+<span class="n">implicit</span> <span class="k">yield</span> <span class="n">request</span> <span class="c1">#2</span>
+<span class="n">implicit</span> <span class="k">yield</span> <span class="n">request</span> <span class="c1">#3</span>
+<span class="n">commit</span>
+</pre></div>
+</div>
+<p>will not cause implicit yield until the commit occurs (specifically: just before
+the writes to the WAL, which are delayed until commit time). The commit request
+is not itself an implicit yield request, it only enables yields caused by
+earlier implicit yield requests.</p>
+<p>Despite their resemblance to implicit yield requests,
+<a class="reference internal" href="box_space.html#box-space-truncate"><span class="std std-ref">truncate</span></a> and <a class="reference internal" href="box_space.html#box-space-drop"><span class="std std-ref">drop</span></a> do not
+cause implicit yield. Despite their resemblance to functions of the fio module,
+functions of the <a class="reference internal" href="../../reference_lua/os.html#os-module"><span class="std std-ref">os</span></a> module do not cause implicit yield.
+Despite its resemblance to commit, <a class="reference internal" href="#atomic-box-rollback"><span class="std std-ref">rollback</span></a> does
+not enable yields.</p>
+<p>If <a class="reference internal" href="../configuration/index.html#cfg-binary-logging-snapshots-wal-mode"><span class="std std-ref">wal_mode</span></a> = 'none', then
+implicit yielding is disabled, because there are no writes to the WAL.</p>
+<p>If a task is interactive -- sending requests to the server and receiving
+responses -- then it involves network IO, and therefore there is an implicit
+yield, even if the request that is sent to the server is not itself an implicit
+yield request. Therefore the sequence</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">select</span>
+<span class="n">select</span>
+<span class="n">select</span>
+</pre></div>
+</div>
+<p>causes blocking if it is inside a function or Lua program being executed on the
+server, but causes yielding if it is done as a series of transmissions from a
+client, including a client which operates via telnet, via one of the connectors,
+or via the MySQL and PostgreSQL rocks, or via the interactive mode when
+<a class="reference internal" href="../administration.html#administration-using-tarantool-as-a-client"><span class="std std-ref">&quot;Using tarantool as a client&quot;</span></a>.</p>
+<p>After a fiber has yielded and then has regained control, it immediately issues
+<a class="reference internal" href="../../reference_lua/fiber.html#fiber-testcancel"><span class="std std-ref">testcancel</span></a>.</p>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="admin.html"
+           class="b-prev b-ellipsis"
+           title="3.4.7. Administrative requests">3.4.7. Administrative requests</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../_sources/book/box/atomic.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="authentication.html"
+           class="b-next b-ellipsis"
+           title="3.4.9. Access control">3.4.9. Access control</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

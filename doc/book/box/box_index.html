@@ -1,0 +1,1540 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>3.4.3. Submodule box.index</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="3.4.3. Submodule box.index">
+        3.4.3. Submodule box.index
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../book/box/box_index.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../ru/book/box/box_index.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/box/box_index">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference_lua/index.html">Lua reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference_lua/box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/clock.html">Module <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/console.html">Module <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/crypto.html">Module <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/digest.html">Module <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/box_error.html">Submodule <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fiber.html">Module <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fiber_ipc.html">Submodule <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/msgpack.html">Module <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/net_box.html">Module <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/box_once.html">Function <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/pickle.html">Module <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/socket.html">Module <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/strict.html">Module <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/tarantool.html">Module <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/other.html">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            User Guide
+          </a>
+        </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            3. Database
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="3.4.3. Submodule <cite>box.index</cite>" class="b-path_current b-ellipsis">
+          3.4.3. Submodule <cite>box.index</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="submodule-box-index">
+<span id="box-index"></span><h1>3.4.3. Submodule <cite>box.index</cite><a class="headerlink" href="#submodule-box-index" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">box.index</span></code> submodule provides read-only access for index definitions and
+index keys. Indexes are contained in <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">.index</span></code> array within
+each space object. They provide an API for ordered iteration over tuples. This
+API is a direct binding to corresponding methods of index objects of type
+<code class="docutils literal"><span class="pre">box.index</span></code> in the storage engine.</p>
+<span class="target" id="lua-module.box.index"></span><dl class="class">
+<dt id="lua-object.box.index.index_object">
+<em class="property">object </em><code class="descname">index_object</code><a class="headerlink" href="#lua-object.box.index.index_object" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="data">
+<dt id="lua-data.index_object.unique">
+<em class="property"> </em><code class="descclassname">index_object.</code><code class="descname">unique</code><a class="headerlink" href="#lua-data.index_object.unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the index is unique, false if the index is not unique.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="lua-data.index_object.type">
+<em class="property"> </em><code class="descclassname">index_object.</code><code class="descname">type</code><a class="headerlink" href="#lua-data.index_object.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Index type, 'TREE' or 'HASH' or 'BITSET' or 'RTREE'.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>.</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="lua-data.index_object.parts">
+<em class="property"> </em><code class="descclassname">index_object.</code><code class="descname">parts</code><a class="headerlink" href="#lua-data.index_object.parts" title="Permalink to this definition">¶</a></dt>
+<dd><p>An array describing index key fields.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body">table</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">unique</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="l l-Scalar l-Scalar-Plain">parts</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">unsigned</span>
+    <span class="l l-Scalar l-Scalar-Plain">fieldno</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+  <span class="l l-Scalar l-Scalar-Plain">space_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">513</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">primary</span>
+  <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">TREE</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-index-index-pairs"></span><dl class="method">
+<dt id="lua-function.index_object.pairs">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">pairs</code><big>(</big><em>bitset-value | search-value</em>, <em>iterator-type</em><big>)</big><a class="headerlink" href="#lua-function.index_object.pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method provides iteration support within an index.
+The <span class="ccodei">bitset-value</span> or <span class="ccodei">search-value</span> parameter
+specifies what must match within the index.
+The <span class="ccodei">iterator-type</span>
+parameter specifies the rule for matching and ordering. Different index types support
+different iterators. For example, a TREE index maintains a
+strict order of keys and can return all tuples in ascending or descending
+order, starting from the specified key. Other index types, however, do not
+support ordering.</p>
+<p>To understand consistency of tuples returned by an iterator, it's essential
+to know the principles of the Tarantool transaction processing subsystem. An
+iterator in Tarantool does not own a consistent read view. Instead, each
+procedure is granted exclusive access to all tuples and spaces until
+there is a &quot;context switch&quot;: which may happen due to
+<a class="reference internal" href="atomic.html#atomic-the-implicit-yield-rules"><span class="std std-ref">the-implicit-yield-rules</span></a>,
+or by an
+explicit call to <a class="reference internal" href="../../reference_lua/fiber.html#fiber-yield"><span class="std std-ref">fiber.yield</span></a>. When the execution flow returns
+to the yielded procedure, the data set could have changed significantly.
+Iteration, resumed after a yield point, does not preserve the read view,
+but continues with the new content of the database.
+The tutorial <a class="reference internal" href="../app/c_lua_tutorial.html#c-lua-tutorial-indexed-pattern-search"><span class="std std-ref">Indexed pattern search</span></a>
+shows one way that iterators and yields can be used together.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</li>
+<li><code class="samp docutils literal"><em><span class="pre">bitset-value</span></em> <span class="pre">|</span> <em><span class="pre">search-value...</span></em></code> = what to search for</li>
+<li><code class="samp docutils literal"><em><span class="pre">iterator-type</span></em></code> = as defined in tables below.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">this method returns an iterator closure, i.e. a function which can
+be used to get the next value on each invocation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">function, tuple</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: Selected iteration type is not supported for the index type,
+or search value is not supported for the iteration type.</p>
+<p>Complexity Factors: Index size, Index type, Number of tuples accessed.</p>
+<p>A search-value can be a number (for example <code class="docutils literal"><span class="pre">1234</span></code>), a string
+(for example <code class="docutils literal"><span class="pre">'abcd'</span></code>),
+or a table of numbers and strings (for example <code class="docutils literal"><span class="pre">{1234,</span> <span class="pre">'abcd'}</span></code>).
+Each part of a search-value will be compared to each part of an index key.</p>
+<div class="table container">
+<p><strong>Iterator types for TREE indexes</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Formally the logic for TREE index searches is: <br />
+comparison-operator is = or &gt;= or &gt; or &lt;= or &lt; depending on
+iterator-type</p>
+<pre class="highlight literal-block">
+for i = 1 to number-of-parts-of-search-value
+    if (search-value-part[i] is <code class="docutils literal"><span class="pre">nil</span></code> and &lt;comparison-operator&gt; is &quot;=&quot;) or
+       (search-value-part[i] &lt;comparison-operator&gt; index-key-part[i] is true) then
+           comparison-result[i] is true
+    endif
+</pre>
+<p>if all comparison-results are true, then search-value &quot;matches&quot;
+index key.</p>
+<p class="last">Notice how, according to this logic, regardless what the index-key-part
+contains, the comparison-result for equality is always true when a
+search-value-part is <code class="docutils literal"><span class="pre">nil</span></code> or is missing. This behavior of
+searches with nil is subject to change.</p>
+</div>
+<table border="1" class="left-align-column-1 left-align-column-2 left-align-column-3 docutils">
+<colgroup>
+<col width="21%" />
+<col width="15%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Arguments</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>box.index.EQ
+or 'EQ'</td>
+<td>search
+value</td>
+<td>The comparison operator is '==' (equal to).
+If an index key is equal to a search value,
+it matches.
+Tuples are returned in ascending order by
+index key. This is the default.</td>
+</tr>
+<tr class="row-odd"><td>box.index.REQ
+or 'REQ'</td>
+<td>search
+value</td>
+<td>Matching is the same as for
+<code class="docutils literal"><span class="pre">box.index.EQ</span></code>.
+Tuples are returned in descending order by
+index key.</td>
+</tr>
+<tr class="row-even"><td>box.index.GT
+or 'GT'</td>
+<td>search
+value</td>
+<td>The comparison operator is '&gt;' (greater
+than).
+If an index key is greater than a search
+value, it matches.
+Tuples are returned in ascending order by
+index key.</td>
+</tr>
+<tr class="row-odd"><td>box.index.GE
+or 'GE'</td>
+<td>search
+value</td>
+<td>The comparison operator is '&gt;=' (greater
+than or equal to).
+If an index key is greater than or equal to
+a search value, it matches.
+Tuples are returned in ascending order by
+index key.</td>
+</tr>
+<tr class="row-even"><td>box.index.ALL
+or 'ALL'</td>
+<td>search
+value</td>
+<td>Same as box.index.GE.</td>
+</tr>
+<tr class="row-odd"><td>box.index.LT
+or 'LT'</td>
+<td>search
+value</td>
+<td>The comparison operator is '&lt;' (less than).
+If an index key is less than a search
+value, it matches.
+Tuples are returned in descending order by
+index key.</td>
+</tr>
+<tr class="row-even"><td>box.index.LE
+or 'LE'</td>
+<td>search
+value</td>
+<td>The comparison operator is '&lt;=' (less than
+or equal to).
+If an index key is less than or equal to a
+search value, it matches.
+Tuples are returned in descending order by
+index key.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Iterator types for HASH indexes</strong></p>
+<table border="1" class="left-align-column-1 left-align-column-2 left-align-column-3 docutils">
+<colgroup>
+<col width="20%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Arguments</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>box.index.ALL</td>
+<td>none</td>
+<td>All index keys match.
+Tuples are returned in ascending order by
+hash of index key, which will appear to be
+random.</td>
+</tr>
+<tr class="row-odd"><td>box.index.EQ
+or 'EQ'</td>
+<td>search
+value</td>
+<td>The comparison operator is '==' (equal to).
+If an index key is equal to a search value,
+it matches.
+The number of returned tuples will be 0 or 1.
+This is the default.</td>
+</tr>
+<tr class="row-even"><td>box.index.GT
+or 'GT'</td>
+<td>search
+value</td>
+<td>The comparison operator is '&gt;' (greater than).
+If a hash of an index key is greater than a
+hash of a search value, it matches.
+Tuples are returned in ascending order by hash
+of index key, which will appear to be random.
+Provided that the space is not being updated,
+one can retrieve all the tuples in a space,
+N tuples at a time, by using
+{iterator='GT', limit=N}
+in each search, and using the last returned
+value from the previous result as the start
+search value for the next search.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Iterator types for BITSET indexes</strong></p>
+<table border="1" class="left-align-column-1 left-align-column-2 left-align-column-3 docutils">
+<colgroup>
+<col width="33%" />
+<col width="13%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Arguments</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>box.index.ALL
+or 'ALL'</td>
+<td>none</td>
+<td>All index keys match.
+Tuples are returned in their order within
+the space.</td>
+</tr>
+<tr class="row-odd"><td>box.index.EQ
+or 'EQ'</td>
+<td>bitset
+value</td>
+<td>If an index key is equal to a bitset value,
+it matches.
+Tuples are returned in their order within
+the space. This is the default.</td>
+</tr>
+<tr class="row-even"><td>box.index.BITS_ALL_SET</td>
+<td>bitset
+value</td>
+<td>If all of the bits which are 1 in the bitset
+value are 1 in the index key, it matches.
+Tuples are returned in their order within
+the space.</td>
+</tr>
+<tr class="row-odd"><td>box.index.BITS_ANY_SET</td>
+<td>bitset
+value</td>
+<td>If any of the bits which are 1 in the bitset
+value are 1 in the index key, it matches.
+Tuples are returned in their order within
+the space.</td>
+</tr>
+<tr class="row-even"><td>box.index.BITS_ALL_NOT_SET</td>
+<td>bitset
+value</td>
+<td>If all of the bits which are 1 in the bitset
+value are 0 in the index key, it matches.
+Tuples are returned in their order within
+the space.</td>
+</tr>
+</tbody>
+</table>
+<p id="rtree-iterator"><strong>Iterator types for RTREE indexes</strong></p>
+<table border="1" class="left-align-column-1 left-align-column-2 left-align-column-3 docutils">
+<colgroup>
+<col width="23%" />
+<col width="13%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Arguments</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>box.index.ALL
+or 'ALL'</td>
+<td>none</td>
+<td>All keys match.
+Tuples are returned in their order within the space.</td>
+</tr>
+<tr class="row-odd"><td>box.index.EQ
+or 'EQ'</td>
+<td>search
+value</td>
+<td>If all points of the rectangle-or-box defined by the
+search value are the same as the rectangle-or-box
+defined by the index key, it matches.
+Tuples are returned in their order within the space.
+&quot;Rectangle-or-box&quot; means &quot;rectangle-or-box as
+explained in section about
+<a class="reference internal" href="#box-index-rtree"><span class="std std-ref">RTREE</span></a>&quot;. This is the default.</td>
+</tr>
+<tr class="row-even"><td>box.index.GT
+or 'GT'</td>
+<td>search
+value</td>
+<td>If all points of the rectangle-or-box defined by the
+search value are within the rectangle-or-box
+defined by the index key, it matches.
+Tuples are returned in their order within the space.</td>
+</tr>
+<tr class="row-odd"><td>box.index.GE
+or 'GE'</td>
+<td>search
+value</td>
+<td>If all points of the rectangle-or-box defined by the
+search value are within, or at the side of, the
+rectangle-or-box defined by the index key, it matches.
+Tuples are returned in their order within the space.</td>
+</tr>
+<tr class="row-even"><td>box.index.LT
+or 'LT'</td>
+<td>search
+value</td>
+<td>If all points of the rectangle-or-box defined by the
+index key are within the rectangle-or-box
+defined by the search key, it matches.
+Tuples are returned in their order within the space.</td>
+</tr>
+<tr class="row-odd"><td>box.index.LE
+or 'LE'</td>
+<td>search
+value</td>
+<td>If all points of the rectangle-or-box defined by the
+index key are within, or at the side of, the
+rectangle-or-box defined by the search key, it matches.
+Tuples are returned in their order within the space.</td>
+</tr>
+<tr class="row-even"><td>box.index.OVERLAPS
+or 'OVERLAPS'</td>
+<td>search
+values</td>
+<td>If some points of the rectangle-or-box defined by the
+search value are within the rectangle-or-box
+defined by the index key, it matches.
+Tuples are returned in their order within the space.</td>
+</tr>
+<tr class="row-odd"><td>box.index.NEIGHBOR
+or 'NEIGHBOR'</td>
+<td>search
+value</td>
+<td>If some points of the rectangle-or-box defined by the
+defined by the key are within, or at the side of,
+defined by the index key, it matches.
+Tuples are returned in order: nearest neighbor first.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>First Example of index pairs():</strong></p>
+<p>Default 'TREE' Index and <code class="docutils literal"><span class="pre">pairs()</span></code> function:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">space17&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">string&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">string&#39;</span><span class="p">}</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="s1">&#39;</span><span class="s">C&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">C&#39;</span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;C&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;C&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="s1">&#39;</span><span class="s">B&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">A&#39;</span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;B&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;A&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="s1">&#39;</span><span class="s">C&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">!&#39;</span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;C&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;!&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="s1">&#39;</span><span class="s">A&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">C&#39;</span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;A&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;C&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">example</span><span class="p">()</span>
+<span class="gp">         &gt; </span>  <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">tuple</span> <span class="k">in</span>
+<span class="gp">         &gt; </span>    <span class="n">s</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="nb">pairs</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>        <span class="n">iterator</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">ALL</span><span class="p">})</span> <span class="k">do</span>
+<span class="gp">         &gt; </span>      <span class="nb">print</span><span class="p">(</span><span class="n">tuple</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="k">end</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">example</span><span class="p">()</span>
+<span class="go">[&#39;A&#39;, &#39;C&#39;]</span>
+<span class="go">[&#39;B&#39;, &#39;A&#39;]</span>
+<span class="go">[&#39;C&#39;, &#39;!&#39;]</span>
+<span class="go">[&#39;C&#39;, &#39;C&#39;]</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">drop</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p><strong>Second Example of index pairs():</strong></p>
+<p>This Lua code finds all the tuples whose primary key values begin with 'XY'.
+The assumptions include that there is a one-part primary-key
+TREE index on the first field, which must be a string. The iterator loop ensures
+that the search will return tuples where the first value
+is greater than or equal to 'XY'. The conditional statement
+within the loop ensures that the looping will stop when the
+first two letters are not 'XY'.</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tuple</span> <span class="k">in</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">t</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="nb">pairs</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">XY&quot;</span><span class="p">,{</span><span class="n">iterator</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">GE&quot;</span><span class="p">})</span> <span class="k">do</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">string.sub</span><span class="p">(</span><span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">~=</span> <span class="s2">&quot;</span><span class="s">XY&quot;</span><span class="p">)</span> <span class="k">then</span> <span class="k">break</span> <span class="k">end</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">tuple</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p><strong>Third Example of index pairs():</strong></p>
+<p>This Lua code finds all the tuples whose primary key values are
+greater than or equal to 1000, and less than or equal to 1999
+(this type of request is sometimes called a &quot;range search&quot; or a &quot;between search&quot;).
+The assumptions include that there is a one-part primary-key
+TREE index on the first field, which must be a number. The iterator loop ensures
+that the search will return tuples where the first value
+is greater than or equal to 1000. The conditional statement
+within the loop ensures that the looping will stop when the
+first value is greater than 1999.</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tuple</span> <span class="k">in</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">t2</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="nb">pairs</span><span class="p">(</span><span class="mi">1000</span><span class="p">,{</span><span class="n">iterator</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">GE&quot;</span><span class="p">})</span> <span class="k">do</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1999</span><span class="p">)</span> <span class="k">then</span> <span class="k">break</span> <span class="k">end</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">tuple</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-index-select"></span><dl class="method">
+<dt id="lua-function.index_object.select">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">select</code><big>(</big><em>search-key</em>, <em>options</em><big>)</big><a class="headerlink" href="#lua-function.index_object.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is an alternative to <a class="reference internal" href="box_space.html#box-space-select"><span class="std std-ref">box.space...select()</span></a>
+which goes via a particular index and can make use of additional
+parameters that specify the iterator type, and the limit (that is, the
+maximum number of tuples to return) and the offset (that is, which
+tuple to start with in the list).</p>
+<p>Parameters:</p>
+<ul>
+<li><p class="first"><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</p>
+</li>
+<li><p class="first"><code class="samp docutils literal"><span class="pre">search-key</span></code> = values to be matched against the index key;</p>
+</li>
+<li><dl class="first docutils">
+<dt><code class="samp docutils literal"><span class="pre">option(s)</span></code> any or all of</dt>
+<dd><ul class="first last simple">
+<li><code class="samp docutils literal"><span class="pre">iterator</span> <span class="pre">=</span> <em><span class="pre">iterator-type</span></em></code>,</li>
+<li><code class="samp docutils literal"><span class="pre">limit</span> <span class="pre">=</span> <em><span class="pre">maximum-number-of-tuples</span></em></code>,</li>
+<li><code class="samp docutils literal"><span class="pre">offset</span> <span class="pre">=</span> <em><span class="pre">start-tuple-number</span></em></code>.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the tuple or tuples that match the field values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">tuple set as a Lua table</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="go">-- Create a space named tester.</span>
+<span class="gp">tarantool&gt; </span><span class="n">sp</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="go">-- Create a unique index &#39;primary&#39;</span>
+<span class="go">-- which won&#39;t be needed for this example.</span>
+<span class="gp">tarantool&gt; </span><span class="n">sp</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">unsigned&#39;</span> <span class="p">}})</span>
+<span class="go">-- Create a non-unique index &#39;secondary&#39;</span>
+<span class="go">-- with an index on the second field.</span>
+<span class="gp">tarantool&gt; </span><span class="n">sp</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">secondary&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">tree&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">unique</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">string&#39;</span><span class="p">}</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="go">-- Insert three tuples, values in field[2]</span>
+<span class="go">-- equal to &#39;X&#39;, &#39;Y&#39;, and &#39;Z&#39;.</span>
+<span class="gp">tarantool&gt; </span><span class="n">sp</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">X&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Row with field[2]=X&#39;</span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">sp</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Y&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Row with field[2]=Y&#39;</span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">sp</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Z&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Row with field[2]=Z&#39;</span><span class="p">}</span>
+<span class="go">-- Select all tuples where the secondary index</span>
+<span class="go">-- keys are greater than &#39;X&#39;.`</span>
+<span class="gp">tarantool&gt; </span><span class="n">sp</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">secondary</span><span class="p">:</span><span class="nb">select</span><span class="p">({</span><span class="s1">&#39;</span><span class="s">X&#39;</span><span class="p">},</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">iterator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">GT&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">limit</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+</pre></div>
+</div>
+<p>The result will be a table of tuple and will look like this:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span> <span class="s">&#39;Y&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;Row</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">field[2]=Y&#39;</span><span class="p p-Indicator">]</span>
+  <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">3</span><span class="p p-Indicator">,</span> <span class="s">&#39;Z&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;Row</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">field[2]=Z&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="samp docutils literal"><span class="pre">index.</span><em><span class="pre">index-name</span></em></code> is optional. If it is omitted, then the assumed
+index is the first (primary-key) index. Therefore, for the example
+above, <code class="docutils literal"><span class="pre">box.space.tester:select({1},</span> <span class="pre">{iterator</span> <span class="pre">=</span> <span class="pre">'GT'})</span></code> would have
+returned the same two rows, via the 'primary' index.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="samp docutils literal"><span class="pre">iterator</span> <span class="pre">=</span> <em><span class="pre">iterator-type</span></em></code> is optional. If it is omitted, then
+<code class="docutils literal"><span class="pre">iterator</span> <span class="pre">=</span> <span class="pre">'EQ'</span></code> is assumed.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="samp docutils literal"><em><span class="pre">field-value</span></em> <span class="pre">[,</span> <em><span class="pre">field-value</span> <span class="pre">...</span></em><span class="pre">]</span></code> is optional. If it is omitted,
+then every key in the index is considered to be a match, regardless of
+iterator type. Therefore, for the example above,
+<code class="docutils literal"><span class="pre">box.space.tester:select{}</span></code> will select every tuple in the tester
+space via the first (primary-key) index.</p>
+</div>
+<div class="admonition note" id="box-index-note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">.index.</span><em><span class="pre">index-name</span></em><span class="pre">:select(...)[1]`</span></code>. can be
+replaced by <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">.index.</span><em><span class="pre">index-name</span></em><span class="pre">:get(...)</span></code>.
+That is, <code class="docutils literal"><span class="pre">get</span></code> can be used as a convenient shorthand to get the first
+tuple in the tuple set that would be returned by <code class="docutils literal"><span class="pre">select</span></code>. However,
+if there is more than one tuple in the tuple set, then <code class="docutils literal"><span class="pre">get</span></code> returns
+an error.</p>
+</div>
+<p><strong>Example with BITSET index:</strong></p>
+<p>The following script shows creation and search with a BITSET index.
+Notice: BITSET cannot be unique, so first a primary-key index is created.
+Notice: bit values are entered as hexadecimal literals for easier reading.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">space_with_bitset&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary_index&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">string&#39;</span><span class="p">},</span>
+<span class="gp">         &gt; </span>  <span class="n">unique</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">TREE&#39;</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">bitset_index&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">unsigned&#39;</span><span class="p">},</span>
+<span class="gp">         &gt; </span>  <span class="n">unique</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">BITSET&#39;</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="s1">&#39;</span><span class="s">Tuple with bit value = 01&#39;</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="s1">&#39;</span><span class="s">Tuple with bit value = 10&#39;</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="s1">&#39;</span><span class="s">Tuple with bit value = 11&#39;</span><span class="p">,</span> <span class="mh">0x03</span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">bitset_index</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="mh">0x02</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">iterator</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">EQ</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;Tuple</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">bit</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">10&#39;</span><span class="p p-Indicator">,</span> <span class="nv">2</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">bitset_index</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="mh">0x02</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">iterator</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">BITS_ANY_SET</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;Tuple</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">bit</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">10&#39;</span><span class="p p-Indicator">,</span> <span class="nv">2</span><span class="p p-Indicator">]</span>
+  <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;Tuple</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">bit</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">11&#39;</span><span class="p p-Indicator">,</span> <span class="nv">3</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">bitset_index</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="mh">0x02</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">iterator</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">BITS_ALL_SET</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;Tuple</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">bit</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">10&#39;</span><span class="p p-Indicator">,</span> <span class="nv">2</span><span class="p p-Indicator">]</span>
+  <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;Tuple</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">bit</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">11&#39;</span><span class="p p-Indicator">,</span> <span class="nv">3</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">bitset_index</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="mh">0x02</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">iterator</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">BITS_ALL_NOT_SET</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;Tuple</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">bit</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">01&#39;</span><span class="p p-Indicator">,</span> <span class="nv">1</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-index-get"></span><dl class="method">
+<dt id="lua-function.index_object.get">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">get</code><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#lua-function.index_object.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for a tuple via the given index, as described <a class="reference internal" href="#box-index-note"><span class="std std-ref">earlier</span></a>.</p>
+<p>Parameters: <code class="samp docutils literal"><em><span class="pre">space_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;
+<span class="ccodei">key</span> (type = Lua table or scalar) = key to be matched against the index key,
+which may be multi-part.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the tuple whose index-key fields are equal to the passed key values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: No such index; wrong type; more than one tuple matches.</p>
+<p>Complexity Factors: Index size, Index type.
+See also <a class="reference internal" href="box_space.html#box-space-get"><span class="std std-ref">space_object:get()</span></a>.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span> <span class="s">&#39;Music&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-index-min"></span><dl class="method">
+<dt id="lua-function.index_object.min">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">min</code><big>(</big><span class="optional">[</span><em>key-value</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.index_object.min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the minimum value in the specified index.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</li>
+<li><code class="samp docutils literal"><span class="pre">key-value</span></code>.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the tuple for the first key in the index. If optional
+<code class="docutils literal"><span class="pre">key-value</span></code> is supplied, returns the first key which
+is greater than or equal to <code class="docutils literal"><span class="pre">key-value</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: index is not of type 'TREE'.</p>
+<p>Complexity Factors: Index size, Index type.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">min</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;Alpha!&#39;</span><span class="p p-Indicator">,</span> <span class="nv">55</span><span class="p p-Indicator">,</span> <span class="s">&#39;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">first</span><span class="nv"> </span><span class="s">tuple!&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-index-max"></span><dl class="method">
+<dt id="lua-function.index_object.max">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">max</code><big>(</big><span class="optional">[</span><em>key-value</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.index_object.max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the maximum value in the specified index.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</li>
+<li><code class="samp docutils literal"><span class="pre">key-value</span></code>.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the tuple for the last key in the index. If optional <code class="docutils literal"><span class="pre">key-value</span></code>
+is supplied, returns the last key which is less than or equal to
+<code class="docutils literal"><span class="pre">key-value</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: index is not of type 'TREE'.</p>
+<p>Complexity Factors: Index size, Index type.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">max</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;Gamma!&#39;</span><span class="p p-Indicator">,</span> <span class="nv">55</span><span class="p p-Indicator">,</span> <span class="s">&#39;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">third</span><span class="nv"> </span><span class="s">tuple!&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-index-random"></span><dl class="method">
+<dt id="lua-function.index_object.random">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">random</code><big>(</big><em>random-value</em><big>)</big><a class="headerlink" href="#lua-function.index_object.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a random value in the specified index. This method is useful when it's
+important to get insight into data distribution in an index without having
+to iterate over the entire data set.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</li>
+<li><code class="samp docutils literal"><span class="pre">random-value</span></code> (type = number) = an arbitrary non-negative integer.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the tuple for the random key in the index.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<p>Complexity Factors: Index size, Index type.</p>
+<p>Note re storage engine: vinyl does not support <code class="docutils literal"><span class="pre">random()</span></code>.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">secondary</span><span class="p">:</span><span class="n">random</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;Beta!&#39;</span><span class="p p-Indicator">,</span> <span class="nv">66</span><span class="p p-Indicator">,</span> <span class="s">&#39;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">second</span><span class="nv"> </span><span class="s">tuple!&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="box-index-count"></span><dl class="method">
+<dt id="lua-function.index_object.count">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">count</code><big>(</big><span class="optional">[</span><em>key</em><span class="optional">]</span><span class="optional">[</span>, <em>iterator</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.index_object.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over an index, counting the number of
+tuples which match the key-value.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</li>
+<li><code class="samp docutils literal"><em><span class="pre">key-value</span></em></code> (type = Lua table or scalar) =
+the value which must match the key(s) in the specified index. The type
+may be a list of field-values, or a tuple containing only the
+field-values;  <span class="ccodei">iterator</span> = comparison method.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the number of matching index keys.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">count</span><span class="p">(</span><span class="mi">999</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Alpha!&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="n">iterator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">LE&#39;</span> <span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-function.index_object.update">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">update</code><big>(</big><em>key</em>, <em>{{operator</em>, <em>field_no</em>, <em>value}</em>, <em>...}</em><big>)</big><a class="headerlink" href="#lua-function.index_object.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a tuple.</p>
+<p>Same as <a class="reference internal" href="box_space.html#box-space-update"><span class="std std-ref">box.space...update()</span></a>,
+but key is searched in this index instead of primary key.
+This index ought to be unique.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</li>
+<li><code class="samp docutils literal"><em><span class="pre">key</span></em></code> (type = Lua table or scalar) = key to be matched against
+the index key;</li>
+<li><code class="samp docutils literal"><em><span class="pre">operator,</span> <span class="pre">field_no,</span> <span class="pre">value</span></em></code> (type = Lua table) = update
+operations (see: <a class="reference internal" href="box_space.html#box-space-update"><span class="std std-ref">box.space...update()</span></a>).</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the updated tuple.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-function.index_object.delete">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">delete</code><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#lua-function.index_object.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a tuple identified by a key.</p>
+<p>Same as <a class="reference internal" href="box_space.html#box-space-delete"><span class="std std-ref">box.space...delete()</span></a>, but key is
+searched in this index instead of in the primary-key index. This index
+ought to be unique.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</li>
+<li><code class="samp docutils literal"><span class="pre">key</span></code> (type = Lua table or scalar) = key to be matched against
+the index key.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the deleted tuple.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<p>Note re storage engine: vinyl will return nil, rather than the deleted tuple.</p>
+</dd></dl>
+
+<span class="target" id="box-index-alter"></span><dl class="method">
+<dt id="lua-function.index_object.alter">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">alter</code><big>(</big><em>{options}</em><big>)</big><a class="headerlink" href="#lua-function.index_object.alter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alter an index.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</li>
+<li><code class="samp docutils literal"><em><span class="pre">options</span></em></code> = options list, same as the options list for
+<a class="reference internal" href="box_space.html#box-space-create-index"><span class="std std-ref">create_index</span></a>.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">nil</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: Index does not exist, or
+the first index cannot be changed to {unique = false}, or
+the alter function is only applicable for the memtx storage engine.</p>
+<p>Note re storage engine: vinyl does not support <code class="docutils literal"><span class="pre">alter()</span></code>.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">space55</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">alter</span><span class="p">({</span><span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">HASH&#39;</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-function.index_object.drop">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">drop</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.index_object.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drop an index. Dropping a primary-key index has
+a side effect: all tuples are deleted.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">nil.</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: Index does not exist, or a primary-key index cannot
+be dropped while a secondary-key index exists.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">space55</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">drop</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-function.index_object.rename">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">rename</code><big>(</big><em>index-name</em><big>)</big><a class="headerlink" href="#lua-function.index_object.rename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rename an index.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>;</li>
+<li><code class="samp docutils literal"><em><span class="pre">index-name</span></em></code> (type = string) = new name for index.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">nil</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: index_object does not exist.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">space55</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">secondary&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Complexity Factors: Index size, Index type, Number of tuples accessed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-function.index_object.bsize">
+<em class="property"> </em><code class="descclassname">index_object:</code><code class="descname">bsize</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.index_object.bsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the total number of bytes taken by the index.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">index_object</span></em></code> = an <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">object reference</span></a>.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">number of bytes</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="example-showing-use-of-the-box-functions">
+<h2>3.4.3.1. Example showing use of the box functions<a class="headerlink" href="#example-showing-use-of-the-box-functions" title="Permalink to this headline">¶</a></h2>
+<p>This example will work with the sandbox configuration described in the preface.
+That is, there is a space named tester with a numeric primary key. The example
+function will:</p>
+<ul>
+<li><p class="first">select a tuple whose key value is 1000;</p>
+</li>
+<li><p class="first">return an error if the tuple already exists and already has 3 fields;</p>
+</li>
+<li><dl class="first docutils">
+<dt>Insert or replace the tuple with:</dt>
+<dd><ul class="first last simple">
+<li>field[1] = 1000</li>
+<li>field[2] = a uuid</li>
+<li>field[3] = number of seconds since 1970-01-01;</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Get field[3] from what was replaced;</p>
+</li>
+<li><p class="first">Format the value from field[3] as yyyy-mm-dd hh:mm:ss.ffff;</p>
+</li>
+<li><p class="first">Return the formatted value.</p>
+</li>
+</ul>
+<p>The function uses Tarantool box functions
+<a class="reference internal" href="box_space.html#box-space-select"><span class="std std-ref">box.space...select</span></a>,
+<a class="reference internal" href="box_space.html#box-space-replace"><span class="std std-ref">box.space...replace</span></a>, <a class="reference internal" href="../../reference_lua/fiber.html#fiber-time"><span class="std std-ref">fiber.time</span></a>,
+<a class="reference internal" href="../../reference_lua/uuid.html#uuid-str"><span class="std std-ref">uuid.str</span></a>. The function uses
+Lua functions <a class="reference external" href="http://www.lua.org/pil/22.1.html">os.date()</a> and <a class="reference external" href="http://www.lua.org/pil/20.html">string.sub()</a>.</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">example</span><span class="p">()</span>
+  <span class="kd">local</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">table_of_selected_tuples</span><span class="p">,</span> <span class="n">d</span>
+  <span class="kd">local</span> <span class="n">replaced_tuple</span><span class="p">,</span> <span class="n">time_field</span>
+  <span class="kd">local</span> <span class="n">formatted_time_field</span>
+  <span class="kd">local</span> <span class="n">fiber</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">fiber&#39;</span><span class="p">)</span>
+  <span class="n">table_of_selected_tuples</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">1000</span><span class="p">}</span>
+  <span class="k">if</span> <span class="n">table_of_selected_tuples</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="k">then</span>
+    <span class="k">if</span> <span class="n">table_of_selected_tuples</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="k">then</span>
+      <span class="k">if</span> <span class="o">#</span><span class="n">table_of_selected_tuples</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">then</span>
+        <span class="n">box</span><span class="p">.</span><span class="n">error</span><span class="p">({</span><span class="n">code</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">This tuple already has 3 fields&#39;</span><span class="p">})</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="n">replaced_tuple</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">replace</span>
+    <span class="p">{</span><span class="mi">1000</span><span class="p">,</span>  <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">uuid&#39;</span><span class="p">).</span><span class="n">str</span><span class="p">(),</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">fiber</span><span class="p">.</span><span class="n">time</span><span class="p">())}</span>
+  <span class="n">time_field</span> <span class="o">=</span> <span class="nb">tonumber</span><span class="p">(</span><span class="n">replaced_tuple</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+  <span class="n">formatted_time_field</span> <span class="o">=</span> <span class="nb">os.date</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">%Y-%m-%d %H:%M:%S&quot;</span><span class="p">,</span> <span class="n">time_field</span><span class="p">)</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="n">time_field</span> <span class="o">%</span> <span class="mi">1</span>
+  <span class="n">d</span> <span class="o">=</span> <span class="nb">string.sub</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+  <span class="n">formatted_time_field</span> <span class="o">=</span> <span class="n">formatted_time_field</span> <span class="o">..</span> <span class="s1">&#39;</span><span class="s">.&#39;</span> <span class="o">..</span> <span class="n">d</span>
+  <span class="k">return</span> <span class="n">formatted_time_field</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>... And here is what happens when one invokes the function:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">delete</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">1000</span><span class="p p-Indicator">,</span> <span class="s">&#39;264ee2da03634f24972be76c43808254&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;1391037015.6809&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">example</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">2014-01-29 16:11:51.1582</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">example</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">error</span><span class="p p-Indicator">:</span> <span class="s">&#39;This</span><span class="nv"> </span><span class="s">tuple</span><span class="nv"> </span><span class="s">already</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">3</span><span class="nv"> </span><span class="s">fields&#39;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-showing-a-user-defined-iterator">
+<h2>3.4.3.2. Example showing a user-defined iterator<a class="headerlink" href="#example-showing-a-user-defined-iterator" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example that shows how to build one's own iterator.
+The <code class="docutils literal"><span class="pre">paged_iter</span></code> function is an &quot;iterator function&quot;, which will only be
+understood by programmers who have read the Lua
+manual section
+<a class="reference external" href="https://www.lua.org/pil/7.1.html">Iterators and Closures</a>.
+It does paginated retrievals, that is, it returns 10
+tuples at a time from a table named &quot;t&quot;, whose
+primary key was defined with
+<span class="ccode">create_index('primary',{parts={1,'string'}})</span>.</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">paged_iter</span><span class="p">(</span><span class="n">search_key</span><span class="p">,</span> <span class="n">tuples_per_page</span><span class="p">)</span>
+  <span class="kd">local</span> <span class="n">iterator_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">GE&quot;</span>
+  <span class="k">return</span> <span class="k">function</span> <span class="p">()</span>
+  <span class="kd">local</span> <span class="n">page</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">t</span><span class="p">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="nb">select</span><span class="p">(</span><span class="n">search_key</span><span class="p">,</span>
+    <span class="p">{</span><span class="n">iterator</span> <span class="o">=</span> <span class="n">iterator_string</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">tuples_per_page</span><span class="p">})</span>
+  <span class="k">if</span> <span class="o">#</span><span class="n">page</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">then</span> <span class="k">return</span> <span class="kc">nil</span> <span class="k">end</span>
+  <span class="n">search_key</span> <span class="o">=</span> <span class="n">page</span><span class="p">[</span><span class="o">#</span><span class="n">page</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">iterator_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">GT&quot;</span>
+  <span class="k">return</span> <span class="n">page</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Programmers who use <code class="docutils literal"><span class="pre">paged_iter</span></code> do not need to know
+why it works, they only need to know that, if they
+call it within a loop, they will get 10 tuples
+at a time until there are no more tuples. In this
+example the tuples are merely printed, a page at a time.
+But it should be simple to change the functionality,
+for example by yielding after each retrieval, or
+by breaking when the tuples fail to match some
+additional criteria.</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">page</span> <span class="k">in</span> <span class="n">paged_iter</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">X&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">do</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">New Page. Number Of Tuples = &quot;</span> <span class="o">..</span> <span class="o">#</span><span class="n">page</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="o">#</span><span class="n">page</span><span class="p">,</span><span class="mi">1</span> <span class="k">do</span> <span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="submodule-box-index-with-index-type-rtree-for-spatial-searches">
+<span id="box-index-rtree"></span><h2>3.4.3.3. Submodule <cite>box.index</cite> with index type = RTREE for spatial searches<a class="headerlink" href="#submodule-box-index-with-index-type-rtree-for-spatial-searches" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#box-index"><span class="std std-ref">box.index</span></a> submodule may be used for spatial searches if the index type
+is RTREE. There are operations for searching <em>rectangles</em> (geometric objects
+with 4 corners and 4 sides) and <em>boxes</em> (geometric objects with more than 4
+corners and more than 4 sides, sometimes called hyperrectangles). This manual
+uses the term <em>rectangle-or-box</em> for the whole class of objects that includes both
+rectangles and boxes. Only rectangles will be illustrated.</p>
+<p>Rectangles are described according to their X-axis (horizontal axis) and Y-axis
+(vertical axis) coordinates in a grid of arbitrary size. Here is a picture of
+four rectangles on a grid with 11 horizontal points and 11 vertical points:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>           <span class="n">X</span> <span class="n">AXIS</span>
+           <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span>   <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span>   <span class="mi">10</span>  <span class="mi">11</span>
+        <span class="mi">1</span>
+        <span class="mi">2</span>  <span class="c1">#-------+                                           &lt;-Rectangle#1</span>
+<span class="n">Y</span> <span class="n">AXIS</span>  <span class="mi">3</span>  <span class="o">|</span>       <span class="o">|</span>
+        <span class="mi">4</span>  <span class="o">+-------</span><span class="c1">#</span>
+        <span class="mi">5</span>          <span class="c1">#-----------------------+                   &lt;-Rectangle#2</span>
+        <span class="mi">6</span>          <span class="o">|</span>                       <span class="o">|</span>
+        <span class="mi">7</span>          <span class="o">|</span>   <span class="c1">#---+               |                   &lt;-Rectangle#3</span>
+        <span class="mi">8</span>          <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>               <span class="o">|</span>
+        <span class="mi">9</span>          <span class="o">|</span>   <span class="o">+---</span><span class="c1">#               |</span>
+        <span class="mi">10</span>         <span class="o">+-----------------------</span><span class="c1">#</span>
+        <span class="mi">11</span>                                     <span class="c1">#               &lt;-Rectangle#4</span>
+</pre></div>
+</div>
+<p>The rectangles are defined according to this scheme: {X-axis coordinate of top
+left, Y-axis coordinate of top left, X-axis coordinate of bottom right, Y-axis
+coordinate of bottom right} -- or more succinctly: {x1,y1,x2,y2}. So in the
+picture ... Rectangle#1 starts at position 1 on the X axis and position 2 on
+the Y axis, and ends at position 3 on the X axis and position 4 on the Y axis,
+so its coordinates are {1,2,3,4}. Rectangle#2's coordinates are {3,5,9,10}.
+Rectangle#3's coordinates are {4,7,5,9}. And finally Rectangle#4's coordinates
+are {10,11,10,11}. Rectangle#4 is actually a &quot;point&quot; since it has zero width
+and zero height, so it could have been described with only two digits: {10,11}.</p>
+<p>Some relationships between the rectangles are: &quot;Rectangle#1's nearest neighbor
+is Rectangle#2&quot;, and &quot;Rectangle#3 is entirely inside Rectangle#2&quot;.</p>
+<p>Now let us create a space and add an RTREE index.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">rectangles&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">HASH&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">unsigned&#39;</span><span class="p">}</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+<span class="gp">tarantool&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">rtree&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">RTREE&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">unique</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">ARRAY&#39;</span><span class="p">}</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Field#1 doesn't matter, we just make it because we need a primary-key index.
+(RTREE indexes cannot be unique and therefore cannot be primary-key indexes.)
+The second field must be an &quot;array&quot;, which means its values must represent
+{x,y} points or {x1,y1,x2,y2} rectangles. Now let us populate the table by
+inserting two tuples, containing the coordinates of Rectangle#2 and Rectangle#4.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">}}</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>And now, following the description of <a class="reference internal" href="#rtree-iterator">RTREE iterator types</a>, we can search the
+rectangles with these requests:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">r</span><span class="p">:</span><span class="nb">select</span><span class="p">({</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">},</span> <span class="p">{</span><span class="n">iterator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">EQ&#39;</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">[</span><span class="nv">10</span><span class="p p-Indicator">,</span> <span class="nv">11</span><span class="p p-Indicator">]]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">r</span><span class="p">:</span><span class="nb">select</span><span class="p">({</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">},</span> <span class="p">{</span><span class="n">iterator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">GT&#39;</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">[</span><span class="nv">3</span><span class="p p-Indicator">,</span> <span class="nv">5</span><span class="p p-Indicator">,</span> <span class="nv">9</span><span class="p p-Indicator">,</span> <span class="nv">10</span><span class="p p-Indicator">]]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">r</span><span class="p">:</span><span class="nb">select</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="n">iterator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">NEIGHBOR&#39;</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">[</span><span class="nv">3</span><span class="p p-Indicator">,</span> <span class="nv">5</span><span class="p p-Indicator">,</span> <span class="nv">9</span><span class="p p-Indicator">,</span> <span class="nv">10</span><span class="p p-Indicator">]]</span>
+  <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">[</span><span class="nv">10</span><span class="p p-Indicator">,</span> <span class="nv">11</span><span class="p p-Indicator">]]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Request#1 returns 1 tuple because the point {10,11} is the same as the rectangle
+{10,11,10,11} (&quot;Rectangle#4&quot; in the picture). Request#2 returns 1 tuple because
+the rectangle {4,7,5,9}, which was &quot;Rectangle#3&quot; in the picture, is entirely
+within{3,5,9,10} which was Rectangle#2. Request#3 returns 2 tuples, because the
+NEIGHBOR iterator always returns all tuples, and the first returned tuple will
+be {3,5,9,10} (&quot;Rectangle#2&quot; in the picture) because it is the closest neighbor
+of {1,2,3,4} (&quot;Rectangle#1&quot; in the picture).</p>
+<p>Now let us create a space and index for cuboids, which are rectangle-or-boxes that have
+6 corners and 6 sides.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">R&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">unsigned&#39;</span><span class="p">}})</span>
+<span class="gp">tarantool&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">S&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">RTREE&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">unique</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">dimension</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">ARRAY&#39;</span><span class="p">}</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+</pre></div>
+</div>
+<p>The additional field here is <code class="docutils literal"><span class="pre">dimension=3</span></code>. The default dimension is 2, which is
+why it didn't need to be specified for the examples of rectangle. The maximum dimension
+is 20. Now for insertions and selections there will usually be 6 coordinates. For example:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">}}</span>
+<span class="gp">tarantool&gt; </span><span class="n">r</span><span class="p">:</span><span class="nb">select</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="n">iterator</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">GT</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Now let us create a space and index for Manhattan-style spatial objects, which are rectangle-or-boxes that have
+a different way to calculate neighbors.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">R&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">unsigned&#39;</span><span class="p">}})</span>
+<span class="gp">tarantool&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">S&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">RTREE&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">unique</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">distance</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">manhattan&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">ARRAY&#39;</span><span class="p">}</span>
+<span class="gp">         &gt; </span><span class="p">})</span>
+</pre></div>
+</div>
+<p>The additional field here is <code class="docutils literal"><span class="pre">distance='manhattan'</span></code>.
+The default distance calculator is 'euclid', which is the straightforward as-the-crow-flies method.
+The optional distance calculator is 'manhattan', which can be a more appropriate method
+if one is following the lines of a grid rather than traveling in a straight line.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">}}</span>
+<span class="gp">tarantool&gt; </span><span class="n">r</span><span class="p">:</span><span class="nb">select</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="n">iterator</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">NEIGHBOR</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>More examples of spatial searching are online in the file <a class="reference external" href="https://github.com/tarantool/tarantool/wiki/R-tree-index-quick-start-and-usage">R tree index quick
+start and usage</a>.</p>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="box_space.html"
+           class="b-prev b-ellipsis"
+           title="3.4.2. Submodule &lt;cite&gt;box.space&lt;/cite&gt;">3.4.2. Submodule <cite>box.space</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../_sources/book/box/box_index.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="box_session.html"
+           class="b-next b-ellipsis"
+           title="3.4.4. Submodule &lt;cite&gt;box.session&lt;/cite&gt;">3.4.4. Submodule <cite>box.session</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

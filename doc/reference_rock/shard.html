@@ -1,0 +1,589 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Module shard</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Module shard">
+        Module shard
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_rock/shard.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_rock/shard.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_rock/shard">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Lua reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Lua rocks reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dbms.html">SQL DBMS Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expirationd.html">Module <cite>expirationd</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module <cite>shard</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tdb.html">Module <cite>tdb</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Lua rocks reference
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Module <cite>shard</cite>" class="b-path_current b-ellipsis">
+          Module <cite>shard</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="lua-module.shard">
+<span id="module-shard"></span><span id="shard-module"></span><h1>Module <cite>shard</cite><a class="headerlink" href="#lua-module.shard" title="Permalink to this headline">¶</a></h1>
+<p>With sharding, the tuples of a tuple set are distributed to multiple nodes,
+with a Tarantool database server on each node. With this arrangement,
+each server is handling only a subset of the total data,
+so larger loads can be handled by simply adding more computers to a network.</p>
+<p>The Tarantool shard module has facilities for creating shards,
+as well as analogues for the data-manipulation functions of the box library
+(select, insert, replace, update, delete).</p>
+<p>First some terminology:</p>
+<dl class="glossary docutils">
+<dt id="term-consistent-hash"><strong>Consistent Hash</strong></dt>
+<dd>The shard module distributes according to a hash algorithm, that is,
+it applies a hash function to a tuple's primary-key value in order to
+decide which shard the tuple belongs to. The hash function is <a class="reference external" href="https://en.wikipedia.org/wiki/Consistent_hashing">consistent</a>
+so that changing the number of servers will not affect results for many
+keys. The specific hash function that the shard module uses is
+<a class="reference internal" href="../reference_lua/digest.html#digest-guava"><span class="std std-ref">digest.guava</span></a> in the <span class="ccodei">digest</span> module.</dd>
+<dt id="term-queue"><strong>Queue</strong></dt>
+<dd>A temporary list of recent update requests. Sometimes called &quot;batching&quot;.
+Since updates to a sharded database can be slow, it may speed up
+throughput to send requests to a queue rather than wait for the update
+to finish on ever node. The shard module has functions for adding
+requests to the queue, which it will process without further intervention.
+Queuing is optional.</dd>
+<dt id="term-redundancy"><strong>Redundancy</strong></dt>
+<dd>The number of replicas in each shard.</dd>
+<dt id="term-replica"><strong>Replica</strong></dt>
+<dd>A complete copy of the data. The shard module handles both sharding
+and replication. One shard can contain one or more replicas.
+When a write occurs, the write is attempted on every replica in turn.
+The shard module does not use the built-in replication feature.</dd>
+<dt id="term-shard"><strong>Shard</strong></dt>
+<dd>A subset of the tuples in the database partitioned according to the
+value returned by the consistent hash function. Usually each shard
+is on a separate node, or a separate set of nodes (for example if
+redundancy = 3 then the shard will be on three nodes).</dd>
+<dt id="term-zone"><strong>Zone</strong></dt>
+<dd>A physical location where the nodes are closely connected, with
+the same security and backup and access points. The simplest example
+of a zone is a single computer with a single tarantool-server instance.
+A shard's replicas should be in different zones.</dd>
+</dl>
+<p>The shard package is distributed separately from the main tarantool package.
+To acquire it, do a separate install. For example on Ubuntu say:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install tarantool-shard tarantool-pool
+</pre></div>
+</div>
+<p>Or, download from github tarantool/shard and compile as described in the README.
+Then, before using the module, say <code class="docutils literal"><span class="pre">shard</span> <span class="pre">=</span> <span class="pre">require('shard')</span></code></p>
+<p>The most important function is:</p>
+<pre class="highlight literal-block">
+shard.init(<em>shard-configuration</em>)
+</pre>
+<p>This must be called for every shard.
+The shard-configuration is a table with these fields:</p>
+<ul class="simple">
+<li>servers (a list of URIs of nodes and the zones the nodes are in)</li>
+<li>login (the user name which applies for accessing via the shard module)</li>
+<li>password (the password for the login)</li>
+<li>redundancy (a number, minimum 1)</li>
+<li>binary (a port number that this host is listening on, on the current host)
+(distinguishable from the 'listen' port specified by box.cfg)</li>
+</ul>
+<p>Possible Errors: Redundancy should not be greater than the number of servers;
+the servers must be alive; two replicas of the same shard should not be in the
+same zone.</p>
+<div class="section" id="example-shard-init-syntax-for-one-shard">
+<h2>Example: shard.init syntax for one shard<a class="headerlink" href="#example-shard-init-syntax-for-one-shard" title="Permalink to this headline">¶</a></h2>
+<p>The number of replicas per shard (redundancy) is 3.
+The number of servers is 3.
+The shard module will conclude that there is only one shard.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">cfg</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">servers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">localhost:33131&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">1&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">localhost:33132&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">2&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">localhost:33133&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">3&#39;</span> <span class="p">}</span>
+<span class="gp">         &gt; </span>  <span class="p">},</span>
+<span class="gp">         &gt; </span>  <span class="n">login</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">pass&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">redundancy</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">3&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">binary</span> <span class="o">=</span> <span class="mi">33131</span><span class="p">,</span>
+<span class="gp">         &gt; </span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-shard-init-syntax-for-three-shards">
+<h2>Example: shard.init syntax for three shards<a class="headerlink" href="#example-shard-init-syntax-for-three-shards" title="Permalink to this headline">¶</a></h2>
+<p>This describes three shards. Each shard has two replicas. Since the number of
+servers is 7, and the number of replicas per shard is 2, and dividing 7 / 2
+leaves a remainder of 1, one of the servers will not be used. This is not
+necessarily an error, because perhaps one of the servers in the list is not alive.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">cfg</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">servers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">host1:33131&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">1&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">host2:33131&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">2&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">host3:33131&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">3&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">host4:33131&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">4&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">host5:33131&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">5&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">host6:33131&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">6&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">host7:33131&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">7&#39;</span> <span class="p">}</span>
+<span class="gp">         &gt; </span>  <span class="p">},</span>
+<span class="gp">         &gt; </span>  <span class="n">login</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">pass&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">redundancy</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">2&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">binary</span> <span class="o">=</span> <span class="mi">33131</span><span class="p">,</span>
+<span class="gp">         &gt; </span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<pre class="highlight literal-block">
+shard[<em>space-name</em>].insert{...}
+shard[<em>space-name</em>].replace{...}
+shard[<em>space-name</em>].delete{...}
+shard[<em>space-name</em>].select{...}
+shard[<em>space-name</em>].update{...}
+shard[<em>space-name</em>].auto_increment{...}
+</pre>
+<p>Every data-access function in the box module has an analogue in the shard
+module, so (for example) to insert in table T in a sharded database one simply
+says <code class="docutils literal"><span class="pre">shard.T:insert{...}</span></code> instead of <code class="docutils literal"><span class="pre">box.space.T:insert{...}</span></code>.
+A <code class="docutils literal"><span class="pre">shard.T:select{}</span></code> request without a primary key will search all shards.</p>
+<pre class="highlight literal-block">
+shard[<em>space-name</em>].q_insert{...}
+shard[<em>space-name</em>].q_replace{...}
+shard[<em>space-name</em>].q_delete{...}
+shard[<em>space-name</em>].q_select{...}
+shard[<em>space-name</em>].q_update{...}
+shard[<em>space-name</em>].q_auto_increment{...}
+</pre>
+<p>Every queued data-access function has an analogue in the shard module. The user
+must add an operation_id. The details of queued data-access functions, and of
+maintenance-related functions, are on <a class="reference external" href="https://github.com/tarantool/shard">the shard section of github</a>.</p>
+</div>
+<div class="section" id="example-shard-minimal-configuration">
+<h2>Example: Shard, Minimal Configuration<a class="headerlink" href="#example-shard-minimal-configuration" title="Permalink to this headline">¶</a></h2>
+<p>There is only one shard, and that shard contains only one replica. So this isn't
+illustrating the features of either replication or sharding, it's only
+illustrating what the syntax is, and what the messages look like, that anyone
+could duplicate in a minute or two with the magic of cut-and-paste.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">$</span> mkdir ~/tarantool_sandbox_1
+<span class="gp">$</span> <span class="nb">cd</span> ~/tarantool_sandbox_1
+<span class="gp">$</span> rm -r *.snap
+<span class="gp">$</span> rm -r *.xlog
+<span class="gp">$</span> ~/tarantool-1.7/src/tarantool
+
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{})</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">passwd</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">admin&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">password&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">cfg</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">servers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>      <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">localhost:3301&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">1&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>  <span class="p">},</span>
+<span class="gp">         &gt; </span>  <span class="n">login</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">admin&#39;</span><span class="p">;</span>
+<span class="gp">         &gt; </span>  <span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">password&#39;</span><span class="p">;</span>
+<span class="gp">         &gt; </span>  <span class="n">redundancy</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="gp">         &gt; </span>  <span class="n">binary</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">;</span>
+<span class="gp">         &gt; </span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">shard&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="c1">-- Now put something in ...</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">Tuple #1&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If one cuts and pastes the above, then the result,
+showing only the requests and responses for shard.init
+and shard.tester, should look approximately like this:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+<span class="go">2015-08-09 ... I&gt; Sharding initialization started...</span>
+<span class="go">2015-08-09 ... I&gt; establishing connection to cluster servers...</span>
+<span class="go">2015-08-09 ... I&gt;  - localhost:3301 - connecting...</span>
+<span class="go">2015-08-09 ... I&gt;  - localhost:3301 - connected</span>
+<span class="go">2015-08-09 ... I&gt; connected to all servers</span>
+<span class="go">2015-08-09 ... I&gt; started</span>
+<span class="go">2015-08-09 ... I&gt; redundancy = 1</span>
+<span class="go">2015-08-09 ... I&gt; Zone len=1 THERE</span>
+<span class="go">2015-08-09 ... I&gt; Adding localhost:3301 to shard 1</span>
+<span class="go">2015-08-09 ... I&gt; Zone len=1 THERE</span>
+<span class="go">2015-08-09 ... I&gt; shards = 1</span>
+<span class="go">2015-08-09 ... I&gt; Done</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="c1">-- Now put something in ...</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">Tuple #1&#39;</span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;Tuple</span><span class="nv"> </span><span class="s">#1&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-shard-scaling-out">
+<h2>Example: Shard, Scaling Out<a class="headerlink" href="#example-shard-scaling-out" title="Permalink to this headline">¶</a></h2>
+<p>There are two shards, and each shard contains one replica. This requires two
+nodes. In real life the two nodes would be two computers, but for this
+illustration the requirement is merely: start two shells, which we'll call
+Terminal#1 and Terminal #2.</p>
+<p>On Terminal #1, say:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">$</span> mkdir ~/tarantool_sandbox_1
+<span class="gp">$</span> <span class="nb">cd</span> ~/tarantool_sandbox_1
+<span class="gp">$</span> rm -r *.snap
+<span class="gp">$</span> rm -r *.xlog
+<span class="gp">$</span> ~/tarantool-1.7/src/tarantool
+
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{})</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">passwd</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">admin&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">password&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">console</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">console&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">cfg</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">servers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">localhost:3301&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">1&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">localhost:3302&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">2&#39;</span> <span class="p">},</span>
+<span class="gp">         &gt; </span>  <span class="p">},</span>
+<span class="gp">         &gt; </span>  <span class="n">login</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">admin&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">password&#39;</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">redundancy</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="gp">         &gt; </span>  <span class="n">binary</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">,</span>
+<span class="gp">         &gt; </span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">shard&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="c1">-- Now put something in ...</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">Tuple #1&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>On Terminal #2, say:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">$</span> mkdir ~/tarantool_sandbox_2
+<span class="gp">$</span> <span class="nb">cd</span> ~/tarantool_sandbox_2
+<span class="gp">$</span> rm -r *.snap
+<span class="gp">$</span> rm -r *.xlog
+<span class="gp">$</span> ~/tarantool-1.7/src/tarantool
+
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span> <span class="o">=</span> <span class="mi">3302</span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{})</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">passwd</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">admin&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">password&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">console</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">console&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">cfg</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">servers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">localhost:3301&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">1&#39;</span> <span class="p">};</span>
+<span class="gp">         &gt; </span>    <span class="p">{</span> <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">localhost:3302&#39;</span><span class="p">,</span> <span class="n">zone</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">2&#39;</span> <span class="p">};</span>
+<span class="gp">         &gt; </span>  <span class="p">};</span>
+<span class="gp">         &gt; </span>  <span class="n">login</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">admin&#39;</span><span class="p">;</span>
+<span class="gp">         &gt; </span>  <span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">password&#39;</span><span class="p">;</span>
+<span class="gp">         &gt; </span>  <span class="n">redundancy</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="gp">         &gt; </span>  <span class="n">binary</span> <span class="o">=</span> <span class="mi">3302</span><span class="p">;</span>
+<span class="gp">         &gt; </span><span class="p">}</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">shard&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="c1">-- Now get something out ...</span>
+<span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>What will appear on Terminal #1 is: a loop of error messages saying &quot;Connection
+refused&quot; and &quot;server check failure&quot;. This is normal. It will go on until
+Terminal #2 process starts.</p>
+<p>What will appear on Terminal #2, at the end, should look like this:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">shard</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;Tuple</span><span class="nv"> </span><span class="s">#1&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>This shows that what was inserted by Terminal #1 can be selected by Terminal #2,
+via the shard module.</p>
+<p>Details are on <a class="reference external" href="https://github.com/tarantool/shard">the shard section of github</a>.</p>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="expirationd.html"
+           class="b-prev b-ellipsis"
+           title="Module &lt;cite&gt;expirationd&lt;/cite&gt;">Module <cite>expirationd</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_rock/shard.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="tdb.html"
+           class="b-next b-ellipsis"
+           title="Module &lt;cite&gt;tdb&lt;/cite&gt;">Module <cite>tdb</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

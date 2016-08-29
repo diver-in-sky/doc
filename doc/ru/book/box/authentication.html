@@ -1,0 +1,743 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>3.4.9. Ограничение доступа</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="3.4.9. Ограничение доступа">
+        3.4.9. Ограничение доступа
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../book/box/authentication.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../ru/book/box/authentication.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/box/authentication">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Руководство пользователя</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">1. Предисловие</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide_getting_started.html">2. Начало работы</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">3. Функционал СУБД</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../replication/index.html">4. Репликация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">5. Справочник по конфигурированию</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administration.html">6. Администрирование серверной части</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors/index.html">7. Коннекторы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules.html">8. Модули</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/a_errcodes.html">9. Приложение A. Коды ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/b_internals.html">10. Приложение B. Детали реализации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/c_lua_tutorial.html">11. Приложение C. Учебные примеры на языке Lua</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Руководство пользователя
+          </a>
+        </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            3. Функционал СУБД
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="3.4.9. Ограничение доступа" class="b-path_current b-ellipsis">
+          3.4.9. Ограничение доступа
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="access-control">
+<span id="authentication"></span><h1>3.4.9. Ограничение доступа<a class="headerlink" href="#access-control" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Understanding the details of security is primarily an issue for administrators,
+but ordinary users should at least skim this section so that they will have an
+idea of how Tarantool makes it possible for administrators to prevent
+unauthorized access to the database and to certain functions.</p>
+<p>Briefly: there is a method to guarantee with password checks that users really
+are who they say they are (&quot;authentication&quot;). There is a _user space where user
+names and password-hashes are stored. There are functions for saying that
+certain users are allowed to do certain things (&quot;privileges&quot;). There is a _priv
+space where privileges are stored. Whenever a user tries to do an operation,
+there is a check whether the user has the privilege to do the operation
+(&quot;access control&quot;).</p>
+<div class="section" id="passwords">
+<h2>3.4.9.1. Passwords<a class="headerlink" href="#passwords" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Each user may have a password. The password is any alphanumeric string.
+Administrators should advise users to choose long unobvious passwords, but it
+is ultimately up to the users to choose or change their own passwords.</p>
+<p>Tarantool passwords are stored in the _user space with a <a class="reference external" href="https://en.wikipedia.org/wiki/Cryptographic_hash">Cryptographic hash function</a>
+so that, if the password is 'x', the stored hashed-password is a long string
+like '<code class="docutils literal"><span class="pre">lL3OvhkIPOKh+Vn9Avlkx69M/Ck=</span></code>'. When a client connects to a Tarantool
+server, the server sends a random <a class="reference external" href="https://en.wikipedia.org/wiki/Salt_%28cryptography%29">Salt Value</a> which the client must mix with the
+hashed-password before sending to the server. Thus the original value 'x' is
+never stored anywhere except in the user's head, and the hashed value is never
+passed down a network wire except when mixed with a random salt. This system
+prevents malicious onlookers from finding passwords by snooping in the log
+files or snooping on the wire. It is the same system that <a class="reference external" href="http://dev.mysql.com/doc/refman/4.1/en/password-hashing.html">MySQL introduced
+several years ago</a> which has proved adequate for medium-security installations.
+Nevertheless administrators should warn users that no system is foolproof against
+determined long-term attacks, so passwords should be guarded and changed occasionally.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">To get the hash-password of a string 'X', say
+<code class="docutils literal"><span class="pre">box.schema.user.password('X')</span></code>. To see more about the details of the
+algorithm for the purpose of writing a new client application, read the
+<a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/scramble.h">scramble.h</a> header file.</p>
+</div>
+</div>
+<div class="section" id="users-and-the-user-space">
+<span id="authentication-users"></span><h2>3.4.9.2. Users and the _user space<a class="headerlink" href="#users-and-the-user-space" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The fields in the _user space are:</p>
+<ul class="simple">
+<li>the numeric id of the tuple</li>
+<li>the numeric id of the tuple's creator</li>
+<li>the user name</li>
+<li>the type</li>
+<li>optional password</li>
+</ul>
+<p>There are four special tuples in the _user space: 'guest', 'admin', 'public', and 'replication'.</p>
+<div class="table container">
+<table border="1" class="left-align-column-1 right-align-column-2 left-align-column-3 left-align-column-4 docutils">
+<colgroup>
+<col width="16%" />
+<col width="5%" />
+<col width="8%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">ID</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>guest</td>
+<td>0</td>
+<td>user</td>
+<td>Default when connecting remotely. Usually an untrusted
+user with few privileges.</td>
+</tr>
+<tr class="row-odd"><td>admin</td>
+<td>1</td>
+<td>user</td>
+<td>Default when using <code class="docutils literal"><span class="pre">tarantool</span></code> as a console. Usually
+an administrative user with all privileges.</td>
+</tr>
+<tr class="row-even"><td>public</td>
+<td>2</td>
+<td>role</td>
+<td>Not a user in the usual sense. Described later in
+section <a class="reference internal" href="#roles">Roles</a>.</td>
+</tr>
+<tr class="row-odd"><td>replication</td>
+<td>3</td>
+<td>role</td>
+<td>Not a user in the usual sense. Described later in
+section <a class="reference internal" href="#roles">Roles</a>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>To select a row from the _user space, use <code class="docutils literal"><span class="pre">box.space._user:select</span></code>. For
+example, here is what happens with a select for user id = 0, which is the
+'guest' user, which by default has no password:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">_user</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span> <span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;guest&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;user&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>To change tuples in the _user space, do not use ordinary <code class="docutils literal"><span class="pre">box.space</span></code>
+functions for insert or update or delete - the _user space is special so
+there are special functions which have appropriate error checking.</p>
+<p>To create a new user, say:</p>
+<pre class="highlight literal-block">
+box.schema.user.create(<em>user-name</em>)
+box.schema.user.create(<em>user-name</em>, {if_not_exists = true})
+box.schema.user.create(<em>user-name</em>, {password = <em>password</em>}).
+</pre>
+<p>The <code class="samp docutils literal"><span class="pre">password=</span><em><span class="pre">password</span></em></code> specification is good because in a <a class="reference internal" href="../configuration/index.html#index-uri"><span class="std std-ref">URI</span></a> (Uniform Resource Identifier) it is
+usually illegal to include a user-name without a password.</p>
+<p>To change the user's password, say:</p>
+<pre class="highlight literal-block">
+-- To change the current user's password
+box.schema.user.passwd(<em>password</em>)
+
+-- To change a different user's password
+box.schema.user.passwd(<em>user-name</em>, <em>password</em>)
+</pre>
+<p>(Usually it is only the admin user who can change a different user's password.)</p>
+<p>To drop a user, say:</p>
+<pre class="highlight literal-block">
+box.schema.user.drop(<em>user-name</em>).
+</pre>
+<p>To check whether a user exists, say:</p>
+<pre class="highlight literal-block">
+box.schema.user.exists(<em>user-name</em>)
+</pre>
+<p>which returns true or false.</p>
+<p>To find what privileges a user has, say:</p>
+<pre class="highlight literal-block">
+box.schema.user.info(<em>user-name</em>)
+</pre>
+<p><strong>Example:</strong></p>
+<p>Here is a session which creates a new user with a strong password, selects a
+tuple in the _user space, and then drops the user.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">JeanMartin&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">Iwtso_6_os$$&#39;</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">_user</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">name</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="s1">&#39;</span><span class="s">JeanMartin&#39;</span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">17</span><span class="p p-Indicator">,</span> <span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;JeanMartin&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;user&#39;</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">{</span><span class="s">&#39;chap-sha1&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;t3xjUpQdrt857O+YRvGbMY5py8Q=&#39;</span><span class="p p-Indicator">}]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">JeanMartin&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">The maximum number of users is 32.</p>
+</div>
+</div>
+<div class="section" id="privileges-and-the-priv-space">
+<span id="authentication-privileges"></span><h2>3.4.9.3. Privileges and the _priv space<a class="headerlink" href="#privileges-and-the-priv-space" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The fields in the _priv space are:</p>
+<ul class="simple">
+<li>the numeric id of the user who gave the privilege (&quot;grantor_id&quot;),</li>
+<li>the numeric id of the user who received the privilege (&quot;grantee_id&quot;),</li>
+<li>the type of object - &quot;space&quot; or &quot;function&quot; or &quot;universe&quot;,</li>
+<li>the numeric id of the object,</li>
+<li>the type of operation - &quot;read&quot; = 1, or &quot;write&quot; = 2, or &quot;execute&quot; = 4, or a
+combination such as &quot;read,write,execute&quot;.</li>
+</ul>
+<p>The function for granting a privilege is:</p>
+<pre class="highlight literal-block">
+box.schema.user.grant(<em>grantee</em>, <em>operation</em>, <em>object-type</em>, <em>object-name*[, *options</em>])
+-- OR
+box.schema.user.grant(<em>grantee</em>, <em>operation</em>, 'universe' [, nil, <em>options</em>])
+</pre>
+<p>where 'universe' means 'all objects', and the optional grant-option can be:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><span class="pre">grantor=</span><em><span class="pre">grantor_name_or_id</span></em></code> - string or number, for custom grantor</li>
+<li><code class="samp docutils literal"><span class="pre">if_not_exists=true|false</span></code> - bool, do not throw error if user already has the privilege</li>
+</ul>
+<p>The function for revoking a privilege is:</p>
+<pre class="highlight literal-block">
+box.schema.user.revoke(<em>grantee</em>, <em>operation</em>, <em>object-type</em>, <em>object-name*[, *options</em>])
+box.schema.user.revoke(<em>grantee</em>, <em>operation</em>, 'universe'[, nil, <em>options</em>])
+</pre>
+<p>where 'universe' means 'all objects', and the optional grant-option can be:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><span class="pre">if_not_exists=true|false</span></code> - bool, do not throw error if user already lacks the privilege</li>
+</ul>
+<p>For example, here is a session where the admin user gave the guest user the
+privilege to read from a space named <code class="docutils literal"><span class="pre">space55</span></code>, and then took the privilege away:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">guest&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space55&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">guest&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space55&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Generally privileges are granted or revoked by the owner of the object
+(the user who created it), or by the 'admin' user.
+Before dropping any objects or users, steps should be taken to ensure
+that all their associated privileges have been revoked.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Only the 'admin' user can grant privileges for the 'universe'.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Only the creator of a space can drop, alter, or truncate the space.
+Only the creator of a user can change a different user's password.</p>
+</div>
+</div>
+<div class="section" id="functions-and-the-func-space">
+<span id="authentication-funcs"></span><h2>3.4.9.4. Functions and the _func space<a class="headerlink" href="#functions-and-the-func-space" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The fields in the _func space are:</p>
+<ul class="simple">
+<li>the numeric function id, a number,</li>
+<li>the function name</li>
+<li>flag</li>
+<li>possibly a language name.</li>
+</ul>
+<p>The _func space does not include the function's body. One continues to
+create Lua functions in the usual way, by saying
+&quot;<code class="samp docutils literal"><span class="pre">function</span> <em><span class="pre">function_name</span></em> <span class="pre">()</span> <span class="pre">...</span> <span class="pre">end</span></code>&quot;, without adding anything in the
+_func space. The _func space only exists for storing function tuples so
+that their names can be used within grant/revoke functions.</p>
+<p>The function for creating a _func tuple is:</p>
+<pre class="highlight literal-block">
+box.schema.func.create(<em>function-name</em> [, <em>options</em>])
+</pre>
+<p>The possible options are:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><span class="pre">if_not_exists</span> <span class="pre">=</span> <em><span class="pre">true|false</span></em></code> - default = false,</li>
+<li><code class="samp docutils literal"><span class="pre">setuid</span> <span class="pre">=</span> <em><span class="pre">true|false</span></em></code> - default = false,</li>
+<li><code class="samp docutils literal"><span class="pre">language</span> <span class="pre">=</span> <em><span class="pre">'LUA'|'C'</span></em></code> - default = 'LUA'.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">func</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">f&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">C&#39;</span><span class="p">,</span> <span class="n">setuid</span> <span class="o">=</span> <span class="kc">false</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Specifying <code class="code docutils literal"><span class="pre">if_not_exists=false</span></code> would cause <code class="docutils literal"><span class="pre">error:</span> <span class="pre">Function</span> <span class="pre">'...'</span> <span class="pre">already</span>
+<span class="pre">exists</span></code> if the _func tuple already exists.</p>
+<p>Specifying <code class="code docutils literal"><span class="pre">setuid=true</span></code> would cause the setuid flag (the fourth field in
+the _func tuple) to have a value meaning &quot;true&quot;, and the effect of that is that
+the function's caller is treated as the function's creator, with full privileges.
+The setuid behavior does not apply for users who connect via <code class="code docutils literal"><span class="pre">console.connect</span></code>.</p>
+<p>Specifying <code class="code docutils literal"><span class="pre">language='C'</span></code> would cause the language field (the fifth field
+in the _func tuple) to have a value 'C', which means the function was written in
+C. Tarantool functions are normally written in Lua but can be written in C as well.</p>
+<p>The function for dropping a _func tuple is:</p>
+<pre class="highlight literal-block">
+box.schema.func.drop(<em>function-name</em>)
+</pre>
+<p>The function for checking whether a _func tuple exists is:</p>
+<pre class="highlight literal-block">
+box.schema.func.exists(<em>function-name</em>)
+</pre>
+<p>In the following example, a function named 'f7' is created, then it is put in
+the _func space, then it is used in a <code class="docutils literal"><span class="pre">box.schema.user.grant</span></code> function,
+then it is dropped:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">f7</span><span class="p">()</span>
+<span class="gp">         &gt; </span>  <span class="n">box</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">uid</span><span class="p">()</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">func</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">f7&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">guest&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">function&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">f7&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">revoke</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">guest&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">function&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">f7&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">func</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">f7&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="box-session-and-security">
+<h2>3.4.9.5. <code class="docutils literal"><span class="pre">box.session</span></code> and security<a class="headerlink" href="#box-session-and-security" title="Ссылка на этот заголовок">¶</a></h2>
+<p>After a connection has taken place, the user has access to a &quot;session&quot; object
+which has several functions. The ones which are of interest for security
+purposes are:</p>
+<pre class="highlight literal-block">
+box.session.uid()         -- returns the id of the current user
+box.session.user()        -- returns the name of the current user
+box.session.su(<em>user-name</em>) -- allows changing current user to 'user-name'
+</pre>
+<p>If a user types requests directly on the Tarantool server in its
+<a class="reference internal" href="../administration.html#administration-using-tarantool-as-a-client"><span class="std std-ref">interactive mode</span></a>,
+or if a user connects to the <a class="reference internal" href="../administration.html#administration-admin-ports"><span class="std std-ref">admin port</span></a>,
+then the user by default is 'admin' and has many privileges.
+If a user connects from an application program via one of the <a class="reference internal" href="../connectors/index.html#index-box-connectors"><span class="std std-ref">connectors</span></a>, then
+the user by default is 'guest' and has few privileges. Typically an admin user
+will set up and configure objects, then grant privileges to appropriate non-admin
+users. Typically a guest user will use <code class="docutils literal"><span class="pre">box.session.su()</span></code> to change into a non-generic
+user to whom admin has granted more than the default privileges. For example,
+admin might say:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">_user</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">123456</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">manager&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">user&#39;</span><span class="p">}</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">manager&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">_space&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">manager&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">payroll&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and later a guest user, who wishes to see the payroll, might say:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">su</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">manager&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">payroll</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="s1">&#39;</span><span class="s">Jones&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="roles">
+<span id="authentication-roles"></span><h2>3.4.9.6. Roles<a class="headerlink" href="#roles" title="Ссылка на этот заголовок">¶</a></h2>
+<p>A role is a container for privileges which can be granted to regular users.
+Instead of granting and revoking individual privileges, one can put all the
+privileges in a role and then grant or revoke the role. Role information is
+in the _user space but the third field - the type field - is 'role' rather
+than 'user'.</p>
+<p id="authentication-rep-role">If a role R1 is granted a privilege X, and user U1 is granted a privilege
+&quot;role R1&quot;, then user U1 in effect has privilege X. Then if a role R2 is
+granted a privilege Y, and role R1 is granted a privilege &quot;role R2&quot;,
+then user U1 in effect has both privilege X and privilege Y. In other words,
+a user gets all the privileges that are granted to a user's roles, directly
+or indirectly.</p>
+<span class="target" id="lua-module.box.schema.role"></span><dl class="function">
+<dt id="lua-функция.box.schema.role.create">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">create</code><big>(</big><em>role-name</em><span class="optional">[</span>, <em>{if_not_exists=true}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.box.schema.role.create" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Create a new role.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.box.schema.role.grant">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">grant</code><big>(</big><em>role-name</em>, <em>privilege</em><big>)</big><a class="headerlink" href="#lua-функция.box.schema.role.grant" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Put a privilege in a role.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.box.schema.role.revoke">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">revoke</code><big>(</big><em>role-name</em>, <em>privilege</em><big>)</big><a class="headerlink" href="#lua-функция.box.schema.role.revoke" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Take a privilege out of a role.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.box.schema.role.drop">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">drop</code><big>(</big><em>role-name</em><big>)</big><a class="headerlink" href="#lua-функция.box.schema.role.drop" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Drop a role.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">grant</code><big>(</big><em>role-name</em>, <em>'execute'</em>, <em>'role'</em>, <em>role-name</em><big>)</big></dt>
+<dd><p>Grant a role to a role.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">revoke</code><big>(</big><em>role-name</em>, <em>'execute'</em>, <em>'role'</em>, <em>role-name</em><big>)</big></dt>
+<dd><p>Revoke a role from a role.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.box.schema.role.exists">
+<em class="property"> </em><code class="descclassname">box.schema.role.</code><code class="descname">exists</code><big>(</big><em>role-name</em><big>)</big><a class="headerlink" href="#lua-функция.box.schema.role.exists" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Check whether a role exists.
+Returns (type = boolean) true if role-name identifies a role, otherwise false.</p>
+</dd></dl>
+
+<span class="target" id="lua-module.box.schema.user"></span><dl class="function">
+<dt id="lua-функция.box.schema.user.grant">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">grant</code><big>(</big><em>user-name</em>, <em>'execute'</em>, <em>'role'</em>, <em>role-name</em><big>)</big><a class="headerlink" href="#lua-функция.box.schema.user.grant" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Grant a role to a user.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.box.schema.user.revoke">
+<em class="property"> </em><code class="descclassname">box.schema.user.</code><code class="descname">revoke</code><big>(</big><em>user-name</em>, <em>'execute'</em>, <em>'role'</em>, <em>role-name</em><big>)</big><a class="headerlink" href="#lua-функция.box.schema.user.revoke" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Revoke a role from a user.</p>
+</dd></dl>
+
+<p>There are two predefined roles. The first predefined role, named 'public', is
+automatically assigned to new users when they are created with
+<code class="samp docutils literal"><span class="pre">box.schema.user.create(</span><em><span class="pre">user-name</span></em><span class="pre">)</span></code> - Therefore a convenient way to
+grant 'read' on space 't' to every user that will ever exist is:
+<code class="code docutils literal"><span class="pre">box.schema.role.grant('public','read','space','t')</span></code>. The second
+predefined role, named 'replication', can be assigned by the 'admin' user to
+users who need to use replication features.</p>
+</div>
+<div class="section" id="example-showing-a-role-within-a-role">
+<h2>3.4.9.7. Example showing a role within a role<a class="headerlink" href="#example-showing-a-role-within-a-role" title="Ссылка на этот заголовок">¶</a></h2>
+<p>In this example, a new user named U1 will insert a new tuple into a new space
+named T, and will succeed even though user U1 has no direct privilege to do
+such an insert -- that privilege is inherited from role R1, which in turn
+inherits from role R2.</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- This example will work for a user with many privileges, such as &#39;admin&#39;</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">T&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">T</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{})</span>
+<span class="c1">-- Create a user U1 so that later it&#39;s possible to say box.session.su(&#39;U1&#39;)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">U1&#39;</span><span class="p">)</span>
+<span class="c1">-- Create two roles, R1 and R2</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">R1&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">R2&#39;</span><span class="p">)</span>
+<span class="c1">-- Grant role R2 to role R1 and role R1 to U1 (order doesn&#39;t matter)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">R1&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">role&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">R2&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">U1&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">role&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">R1&#39;</span><span class="p">)</span>
+<span class="c1">-- Grant read and execute privileges to R2 (but not to R1 and not to U1)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">R2&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">read,write&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">space&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">T&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">role</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">R2&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">execute&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">universe&#39;</span><span class="p">)</span>
+<span class="c1">-- Use box.session.su to say &quot;now become user U1&quot;</span>
+<span class="n">box</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">su</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">U1&#39;</span><span class="p">)</span>
+<span class="c1">-- Next insert succeeds because U1 in effect has write privilege on T</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">T</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="atomic.html"
+           class="b-prev b-ellipsis"
+           title="3.4.8. Атомарные операции">3.4.8. Атомарные операции</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../_sources/book/box/authentication.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="triggers.html"
+           class="b-next b-ellipsis"
+           title="3.4.10. Триггеры">3.4.10. Триггеры</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

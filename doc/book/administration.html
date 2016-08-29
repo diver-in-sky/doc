@@ -1,0 +1,1281 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>6. Server administration</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="6. Server administration">
+        6. Server administration
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../book/administration.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/book/administration.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/administration">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">1. Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide_getting_started.html">2. Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="box/index.html">3. Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="replication/index.html">4. Replication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.html">5. Configuration reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6. Server administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectors/index.html">7. Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">8. Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/a_errcodes.html">9. Appendix A. List of error codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/b_internals.html">10. Appendix B. Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/c_lua_tutorial.html">11. Appendix C. Lua tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Appendix D. Vinyl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Appendix E. Cookbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Appendix F. C tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Appendix G. Some significant changes in version 1.7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Lua reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            User Guide
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="6. Server administration" class="b-path_current b-ellipsis">
+          6. Server administration
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="server-administration">
+<h1>6. Server administration<a class="headerlink" href="#server-administration" title="Permalink to this headline">¶</a></h1>
+<p>Typical server administration tasks include starting and stopping the server,
+reloading configuration, taking snapshots, log rotation.</p>
+<div class="section" id="server-signal-handling">
+<h2>6.1. Server signal handling<a class="headerlink" href="#server-signal-handling" title="Permalink to this headline">¶</a></h2>
+<p>The server processes these signals during the main thread event loop:</p>
+<dl class="glossary docutils">
+<dt id="term-sighup">SIGHUP</dt>
+<dd>may cause log file rotation, see
+<a class="reference internal" href="configuration/index.html#cfg-logging-logging-example"><span class="std std-ref">the example in section &quot;Logging&quot;</span></a>.</dd>
+<dt id="term-sigusr1">SIGUSR1</dt>
+<dd>may cause saving of a snapshot, see the description of
+<a class="reference internal" href="box/admin.html#admin-snapshot"><span class="std std-ref">box.snapshot</span></a>.</dd>
+<dt id="term-sigterm">SIGTERM</dt>
+<dd>may cause graceful shutdown (information will be saved first).</dd>
+<dt id="term-sigint">SIGINT</dt>
+<dd>(also known as keyboard interrupt) may cause graceful shutdown.</dd>
+<dt id="term-sigkill">SIGKILL</dt>
+<dd>causes shutdown.</dd>
+</dl>
+<p>Other signals will result in behavior defined by the operating system. Signals
+other than SIGKILL may be ignored, especially if the server is executing a
+long-running procedure which prevents return to the main thread event loop.</p>
+</div>
+<div class="section" id="process-title">
+<span id="administration-proctitle"></span><h2>6.2. Process title<a class="headerlink" href="#process-title" title="Permalink to this headline">¶</a></h2>
+<p>Linux and FreeBSD operating systems allow a running process to modify its title,
+which otherwise contains the program name. Tarantool uses this feature to help
+meet the needs of system administration, such as figuring out what services are
+running on a host, their status, and so on.</p>
+<p>A Tarantool server's process title has these components:</p>
+<p><code class="extsamp docutils literal"><strong><span class="pre">program_name</span></strong> <span class="pre">[</span><strong><span class="pre">initialization_file_name</span></strong><span class="pre">]</span> <strong><span class="pre">&lt;role_name&gt;</span></strong> <span class="pre">[</span><strong><span class="pre">custom_proc_title</span></strong><span class="pre">]</span></code></p>
+<ul class="simple">
+<li><strong>program_name</strong> is typically &quot;tarantool&quot;.</li>
+<li><strong>initialization_file_name</strong> is the name of an
+<a class="reference internal" href="configuration/index.html#index-init-label"><span class="std std-ref">initialization file</span></a>, if one was specified.</li>
+<li><strong>role_name</strong> is:<ul>
+<li>&quot;running&quot; (ordinary node &quot;ready to accept requests&quot;),</li>
+<li>&quot;loading&quot; (ordinary node recovering from old snap and wal files),</li>
+<li>&quot;orphan&quot; (not in a cluster),</li>
+<li>&quot;hot_standby&quot; (see section <a class="reference internal" href="configuration/index.html#book-cfg-local-hot-standby"><span class="std std-ref">local hot standby</span></a>), or</li>
+<li>&quot;dumper&quot; + process-id (saving a snapshot).</li>
+</ul>
+</li>
+<li><strong>custom_proc_title</strong> is taken from the
+<a class="reference internal" href="configuration/index.html#cfg-basic-custom-proc-title"><span class="std std-ref">custom_proc_title</span></a> configuration parameter,
+if one was specified.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ps -AF <span class="p">|</span> grep tarantool
+<span class="go">1000     17337 16716  1 91362  6916   0 11:07 pts/5    00:00:13 tarantool script.lua &lt;running&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-tarantool-as-a-client">
+<span id="administration-using-tarantool-as-a-client"></span><h2>6.3. Using tarantool as a client<a class="headerlink" href="#using-tarantool-as-a-client" title="Permalink to this headline">¶</a></h2>
+<p>If <strong class="program">tarantool</strong> is started without an <a class="reference internal" href="configuration/index.html#index-init-label"><span class="std std-ref">initialization file</span></a>,
+or if the initialization file contains <a class="reference internal" href="../reference_lua/console.html#console-start"><span class="std std-ref">console.start()</span></a>, then
+<strong class="program">tarantool</strong> enters interactive mode. There will be a prompt (&quot;<code class="docutils literal"><span class="pre">tarantool&gt;</span></code>&quot;)
+and it will be possible to enter requests. When used this way, <strong class="program">tarantool</strong>
+can be a client for a remote server.</p>
+<p>This section shows all legal syntax for the <strong class="program">tarantool</strong> program, with
+short notes and examples. Other client programs may have similar options and
+request syntaxes. Some of the information in this section is duplicated in the
+chapter <a class="reference internal" href="configuration/index.html#index-book-cfg"><span class="std std-ref">Configuration reference</span></a>.</p>
+<div class="section" id="conventions-used-in-this-section">
+<h3>6.3.1. Conventions used in this section<a class="headerlink" href="#conventions-used-in-this-section" title="Permalink to this headline">¶</a></h3>
+<p>Tokens are character sequences which are treated as syntactic units within
+requests. Square brackets [ and ] enclose optional syntax. Three dots in a
+row ... mean the preceding tokens may be repeated. A vertical bar | means
+the preceding and following tokens are mutually exclusive alternatives.</p>
+</div>
+<div class="section" id="options-when-starting-client-from-the-command-line">
+<h3>6.3.2. Options when starting client from the command line<a class="headerlink" href="#options-when-starting-client-from-the-command-line" title="Permalink to this headline">¶</a></h3>
+<p>General form:</p>
+<pre class="highlight literal-block">
+$ <strong>tarantool</strong>
+OR
+$ <strong>tarantool</strong> <em>options</em>
+OR
+$ <strong>tarantool</strong> <em>lua-initialization-file</em> <strong>[</strong> <em>arguments</em> <strong>]</strong>
+</pre>
+<p>Here <em>lua-initialization-file</em> can be any script containing code for initializing.
+Effect: The code in the file is executed during startup. Example: <code class="samp docutils literal"><span class="pre">init.lua</span></code>.
+<br /> Notes: If a script is used, there will be no prompt. The script should contain
+configuration information including <code class="samp docutils literal"><span class="pre">box.cfg</span><em><span class="pre">...listen=...</span></em></code> or
+<code class="samp docutils literal"><span class="pre">box.listen(...)</span></code> so that a separate program can connect to the server via
+one of the ports.</p>
+<p><em>Option</em> is one of the following (in alphabetical order by the long form of the
+option):</p>
+<dl class="option">
+<dt id="cmdoption-tarantool-?">
+<span id="cmdoption-tarantool-h"></span><span id="cmdoption-tarantool--help"></span><code class="descname">-?</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-tarantool-?" title="Permalink to this definition">¶</a></dt>
+<dd><p>Client displays a help message including a list of options.
+Example: <code class="samp docutils literal"><span class="pre">tarantool</span> <span class="pre">--help</span></code>
+The program stops after displaying the help.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-tarantool-V">
+<span id="cmdoption-tarantool--version"></span><code class="descname">-V</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--version</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-tarantool-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>Client displays version information.
+Example: <code class="samp docutils literal"><span class="pre">tarantool</span> <span class="pre">--version</span></code>.
+The program stops after displaying the version.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="tokens-requests-and-special-key-combinations">
+<h3>6.3.3. Tokens, requests, and special key combinations<a class="headerlink" href="#tokens-requests-and-special-key-combinations" title="Permalink to this headline">¶</a></h3>
+<p>Procedure identifiers are: Any sequence of letters, digits, or underscores
+which is legal according to the rules for Lua identifiers. Procedure
+identifiers are also called function names. <br />
+Note: function names are case sensitive so <code class="docutils literal"><span class="pre">insert</span></code> and <code class="docutils literal"><span class="pre">Insert</span></code> are not the
+same thing.</p>
+<p>String literals are: Any sequence of zero or more characters enclosed in
+single quotes. Double quotes are legal but single quotes are preferred.
+Enclosing in double square brackets is good for multi-line strings as
+described in <a class="reference external" href="http://www.lua.org/pil/2.4.html">Lua documentation</a>. <br />
+Examples: 'Hello, world', 'A', [[A\B!]].</p>
+<p>Numeric literals are: Any sequence of one or more digits, not enclosed in
+quotes, optionally preceded by - (minus sign).
+Large or floating-point numeric
+literals may include decimal points, exponential notation, or suffixes.|br|
+Examples: 500, -500, 5e2, 500.1, 5LL, 5ULL.</p>
+<p>Single-byte tokens are: , or ( or ) or arithmetic operators. <br />
+Examples: * , ( ).</p>
+<p>Tokens must be separated from each other by one or more spaces, except that
+spaces are not necessary around single-byte tokens or string literals.</p>
+</div>
+<div class="section" id="requests">
+<span id="administration-setting-delimiter"></span><h3>6.3.4. Requests<a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h3>
+<p>Generally requests are entered following the prompt in interactive mode while
+<strong class="program">tarantool</strong> is running. (A prompt will be the word 'tarantool' and a
+greater-than sign, for example <code class="samp docutils literal"><span class="pre">tarantool&gt;</span></code>). The end-of-request marker is
+by default a newline (line feed).</p>
+<p>For multi-line requests, it is possible to change the end-of-request marker.
+Syntax: <code class="samp docutils literal"><span class="pre">console</span> <span class="pre">=</span> <span class="pre">require('console');</span> <span class="pre">console.delimiter(</span><em><span class="pre">string-literal</span></em><span class="pre">)</span></code>.
+The string-literal must be a value in single quotes. Effect: string becomes
+end-of-request delimiter, so newline alone is not treated as end of request.
+To go back to normal mode: <code class="samp docutils literal"><span class="pre">console.delimiter('')</span><em><span class="pre">string-literal</span></em></code>.
+Delimiters are usually not necessary because Tarantool can tell when a
+multi-line request has not ended (for example, if it sees that a function
+declaration does not have an <code class="samp docutils literal"><span class="pre">end</span></code> keyword). Example:</p>
+<div class="highlight-lua_tarantool"><div class="highlight"><pre><span></span><span class="n">console</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">console&#39;</span><span class="p">);</span> <span class="n">console</span><span class="p">.</span><span class="n">delimiter</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">!&#39;</span><span class="p">)</span>
+<span class="k">function</span> <span class="nf">f</span> <span class="p">()</span>
+  <span class="n">statement_1</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">a&#39;</span>
+  <span class="n">statement_2</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">b&#39;</span>
+<span class="k">end</span><span class="p">!</span>
+<span class="n">console</span><span class="p">.</span><span class="n">delimiter</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">&#39;</span><span class="p">)!</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">here</span></a> a condensed Backus-Naur Form
+[BNF] description of the suggested form of client requests.</p>
+<p>In <em>interactive</em> mode, one types requests and gets results. Typically the
+requests are typed in by the user following prompts. Here is an example of
+an interactive-mode Tarantool client session:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">$</span> tarantool
+<span class="go">[ tarantool will display an introductory message</span>
+<span class="go">  including version number here ]</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">}</span>
+<span class="go">[ tarantool will display configuration information here ]</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="go">[ tarantool may display an in-progress message here ]</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">hash&#39;</span><span class="p">,</span> <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">unsigned&#39;</span><span class="p">}})</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">My first tuple&#39;</span><span class="p">}</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;My</span><span class="nv"> </span><span class="s">first</span><span class="nv"> </span><span class="s">tuple&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;My</span><span class="nv"> </span><span class="s">first</span><span class="nv"> </span><span class="s">tuple&#39;</span><span class="p p-Indicator">]</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">drop</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="nb">os.exit</span><span class="p">()</span>
+<span class="go">2014-04-30 10:28:00.886 [20436] main/101/spawner I&gt; Exiting: master shutdown</span>
+<span class="go">$</span>
+</pre></div>
+</div>
+<p>Explanatory notes about what Tarantool displayed in the above example:</p>
+<ul class="simple">
+<li>Many requests return typed objects. In the case of <code class="samp docutils literal"><span class="pre">box.cfg</span><em><span class="pre">listen=3301</span></em></code>,
+this result is displayed on the screen. If the request had assigned the result
+to a variable, for example <code class="samp docutils literal"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">box.cfg</span><em><span class="pre">listen=3301</span></em></code>, then the result
+would not have been displayed on the screen.</li>
+<li>A display of an object always begins with &quot;<code class="docutils literal"><span class="pre">---</span></code>&quot; and ends with &quot;<code class="docutils literal"><span class="pre">...</span></code>&quot;.</li>
+<li>The insert request returns an object of type = tuple, so the object display
+line begins with a single dash ('<code class="docutils literal"><span class="pre">-</span></code>'). However, the select request returns
+an object of type = table of tuples, so the object display line begins with
+two dashes ('<code class="docutils literal"><span class="pre">-</span> <span class="pre">-</span></code>').</li>
+</ul>
+</div>
+</div>
+<div class="section" id="utility-tarantoolctl">
+<span id="administration-tarantoolctl"></span><h2>6.4. Utility tarantoolctl<a class="headerlink" href="#utility-tarantoolctl" title="Permalink to this headline">¶</a></h2>
+<p>With <strong class="program">tarantoolctl</strong> you can say: &quot;start an instance of the Tarantool
+server which runs a single user-written Lua program, allocating disk resources
+specifically for that program, via a standardized deployment method.&quot;
+If Tarantool was installed with Debian or
+Red Hat installation packages, the script is
+in <code class="file docutils literal"><span class="pre">/usr/bin/tarantoolctl</span></code> or <code class="file docutils literal"><span class="pre">/usr/local/bin/tarantoolctl</span></code>.
+The script handles such things as:
+starting, stopping, rotating logs, logging in to the application's console,
+and checking status.</p>
+<p>The use of <strong class="program">tarantoolctl</strong> as a client is described in a separate section,
+<a class="reference internal" href="#administration-tarantoolctl-connect"><span class="std std-ref">tarantoolctl connect</span></a>.</p>
+<div class="section" id="configuration-for-tarantoolctl">
+<h3>6.4.1. Configuration for tarantoolctl<a class="headerlink" href="#configuration-for-tarantoolctl" title="Permalink to this headline">¶</a></h3>
+<p>The <strong class="program">tarantoolctl</strong> script will look for a configuration file
+in the current directory (<code class="file docutils literal"><span class="pre">$PWD/.tarantoolctl</span></code>).
+If that fails, it looks in the current user's home directory
+(<code class="file docutils literal"><span class="pre">$HOME/.config/tarantool/tarantool</span></code>).
+If that fails, it looks in the SYSCONFDIR directory (usually
+<code class="file docutils literal"><span class="pre">/etc/sysconfig/tarantool</span></code>, but it may be different on some platforms).
+Most of the settings are similar to the settings used by <code class="samp docutils literal"><span class="pre">box.cfg</span><em><span class="pre">...</span></em></code>;
+however, <strong class="program">tarantoolctl</strong> adjusts some of them by adding an application
+name. A copy of <code class="file docutils literal"><span class="pre">usr/local/etc/default/tarantool</span></code>, with defaults for all
+settings, would look like this:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">default_cfg</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">pid_file</span>   <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/var/run/tarantool&quot;</span><span class="p">,</span>
+    <span class="n">wal_dir</span>    <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/var/lib/tarantool&quot;</span><span class="p">,</span>
+    <span class="n">snap_dir</span>   <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/var/lib/tarantool&quot;</span><span class="p">,</span>
+    <span class="n">vinyl_dir</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/var/lib/tarantool&quot;</span><span class="p">,</span>
+    <span class="n">logger</span>     <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/var/log/tarantool&quot;</span><span class="p">,</span>
+    <span class="n">username</span>   <span class="o">=</span> <span class="s2">&quot;</span><span class="s">tarantool&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">instance_dir</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/etc/tarantool/instances.enabled&quot;</span>
+</pre></div>
+</div>
+<p>The settings in the above script are:</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">pid_file</span></code></dt>
+<dd>The directory for the pid file and control-socket file. The
+script will add &quot;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em></code>&quot; to the directory name.</dd>
+<dt><code class="docutils literal"><span class="pre">wal_dir</span></code></dt>
+<dd>The directory for the write-ahead <code class="file docutils literal"><span class="pre">*.xlog</span></code> files. The
+script will add &quot;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em></code>&quot; to the directory-name.</dd>
+<dt><code class="docutils literal"><span class="pre">snap_dir</span></code></dt>
+<dd>The directory for the snapshot <code class="file docutils literal"><span class="pre">*.snap</span></code> files. The script
+will add &quot;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em></code>&quot; to the directory-name.</dd>
+<dt><code class="docutils literal"><span class="pre">vinyl_dir</span></code></dt>
+<dd>The directory for the vinyl-storage-engine files. The script
+will add &quot;<code class="samp docutils literal"><span class="pre">/vinyl/</span><em><span class="pre">instance-name</span></em></code>&quot; to the directory-name.</dd>
+<dt><code class="docutils literal"><span class="pre">logger</span></code></dt>
+<dd>The place where the application log will go. The script will
+add &quot;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em><span class="pre">.log</span></code>&quot; to the name.</dd>
+<dt><code class="docutils literal"><span class="pre">username</span></code></dt>
+<dd>The user that runs the Tarantool server. This is the operating-system
+user name rather than the Tarantool-client user name.</dd>
+<dt><code class="docutils literal"><span class="pre">instance_dir</span></code></dt>
+<dd>The directory where all applications for this host are stored. The user
+who writes an application for <strong class="program">tarantoolctl</strong> must put the
+application's source code in this directory, or a symbolic link. For
+examples in this section the application name <code class="docutils literal"><span class="pre">my_app</span></code> will be used, and
+its source will have to be in <code class="samp docutils literal"><em><span class="pre">instance_dir</span></em><span class="pre">/my_app.lua</span></code>.</dd>
+</dl>
+</div>
+<div class="section" id="commands-for-tarantoolctl">
+<h3>6.4.2. Commands for tarantoolctl<a class="headerlink" href="#commands-for-tarantoolctl" title="Permalink to this headline">¶</a></h3>
+<p>The command format is <code class="samp docutils literal"><span class="pre">tarantoolctl</span> <em><span class="pre">operation</span></em> <em><span class="pre">application_name</span></em></code>, where
+operation is one of: start, stop, enter, logrotate, status, eval. Thus ...</p>
+<dl class="option">
+<dt id="cmdoption-tarantoolctl-arg-start">
+<code class="descname">start</code><code class="descclassname"> &lt;application&gt;</code><a class="headerlink" href="#cmdoption-tarantoolctl-arg-start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start application <em>&lt;application&gt;</em></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-tarantoolctl-arg-stop">
+<code class="descname">stop</code><code class="descclassname"> &lt;application&gt;</code><a class="headerlink" href="#cmdoption-tarantoolctl-arg-stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop application</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-tarantoolctl-arg-enter">
+<code class="descname">enter</code><code class="descclassname"> &lt;application&gt;</code><a class="headerlink" href="#cmdoption-tarantoolctl-arg-enter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show application's admin console</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-tarantoolctl-arg-logrotate">
+<code class="descname">logrotate</code><code class="descclassname"> &lt;application&gt;</code><a class="headerlink" href="#cmdoption-tarantoolctl-arg-logrotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate application's log files (make new, remove old)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-tarantoolctl-arg-status">
+<code class="descname">status</code><code class="descclassname"> &lt;application&gt;</code><a class="headerlink" href="#cmdoption-tarantoolctl-arg-status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check application's status</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-tarantoolctl-arg-eval">
+<code class="descname">eval</code><code class="descclassname"> &lt;application&gt; &lt;scriptname&gt;</code><a class="headerlink" href="#cmdoption-tarantoolctl-arg-eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute code from <em>&lt;scriptname&gt;</em> on an instance of application</p>
+</dd></dl>
+
+</div>
+<div class="section" id="typical-code-snippets-for-tarantoolctl">
+<h3>6.4.3. Typical code snippets for tarantoolctl<a class="headerlink" href="#typical-code-snippets-for-tarantoolctl" title="Permalink to this headline">¶</a></h3>
+<p>A user can check whether <code class="docutils literal"><span class="pre">my_app</span></code> is running with these lines:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="k">if</span> tarantoolctl status my_app<span class="p">;</span> <span class="k">then</span>
+...
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>A user can initiate, for boot time, an <code class="file docutils literal"><span class="pre">init.d</span></code> set of instructions:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span>each file mentioned in the instance_dir directory<span class="o">)</span>:
+    tarantoolctl start <span class="sb">`</span>basename $ file .lua<span class="sb">`</span>
+</pre></div>
+</div>
+<p>A user can set up a further configuration file for log rotation, like this:</p>
+<pre class="highlight literal-block">
+/path/to/tarantool/*.log {
+    daily
+    size 512k
+    missingok
+    rotate 10
+    compress
+    delaycompress
+    create 0640 tarantool adm
+    postrotate
+        /path/to/tarantoolctl logrotate <cite>basename $ 1 .log</cite>
+    endscript
+}
+</pre>
+</div>
+<div class="section" id="a-detailed-example-for-tarantoolctl">
+<h3>6.4.4. A detailed example for tarantoolctl<a class="headerlink" href="#a-detailed-example-for-tarantoolctl" title="Permalink to this headline">¶</a></h3>
+<p>The example's objective is: make a temporary directory where
+<strong class="program">tarantoolctl</strong> can start a long-running application and monitor it.</p>
+<p>The assumptions are: the root password is known, the computer is only being used
+for tests, the Tarantool server is ready to run but is not currently running,
+tarantoolctl is installed along the user's path,
+and there currently is no directory named <code class="file docutils literal"><span class="pre">tarantool_test</span></code>.</p>
+<p>Create a directory named <code class="file docutils literal"><span class="pre">/tarantool_test</span></code>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo mkdir /tarantool_test
+</pre></div>
+</div>
+<p>Edit <code class="file docutils literal"><span class="pre">/usr/local/etc/default/tarantool</span></code>. It might be necessary to
+say <code class="samp docutils literal"><span class="pre">sudo</span> <span class="pre">mkdir</span> <span class="pre">/usr/local/etc/default</span></code> first. Let the new file contents
+be:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">default_cfg</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">pid_file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/tarantool_test/my_app.pid&quot;</span><span class="p">,</span>
+    <span class="n">wal_dir</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/tarantool_test&quot;</span><span class="p">,</span>
+    <span class="n">snap_dir</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/tarantool_test&quot;</span><span class="p">,</span>
+    <span class="n">vinyl_dir</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/tarantool_test&quot;</span><span class="p">,</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/tarantool_test/log&quot;</span><span class="p">,</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">tarantool&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">instance_dir</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">/tarantool_test&quot;</span>
+</pre></div>
+</div>
+<p>Make the <code class="docutils literal"><span class="pre">my_app</span></code> application file, that is, <code class="file docutils literal"><span class="pre">/tarantool_test/my_app.lua</span></code>.
+Let the file contents be:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">}</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">passwd</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Gx5!&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">grant</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">guest&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">read,write,execute&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">universe&#39;</span><span class="p">)</span>
+<span class="n">fiber</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">fiber&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,{})</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">do</span>
+    <span class="n">fiber</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">insert &#39;</span> <span class="o">..</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">my_app tuple&#39;</span><span class="p">}</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Tell <strong class="program">tarantoolctl</strong> to start the application ...</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /tarantool_test
+<span class="gp">$</span> sudo tarantoolctl start my_app
+</pre></div>
+</div>
+<p>... expect to see messages indicating that the instance has started. Then ...</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ls -l /tarantool_test/my_app
+</pre></div>
+</div>
+<p>... expect to see the <code class="file docutils literal"><span class="pre">.snap</span></code> file and the <code class="file docutils literal"><span class="pre">.xlog</span></code> file. Then ...</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo less /tarantool_test/log/my_app.log
+</pre></div>
+</div>
+<p>... expect to see the contents of <code class="docutils literal"><span class="pre">my_app</span></code>'s log, including error messages, if
+any. Then ...</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /tarantool_test
+<span class="gp">$</span> <span class="c1"># assume that &#39;tarantool&#39; invokes the tarantool server</span>
+<span class="gp">$</span> sudo tarantool
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{}</span>
+<span class="gp">tarantool&gt; </span><span class="n">console</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">console&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">console</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">localhost:3301&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">({</span><span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="n">iterator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">GE&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>... expect to see several tuples that <code class="docutils literal"><span class="pre">my_app</span></code> has created.</p>
+<p>Stop. The only clean way to stop <code class="docutils literal"><span class="pre">my_app</span></code> is with <strong class="program">tarantoolctl</strong>, thus:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo tarantoolctl stop my_app
+</pre></div>
+</div>
+<p>Clean up. Restore the original contents of <code class="file docutils literal"><span class="pre">/usr/local/etc/default/tarantool</span></code>,
+and ...</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /
+<span class="gp">$</span> sudo rm -R tarantool_test
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="utility-tarantoolctl-connect">
+<span id="administration-tarantoolctl-connect"></span><h2>6.5. Utility tarantoolctl connect<a class="headerlink" href="#utility-tarantoolctl-connect" title="Permalink to this headline">¶</a></h2>
+<p>The <strong class="program">tarantoolctl connect</strong> utility is a client program.
+Use it to connect to a Tarantool server and pass requests.</p>
+<p>To invoke the utility, say:</p>
+<pre class="highlight literal-block">
+tarantoolctl connect <em>URI</em>
+</pre>
+<p>and the format of a URI is described <a class="reference internal" href="configuration/index.html#index-uri"><span class="std std-ref">in the URI section</span></a>.</p>
+<p>Example:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> tarantoolctl connect username:password@127.0.0.1:3306
+</pre></div>
+</div>
+<p>There are alternatives to <strong class="program">tarantoolctl connect</strong> -- you can use
+the <a class="reference internal" href="../reference_lua/console.html#console-module"><span class="std std-ref">console module</span></a> or the
+<a class="reference internal" href="../reference_lua/net_box.html#net-box-module"><span class="std std-ref">net.box module</span></a> from a Tarantool server.
+Also you can write your client programs with any of the
+Connectors. However, most of the examples in this manual illustrate
+usage with either <strong class="program">tarantoolctl connect</strong> or with
+<a class="reference internal" href="#administration-using-tarantool-as-a-client"><span class="std std-ref">using the Tarantool server as a client</span></a>.</p>
+<p>Statements about <a class="reference internal" href="../reference_lua/console.html#console-connect"><span class="std std-ref">console.connect()</span></a> behavior are
+usually applicable for <strong class="program">tarantoolctl connect</strong> as well.
+For example, an <a class="reference internal" href="box/triggers.html#triggers-authentication-triggers"><span class="std std-ref">authentication trigger</span></a>
+will be activated whenever <strong class="program">tarantoolctl connect</strong> starts or ends.</p>
+</div>
+<div class="section" id="admin-ports">
+<span id="administration-admin-ports"></span><h2>6.6. Admin ports<a class="headerlink" href="#admin-ports" title="Permalink to this headline">¶</a></h2>
+<p>&quot;Admin port&quot;, &quot;admin console&quot;, and &quot;text protocol&quot; all
+refer to the same thing: a connection which is set up
+with <a class="reference internal" href="../reference_lua/console.html#console-listen"><span class="std std-ref">console.listen(...)</span></a> for entry of requests by
+administrators.</p>
+<p>&quot;Binary port&quot;, &quot;binary protocol&quot;, and &quot;primary port&quot;
+all refer to a different thing: a connection which is set up
+with <a class="reference internal" href="configuration/index.html#cfg-basic-listen"><span class="std std-ref">box.cfg{listen=...}</span></a> for entry of requests by
+anyone.</p>
+<p>Ordinary connections to the Tarantool server should go via a binary port.
+But admin ports are useful for special cases involving security.</p>
+<p>When you connect to an admin port:</p>
+<ul class="simple">
+<li>No password is necessary</li>
+<li>The user is automatically 'admin', a user with many privileges.</li>
+</ul>
+<p>Therefore you must set up admin ports very cautiously.
+If it is a TCP port, it should only be opened for a specific IP.
+Ideally it should not be a TCP port at all, it should be a Unix domain socket,
+so that access to the server machine is required.
+Thus a typical setup for an admin port is:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="go">console.listen(&#39;/var/lib/tarantool/socket_name.sock&#39;)</span>
+</pre></div>
+</div>
+<p>and a typical connection <a class="reference internal" href="configuration/index.html#index-uri"><span class="std std-ref">URI</span></a> is:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>admin:any_string@/var/lib/tarantool/socket_name.sock
+</pre></div>
+</div>
+<p>if the listener has the privilege to write on <code class="file docutils literal"><span class="pre">/var/lib/tarantool</span></code>
+and the connector has the privilege to read on <code class="file docutils literal"><span class="pre">/var/lib/tarantool</span></code>.
+Alternatively both setup and connection can be done with
+<a class="reference internal" href="#administration-tarantoolctl"><span class="std std-ref">tarantoolctl</span></a>.</p>
+<p>If no administrator password exists which could be given out to users,
+and admin ports are restricted or are sockets,
+then requests which require 'admin' privileges can only occur locally,
+and are subject to Unix security and monitoring.</p>
+<p>For additional security, some requests are illegal.
+For example, <a class="reference internal" href="../reference_lua/net_box.html#net-box-eval"><span class="std std-ref">&quot;conn:eval&quot;</span></a>  will result in the error message
+&quot;- error: console does not support this request type&quot;
+because <code class="docutils literal"><span class="pre">conn:eval</span></code> requires the binary protocol.</p>
+<p>If security via admin ports is not necessary, it is still possible
+to be an admin user by
+<a class="reference internal" href="#administration-using-tarantool-as-a-client"><span class="std std-ref">using the tarantool server as a client</span></a>,
+or by connecting to a binary port with a valid password.</p>
+<p>To find out whether a TCP port is an admin port, use <strong class="program">telnet</strong>.
+For example:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> telnet <span class="m">0</span> 3303
+<span class="go">Trying 0.0.0.0...</span>
+<span class="go">Connected to 0.</span>
+<span class="go">Escape character is &#39;^]&#39;.</span>
+<span class="go">Tarantool 1.7.1-70-gbc479ad (Lua console)</span>
+<span class="go">type &#39;help&#39; for interactive help</span>
+</pre></div>
+</div>
+<p>In this example the response does not include the word &quot;binary&quot;
+and does include the words &quot;Lua console&quot;. Therefore it is
+clear that this is a successful connection to an admin
+port, and admin requests can now be entered on this terminal.</p>
+</div>
+<div class="section" id="system-specific-administration-notes">
+<h2>6.7. System-specific administration notes<a class="headerlink" href="#system-specific-administration-notes" title="Permalink to this headline">¶</a></h2>
+<p>This section will contain information about issue or features which exist
+on some platforms but not others - for example, on certain versions of a
+particular Linux distribution.</p>
+<div class="section" id="debian-gnu-linux-and-ubuntu">
+<h3>6.7.1. Debian GNU/Linux and Ubuntu<a class="headerlink" href="#debian-gnu-linux-and-ubuntu" title="Permalink to this headline">¶</a></h3>
+<p>Setting up an instance:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ln -s /etc/tarantool/instances.available/*instance-name.cfg* /etc/tarantool/instances.enabled/
+</pre></div>
+</div>
+<p>Starting all instances:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> service tarantool start
+</pre></div>
+</div>
+<p>Stopping all instances:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> service tarantool stop
+</pre></div>
+</div>
+<p>Starting/stopping one instance:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> service tarantool-instance-name start/stop
+</pre></div>
+</div>
+</div>
+<div class="section" id="fedora-rhel-centos">
+<h3>6.7.2. Fedora, RHEL, CentOS<a class="headerlink" href="#fedora-rhel-centos" title="Permalink to this headline">¶</a></h3>
+<p>There are no known permanent issues. For transient issues, go to
+<a class="reference external" href="http://github.com/tarantool/tarantool/issues">http://github.com/tarantool/tarantool/issues</a> and enter &quot;RHEL&quot; or
+&quot;CentOS&quot; or &quot;Fedora&quot; or &quot;Red Hat&quot; in the search box.</p>
+</div>
+<div class="section" id="freebsd">
+<h3>6.7.3. FreeBSD<a class="headerlink" href="#freebsd" title="Permalink to this headline">¶</a></h3>
+<p>There are no known permanent issues. For transient issues, go to
+<a class="reference external" href="http://github.com/tarantool/tarantool/issues">http://github.com/tarantool/tarantool/issues</a> and enter &quot;FreeBSD&quot;
+in the search box.</p>
+</div>
+<div class="section" id="mac-os-x">
+<h3>6.7.4. Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h3>
+<p>There are no known permanent issues. For transient issues, go to
+<a class="reference external" href="http://github.com/tarantool/tarantool/issues">http://github.com/tarantool/tarantool/issues</a> and enter &quot;OS X&quot; in
+the search box.</p>
+</div>
+</div>
+<div class="section" id="notes-for-systemd-users">
+<h2>6.8. Notes for systemd users<a class="headerlink" href="#notes-for-systemd-users" title="Permalink to this headline">¶</a></h2>
+<p>Tarantool fully supports <strong class="program">systemd</strong> for managing instances and
+supervising database daemons.</p>
+<div class="section" id="instance-management">
+<h3>6.8.1. Instance management<a class="headerlink" href="#instance-management" title="Permalink to this headline">¶</a></h3>
+<p>Tarantool was designed to have multiple running instances of Tarantool
+on the same machine. Use
+<code class="samp docutils literal"><span class="pre">systemctl</span> <em><span class="pre">start|stop|restart|status</span></em> <span class="pre">tarantool&#64;$</span><em><span class="pre">MYAPP</span></em></code>
+to manage your databases and Lua applications.</p>
+<div class="section" id="creating-instances">
+<h4>6.8.1.1. Creating instances<a class="headerlink" href="#creating-instances" title="Permalink to this headline">¶</a></h4>
+<p>Simply put your Lua configuration to
+<code class="file docutils literal"><span class="pre">/etc/tarantool/instances.available/$</span><em><span class="pre">MYAPP</span></em><span class="pre">.lua</span></code>:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span> <span class="o">=</span> <span class="mi">3313</span><span class="p">}</span>
+<span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">myappcode&#39;</span><span class="p">).</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>(this minimal example is sufficient).</p>
+<p>Another starting point could be the <code class="file docutils literal"><span class="pre">example.lua</span></code> script that ships with
+Tarantool and defines all options.</p>
+</div>
+<div class="section" id="starting-instances">
+<h4>6.8.1.2. Starting instances<a class="headerlink" href="#starting-instances" title="Permalink to this headline">¶</a></h4>
+<p>Use <code class="samp docutils literal"><span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">tarantool&#64;$</span><em><span class="pre">MYAPP</span></em></code> to start <code class="docutils literal"><span class="pre">${MYAPP}</span></code> instance:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> systemctl start tarantool@example
+<span class="gp">$</span> ps axuf<span class="p">|</span>grep exampl<span class="o">[</span>e<span class="o">]</span>
+<span class="go">taranto+  5350  1.3  0.3 1448872 7736 ?        Ssl  20:05   0:28 tarantool example.lua &lt;running&gt;</span>
+</pre></div>
+</div>
+<p>(console examples here and further on are for Fedora).</p>
+<p>Use <code class="samp docutils literal"><span class="pre">systemctl</span> <span class="pre">enable</span> <span class="pre">tarantool&#64;$</span><em><span class="pre">MYAPP</span></em></code> to enable <code class="docutils literal"><span class="pre">${MYAPP}</span></code> instance
+for auto-load during system startup.</p>
+</div>
+<div class="section" id="monitoring-instances">
+<h4>6.8.1.3. Monitoring instances<a class="headerlink" href="#monitoring-instances" title="Permalink to this headline">¶</a></h4>
+<p>Use <code class="samp docutils literal"><span class="pre">systemctl</span> <span class="pre">status</span> <span class="pre">tarantool&#64;$</span><em><span class="pre">MYAPP</span></em></code> to check information about
+<code class="docutils literal"><span class="pre">${MYAPP}</span></code> instance:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> systemctl status tarantool@example
+<span class="go">tarantool@example.service - Tarantool Database Server</span>
+<span class="go">Loaded: loaded (/etc/systemd/system/tarantool@.service; disabled; vendor preset: disabled)</span>
+<span class="go">Active: active (running)</span>
+<span class="go">Docs: man:tarantool(1)</span>
+<span class="go">Process: 5346 ExecStart=/usr/bin/tarantoolctl start %I (code=exited, status=0/SUCCESS)</span>
+<span class="go">Main PID: 5350 (tarantool)</span>
+<span class="go">Tasks: 11 (limit: 512)</span>
+<span class="go">CGroup: /system.slice/system-tarantool.slice/tarantool@example.service</span>
+<span class="go">+ 5350 tarantool example.lua &lt;running&gt;</span>
+</pre></div>
+</div>
+<p>Use <code class="samp docutils literal"><span class="pre">journalctl</span> <span class="pre">-u</span> <span class="pre">tarantool&#64;$</span><em><span class="pre">MYAPP</span></em></code> to check the boot log:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> journalctl -u tarantool@example -n 5
+<span class="go">-- Logs begin at Fri 2016-01-08 12:21:53 MSK, end at Thu 2016-01-21 21:17:47 MSK. --</span>
+<span class="go">Jan 21 21:17:47 localhost.localdomain systemd[1]: Stopped Tarantool Database Server.</span>
+<span class="go">Jan 21 21:17:47 localhost.localdomain systemd[1]: Starting Tarantool Database Server...</span>
+<span class="go">Jan 21 21:17:47 localhost.localdomain tarantoolctl[5969]: /usr/bin/tarantoolctl: Found example.lua in /etc/tarantool/instances.available</span>
+<span class="go">Jan 21 21:17:47 localhost.localdomain tarantoolctl[5969]: /usr/bin/tarantoolctl: Starting instance...</span>
+<span class="go">Jan 21 21:17:47 localhost.localdomain systemd[1]: Started Tarantool Database Server</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="attaching-to-instances">
+<h4>6.8.1.4. Attaching to instances<a class="headerlink" href="#attaching-to-instances" title="Permalink to this headline">¶</a></h4>
+<p>You can attach to a running Tarantool instance and evaluate some Lua code using
+the <strong class="program">tarantoolctl</strong> utility:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> tarantoolctl enter example
+<span class="go">/bin/tarantoolctl: Found example.lua in /etc/tarantool/instances.available</span>
+<span class="go">/bin/tarantoolctl: Connecting to /var/run/tarantool/example.control</span>
+<span class="go">/bin/tarantoolctl: connected to unix/:/var/run/tarantool/example.control</span>
+<span class="go">unix/:/var/run/tarantool/example.control&gt; 1 + 1</span>
+<span class="go">---</span>
+<span class="go">- 2</span>
+<span class="go">...</span>
+<span class="go">unix/:/var/run/tarantool/example.control&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="checking-logs">
+<h4>6.8.1.5. Checking logs<a class="headerlink" href="#checking-logs" title="Permalink to this headline">¶</a></h4>
+<p>Tarantool logs important events to <code class="file docutils literal"><span class="pre">/var/log/tarantool/$</span><em><span class="pre">MYAPP</span></em><span class="pre">.log</span></code>.</p>
+<p>Let's write something to the log file:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> tarantoolctl enter example
+<span class="go">/bin/tarantoolctl: Found example.lua in /etc/tarantool/instances.available</span>
+<span class="go">/bin/tarantoolctl: Connecting to /var/run/tarantool/example.control</span>
+<span class="go">/bin/tarantoolctl: connected to unix/:/var/run/tarantool/example.control</span>
+<span class="go">unix/:/var/run/tarantool/example.control&gt; require(&#39;log&#39;).info(&quot;Hello for README.systemd readers&quot;)</span>
+<span class="go">---</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+<p>Then check the logs:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> tail /var/log/tarantool/example.log
+<span class="go">2016-01-21 21:09:45.982 [5914] iproto I&gt; binary: started</span>
+<span class="go">2016-01-21 21:09:45.982 [5914] iproto I&gt; binary: bound to 0.0.0.0:3301</span>
+<span class="go">2016-01-21 21:09:45.983 [5914] main/101/tarantoolctl I&gt; ready to accept requests</span>
+<span class="go">2016-01-21 21:09:45.983 [5914] main/101/example I&gt; Run console at /var/run/tarantool/example.control</span>
+<span class="go">2016-01-21 21:09:45.984 [5914] main/101/example I&gt; tcp_server: remove dead UNIX socket: /var/run/tarantool/example.control</span>
+<span class="go">2016-01-21 21:09:45.984 [5914] main/104/console/unix/:/var/run/tarant I&gt; started</span>
+<span class="go">2016-01-21 21:09:45.985 [5914] main C&gt; entering the event loop</span>
+<span class="go">2016-01-21 21:14:43.320 [5914] main/105/console/unix/: I&gt; client unix/: connected</span>
+<span class="go">2016-01-21 21:15:07.115 [5914] main/105/console/unix/: I&gt; Hello for README.systemd readers</span>
+<span class="go">2016-01-21 21:15:09.250 [5914] main/105/console/unix/: I&gt; client unix/: disconnected</span>
+</pre></div>
+</div>
+<p>Log rotation is enabled by default if you have <strong class="program">logrotate</strong> installed.
+Please configure <code class="file docutils literal"><span class="pre">/etc/logrotate.d/tarantool</span></code> to change the default
+behavior.</p>
+</div>
+<div class="section" id="stopping-instances">
+<h4>6.8.1.6. Stopping instances<a class="headerlink" href="#stopping-instances" title="Permalink to this headline">¶</a></h4>
+<p>Use <code class="samp docutils literal"><span class="pre">systemctl</span> <span class="pre">stop</span> <span class="pre">tarantool&#64;$</span><em><span class="pre">MYAPP</span></em></code> to see information about the running
+<code class="docutils literal"><span class="pre">${MYAPP}</span></code> instance.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> systemctl stop tarantool@example
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="daemon-supervision">
+<h3>6.8.2. Daemon supervision<a class="headerlink" href="#daemon-supervision" title="Permalink to this headline">¶</a></h3>
+<p>All instances are automatically restarted by <strong class="program">systemd</strong> in case of failure.</p>
+<p>Let's try to destroy an instance:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> systemctl status tarantool@example<span class="p">|</span>grep PID
+<span class="go">Main PID: 5885 (tarantool)</span>
+<span class="gp">$</span> tarantoolctl enter example
+<span class="go">/bin/tarantoolctl: Found example.lua in /etc/tarantool/instances.available</span>
+<span class="go">/bin/tarantoolctl: Connecting to /var/run/tarantool/example.control</span>
+<span class="go">/bin/tarantoolctl: connected to unix/:/var/run/tarantool/example.control</span>
+<span class="go">unix/:/var/run/tarantool/example.control&gt; os.exit(-1)</span>
+<span class="go">/bin/tarantoolctl: unix/:/var/run/tarantool/example.control: Remote host closed connection</span>
+</pre></div>
+</div>
+<p>Now let's make sure that <strong class="program">systemd</strong> has revived our Tarantool instance:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> systemctl status tarantool@example<span class="p">|</span>grep PID
+<span class="go">Main PID: 5914 (tarantool)</span>
+</pre></div>
+</div>
+<p>Finally, let's check the boot logs:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> journalctl -u tarantool@example -n 8
+<span class="go">-- Logs begin at Fri 2016-01-08 12:21:53 MSK, end at Thu 2016-01-21 21:09:45 MSK. --</span>
+<span class="go">Jan 21 21:09:45 localhost.localdomain systemd[1]: tarantool@example.service: Unit entered failed state.</span>
+<span class="go">Jan 21 21:09:45 localhost.localdomain systemd[1]: tarantool@example.service: Failed with result &#39;exit-code&#39;.</span>
+<span class="go">Jan 21 21:09:45 localhost.localdomain systemd[1]: tarantool@example.service: Service hold-off time over, scheduling restart.</span>
+<span class="go">Jan 21 21:09:45 localhost.localdomain systemd[1]: Stopped Tarantool Database Server.</span>
+<span class="go">Jan 21 21:09:45 localhost.localdomain systemd[1]: Starting Tarantool Database Server...</span>
+<span class="go">Jan 21 21:09:45 localhost.localdomain tarantoolctl[5910]: /usr/bin/tarantoolctl: Found example.lua in /etc/tarantool/instances.available</span>
+<span class="go">Jan 21 21:09:45 localhost.localdomain tarantoolctl[5910]: /usr/bin/tarantoolctl: Starting instance...</span>
+<span class="go">Jan 21 21:09:45 localhost.localdomain systemd[1]: Started Tarantool Database Server.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customizing-the-service-file">
+<h3>6.8.3. Customizing the service file<a class="headerlink" href="#customizing-the-service-file" title="Permalink to this headline">¶</a></h3>
+<p>Please don't modify the <code class="file docutils literal"><span class="pre">tarantool&#64;.service</span></code> file in-place, because it will be
+overwritten during package upgrades. It is recommended to copy this file to
+<code class="file docutils literal"><span class="pre">/etc/systemd/system</span></code> and then modify the required settings. Alternatively,
+you can create a directory named <code class="file docutils literal"><span class="pre">unit.d/</span></code> within <code class="file docutils literal"><span class="pre">/etc/systemd/system</span></code> and
+put there a drop-in file <code class="file docutils literal"><span class="pre">name.conf</span></code> that only changes the required settings.
+Please see <code class="docutils literal"><span class="pre">systemd.unit(5)</span></code> manual page for additional information.</p>
+</div>
+<div class="section" id="debugging">
+<h3>6.8.4. Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h3>
+<p><strong class="program">coredumpctl</strong> automatically saves core dumps and stack traces in case
+of a crash. Here is how it works:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="c1"># !!! please never do this on the production system !!!</span>
+<span class="gp">$</span> tarantoolctl enter example
+<span class="go">/bin/tarantoolctl: Found example.lua in /etc/tarantool/instances.available</span>
+<span class="go">/bin/tarantoolctl: Connecting to /var/run/tarantool/example.control</span>
+<span class="go">/bin/tarantoolctl: connected to unix/:/var/run/tarantool/example.control</span>
+<span class="go">unix/:/var/run/tarantool/example.control&gt; require(&#39;ffi&#39;).cast(&#39;char *&#39;, 0)[0] = 48</span>
+<span class="go">/bin/tarantoolctl: unix/:/var/run/tarantool/example.control: Remote host closed connection</span>
+</pre></div>
+</div>
+<p><code class="samp docutils literal"><span class="pre">coredumpctl</span> <span class="pre">list</span> <span class="pre">/usr/bin/tarantool</span></code> displays the latest crashes of the
+Tarantool daemon:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> coredumpctl list /usr/bin/tarantool
+<span class="go">MTIME                            PID   UID   GID SIG PRESENT EXE</span>
+<span class="go">Sat 2016-01-23 15:21:24 MSK   20681  1000  1000   6   /usr/bin/tarantool</span>
+<span class="go">Sat 2016-01-23 15:51:56 MSK   21035   995   992   6   /usr/bin/tarantool</span>
+</pre></div>
+</div>
+<p><code class="samp docutils literal"><span class="pre">coredumpctl</span> <span class="pre">info</span> <span class="pre">&lt;pid&gt;</span></code> shows the stack trace and other useful information:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> coredumpctl info 21035
+<span class="go">          PID: 21035 (tarantool)</span>
+<span class="go">          UID: 995 (tarantool)</span>
+<span class="go">          GID: 992 (tarantool)</span>
+<span class="go">       Signal: 6 (ABRT)</span>
+<span class="go">    Timestamp: Sat 2016-01-23 15:51:42 MSK (4h 36min ago)</span>
+<span class="go"> Command Line: tarantool example.lua &lt;running&gt;</span>
+<span class="go">   Executable: /usr/bin/tarantool</span>
+<span class="go">Control Group: /system.slice/system-tarantool.slice/tarantool@example.service</span>
+<span class="go">         Unit: tarantool@example.service</span>
+<span class="go">        Slice: system-tarantool.slice</span>
+<span class="go">      Boot ID: 7c686e2ef4dc4e3ea59122757e3067e2</span>
+<span class="go">   Machine ID: a4a878729c654c7093dc6693f6a8e5ee</span>
+<span class="go">     Hostname: localhost.localdomain</span>
+<span class="go">      Message: Process 21035 (tarantool) of user 995 dumped core.</span>
+
+<span class="go">               Stack trace of thread 21035:</span>
+<span class="gp">               #</span><span class="m">0</span>  0x00007f84993aa618 raise <span class="o">(</span>libc.so.6<span class="o">)</span>
+<span class="gp">               #</span><span class="m">1</span>  0x00007f84993ac21a abort <span class="o">(</span>libc.so.6<span class="o">)</span>
+<span class="gp">               #</span><span class="m">2</span>  0x0000560d0a9e9233 _ZL12sig_fatal_cbi <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">3</span>  0x00007f849a211220 __restore_rt <span class="o">(</span>libpthread.so.0<span class="o">)</span>
+<span class="gp">               #</span><span class="m">4</span>  0x0000560d0aaa5d9d lj_cconv_ct_ct <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">5</span>  0x0000560d0aaa687f lj_cconv_ct_tv <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">6</span>  0x0000560d0aaabe33 lj_cf_ffi_meta___newindex <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">7</span>  0x0000560d0aaae2f7 lj_BC_FUNCC <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">8</span>  0x0000560d0aa9aabd lua_pcall <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">9</span>  0x0000560d0aa71400 lbox_call <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">10</span> 0x0000560d0aa6ce36 lua_fiber_run_f <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">11</span> 0x0000560d0a9e8d0c _ZL16fiber_cxx_invokePFiP13__va_list_tagES0_ <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">12</span> 0x0000560d0aa7b255 fiber_loop <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="gp">               #</span><span class="m">13</span> 0x0000560d0ab38ed1 coro_init <span class="o">(</span>tarantool<span class="o">)</span>
+<span class="go">               ...</span>
+</pre></div>
+</div>
+<p><code class="samp docutils literal"><span class="pre">coredumpctl</span> <span class="pre">-o</span> <span class="pre">filename.core</span> <span class="pre">info</span> <span class="pre">&lt;pid&gt;</span></code> saves the core dump into a file.</p>
+<p><code class="samp docutils literal"><span class="pre">coredumpctl</span> <span class="pre">gdb</span> <span class="pre">&lt;pid&gt;</span></code> starts <strong class="program">gdb</strong> on the core dump.</p>
+<p>It is highly recommended to install the <code class="docutils literal"><span class="pre">tarantool-debuginfo</span></code> package to improve
+<strong class="program">gdb</strong> experience. Example:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> dnf debuginfo-install tarantool
+</pre></div>
+</div>
+<p><strong class="program">gdb</strong> also provides information about the <code class="docutils literal"><span class="pre">debuginfo</span></code> packages you need to install:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="c1"># gdb -p &lt;pid&gt;</span>
+<span class="go">...</span>
+<span class="go">Missing separate debuginfos, use: dnf debuginfo-install</span>
+<span class="go">glibc-2.22.90-26.fc24.x86_64 krb5-libs-1.14-12.fc24.x86_64</span>
+<span class="go">libgcc-5.3.1-3.fc24.x86_64 libgomp-5.3.1-3.fc24.x86_64</span>
+<span class="go">libselinux-2.4-6.fc24.x86_64 libstdc++-5.3.1-3.fc24.x86_64</span>
+<span class="go">libyaml-0.1.6-7.fc23.x86_64 ncurses-libs-6.0-1.20150810.fc24.x86_64</span>
+<span class="go">openssl-libs-1.0.2e-3.fc24.x86_64</span>
+</pre></div>
+</div>
+<p>Symbol names are present in stack traces even if you don't have the
+<code class="docutils literal"><span class="pre">tarantool-debuginfo</span></code> package installed.</p>
+<p>For additional information, please refer to the documentation provided with your
+Linux distribution.</p>
+</div>
+<div class="section" id="precautions">
+<h3>6.8.5. Precautions<a class="headerlink" href="#precautions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Please don't use <code class="docutils literal"><span class="pre">tarantoolctl</span> <span class="pre">{start,stop,restart}</span></code> to control instances
+started by <strong class="program">systemd</strong>. It is still possible to use
+<strong class="program">tarantoolctl</strong> to start and stop instances from your local directories
+(e.g. <code class="file docutils literal"><span class="pre">$</span><em><span class="pre">HOME</span></em></code>) without obtaining <code class="docutils literal"><span class="pre">ROOT</span></code> access.</li>
+<li><strong class="program">tarantoolctl</strong> is configured to work properly with <strong class="program">systemd</strong>.
+Please don't modify system-wide settings of <strong class="program">tarantoolctl</strong>, such as
+paths, directory permissions and usernames. Otherwise, you have a chance to
+shoot yourself in the foot.</li>
+<li><strong class="program">systemd</strong> scripts are maintained by the Tarantool Team
+(<a class="reference external" href="http://tarantool.org">http://tarantool.org</a>). Please file tickets directly to the upstream's bug
+tracker (<a class="reference external" href="https://github.com/tarantool/tarantool/issues/">https://github.com/tarantool/tarantool/issues/</a>) rather than to your
+Linux distribution.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="updating-tarantool-in-production">
+<h2>6.9. Updating Tarantool in production<a class="headerlink" href="#updating-tarantool-in-production" title="Permalink to this headline">¶</a></h2>
+<p>First, put your application's business logic in a Tarantool-Lua module that
+exports its functions for CALL.</p>
+<p>For example, <code class="file docutils literal"><span class="pre">/usr/share/tarantool/myapp.lua</span></code>:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="k">function</span> <span class="nf">start</span><span class="p">()</span>
+<span class="c1">-- Initial version</span>
+<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.1.0&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">somedata&quot;</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">primary&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="k">end</span>
+
+<span class="c1">-- migration code from 1.0 to 1.1</span>
+<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.1&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="k">end</span>
+
+<span class="c1">-- migration code from 1.1 to 1.2</span>
+<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.2&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">space</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">insert</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="k">end</span>
+
+<span class="c1">-- start some background fibers if you need</span>
+
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">stop</span><span class="p">()</span>
+<span class="c1">-- stop all background fibers and cleanup resources</span>
+<span class="k">end</span>
+
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">api_for_call</span><span class="p">(</span><span class="n">xxx</span><span class="p">)</span>
+<span class="c1">-- do some business</span>
+<span class="k">end</span>
+
+<span class="k">return</span> <span class="p">{</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+<span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="p">;</span>
+<span class="n">api_for_call</span> <span class="o">=</span> <span class="n">api_for_call</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This file is maintained by the application's developers. On its side,
+Tarantool Team provides templates for you to
+<a class="reference external" href="https://github.com/tarantool/modulekit">assemble deb/rpm packages</a>
+and utilities to quickly
+<a class="reference external" href="https://github.com/tarantool/build">assemble packages for specific platforms</a>.
+If needed, you can split applications into standalone files and/or modules.</p>
+<p>Second, put an initialization script to the
+<code class="file docutils literal"><span class="pre">/etc/tarantool/instances.available</span></code> directory.</p>
+<p>For example, <code class="file docutils literal"><span class="pre">/etc/tarantool/instances.available/myappcfg.lua</span></code>:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
+
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span> <span class="p">{</span>
+<span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="n">myapp</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="k">then</span>
+<span class="c1">-- hot code reload using tarantoolctl or dofile()</span>
+
+<span class="c1">-- unload old application</span>
+<span class="n">myapp</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="c1">-- clear cache for loaded modules and dependencies</span>
+<span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">myapp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">somedep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">;</span> <span class="c1">-- dependency of &#39;myapp&#39;</span>
+<span class="k">end</span>
+
+<span class="c1">-- load a new version of app and all dependencies</span>
+<span class="n">myapp</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">myapp&#39;</span><span class="p">).</span><span class="n">start</span><span class="p">({</span><span class="n">some</span> <span class="n">app</span> <span class="n">options</span> <span class="n">controlled</span> <span class="n">by</span> <span class="n">sysadmins</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>As a more detailed example, you can take the <code class="file docutils literal"><span class="pre">example.lua</span></code> script that
+ships with Tarantool and defines all configuration options.</p>
+<p>This initialization script is actually a configuration file and should be
+maintained by system administrators, while developers only provide a template.</p>
+<p>Now update your app file in <code class="file docutils literal"><span class="pre">/usr/share/tarantool</span></code>. Replace your
+application file (for example, <code class="file docutils literal"><span class="pre">/usr/share/tarantool/myapp.lua</span></code>) and
+manually reload the <code class="file docutils literal"><span class="pre">myappcfg.lua</span></code> initialization script using
+<strong class="program">tarantoolctl</strong>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> tarantoolctl <span class="nb">eval</span> /etc/tarantool/instance.enabled/myappcfg.lua
+</pre></div>
+</div>
+<p>After that, you need to manually flush the cache of <code class="docutils literal"><span class="pre">package.loaded</span></code> modules.</p>
+<p>For deb/rpm packages, you can add the <code class="docutils literal"><span class="pre">tarantoolctl</span> <span class="pre">eval</span></code> instruction directly
+into Tarantool's specification in <code class="file docutils literal"><span class="pre">RPM.spec</span></code> and the
+<code class="file docutils literal"><span class="pre">/debian</span></code> directory.</p>
+<p>Finally, clients make a CALL to <code class="docutils literal"><span class="pre">myapp.api_for_call</span></code> and other API functions.</p>
+<p>In the case of <code class="docutils literal"><span class="pre">tarantool-http</span></code>, there is no need to start the binary protocol
+at all.</p>
+</div>
+<div class="section" id="backups">
+<h2>6.10. Backups<a class="headerlink" href="#backups" title="Permalink to this headline">¶</a></h2>
+<p>The exact procedure for backing up a database depends on:
+how up-to-date the database must be,
+how frequently backups must be taken,
+whether it is okay to disrupt other users,
+and whether the procedure should be optimized for size (saving disk space)
+or for speed (saving time).
+So there is a spectrum of possible policies, ranging from cold-and-simple
+to hot-and-difficult.</p>
+<p><strong>Cold backup</strong></p>
+<p>In essence:
+The last snapshot file is a backup of the entire database;
+and the WAL files that are made after the last snapshot are incremental backups.
+Therefore taking a backup is a matter of copying the snapshot and WAL files.</p>
+<ol class="arabic simple">
+<li>Prevent all users from writing to the database. This can be done by
+shutting down the server, or by saying
+<code class="docutils literal"><span class="pre">box.cfg{read_only=true}</span></code> and then ensuring that all earlier
+writes are complete (<strong class="program">fsync</strong> can be used for this purpose).</li>
+<li>If this is a backup of the whole database, say
+<code class="samp docutils literal"><span class="pre">box.snapshot()</span></code>.</li>
+<li>Use <strong class="program">tar</strong> to make a (possibly compressed) copy of the
+latest <code class="file docutils literal"><span class="pre">.snap</span></code> and <code class="file docutils literal"><span class="pre">.xlog</span></code> files on the
+<a class="reference internal" href="configuration/index.html#cfg-basic-snap-dir"><span class="std std-ref">snap_dir</span></a> and
+<a class="reference internal" href="configuration/index.html#cfg-basic-wal-dir"><span class="std std-ref">wal_dir</span></a> directories.</li>
+<li>If there is a security policy, encrypt the tar file.</li>
+<li>Copy the tar file to a safe place.</li>
+</ol>
+<p>... Later, restoring the database is a matter of taking the
+tar file and putting its contents back in the <code class="docutils literal"><span class="pre">snap_dir</span></code> and <code class="docutils literal"><span class="pre">wal_dir</span></code>
+directories.</p>
+<p><strong>Continuous remote backup</strong></p>
+<p>In essence: <a class="reference internal" href="replication/index.html#index-box-replication"><span class="std std-ref">replication</span></a>
+is useful for backup as well as for load balancing.
+Therefore taking a backup is a matter of ensuring that any given
+replica is up to date, and doing a cold backup on it.
+Since all the other replicas continue to operate, this is not a
+cold backup from the end user's point of view. This could be
+done on a regular basis, with a cron job or with a Tarantool fiber.</p>
+<p><strong>Hot backup</strong></p>
+<p>In essence:
+The logged changes done since the last cold backup must be
+secured, while the system is running.</p>
+<p>For this purpose you need a &quot;file copy&quot; utility that will
+do the copying remotely and continuously, copying only the
+parts of a file that are changing. One such utility is
+<a class="reference external" href="https://en.wikipedia.org/wiki/rsync">rsync</a>.</p>
+<p>Alternatively, you need an ordinary file copy utility,
+but there should be frequent production of new snapshot files or
+new WAL files as changes occur, so that only the new files need to be copied.</p>
+<p>Note re storage engine: vinyl databases require additional steps.</p>
+</div>
+<div class="section" id="upgrades">
+<h2>6.11. Upgrades<a class="headerlink" href="#upgrades" title="Permalink to this headline">¶</a></h2>
+<p>This information applies for users who created databases with older
+versions of the Tarantool server, and have now installed a newer version.
+The request to make in this case is: <code class="samp docutils literal"><span class="pre">box.schema.upgrade()</span></code>.</p>
+<p>For example, here is what happens when one runs <code class="samp docutils literal"><span class="pre">box.schema.upgrade()</span></code>
+with a database that was created in early 2015. Only a small part of the output
+is shown.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">upgrade</span><span class="p">()</span>
+<span class="go">alter index primary on _space set options to {&quot;unique&quot;:true}, parts to [[0,&quot;unsigned&quot;]]</span>
+<span class="go">alter space _schema set options to {}</span>
+<span class="go">create view _vindex...</span>
+<span class="go">grant read access to &#39;public&#39; role for _vindex view</span>
+<span class="go">set schema version to 1.7.0</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="configuration/index.html"
+           class="b-prev b-ellipsis"
+           title="5. Configuration reference">5. Configuration reference</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/book/administration.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="connectors/index.html"
+           class="b-next b-ellipsis"
+           title="7. Connectors">7. Connectors</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

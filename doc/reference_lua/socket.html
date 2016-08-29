@@ -1,0 +1,1195 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Module socket</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Module socket">
+        Module socket
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_lua/socket.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_lua/socket.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_lua/socket">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Lua reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Module <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Module <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">Module <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="digest.html">Module <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_error.html">Submodule <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber.html">Module <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber_ipc.html">Submodule <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="msgpack.html">Module <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="net_box.html">Module <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_once.html">Function <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">Module <cite>pickle</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="strict.html">Module <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarantool.html">Module <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Lua reference
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Module <cite>socket</cite>" class="b-path_current b-ellipsis">
+          Module <cite>socket</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="module-socket">
+<span id="socket-module"></span><h1>Module <cite>socket</cite><a class="headerlink" href="#module-socket" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">socket</span></code> module allows exchanging data via BSD sockets with a local or
+remote host in connection-oriented (TCP) or datagram-oriented (UDP) mode.
+Semantics of the calls in the <code class="docutils literal"><span class="pre">socket</span></code> API closely follow semantics of the
+corresponding POSIX calls. Function names and signatures are mostly compatible
+with <a class="reference external" href="https://github.com/diegonehab/luasocket">luasocket</a>.</p>
+<p>The functions for setting up and connecting are <code class="docutils literal"><span class="pre">socket</span></code>, <code class="docutils literal"><span class="pre">sysconnect</span></code>,
+<code class="docutils literal"><span class="pre">tcp_connect</span></code>. The functions for sending data are <code class="docutils literal"><span class="pre">send</span></code>, <code class="docutils literal"><span class="pre">sendto</span></code>,
+<code class="docutils literal"><span class="pre">write</span></code>, <code class="docutils literal"><span class="pre">syswrite</span></code>. The functions for receiving data are <code class="docutils literal"><span class="pre">recv</span></code>,
+<code class="docutils literal"><span class="pre">recvfrom</span></code>, <code class="docutils literal"><span class="pre">read</span></code>. The functions for waiting before sending/receiving
+data are <code class="docutils literal"><span class="pre">wait</span></code>, <code class="docutils literal"><span class="pre">readable</span></code>, <code class="docutils literal"><span class="pre">writable</span></code>. The functions for setting
+flags are <code class="docutils literal"><span class="pre">nonblock</span></code>, <code class="docutils literal"><span class="pre">setsockopt</span></code>. The functions for stopping and
+disconnecting are <code class="docutils literal"><span class="pre">shutdown</span></code>, <code class="docutils literal"><span class="pre">close</span></code>. The functions for error checking
+are <code class="docutils literal"><span class="pre">errno</span></code>, <code class="docutils literal"><span class="pre">error</span></code>.</p>
+<div class="table container">
+<p><strong>Socket functions</strong></p>
+<table border="1" class="left-align-column-2 docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Purposes</th>
+<th class="head">Names</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>setup</td>
+<td><a class="reference internal" href="#socket-socket"><span class="std std-ref">socket()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-tcp-connect"><span class="std std-ref">socket.tcp_connect()</span></a></td>
+</tr>
+<tr class="row-even"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-tcp-server"><span class="std std-ref">socket.tcp_server()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-sysconnect"><span class="std std-ref">socket_object:sysconnect()</span></a></td>
+</tr>
+<tr class="row-even"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-send"><span class="std std-ref">socket_object:send()</span></a></td>
+</tr>
+<tr class="row-odd"><td>sending</td>
+<td><a class="reference internal" href="#socket-sendto"><span class="std std-ref">socket_object:sendto()</span></a></td>
+</tr>
+<tr class="row-even"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-send"><span class="std std-ref">socket_object:write()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-syswrite"><span class="std std-ref">socket_object:syswrite()</span></a></td>
+</tr>
+<tr class="row-even"><td>receiving</td>
+<td><a class="reference internal" href="#socket-recv"><span class="std std-ref">socket_object:recv()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-recvfrom"><span class="std std-ref">socket_object:recvfrom()</span></a></td>
+</tr>
+<tr class="row-even"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-read"><span class="std std-ref">socket_object:read()</span></a></td>
+</tr>
+<tr class="row-odd"><td>flag setting</td>
+<td><a class="reference internal" href="#socket-nonblock"><span class="std std-ref">socket_object:nonblock()</span></a></td>
+</tr>
+<tr class="row-even"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-setsockopt"><span class="std std-ref">socket_object:setsockopt()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-linger"><span class="std std-ref">socket_object:linger()</span></a></td>
+</tr>
+<tr class="row-even"><td>client/server</td>
+<td><a class="reference internal" href="#socket-listen"><span class="std std-ref">socket_object:listen()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-accept"><span class="std std-ref">socket_object:accept()</span></a></td>
+</tr>
+<tr class="row-even"><td>teardown</td>
+<td><a class="reference internal" href="#socket-shutdown"><span class="std std-ref">socket_object:shutdown()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-close"><span class="std std-ref">socket_object:close()</span></a></td>
+</tr>
+<tr class="row-even"><td>error checking</td>
+<td><a class="reference internal" href="#socket-error"><span class="std std-ref">socket_object:error()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-error"><span class="std std-ref">socket_object:errno()</span></a></td>
+</tr>
+<tr class="row-even"><td>information</td>
+<td><a class="reference internal" href="#socket-getaddrinfo"><span class="std std-ref">socket.getaddrinfo()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-getsockopt"><span class="std std-ref">socket_object:getsockopt()</span></a></td>
+</tr>
+<tr class="row-even"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-peer"><span class="std std-ref">socket_object:peer()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-name"><span class="std std-ref">socket_object:name()</span></a></td>
+</tr>
+<tr class="row-even"><td>state checking</td>
+<td><a class="reference internal" href="#socket-readable"><span class="std std-ref">socket_object:readable()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-writable"><span class="std std-ref">socket_object:writable()</span></a></td>
+</tr>
+<tr class="row-even"><td>&quot;&quot;</td>
+<td><a class="reference internal" href="#socket-wait"><span class="std std-ref">socket_object:wait()</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Typically a socket session will begin with the setup functions, will set one
+or more flags, will have a loop with sending and receiving functions, will
+end with the teardown functions -- as an example at the end of this section
+will show. Throughout, there may be error-checking and waiting functions for
+synchronization. To prevent a fiber containing socket functions from &quot;blocking&quot;
+other fibers, the <a class="reference internal" href="../book/box/atomic.html#atomic-the-implicit-yield-rules"><span class="std std-ref">implicit yield rules</span></a>
+will cause a yield so that other processes
+may take over, as is the norm for cooperative multitasking.</p>
+<p>For all examples in this section the socket name will be sock and
+the function invocations will look like <code class="docutils literal"><span class="pre">sock:function_name(...)</span></code>.</p>
+<span class="target" id="lua-module.socket"></span><span class="target" id="socket-socket"></span><dl class="function">
+<dt id="lua-function.socket.__call">
+<em class="property"> </em><code class="descclassname">socket.</code><code class="descname">__call</code><big>(</big><em>domain</em>, <em>type</em>, <em>protocol</em><big>)</big><a class="headerlink" href="#lua-function.socket.__call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new TCP or UDP socket. The argument values
+are the same as in the <a class="reference external" href="http://man7.org/linux/man-pages/man2/socket.2.html">Linux socket(2) man page</a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">an unconnected socket, or nil.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">userdata</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">socket</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">AF_INET&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">SOCK_STREAM&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">tcp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="socket-tcp-connect"></span><dl class="function">
+<dt id="lua-function.socket.tcp_connect">
+<em class="property"> </em><code class="descclassname">socket.</code><code class="descname">tcp_connect</code><big>(</big><em>host</em><span class="optional">[</span>, <em>port</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket.tcp_connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect a socket to a remote host.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>host</strong> (<em>string</em>) -- URL or IP address</li>
+<li><strong>port</strong> (<em>number</em>) -- port number</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">a connected socket, if no error.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">userdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">tcp_connect</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">127.0.0.1&#39;</span><span class="p">,</span> <span class="mi">3301</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="socket-getaddrinfo"></span><dl class="function">
+<dt id="lua-function.socket.getaddrinfo">
+<em class="property"> </em><code class="descclassname">socket.</code><code class="descname">getaddrinfo</code><big>(</big><em>host</em>, <em>type</em><span class="optional">[</span>, <em>{option-list}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket.getaddrinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal"><span class="pre">socket.getaddrinfo()</span></code> function is useful for finding information
+about a remote site so that the correct arguments for
+<code class="docutils literal"><span class="pre">sock:sysconnect()</span></code> can be passed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">A table containing these fields: &quot;host&quot;, &quot;family&quot;, &quot;type&quot;, &quot;protocol&quot;, &quot;port&quot;.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">table</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<p><code class="docutils literal"><span class="pre">socket.getaddrinfo('tarantool.org',</span> <span class="pre">'http')</span></code> will return variable
+information such as</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">188.93.56.70</span>
+    <span class="l l-Scalar l-Scalar-Plain">family</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">AF_INET</span>
+    <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">SOCK_STREAM</span>
+    <span class="l l-Scalar l-Scalar-Plain">protocol</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+    <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">188.93.56.70</span>
+    <span class="l l-Scalar l-Scalar-Plain">family</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">AF_INET</span>
+    <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">SOCK_DGRAM</span>
+    <span class="l l-Scalar l-Scalar-Plain">protocol</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">udp</span>
+    <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="socket-tcp-server"></span><dl class="function">
+<dt id="lua-function.socket.tcp_server">
+<em class="property"> </em><code class="descclassname">socket.</code><code class="descname">tcp_server</code><big>(</big><em>host</em>, <em>port</em>, <em>handler-function</em><big>)</big><a class="headerlink" href="#lua-function.socket.tcp_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal"><span class="pre">socket.tcp_server()</span></code> function makes Tarantool act as a server that
+can accept connections. Usually the same objective
+is accomplished with <code class="docutils literal"><span class="pre">box.cfg{listen=...)</span></code>.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">socket</span><span class="p">.</span><span class="n">tcp_server</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">localhost&#39;</span><span class="p">,</span> <span class="mi">3302</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="k">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="lua-object.socket.socket_object">
+<em class="property">object </em><code class="descname">socket_object</code><a class="headerlink" href="#lua-object.socket.socket_object" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="socket-sysconnect"></span><dl class="method">
+<dt id="lua-function.socket_object.sysconnect">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">sysconnect</code><big>(</big><em>host</em>, <em>port</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.sysconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect an existing socket to a remote host. The argument values are the same as
+in tcp_connect().
+The host must be an IP address.</p>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Either:</dt>
+<dd><ul class="first last simple">
+<li>host - a string representation of an IPv4 address
+or an IPv6 address;</li>
+<li>port - a number.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Or:</dt>
+<dd><ul class="first last simple">
+<li>host - a string containing &quot;unix/&quot;;</li>
+<li>port - a string containing a path to a unix socket.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Or:</dt>
+<dd><ul class="first last simple">
+<li>host - a number, 0 (zero), meaning &quot;all local
+interfaces&quot;;</li>
+<li>port - a number. If a port number is 0 (zero),
+the socket will be bound to a random local port.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the socket object value may change if sysconnect() succeeds.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">socket</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">socket&#39;</span><span class="p">)</span>
+<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">AF_INET&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">SOCK_STREAM&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">tcp&#39;</span><span class="p">)</span>
+<span class="n">sock</span><span class="p">:</span><span class="n">sysconnect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3301</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="socket-send"></span><dl class="method">
+<dt id="lua-function.socket_object.send">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">send</code><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.send" title="Permalink to this definition">¶</a></dt>
+<dt id="lua-function.socket_object.write">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">write</code><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send data over a connected socket.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>string</em>) -- </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">the number of bytes sent.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">number</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: nil on error.</p>
+</dd></dl>
+
+<span class="target" id="socket-syswrite"></span><dl class="method">
+<dt id="lua-function.socket_object.syswrite">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">syswrite</code><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.syswrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write as much as possible data to the socket buffer if non-blocking.
+Rarely used. For details see <a class="reference external" href="https://github.com/tarantool/tarantool/wiki/sockets%201.6">this description</a>.</p>
+</dd></dl>
+
+<span class="target" id="socket-recv"></span><dl class="method">
+<dt id="lua-function.socket_object.recv">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">recv</code><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.recv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read <code class="docutils literal"><span class="pre">size</span></code> bytes from a connected socket. An internal read-ahead
+buffer is used to reduce the cost of this call.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>size</strong> (<em>integer</em>) -- </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">a string of the requested length on success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: On error, returns an empty string, followed by status,
+errno, errstr. In case the writing side has closed its
+end, returns the remainder read from the socket (possibly
+an empty string), followed by &quot;eof&quot; status.</p>
+</dd></dl>
+
+<span class="target" id="socket-read"></span><dl class="method">
+<dt id="lua-function.socket_object.read">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">read</code><big>(</big><em>limit</em><span class="optional">[</span>, <em>timeout</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket_object.read" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">read</code><big>(</big><em>delimiter</em><span class="optional">[</span>, <em>timeout</em><span class="optional">]</span><big>)</big></dt>
+<dt>
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">read</code><big>(</big><em>{limit=limit}</em><span class="optional">[</span>, <em>timeout</em><span class="optional">]</span><big>)</big></dt>
+<dt>
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">read</code><big>(</big><em>{delimiter=delimiter}</em><span class="optional">[</span>, <em>timeout</em><span class="optional">]</span><big>)</big></dt>
+<dt>
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">read</code><big>(</big><em>{limit=limit</em>, <em>delimiter=delimiter}</em><span class="optional">[</span>, <em>timeout</em><span class="optional">]</span><big>)</big></dt>
+<dd><p>Read from a connected socket until some condition is true, and return
+the bytes that were read.
+Reading goes on until <code class="docutils literal"><span class="pre">limit</span></code> bytes have been read, or a delimiter
+has been read, or a timeout has expired.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>limit</strong> (<em>integer</em>) -- maximum number of bytes to read for
+example 50 means &quot;stop after 50 bytes&quot;</li>
+<li><strong>delimiter</strong> (<em>string</em>) -- separator for example
+'?' means &quot;stop after a question mark&quot;</li>
+<li><strong>timeout</strong> (<em>number</em>) -- maximum number of seconds to wait for
+example 50 means &quot;stop after 50 seconds&quot;.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">an empty string if there is nothing more to read, or a nil
+value if error, or a string up to <code class="docutils literal"><span class="pre">limit</span></code> bytes long,
+which may include the bytes that matched the <code class="docutils literal"><span class="pre">delimiter</span></code>
+expression.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-sysread"></span><dl class="method">
+<dt id="lua-function.socket_object.sysread">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">sysread</code><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.sysread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all available data from the socket buffer if non-blocking.
+Rarely used. For details see <a class="reference external" href="https://github.com/tarantool/tarantool/wiki/sockets%201.6">this description</a>.</p>
+</dd></dl>
+
+<span class="target" id="socket-bind"></span><dl class="method">
+<dt id="lua-function.socket_object.bind">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">bind</code><big>(</big><em>host</em><span class="optional">[</span>, <em>port</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket_object.bind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bind a socket to the given host/port. A UDP socket after binding
+can be used to receive data (see <a class="reference internal" href="#socket-recvfrom"><span class="std std-ref">socket_object.recvfrom</span></a>).
+A TCP socket can be used to accept new connections, after it has
+been put in listen mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>host</strong> -- </li>
+<li><strong>port</strong> -- </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">a socket object on success</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">userdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: Returns nil, status, errno, errstr on error.</p>
+</dd></dl>
+
+<span class="target" id="socket-listen"></span><dl class="method">
+<dt id="lua-function.socket_object.listen">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">listen</code><big>(</big><em>backlog</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.listen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start listening for incoming connections.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>backlog</strong> -- On Linux the listen <code class="docutils literal"><span class="pre">backlog</span></code> backlog may be from
+/proc/sys/net/core/somaxconn, on BSD the backlog
+may be <code class="docutils literal"><span class="pre">SOMAXCONN</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true for success, false for error.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-accept"></span><dl class="method">
+<dt id="lua-function.socket_object.accept">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">accept</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.socket_object.accept" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accept a new client connection and create a new connected socket.
+It is good practice to set the socket's blocking mode explicitly
+after accepting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">new socket if success.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">userdata</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: nil.</p>
+</dd></dl>
+
+<span class="target" id="socket-sendto"></span><dl class="method">
+<dt id="lua-function.socket_object.sendto">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">sendto</code><big>(</big><em>host</em>, <em>port</em>, <em>data</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.sendto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a message on a UDP socket to a specified host.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>host</strong> (<em>string</em>) -- </li>
+<li><strong>port</strong> (<em>number</em>) -- </li>
+<li><strong>data</strong> (<em>string</em>) -- </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">the number of bytes sent.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">number</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: on error, returns status, errno, errstr.</p>
+</dd></dl>
+
+<span class="target" id="socket-recvfrom"></span><dl class="method">
+<dt id="lua-function.socket_object.recvfrom">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">recvfrom</code><big>(</big><em>limit</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.recvfrom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a message on a UDP socket.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>limit</strong> (<em>integer</em>) -- </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">message, a table containing &quot;host&quot;, &quot;family&quot; and &quot;port&quot; fields.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string, table</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: on error, returns status, errno, errstr.</p>
+<p><strong>Example:</strong></p>
+<p>After <code class="docutils literal"><span class="pre">message_content,</span> <span class="pre">message_sender</span> <span class="pre">=</span> <span class="pre">recvfrom(1)</span></code>
+the value of <code class="docutils literal"><span class="pre">message_content</span></code> might be a string containing 'X' and
+the value of <code class="docutils literal"><span class="pre">message_sender</span></code> might be a table containing</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">message_sender</span><span class="p">.</span><span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">18.44.0.1&#39;</span>
+<span class="n">message_sender</span><span class="p">.</span><span class="n">family</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">AF_INET&#39;</span>
+<span class="n">message_sender</span><span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">43065</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="socket-shutdown"></span><dl class="method">
+<dt id="lua-function.socket_object.shutdown">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">shutdown</code><big>(</big><em>how</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shutdown a reading end, a writing end, or both ends of a socket.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>how</strong> -- socket.SHUT_RD, socket.SHUT_WR, or socket.SHUT_RDWR.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true or false.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-close"></span><dl class="method">
+<dt id="lua-function.socket_object.close">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">close</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.socket_object.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close (destroy) a socket. A closed socket should not be used any more.
+A socket is closed automatically when its userdata is garbage collected by Lua.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">true on success, false on error. For example, if
+sock is already closed, sock:close() returns false.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-error"></span><dl class="method">
+<dt id="lua-function.socket_object.error">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">error</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.socket_object.error" title="Permalink to this definition">¶</a></dt>
+<dt id="lua-function.socket_object.errno">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">errno</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.socket_object.errno" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve information about the last error that occurred on a socket, if any.
+Errors do not cause throwing of exceptions so these functions are usually necessary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">result for <code class="docutils literal"><span class="pre">sock:errno()</span></code>, result for <code class="docutils literal"><span class="pre">sock:error()</span></code>.
+If there is no error, then <code class="docutils literal"><span class="pre">sock:errno()</span></code> will return 0 and <code class="docutils literal"><span class="pre">sock:error()</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number, string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-setsockopt"></span><dl class="method">
+<dt id="lua-function.socket_object.setsockopt">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">setsockopt</code><big>(</big><em>level</em>, <em>name</em>, <em>value</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.setsockopt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set socket flags. The argument values are the same as in the
+<a class="reference external" href="http://man7.org/linux/man-pages/man2/setsockopt.2.html">Linux getsockopt(2) man page</a>.
+The ones that Tarantool accepts are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>SO_ACCEPTCONN</li>
+<li>SO_BINDTODEVICE</li>
+<li>SO_BROADCAST</li>
+<li>SO_DEBUG</li>
+<li>SO_DOMAIN</li>
+<li>SO_ERROR</li>
+<li>SO_DONTROUTE</li>
+<li>SO_KEEPALIVE</li>
+<li>SO_MARK</li>
+<li>SO_OOBINLINE</li>
+<li>SO_PASSCRED</li>
+<li>SO_PEERCRED</li>
+<li>SO_PRIORITY</li>
+<li>SO_PROTOCOL</li>
+<li>SO_RCVBUF</li>
+<li>SO_RCVBUFFORCE</li>
+<li>SO_RCVLOWAT</li>
+<li>SO_SNDLOWAT</li>
+<li>SO_RCVTIMEO</li>
+<li>SO_SNDTIMEO</li>
+<li>SO_REUSEADDR</li>
+<li>SO_SNDBUF</li>
+<li>SO_SNDBUFFORCE</li>
+<li>SO_TIMESTAMP</li>
+<li>SO_TYPE</li>
+</ul>
+</div></blockquote>
+<p>Setting SO_LINGER is done with <code class="docutils literal"><span class="pre">sock:linger(active)</span></code>.</p>
+</dd></dl>
+
+<span class="target" id="socket-getsockopt"></span><dl class="method">
+<dt id="lua-function.socket_object.getsockopt">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">getsockopt</code><big>(</big><em>level</em>, <em>name</em><big>)</big><a class="headerlink" href="#lua-function.socket_object.getsockopt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get socket flags. For a list of possible flags see <code class="docutils literal"><span class="pre">sock:setsockopt()</span></code>.</p>
+</dd></dl>
+
+<span class="target" id="socket-linger"></span><dl class="method">
+<dt id="lua-function.socket_object.linger">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">linger</code><big>(</big><span class="optional">[</span><em>active</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket_object.linger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set or clear the SO_LINGER flag. For a description of the flag, see
+the <a class="reference external" href="http://man7.org/linux/man-pages/man1/loginctl.1.html">Linux man page</a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>active</strong> (<em>boolean</em>) -- </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">new active and timeout values.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-nonblock"></span><dl class="method">
+<dt id="lua-function.socket_object.nonblock">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">nonblock</code><big>(</big><span class="optional">[</span><em>flag</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket_object.nonblock" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li><code class="docutils literal"><span class="pre">sock:nonblock()</span></code> returns the current flag value.</li>
+<li><code class="docutils literal"><span class="pre">sock:nonblock(false)</span></code> sets the flag to false and returns false.</li>
+<li><code class="docutils literal"><span class="pre">sock:nonblock(true)</span></code> sets the flag to true and returns true.</li>
+</ul>
+<p>This function may be useful before invoking a function which might
+otherwise block indefinitely.</p>
+</dd></dl>
+
+<span class="target" id="socket-readable"></span><dl class="method">
+<dt id="lua-function.socket_object.readable">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">readable</code><big>(</big><span class="optional">[</span><em>timeout</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket_object.readable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until something is readable, or until a timeout value expires.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">true if the socket is now readable, false if timeout expired;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-writable"></span><dl class="method">
+<dt id="lua-function.socket_object.writable">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">writable</code><big>(</big><span class="optional">[</span><em>timeout</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket_object.writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until something is writable, or until a timeout value expires.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">true if the socket is now writable, false if timeout expired;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-wait"></span><dl class="method">
+<dt id="lua-function.socket_object.wait">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">wait</code><big>(</big><span class="optional">[</span><em>timeout</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket_object.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until something is either readable or writable, or until a timeout value expires.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">'R' if the socket is now readable, 'W' if the socket is now writable, 'RW' if the socket is now both readable and writable, '' (empty string) if timeout expired;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-name"></span><dl class="method">
+<dt id="lua-function.socket_object.name">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">name</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.socket_object.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal"><span class="pre">sock:name()</span></code> function is used to get information about the
+near side of the connection. If a socket was bound to <code class="docutils literal"><span class="pre">xyz.com:45</span></code>,
+then <code class="docutils literal"><span class="pre">sock:name</span></code> will return information about <code class="docutils literal"><span class="pre">[host:xyz.com,</span> <span class="pre">port:45]</span></code>.
+The equivalent POSIX function is <code class="docutils literal"><span class="pre">getsockname()</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">A table containing these fields: &quot;host&quot;, &quot;family&quot;, &quot;type&quot;, &quot;protocol&quot;, &quot;port&quot;.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">table</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="socket-peer"></span><dl class="method">
+<dt id="lua-function.socket_object.peer">
+<em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">peer</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.socket_object.peer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal"><span class="pre">sock:peer()</span></code> function is used to get information about the far side of a connection.
+If a TCP connection has been made to a distant host <code class="docutils literal"><span class="pre">tarantool.org:80</span></code>, <code class="docutils literal"><span class="pre">sock:peer()</span></code>
+will return information about <code class="docutils literal"><span class="pre">[host:tarantool.org,</span> <span class="pre">port:80]</span></code>.
+The equivalent POSIX function is <code class="docutils literal"><span class="pre">getpeername()</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">A table containing these fields: &quot;host&quot;, &quot;family&quot;, &quot;type&quot;, &quot;protocol&quot;, &quot;port&quot;.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">table</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-of-a-tcp-socket-over-the-internet">
+<h3>Use of a TCP socket over the Internet<a class="headerlink" href="#use-of-a-tcp-socket-over-the-internet" title="Permalink to this headline">¶</a></h3>
+<p>In this example a connection is made over the internet between the Tarantool
+server and tarantool.org, then an HTTP &quot;head&quot; message is sent, and a response
+is received: &quot;<code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">200</span> <span class="pre">OK</span></code>&quot;. This is not a useful way to communicate
+with this particular site, but shows that the system works.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">socket</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">socket&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">tcp_connect</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tarantool.org&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">sock</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">table</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock</span><span class="p">:</span><span class="nb">error</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock</span><span class="p">:</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">HEAD / HTTP/1.0rnHost: tarantool.orgrnrn&quot;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock</span><span class="p">:</span><span class="n">read</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="s">&quot;HTTP/1.1</span><span class="nv"> </span><span class="s">200</span><span class="nv"> </span><span class="s">OKrn&quot;</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-of-a-udp-socket-on-localhost">
+<h3>Use of a UDP socket on localhost<a class="headerlink" href="#use-of-a-udp-socket-on-localhost" title="Permalink to this headline">¶</a></h3>
+<p>Here is an example with datagrams. Set up two connections on 127.0.0.1
+(localhost): <code class="docutils literal"><span class="pre">sock_1</span></code> and <code class="docutils literal"><span class="pre">sock_2</span></code>. Using <code class="docutils literal"><span class="pre">sock_2</span></code>, send a message
+to <code class="docutils literal"><span class="pre">sock_1</span></code>. Using <code class="docutils literal"><span class="pre">sock_1</span></code>, receive a message. Display the received
+message. Close both connections. <br /> This is not a useful way for a
+computer to communicate with itself, but shows that the system works.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">socket</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">socket&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock_1</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">AF_INET&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">SOCK_DGRAM&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">udp&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock_1</span><span class="p">:</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">127.0.0.1&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock_2</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">AF_INET&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">SOCK_DGRAM&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">udp&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock_2</span><span class="p">:</span><span class="n">sendto</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">127.0.0.1&#39;</span><span class="p">,</span> <span class="n">sock_1</span><span class="p">:</span><span class="n">name</span><span class="p">().</span><span class="n">port</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">X&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">message</span> <span class="o">=</span> <span class="n">sock_1</span><span class="p">:</span><span class="n">recvfrom</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">message</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">X</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock_1</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock_2</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-tcp-server-to-accept-file-contents-sent-with-socat">
+<h3>Use tcp_server to accept file contents sent with socat<a class="headerlink" href="#use-tcp-server-to-accept-file-contents-sent-with-socat" title="Permalink to this headline">¶</a></h3>
+<p>Here is an example of the tcp_server function, reading
+strings from the client and printing them. On the client
+side, the Linux socat utility will be used to ship a
+whole file for the tcp_server function to read.</p>
+<p>Start two shells. The first shell will be the server.
+The second shell will be the client.</p>
+<p>On the first shell, start Tarantool and say:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{}</span>
+<span class="n">socket</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">socket&#39;</span><span class="p">)</span>
+<span class="n">socket</span><span class="p">.</span><span class="n">tcp_server</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">0.0.0.0&#39;</span><span class="p">,</span> <span class="mi">3302</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">true</span> <span class="k">do</span>
+      <span class="kd">local</span> <span class="n">request</span>
+      <span class="n">request</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+      <span class="k">if</span> <span class="n">request</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="s">&quot;</span> <span class="ow">or</span> <span class="n">request</span> <span class="o">==</span> <span class="kc">nil</span> <span class="k">then</span>
+        <span class="k">break</span>
+      <span class="k">end</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above code means: use <cite>tcp_server()</cite> to wait for a
+connection from any host on port 3302. When it happens,
+enter a loop that reads on the socket and prints what it
+reads. The &quot;delimiter&quot; for the read function is &quot;\n&quot; so
+each <cite>read()</cite> will read a string as far as the next line feed,
+including the line feed.</p>
+<p>On the second shell, create a file that contains a few
+lines. The contents don't matter. Suppose the first line
+contains A, the second line contains B, the third line
+contains C. Call this file &quot;tmp.txt&quot;.</p>
+<p>On the second shell, use the socat utility to ship the
+tmp.txt file to the server's host and port:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> socat TCP:localhost:3302 ./tmp.txt
+</pre></div>
+</div>
+<p>Now watch what happens on the first shell.
+The strings &quot;A&quot;, &quot;B&quot;, &quot;C&quot; are printed.</p>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="pickle.html"
+           class="b-prev b-ellipsis"
+           title="Module &lt;cite&gt;pickle&lt;/cite&gt;">Module <cite>pickle</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_lua/socket.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="strict.html"
+           class="b-next b-ellipsis"
+           title="Module &lt;cite&gt;strict&lt;/cite&gt;">Module <cite>strict</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

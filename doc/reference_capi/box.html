@@ -1,0 +1,564 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Module box</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Module box">
+        Module box
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_capi/box.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_capi/box.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_capi/box">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Lua reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">C API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Module <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="coio.html">Module <cite>coio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">Module <cite>error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber.html">Module <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_index.html">Module <cite>index</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="latch.html">Module <cite>latch</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Module <cite>lua/utils</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="say.html">Module <cite>say</cite> (logging)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schema.html">Module <cite>schema</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="trivia.html">Module <cite>trivia/config</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuple.html">Module <cite>tuple</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="txn.html">Module <cite>txn</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            C API reference
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Module <cite>box</cite>" class="b-path_current b-ellipsis">
+          Module <cite>box</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="module-box">
+<h1>Module <cite>box</cite><a class="headerlink" href="#module-box" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="c.box_function_ctx_t">
+<code class="descname">box_function_ctx_t</code><a class="headerlink" href="#c.box_function_ctx_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opaque structure passed to the stored C procedure</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.box_return_tuple">
+int <code class="descname">box_return_tuple</code><big>(</big><a class="reference internal" href="#c.box_function_ctx_t" title="box_function_ctx_t">box_function_ctx_t</a><em>&nbsp;*ctx</em>, <a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t">box_tuple_t</a><em>&nbsp;*tuple</em><big>)</big><a class="headerlink" href="#c.box_return_tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a tuple from stored C procedure.</p>
+<p>Returned tuple is automatically reference counted by Tarantool.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ctx</strong> (<em>box_funtion_ctx_t*</em>) -- an opaque structure passed to the stored C
+procedure by Tarantool</li>
+<li><strong>tuple</strong> (<a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t"><em>box_tuple_t*</em></a>) -- a tuple to return</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">-1 on error (perhaps, out of memory; check
+<a class="reference internal" href="error.html#c-api-error-box-error-last"><span class="std std-ref">box_error_last()</span></a>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">0 otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="box-box-space-id-by-name"></span><dl class="function">
+<dt id="c.box_space_id_by_name">
+uint32_t <code class="descname">box_space_id_by_name</code><big>(</big>const char<em>&nbsp;*name</em>, uint32_t<em>&nbsp;len</em><big>)</big><a class="headerlink" href="#c.box_space_id_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find space id by name.</p>
+<p>This function performs SELECT request to _vspace system space.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>char* name</strong> (<em>const</em>) -- space name</li>
+<li><strong>len</strong> (<em>uint32_t</em>) -- length of <code class="docutils literal"><span class="pre">name</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref c c-macro docutils literal"><span class="pre">BOX_ID_NIL</span></code> on error or if not found (check
+<a class="reference internal" href="error.html#c-api-error-box-error-last"><span class="std std-ref">box_error_last()</span></a>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">space_id otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also: <a class="reference internal" href="#c.box_index_id_by_name" title="box_index_id_by_name"><code class="xref c c-type docutils literal"><span class="pre">box_index_id_by_name</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.box_index_id_by_name">
+uint32_t <code class="descname">box_index_id_by_name</code><big>(</big>uint32_t<em>&nbsp;space_id</em>, const char<em>&nbsp;*name</em>, uint32_t<em>&nbsp;len</em><big>)</big><a class="headerlink" href="#c.box_index_id_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find index id by name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>space_id</strong> (<em>uint32_t</em>) -- space identifier</li>
+<li><strong>char*  name</strong> (<em>const</em>) -- index name</li>
+<li><strong>len</strong> (<em>uint32_t</em>) -- length of <code class="docutils literal"><span class="pre">name</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="xref c c-macro docutils literal"><span class="pre">BOX_ID_NIL</span></code> on error or if not found (check
+<a class="reference internal" href="error.html#c-api-error-box-error-last"><span class="std std-ref">box_error_last()</span></a>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">space_id otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This function performs SELECT request to _vindex system space.</p>
+<p>See also: <a class="reference internal" href="#c.box_space_id_by_name" title="box_space_id_by_name"><code class="xref c c-type docutils literal"><span class="pre">box_space_id_by_name</span></code></a></p>
+</dd></dl>
+
+<span class="target" id="box-box-insert"></span><dl class="function">
+<dt id="c.box_insert">
+int <code class="descname">box_insert</code><big>(</big>uint32_t<em>&nbsp;space_id</em>, const char<em>&nbsp;*tuple</em>, const char<em>&nbsp;*tuple_end</em>, <a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t">box_tuple_t</a><em>&nbsp;**result</em><big>)</big><a class="headerlink" href="#c.box_insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an INSERT/REPLACE request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>space_id</strong> (<em>uint32_t</em>) -- space identifier</li>
+<li><strong>char*     tuple</strong> (<em>const</em>) -- encoded tuple in MsgPack Array format ([ field1, field2, ...])</li>
+<li><strong>char* tuple_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">tuple</span></code></li>
+<li><strong>result</strong> (<a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t"><em>box_tuple_t**</em></a>) -- output argument. Resulted tuple. Can be set to
+NULL to discard result</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">-1 on error (check <a class="reference internal" href="error.html#c-api-error-box-error-last"><span class="std std-ref">box_error_last()</span></a>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">0 otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a class="reference internal" href="../book/box/box_space.html#box-space-insert"><span class="std std-ref">space_object.insert()</span></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.box_replace">
+int <code class="descname">box_replace</code><big>(</big>uint32_t<em>&nbsp;space_id</em>, const char<em>&nbsp;*tuple</em>, const char<em>&nbsp;*tuple_end</em>, <a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t">box_tuple_t</a><em>&nbsp;**result</em><big>)</big><a class="headerlink" href="#c.box_replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an REPLACE request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>space_id</strong> (<em>uint32_t</em>) -- space identifier</li>
+<li><strong>char*     tuple</strong> (<em>const</em>) -- encoded tuple in MsgPack Array format ([ field1, field2, ...])</li>
+<li><strong>char* tuple_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">tuple</span></code></li>
+<li><strong>result</strong> (<a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t"><em>box_tuple_t**</em></a>) -- output argument. Resulted tuple. Can be set to
+NULL to discard result</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">-1 on error (check <a class="reference internal" href="error.html#c-api-error-box-error-last"><span class="std std-ref">box_error_last()</span></a>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">0 otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a class="reference internal" href="../book/box/box_space.html#box-space-replace"><span class="std std-ref">space_object.replace()</span></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.box_delete">
+int <code class="descname">box_delete</code><big>(</big>uint32_t<em>&nbsp;space_id</em>, uint32_t<em>&nbsp;index_id</em>, const char<em>&nbsp;*key</em>, const char<em>&nbsp;*key_end</em>, <a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t">box_tuple_t</a><em>&nbsp;**result</em><big>)</big><a class="headerlink" href="#c.box_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an DELETE request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>space_id</strong> (<em>uint32_t</em>) -- space identifier</li>
+<li><strong>index_id</strong> (<em>uint32_t</em>) -- index identifier</li>
+<li><strong>char*      key</strong> (<em>const</em>) -- encoded key in MsgPack Array format ([ field1, field2, ...])</li>
+<li><strong>char*  key_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">key</span></code></li>
+<li><strong>result</strong> (<a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t"><em>box_tuple_t**</em></a>) -- output argument. Result an old tuple. Can be
+set to NULL to discard result</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">-1 on error (check <a class="reference internal" href="error.html#c-api-error-box-error-last"><span class="std std-ref">box_error_last()</span></a>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">0 otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a class="reference internal" href="../book/box/box_space.html#box-space-delete"><span class="std std-ref">space_object.delete()</span></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.box_update">
+int <code class="descname">box_update</code><big>(</big>uint32_t<em>&nbsp;space_id</em>, uint32_t<em>&nbsp;index_id</em>, const char<em>&nbsp;*key</em>, const char<em>&nbsp;*key_end</em>, const char<em>&nbsp;*ops</em>, const char<em>&nbsp;*ops_end</em>, int<em>&nbsp;index_base</em>, <a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t">box_tuple_t</a><em>&nbsp;**result</em><big>)</big><a class="headerlink" href="#c.box_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an UPDATE request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>space_id</strong> (<em>uint32_t</em>) -- space identifier</li>
+<li><strong>index_id</strong> (<em>uint32_t</em>) -- index identifier</li>
+<li><strong>char*      key</strong> (<em>const</em>) -- encoded key in MsgPack Array format ([ field1, field2, ...])</li>
+<li><strong>char*  key_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">key</span></code></li>
+<li><strong>char*      ops</strong> (<em>const</em>) -- encoded operations in MsgPack Arrat format, e.g.
+<code class="docutils literal"><span class="pre">[[</span> <span class="pre">'=',</span> <span class="pre">field_id,</span>&#160; <span class="pre">value</span> <span class="pre">],</span> <span class="pre">['!',</span> <span class="pre">2,</span> <span class="pre">'xxx']]</span></code></li>
+<li><strong>char*  ops_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">ops</span></code></li>
+<li><strong>index_base</strong> (<em>int</em>) -- 0 if field_ids in update operation are zero-based
+indexed (like C) or 1 if for one-based indexed
+field ids (like Lua).</li>
+<li><strong>result</strong> (<a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t"><em>box_tuple_t**</em></a>) -- output argument. Result an old tuple. Can be
+set to NULL to discard result</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">-1 on error (check <a class="reference internal" href="error.html#c-api-error-box-error-last"><span class="std std-ref">box_error_last()</span></a>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">0 otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a class="reference internal" href="../book/box/box_space.html#box-space-update"><span class="std std-ref">space_object.update()</span></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.box_upsert">
+int <code class="descname">box_upsert</code><big>(</big>uint32_t<em>&nbsp;space_id</em>, uint32_t<em>&nbsp;index_id</em>, const char<em>&nbsp;*tuple</em>, const char<em>&nbsp;*tuple_end</em>, const char<em>&nbsp;*ops</em>, const char<em>&nbsp;*ops_end</em>, int<em>&nbsp;index_base</em>, <a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t">box_tuple_t</a><em>&nbsp;**result</em><big>)</big><a class="headerlink" href="#c.box_upsert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an UPSERT request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>space_id</strong> (<em>uint32_t</em>) -- space identifier</li>
+<li><strong>index_id</strong> (<em>uint32_t</em>) -- index identifier</li>
+<li><strong>char*     tuple</strong> (<em>const</em>) -- encoded tuple in MsgPack Array format ([ field1, field2, ...])</li>
+<li><strong>char* tuple_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">tuple</span></code></li>
+<li><strong>char*       ops</strong> (<em>const</em>) -- encoded operations in MsgPack Arrat format, e.g.
+<code class="docutils literal"><span class="pre">[[</span> <span class="pre">'=',</span> <span class="pre">field_id,</span>&#160; <span class="pre">value</span> <span class="pre">],</span> <span class="pre">['!',</span> <span class="pre">2,</span> <span class="pre">'xxx']]</span></code></li>
+<li><strong>char*   ops_end</strong> (<em>const</em>) -- end of a <code class="docutils literal"><span class="pre">ops</span></code></li>
+<li><strong>index_base</strong> (<em>int</em>) -- 0 if field_ids in update operation are zero-based
+indexed (like C) or 1 if for one-based indexed
+field ids (like Lua).</li>
+<li><strong>result</strong> (<a class="reference internal" href="tuple.html#c.box_tuple_t" title="box_tuple_t"><em>box_tuple_t**</em></a>) -- output argument. Result an old tuple. Can be
+set to NULL to discard result</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">-1 on error (check :<a class="reference internal" href="error.html#c-api-error-box-error-last"><span class="std std-ref">box_error_last()</span></a>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">0 otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a class="reference internal" href="../book/box/box_space.html#box-space-upsert"><span class="std std-ref">space_object.upsert()</span></a></p>
+</dd></dl>
+
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="index.html"
+           class="b-prev b-ellipsis"
+           title="C API reference">C API reference</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_capi/box.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="clock.html"
+           class="b-next b-ellipsis"
+           title="Module &lt;cite&gt;clock&lt;/cite&gt;">Module <cite>clock</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

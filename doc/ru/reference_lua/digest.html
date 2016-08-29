@@ -1,0 +1,591 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Модуль digest</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Модуль digest">
+        Модуль digest
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_lua/digest.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_lua/digest.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_lua/digest">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">Руководство пользователя</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Справочник по Lua API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Модуль <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Модуль <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">Модуль <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Модуль <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_error.html">Вложенный модуль <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber.html">Модуль <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber_ipc.html">Модуль <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="msgpack.html">Модуль <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="net_box.html">Модуль <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_once.html">Функция <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">Модуль <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">Модуль <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="strict.html">Модуль <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarantool.html">Модуль <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Разное</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Справочник по Lua API
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Модуль <cite>digest</cite>" class="b-path_current b-ellipsis">
+          Модуль <cite>digest</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="lua-module.digest">
+<span id="module-digest"></span><span id="digest"></span><h1>Модуль <cite>digest</cite><a class="headerlink" href="#lua-module.digest" title="Ссылка на этот заголовок">¶</a></h1>
+<p>A &quot;digest&quot; is a value which is returned by a function (usually a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">Cryptographic hash function</a>), applied against a string. Tarantool's digest
+module supports several types of cryptographic hash functions (<a class="reference external" href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Md4">MD4</a>,
+<a class="reference external" href="https://en.wikipedia.org/wiki/Md5">MD5</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Sha-0">SHA-0</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Sha-1">SHA-1</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Sha-2">SHA-2</a>) as well as a checksum function (<a class="reference external" href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check">CRC32</a>), two
+functions for <a class="reference external" href="https://en.wikipedia.org/wiki/Base64">base64</a>, and two non-cryptographic hash functions (<a class="reference external" href="https://code.google.com/p/guava-libraries/wiki/HashingExplained">guava</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/MurmurHash">murmur</a>).
+Some of the digest functionality is also present in the <a class="reference internal" href="crypto.html#crypto"><span class="std std-ref">crypto</span></a>
+module.</p>
+<p>The functions in digest are:</p>
+<dl class="function">
+<dt id="lua-функция.digest.aes256cbc.encrypt">
+<em class="property"> </em><code class="descclassname">digest.aes256cbc.</code><code class="descname">encrypt</code><big>(</big><em>string</em>, <em>key</em>, <em>iv</em><big>)</big><a class="headerlink" href="#lua-функция.digest.aes256cbc.encrypt" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.digest.aes256cbc.decrypt">
+<em class="property"> </em><code class="descclassname">digest.aes256cbc.</code><code class="descname">decrypt</code><big>(</big><em>string</em>, <em>key</em>, <em>iv</em><big>)</big><a class="headerlink" href="#lua-функция.digest.aes256cbc.decrypt" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 256-bit binary string = digest made with AES.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.md4">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">md4</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.md4" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 128-bit binary string = digest made with MD4.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.md4_hex">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">md4_hex</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.md4_hex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 32-byte string = hexadecimal of a digest calculated with md4.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.md5">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">md5</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.md5" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 128-bit binary string = digest made with MD5.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.md5_hex">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">md5_hex</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.md5_hex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 32-byte string = hexadecimal of a digest calculated with md5.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 160-bit binary string = digest made with SHA-0.|br|
+Not recommended.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha_hex">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha_hex</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha_hex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 40-byte string = hexadecimal of a digest calculated with sha.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha1">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha1</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha1" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 160-bit binary string = digest made with SHA-1.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha1_hex">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha1_hex</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha1_hex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 40-byte string = hexadecimal of a digest calculated with sha1.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha224">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha224</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha224" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 224-bit binary string = digest made with SHA-2.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha224_hex">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha224_hex</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha224_hex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 56-byte string = hexadecimal of a digest calculated with sha224.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha256">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha256</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha256" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 256-bit binary string =  digest made with SHA-2.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha256_hex">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha256_hex</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha256_hex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 64-byte string = hexadecimal of a digest calculated with sha256.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha384">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha384</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha384" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 384-bit binary string =  digest made with SHA-2.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha384_hex">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha384_hex</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha384_hex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 96-byte string = hexadecimal of a digest calculated with sha384.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha512">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha512</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha512" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 512-bit binary tring = digest made with SHA-2.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.sha512_hex">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">sha512_hex</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.sha512_hex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 128-byte string = hexadecimal of a digest calculated with sha512.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.base64_encode">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">base64_encode</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.base64_encode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns base64 encoding from a regular string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.base64_decode">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">base64_decode</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.base64_decode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns a regular string from a base64 encoding.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.urandom">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">urandom</code><big>(</big><em>integer</em><big>)</big><a class="headerlink" href="#lua-функция.digest.urandom" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns array of random bytes with length = integer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.crc32">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">crc32</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.crc32" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 32-bit checksum made with CRC32.</p>
+<p>The crc32 and crc32_update functions use the <a class="reference external" href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check#Standards_and_common_use">CRC-32C (Castagnoli)</a>
+polynomial value: <code class="docutils literal"><span class="pre">0x1EDC6F41</span></code> / <code class="docutils literal"><span class="pre">4812730177</span></code>. If it is necessary to be
+compatible with other checksum functions in other programming languages,
+ensure that the other functions use the same polynomial value.</p>
+<p>For example, in Python, install the <code class="docutils literal"><span class="pre">crcmod</span></code> package and say:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">crcmod</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fun</span> <span class="o">=</span> <span class="n">crcmod</span><span class="o">.</span><span class="n">mkCrcFun</span><span class="p">(</span><span class="s1">&#39;4812730177&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fun</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">)</span>
+<span class="go">3304160206L</span>
+</pre></div>
+</div>
+<p>In Perl, install the <code class="docutils literal"><span class="pre">Digest::CRC</span></code> module and run the following code:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nn">Digest::</span><span class="n">CRC</span><span class="p">;</span>
+<span class="nv">$d</span> <span class="o">=</span> <span class="nn">Digest::</span><span class="n">CRC</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="n">width</span> <span class="o">=&gt;</span> <span class="mi">32</span><span class="p">,</span> <span class="n">poly</span> <span class="o">=&gt;</span> <span class="mh">0x1EDC6F41</span><span class="p">,</span> <span class="n">init</span> <span class="o">=&gt;</span> <span class="mh">0xFFFFFFFF</span><span class="p">,</span> <span class="n">refin</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">refout</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nv">$d</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">);</span>
+<span class="k">print</span> <span class="nv">$d</span><span class="o">-&gt;</span><span class="n">digest</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>(the expected output is 3304160206).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.crc32.new">
+<em class="property"> </em><code class="descclassname">digest.crc32.</code><code class="descname">new</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.digest.crc32.new" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Initiates incremental crc32.
+See <a class="reference internal" href="#digest-incremental-digests"><span class="std std-ref">incremental methods</span></a> notes.</p>
+</dd></dl>
+
+<span class="target" id="digest-guava"></span><dl class="function">
+<dt id="lua-функция.digest.guava">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">guava</code><big>(</big><em>state</em>, <em>bucket</em><big>)</big><a class="headerlink" href="#lua-функция.digest.guava" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns a number made with consistent hash.</p>
+<p>The guava function uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Consistent_hashing">Consistent Hashing</a> algorithm of the Google
+guava library. The first parameter should be a hash code; the second
+parameter should be the number of buckets; the returned value will be an
+integer between 0 and the number of buckets. For example,</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">digest</span><span class="p">.</span><span class="n">guava</span><span class="p">(</span><span class="mi">10863919174838991</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.murmur">
+<em class="property"> </em><code class="descclassname">digest.</code><code class="descname">murmur</code><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#lua-функция.digest.murmur" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Returns 32-bit binary string = digest made with MurmurHash.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.digest.murmur.new">
+<em class="property"> </em><code class="descclassname">digest.murmur.</code><code class="descname">new</code><big>(</big><span class="optional">[</span><em>seed</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.digest.murmur.new" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Initiates incremental MurmurHash.
+See <a class="reference internal" href="#digest-incremental-digests"><span class="std std-ref">incremental methods</span></a> notes.</p>
+</dd></dl>
+
+<div class="section" id="incremental-methods-in-the-digest-module">
+<span id="digest-incremental-digests"></span><h2>Incremental methods in the digest module<a class="headerlink" href="#incremental-methods-in-the-digest-module" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Suppose that a digest is done for a string 'A', then a new part 'B' is appended
+to the string, then a new digest is required. The new digest could be recomputed
+for the whole string 'AB', but it is faster to take what was computed before for
+'A' and apply changes based on the new part 'B'. This is called multi-step or
+&quot;incremental&quot; digesting, which Tarantool supports with crc32 and with murmur...</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">digest</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">digest&#39;</span><span class="p">)</span>
+
+<span class="c1">-- print crc32 of &#39;AB&#39;, with one step, then incrementally</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">digest</span><span class="p">.</span><span class="n">crc32</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">AB&#39;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">digest</span><span class="p">.</span><span class="n">crc32</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">c</span><span class="p">:</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">A&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="p">:</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">B&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">:</span><span class="n">result</span><span class="p">())</span>
+
+<span class="c1">-- print murmur hash of &#39;AB&#39;, with one step, then incrementally</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">digest</span><span class="p">.</span><span class="n">murmur</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">AB&#39;</span><span class="p">))</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">digest</span><span class="p">.</span><span class="n">murmur</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">m</span><span class="p">:</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">A&#39;</span><span class="p">)</span>
+<span class="n">m</span><span class="p">:</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">B&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">:</span><span class="n">result</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Ссылка на этот заголовок">¶</a></h2>
+<p>In the following example, the user creates two functions, <code class="docutils literal"><span class="pre">password_insert()</span></code>
+which inserts a <a class="reference external" href="https://en.wikipedia.org/wiki/Sha-1">SHA-1</a> digest of the word &quot;<strong>^S^e^c^ret Wordpass</strong>&quot; into a tuple
+set, and <code class="docutils literal"><span class="pre">password_check()</span></code> which requires input of a password.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">digest</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">digest&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">password_insert</span><span class="p">()</span>
+<span class="gp">         &gt; </span>  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">1234</span><span class="p">,</span> <span class="n">digest</span><span class="p">.</span><span class="n">sha1</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">^S^e^c^ret Wordpass&#39;</span><span class="p">)}</span>
+<span class="gp">         &gt; </span>  <span class="k">return</span> <span class="s1">&#39;</span><span class="s">OK&#39;</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">password_check</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">12345</span><span class="p">}</span>
+<span class="gp">         &gt; </span>  <span class="k">if</span> <span class="n">digest</span><span class="p">.</span><span class="n">sha1</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="o">==</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">then</span>
+<span class="gp">         &gt; </span>    <span class="k">return</span> <span class="s1">&#39;</span><span class="s">Password is valid&#39;</span>
+<span class="gp">         &gt; </span>  <span class="k">else</span>
+<span class="gp">         &gt; </span>    <span class="k">return</span> <span class="s1">&#39;</span><span class="s">Password is not valid&#39;</span>
+<span class="gp">         &gt; </span>  <span class="k">end</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">password_insert</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="s">&#39;OK&#39;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>If a later user calls the <code class="docutils literal"><span class="pre">password_check()</span></code> function and enters
+the wrong password, the result is an error.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">password_insert</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Secret Password&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="s">&#39;Password</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">valid&#39;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="csv.html"
+           class="b-prev b-ellipsis"
+           title="Module &lt;cite&gt;csv&lt;/cite&gt;">Module <cite>csv</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_lua/digest.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="box_error.html"
+           class="b-next b-ellipsis"
+           title="Вложенный модуль &lt;cite&gt;box.error&lt;/cite&gt;">Вложенный модуль <cite>box.error</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

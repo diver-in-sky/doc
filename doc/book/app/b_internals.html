@@ -1,0 +1,552 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>10. Appendix B. Internals</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="10. Appendix B. Internals">
+        10. Appendix B. Internals
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../book/app/b_internals.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../ru/book/app/b_internals.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/app/b_internals">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">1. Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide_getting_started.html">2. Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../box/index.html">3. Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../replication/index.html">4. Replication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">5. Configuration reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administration.html">6. Server administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors/index.html">7. Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules.html">8. Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="a_errcodes.html">9. Appendix A. List of error codes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10. Appendix B. Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_lua_tutorial.html">11. Appendix C. Lua tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="d_vinyl/index.html">12. Appendix D. Vinyl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="e_cookbook.html">13. Appendix E. Cookbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f_c_tutorial.html">14. Appendix F. C tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_changes.html">15. Appendix G. Some significant changes in version 1.7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Lua reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            User Guide
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="10. Appendix B. Internals" class="b-path_current b-ellipsis">
+          10. Appendix B. Internals
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="appendix-b-internals">
+<span id="b-internals"></span><h1>10. Appendix B. Internals<a class="headerlink" href="#appendix-b-internals" title="Permalink to this headline">¶</a></h1>
+<p>This section is for advanced users or users who wish to
+know more about how the Tarantool program works. The
+discussion here is technical but generalized.
+The ultimate authority is the code.</p>
+<div class="section" id="data-persistence-and-the-wal-file-format">
+<h2>10.1. Data persistence and the WAL file format<a class="headerlink" href="#data-persistence-and-the-wal-file-format" title="Permalink to this headline">¶</a></h2>
+<p>To maintain data persistence, Tarantool writes each data change request (INSERT,
+UPDATE, DELETE, REPLACE) into a write-ahead log (WAL) file in the
+<a class="reference internal" href="../configuration/index.html#cfg-basic-wal-dir"><span class="std std-ref">wal_dir</span></a> directory. A new WAL file is created for every
+<a class="reference internal" href="../configuration/index.html#cfg-binary-logging-snapshots-rows-per-wal"><span class="std std-ref">rows_per_wal</span></a> records. Each data change request gets
+assigned a continuously growing 64-bit log sequence number. The name of the WAL
+file is based on the log sequence number of the first record in the file, plus
+an extension <code class="docutils literal"><span class="pre">.xlog</span></code>.</p>
+<p>Apart from a log sequence number and the data change request (its format is the
+same as in the binary protocol and is described in <a class="reference external" href="http://tarantool.org/doc/dev_guide/box-protocol.html">doc/dev_guide/box-protocol.html</a>),
+each WAL record contains a header, some metadata, and then the data formatted
+according to <a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">msgpack</a> rules. For example this is what the WAL file looks like
+after the first INSERT request (&quot;s:insert({1})&quot;) for the introductory sandbox
+exercise &quot;<a class="reference internal" href="../user_guide_getting_started.html#user-guide-getting-started-first-database"><span class="std std-ref">Starting Tarantool and making your first database</span></a> “.
+On the left are the hexadecimal bytes that one would see with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> hexdump 00000000000000000000.xlog
+</pre></div>
+</div>
+<p>and on the right are comments.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Hex dump of WAL file       Comment
+--------------------       -------
+58 4c 4f 47 0a             File header: &quot;XLOG\n&quot;
+30 2e 31 32 0a             File header: &quot;0.12\n&quot; = version
+...                        (not shown = more header + tuples for system spaces)
+d5 ba 0b ab                Magic row marker always = 0xab0bbad5 if version 0.12
+19 00                      Length, not including length of header, = 25 bytes
+ce 16 a4 38 6f             Record header: previous crc32, current crc32,
+a7 cc 73 7f 00 00 66 39
+84                         msgpack code meaning &quot;Map of 4 elements&quot; follows
+00 02                         element#1: tag=request type, value=0x02=IPROTO_INSERT
+02 01                         element#2: tag=server id, value=0x01
+03 04                         element#3: tag=lsn, value=0x04
+04 cb 41 d4 e2 2f 62 fd d5 d4 element#4: tag=timestamp, value=an 8-byte &quot;Double&quot;
+82                         msgpack code meaning &quot;map of 2 elements&quot; follows
+10 cd 02 00                   element#1: tag=space id, value=512, big byte first
+21 91 01                      element#2: tag=tuple, value=1-element fixed array={1}
+</pre></div>
+</div>
+<p>Tarantool processes requests atomically: a change is either accepted and recorded
+in the WAL, or discarded completely. Let's clarify how this happens, using the
+REPLACE request as an example:</p>
+<ol class="arabic simple">
+<li>The server attempts to locate the original tuple by primary key. If found, a
+reference to the tuple is retained for later use.</li>
+<li>The new tuple is validated. If for example it does not contain an indexed
+field, or it has an indexed field whose type does not match the type
+according to the index definition, the change is aborted.</li>
+<li>The new tuple replaces the old tuple in all existing indexes.</li>
+<li>A message is sent to WAL writer running in a separate thread, requesting that
+the change be recorded in the WAL. The server switches to work on the next
+request until the write is acknowledged.</li>
+<li>On success, a confirmation is sent to the client. On failure, a rollback
+procedure is begun. During the rollback procedure, the transaction processor
+rolls back all changes to the database which occurred after the first failed
+change, from latest to oldest, up to the first failed change. All rolled back
+requests are aborted with <code class="xref std std-errcode docutils literal"><span class="pre">ER_WAL_IO</span></code> error. No new
+change is applied while rollback is in progress. When the rollback procedure
+is finished, the server restarts the processing pipeline.</li>
+</ol>
+<p>One advantage of the described algorithm is that complete request pipelining is
+achieved, even for requests on the same value of the primary key. As a result,
+database performance doesn't degrade even if all requests refer to the same
+key in the same space.</p>
+<p>The transaction processor thread communicates with the WAL writer thread using
+asynchronous (yet reliable) messaging; the transaction processor thread, not
+being blocked on WAL tasks, continues to handle requests quickly even at high
+volumes of disk I/O. A response to a request is sent as soon as it is ready,
+even if there were earlier incomplete requests on the same connection. In
+particular, SELECT performance, even for SELECTs running on a connection packed
+with UPDATEs and DELETEs, remains unaffected by disk load.</p>
+<p>The WAL writer employs a number of durability modes, as defined in configuration
+variable <a class="reference internal" href="../configuration/index.html#index-wal-mode"><span class="std std-ref">wal_mode</span></a>. It is possible to turn the write-ahead
+log completely off, by setting <a class="reference internal" href="../configuration/index.html#cfg-binary-logging-snapshots-wal-mode"><span class="std std-ref">wal_mode</span></a> to <em>none</em>. Even
+without the write-ahead log it's still possible to take a persistent copy of the
+entire data set with the <a class="reference internal" href="../box/admin.html#admin-snapshot"><span class="std std-ref">box.snapshot()</span></a> request.</p>
+<p>An .xlog file always contains changes based on the primary key.
+Even if the client requested an update or delete using
+a secondary key, the record in the .xlog file will contain the primary key.</p>
+</div>
+<div class="section" id="the-snapshot-file-format">
+<h2>10.2. The snapshot file format<a class="headerlink" href="#the-snapshot-file-format" title="Permalink to this headline">¶</a></h2>
+<p>The format of a snapshot .snap file is nearly the same as the format of a WAL .xlog file.
+However, the snapshot header differs: it contains the server's global unique identifier
+and the snapshot file's position in history, relative to earlier snapshot files.
+Also, the content differs: an .xlog file may contain records for any data-change
+requests (inserts, updates, upserts, and deletes), a .snap file may only contain records
+of inserts to memtx spaces.</p>
+<p>Primarily, the .snap file's records are ordered by space id. Therefore the records of
+system spaces, such as _schema and _space and _index and _func and _priv and _cluster,
+will be at the start of the .snap file, before the records of any spaces
+that were created by users.</p>
+<p>Secondarily, the .snap file's records are ordered by primary key within space id.</p>
+</div>
+<div class="section" id="the-recovery-process">
+<h2>10.3. The Recovery Process<a class="headerlink" href="#the-recovery-process" title="Permalink to this headline">¶</a></h2>
+<p>The recovery process begins when box.cfg{} happens for the
+first time after the Tarantool server starts.</p>
+<p>The recovery process must recover the databases
+as of the moment when the server was last shut down. For this it may
+use the latest snapshot file and any WAL files that were written
+after the snapshot. One complicating factor is that Tarantool
+has two engines -- the memtx data must be reconstructed entirely
+from the snapshot and the WAL files, while the vinyl data will
+be on disk but might require updating around the time of a checkpoint.
+(When a snapshot happens, Tarantool tells the vinyl engine to
+make a checkpoint, and the snapshot operation is rolled back if
+anything goes wrong, so vinyl's checkpoint is at least as fresh
+as the snapshot file.)</p>
+<dl class="docutils">
+<dt>Step 1</dt>
+<dd>Read the configuration parameters in the <code class="docutils literal"><span class="pre">box.cfg{}</span></code> request.
+Parameters which affect recovery may include <a class="reference internal" href="../configuration/index.html#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>,
+<a class="reference internal" href="../configuration/index.html#cfg-basic-wal-dir"><span class="std std-ref">wal_dir</span></a>, <a class="reference internal" href="../configuration/index.html#cfg-basic-snap-dir"><span class="std std-ref">snap_dir</span></a>, <a class="reference internal" href="../configuration/index.html#cfg-basic-vinyl-dir"><span class="std std-ref">vinyl_dir</span></a>,
+<a class="reference internal" href="../configuration/index.html#cfg-binary-logging-snapshots-panic-on-snap-error"><span class="std std-ref">panic_on_snap_error</span></a>,
+and <a class="reference internal" href="../configuration/index.html#cfg-binary-logging-snapshots-panic-on-wal-error"><span class="std std-ref">panic_on_wal_error</span></a>.</dd>
+<dt>Step 2</dt>
+<dd>Find the latest snapshot file. Use its data to reconstruct the in-memory
+databases. Instruct the vinyl engine to recover to the latest checkpoint.</dd>
+</dl>
+<p>There are actually two variations of the reconstruction procedure for the memtx
+databases, depending whether the recovery process is &quot;default&quot;.</p>
+<p>If it is default (<code class="docutils literal"><span class="pre">panic_on_snap_error</span></code> is <code class="docutils literal"><span class="pre">true</span></code> and <code class="docutils literal"><span class="pre">panic_on_wal_error</span></code>
+is <code class="docutils literal"><span class="pre">true</span></code>), memtx can read data in the snapshot with all indexes disabled.
+First, all tuples are read into memory. Then, primary keys are built in bulk,
+taking advantage of the fact that the data is already sorted by primary key
+within each space.</p>
+<p>If it is not default (<code class="docutils literal"><span class="pre">panic_on_snap_error</span></code> is <code class="docutils literal"><span class="pre">false</span></code> or <code class="docutils literal"><span class="pre">panic_on_wal_error</span></code>
+is <code class="docutils literal"><span class="pre">false</span></code>), Tarantool performs additional checking. Indexes are enabled at
+the start, and tuples are added one by one. This means that any unique-key
+constraint violations will be caught, and any duplicates will be skipped.
+Normally there will be no constraint violations or duplicates, so these checks
+are only made if an error has occurred.</p>
+<dl class="docutils">
+<dt>Step 2</dt>
+<dd>Find the WAL file that was made at the time of, or after, the snapshot file.
+Read its log entries until the log-entry LSN is greater than the LSN of the
+snapshot, or greater than the LSN of the vinyl checkpoint. This is the
+recovery process's &quot;start position&quot;; it matches the current state of the engines.</dd>
+<dt>Step 3</dt>
+<dd>Redo the log entries, from the start position to the end of the WAL. The
+engine skips a redo instruction if it is older than the engine's checkpoint.</dd>
+<dt>Step 4</dt>
+<dd>For the memtx engine, re-create all secondary indexes.</dd>
+</dl>
+</div>
+<div class="section" id="server-startup-with-replication">
+<span id="b-internals-replication"></span><h2>10.4. Server Startup With Replication<a class="headerlink" href="#server-startup-with-replication" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the recovery process described above, the server must take
+additional steps and precautions if <a class="reference internal" href="../replication/index.html#index-box-replication"><span class="std std-ref">replication</span></a> is
+enabled.</p>
+<p>Once again the startup procedure is initiated by the <code class="docutils literal"><span class="pre">box.cfg{}</span></code> request.
+One of the box.cfg parameters may be <a class="reference internal" href="../configuration/index.html#cfg-replication-replication-source"><span class="std std-ref">replication_source</span></a>. We will
+refer to this server, which is starting up due to box.cfg, as the &quot;local&quot; server
+to distinguish it from the other servers in a cluster, which we will refer to as
+&quot;distant&quot; servers.</p>
+<p><em>If there is no snapshot .snap file and replication_source is empty</em>: <br />
+then the local server assumes it is an unreplicated &quot;standalone&quot; server, or is
+the first server of a new replication cluster. It will generate new UUIDs for
+itself and for the cluster. The server UUID is stored in the _cluster space; the
+cluster UUID is stored in the _schema space. Since a snapshot contains all the
+data in all the spaces, that means the local server's snapshot will contain the
+server UUID and the cluster UUID. Therefore, when the local server restarts on
+later occasions, it will be able to recover these UUIDs when it reads the .snap
+file.</p>
+<p><em>If there is no snapshot .snap file and replication_source is not empty
+and the _cluster space contains no other server UUIDs</em>: <br />
+then the local server assumes it is not a standalone server, but is not yet part
+of a cluster. It must now join the cluster. It will send its server UUID to the
+first distant server which is listed in replication_source, which will act as a
+master. This is called the &quot;join request&quot;. When a distant server receives a join
+request, it will send back:</p>
+<ol class="arabic simple">
+<li>the distant server's cluster UUID,</li>
+<li>the contents of the distant server's .snap file. <br />
+When the local server receives this information, it puts the cluster UUID in
+its _schema space, puts the distant server's UUID and connection information
+in its _cluster space, and makes a snapshot containing all the data sent by
+the distant server. Then, if the local server has data in its WAL .xlog
+files, it sends that data to the distant server. The distant server will
+receive this and update its own copy of the data, and add the local server's
+UUID to its _cluster space.</li>
+</ol>
+<p><em>If there is no snapshot .snap file and replication_source is not empty
+and the _cluster space contains other server UUIDs</em>: <br />
+then the local server assumes it is not a standalone server, and is already part
+of a cluster. It will send its server UUID and cluster UUID to all the distant
+servers which are listed in replication_source. This is called the &quot;on-connect
+handshake&quot;. When a distant server receives an on-connect handshake: <br /></p>
+<ol class="arabic simple">
+<li>the distant server compares its own copy of the cluster UUID to the one in
+the on-connect handshake. If there is no match, then the handshake fails and
+the local server will display an error.</li>
+<li>the distant server looks for a record of the connecting instance in its
+_cluster space. If there is none, then the handshake fails. <br />
+Otherwise the handshake is successful. The distant server will read any new
+information from its own .snap and .xlog files, and send the new requests to
+the local server.</li>
+</ol>
+<p>In the end ... the local server knows what cluster it belongs to, the distant
+server knows that the local server is a member of the cluster, and both servers
+have the same database contents.</p>
+<p><em>If there is a snapshot file and replication source is not empty</em>: <br />
+first the local server goes through the recovery process described in the
+previous section, using its own .snap and .xlog files. Then it sends a
+&quot;subscribe&quot; request to all the other servers of the cluster. The subscribe
+request contains the server vector clock. The vector clock has a collection of
+pairs 'server id, lsn' for every server in the _cluster system space. Each
+distant server, upon receiving a subscribe request, will read its .xlog files'
+requests and send them to the local server if (lsn of .xlog file request) is
+greater than (lsn of the vector clock in the subscribe request). After all the
+other servers of the cluster have responded to the local server's subscribe
+request, the server startup is complete.</p>
+<p>The following temporary limitations apply for version 1.7:</p>
+<ul class="simple">
+<li>The URIs in replication_source should all be in the same order on all servers.
+This is not mandatory but is an aid to consistency.</li>
+<li>The servers of a cluster should be started up at slightly different times.
+This is not mandatory but prevents a situation where each server is waiting
+for the other server to be ready.</li>
+<li>The maximum number of entries in the _cluster space is 32. Tuples for
+out-of-date replicas are not automatically re-used, so if this 32-replica
+limit is reached, users may have to reorganize the _cluster space manually.</li>
+</ul>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="a_errcodes.html"
+           class="b-prev b-ellipsis"
+           title="9. Appendix A. List of error codes">9. Appendix A. List of error codes</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../_sources/book/app/b_internals.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="c_lua_tutorial.html"
+           class="b-next b-ellipsis"
+           title="11. Appendix C. Lua tutorials">11. Appendix C. Lua tutorials</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

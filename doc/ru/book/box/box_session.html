@@ -1,0 +1,458 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>3.4.4. Вложенный модуль box.session</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="3.4.4. Вложенный модуль box.session">
+        3.4.4. Вложенный модуль box.session
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../book/box/box_session.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../ru/book/box/box_session.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/box/box_session">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Руководство пользователя</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference_lua/box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/clock.html">Модуль <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/console.html">Модуль <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/crypto.html">Модуль <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/digest.html">Модуль <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/box_error.html">Вложенный модуль <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fiber.html">Модуль <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fiber_ipc.html">Модуль <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/msgpack.html">Модуль <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/net_box.html">Модуль <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/box_once.html">Функция <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/pickle.html">Модуль <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/socket.html">Модуль <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/strict.html">Модуль <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/tarantool.html">Модуль <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/other.html">Разное</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Руководство пользователя
+          </a>
+        </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            3. Функционал СУБД
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="3.4.4. Вложенный модуль <cite>box.session</cite>" class="b-path_current b-ellipsis">
+          3.4.4. Вложенный модуль <cite>box.session</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="submodule-box-session">
+<h1>3.4.4. Вложенный модуль <cite>box.session</cite><a class="headerlink" href="#submodule-box-session" title="Ссылка на этот заголовок">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">box.session</span></code> submodule allows querying the session state, writing to a
+session-specific temporary Lua table, or setting up triggers which will fire
+when a session starts or ends. A <em>session</em> is an object associated with each
+client connection.</p>
+<span class="target" id="lua-module.box.session"></span><dl class="function">
+<dt id="lua-функция.box.session.id">
+<em class="property"> </em><code class="descclassname">box.session.</code><code class="descname">id</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.box.session.id" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the unique identifier (ID) for the current session.
+The result can be 0 meaning there is no session.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.box.session.exists">
+<em class="property"> </em><code class="descclassname">box.session.</code><code class="descname">exists</code><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#lua-функция.box.session.exists" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">1 if the session exists, 0 if the session does not exist.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.box.session.peer">
+<em class="property"> </em><code class="descclassname">box.session.</code><code class="descname">peer</code><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#lua-функция.box.session.peer" title="Ссылка на это определение">¶</a></dt>
+<dd><p>This function works only if there is a peer, that is,
+if a connection has been made to a separate server.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">The host address and port of the session peer,
+for example &quot;127.0.0.1:55457&quot;.
+If the session exists but there is no connection to a
+separate server, the return is null.
+The command is executed on the server,
+so the &quot;local name&quot; is the server's host
+and port, and the &quot;peer name&quot; is the client's host
+and port.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: 'session.peer(): session does not exist'</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.box.session.sync">
+<em class="property"> </em><code class="descclassname">box.session.</code><code class="descname">sync</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.box.session.sync" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the value of the <code class="code docutils literal"><span class="pre">sync</span></code> integer constant used in the
+<a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/box/iproto_constants.h">binary protocol</a>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="box-session-storage"></span><dl class="data">
+<dt id="lua-данные.box.session.storage">
+<em class="property"> </em><code class="descclassname">box.session.</code><code class="descname">storage</code><a class="headerlink" href="#lua-данные.box.session.storage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A Lua table that can hold arbitrary unordered session-specific
+names and values, which will last until the session ends.</p>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>3.4.4.1. Пример<a class="headerlink" href="#example" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">peer</span><span class="p">(</span><span class="n">box</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">id</span><span class="p">())</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1:45129</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">random_memorandum</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Don&#39;t forget the eggs&quot;</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">radius_of_mars</span> <span class="o">=</span> <span class="mi">3396</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">&#39;</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">box</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">storage</span><span class="p">)</span> <span class="k">do</span>
+<span class="gp">         &gt; </span>  <span class="n">m</span> <span class="o">=</span> <span class="n">m</span> <span class="o">..</span> <span class="n">k</span> <span class="o">..</span> <span class="s1">&#39;</span><span class="s">=&#39;</span><span class="o">..</span> <span class="n">v</span> <span class="o">..</span> <span class="s1">&#39;</span><span class="s"> &#39;</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">m</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="s">&#39;radius_of_mars=3396</span><span class="nv"> </span><span class="s">random_memorandum=Don</span><span class="se">&#39;&#39;</span><span class="s">t</span><span class="nv"> </span><span class="s">forget</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">eggs.</span><span class="nv"> </span><span class="s">&#39;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>See the section <a class="reference internal" href="triggers.html#triggers-box-triggers"><span class="std std-ref">Triggers</span></a>
+for instructions about defining triggers for connect and disconnect
+events with <code class="docutils literal"><span class="pre">box.session.on_connect()</span></code> and <code class="docutils literal"><span class="pre">box.session.on_disconnect()</span></code>.
+See the section <a class="reference internal" href="authentication.html#authentication"><span class="std std-ref">Access control</span></a>
+for instructions about <code class="docutils literal"><span class="pre">box.session</span></code> functions that affect user
+identification and security.</p>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="box_index.html"
+           class="b-prev b-ellipsis"
+           title="3.4.3. Вложенный модуль &lt;cite&gt;box.index&lt;/cite&gt;">3.4.3. Вложенный модуль <cite>box.index</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../_sources/book/box/box_session.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="box_tuple.html"
+           class="b-next b-ellipsis"
+           title="3.4.5. Вложенный модуль &lt;cite&gt;box.tuple&lt;/cite&gt;">3.4.5. Вложенный модуль <cite>box.tuple</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

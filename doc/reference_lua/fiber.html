@@ -1,0 +1,912 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Module fiber</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Module fiber">
+        Module fiber
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_lua/fiber.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_lua/fiber.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_lua/fiber">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Lua reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Module <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Module <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">Module <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="digest.html">Module <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_error.html">Submodule <cite>box.error</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber_ipc.html">Submodule <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="msgpack.html">Module <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="net_box.html">Module <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_once.html">Function <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">Module <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">Module <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="strict.html">Module <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarantool.html">Module <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Lua reference
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Module <cite>fiber</cite>" class="b-path_current b-ellipsis">
+          Module <cite>fiber</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="module-fiber">
+<h1>Module <cite>fiber</cite><a class="headerlink" href="#module-fiber" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">fiber</span></code> module allows for creating, running and managing <em>fibers</em>.</p>
+<p>A fiber is a set of instructions which are executed with cooperative
+multitasking. Fibers managed by the fiber module are associated with
+a user-supplied function called the <em>fiber function</em>.
+A fiber has three possible states: <strong>running</strong>, <strong>suspended</strong> or <strong>dead</strong>.
+When a fiber is created with <a class="reference internal" href="#fiber-create"><span class="std std-ref">fiber.create()</span></a>, it is running.
+When a fiber yields control with <a class="reference internal" href="#fiber-sleep"><span class="std std-ref">fiber.sleep()</span></a>, it is suspended.
+When a fiber ends (because the fiber function ends), it is dead.</p>
+<p>All fibers are part of the fiber registry. This registry can be searched
+with <a class="reference internal" href="#fiber-find"><span class="std std-ref">fiber.find()</span></a> - via fiber id (fid), which is a numeric
+identifier.</p>
+<p>A runaway fiber can be stopped with <a class="reference internal" href="#fiber-object-cancel"><span class="std std-ref">fiber_object.cancel</span></a>.
+However, <a class="reference internal" href="#fiber-object-cancel"><span class="std std-ref">fiber_object.cancel</span></a> is advisory — it works
+only if the runaway fiber calls <a class="reference internal" href="#fiber-testcancel"><span class="std std-ref">fiber.testcancel()</span></a>
+occasionally. Most <code class="docutils literal"><span class="pre">box.*</span></code> functions, such as
+<a class="reference internal" href="../book/box/box_space.html#box-space-delete"><span class="std std-ref">box.space...delete()</span></a> or
+<a class="reference internal" href="../book/box/box_space.html#box-space-update"><span class="std std-ref">box.space...update()</span></a>, do call
+<a class="reference internal" href="#fiber-testcancel"><span class="std std-ref">fiber.testcancel()</span></a> but
+<a class="reference internal" href="../book/box/box_space.html#box-space-select"><span class="std std-ref">box.space...select{}</span></a> does not. In practice, a runaway
+fiber can only become unresponsive if it does many computations and does not
+check whether it has been cancelled.</p>
+<p>The other potential problem comes from fibers which never get scheduled, because
+they are not subscribed to any events, or because no relevant events occur. Such
+morphing fibers can be killed with <a class="reference internal" href="#fiber-kill"><span class="std std-ref">fiber.kill()</span></a> at any time,
+since <a class="reference internal" href="#fiber-kill"><span class="std std-ref">fiber.kill()</span></a> sends an asynchronous wakeup event to the
+fiber, and <a class="reference internal" href="#fiber-testcancel"><span class="std std-ref">fiber.testcancel()</span></a> is checked whenever such
+a wakeup event occurs.</p>
+<p>Like all Lua objects, dead fibers are garbage collected. The garbage collector
+frees pool allocator memory owned by the fiber, resets all fiber data, and
+returns the fiber (now called a fiber carcass) to the fiber pool. The carcass
+can be reused when another fiber is created.</p>
+<p>A fiber has all the features of a Lua <a class="reference external" href="http://www.lua.org/pil/contents.html#9">coroutine</a> and all the programming
+concepts that apply for Lua coroutines will apply for fibers as well. However,
+Tarantool has made some enhancements for fibers and has used fibers internally.
+So, although use of coroutines is possible and supported, use of fibers is
+recommended.</p>
+<span class="target" id="lua-module.fiber"></span><span class="target" id="fiber-create"></span><dl class="function">
+<dt id="lua-function.fiber.create">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">create</code><big>(</big><em>function</em><span class="optional">[</span>, <em>function-arguments</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.fiber.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and start a fiber. The fiber is created and begins to run immediately.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>function</strong> -- the function to be associated with the fiber</li>
+<li><strong>function-arguments</strong> -- what will be passed to function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">created fiber object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">userdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">fiber&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">function_name</span><span class="p">()</span>
+<span class="gp">         &gt; </span>  <span class="n">fiber</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fiber_object</span> <span class="o">=</span> <span class="n">fiber</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">function_name</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-self"></span><dl class="function">
+<dt id="lua-function.fiber.self">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">self</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber.self" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">fiber object for the currently scheduled fiber.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">userdata</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">self</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">status</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">running</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">interactive</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">101</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-find"></span><dl class="function">
+<dt id="lua-function.fiber.find">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">find</code><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#lua-function.fiber.find" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> -- numeric identifier of the fiber.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">fiber object for the specified fiber.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">userdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">status</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">running</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">interactive</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">101</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-sleep"></span><dl class="function">
+<dt id="lua-function.fiber.sleep">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">sleep</code><big>(</big><em>time</em><big>)</big><a class="headerlink" href="#lua-function.fiber.sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yield control to the transaction processor thread and sleep for the specified number
+of seconds. Only the current fiber can be made to sleep.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> -- number of seconds to sleep.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-yield"></span><dl class="function">
+<dt id="lua-function.fiber.yield">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">yield</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber.yield" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yield control to the scheduler. Equivalent to <a class="reference internal" href="#fiber-sleep"><span class="std std-ref">fiber.sleep(0)</span></a>.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">yield</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-status"></span><dl class="function">
+<dt id="lua-function.fiber.status">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">status</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the status of the current fiber.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the status of <code class="docutils literal"><span class="pre">fiber</span></code>. One of: “dead”, “suspended”, or “running”.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">status</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">running</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-info"></span><dl class="function">
+<dt id="lua-function.fiber.info">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">info</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return information about all fibers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">number of context switches, backtrace, id, total memory, used
+memory, name for each fiber.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">table</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">info</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">101</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">csw</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">7</span>
+    <span class="l l-Scalar l-Scalar-Plain">backtrace</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
+    <span class="l l-Scalar l-Scalar-Plain">fid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">101</span>
+    <span class="l l-Scalar l-Scalar-Plain">memory</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">total</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">65776</span>
+      <span class="l l-Scalar l-Scalar-Plain">used</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">interactive</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-kill"></span><dl class="function">
+<dt id="lua-function.fiber.kill">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">kill</code><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#lua-function.fiber.kill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Locate a fiber by its numeric id and cancel it. In other words,
+<a class="reference internal" href="#fiber-kill"><span class="std std-ref">fiber.kill()</span></a> combines <a class="reference internal" href="#fiber-find"><span class="std std-ref">fiber.find()</span></a> and
+<a class="reference internal" href="#fiber-object-cancel"><span class="std std-ref">fiber_object:cancel()</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> -- the id of the fiber to be cancelled.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">the specified fiber does not exist or cancel is not permitted.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">kill</span><span class="p">(</span><span class="n">fiber</span><span class="p">.</span><span class="n">id</span><span class="p">())</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">error</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fiber is cancelled</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-testcancel"></span><dl class="function">
+<dt id="lua-function.fiber.testcancel">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">testcancel</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber.testcancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the current fiber has been cancelled
+and throw an exception if this is the case.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">testcancel</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">error</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fiber is cancelled</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="lua-object.fiber.fiber_object">
+<em class="property">object </em><code class="descname">fiber_object</code><a class="headerlink" href="#lua-object.fiber.fiber_object" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="fiber-object-id"></span><dl class="method">
+<dt id="lua-function.fiber_object.id">
+<em class="property"> </em><code class="descclassname">fiber_object:</code><code class="descname">id</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber_object.id" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>self</strong> -- fiber object, for example the fiber object returned
+by <a class="reference internal" href="#fiber-create"><span class="std std-ref">fiber.create</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">id of the fiber.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">number</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber_object</span> <span class="o">=</span> <span class="n">fiber</span><span class="p">.</span><span class="n">self</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fiber_object</span><span class="p">:</span><span class="n">id</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">101</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-object-name-get"></span><dl class="method">
+<dt id="lua-function.fiber_object.name">
+<em class="property"> </em><code class="descclassname">fiber_object:</code><code class="descname">name</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber_object.name" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>self</strong> -- fiber object, for example the fiber object returned
+by <a class="reference internal" href="#fiber-create"><span class="std std-ref">fiber.create</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">name of the fiber.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">self</span><span class="p">():</span><span class="n">name</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">interactive</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-object-name-set"></span><dl class="method">
+<dt>
+<em class="property"> </em><code class="descclassname">fiber_object:</code><code class="descname">name</code><big>(</big><em>name</em><big>)</big></dt>
+<dd><p>Change the fiber name. By default the Tarantool server's
+interactive-mode fiber is named 'interactive' and new
+fibers created due to <a class="reference internal" href="#fiber-create"><span class="std std-ref">fiber.create</span></a> are named 'lua'.
+Giving fibers distinct names makes it easier to
+distinguish them when using <a class="reference internal" href="#fiber-info"><span class="std std-ref">fiber.info</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>self</strong> -- fiber object, for example the fiber
+object returned by <a class="reference internal" href="#fiber-create"><span class="std std-ref">fiber.create</span></a></li>
+<li><strong>name</strong> (<em>string</em>) -- the new name of the fiber.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">nil</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">self</span><span class="p">():</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">non-interactive&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-object-status"></span><dl class="method">
+<dt id="lua-function.fiber_object.status">
+<em class="property"> </em><code class="descclassname">fiber_object:</code><code class="descname">status</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber_object.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the status of the specified fiber.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>self</strong> -- fiber object, for example the fiber object returned by
+<a class="reference internal" href="#fiber-create"><span class="std std-ref">fiber.create</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">the status of fiber. One of: “dead”, “suspended”, or “running”.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">self</span><span class="p">():</span><span class="n">status</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">running</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-object-cancel"></span><dl class="method">
+<dt id="lua-function.fiber_object.cancel">
+<em class="property"> </em><code class="descclassname">fiber_object:</code><code class="descname">cancel</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber_object.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancel a fiber. Running and suspended fibers can be cancelled.
+After a fiber has been cancelled, attempts to operate on it will
+cause errors, for example <a class="reference internal" href="#fiber-object-id"><span class="std std-ref">fiber_object:id()</span></a>
+will cause <code class="docutils literal"><span class="pre">error:</span> <span class="pre">the</span> <span class="pre">fiber</span> <span class="pre">is</span> <span class="pre">dead</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>self</strong> -- fiber object, for example the fiber
+object returned by <a class="reference internal" href="#fiber-create"><span class="std std-ref">fiber.create</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">nil</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: cancel is not permitted for the specified fiber object.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">self</span><span class="p">():</span><span class="n">cancel</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">error</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fiber is cancelled</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="fiber-object-storage"></span><dl class="data">
+<dt id="lua-data.fiber_object.storage">
+<em class="property"> </em><code class="descclassname">fiber_object.</code><code class="descname">storage</code><a class="headerlink" href="#lua-data.fiber_object.storage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local storage within the fiber. The storage can contain any number of
+named values, subject to memory limitations. Naming may be done with
+<code class="samp docutils literal"><em><span class="pre">fiber_object</span></em><span class="pre">.storage.</span><em><span class="pre">name</span></em></code> or <code class="samp docutils literal"><span class="pre">fiber_object}.storage['</span><em><span class="pre">name</span></em><span class="pre">'].</span></code>
+or with a number <code class="samp docutils literal"><em><span class="pre">fiber_object</span></em><span class="pre">.storage[</span><em><span class="pre">number</span></em><span class="pre">]</span></code>.
+Values may be either numbers or strings. The storage is garbage-collected
+when <code class="samp docutils literal"><em><span class="pre">fiber_object</span></em><span class="pre">:cancel()</span></code> happens.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">fiber&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">f</span> <span class="p">()</span> <span class="n">fiber</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fiber_function</span> <span class="o">=</span> <span class="n">fiber</span><span class="p">:</span><span class="n">create</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">error</span><span class="p p-Indicator">:</span> <span class="s">&#39;[string</span><span class="nv"> </span><span class="s">&quot;fiber_function</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">fiber:create(f)&quot;]:1:</span><span class="nv"> </span><span class="s">fiber.create(function,</span><span class="nv"> </span><span class="s">...):</span>
+    <span class="s">bad</span><span class="nv"> </span><span class="s">arguments&#39;</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fiber_function</span> <span class="o">=</span> <span class="n">fiber</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fiber_function</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">string&#39;</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fiber_function</span><span class="p">.</span><span class="n">storage</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">str1&#39;</span><span class="p">]</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fiber_function</span><span class="p">:</span><span class="n">cancel</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">fiber_function</span><span class="p">.</span><span class="n">storage</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">str1&#39;</span><span class="p">]</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">error</span><span class="p p-Indicator">:</span> <span class="s">&#39;[string</span><span class="nv"> </span><span class="s">&quot;return</span><span class="nv"> </span><span class="s">fiber_function.storage[</span><span class="se">&#39;&#39;</span><span class="s">str1</span><span class="se">&#39;&#39;</span><span class="s">]&quot;]:1:</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">fiber</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">dead&#39;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../book/box/box_session.html#box-session-storage"><span class="std std-ref">box.session.storage</span></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="fiber-time"></span><dl class="function">
+<dt id="lua-function.fiber.time">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">time</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber.time" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">current system time (in seconds since the epoch) as a Lua
+number. The time is taken from the event loop clock,
+which makes this call very cheap, but still useful for
+constructing artificial tuple keys.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">num</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">time</span><span class="p">(),</span> <span class="n">fiber</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1448466279.2415</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1448466279.2415</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<span class="target" id="fiber-time64"></span><dl class="function">
+<dt id="lua-function.fiber.time64">
+<em class="property"> </em><code class="descclassname">fiber.</code><code class="descname">time64</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.fiber.time64" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">current system time (in microseconds since the epoch)
+as a 64-bit integer. The time is taken from the event
+loop clock.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">num</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span><span class="p">.</span><span class="n">time</span><span class="p">(),</span> <span class="n">fiber</span><span class="p">.</span><span class="n">time64</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1448466351.2708</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1448466351270762</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="section" id="example-of-fiber-use">
+<h2>Example Of Fiber Use<a class="headerlink" href="#example-of-fiber-use" title="Permalink to this headline">¶</a></h2>
+<p>Make the function which will be associated with the fiber. This function
+contains an infinite loop (<code class="docutils literal"><span class="pre">while</span> <span class="pre">0</span> <span class="pre">==</span> <span class="pre">0</span></code> is always true). Each iteration
+of the loop adds 1 to a global variable named gvar, then goes to sleep for
+2 seconds. The sleep causes an implicit <a class="reference internal" href="#fiber-yield"><span class="std std-ref">fiber.yield()</span></a>.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">fiber&#39;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">function_x</span><span class="p">()</span>
+<span class="gp">         &gt; </span>  <span class="n">gvar</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">         &gt; </span>  <span class="k">while</span> <span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">do</span>
+<span class="gp">         &gt; </span>    <span class="n">gvar</span> <span class="o">=</span> <span class="n">gvar</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">         &gt; </span>    <span class="n">fiber</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="k">end</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Make a fiber, associate function_x with the fiber, and start function_x.
+It will immediately &quot;detach&quot; so it will be running independently of the caller.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">gvar</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="gp">tarantool&gt; </span><span class="n">fiber_of_x</span> <span class="o">=</span> <span class="n">fiber</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">function_x</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Get the id of the fiber (fid), to be used in later displays.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fid</span> <span class="o">=</span> <span class="n">fiber_of_x</span><span class="p">:</span><span class="n">id</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Pause for a while, while the detached function runs. Then ... Display the fiber
+id, the fiber status, and gvar (gvar will have gone up a bit depending how long
+the pause lasted). The status is suspended because the fiber spends almost all
+its time sleeping or yielding.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">#&#39;</span><span class="p">,</span> <span class="n">fid</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">. &#39;</span><span class="p">,</span> <span class="n">fiber_of_x</span><span class="p">:</span><span class="n">status</span><span class="p">(),</span> <span class="s1">&#39;</span><span class="s">. gvar=&#39;</span><span class="p">,</span> <span class="n">gvar</span><span class="p">)</span>
+<span class="go"># 102 .  suspended . gvar= 399</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Pause for a while, while the detached function runs. Then ... Cancel the fiber.
+Then, once again ... Display the fiber id, the fiber status, and gvar (gvar
+will have gone up a bit more depending how long the pause lasted). This time
+the status is dead because the cancel worked.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">fiber_of_x</span><span class="p">:</span><span class="n">cancel</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">#&#39;</span><span class="p">,</span> <span class="n">fid</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">. &#39;</span><span class="p">,</span> <span class="n">fiber_of_x</span><span class="p">:</span><span class="n">status</span><span class="p">(),</span> <span class="s1">&#39;</span><span class="s">. gvar=&#39;</span><span class="p">,</span> <span class="n">gvar</span><span class="p">)</span>
+<span class="go"># 102 .  dead . gvar= 421</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="box_error.html"
+           class="b-prev b-ellipsis"
+           title="Submodule &lt;cite&gt;box.error&lt;/cite&gt;">Submodule <cite>box.error</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_lua/fiber.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="fiber_ipc.html"
+           class="b-next b-ellipsis"
+           title="Submodule &lt;cite&gt;fiber-ipc&lt;/cite&gt;">Submodule <cite>fiber-ipc</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

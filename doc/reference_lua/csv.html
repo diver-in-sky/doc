@@ -1,0 +1,537 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Module csv</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Module csv">
+        Module csv
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_lua/csv.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_lua/csv.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_lua/csv">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Lua reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Module <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Module <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">Module <cite>crypto</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="digest.html">Module <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_error.html">Submodule <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber.html">Module <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber_ipc.html">Submodule <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="msgpack.html">Module <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="net_box.html">Module <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_once.html">Function <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">Module <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">Module <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="strict.html">Module <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarantool.html">Module <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Lua reference
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Module <cite>csv</cite>" class="b-path_current b-ellipsis">
+          Module <cite>csv</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="lua-module.csv">
+<span id="module-csv"></span><h1>Module <cite>csv</cite><a class="headerlink" href="#lua-module.csv" title="Permalink to this headline">¶</a></h1>
+<p>The csv module handles records formatted according to Comma-Separated-Values
+(CSV) rules.</p>
+<p>The default formatting rules are:</p>
+<ul class="simple">
+<li>Lua <a class="reference external" href="http://www.lua.org/pil/2.4.html">escape sequences</a> such as \n or \10 are legal within strings but not
+within files,</li>
+<li>Commas designate end-of-field,</li>
+<li>Line feeds, or line feeds plus carriage returns, designate end-of-record,</li>
+<li>Leading or trailing spaces are ignored,</li>
+<li>Quote marks may enclose fields or parts of fields,</li>
+<li>When enclosed by quote marks, commas and line feeds and spaces are treated
+as ordinary characters, and a pair of quote marks &quot;&quot; is treated as a single
+quote mark.</li>
+</ul>
+<p id="csv-options">The possible options which can be passed to csv functions are:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><span class="pre">delimiter</span> <span class="pre">=</span> <em><span class="pre">string</span></em></code> -- single-byte character to designate end-of-field, default = comma</li>
+<li><code class="samp docutils literal"><span class="pre">quote_char</span> <span class="pre">=</span> <em><span class="pre">string</span></em></code> -- single-byte character to designate encloser of string, default = quote mark</li>
+<li><code class="samp docutils literal"><span class="pre">chunk-size</span> <span class="pre">=</span> <em><span class="pre">number</span></em></code> -- number of characters to read at once (usually for file-IO efficiency), default = 4096</li>
+<li><code class="samp docutils literal"><span class="pre">skip_head_lines</span> <span class="pre">=</span> <em><span class="pre">number</span></em></code> -- number of lines to skip at the start (usually for a header), default 0</li>
+</ul>
+<span class="target" id="csv-load"></span><dl class="function">
+<dt id="lua-function.csv.load">
+<em class="property"> </em><code class="descclassname">csv.</code><code class="descname">load</code><big>(</big><em>readable</em><span class="optional">[</span>, <em>{options}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.csv.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get CSV-formatted input from <code class="docutils literal"><span class="pre">readable</span></code> and return a table as output.
+Usually <code class="docutils literal"><span class="pre">readable</span></code> is either a string or a file opened for reading.
+Usually <code class="samp docutils literal"><em><span class="pre">options</span></em></code> is not specified.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>readable</strong> (<em>object</em>) -- a string, or any object which has a read() method,
+formatted according to the CSV rules</li>
+<li><strong>options</strong> (<em>table</em>) -- see <a class="reference internal" href="#csv-options"><span class="std std-ref">above</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">loaded_value</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">table</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<p>Readable string has 3 fields, field#2 has comma and space so use quote marks:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">csv</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">csv&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">csv</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">a,&quot;b,c &quot;,d&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">a</span>
+    <span class="p p-Indicator">-</span> <span class="s">&#39;b,c</span><span class="nv"> </span><span class="s">&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">d</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Readable string contains 2-byte character = Cyrillic Letter Palochka:
+(This displays a palochka if and only if character set = UTF-8.)</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">csv</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">a</span><span class="se">\\</span><span class="s">211</span><span class="se">\\</span><span class="s">128b&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">a\211\128b</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Semicolon instead of comma for the delimiter:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">csv</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">a,b;c,d&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">;&#39;</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">a,b</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">c,d</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Readable file <code class="file docutils literal"><span class="pre">./file.csv</span></code> contains two CSV records.
+Explanation of fio is in section <a class="reference internal" href="fio.html#fio-section"><span class="std std-ref">fio</span></a>.
+Source CSV file and example respectively:</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="c1">-- input in file.csv is:</span>
+<span class="gp">tarantool&gt; </span><span class="c1">-- a,&quot;b,c &quot;,d</span>
+<span class="gp">tarantool&gt; </span><span class="c1">-- a\\211\\128b</span>
+<span class="gp">tarantool&gt; </span><span class="n">fio</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">fio&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">fio</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">./file.csv&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;</span><span class="s">O_RDONLY&#39;</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">csv</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">{</span><span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">4096</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">a</span>
+    <span class="p p-Indicator">-</span> <span class="s">&#39;b,c</span><span class="nv"> </span><span class="s">&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">d</span>
+  <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">a\\211\\128b</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">f</span><span class="p">:</span><span class="n">close</span><span class="p">(</span><span class="n">nn</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="csv-dump"></span><dl class="function">
+<dt id="lua-function.csv.dump">
+<em class="property"> </em><code class="descclassname">csv.</code><code class="descname">dump</code><big>(</big><em>csv-table</em><span class="optional">[</span>, <em>options</em>, <em>writable</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.csv.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get table input from <code class="docutils literal"><span class="pre">csv-table</span></code> and return a CSV-formatted string as output.
+Or, get table input from <code class="docutils literal"><span class="pre">csv-table</span></code> and put the output in <code class="docutils literal"><span class="pre">writable</span></code>.
+Usually <code class="samp docutils literal"><em><span class="pre">options</span></em></code> is not specified.
+Usually <code class="docutils literal"><span class="pre">writable</span></code>, if specified, is a file opened for writing.
+<a class="reference internal" href="#csv-dump"><span class="std std-ref">csv.dump()</span></a> is the reverse of <a class="reference internal" href="#csv-load"><span class="std std-ref">csv.load()</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>csv-table</strong> (<em>table</em>) -- a table which can be formatted according to the CSV rules.</li>
+<li><strong>options</strong> (<em>table</em>) -- optional. see <a class="reference internal" href="#csv-options"><span class="std std-ref">above</span></a></li>
+<li><strong>writable</strong> (<em>object</em>) -- any object which has a write() method</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">dumped_value</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string, which is written to <code class="docutils literal"><span class="pre">writable</span></code> if specified</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<p>CSV-table has 3 fields, field#2 has &quot;,&quot; so result has quote marks</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">csv</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">csv&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">csv</span><span class="p">.</span><span class="n">dump</span><span class="p">({</span><span class="s1">&#39;</span><span class="s">a&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">b,c &#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">d&#39;</span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="s">&#39;a,&quot;b,c</span><span class="nv"> </span><span class="s">&quot;,d</span>
+
+<span class="s">&#39;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Round Trip: from string to table and back to string</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">csv_table</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">a,b,c&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">csv</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">csv_table</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="s">&#39;a,b,c</span>
+
+<span class="s">&#39;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="csv-iterate"></span><dl class="function">
+<dt id="lua-function.csv.iterate">
+<em class="property"> </em><code class="descclassname">csv.</code><code class="descname">iterate</code><big>(</big><em>input</em>, <em>{options}</em><big>)</big><a class="headerlink" href="#lua-function.csv.iterate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Form a Lua iterator function for going through CSV records
+one field at a time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>csv-table</strong> (<em>table</em>) -- a table which can be formatted according to the CSV rules.</li>
+<li><strong>options</strong> (<em>table</em>) -- see <a class="reference internal" href="#csv-options"><span class="std std-ref">above</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">Lua iterator function</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">iterator function</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<p><a class="reference internal" href="#csv-iterate"><span class="std std-ref">csv.iterate()</span></a> is the low level of <a class="reference internal" href="#csv-load"><span class="std std-ref">csv.load()</span></a> and <a class="reference internal" href="#csv-dump"><span class="std std-ref">csv.dump()</span></a>.
+To illustrate that, here is a function which is the same as the <a class="reference internal" href="#csv-load"><span class="std std-ref">csv.load()</span></a>
+function, as seen in <a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/lua/csv.lua">the Tarantool source code</a>.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="nb">load</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">readable</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="n">opts</span> <span class="o">=</span> <span class="n">opts</span> <span class="ow">or</span> <span class="p">{}</span>
+<span class="gp">         &gt; </span>  <span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">         &gt; </span>  <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">tup</span> <span class="k">in</span> <span class="n">csv</span><span class="p">.</span><span class="n">iterate</span><span class="p">(</span><span class="n">readable</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span> <span class="k">do</span>
+<span class="gp">         &gt; </span>    <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tup</span>
+<span class="gp">         &gt; </span>  <span class="k">end</span>
+<span class="gp">         &gt; </span>  <span class="k">return</span> <span class="n">result</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="nb">load</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">a,b,c&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">a</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">b</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">c</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="crypto.html"
+           class="b-prev b-ellipsis"
+           title="Module &lt;cite&gt;crypto&lt;/cite&gt;">Module <cite>crypto</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_lua/csv.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="digest.html"
+           class="b-next b-ellipsis"
+           title="Module &lt;cite&gt;digest&lt;/cite&gt;">Module <cite>digest</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

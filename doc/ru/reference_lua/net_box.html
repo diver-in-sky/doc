@@ -1,0 +1,647 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Модуль net.box</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Модуль net.box">
+        Модуль net.box
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_lua/net_box.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_lua/net_box.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_lua/net_box">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">Руководство пользователя</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Справочник по Lua API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Модуль <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Модуль <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">Модуль <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="digest.html">Модуль <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_error.html">Вложенный модуль <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber.html">Модуль <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber_ipc.html">Модуль <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="msgpack.html">Модуль <cite>msgpack</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Модуль <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_once.html">Функция <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">Модуль <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">Модуль <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="strict.html">Модуль <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarantool.html">Модуль <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Разное</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Справочник по Lua API
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Модуль <cite>net.box</cite>" class="b-path_current b-ellipsis">
+          Модуль <cite>net.box</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="module-net-box">
+<span id="net-box-module"></span><h1>Модуль <cite>net.box</cite><a class="headerlink" href="#module-net-box" title="Ссылка на этот заголовок">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">net.box</span></code> module contains connectors to remote database systems. One
+variant, to be discussed later, is for connecting to MySQL or MariaDB or PostgreSQL —
+that variant is the subject of the <a class="reference internal" href="../reference_rock/dbms.html#dbms-modules"><span class="std std-ref">SQL DBMS modules</span></a> appendix.
+In this section the subject is the built-in variant, <code class="docutils literal"><span class="pre">net.box</span></code>. This is for
+connecting to tarantool servers via a network.</p>
+<p>Call <code class="docutils literal"><span class="pre">require('net.box')</span></code> to get a <code class="docutils literal"><span class="pre">net.box</span></code> object, which will be called
+<code class="docutils literal"><span class="pre">net_box</span></code> for examples in this section. Call <code class="docutils literal"><span class="pre">net_box.new()</span></code> to connect and
+get a connection object, which will be called <code class="docutils literal"><span class="pre">conn</span></code> for examples in this section.
+Call the other <code class="docutils literal"><span class="pre">net.box()</span></code> routines, passing <code class="docutils literal"><span class="pre">conn:</span></code>, to execute requests on
+the remote box. Call <a class="reference internal" href="socket.html#socket-close"><span class="std std-ref">conn:close</span></a> to disconnect.</p>
+<p>All <code class="docutils literal"><span class="pre">net.box</span></code> methods are fiber-safe, that is, it is safe to share and use the
+same connection object across multiple concurrent fibers. In fact, it's perhaps
+the best programming practice with Tarantool. When multiple fibers use the same
+connection, all requests are pipelined through the same network socket, but each
+fiber gets back a correct response. Reducing the number of active sockets lowers
+the overhead of system calls and increases the overall server performance. There
+are, however, cases when a single connection is not enough — for example when it's
+necessary to prioritize requests or to use different authentication ids.</p>
+<span class="target" id="lua-module.net_box"></span><dl class="function">
+<dt id="lua-функция.net_box.new">
+<em class="property"> </em><code class="descclassname">net_box.</code><code class="descname">new</code><big>(</big><em>URI</em><span class="optional">[</span>, <em>{option[s]}</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.net_box.new" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Create a new connection. The connection is established on demand, at the
+time of the first request. It is re-established automatically after a
+disconnect. The returned <code class="docutils literal"><span class="pre">conn</span></code> object supports methods for making remote
+requests, such as select, update or delete.</p>
+<p>For the local tarantool server there is a pre-created always-established
+connection object named <code class="samp docutils literal"><em><span class="pre">net_box</span></em><span class="pre">.self</span></code>. Its purpose is to make polymorphic
+use of the <code class="docutils literal"><span class="pre">net_box</span></code> API easier. Therefore <code class="samp docutils literal"><span class="pre">conn</span> <span class="pre">=</span> <em><span class="pre">net_box</span></em><span class="pre">.new('localhost:3301')</span></code>
+can be replaced by <code class="samp docutils literal"><span class="pre">conn</span> <span class="pre">=</span> <em><span class="pre">net_box</span></em><span class="pre">.self</span></code>. However, there is an important
+difference between the embedded connection and a remote one. With the
+embedded connection, requests which do not modify data do not yield.
+When using a remote connection, due to <a class="reference internal" href="../book/box/atomic.html#atomic-the-implicit-yield-rules"><span class="std std-ref">the implicit rules</span></a>
+any request can yield, and database
+state may have changed by the time it regains control.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>URI</strong> (<em>string</em>) -- the <a class="reference internal" href="../book/configuration/index.html#index-uri"><span class="std std-ref">URI</span></a> of the target for the connection</li>
+<li><strong>options</strong> -- a possible option is <cite>wait_connect</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">conn object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">userdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">conn</span> <span class="o">=</span> <span class="n">net_box</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">localhost:3301&#39;</span><span class="p">)</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">net_box</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">127.0.0.1:3306&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">wait_connect</span> <span class="o">=</span> <span class="kc">false</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="lua-объект.net_box.conn">
+<em class="property">объект </em><code class="descclassname">net_box.</code><code class="descname">conn</code><a class="headerlink" href="#lua-объект.net_box.conn" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="method">
+<dt id="lua-функция.conn.ping">
+<em class="property"> </em><code class="descclassname">conn:</code><code class="descname">ping</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.conn.ping" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Execute a PING command.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">true on success, false on error</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">net_box</span><span class="p">.</span><span class="n">self</span><span class="p">:</span><span class="n">ping</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.conn.wait_connected">
+<em class="property"> </em><code class="descclassname">conn:</code><code class="descname">wait_connected</code><big>(</big><span class="optional">[</span><em>timeout</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.conn.wait_connected" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Wait for connection to be active or closed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>timeout</strong> (<em>number</em>) -- </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true when connected, false on failure.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">net_box</span><span class="p">.</span><span class="n">self</span><span class="p">:</span><span class="n">wait_connected</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.conn.is_connected">
+<em class="property"> </em><code class="descclassname">conn:</code><code class="descname">is_connected</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.conn.is_connected" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Show whether connection is active or closed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">true if connected, false on failure.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">net_box</span><span class="p">.</span><span class="n">self</span><span class="p">:</span><span class="n">is_connected</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.conn.close">
+<em class="property"> </em><code class="descclassname">conn:</code><code class="descname">close</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.conn.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Close a connection.</p>
+<p>Connection objects are garbage collected just like any other objects in Lua, so
+an explicit destruction is not mandatory. However, since close() is a system
+call, it is good programming practice to close a connection explicitly when it
+is no longer needed, to avoid lengthy stalls of the garbage collector.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">conn</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">conn.space.&lt;space-name&gt;:select{field-value, ...}</code></dt>
+<dd><p><code class="samp docutils literal"><span class="pre">conn.space.</span><em><span class="pre">space-name</span></em><span class="pre">:select</span></code><code class="code docutils literal"><span class="pre">{...}</span></code> is the remote-call equivalent
+of the local call <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:select</span></code><code class="code docutils literal"><span class="pre">{...}</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">due to <a class="reference internal" href="../book/box/atomic.html#atomic-the-implicit-yield-rules"><span class="std std-ref">the implicit yield rules</span></a>
+a local <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:select</span></code><code class="code docutils literal"><span class="pre">{...}</span></code> does
+not yield, but a remote <code class="samp docutils literal"><span class="pre">conn.space.</span><em><span class="pre">space-name</span></em><span class="pre">:select</span></code><code class="code docutils literal"><span class="pre">{...}</span></code>
+call does yield, so global variables or database tuples data may
+change when a remote <code class="samp docutils literal"><span class="pre">conn.space.</span><em><span class="pre">space-name</span></em><span class="pre">:select</span></code><code class="code docutils literal"><span class="pre">{...}</span></code>
+occurs.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">conn.space.&lt;space-name&gt;:get{field-value, ...}</code></dt>
+<dd><p><code class="samp docutils literal"><span class="pre">conn.space.</span><em><span class="pre">space-name</span></em><span class="pre">:get(...)</span></code> is the remote-call equivalent
+of the local call <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:get(...)</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">conn.space.&lt;space-name&gt;:insert{field-value, ...}</code></dt>
+<dd><p><code class="samp docutils literal"><span class="pre">conn.space.</span><em><span class="pre">space-name</span></em><span class="pre">:insert(...)</span></code> is the remote-call equivalent
+of the local call <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:insert(...)</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">conn.space.&lt;space-name&gt;:replace{field-value, ...}</code></dt>
+<dd><p><code class="samp docutils literal"><span class="pre">conn.space.</span><em><span class="pre">space-name</span></em><span class="pre">:replace(...)</span></code> is the remote-call equivalent
+of the local call <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:replace(...)</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">conn.space.&lt;space-name&gt;:update{field-value, ...}</code></dt>
+<dd><p><code class="samp docutils literal"><span class="pre">conn.space.</span><em><span class="pre">space-name</span></em><span class="pre">:update(...)</span></code> is the remote-call equivalent
+of the local call <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:update(...)</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">conn.space.&lt;space-name&gt;:upsert{field-value, ...}</code></dt>
+<dd><p><code class="samp docutils literal"><span class="pre">conn.space.</span><em><span class="pre">space-name</span></em><span class="pre">:upsert(...)</span></code> is the remote-call equivalent
+of the local call <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:upsert(...)</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">conn.space.&lt;space-name&gt;:delete{field-value, ...}</code></dt>
+<dd><p><code class="samp docutils literal"><span class="pre">conn.space.</span><em><span class="pre">space-name</span></em><span class="pre">:delete(...)</span></code> is the remote-call equivalent
+of the local call <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:delete(...)</span></code>.</p>
+</dd></dl>
+
+<span class="target" id="net-box-call"></span><dl class="method">
+<dt id="lua-функция.conn.call">
+<em class="property"> </em><code class="descclassname">conn:</code><code class="descname">call</code><big>(</big><em>function-name</em><span class="optional">[</span>, <em>arguments</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.conn.call" title="Ссылка на это определение">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">conn:call('func',</span> <span class="pre">'1',</span> <span class="pre">'2',</span> <span class="pre">'3')</span></code> is the remote-call equivalent of
+<code class="docutils literal"><span class="pre">func('1',</span> <span class="pre">'2',</span> <span class="pre">'3')</span></code>. That is, <code class="docutils literal"><span class="pre">conn:call</span></code> is a remote
+stored-procedure call.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">conn</span><span class="p">:</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">function5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="net-box-eval"></span><dl class="method">
+<dt id="lua-функция.conn.eval">
+<em class="property"> </em><code class="descclassname">conn:</code><code class="descname">eval</code><big>(</big><em>Lua-string</em><big>)</big><a class="headerlink" href="#lua-функция.conn.eval" title="Ссылка на это определение">¶</a></dt>
+<dd><p><code class="samp docutils literal"><span class="pre">conn:eval(</span><em><span class="pre">Lua-string</span></em><span class="pre">)</span></code> evaluates and executes the expression
+in Lua-string, which may be any statement or series of statements.
+An <a class="reference internal" href="../book/box/authentication.html#authentication-privileges"><span class="std std-ref">execute privilege</span></a> is required; if
+the user does not have it, an administrator may grant it with
+<code class="samp docutils literal"><span class="pre">box.schema.user.grant(</span><em><span class="pre">username</span></em><span class="pre">,</span> <span class="pre">'execute',</span> <span class="pre">'universe')</span></code>.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">conn</span><span class="p">:</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">return 5+5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.conn.timeout">
+<em class="property"> </em><code class="descclassname">conn:</code><code class="descname">timeout</code><big>(</big><em>timeout</em><big>)</big><a class="headerlink" href="#lua-функция.conn.timeout" title="Ссылка на это определение">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">timeout(...)</span></code> is a wrapper which sets a timeout for the request that
+follows it.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">conn</span><span class="p">:</span><span class="n">timeout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">).</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">1</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">}})</span>
+</pre></div>
+</div>
+<p>All remote calls support execution timeouts. Using a wrapper object makes
+the remote connection API compatible with the local one, removing the need
+for a separate <code class="docutils literal"><span class="pre">timeout</span></code> argument, which the local version would ignore. Once
+a request is sent, it cannot be revoked from the remote server even if a
+timeout expires: the timeout expiration only aborts the wait for the remote
+server response, not the request itself.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="example-showing-use-of-most-of-the-net-box-methods">
+<h2>Example showing use of most of the net.box methods<a class="headerlink" href="#example-showing-use-of-most-of-the-net-box-methods" title="Ссылка на этот заголовок">¶</a></h2>
+<p>This example will work with the sandbox configuration described in the preface.
+That is, there is a space named tester with a numeric primary key. Assume that
+the database is nearly empty. Assume that the tarantool server is running on
+<code class="docutils literal"><span class="pre">localhost</span> <span class="pre">127.0.0.1:3301</span></code>.</p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">net_box</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">net.box&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">example</span><span class="p">()</span>
+<span class="gp">         &gt; </span>  <span class="kd">local</span> <span class="n">conn</span><span class="p">,</span> <span class="n">wtuple</span>
+<span class="gp">         &gt; </span>  <span class="k">if</span> <span class="n">net_box</span><span class="p">.</span><span class="n">self</span><span class="p">:</span><span class="n">ping</span><span class="p">()</span> <span class="k">then</span>
+<span class="gp">         &gt; </span>    <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">self:ping() succeeded&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>    <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">  (no surprise -- self connection is pre-established)&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="k">end</span>
+<span class="gp">         &gt; </span>  <span class="k">if</span> <span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">.</span><span class="n">listen</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="s">3301&#39;</span> <span class="k">then</span>
+<span class="gp">         &gt; </span>    <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span><span class="s1">&#39;</span><span class="s">The local server listen address = 3301&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="k">else</span>
+<span class="gp">         &gt; </span>    <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">The local server listen address is not 3301&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>    <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">(  (maybe box.cfg{...listen=&quot;3301&quot;...} was not stated)&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>    <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">(  (so connect will fail)&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="k">end</span>
+<span class="gp">         &gt; </span>  <span class="n">conn</span> <span class="o">=</span> <span class="n">net_box</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">127.0.0.1:3301&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="n">conn</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">delete</span><span class="p">{</span><span class="mi">800</span><span class="p">}</span>
+<span class="gp">         &gt; </span>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">conn delete done on tester.&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="n">conn</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">800</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">data&#39;</span><span class="p">}</span>
+<span class="gp">         &gt; </span>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">conn insert done on tester, index 0&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">  primary key value = 800.&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="n">wtuple</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">800</span><span class="p">}</span>
+<span class="gp">         &gt; </span>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">conn select done on tester, index 0&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">  number of fields = &#39;</span> <span class="o">..</span> <span class="o">#</span><span class="n">wtuple</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="n">conn</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">delete</span><span class="p">{</span><span class="mi">800</span><span class="p">}</span>
+<span class="gp">         &gt; </span>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">conn delete done on tester&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="n">conn</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">replace</span><span class="p">{</span><span class="mi">800</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">New data&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Extra data&#39;</span><span class="p">}</span>
+<span class="gp">         &gt; </span>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">conn:replace done on tester&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="n">conn</span><span class="p">:</span><span class="n">timeout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">).</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">800</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Fld#1&#39;</span><span class="p">}})</span>
+<span class="gp">         &gt; </span>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">conn update done on tester&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span>  <span class="n">conn</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">         &gt; </span>  <span class="nb">table.insert</span><span class="p">(</span><span class="n">ta</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">conn close done&#39;</span><span class="p">)</span>
+<span class="gp">         &gt; </span><span class="k">end</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">ta</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">example</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">ta</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">self:ping() succeeded</span>
+  <span class="p p-Indicator">-</span> <span class="s">&#39;</span><span class="nv">  </span><span class="s">(no</span><span class="nv"> </span><span class="s">surprise</span><span class="nv"> </span><span class="s">--</span><span class="nv"> </span><span class="s">self</span><span class="nv"> </span><span class="s">connection</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">pre-established)&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">The local server listen address = 3301</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conn delete done on tester.</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conn insert done on tester, index 0</span>
+  <span class="p p-Indicator">-</span> <span class="s">&#39;</span><span class="nv">  </span><span class="s">primary</span><span class="nv"> </span><span class="s">key</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">800.&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conn select done on tester, index 0</span>
+  <span class="p p-Indicator">-</span> <span class="s">&#39;</span><span class="nv">  </span><span class="s">number</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">fields</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">1&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conn delete done on tester</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conn:replace done on tester</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conn update done on tester</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conn close done</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="msgpack.html"
+           class="b-prev b-ellipsis"
+           title="Модуль &lt;cite&gt;msgpack&lt;/cite&gt;">Модуль <cite>msgpack</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_lua/net_box.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="box_once.html"
+           class="b-next b-ellipsis"
+           title="Функция &lt;cite&gt;box.once&lt;/cite&gt;">Функция <cite>box.once</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

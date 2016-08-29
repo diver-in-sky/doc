@@ -1,0 +1,485 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Модуль clock</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Модуль clock">
+        Модуль clock
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_lua/clock.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_lua/clock.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_lua/clock">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">Руководство пользователя</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Справочник по Lua API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Модуль <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Модуль <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">Модуль <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="digest.html">Модуль <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_error.html">Вложенный модуль <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber.html">Модуль <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber_ipc.html">Модуль <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="msgpack.html">Модуль <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="net_box.html">Модуль <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_once.html">Функция <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">Модуль <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">Модуль <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="strict.html">Модуль <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarantool.html">Модуль <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Разное</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Справочник по Lua API
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Модуль <cite>clock</cite>" class="b-path_current b-ellipsis">
+          Модуль <cite>clock</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="module-clock">
+<span id="clock-module"></span><h1>Модуль <cite>clock</cite><a class="headerlink" href="#module-clock" title="Ссылка на этот заголовок">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">clock</span></code> module returns time values derived from
+the Posix / C <a class="reference external" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/clock_getres.html">CLOCK_GETTIME</a> function or equivalent.
+Most functions in the module return a number of seconds;
+functions whose names end in &quot;64&quot; return a 64-bit number of nanoseconds.</p>
+<span class="target" id="lua-module.clock"></span><dl class="function">
+<dt id="lua-функция.clock.time">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">time</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.time" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.clock.time64">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">time64</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.time64" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.clock.realtime">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">realtime</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.realtime" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.clock.realtime64">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">realtime64</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.realtime64" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The wall clock time. Derived from C function clock_gettime(CLOCK_REALTIME).
+This is the best function for knowing what the official time is,
+as determined by the system administrator.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">seconds or nanoseconds since epoch (1970-01-01 00:00:00), adjusted.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number or number64</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- This will print an approximate number of years since 1970.</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">clock&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clock</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="mi">365</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="fiber.html#fiber-time64"><span class="std std-ref">fiber.time64</span></a> and <a class="reference internal" href="os.html#os-clock"><span class="std std-ref">os.clock()</span></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.clock.monotonic">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">monotonic</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.monotonic" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.clock.monotonic64">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">monotonic64</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.monotonic64" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The monotonic time. Derived from C function clock_gettime(CLOCK_MONOTONIC).
+Monotonic time is similar to wall clock time but is not affected by changes
+to or from daylight saving time, or by changes done by a user.
+This is the best function to use with benchmarks that need to calculate elapsed time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">seconds or nanoseconds since the last time that the computer was booted.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number or number64</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- This will print nanoseconds since the start.</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">clock&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clock</span><span class="p">.</span><span class="n">monotonic64</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.clock.proc">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">proc</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.proc" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.clock.proc64">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">proc64</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.proc64" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The processor time. Derived from C function clock_gettime(CLOCK_PROCESS_CPUTIME_ID).
+This is the best function to use with benchmarks that need to calculate
+how much time has been spent within a CPU.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">seconds or nanoseconds since processor start.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number or number64</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- This will print nanoseconds in the CPU since the start.</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">clock&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clock</span><span class="p">.</span><span class="n">proc64</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.clock.thread">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">thread</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.thread" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.clock.thread64">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">thread64</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.clock.thread64" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The thread time. Derived from C function clock_gettime(CLOCK_THREAD_CPUTIME_ID).
+This is the best function to use with benchmarks that need to calculate
+how much time has been spent within a thread within a CPU.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">seconds or nanoseconds since thread start.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">number or number64</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- This will print seconds in the thread since the start.</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">clock&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clock</span><span class="p">.</span><span class="n">thread64</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-функция.clock.bench">
+<em class="property"> </em><code class="descclassname">clock.</code><code class="descname">bench</code><big>(</big><em>function</em><span class="optional">[</span>, <em>function parameters ...</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-функция.clock.bench" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The time that a function takes within a processor.
+This function uses clock.proc(), therefore it calculates elapsed CPU time.
+Therefore it is not useful for showing actual elapsed time.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><code class="samp docutils literal"><em><span class="pre">function</span></em></code> = function or function reference;</li>
+<li><code class="samp docutils literal"><em><span class="pre">function</span> <span class="pre">parameters</span></em></code> = whatever values are required by the function.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">table. first element = seconds of CPU time; second element = whatever the function returns.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">table</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- Benchmark a function which sleeps 10 seconds.</span>
+<span class="c1">-- NB: bench() will not calculate sleep time.</span>
+<span class="c1">-- So the returned value will be {a number less than 10, 88}.</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">clock&#39;</span><span class="p">)</span>
+<span class="n">fiber</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">fiber&#39;</span><span class="p">)</span>
+<span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+  <span class="n">fiber</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+  <span class="k">return</span> <span class="mi">88</span>
+<span class="k">end</span>
+<span class="n">clock</span><span class="p">.</span><span class="n">bench</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="box.html"
+           class="b-prev b-ellipsis"
+           title="Module &lt;cite&gt;box&lt;/cite&gt;">Module <cite>box</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_lua/clock.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="console.html"
+           class="b-next b-ellipsis"
+           title="Модуль &lt;cite&gt;console&lt;/cite&gt;">Модуль <cite>console</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

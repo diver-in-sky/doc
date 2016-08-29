@@ -1,0 +1,852 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Протокол IProto</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Протокол IProto">
+        Протокол IProto
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../dev_guide/box_protocol.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/dev_guide/box_protocol.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-dev_guide/box_protocol">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">Руководство пользователя</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Справочник по Lua API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Руководство разработчика</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Состав документации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_from_source.html">Сборка из исходных файлов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_documentation.html">Сборка документации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_guidelines.html">Соглашения по разработке</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation_guidelines.html">Соглашения по документации</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Протокол IProto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_style_guide.html">Соглашения по разработке на языке C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_style_guide.html">Соглашения по разработке на языке Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_management.html">Работа с релизами</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Руководство разработчика
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Протокол IProto" class="b-path_current b-ellipsis">
+          Протокол IProto
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="iproto-protocol">
+<span id="box-protocol-iproto-protocol"></span><h1>Протокол IProto<a class="headerlink" href="#iproto-protocol" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="notion-in-diagrams">
+<h2>Диаграмма общей схемы данных<a class="headerlink" href="#notion-in-diagrams" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-none"><div class="highlight"><pre><span></span>0    X
++----+
+|    | - X байт
++----+
+ TYPE - тип переменной из библиотеки MsgPack (если это объект из библиотеки MsgPack)
+
++====+
+|    | - объект из библиотеки MsgPack, динамически изменяемого размера
++====+
+ TYPE - тип переменной из библиотеки MsgPack
+
++~~~~+
+|    | - массив/сопоставление из библиотеки MsgPack, динамически изменяемого размера
++~~~~+
+ TYPE - тип переменной из библиотеки MsgPack
+</pre></div>
+</div>
+<p>Типы данных из библиотеки MsgPack:</p>
+<ul class="simple">
+<li><p class="first"><strong>MP_INT</strong> - целое число</p>
+</li>
+<li><strong>MP_MAP</strong> - Map</li>
+<li><strong>MP_ARR</strong> - Array</li>
+<li><strong>MP_STRING</strong> - String</li>
+<li><strong>MP_FIXSTR</strong> - Fixed size string</li>
+<li><strong>MP_OBJECT</strong> - Any MsgPack object</li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Ссылка на этот заголовок">¶</a></h2>
+<p>IPROTO is a binary request/response protocol.</p>
+</div>
+<div class="section" id="greeting-packet">
+<h2>Greeting Packet<a class="headerlink" href="#greeting-packet" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-none"><div class="highlight"><pre><span></span>TARANTOOL&#39;S GREETING:
+
+0                                     63
++--------------------------------------+
+|                                      |
+| Tarantool Greeting (server version)  |
+|               64 bytes               |
++---------------------+----------------+
+|                     |                |
+| BASE64 encoded SALT |      NULL      |
+|      44 bytes       |                |
++---------------------+----------------+
+64                  107              127
+</pre></div>
+</div>
+<p>The server begins the dialogue by sending a fixed-size (128 bytes) text greeting
+to the client. The greeting always contains two 64 byte lines of ASCII text, each
+line ending with newline character ('\n'). The first line contains the server
+version and protocol type. The second line contains up to 44 bytes of base64-encoded
+random string, to use in authentication packet, and ends with up to 23 spaces.</p>
+</div>
+<div class="section" id="unified-packet-structure">
+<h2>Unified packet structure<a class="headerlink" href="#unified-packet-structure" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Once a greeting is read, the protocol becomes pure request/response and features
+a complete access to Tarantool functionality, including:</p>
+<ul class="simple">
+<li>request multiplexing, e.g. ability to asynchronously issue multiple requests
+via the same connection</li>
+<li>response format that supports zero-copy writes</li>
+</ul>
+<p>For data structuring and encoding, the protocol uses msgpack data format, see
+<a class="reference external" href="http://msgpack.org">http://msgpack.org</a></p>
+<p>Tarantool protocol mandates use of a few integer constants serving as keys in
+maps used in the protocol. These constants are defined in <a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/box/iproto_constants.h">src/box/iproto_constants.h</a></p>
+<p>Let's list them here too:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>-- user keys
+&lt;code&gt;          ::= 0x00
+&lt;sync&gt;          ::= 0x01
+&lt;schema_id&gt;     ::= 0x05
+&lt;space_id&gt;      ::= 0x10
+&lt;index_id&gt;      ::= 0x11
+&lt;limit&gt;         ::= 0x12
+&lt;offset&gt;        ::= 0x13
+&lt;iterator&gt;      ::= 0x14
+&lt;key&gt;           ::= 0x20
+&lt;tuple&gt;         ::= 0x21
+&lt;function_name&gt; ::= 0x22
+&lt;username&gt;      ::= 0x23
+&lt;expression&gt;    ::= 0x27
+&lt;ops&gt;           ::= 0x28
+&lt;data&gt;          ::= 0x30
+&lt;error&gt;         ::= 0x31
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>-- -- Value for &lt;code&gt; key in request can be:
+-- User command codes
+&lt;select&gt;  ::= 0x01
+&lt;insert&gt;  ::= 0x02
+&lt;replace&gt; ::= 0x03
+&lt;update&gt;  ::= 0x04
+&lt;delete&gt;  ::= 0x05
+&lt;call&gt;    ::= 0x06
+&lt;auth&gt;    ::= 0x07
+&lt;eval&gt;    ::= 0x08
+&lt;upsert&gt;  ::= 0x09
+-- Admin command codes
+&lt;ping&gt;    ::= 0x40
+
+-- -- Value for &lt;code&gt; key in response can be:
+&lt;OK&gt;      ::= 0x00
+&lt;ERROR&gt;   ::= 0x8XXX
+</pre></div>
+</div>
+<p>Both <code class="code docutils literal"><span class="pre">&lt;header&gt;</span></code> and <code class="code docutils literal"><span class="pre">&lt;body&gt;</span></code> are msgpack maps:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Request/Response:
+
+0        5
++--------+ +============+ +===================================+
+| BODY + | |            | |                                   |
+| HEADER | |   HEADER   | |               BODY                |
+|  SIZE  | |            | |                                   |
++--------+ +============+ +===================================+
+  MP_INT       MP_MAP                     MP_MAP
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>UNIFIED HEADER:
+
++================+================+=====================+
+|                |                |                     |
+|   0x00: CODE   |   0x01: SYNC   |    0x05: SCHEMA_ID  |
+| MP_INT: MP_INT | MP_INT: MP_INT |  MP_INT: MP_INT     |
+|                |                |                     |
++================+================+=====================+
+                          MP_MAP
+</pre></div>
+</div>
+<p>They only differ in the allowed set of keys and values, the key defines the type
+of value that follows. If a body has no keys, entire msgpack map for the body
+may be missing. Such is the case, for example, in &lt;ping&gt; request. <code class="docutils literal"><span class="pre">schema_id</span></code>
+may be absent in request's header, that means that there'll be no version
+checking, but it must be present in the response. If <code class="docutils literal"><span class="pre">schema_id</span></code> is sent in
+the header, then it'll be checked.</p>
+</div>
+<div class="section" id="authentication">
+<span id="box-protocol-authentication"></span><h2>Authentication<a class="headerlink" href="#authentication" title="Ссылка на этот заголовок">¶</a></h2>
+<p>When a client connects to the server, the server responds with a 128-byte
+text greeting message. Part of the greeting is base-64 encoded session salt -
+a random string which can be used for authentication. The length of decoded
+salt (44 bytes) exceeds the amount necessary to sign the authentication
+message (first 20 bytes). An excess is reserved for future authentication
+schemas.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>PREPARE SCRAMBLE:
+
+    LEN(ENCODED_SALT) = 44;
+    LEN(SCRAMBLE)     = 20;
+
+prepare &#39;chap-sha1&#39; scramble:
+
+    salt = base64_decode(encoded_salt);
+    step_1 = sha1(password);
+    step_2 = sha1(step_1);
+    step_3 = sha1(salt, step_2);
+    scramble = xor(step_1, step_3);
+    return scramble;
+
+AUTHORIZATION BODY: CODE = 0x07
+
++==================+====================================+
+|                  |        +-------------+-----------+ |
+|  (KEY)           | (TUPLE)|  len == 9   | len == 20 | |
+|   0x23:USERNAME  |   0x21:| &quot;chap-sha1&quot; |  SCRAMBLE | |
+| MP_INT:MP_STRING | MP_INT:|  MP_STRING  | MP_STRING | |
+|                  |        +-------------+-----------+ |
+|                  |                   MP_ARRAY         |
++==================+====================================+
+                        MP_MAP
+</pre></div>
+</div>
+<p><code class="code docutils literal"><span class="pre">&lt;key&gt;</span></code> holds the user name. <code class="code docutils literal"><span class="pre">&lt;tuple&gt;</span></code> must be an array of 2 fields:
+authentication mechanism (&quot;chap-sha1&quot; is the only supported mechanism right now)
+and password, encrypted according to the specified mechanism. Authentication in
+Tarantool is optional, if no authentication is performed, session user is 'guest'.
+The server responds to authentication packet with a standard response with 0 tuples.</p>
+</div>
+<div class="section" id="requests">
+<h2>Requests<a class="headerlink" href="#requests" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li>SELECT: CODE - 0x01
+Find tuples matching the search pattern</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>SELECT BODY:
+
++==================+==================+==================+
+|                  |                  |                  |
+|   0x10: SPACE_ID |   0x11: INDEX_ID |   0x12: LIMIT    |
+| MP_INT: MP_INT   | MP_INT: MP_INT   | MP_INT: MP_INT   |
+|                  |                  |                  |
++==================+==================+==================+
+|                  |                  |                  |
+|   0x13: OFFSET   |   0x14: ITERATOR |   0x20: KEY      |
+| MP_INT: MP_INT   | MP_INT: MP_INT   | MP_INT: MP_ARRAY |
+|                  |                  |                  |
++==================+==================+==================+
+                          MP_MAP
+</pre></div>
+</div>
+<ul class="simple">
+<li>INSERT:  CODE - 0x02
+Inserts tuple into the space, if no tuple with same unique keys exists. Otherwise throw <em>duplicate key</em> error.</li>
+<li>REPLACE: CODE - 0x03
+Insert a tuple into the space or replace an existing one.</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>INSERT/REPLACE BODY:
+
++==================+==================+
+|                  |                  |
+|   0x10: SPACE_ID |   0x21: TUPLE    |
+| MP_INT: MP_INT   | MP_INT: MP_ARRAY |
+|                  |                  |
++==================+==================+
+                 MP_MAP
+</pre></div>
+</div>
+<ul class="simple">
+<li>UPDATE: CODE - 0x04
+Update a tuple</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>UPDATE BODY:
+
++==================+=======================+
+|                  |                       |
+|   0x10: SPACE_ID |   0x11: INDEX_ID      |
+| MP_INT: MP_INT   | MP_INT: MP_INT        |
+|                  |                       |
++==================+=======================+
+|                  |          +~~~~~~~~~~+ |
+|                  |          |          | |
+|                  | (TUPLE)  |    OP    | |
+|   0x20: KEY      |    0x21: |          | |
+| MP_INT: MP_ARRAY |  MP_INT: +~~~~~~~~~~+ |
+|                  |            MP_ARRAY   |
++==================+=======================+
+                 MP_MAP
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>OP:
+    Works only for integer fields:
+    * Addition    OP = &#39;+&#39; . space[key][field_no] += argument
+    * Subtraction OP = &#39;-&#39; . space[key][field_no] -= argument
+    * Bitwise AND OP = &#39;&amp;&#39; . space[key][field_no] &amp;= argument
+    * Bitwise XOR OP = &#39;^&#39; . space[key][field_no] ^= argument
+    * Bitwise OR  OP = &#39;|&#39; . space[key][field_no] |= argument
+    Works on any fields:
+    * Delete      OP = &#39;#&#39;
+      delete &lt;argument&gt; fields starting
+      from &lt;field_no&gt; in the space[&lt;key&gt;]
+
+0           2
++-----------+==========+==========+
+|           |          |          |
+|    OP     | FIELD_NO | ARGUMENT |
+| MP_FIXSTR |  MP_INT  |  MP_INT  |
+|           |          |          |
++-----------+==========+==========+
+              MP_ARRAY
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>    * Insert      OP = &#39;!&#39;
+      insert &lt;argument&gt; before &lt;field_no&gt;
+    * Assign      OP = &#39;=&#39;
+      assign &lt;argument&gt; to field &lt;field_no&gt;.
+      will extend the tuple if &lt;field_no&gt; == &lt;max_field_no&gt; + 1
+
+0           2
++-----------+==========+===========+
+|           |          |           |
+|    OP     | FIELD_NO | ARGUMENT  |
+| MP_FIXSTR |  MP_INT  | MP_OBJECT |
+|           |          |           |
++-----------+==========+===========+
+              MP_ARRAY
+
+    Works on string fields:
+    * Splice      OP = &#39;:&#39;
+      take the string from space[key][field_no] and
+      substitute &lt;offset&gt; bytes from &lt;position&gt; with &lt;argument&gt;
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>0           2
++-----------+==========+==========+========+==========+
+|           |          |          |        |          |
+|    &#39;:&#39;    | FIELD_NO | POSITION | OFFSET | ARGUMENT |
+| MP_FIXSTR |  MP_INT  |  MP_INT  | MP_INT |  MP_STR  |
+|           |          |          |        |          |
++-----------+==========+==========+========+==========+
+                         MP_ARRAY
+</pre></div>
+</div>
+<p>It's an error to specify an argument of a type that differs from expected type.</p>
+<ul class="simple">
+<li>DELETE: CODE - 0x05
+Delete a tuple</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>DELETE BODY:
+
++==================+==================+==================+
+|                  |                  |                  |
+|   0x10: SPACE_ID |   0x11: INDEX_ID |   0x20: KEY      |
+| MP_INT: MP_INT   | MP_INT: MP_INT   | MP_INT: MP_ARRAY |
+|                  |                  |                  |
++==================+==================+==================+
+                          MP_MAP
+</pre></div>
+</div>
+<ul class="simple">
+<li>CALL: CODE - 0x06
+Call a stored function</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>CALL BODY:
+
++=======================+==================+
+|                       |                  |
+|   0x22: FUNCTION_NAME |   0x21: TUPLE    |
+| MP_INT: MP_STRING     | MP_INT: MP_ARRAY |
+|                       |                  |
++=======================+==================+
+                    MP_MAP
+</pre></div>
+</div>
+<ul class="simple">
+<li>EVAL: CODE - 0x08
+Evaulate Lua expression</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>EVAL BODY:
+
++=======================+==================+
+|                       |                  |
+|   0x27: EXPRESSION    |   0x21: TUPLE    |
+| MP_INT: MP_STRING     | MP_INT: MP_ARRAY |
+|                       |                  |
++=======================+==================+
+                    MP_MAP
+</pre></div>
+</div>
+<ul class="simple">
+<li>UPSERT: CODE - 0x09
+Update tuple if it would be found elsewhere try to insert tuple. Always use primary index for key.</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>UPSERT BODY:
+
++==================+==================+==========================+
+|                  |                  |             +~~~~~~~~~~+ |
+|                  |                  |             |          | |
+|   0x10: SPACE_ID |   0x21: TUPLE    |       (OPS) |    OP    | |
+| MP_INT: MP_INT   | MP_INT: MP_ARRAY |       0x28: |          | |
+|                  |                  |     MP_INT: +~~~~~~~~~~+ |
+|                  |                  |               MP_ARRAY   |
++==================+==================+==========================+
+                                MP_MAP
+
+Operations structure same as for UPDATE operation.
+   0           2
++-----------+==========+==========+
+|           |          |          |
+|    OP     | FIELD_NO | ARGUMENT |
+| MP_FIXSTR |  MP_INT  |  MP_INT  |
+|           |          |          |
++-----------+==========+==========+
+              MP_ARRAY
+
+Supported operations:
+
+&#39;+&#39; - add a value to a numeric field. If the filed is not numeric, it&#39;s
+      changed to 0 first. If the field does not exist, the operation is
+      skipped. There is no error in case of overflow either, the value
+      simply wraps around in C style. The range of the integer is MsgPack:
+      from -2^63 to 2^64-1
+&#39;-&#39; - same as the previous, but subtract a value
+&#39;=&#39; - assign a field to a value. The field must exist, if it does not exist,
+      the operation is skipped.
+&#39;!&#39; - insert a field. It&#39;s only possible to insert a field if this create no
+      nil &quot;gaps&quot; between fields. E.g. it&#39;s possible to add a field between
+      existing fields or as the last field of the tuple.
+&#39;#&#39; - delete a field. If the field does not exist, the operation is skipped.
+      It&#39;s not possible to change with update operations a part of the primary
+      key (this is validated before performing upsert).
+</pre></div>
+</div>
+</div>
+<div class="section" id="response-packet-structure">
+<h2>Response packet structure<a class="headerlink" href="#response-packet-structure" title="Ссылка на этот заголовок">¶</a></h2>
+<p>We'll show whole packets here:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>OK:    LEN + HEADER + BODY
+
+0      5                                          OPTIONAL
++------++================+================++===================+
+|      ||                |                ||                   |
+| BODY ||   0x00: 0x00   |   0x01: SYNC   ||   0x30: DATA      |
+|HEADER|| MP_INT: MP_INT | MP_INT: MP_INT || MP_INT: MP_OBJECT |
+| SIZE ||                |                ||                   |
++------++================+================++===================+
+ MP_INT                MP_MAP                      MP_MAP
+</pre></div>
+</div>
+<p>Set of tuples in the response <code class="code docutils literal"><span class="pre">&lt;data&gt;</span></code> expects a msgpack array of tuples as value
+EVAL command returns arbitrary <cite>MP_ARRAY</cite> with arbitrary MsgPack values.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>ERROR: LEN + HEADER + BODY
+
+0      5
++------++================+================++===================+
+|      ||                |                ||                   |
+| BODY ||   0x00: 0x8XXX |   0x01: SYNC   ||   0x31: ERROR     |
+|HEADER|| MP_INT: MP_INT | MP_INT: MP_INT || MP_INT: MP_STRING |
+| SIZE ||                |                ||                   |
++------++================+================++===================+
+ MP_INT                MP_MAP                      MP_MAP
+
+Where 0xXXX is ERRCODE.
+</pre></div>
+</div>
+<p>Error message is present in the response only if there is an error <code class="code docutils literal"><span class="pre">&lt;error&gt;</span></code>
+expects as value a msgpack string</p>
+<p>Convenience macros which define hexadecimal constants for return codes
+can be found in <a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/box/errcode.h">src/box/errcode.h</a></p>
+</div>
+<div class="section" id="replication-packet-structure">
+<h2>Replication packet structure<a class="headerlink" href="#replication-packet-structure" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-none"><div class="highlight"><pre><span></span>-- replication keys
+&lt;server_id&gt;     ::= 0x02
+&lt;lsn&gt;           ::= 0x03
+&lt;timestamp&gt;     ::= 0x04
+&lt;server_uuid&gt;   ::= 0x24
+&lt;cluster_uuid&gt;  ::= 0x25
+&lt;vclock&gt;        ::= 0x26
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>-- replication codes
+&lt;join&gt;      ::= 0x41
+&lt;subscribe&gt; ::= 0x42
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>JOIN:
+
+In the beginning you must send JOIN
+                         HEADER                          BODY
++================+================+===================++-------+
+|                |                |    SERVER_UUID    ||       |
+|   0x00: 0x41   |   0x01: SYNC   |   0x24: UUID      || EMPTY |
+| MP_INT: MP_INT | MP_INT: MP_INT | MP_INT: MP_STRING ||       |
+|                |                |                   ||       |
++================+================+===================++-------+
+               MP_MAP                                   MP_MAP
+
+Then server, which we connect to, will send last SNAP file by, simply,
+creating a number of INSERTs (with additional LSN and ServerID)
+(don&#39;t reply). Then it&#39;ll send a vclock&#39;s MP_MAP and close a socket.
+
++================+================++============================+
+|                |                ||        +~~~~~~~~~~~~~~~~~+ |
+|                |                ||        |                 | |
+|   0x00: 0x00   |   0x01: SYNC   ||   0x26:| SRV_ID: SRV_LSN | |
+| MP_INT: MP_INT | MP_INT: MP_INT || MP_INT:| MP_INT: MP_INT  | |
+|                |                ||        +~~~~~~~~~~~~~~~~~+ |
+|                |                ||               MP_MAP       |
++================+================++============================+
+               MP_MAP                      MP_MAP
+
+SUBSCRIBE:
+
+Then you must send SUBSCRIBE:
+
+                              HEADER
++===================+===================+
+|                   |                   |
+|     0x00: 0x41    |    0x01: SYNC     |
+|   MP_INT: MP_INT  |  MP_INT: MP_INT   |
+|                   |                   |
++===================+===================+
+|    SERVER_UUID    |    CLUSTER_UUID   |
+|   0x24: UUID      |   0x25: UUID      |
+| MP_INT: MP_STRING | MP_INT: MP_STRING |
+|                   |                   |
++===================+===================+
+                 MP_MAP
+
+      BODY
++================+
+|                |
+|   0x26: VCLOCK |
+| MP_INT: MP_INT |
+|                |
++================+
+      MP_MAP
+
+Then you must process every query that&#39;ll came through other masters.
+Every request between masters will have Additional LSN and SERVER_ID.
+</pre></div>
+</div>
+</div>
+<div class="section" id="xlog-snap">
+<h2>XLOG / SNAP<a class="headerlink" href="#xlog-snap" title="Ссылка на этот заголовок">¶</a></h2>
+<p>XLOG and SNAP have the same format. They start with:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>SNAP\n
+0.12\n
+Server: e6eda543-eda7-4a82-8bf4-7ddd442a9275\n
+VClock: {1: 0}\n
+\n
+...
+</pre></div>
+</div>
+<p>So, <strong>Header</strong> of an SNAP/XLOG consists of:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&lt;format&gt;\n
+&lt;format_version&gt;\n
+Server: &lt;server_uuid&gt;\n
+VClock: &lt;vclock_map&gt;\n
+\n
+</pre></div>
+</div>
+<p>There are two markers: tuple beginning - <strong>0xd5ba0bab</strong> and EOF marker -
+<strong>0xd510aded</strong>. So, next, between <strong>Header</strong> and EOF marker there's data with
+the following schema:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>0            3 4                                         17
++-------------+========+============+===========+=========+
+|             |        |            |           |         |
+| 0xd5ba0bab  | LENGTH | CRC32 PREV | CRC32 CUR | PADDING |
+|             |        |            |           |         |
++-------------+========+============+===========+=========+
+  MP_FIXEXT2    MP_INT     MP_INT       MP_INT      ---
+
++============+ +===================================+
+|            | |                                   |
+|   HEADER   | |                BODY               |
+|            | |                                   |
++============+ +===================================+
+    MP_MAP                     MP_MAP
+</pre></div>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="documentation_guidelines.html"
+           class="b-prev b-ellipsis"
+           title="Соглашения по документации">Соглашения по документации</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/dev_guide/box_protocol.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="c_style_guide.html"
+           class="b-next b-ellipsis"
+           title="Соглашения по разработке на языке C">Соглашения по разработке на языке C</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

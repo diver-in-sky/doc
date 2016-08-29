@@ -1,0 +1,558 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>14. Приложение F. Учебные примеры на языке C</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="14. Приложение F. Учебные примеры на языке C">
+        14. Приложение F. Учебные примеры на языке C
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../book/app/f_c_tutorial.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../ru/book/app/f_c_tutorial.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/app/f_c_tutorial">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Руководство пользователя</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">1. Предисловие</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide_getting_started.html">2. Начало работы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../box/index.html">3. Функционал СУБД</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../replication/index.html">4. Репликация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">5. Справочник по конфигурированию</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administration.html">6. Администрирование серверной части</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors/index.html">7. Коннекторы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules.html">8. Модули</a></li>
+<li class="toctree-l2"><a class="reference internal" href="a_errcodes.html">9. Приложение A. Коды ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_internals.html">10. Приложение B. Детали реализации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_lua_tutorial.html">11. Приложение C. Учебные примеры на языке Lua</a></li>
+<li class="toctree-l2"><a class="reference internal" href="d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14. Приложение F. Учебные примеры на языке C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Руководство пользователя
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="14. Приложение F. Учебные примеры на языке C" class="b-path_current b-ellipsis">
+          14. Приложение F. Учебные примеры на языке C
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="appendix-f-c-tutorial">
+<h1>14. Приложение F. Учебные примеры на языке C<a class="headerlink" href="#appendix-f-c-tutorial" title="Ссылка на этот заголовок">¶</a></h1>
+<p>There is one C tutorial:
+<a class="reference internal" href="#f-c-tutorial-c-stored-procedures"><span class="std std-ref">C stored procedures</span></a>.</p>
+<div class="section" id="c-stored-procedures">
+<span id="f-c-tutorial-c-stored-procedures"></span><h2>14.1. Работа с хранимыми процедурами на языке C<a class="headerlink" href="#c-stored-procedures" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Tarantool can call C code with <a class="reference internal" href="../modules.html#modules-example-c"><span class="std std-ref">modules</span></a>,
+or with <a class="reference internal" href="e_cookbook.html#e-cookbook-ffi-printf"><span class="std std-ref">ffi</span></a>,
+or with C stored procedures.
+This tutorial only is about the third option, C stored procedures.
+In fact the routines are always &quot;C functions&quot; but the phrase
+&quot;stored procedure&quot; is commonly used for historical reasons.</p>
+<p>In this tutorial, which can be followed by anyone with a Tarantool
+development package and a C compiler, there are three tasks.
+The first -- <code class="code docutils literal"><span class="pre">easy.c</span></code> -- prints &quot;hello world&quot;.
+The second -- <code class="code docutils literal"><span class="pre">harder.c</span></code> -- decodes a passed parameter value.
+The third -- <code class="code docutils literal"><span class="pre">hardest.c</span></code> -- uses the C API to do DBMS work.</p>
+<p>After following the instructions, and seeing that the results
+are what is described here, users should feel confident about
+writing their own stored procedures.</p>
+<p><strong>Подготовка</strong></p>
+<p>Check that these items exist on the computer: <br />
+* Tarantool 1.7 <br />
+* A gcc compiler, any modern version should work <br />
+* &quot;module.h&quot; <br />
+* &quot;msgpuck.h&quot; <br /></p>
+<p>The &quot;module.h&quot; file will exist if Tarantool 1.7 was installed from source.
+Otherwise Tarantool's &quot;developer&quot; package must be installed.
+For example on Ubuntu say <br />
+<code class="code docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">tarantool-dev</span></code> <br />
+or on Fedora say <br />
+<code class="code docutils literal"><span class="pre">dnf</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">tarantool-devel</span></code></p>
+<p>The &quot;msgpuck.h&quot; file will exist if Tarantool 1.7 was installed from source.
+Otherwise the &quot;msgpuck&quot; package must be installed from
+<a class="reference external" href="https://github.com/rtsisyk/msgpuck">https://github.com/rtsisyk/msgpuck</a>.</p>
+<p>Both module.h and msgpuck.h must be on the include path for the C compiler to see them.
+For example, if module.h address is /usr/local/include/tarantool/module.h,
+and msgpuck.h address is /usr/local/include/msgpuck/msgpuck.h,
+and they are not currently on the include path, say <br />
+<code class="code docutils literal"><span class="pre">export</span> <span class="pre">CPATH=/usr/local/include/tarantool:/usr/local/include/msgpuck</span></code></p>
+<p>Requests will be done using tarantool as a <a class="reference internal" href="../administration.html#administration-using-tarantool-as-a-client"><span class="std std-ref">client</span></a>.
+Start tarantool, and enter these requests.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>box.cfg{listen=3306}
+box.schema.space.create(&#39;capi_test&#39;)
+box.space.capi_test:create_index(&#39;primary&#39;)
+net_box = require(&#39;net.box&#39;)
+capi_connection = net_box:new(3306)
+</pre></div>
+</div>
+<p>In plainer language: create a space named capi_test,
+and make a connection to self named capi_connection.</p>
+<p>Leave the client running. It will be necessary to enter more requests later.</p>
+<p><strong>easy.c</strong></p>
+<p>Start another shell. Change directory (cd) so that it is
+the same as the directory that the client is running on.</p>
+<p>Create a file. Name it easy.c. Put these six lines in it.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>#include &quot;module.h&quot;
+int easy(box_function_ctx_t *ctx, const char *args, const char *args_end)
+{
+  printf(&quot;hello world\n&quot;);
+  return 0;
+}
+</pre></div>
+</div>
+<p>Compile the program, producing a library file named easy.so: <br />
+<code class="code docutils literal"><span class="pre">gcc</span> <span class="pre">-shared</span> <span class="pre">-o</span> <span class="pre">easy.so</span> <span class="pre">-fPIC</span> <span class="pre">easy.c</span></code></p>
+<p>Теперь вернитесь в клиентский терминал и выполните следующие запросы:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>box.schema.func.create(&#39;easy&#39;, {language = &#39;C&#39;})
+box.schema.user.grant(&#39;guest&#39;, &#39;execute&#39;, &#39;function&#39;, &#39;easy&#39;)
+capi_connection:call(&#39;easy&#39;)
+</pre></div>
+</div>
+<p>If these requests appear unfamiliar,
+re-read the descriptions of
+<a class="reference internal" href="../box/box_schema.html#box-schema-func-create"><span class="std std-ref">box.schema.func.create</span></a>
+and <a class="reference internal" href="../box/box_schema.html#box-schema-user-grant"><span class="std std-ref">box.schema.user.grant</span></a>
+and <a class="reference internal" href="../../reference_lua/net_box.html#net-box-call"><span class="std std-ref">conn:call</span></a>.</p>
+<p>The function that matters is capi_connection:call('easy').</p>
+<p>Its first job is to find the 'easy' function, which should
+be easy because by default Tarantool looks on the current
+directory for a file named easy.so.</p>
+<p>Its second job is to call the 'easy' function.
+Since the easy() function in easy.c begins with <code class="code docutils literal"><span class="pre">printf(&quot;hello</span> <span class="pre">world\n&quot;)</span></code>,
+the words &quot;hello world&quot; will appear on the screen.</p>
+<p>Its third job is to check that the call was successful.
+Since the easy() function in easy.c ends with <code class="code docutils literal"><span class="pre">return</span> <span class="pre">0</span></code>,
+there is no error message to display and the request is over.</p>
+<p>Вывод на экране будет выглядеть следующим образом:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>tarantool&gt; capi_connection:call(&#39;easy&#39;)
+hello world
+---
+- []
+...
+</pre></div>
+</div>
+<p>Conclusion: calling a C function is easy.</p>
+<p><strong>harder.c</strong></p>
+<p>Go back to the shell where the easy.c program was created.</p>
+<p>Create a file. Name it harder.c. Put these 17 lines in it:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>#include &quot;module.h&quot;
+#include &quot;msgpuck.h&quot;
+int harder(box_function_ctx_t *ctx, const char *args, const char *args_end)
+{
+  uint32_t arg_count = mp_decode_array(&amp;args);
+  printf(&quot;arg_count = %d\n&quot;, arg_count);
+  uint32_t field_count = mp_decode_array(&amp;args);
+  printf(&quot;field_count = %d\n&quot;, field_count);
+  uint32_t val;
+  int i;
+  for (i = 0; i &lt; field_count; ++i)
+  {
+    val = mp_decode_uint(&amp;args);
+    printf(&quot;val=%d.\n&quot;, val);
+  }
+  return 0;
+}
+</pre></div>
+</div>
+<p>Compile the program, producing a library file named harder.so: <br />
+<code class="code docutils literal"><span class="pre">gcc</span> <span class="pre">-shared</span> <span class="pre">-o</span> <span class="pre">harder.so</span> <span class="pre">-fPIC</span> <span class="pre">harder.c</span></code></p>
+<p>Теперь вернитесь в клиентский терминал и выполните следующие запросы:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>box.schema.func.create(&#39;harder&#39;, {language = &#39;C&#39;})
+box.schema.user.grant(&#39;guest&#39;, &#39;execute&#39;, &#39;function&#39;, &#39;harder&#39;)
+passable_table = {}
+table.insert(passable_table, 1)
+table.insert(passable_table, 2)
+table.insert(passable_table, 3)
+capi_connection:call(&#39;harder&#39;, passable_table)
+</pre></div>
+</div>
+<p>This time the call is passing a Lua table (passable_table)
+to the harder() function. The harder() function will see it,
+it's in the <code class="code docutils literal"><span class="pre">char</span> <span class="pre">*args</span></code> parameter.</p>
+<p>At this point the harder() function will start using functions
+defined in msgpuck.h, which are documented in
+<a class="reference external" href="http://rtsisyk.github.io/msgpuck">http://rtsisyk.github.io/msgpuck</a>.
+The routines that begin with &quot;mp&quot; are msgpuck functions that
+handle data formatted according to the <a class="reference external" href="http://msgpack.org/">MsgPack</a> specification.
+Passes and returns are always done with this format so
+one must become acquainted with msgpuck
+to become proficient with the C API.</p>
+<p>For now, though, it's enough to know that mp_decode_array()
+returns the number of elements in an array, and mp_decode_uint
+returns an unsigned integer, from <code class="code docutils literal"><span class="pre">args</span></code>. And there's a side
+effect: when the decoding finishes, <code class="code docutils literal"><span class="pre">args</span></code> has changed
+and is now pointing to the next element.</p>
+<p>Therefore the first displayed line will be &quot;arg_count = 1&quot;
+because there was only one item passed: passable_table. <br />
+The second displayed line will be &quot;field_count = 3&quot;
+because there are three items in the table. <br />
+The next three lines will be &quot;1&quot; and &quot;2&quot; and &quot;3&quot;
+because those are the values in the items in the table.</p>
+<p>Теперь вывод на экране выглядит следующим образом:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>tarantool&gt; capi_connection:call(&#39;harder&#39;, passable_table)
+arg_count = 1
+field_count = 3
+val=1.
+val=2.
+val=3.
+---
+- []
+...
+</pre></div>
+</div>
+<p>Conclusion: decoding parameter values passed to a
+C function is not easy at first, but there are routines
+to do the job, and they're documented, and there aren't
+very many of them.</p>
+<p><strong>hardest.c</strong></p>
+<p>Go back to the shell where the easy.c
+and the harder.c programs were created.</p>
+<p>Create a file. Name it hardest.c. Put these 13 lines in it:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>#include &quot;module.h&quot;
+#include &quot;msgpuck.h&quot;
+int hardest(box_function_ctx_t *ctx, const char *args, const char *args_end)
+{
+  uint32_t space_id = box_space_id_by_name(&quot;capi_test&quot;, strlen(&quot;capi_test&quot;));
+  char tuple[1024];
+  char *tuple_pointer = tuple;
+  tuple_pointer = mp_encode_array(tuple_pointer, 2);
+  tuple_pointer = mp_encode_uint(tuple_pointer, 10000);
+  tuple_pointer = mp_encode_str(tuple_pointer, &quot;String 2&quot;, 8);
+  int n = box_insert(space_id, tuple, tuple_pointer, NULL);
+  return n;
+}
+</pre></div>
+</div>
+<p>Compile the program, producing a library file named hardest.so: <br />
+<code class="code docutils literal"><span class="pre">gcc</span> <span class="pre">-shared</span> <span class="pre">-o</span> <span class="pre">hardest.so</span> <span class="pre">-fPIC</span> <span class="pre">hardest.c</span></code></p>
+<p>Теперь вернитесь в клиентский терминал и выполните следующие запросы:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>box.schema.func.create(&#39;hardest&#39;, {language = &quot;C&quot;})
+box.schema.user.grant(&#39;guest&#39;, &#39;execute&#39;, &#39;function&#39;, &#39;hardest&#39;)
+box.schema.user.grant(&#39;guest&#39;, &#39;read,write&#39;, &#39;space&#39;, &#39;capi_test&#39;)
+capi_connection:call(&#39;hardest&#39;)
+</pre></div>
+</div>
+<p>This time the C function is doing three things:
+(1) finding the numeric identifier of the &quot;capi_test&quot; space
+by calling box_space_id_by_name(); <br />
+(2) formatting a tuple using more msgpuck.h functions; <br />
+(3) inserting a row using box_insert.</p>
+<p>Now, still on the client, execute this request: <br />
+<code class="code docutils literal"><span class="pre">box.space.capi_test:select()</span></code></p>
+<p>Вывод на экране будет выглядеть следующим образом:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>tarantool&gt; box.space.capi_test:select()
+---
+- - [10000, &#39;String 2&#39;]
+...
+</pre></div>
+</div>
+<p>This proves that the hardest() function succeeded, but
+where did box_space_id_by_name() and box_insert() come from?
+Answer: the C API. The whole C API is documented <a class="reference internal" href="../../reference_capi/index.html#index-c-api-reference"><span class="std std-ref">here</span></a>.
+The function box_space_id_by_name() is documented <a class="reference internal" href="../../reference_capi/box.html#box-box-space-id-by-name"><span class="std std-ref">here</span></a>.
+The function box_insert() is documented <a class="reference internal" href="../../reference_capi/box.html#box-box-insert"><span class="std std-ref">here</span></a>.</p>
+<p>Conclusion: the long description of the C API is
+there for a good reason.
+All of the functions in it can be called from C functions
+which are called from Lua.
+So C &quot;stored procedures&quot; have full access to the database.</p>
+<p><strong>Cleaning up</strong></p>
+<p>Get rid of each of the function tuples with <a class="reference internal" href="../box/box_schema.html#box-schema-func-drop"><span class="std std-ref">box.schema.func.drop</span></a>,
+and get rid of the capi_test space with <a class="reference internal" href="../box/box_space.html#box-space-drop"><span class="std std-ref">box.schema.capi_test:drop()</span></a>,
+and remove the .c and .so files that were created for this
+tutorial.</p>
+<p><strong>An example in the test suite</strong></p>
+<p>Download the source code of Tarantool. Look in a subdirectory
+<code class="code docutils literal"><span class="pre">test/box</span></code>. Notice that there is a file named
+<code class="code docutils literal"><span class="pre">tuple_bench.test.lua</span></code> and another file named
+<code class="code docutils literal"><span class="pre">tuple_bench.c</span></code>. Examine the Lua file and observe
+that it is calling a function in the C file, using the
+same techniques that this tutorial has shown.</p>
+<p>Conclusion: parts of the standard test suite
+use C stored procedures, and they must work,
+because releases don't happen if Tarantool doesn't pass the tests.</p>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="e_cookbook.html"
+           class="b-prev b-ellipsis"
+           title="13. Приложение E. Готовые рецепты">13. Приложение E. Готовые рецепты</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../_sources/book/app/f_c_tutorial.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="g_changes.html"
+           class="b-next b-ellipsis"
+           title="15. Приложение G. Список изменений для версии 1.7">15. Приложение G. Список изменений для версии 1.7</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

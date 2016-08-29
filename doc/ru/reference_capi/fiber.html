@@ -1,0 +1,532 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Модуль fiber</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Модуль fiber">
+        Модуль fiber
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_capi/fiber.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_capi/fiber.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_capi/fiber">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">Руководство пользователя</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Справочник по Lua API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Справочник по C API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Модуль <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Модуль <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="coio.html">Модуль <cite>coio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">Модуль <cite>error</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Модуль <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_index.html">Модуль <cite>index</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="latch.html">Модуль <cite>latch</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Модуль <cite>lua/utils</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="say.html">Модуль <cite>say</cite> (логирование)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schema.html">Модуль <cite>schema</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="trivia.html">Модуль <cite>trivia/config</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuple.html">Модуль <cite>tuple</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="txn.html">Модуль <cite>txn</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Справочник по C API
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Модуль <cite>fiber</cite>" class="b-path_current b-ellipsis">
+          Модуль <cite>fiber</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="module-fiber">
+<h1>Модуль <cite>fiber</cite><a class="headerlink" href="#module-fiber" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="type">
+<dt id="c.fiber">
+struct <code class="descname">fiber</code><a class="headerlink" href="#c.fiber" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Fiber - contains information about fiber</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.fiber_new">
+struct <a class="reference internal" href="#c.fiber" title="fiber">fiber</a> *<code class="descname">fiber_new</code><big>(</big>const char<em>&nbsp;*name</em>, fiber_func<em>&nbsp;f</em><big>)</big><a class="headerlink" href="#c.fiber_new" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt id="c.fuber_func">
+typedef int <code class="descname">(*fuber_func)</code><big>(</big>va_list<big>)</big><a class="headerlink" href="#c.fuber_func" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Create a new fiber.</p>
+<p>Takes a fiber from fiber cache, if it's not empty. Can fail only if there is
+not enough memory for the fiber structure or fiber stack.</p>
+<p>The created fiber automatically returns itself to the fiber cache when its
+&quot;main&quot; function completes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>char* name</strong> (<em>const</em>) -- string with fiber name</li>
+<li><strong>f</strong> (<em>fiber_func</em>) -- func for run inside fiber</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also: <a class="reference internal" href="#c-api-fiber-fiber-start"><span class="std std-ref">fiber_start()</span></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.fiber_yield">
+void <code class="descname">fiber_yield</code><big>(</big>void<big>)</big><a class="headerlink" href="#c.fiber_yield" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Return control to another fiber and wait until it'll be woken.</p>
+<p>See also: <a class="reference internal" href="#c-api-fiber-fiber-wakeup"><span class="std std-ref">fiber_wakeup()</span></a></p>
+</dd></dl>
+
+<span class="target" id="c-api-fiber-fiber-start"></span><dl class="function">
+<dt id="c.fiber_start">
+void <code class="descname">fiber_start</code><big>(</big>struct <a class="reference internal" href="#c.fiber" title="fiber">fiber</a><em>&nbsp;*callee</em>, ...<big>)</big><a class="headerlink" href="#c.fiber_start" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Start execution of created fiber.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fiber* callee</strong> (<em>struct</em>) -- fiber to start</li>
+<li><strong>...</strong> -- arguments to start the fiber with</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="c-api-fiber-fiber-wakeup"></span><dl class="function">
+<dt id="c.fiber_wakeup">
+void <code class="descname">fiber_wakeup</code><big>(</big>struct <a class="reference internal" href="#c.fiber" title="fiber">fiber</a><em>&nbsp;*f</em><big>)</big><a class="headerlink" href="#c.fiber_wakeup" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Interrupt a synchronous wait of a fiber</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fiber* f</strong> (<em>struct</em>) -- fiber to be woken up</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.fiber_cancel">
+void <code class="descname">fiber_cancel</code><big>(</big>struct <a class="reference internal" href="#c.fiber" title="fiber">fiber</a><em>&nbsp;*f</em><big>)</big><a class="headerlink" href="#c.fiber_cancel" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Cancel the subject fiber (set <code class="docutils literal"><span class="pre">FIBER_IS_CANCELLED</span></code> flag)</p>
+<p>If target fiber's flag <code class="docutils literal"><span class="pre">FIBER_IS_CANCELLABLE</span></code> set, then it would be woken
+up (maybe prematurely). Then current fiber yields until the target fiber is
+dead (or is woken up by <a class="reference internal" href="#c-api-fiber-fiber-wakeup"><span class="std std-ref">fiber_wakeup()</span></a>).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fiber* f</strong> (<em>struct</em>) -- fiber to be cancelled</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.fiber_set_cancellable">
+bool <code class="descname">fiber_set_cancellable</code><big>(</big>bool<em>&nbsp;yesno</em><big>)</big><a class="headerlink" href="#c.fiber_set_cancellable" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Make it possible or not possible to wakeup the current fiber immediately
+when it's cancelled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>fiber* f</strong> (<em>struct</em>) -- fiber</li>
+<li><strong>yesno</strong> (<em>bool</em>) -- status to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Результат:</th><td class="field-body"><p class="first last">previous state</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="c-api-fiber-fiber-set-joinable"></span><dl class="function">
+<dt id="c.fiber_set_joinable">
+void <code class="descname">fiber_set_joinable</code><big>(</big>struct <a class="reference internal" href="#c.fiber" title="fiber">fiber</a><em>&nbsp;*fiber</em>, bool<em>&nbsp;yesno</em><big>)</big><a class="headerlink" href="#c.fiber_set_joinable" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Set fiber to be joinable (<code class="docutils literal"><span class="pre">false</span></code> by default).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fiber* f</strong> (<em>struct</em>) -- fiber</li>
+<li><strong>yesno</strong> (<em>bool</em>) -- status to set</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.fiber_join">
+void <code class="descname">fiber_join</code><big>(</big>struct <a class="reference internal" href="#c.fiber" title="fiber">fiber</a><em>&nbsp;*f</em><big>)</big><a class="headerlink" href="#c.fiber_join" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Wait until the fiber is dead and then move its execution status to the
+caller. The fiber must not be detached.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fiber* f</strong> (<em>struct</em>) -- fiber to be woken up</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Before: <code class="docutils literal"><span class="pre">FIBER_IS_JOINABLE</span></code> flag is set.</p>
+<p>See also: <a class="reference internal" href="#c-api-fiber-fiber-set-joinable"><span class="std std-ref">fiber_set_joinable()</span></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.fiber_sleep">
+void <code class="descname">fiber_sleep</code><big>(</big>double<em>&nbsp;s</em><big>)</big><a class="headerlink" href="#c.fiber_sleep" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Put the current fiber to sleep for at least 's' seconds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>s</strong> (<em>double</em>) -- time to sleep</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Note: this is a cancellation point.</p>
+<p>See also: <a class="reference internal" href="#c-api-fiber-fiber-is-cancelled"><span class="std std-ref">fiber_is_cancelled()</span></a></p>
+</dd></dl>
+
+<span class="target" id="c-api-fiber-fiber-is-cancelled"></span><dl class="function">
+<dt id="c.fiber_is_cancelled">
+bool <code class="descname">fiber_is_cancelled</code><big>(</big><big>)</big><a class="headerlink" href="#c.fiber_is_cancelled" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Check current fiber for cancellation (it must be checked manually).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.fiber_time">
+double <code class="descname">fiber_time</code><big>(</big>void<big>)</big><a class="headerlink" href="#c.fiber_time" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Report loop begin time as double (cheap).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.fiber_time64">
+uint64_t <code class="descname">fiber_time64</code><big>(</big>void<big>)</big><a class="headerlink" href="#c.fiber_time64" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Report loop begin time as 64-bit int.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.fiber_reschedule">
+void <code class="descname">fiber_reschedule</code><big>(</big>void<big>)</big><a class="headerlink" href="#c.fiber_reschedule" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Reschedule fiber to end of event loop cycle.</p>
+</dd></dl>
+
+<dl class="type">
+<dt id="c.slab_cache">
+struct <code class="descname">slab_cache</code><a class="headerlink" href="#c.slab_cache" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="c.cord_slab_cache">
+struct <a class="reference internal" href="#c.slab_cache" title="slab_cache">slab_cache</a> *<code class="descname">cord_slab_cache</code><big>(</big>void<big>)</big><a class="headerlink" href="#c.cord_slab_cache" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Return slab_cache suitable to use with <code class="docutils literal"><span class="pre">tarantool/small</span></code> library</p>
+</dd></dl>
+
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="error.html"
+           class="b-prev b-ellipsis"
+           title="Модуль &lt;cite&gt;error&lt;/cite&gt;">Модуль <cite>error</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_capi/fiber.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="box_index.html"
+           class="b-next b-ellipsis"
+           title="Модуль &lt;cite&gt;index&lt;/cite&gt;">Модуль <cite>index</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

@@ -1,0 +1,482 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>8. Модули</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="8. Модули">
+        8. Модули
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../book/modules.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/book/modules.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/modules">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Руководство пользователя</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">1. Предисловие</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide_getting_started.html">2. Начало работы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="box/index.html">3. Функционал СУБД</a></li>
+<li class="toctree-l2"><a class="reference internal" href="replication/index.html">4. Репликация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.html">5. Справочник по конфигурированию</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administration.html">6. Администрирование серверной части</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectors/index.html">7. Коннекторы</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8. Модули</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/a_errcodes.html">9. Приложение A. Коды ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/b_internals.html">10. Приложение B. Детали реализации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/c_lua_tutorial.html">11. Приложение C. Учебные примеры на языке Lua</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Справочник по Lua API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Руководство пользователя
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="8. Модули" class="b-path_current b-ellipsis">
+          8. Модули
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="modules">
+<span id="id1"></span><h1>8. Модули<a class="headerlink" href="#modules" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="modules-luarocks-and-requiring-modules">
+<span id="modules-modules-luarocks-and-requiring-modules"></span><h2>8.1. Модули, Lua Rocks и модули, подключаемые с помощью require<a class="headerlink" href="#modules-luarocks-and-requiring-modules" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Возможности Tarantool'а можно расширять с помощью модулей. В языке Lua их называют &quot;rocks&quot;. Тем, кто не знаком с языком Lua, мы рекомендуем пройти краткий обучающий курс по Lua (<a class="reference external" href="http://lua-users.org/wiki/ModulesTutorial">Lua-Modules-Tutorial</a>) прежде, чем читать эту главу.</p>
+<p><strong>Install a module</strong></p>
+<p>The modules that come from Tarantool developers and community contributors are
+on <a class="reference external" href="http://rocks.tarantool.org">rocks.tarantool.org</a>. Some of them
+-- <a class="reference internal" href="../reference_rock/expirationd.html#expirationd-module"><span class="std std-ref">expirationd</span></a>,
+<a class="reference internal" href="../reference_rock/dbms.html#dbms-modules-mysql-example"><span class="std std-ref">mysql</span></a>,
+<a class="reference internal" href="../reference_rock/dbms.html#dbms-modules-postgresql-example"><span class="std std-ref">postgresql</span></a>,
+<a class="reference internal" href="../reference_rock/shard.html#shard-module"><span class="std std-ref">shard</span></a> --
+are discussed elsewhere in this manual.</p>
+<p>Step 1: Install LuaRocks.
+A general description for installing LuaRocks on a Unix system is in
+the <a class="reference external" href="http://luarocks.org/#quick-start">LuaRocks-Quick-Start-Guide</a>.
+For example on Ubuntu one could say: <br />
+<span class="ccode">$</span> <span class="ccodeb">sudo apt-get install luarocks</span></p>
+<p>Step 2: Add the Tarantool repository to the list of rocks servers.
+This is done by putting rocks.tarantool.org in the .luarocks/config.lua file: <br />
+<span class="ccode">$</span> <span class="ccodeb">mkdir ~/.luarocks</span> <br />
+<span class="ccode">$</span> <span class="ccodeb">echo &quot;rocks_servers = {[[http://rocks.tarantool.org/]]}&quot; &gt;&gt; ~/.luarocks/config.lua</span> <br /></p>
+<p>Once these steps are complete, the repositories can be searched with <br />
+<span class="ccode">$</span> <span class="ccodeb">luarocks search</span> <span class="ccodei">module-name</span> <br />
+and new modules can be added to the local repository with <br />
+<span class="ccode">$</span> <span class="ccodeb">luarocks install</span> <span class="ccodei">module-name</span> <span class="ccode">--local</span> <br />
+and any module can be loaded for Tarantool with <br />
+<span class="ccode">tarantool&gt;</span> <span class="ccodei">local-name</span> <span class="ccode">=</span> <span class="ccodeb">require('</span><span class="ccodei">module-name</span><span class="ccode">')</span> <br />
+... and that is why the examples in the manual's Modules section often begin with <cite>require</cite> requests.
+See <a class="reference external" href="github.com/tarantool/rocks&lt;https://github.com/tarantool/rocks">rocks</a> on github.com/tarantool for more examples
+and information about contributing.</p>
+</div>
+<div class="section" id="example-making-a-new-lua-module-locally">
+<h2>8.2. Пример: как создать у себя новый модуль на языке Lua<a class="headerlink" href="#example-making-a-new-lua-module-locally" title="Ссылка на этот заголовок">¶</a></h2>
+<p>In this example, create a new Lua file named <cite>mymodule.lua</cite>,
+containing a named function which will be exported.
+Then, in Tarantool: load, examine, and call.</p>
+<p>Lua-файл будет выглядеть следующим образом:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- mymodule - a simple Tarantool module</span>
+<span class="kd">local</span> <span class="n">exports</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">exports</span><span class="p">.</span><span class="n">myfun</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">input_string</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Hello&#39;</span><span class="p">,</span> <span class="n">input_string</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="k">return</span> <span class="n">exports</span>
+</pre></div>
+</div>
+<p>The requests to load and examine and call look like this: <br />
+<span class="ccode">tarantool&gt;</span><span class="ccodeb">mymodule = require('mymodule')</span> <br />
+<span class="ccode">&gt;---</span> <br />
+<span class="ccode">&gt;...</span> <br />
+<br />
+<span class="ccode">tarantool&gt;</span><span class="ccodeb">mymodule</span> <br />
+<span class="ccode">---</span> <br />
+<span class="ccode">&gt;- myfun: 'function: 0x405edf20'</span> <br />
+<span class="ccode">&gt;...</span> <br />
+<span class="ccode">tarantool&gt;</span><span class="ccodeb">mymodule.myfun(os.getenv('USER'))</span> <br />
+<span class="ccode">Hello world</span> <br />
+<span class="ccode">&gt;---</span> <br />
+<span class="ccode">&gt;...</span></p>
+</div>
+<div class="section" id="example-making-a-new-c-c-module-locally">
+<span id="modules-example-c"></span><h2>8.3. Пример: как создать у себя новый модуль на языке C/C++<a class="headerlink" href="#example-making-a-new-c-c-module-locally" title="Ссылка на этот заголовок">¶</a></h2>
+<p>In this example, create a new C file named <cite>mycmodule.c</cite>,
+containing a named function which will be exported.
+Then, in Tarantool: load, examine, and call.</p>
+<p>Prerequisite: install <cite>tarantool-dev</cite> first.</p>
+<p>C-файл будет выглядеть следующим образом:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>/* mycmodule - a simple Tarantool module */
+#include &lt;lua.h&gt;
+#include &lt;lauxlib.h&gt;
+#include &lt;lualib.h&gt;
+#include &lt;tarantool.h&gt;
+static int
+myfun(lua_State *L)
+{
+    if (lua_gettop(L) &lt; 1)
+        return luaL_error(L, &quot;Usage: myfun(name)&quot;);
+
+    /* Get first argument */
+    const char *name = lua_tostring(L, 1);
+
+    /* Push one result to Lua stack */
+    lua_pushfstring(L, &quot;Hello, %s&quot;, name);
+    return 1; /* the function returns one result */
+}
+
+LUA_API int
+luaopen_mycmodule(lua_State *L)
+{
+    static const struct luaL_reg reg[] = {
+        { &quot;myfun&quot;, myfun },
+        { NULL, NULL }
+    };
+    luaL_register(L, &quot;mycmodule&quot;, reg);
+    return 1;
+}
+</pre></div>
+</div>
+<p>Use <span class="ccode">gcc</span> to compile the code for a shared library (without a &quot;lib&quot; prefix),
+then use <span class="ccode">ls</span> to examine it: <br /></p>
+<p><span class="ccode">$</span> <span class="ccodeb">gcc mycmodule.c -shared -fPIC -I/usr/include/tarantool -o mycmodule.so</span> <br />
+<span class="ccode">$</span> <span class="ccodeb">ls mycmodule.so -l</span> <br />
+<span class="ccode">-rwxr-xr-x 1 roman roman 7272 Jun  3 16:51 mycmodule.so</span></p>
+<p>Tarantool's developers recommend use of Tarantool's <a class="reference external" href="https://github.com/tarantool/http">CMake-scripts</a>
+which will handle some of the build steps automatically.</p>
+<p>The requests to load and examine and call look like this: <br />
+<span class="ccode">tarantool&gt;</span><span class="ccodeb">myсmodule = require('myсmodule')</span> <br />
+<span class="ccode">---</span> <br />
+<span class="ccode">...</span> <br />
+<span class="ccode">tarantool&gt;</span><span class="ccodeb">myсmodule</span> <br />
+<span class="ccode">---</span> <br />
+<span class="ccode">- myfun: 'function: 0x4100ec98'</span> <br />
+<span class="ccode">...</span> <br />
+<span class="ccode">tarantool&gt;</span><span class="ccodeb">mycmodule.myfun(os.getenv('USER'))</span> <br />
+<span class="ccode">---</span> <br />
+<span class="ccode">- Hello, world</span> <br />
+<span class="ccode">...</span> <br /></p>
+<p>One can also make modules with C++, provided that the code does not throw exceptions.</p>
+<p><strong>Tips for special situations</strong></p>
+<p>Lua caches all loaded modules in the <code class="code docutils literal"><span class="pre">package.loaded</span></code> table.
+To reload a module from disk, set its key to <cite>nil</cite>: <br />
+<span class="ccode">tarantool&gt;</span> <span class="ccodeb">package.loaded['</span><span class="ccodei">modulename</span><span class="ccodeb">'] = nil</span></p>
+<p>Use <code class="docutils literal"><span class="pre">package.path</span></code> to search for <code class="docutils literal"><span class="pre">.lua</span></code> modules, and use
+<code class="docutils literal"><span class="pre">package.cpath</span></code> to search for C binary modules. <br />
+<span class="ccode">tarantool&gt;</span><span class="ccodeb">package.path</span> <br />
+<span class="ccode">---</span> <br />
+<span class="ccode">- ./?.lua;./?/init.lua;/home/roman/.luarocks/share/lua/5.1/?.lua;/home/roman/.luarocks/share/lua/5.1/?/init.lua;/home/roman/.luarocks/share/lua/?.lua;/home/roman/.luarocks/share/lua/?/init.lua;/usr/share/tarantool/?.lua;/usr/share/tarantool/?/init.lua;./?.lua;/usr/local/share/luajit-2.0.3/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua</span> <br />
+<span class="ccode">...</span>
+<span class="ccode">tarantool&gt;</span><span class="ccodeb">package.cpath</span> <br />
+<span class="ccode">---</span> <br />
+<span class="ccode">- ./?.so;/home/roman/.luarocks/lib/lua/5.1/?.so;/home/roman/.luarocks/lib/lua/?.so;/usr/lib/tarantool/?.so;./?.so;/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so</span> <br />
+<span class="ccode">...</span> <br />
+Substitute question-mark with <code class="code docutils literal"><span class="pre">modulename</span></code> when calling
+<code class="code docutils literal"><span class="pre">require('modulename')</span></code>.</p>
+<p>To see the internal state from within a Lua module, use <cite>state</cite>
+and create a local variable inside the scope of the file:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>-- mymodule
+local exports = {}
+local state = {}
+exports.myfun = function()
+    state.x = 42 -- use state
+end
+return exports
+</pre></div>
+</div>
+<p>Notice that the Lua examples use local variables.
+Use global variables with caution, since the module's users
+may be unaware of them.</p>
+<p>To see a sample Lua + C module, go to <a class="reference external" href="https://github.com/tarantool/http">http</a> on github.com/tarantool.</p>
+</div>
+<div class="section" id="mixed-lua-c-module">
+<h2>8.4. Модули на смеси языков Lua/C<a class="headerlink" href="#mixed-lua-c-module" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li>Create a Lua module, say <cite>myfunmodule</cite>.</li>
+<li>Create C module and name it <cite>myfunmodule.internal</cite> or something like
+that (submodule).</li>
+<li>Load C module from Lua code using <cite>require('myfunmodule.internal')</cite> and then
+wrap or use it.</li>
+</ul>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="connectors/index.html"
+           class="b-prev b-ellipsis"
+           title="7. Коннекторы">7. Коннекторы</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/book/modules.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="app/a_errcodes.html"
+           class="b-next b-ellipsis"
+           title="9. Приложение A. Коды ошибок">9. Приложение A. Коды ошибок</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

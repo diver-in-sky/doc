@@ -1,0 +1,520 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>12. Appendix D. Vinyl</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../../../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="12. Appendix D. Vinyl">
+        12. Appendix D. Vinyl
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../../book/app/d_vinyl/index.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../ru/book/app/d_vinyl/index.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/app/d_vinyl/index">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html">1. Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide_getting_started.html">2. Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../box/index.html">3. Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../replication/index.html">4. Replication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/index.html">5. Configuration reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../administration.html">6. Server administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connectors/index.html">7. Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules.html">8. Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a_errcodes.html">9. Appendix A. List of error codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../b_internals.html">10. Appendix B. Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c_lua_tutorial.html">11. Appendix C. Lua tutorials</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12. Appendix D. Vinyl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e_cookbook.html">13. Appendix E. Cookbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f_c_tutorial.html">14. Appendix F. C tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g_changes.html">15. Appendix G. Some significant changes in version 1.7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference_lua/index.html">Lua reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            User Guide
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="12. Appendix D. Vinyl" class="b-path_current b-ellipsis">
+          12. Appendix D. Vinyl
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="appendix-d-vinyl">
+<span id="index-vinyl"></span><h1>12. Appendix D. Vinyl<a class="headerlink" href="#appendix-d-vinyl" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>12.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Vinyl's features are:</p>
+<ul class="simple">
+<li>Full ACID compliance</li>
+<li>Multi-Version Concurrency Control (MVCC)</li>
+<li>Pure Append-Only</li>
+<li>Multi-threaded (Client access and Engine scalability)</li>
+<li>Multi-databases support (Single environment and WAL)</li>
+<li>Multi-Statement and Single-Statement Transactions (Snapshot Isolation (SI), multi-databases)</li>
+<li>Asynchronous or synchronous transaction execution (Callback triggered versus blocking)</li>
+<li>Separate storage formats: key-value (Default), or document (Keys are part of value)</li>
+<li>Update without read</li>
+<li>Consistent Cursors</li>
+<li>Prefix search</li>
+<li>Point-in-Time Snapshots</li>
+<li>Versional database creation and asynchronous shutdown/drop</li>
+<li>Asynchronous Online/Hot Backup</li>
+<li>Compression (Per region, both lz4 and zstd are supported)</li>
+<li>Metadata Compression (By default)</li>
+<li>Key Compression (Compress key duplicates, including suffixes)</li>
+<li>Easy to use (Minimalist API)</li>
+<li>Easy to integrate (Native support of using as storage engine)</li>
+<li>Easy to write bindings (Very FFI-friendly, API designed to be stable in future)</li>
+<li>Easy to build in (Amalgamated, compiles into two C files)</li>
+<li>Event loop friendly</li>
+<li>Zero-Configuration (Tuned by default)</li>
+<li>Implemented as a small library <strong>written in C</strong> with zero dependencies</li>
+<li>BSD Licensed</li>
+</ul>
+<p>It is appropriate for databases that cannot fit in memory, where access via secondary keys is not required.</p>
+<p>In vinyl terminology:</p>
+<ul class="simple">
+<li>There is one <strong>Environment</strong>.</li>
+<li>An Environment has N <strong>Databases</strong> - a vinyl database is like a Tarantool <cite>space</cite>.</li>
+<li>A Database has N <strong>Ranges</strong>.</li>
+<li>A Range has one <strong>Range File</strong>.</li>
+<li>A Range File has N <strong>Runs</strong>.</li>
+<li>A Run has N <strong>Regions</strong> - a vinyl Region is like a B-tree <cite>page</cite>.</li>
+<li>A Region has <strong>keys</strong> and <strong>values</strong> - a vinyl key-value is like a Tarantool <cite>tuple</cite>.</li>
+</ul>
+<p>A key and its associated value are together, so when one accesses a key one gets
+the whole tuple. In other words, in vinyl the data is stored in the index. There
+are up to two in-memory copies of an index, as well as the copy in the Range File.</p>
+<p>For operations that insert or update tuples - called Set operations in vinyl -
+vinyl makes changes to in-memory copies of the index, and writes to Tarantool's
+Write-ahead Log. A scheduler assigns tasks to multiple background threads for
+transferring index data from memory to disk, and for reorganizing Runs. To
+support transactions, Set operations can be delayed until an explicit commit. If
+multiple users access the same tuples simultaneously, the concurrency control
+method is <a class="reference external" href="https://en.wikipedia.org/wiki/Multiversion_concurrency_control">MVCC</a> and the isolation level is <a class="reference external" href="https://en.wikipedia.org/wiki/Snapshot_isolation">Snapshot</a>.</p>
+<p>Formally, in terms of disk accesses, vinyl has the following algorithmic complexity:</p>
+<ul class="simple">
+<li><strong>Set</strong> - the worst case is O(<em>1</em>) append-only key writes to the Write-Ahead
+Log + in-memory Range index searches + in-memory index inserts</li>
+<li><strong>Delete</strong> - the worst case is O(<em>1</em>) key writes and in-memory index inserts
+(the same as <strong>Set</strong>)</li>
+<li><strong>Get</strong> - the worst case is <a class="reference external" href="https://en.wikipedia.org/wiki/Amortized_analysis">amortized</a> O(<em>max_run_count_per_node</em>)
+random Region reads from a single Range file, which itself does in-memory index
+search + in-memory Region search</li>
+<li><strong>Range</strong> - queries, the worst case of full Database scan is amortized
+O(<em>total_Region_count</em>) + in-memory key-index searches for each Range</li>
+</ul>
+</div>
+<div class="section" id="under-the-hood">
+<h2>12.2. Under the hood<a class="headerlink" href="#under-the-hood" title="Permalink to this headline">¶</a></h2>
+<p>In this section, to illustrate internals, we will discuss this example:</p>
+<ol class="arabic simple">
+<li>filling an empty database with one million tuples (we'll call them &quot;keys&quot; to
+emphasize the indexed nature)</li>
+<li>reading all stored tuples in the original order.</li>
+</ol>
+<div class="section" id="inserting-the-first-200-000-keys">
+<h3>12.2.1. Inserting the first 200.000 keys<a class="headerlink" href="#inserting-the-first-200-000-keys" title="Permalink to this headline">¶</a></h3>
+<p>During the first 200,000 Set operations, inserted keys first go to the
+in-memory index. To maintain persistence, information about each Set
+operation is written to Tarantool's Write-ahead Log.</p>
+<img alt="i1.png" class="align-center" src="../../../_images/i1.png" />
+<p>At this point we have keys in an in-memory index
+and records in the Write-ahead Log.</p>
+</div>
+<div class="section" id="inserting-the-next-300-000-keys">
+<h3>12.2.2. Inserting the next 300.000 keys<a class="headerlink" href="#inserting-the-next-300-000-keys" title="Permalink to this headline">¶</a></h3>
+<p>As the in-memory index becomes too large for available memory, the index must be
+copied from memory to disk. The on-disk copy of the in-memory index is called a
+Run. To save the Run, a new file is created, the Range File. We will call
+it <strong>db file</strong> for this example.</p>
+<p>The scheduler wakes a worker thread in the background, a Run Creation Thread.
+The thread creates a second in-memory index. If there are Set operations taking
+place while the thread is working, their contention effect will be small because
+they will operate on the second in-memory index.</p>
+<img alt="i2.png" class="align-center" src="../../../_images/i2.png" />
+<p>When the Run Creation Thread finishes the task, the first in-memory index is
+freed.</p>
+<img alt="i3.png" class="align-center" src="../../../_images/i3.png" />
+</div>
+<div class="section" id="inserting-the-next-200-000-keys">
+<h3>12.2.3. Inserting the next 200.000 keys<a class="headerlink" href="#inserting-the-next-200-000-keys" title="Permalink to this headline">¶</a></h3>
+<p>Several times, the in-memory index becomes too large and a Run Creation
+Thread transfers the keys to a Run. The Runs have been appended to the
+end of db file. The number of created Runs becomes large.</p>
+<img alt="i4.png" class="align-center" src="../../../_images/i4.png" />
+<p>There is a user-settable maximum number of Runs per Range. When the number of
+Runs reaches this maximum, the vinyl scheduler wakes a <strong>Compaction Thread</strong>
+for the db file. The Compaction Thread merges the keys in all the Runs, and
+creates one or more new db files.</p>
+<img alt="i5.png" class="align-center" src="../../../_images/i5.png" />
+<p>Now there are multiple pairs of in-memory indexes, and each pair has an
+associated db file. The combination of the in-memory indexes and the db file is
+called a <strong>Range</strong>, and the db file is called a <strong>Range File</strong>.</p>
+<img alt="i6.png" class="align-center" src="../../../_images/i6.png" />
+<p>Thus the contents of a Range are: a range of sorted key values, stored in Runs
+of a Range File and (when necessary) in memory. Since the ranges do not overlap,
+each Range can be handled independently. Therefore, while one of the background
+threads is working on Range 1, another background thread can be working on Range 2,
+without contention. That means that all the background operations (Run Creation,
+Compaction, Garbage Collection, and Backup) can take place in parallel on multiple
+threads.</p>
+<p>The foregoing explanation will now be repeated with different wording.</p>
+<p>Before the Compaction there was one Range, which was created automatically when
+the Database was initialized. The Range had:</p>
+<ol class="loweralpha simple">
+<li>an in-memory index with some keys in it,</li>
+<li>a Range File with several Runs,</li>
+<li>a Write-Ahead Log file recording the Set operations, in the order they happened.</li>
+</ol>
+<p>The number of Runs became too big, so the vinyl scheduler starts the
+Compaction Thread and creates two new Ranges.</p>
+<img alt="i7.png" class="align-center" src="../../../_images/i7.png" />
+<p>So, each of the two new Range Files contains half of the keys that were in the
+original Range. The Range's in-memory indexes are split in the same way.</p>
+<p>After the splitting, vinyl must take into account that: while the Compaction
+was going on in the background, there might have been more Set operations taking
+place in parallel. These Set operations would have changed one of the in-memory
+indexes, and these changes too will be merged.</p>
+<p>When the Compaction Thread finishes, the original Range is deleted, and
+information about the new Ranges is inserted into an in-memory <strong>Range Index</strong>.</p>
+<img alt="i8.png" class="align-center" src="../../../_images/i8.png" />
+<p>This Range Index is used for all Set operations and all searches. Since the Range
+Index has the minimum and maximum key values that are in each Range, it is
+straightforward to scan it to find what Range would contain a particular key value.</p>
+<img alt="i9.png" class="align-center" src="../../../_images/i9.png" />
+</div>
+<div class="section" id="inserting-the-last-300-000-keys">
+<h3>12.2.4. Inserting the last 300.000 keys<a class="headerlink" href="#inserting-the-last-300-000-keys" title="Permalink to this headline">¶</a></h3>
+<p>The final 300,000 Set operations take place; the background threads continue to
+create new Runs and do more Compactions. After the millionth insertion, the
+Database has four Ranges.</p>
+<img alt="i10.png" class="align-center" src="../../../_images/i10.png" />
+<p>The inserting is done. Now, because the words &quot;memory&quot; and &quot;disk&quot; have appeared
+in this explanation several times, here are a few words about how vinyl is
+designed to use these resources most efficiently:</p>
+<ul class="simple">
+<li>If there is more memory available, then Run Creation and Compaction will be
+less frequent, and there will be fewer disk accesses.</li>
+<li>The best vinyl performance will occur if there is no setting of a memory limit,
+but this must be balanced against other considerations, such as requirements
+for the memtx storage engine. If there is a setting of a memory limit, the
+vinyl scheduler will give priority to the Ranges that have the largest
+in-memory indexes, so that the largest memory blocks are freed first.</li>
+<li>To make the most of hard drives and Flash, vinyl will delay operations that
+require disk access (except the writing of the Write-ahead Log which is
+specially tunable), so that the accesses are done in large sequential blocks.</li>
+<li>Overwriting does not occur; vinyl is an &quot;append-only&quot; engine.</li>
+</ul>
+</div>
+<div class="section" id="reading-million-keys">
+<h3>12.2.5. Reading million keys<a class="headerlink" href="#reading-million-keys" title="Permalink to this headline">¶</a></h3>
+<p>We will now start to read the million rows in the order that they were inserted,
+which was random.</p>
+<img alt="i12.png" class="align-center" src="../../../_images/i12.png" />
+<p>During the Get (search), vinyl first finds the correct Range by looking in the
+Range Index. Then it searches the Range's first in-memory index, and/or the Range's
+second in-memory index, and/or each Run of the Range, starting from the end of
+the Range File.</p>
+<p>Remember that a Run is divided into Regions, which are like what would be
+called &quot;pages&quot; or &quot;blocks&quot; in a B-tree. For each Run, there is a list of the
+Regions and their minimum/maximum key values - the Region Index - as well as
+some metadata.</p>
+<img alt="i13.png" class="align-center" src="../../../_images/i13.png" />
+<p>Region Indexes are loaded into memory when the Database is opened. Since the
+Database's Range Index and the Region Indexes are normally in-memory, searching
+and retrieving a tuple might require only zero or one disk accesses. However,
+when memory is limited and there are many Runs, search time may rise.
+For each additional Run there is a possible additional disk access during a
+search. Also, it is impossible to maintain memory limits without doing a Run
+Creation process, because new Set operations might occur more quickly than the
+Compaction process can run.</p>
+<img alt="i14.png" class="align-center" src="../../../_images/i14.png" />
+<p>Vinyl is read optimized. It is very likely that the most recently created
+Runs (hot data) will be in the file system cache. The scheduler will give
+priority to the Ranges which have the largest in-memory indexes and the most
+Runs.</p>
+<p>The scheduler may also try to arrange that a Range will have only one Run,
+which will ensure the average number of disk seeks for each search is O(<em>1</em>).</p>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="../c_lua_tutorial.html"
+           class="b-prev b-ellipsis"
+           title="11. Appendix C. Lua tutorials">11. Appendix C. Lua tutorials</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../../_sources/book/app/d_vinyl/index.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="../e_cookbook.html"
+           class="b-next b-ellipsis"
+           title="13. Appendix E. Cookbook">13. Appendix E. Cookbook</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

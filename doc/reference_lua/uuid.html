@@ -1,0 +1,543 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Module uuid</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Module uuid">
+        Module uuid
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_lua/uuid.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_lua/uuid.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_lua/uuid">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Lua reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Module <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Module <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">Module <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="digest.html">Module <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_error.html">Submodule <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber.html">Module <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber_ipc.html">Submodule <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="msgpack.html">Module <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="net_box.html">Module <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_once.html">Function <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">Module <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">Module <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="strict.html">Module <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tap.html">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarantool.html">Module <cite>tarantool</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Lua rocks reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">C API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributing</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Lua reference
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Module <cite>uuid</cite>" class="b-path_current b-ellipsis">
+          Module <cite>uuid</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="module-uuid">
+<h1>Module <cite>uuid</cite><a class="headerlink" href="#module-uuid" title="Permalink to this headline">¶</a></h1>
+<p>A &quot;UUID&quot; is a <a class="reference external" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>. If an application requires that
+a value be unique only within a single computer or on a single database, then a
+simple counter is better than a UUID, because getting a UUID is time-consuming
+(it requires a <a class="reference external" href="https://en.wikipedia.org/wiki/Syscall">syscall</a>). For clusters of computers, or widely distributed
+applications, UUIDs are better.</p>
+<p>The functions that can return a UUID are:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#uuid-call"><span class="std std-ref">uuid()</span></a></li>
+<li><a class="reference internal" href="#uuid-bin"><span class="std std-ref">uuid.bin()</span></a></li>
+<li><a class="reference internal" href="#uuid-str"><span class="std std-ref">uuid.str()</span></a></li>
+</ul>
+<p>The functions that can convert between different types of UUID are:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#uuid-object-bin"><span class="std std-ref">uuid_object:bin()</span></a></li>
+<li><a class="reference internal" href="#uuid-object-str"><span class="std std-ref">uuid_object:str()</span></a></li>
+<li><a class="reference internal" href="#uuid-fromstr"><span class="std std-ref">uuid.fromstr()</span></a></li>
+<li><a class="reference internal" href="#uuid-frombin"><span class="std std-ref">uuid.frombin()</span></a></li>
+</ul>
+<p>The function that can determine whether a UUID is an all-zero value is:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#uuid-isnil"><span class="std std-ref">uuid_object:isnil()</span></a></li>
+</ul>
+<span class="target" id="lua-module.uuid"></span><dl class="data">
+<dt id="lua-data.uuid.nil">
+<em class="property"> </em><code class="descclassname">uuid.</code><code class="descname">nil</code><a class="headerlink" href="#lua-data.uuid.nil" title="Permalink to this definition">¶</a></dt>
+<dd><p>A nil object</p>
+</dd></dl>
+
+<span class="target" id="uuid-call"></span><dl class="function">
+<dt id="lua-function.uuid.__call">
+<em class="property"> </em><code class="descclassname">uuid.</code><code class="descname">__call</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.uuid.__call" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">a UUID</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">cdata</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="uuid-bin"></span><dl class="function">
+<dt id="lua-function.uuid.bin">
+<em class="property"> </em><code class="descclassname">uuid.</code><code class="descname">bin</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.uuid.bin" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">a UUID</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">16-byte string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="uuid-str"></span><dl class="function">
+<dt id="lua-function.uuid.str">
+<em class="property"> </em><code class="descclassname">uuid.</code><code class="descname">str</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.uuid.str" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">a UUID</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">36-byte binary string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="uuid-fromstr"></span><dl class="function">
+<dt id="lua-function.uuid.fromstr">
+<em class="property"> </em><code class="descclassname">uuid.</code><code class="descname">fromstr</code><big>(</big><em>uuid_str</em><big>)</big><a class="headerlink" href="#lua-function.uuid.fromstr" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uuid_str</strong> -- UUID in 36-byte hexadecimal string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">converted UUID</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">cdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="uuid-frombin"></span><dl class="function">
+<dt id="lua-function.uuid.frombin">
+<em class="property"> </em><code class="descclassname">uuid.</code><code class="descname">frombin</code><big>(</big><em>uuid_bin</em><big>)</big><a class="headerlink" href="#lua-function.uuid.frombin" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uuid_str</strong> -- UUID in 16-byte binary string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">converted UUID</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">cdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="lua-object.uuid.uuid_object">
+<em class="property">object </em><code class="descname">uuid_object</code><a class="headerlink" href="#lua-object.uuid.uuid_object" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="uuid-object-bin"></span><dl class="method">
+<dt id="lua-function.uuid_object.bin">
+<em class="property"> </em><code class="descclassname">uuid_object:</code><code class="descname">bin</code><big>(</big><span class="optional">[</span><em>byte-order</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.uuid_object.bin" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">byte-order</span></code> can be one of next flags:</p>
+<ul class="simple">
+<li>'l' - little-endian,</li>
+<li>'b' - big-endian,</li>
+<li>'h' - endianness depends on host (default),</li>
+<li>'n' - endianness depends on network</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>byte-order</strong> (<em>string</em>) -- one of <code class="docutils literal"><span class="pre">'l'</span></code>, <code class="docutils literal"><span class="pre">'b'</span></code>, <code class="docutils literal"><span class="pre">'h'</span></code> or <code class="docutils literal"><span class="pre">'n'</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">UUID converted from cdata input value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">16-byte binary string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="uuid-object-str"></span><dl class="method">
+<dt id="lua-function.uuid_object.str">
+<em class="property"> </em><code class="descclassname">uuid_object:</code><code class="descname">str</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.uuid_object.str" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">UUID converted from cdata input value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">36-byte hexadecimal string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="uuid-isnil"></span><dl class="method">
+<dt id="lua-function.uuid_object.isnil">
+<em class="property"> </em><code class="descclassname">uuid_object:</code><code class="descname">isnil</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.uuid_object.isnil" title="Permalink to this definition">¶</a></dt>
+<dd><p>The all-zero UUID value can be expressed as uuid.NULL, or as
+<code class="docutils literal"><span class="pre">uuid.fromstr('00000000-0000-0000-0000-000000000000')</span></code>.
+The comparison with an all-zero value can also be expressed as
+<code class="docutils literal"><span class="pre">uuid_with_type_cdata</span> <span class="pre">==</span> <span class="pre">uuid.NULL</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">true if the value is all zero, otherwise false.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">uuid</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">uuid&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">uuid</span><span class="p">(),</span> <span class="n">uuid</span><span class="p">.</span><span class="n">bin</span><span class="p">(),</span> <span class="n">uuid</span><span class="p">.</span><span class="n">str</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">16ffedc8-cbae-4f93-a05e-349f3ab70baa</span>
+<span class="p p-Indicator">-</span> <span class="kt">!!binary</span> <span class="l l-Scalar l-Scalar-Plain">FvG+Vy1MfUC6kIyeM81DYw==</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">67c999d2-5dce-4e58-be16-ac1bcb93160f</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">uu</span> <span class="o">=</span> <span class="n">uuid</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="o">#</span><span class="n">uui</span><span class="p">:</span><span class="n">bin</span><span class="p">(),</span> <span class="o">#</span><span class="n">uu</span><span class="p">:</span><span class="n">str</span><span class="p">(),</span> <span class="nb">type</span><span class="p">(</span><span class="n">uu</span><span class="p">),</span> <span class="n">uu</span><span class="p">:</span><span class="n">isnil</span><span class="p">()</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">16</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">36</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cdata</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="tarantool.html"
+           class="b-prev b-ellipsis"
+           title="Module &lt;cite&gt;tarantool&lt;/cite&gt;">Module <cite>tarantool</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_lua/uuid.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="yaml.html"
+           class="b-next b-ellipsis"
+           title="Module &lt;cite&gt;yaml&lt;/cite&gt;">Module <cite>yaml</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

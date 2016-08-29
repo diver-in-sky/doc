@@ -1,0 +1,847 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>5. Справочник по конфигурированию</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="5. Справочник по конфигурированию">
+        5. Справочник по конфигурированию
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../book/configuration/index.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../ru/book/configuration/index.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-book/configuration/index">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Руководство пользователя</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">1. Предисловие</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide_getting_started.html">2. Начало работы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../box/index.html">3. Функционал СУБД</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../replication/index.html">4. Репликация</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Справочник по конфигурированию</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administration.html">6. Администрирование серверной части</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors/index.html">7. Коннекторы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules.html">8. Модули</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/a_errcodes.html">9. Приложение A. Коды ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/b_internals.html">10. Приложение B. Детали реализации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/c_lua_tutorial.html">11. Приложение C. Учебные примеры на языке Lua</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Руководство пользователя
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="5. Справочник по конфигурированию" class="b-path_current b-ellipsis">
+          5. Справочник по конфигурированию
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="configuration-reference">
+<span id="index-book-cfg"></span><h1>5. Справочник по конфигурированию<a class="headerlink" href="#configuration-reference" title="Ссылка на этот заголовок">¶</a></h1>
+<p>В этой главе приводится справочная информация о конфигурационных параметрах, которые можно передавать в командной строке или указывать в файле инициализации.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#command-options" id="id1">Опции командной строки</a></li>
+<li><a class="reference internal" href="#uri" id="id2">Универсальный код ресурса (URI)</a></li>
+<li><a class="reference internal" href="#initialization-file" id="id3">Файл инициализации</a></li>
+<li><a class="reference internal" href="#configuration-parameters" id="id4">Параметры конфигурации</a><ul>
+<li><a class="reference internal" href="#basic-parameters" id="id5">Основные параметры</a></li>
+<li><a class="reference internal" href="#configuring-the-storage" id="id6">Настройка хранилища данных</a></li>
+<li><a class="reference internal" href="#snapshot-daemon" id="id7">Фоновая программа для работы со снимками</a></li>
+<li><a class="reference internal" href="#binary-logging-and-snapshots" id="id8">Журналирование и снимки в бинарном формате</a></li>
+<li><a class="reference internal" href="#replication" id="id9">Репликация</a></li>
+<li><a class="reference internal" href="#networking" id="id10">Работа с сетевыми соединениями</a></li>
+<li><a class="reference internal" href="#logging" id="id11">Запись в журнал</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#local-hot-standby" id="id12">Режим горячего резервирования</a></li>
+</ul>
+</div>
+<p>Для запуска Tarantool-сервера нужно ввести одну из следующих команд:</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span>$ **tarantool**
+# ИЛИ
+$ **tarantool** *опции*
+# ИЛИ
+$ **tarantool** *файл-инициализации-на-lua* **[** *аргументы* **]**
+</pre></div>
+</div>
+<div class="section" id="command-options">
+<h2><a class="toc-backref" href="#id1">5.1. Опции командной строки</a><a class="headerlink" href="#command-options" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-h">
+<span id="cmdoption--help"></span><code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вывести на экран список всех опций командной строки с комментариями.</p>
+</dd></dl>
+
+<span class="target" id="index-tarantool-version"></span><dl class="option">
+<dt id="cmdoption-V">
+<span id="cmdoption--version"></span><code class="descname">-V</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--version</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-V" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вывести на экран имя продукта и номер версии, например:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ./tarantool --version
+<span class="go">Tarantool 1.7.0-1216-g73f7154</span>
+<span class="go">Target: Linux-x86_64-Debug</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+<p>В нашем примере:</p>
+<p>“Tarantool” -- это имя повторно используемой асинхронной сетевой программной среды.</p>
+<p>Номер версии составлен по стандартной схеме из 3 частей: <code class="docutils literal"><span class="pre">&lt;major&gt;-&lt;minor&gt;-&lt;patch&gt;</span></code>, где <code class="docutils literal"><span class="pre">&lt;major&gt;</span></code> изменяется очень редко, <code class="docutils literal"><span class="pre">&lt;minor&gt;</span></code> увеличивается на каждый milestone и свидетельствует о возможных несовместимостях с предыдущими версиями, а <code class="docutils literal"><span class="pre">&lt;patch&gt;</span></code> указывает количество релизов с доработками с момента текущего milestone'а. Для сборок, не предназначенных для релиза, здесь могут быть добавлены также номер и SHA1-код коммита, которые указывают, насколько сильно текущая сборка отличается от предыдущего релиза.</p>
+<p>“Target” -- это платформа, на которой была сделана данная сборка Tarantool'а. За этой строчкой может следовать информация для данной платформы.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Идентификатор версии (version id) в Tarantool'е получают с помощью команды <a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-describe.html">git describe</a>. По этому идентификатору можно в любой момент извлечь соответствующие исходные файлы из <a class="reference external" href="http://github.com/tarantool/tarantool.git">git-репозитория</a>.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="uri">
+<span id="index-uri"></span><h2><a class="toc-backref" href="#id2">5.2. Универсальный код ресурса (URI)</a><a class="headerlink" href="#uri" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Некоторые функции и параметры конфигурации в Tarantool'е зависят от универсального кода доступа (URI = Universal Resource Identifier). Формат URI-строки аналогичен <a class="reference external" href="http://en.wikipedia.org/wiki/URI_scheme#Generic_syntax">общепринятому синтаксису URI-схемы</a> и может содержать (перечисляем по порядку) имя пользователя для входа в систему, пароль, имя или IP-адрес хоста, номер порта. Обязательным параметром является только номер порта. Пароль обязателен, если указано имя пользователя (за исключением имени 'guest'). Таким образом, синтаксис URI формально выглядит так: <code class="docutils literal"><span class="pre">[host:]port</span></code> или <code class="docutils literal"><span class="pre">[username:password&#64;]host:port</span></code>. Если не указан <code class="docutils literal"><span class="pre">host</span></code>, то значением по умолчанию является  '0.0.0.0' (т.е. любой адрес формата IPv4) или '[::]'  (т.е. любой адрес формата IPv6) на локальной машине. Если не указаны <code class="docutils literal"><span class="pre">username:password</span></code>, то значением по умолчанию является 'guest'. Вот несколько примеров:</p>
+<blockquote>
+<div><div class="table container">
+<table border="1" class="left-align-column-1 left-align-column-2 docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><p class="first last">Часть URI</p>
+</th>
+<th class="head"><p class="first last">Пример</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>port</td>
+<td>3301</td>
+</tr>
+<tr class="row-odd"><td>host:port</td>
+<td>127.0.0.1:3301</td>
+</tr>
+<tr class="row-even"><td>username:password&#64;host:port</td>
+<td>notguest:sesame&#64;mail.ru:3301</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></blockquote>
+<p>В некоторых случаях вместо URI можно указывать сокет домена Unix, например &quot;unix/:/tmp/unix_domain_socket.sock&quot; или просто &quot;/tmp/unix_domain_socket.sock&quot;.</p>
+<p>См. также <a class="reference internal" href="../app/e_cookbook.html#e-cookbook-uri-parse"><span class="std std-ref">Appendix E: Cookbook</span></a>, где приводится вариант реализации для парсинга URI-адресов.</p>
+</div>
+<div class="section" id="initialization-file">
+<span id="index-init-label"></span><h2><a class="toc-backref" href="#id3">5.3. Файл инициализации</a><a class="headerlink" href="#initialization-file" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Если в команде запуска Tarantool'а указан <cite>файл инициализации на языке Lua</cite>, то запуск начинается с вызова Lua-программы из файла с именем &quot;<code class="docutils literal"><span class="pre">script.lua</span></code>&quot;. Эта Lua-программа может принимать дальнейшие аргументы, указанные в командной строке, или использовать функции операционной системы, такие как <code class="docutils literal"><span class="pre">getenv()</span></code>. Если после запуска Tarantool'а предполагается использовать сервер баз данных или требуется открыть порты на прослушивание, то Lua-программа почти всегда начинается с вызова <code class="docutils literal"><span class="pre">box.cfg()</span></code>. Для примера возьмем файл <code class="docutils literal"><span class="pre">script.lua</span></code>, который содержит следующие строки:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span>
+    <span class="n">listen</span>              <span class="o">=</span> <span class="nb">os.getenv</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">LISTEN_URI&quot;</span><span class="p">),</span>
+    <span class="n">slab_alloc_arena</span>    <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">pid_file</span>            <span class="o">=</span> <span class="s2">&quot;</span><span class="s">tarantool.pid&quot;</span><span class="p">,</span>
+    <span class="n">rows_per_wal</span>        <span class="o">=</span> <span class="mi">50</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Starting &#39;</span><span class="p">,</span> <span class="n">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Далее предположим, что системная переменная LISTEN_URI содержит значение 3301, а вызов командной строки таков: <code class="docutils literal"><span class="pre">~/tarantool/src/tarantool</span> <span class="pre">script.lua</span> <span class="pre">ARG</span></code>. Вывод на экране в таком случае будет выглядеть следующим образом:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">LISTEN_URI</span><span class="o">=</span>3301
+<span class="gp">$</span> ~/tarantool/src/tarantool script.lua ARG
+<span class="go">... main/101/script.lua C&gt; version 1.7.0-1216-g73f7154</span>
+<span class="go">... main/101/script.lua C&gt; log level 5</span>
+<span class="go">... main/101/script.lua I&gt; mapping 107374184 bytes for a shared arena...</span>
+<span class="go">... main/101/script.lua I&gt; recovery start</span>
+<span class="go">... main/101/script.lua I&gt; recovering from &#39;./00000000000000000000.snap&#39;</span>
+<span class="go">... main/101/script.lua I&gt; primary: bound to 0.0.0.0:3301</span>
+<span class="go">... main/102/leave_local_hot_standby I&gt; ready to accept requests</span>
+<span class="go">Starting  ARG</span>
+<span class="go">... main C&gt; entering the event loop</span>
+</pre></div>
+</div>
+<p>Если после инициализации вам понадобится запустить интерактивную Tarantool-сессию на том же терминале, то это можно сделать с помощью команды <a class="reference internal" href="../../reference_lua/console.html#console-start"><span class="std std-ref">console.start()</span></a>.</p>
+</div>
+<div class="section" id="configuration-parameters">
+<span id="index-snapshot-daemon"></span><span id="index-wal-mode"></span><span id="index-wal-dir"></span><span id="index-snap-dir"></span><span id="index-replication-source"></span><span id="index-slab-alloc-arena"></span><span id="index-replication-port"></span><span id="index-local-hot-standby"></span><h2><a class="toc-backref" href="#id4">5.4. Параметры конфигурации</a><a class="headerlink" href="#configuration-parameters" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Параметры конфигурации задаются следующим образом:</p>
+<pre class="highlight literal-block">
+box.cfg{ <em>key = value</em> [, <em>key = value</em> ...]]
+</pre>
+<p>Поскольку вызов <code class="docutils literal"><span class="pre">box.cfg</span></code> может содержать много параметров конфигурации, причем некоторые параметры (например, адреса директорий) могут со временем меняться, то имеет смысл хранить <code class="docutils literal"><span class="pre">box.cfg</span></code> в Lua-файле. Обычно это Lua-файл для инициализации, который указывается в командной строке при запуске Tarantool'а.</p>
+<p>Большинство параметров конфигурации служат для настройки выделения ресурсов и открытия портов, а также для задания поведение базы данных. Все параметры являются необязательными. Некоторые параметры являются динамическими, т.е. их можно менять во время исполнения с помощью повторного вызова <code class="docutils literal"><span class="pre">box.cfg{}</span></code>.</p>
+<p>Для просмотра все не нулевых значений параметров, введите <code class="docutils literal"><span class="pre">box.cfg</span></code> (без фигурных скобок). Для просмотра значения определенного параметра, например адреса для прослушивания, введите <code class="docutils literal"><span class="pre">box.cfg.listen</span></code>.</p>
+<p>В следующих разделах описаны все параметры, которые служат для настройки основных операций, хранения, создания статических снимков данных, репликации, работы с сетевыми соединениями и журналирования.</p>
+<div class="section" id="basic-parameters">
+<h3><a class="toc-backref" href="#id5">5.4.1. Основные параметры</a><a class="headerlink" href="#basic-parameters" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="confval">
+<dt id="confval-background">
+<code class="descname">background</code><a class="headerlink" href="#confval-background" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Запустить Tarantool-сервер в фоновом режиме. При этом нужно задать не нулевые значения для параметров <a class="reference internal" href="#cfg-logging-logger"><span class="std std-ref">logger</span></a> и <a class="reference internal" href="#cfg-basic-pid-file"><span class="std std-ref">pid_file</span></a>.</p>
+<p>Тип значения: boolean <br /> По умолчанию: false <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-coredump">
+<code class="descname">coredump</code><a class="headerlink" href="#confval-coredump" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Параметр устарел. Не используйте его.</p>
+<p>Тип значения: boolean <br /> По умолчанию: false <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-custom-proc-title"></span><dl class="confval">
+<dt id="confval-custom_proc_title">
+<code class="descname">custom_proc_title</code><a class="headerlink" href="#confval-custom_proc_title" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добавить указанную строку к <a class="reference internal" href="../administration.html#administration-proctitle"><span class="std std-ref">заголовку процесса</span></a> Tarantool-сервера (заголовок процесса выводится в колонке COMMAND в ответ на команды <code class="samp docutils literal"><span class="pre">ps</span> <span class="pre">-ef</span></code> и <code class="samp docutils literal"><span class="pre">top</span> <span class="pre">-c</span></code>).</p>
+<p>Например, информация о процессе Tarantool-сервера, которая выводится по команде <code class="samp docutils literal"><span class="pre">ps</span> <span class="pre">-ef</span></code>, обычно имеет следующий вид:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ps -ef <span class="p">|</span> grep tarantool
+<span class="go">1000     14939 14188  1 10:53 pts/2    00:00:13 tarantool &lt;running&gt;</span>
+</pre></div>
+</div>
+<p>Однако, если в конфигурации указан параметр <code class="docutils literal"><span class="pre">custom_proc_title='sessions'</span></code>, то информация в выводе <code class="samp docutils literal"><span class="pre">ps</span> <span class="pre">-ef</span></code> будет другой:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ps -ef <span class="p">|</span> grep tarantool
+<span class="go">1000     14939 14188  1 10:53 pts/2    00:00:16 tarantool &lt;running&gt;: sessions</span>
+</pre></div>
+</div>
+<p>Тип значения: string <br /> По умолчанию: null <br /> Динамический: да <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-listen"></span><dl class="confval">
+<dt id="confval-listen">
+<code class="descname">listen</code><a class="headerlink" href="#confval-listen" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Номер порта для чтения/записи данных, либо <a class="reference internal" href="#index-uri"><span class="std std-ref">URI-строка</span></a> (URI = Universal Resource Identifier). Значения по умолчанию у данного параметра нет, поэтому он <strong>обязателен</strong>, если у клиентов должна быть возможность устанавливать соединение с Tarantool-сервером по портам, не являющимся <a class="reference internal" href="../administration.html#administration-admin-ports"><span class="std std-ref">“портами для администрирования”</span></a>. Соединения через <code class="samp docutils literal"><span class="pre">listen=</span><em><span class="pre">URI</span></em></code> иногда называют соединениями по &quot;бинарному протоколу&quot; или по &quot;главному порту&quot;.</p>
+<p>Стандартное значение -- это 3301. Порт для прослушивания можно задавать также для <a class="reference internal" href="#book-cfg-local-hot-standby"><span class="std std-ref">режима горячего резервирования</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Сервер-реплика принимает запросы на соединение на этом же порту. Реплика принимает только запросы на чтение, пока ей не будет назначена роль главного сервера.</p>
+</div>
+<p>Тип значения: integer или string <br /> По умолчанию: null <br /> Динамический: да <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-pid-file"></span><dl class="confval">
+<dt id="confval-pid_file">
+<code class="descname">pid_file</code><a class="headerlink" href="#confval-pid_file" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сохранить идентификатор процесса в указанный файл. Путь можно указывать относительно рабочей директории (<a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>). Стандартное значение -- это “<code class="file docutils literal"><span class="pre">tarantool.pid</span></code>”.</p>
+<p>Тип значения: string <br /> По умолчанию: null <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-read-only"></span><dl class="confval">
+<dt id="confval-read_only">
+<code class="descname">read_only</code><a class="headerlink" href="#confval-read_only" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Перевести сервер в режим &quot;доступен только на чтение&quot;. После установки этого параметра Tarantool-сервер будет возвращать ошибку ER_READONLY на все запросы на изменение данных.</p>
+<p>Тип значения: boolean <br /> По умолчанию: false <br /> Динамический: да <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-snap-dir"></span><dl class="confval">
+<dt id="confval-snap_dir">
+<code class="descname">snap_dir</code><a class="headerlink" href="#confval-snap_dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Директория для хранения статических снимков данных (.snap-файлов). Путь можно указывать относительно рабочей директории (<a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>). Если этот параметр не задан, то по умолчанию используется рабочая директория (work_dir). См. также <a class="reference internal" href="#cfg-basic-wal-dir"><span class="std std-ref">wal_dir</span></a>.</p>
+<p>Тип значения: string <br /> По умолчанию: &quot;.&quot; <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-vinyl-dir"></span><dl class="confval">
+<dt id="confval-vinyl_dir">
+<code class="descname">vinyl_dir</code><a class="headerlink" href="#confval-vinyl_dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Директория для хранения файлов и поддиректорий движка vinyl. Путь можно указывать относительно рабочей директории (<a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>). Если этот параметр не задан, то по умолчанию используется рабочая директория (work_dir).</p>
+<p>Тип значения: string <br /> По умолчанию: &quot;.&quot; <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-username">
+<code class="descname">username</code><a class="headerlink" href="#confval-username" title="Ссылка на это определение">¶</a></dt>
+<dd><p>UNIX-имя пользователя, на которое нужно переключиться после запуска.</p>
+<p>Тип значения: string <br /> По умолчанию: null <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-wal-dir"></span><dl class="confval">
+<dt id="confval-wal_dir">
+<code class="descname">wal_dir</code><a class="headerlink" href="#confval-wal_dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Директория для хранения журналов упреждающей записи (.xlog-файлов). Путь можно указывать относительно рабочей директории (<a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>). Иногда используют разные пути к wal_dir и <a class="reference internal" href="#cfg-basic-snap-dir"><span class="std std-ref">snap_dir</span></a>,  чтобы .xlog-файлы и .snap-файлы можно было хранить на разных дисках. Если этот параметр не задан, то по умолчанию используется рабочая директория (work_dir).</p>
+<p>Тип значения: string <br /> По умолчанию: &quot;.&quot; <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-work-dir"></span><dl class="confval">
+<dt id="confval-work_dir">
+<code class="descname">work_dir</code><a class="headerlink" href="#confval-work_dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Директория для хранения рабочих файлов базы данных. После запуска сервер переключается на work_dir с помощью <em class="manpage">chdir(2)</em>. Путь можно указывать относительно текущей директории. Если этот параметр не задан, то по умолчанию используется текущая директория. Относительно work_dir можно указывать другие параметры. Например, если задать <br /> <span class="ccode">box.cfg{work_dir='/home/user/A',wal_dir='B',snap_dir='C'}</span> <br /> то .xlog-файлы будут храниться в директории /home/user/A/B, .snap-файлы -- в директории /home/user/A/C, а все прочие файлы и поддиректории -- в рабочей директории /home/user/A.</p>
+<p>Тип значения: string <br /> По умолчанию: null <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="configuring-the-storage">
+<h3><a class="toc-backref" href="#id6">5.4.2. Настройка хранилища данных</a><a class="headerlink" href="#configuring-the-storage" title="Ссылка на этот заголовок">¶</a></h3>
+<span class="target" id="cfg-storage-slab-alloc-arena"></span><dl class="confval">
+<dt id="confval-slab_alloc_arena">
+<code class="descname">slab_alloc_arena</code><a class="headerlink" href="#confval-slab_alloc_arena" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объем памяти (в гигабайтах), который Tarantool выделяет для хранения таплов. Когда этот объем памяти оказывается занят, Tarantool-сервер начинает выдавать ошибку <code class="xref std std-errcode docutils literal"><span class="pre">ER_MEMORY_ISSUE</span></code> на запросы INSERT и UPDATE. Данное ограничение относится только к хранению таплов: для хранения индексов и информации об установленных соединениях Tarantool-сервер использует дополнительную память. Таким образом, в зависимости от конкретной конфигурации и нагрузки, фактическое превышение расхода памяти у Tarantool-сервера может составлять до 20% от указанного здесь значения.</p>
+<p>Тип значения: float <br /> По умолчанию: 1.0 <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-storage-slab-alloc-factor"></span><dl class="confval">
+<dt id="confval-slab_alloc_factor">
+<code class="descname">slab_alloc_factor</code><a class="headerlink" href="#confval-slab_alloc_factor" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Данный параметр используется в качестве множителя при вычислении размера фрагментов памяти, выделяемых для хранения таплов. В некоторых случаях (в зависимости от общего объема памяти и разброса по размеру таплов) вы можете снизить объем выделенной памяти, задав меньшее значение множителя.</p>
+<p>Тип значения: float <br /> По умолчанию: 1.1 <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-storage-slab-alloc-maximal"></span><dl class="confval">
+<dt id="confval-slab_alloc_maximal">
+<code class="descname">slab_alloc_maximal</code><a class="headerlink" href="#confval-slab_alloc_maximal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Максимально возможный размер фрагмента памяти, выделяемого для одного тапла. Можно задать больший размер, если необходимо хранить таплы большого размера.</p>
+<p>Тип значения: integer <br /> По умолчанию: 1048576 <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-storage-slab-alloc-minimal"></span><dl class="confval">
+<dt id="confval-slab_alloc_minimal">
+<code class="descname">slab_alloc_minimal</code><a class="headerlink" href="#confval-slab_alloc_minimal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Минимально возможный размер фрагмента памяти, выделяемого для одного тапла. Можно задать меньший размер, если большинство таплов в базе имеют очень маленький размер. Значение может лежать в интервале от 8 до 1048280 включительно.</p>
+<p>Тип значения: integer <br /> По умолчанию: 16 <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-storage-vinyl"></span><dl class="confval">
+<dt id="confval-vinyl">
+<code class="descname">vinyl</code><a class="headerlink" href="#confval-vinyl" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Пользовательские значения параметров для движка vinyl можно задать с помощью запроса следующего вида:</p>
+<pre class="highlight literal-block">
+vinyl = {
+  run_age_wm = <em>number</em>,
+  run_age_period = <em>number of seconds</em>,
+  memory_limit = <em>number of gigabytes</em>,
+  compact_wm = <em>number</em>,
+  threads = <em>number</em>,
+  run_age = <em>number</em>,
+  run_prio = <em>number</em>,
+}
+</pre>
+<p>В будущем этот способ может быть пересмотрен.</p>
+<p>Значения по умолчанию:</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">vinyl</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">run_age_wm</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">run_age_period</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">memory_limit</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="n">compact_wm</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="n">threads</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="n">run_age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">run_prio</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="snapshot-daemon">
+<span id="book-cfg-snapshot-daemon"></span><h3><a class="toc-backref" href="#id7">5.4.3. Фоновая программа для работы со снимками</a><a class="headerlink" href="#snapshot-daemon" title="Ссылка на этот заголовок">¶</a></h3>
+<blockquote>
+<div><p>Фоновая программа для работы со снимками (snapshot daemon) -- это постоянно запущенный файбер. Он может срабатывать через заданные промежутки времени, создавая новые файлы-снимки (.snap-файлы) и удаляя старые. При удалении файла-снимка удаляются также все WAL-файлы (.xlog), которые старше удаленного файла-снимка и содержат информацию, которая была в удаленном снимке.</p>
+<p>Параметры <a class="reference internal" href="#cfg-snapshot-daemon-snapshot-period"><span class="std std-ref">snapshot_period</span></a> и <a class="reference internal" href="#cfg-snapshot-daemon-snapshot-count"><span class="std std-ref">snapshot_count</span></a> указывают длину интервалов для срабатывания фоновой программы и количество сделанных файлов-снимков, после которого можно удалять самый старый снимок.</p>
+</div></blockquote>
+<span class="target" id="cfg-snapshot-daemon-snapshot-period"></span><dl class="confval">
+<dt id="confval-snapshot_period">
+<code class="descname">snapshot_period</code><a class="headerlink" href="#confval-snapshot_period" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Интервал (в секундах) между срабатываниями фоновой программы. Если значение <code class="docutils literal"><span class="pre">snapshot_period</span></code> больше нуля, а также имели место какие-либо изменения в базе, то фоновая программа будет каждые <code class="docutils literal"><span class="pre">snapshot_period</span></code> секунд вызывать метод <a class="reference internal" href="../box/admin.html#admin-snapshot"><span class="std std-ref">box.snapshot</span></a>, и при каждом таком вызове будет создаваться новый снимок.</p>
+<p>Например, в результате запроса <code class="docutils literal"><span class="pre">box.cfg{snapshot_period=3600}</span></code> фоновая программа будет раз в час создавать новый снимок.</p>
+<p>Тип значения: integer <br /> По умолчанию: 0 <br /> Динамический: да <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-snapshot-daemon-snapshot-count"></span><dl class="confval">
+<dt id="confval-snapshot_count">
+<code class="descname">snapshot_count</code><a class="headerlink" href="#confval-snapshot_count" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Максимальное количество снимков в директории <cite>snap_dir</cite>, после которого фоновая программа может удалять самые старые снимки. Если значение <cite>snapshot_count</cite> равно нулю, то фоновая программа не занимается удалением старых снимков. Например, в результате следующего запроса:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span>
+    <span class="n">snapshot_period</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">,</span>
+    <span class="n">snapshot_count</span>  <span class="o">=</span> <span class="mi">10</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>фоновая программа будет раз в час создавать новый снимок до тех пор, пока не создаст 10 снимков. После создания 11-го снимка фоновая программа удалит самый старый снимок и все связанные с ним WAL-файлы.</p>
+<p>Тип значения: integer <br /> По умолчанию: 6 <br /> Динамический: да <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="binary-logging-and-snapshots">
+<h3><a class="toc-backref" href="#id8">5.4.4. Журналирование и снимки в бинарном формате</a><a class="headerlink" href="#binary-logging-and-snapshots" title="Ссылка на этот заголовок">¶</a></h3>
+<blockquote>
+<div><a class="reference internal" href="#cfg-binary-logging-snapshots-panic-on-snap-error"><span class="std std-ref">panic_on_snap_error</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-panic-on-wal-error"><span class="std std-ref">panic_on_wal_error</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-rows-per-wal"><span class="std std-ref">rows_per_wal</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-snap-io-rate-limit"><span class="std std-ref">snap_io_rate_limit</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-wal-mode"><span class="std std-ref">wal_mode</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-wal-dir-rescan-delay"><span class="std std-ref">wal_dir_rescan_delay</span></a> <br /></div></blockquote>
+<span class="target" id="cfg-binary-logging-snapshots-panic-on-snap-error"></span><dl class="confval">
+<dt id="confval-panic_on_snap_error">
+<code class="descname">panic_on_snap_error</code><a class="headerlink" href="#confval-panic_on_snap_error" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Прервать исполнение, если при чтении файла-снимка возникает ошибка (на этапе запуска Tarantool-сервера).</p>
+<p>Тип значения: boolean <br /> По умолчанию: true <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-panic-on-wal-error"></span><dl class="confval">
+<dt id="confval-panic_on_wal_error">
+<code class="descname">panic_on_wal_error</code><a class="headerlink" href="#confval-panic_on_wal_error" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Прервать исполнение, если при чтении WAL-файла возникает ошибка (на этапе запуска Tarantool-сервера, либо на этапе первого запроса данных со стороны реплики).</p>
+<p>Тип значения: boolean <br /> По умолчанию: true <br /> Динамический: да <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-rows-per-wal"></span><dl class="confval">
+<dt id="confval-rows_per_wal">
+<code class="descname">rows_per_wal</code><a class="headerlink" href="#confval-rows_per_wal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Максимальное количество записей, которые можно хранить в одном WAL-файле. Когда это ограничение достигнуто, то Tarantool создает новый WAL-файл и называет его по LSN-номеру первой записи в новом файле (<code class="samp docutils literal"><em><span class="pre">&lt;lsn-номер-первой-записи&gt;</span></em><span class="pre">.xlog</span></code>). Это может пригодиться при простой организации создания резервных копий с помощью rsync.</p>
+<p>Тип значения: integer <br /> По умолчанию: 500000 <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-snap-io-rate-limit"></span><dl class="confval">
+<dt id="confval-snap_io_rate_limit">
+<code class="descname">snap_io_rate_limit</code><a class="headerlink" href="#confval-snap_io_rate_limit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Уменьшить падение производительности на запросах INSERT/UPDATE/DELETE во время отработки <a class="reference internal" href="../box/admin.html#admin-snapshot"><span class="std std-ref">box.snapshot</span></a> с помощью ограничения на максимальное количество мегабайт, которое может записываться на диск в секунду. С той же целью можно развести директории <a class="reference internal" href="#cfg-basic-wal-dir"><span class="std std-ref">wal_dir</span></a> и <a class="reference internal" href="#cfg-basic-snap-dir"><span class="std std-ref">snap_dir</span></a> по разным адресам и сохранять снимки на другом диске.</p>
+<p>Тип значения: float <br /> По умолчанию: null <br /> Динамический: <strong>да</strong> <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-wal-mode"></span><dl class="confval">
+<dt id="confval-wal_mode">
+<code class="descname">wal_mode</code><a class="headerlink" href="#confval-wal_mode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Задать режим синхронизации между файберами, WAL-файлом и диском:</p>
+<ul class="simple">
+<li><p class="first"><code class="docutils literal"><span class="pre">none</span></code>: запись в WAL-файл не ведется;</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">write</span></code>: файберы ждут, пока их данные будут записаны в WAL-файл (без <em class="manpage">fsync(2)</em>);</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">fsync</span></code>: файберы ожидают свои данные, <em class="manpage">fsync(2)</em> происходит после каждого вызова <em class="manpage">write(2)</em>;</p>
+</li>
+</ul>
+<p>Тип значения: string <br /> По умолчанию: &quot;write&quot; <br /> Динамический: <strong>да</strong> <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-wal-dir-rescan-delay"></span><dl class="confval">
+<dt id="confval-wal_dir_rescan_delay">
+<code class="descname">wal_dir_rescan_delay</code><a class="headerlink" href="#confval-wal_dir_rescan_delay" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Количество секунд между периодическим сканированием директории с WAL-файлами на предмет наличия изменений в WAL-файлах, которые следует синхронизировать в рамках репликации или режима горячей готовности.</p>
+<p>Тип значения: float <br /> По умолчанию: 2 <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="replication">
+<h3><a class="toc-backref" href="#id9">5.4.5. Репликация</a><a class="headerlink" href="#replication" title="Ссылка на этот заголовок">¶</a></h3>
+<span class="target" id="cfg-replication-replication-source"></span><dl class="confval">
+<dt id="confval-replication_source">
+<code class="descname">replication_source</code><a class="headerlink" href="#confval-replication_source" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Источник репликации. Если в параметре <cite>replication_source</cite> указана не пустая строка, то такой Tarantool-сервер считается <a class="reference internal" href="../replication/index.html#index-box-replication"><span class="std std-ref">репликой</span></a>. Сервер-реплика будет пытаться установить соединение с главным сервером, чей адрес указан в параметре <cite>replication_source</cite> в виде <a class="reference internal" href="#index-uri"><span class="std std-ref">URI</span></a> (Universal Resource Identifier), например <code class="samp docutils literal"><em><span class="pre">konstantin</span></em><span class="pre">:</span><em><span class="pre">secret_password</span></em><span class="pre">&#64;</span><em><span class="pre">tarantool.org</span></em><span class="pre">:</span><em><span class="pre">3301</span></em></code>.</p>
+<p>Если в кластере более одного источника репликации, то следует указать массив из URI, например <br /> <code class="samp docutils literal"><span class="pre">box.cfg{replication_source</span> <span class="pre">=</span> <span class="pre">{</span></code><span class="ccodei">uri#1,uri#2</span><span class="ccode">}}</span> <br /></p>
+<p>Если один из URI соответствует текущем серверу -- т.е. тому, на котором сейчас выполняется запрос <cite>box.cfg{}</cite>, -- то такой источник игнорируется. Таким образом, можно использовать одни и те же значения <cite>replication_source</cite> на многих серверах.</p>
+<p>Имя пользователя по умолчанию -- ‘guest’. Сервер-реплика не принимает запросы на изменение данных на порту для прослушивания (параметр <a class="reference internal" href="#cfg-basic-listen"><span class="std std-ref">listen</span></a>). Параметр <cite>replication_source</cite> является динамическим: чтобы перевести реплику в режим главного сервера, нужно только задать пустую строку в <cite>replication_source</cite> и выполнить запрос <code class="code docutils literal"><span class="pre">box.cfg{replication_source=</span></code><code class="samp docutils literal"><em><span class="pre">new-value</span></em></code><code class="code docutils literal"><span class="pre">}</span></code>.</p>
+<p>Тип значения: string <br /> По умолчанию: null <br /> Динамический: <strong>yes</strong> <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="networking">
+<h3><a class="toc-backref" href="#id10">5.4.6. Работа с сетевыми соединениями</a><a class="headerlink" href="#networking" title="Ссылка на этот заголовок">¶</a></h3>
+<blockquote>
+<div><a class="reference internal" href="#cfg-networking-io-collect-interval"><span class="std std-ref">io_collect_interval</span></a>, <br />
+<a class="reference internal" href="#cfg-networking-readahead"><span class="std std-ref">readahead</span></a>  <br /></div></blockquote>
+<span class="target" id="cfg-networking-io-collect-interval"></span><dl class="confval">
+<dt id="confval-io_collect_interval">
+<code class="descname">io_collect_interval</code><a class="headerlink" href="#confval-io_collect_interval" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Между итерациями основного цикла Tarantool-сервер уходит в спящий режим на <cite>io_collect_interval</cite> секунд. Этот параметр можно использовать для ограничения нагрузки на процессор в том случае, когда количество клиентских соединений очень велико, но запросы от них приходят нечасто (например, от каждого соединения приходит всего несколько запросов в секунду).</p>
+<p>Тип значения: float <br /> По умолчанию: null <br /> Динамический: <strong>да</strong> <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-networking-readahead"></span><dl class="confval">
+<dt id="confval-readahead">
+<code class="descname">readahead</code><a class="headerlink" href="#confval-readahead" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Размер буфера предварительного чтения на каждое клиентское соединение. Чем больше размер буфера, тем больше памяти будет потреблять каждое активное соединение и тем больше запросов можно будет зачитать из системного буфера за один системный вызов. Общее правило для определения оптимального размера буфера таково: буфер должен вмещать по крайней мере несколько десятков запросов. Поэтому, если средний размер тапла в запросе у вас большой, например несколько кило- или даже мегабайт, то размер буфера предварительного чтения следует увеличить. Если вы не используете пакетную обработку запросов, то лучше оставить размер буфера по умолчанию.</p>
+<p>Тип значения: integer <br /> По умолчанию: 16320 <br /> Динамический: <strong>да</strong> <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="logging">
+<h3><a class="toc-backref" href="#id11">5.4.7. Запись в журнал</a><a class="headerlink" href="#logging" title="Ссылка на этот заголовок">¶</a></h3>
+<span class="target" id="cfg-logging-log-level"></span><dl class="confval">
+<dt id="confval-log_level">
+<code class="descname">log_level</code><a class="headerlink" href="#confval-log_level" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Уровень детализации при записи в журнал. Всего есть шесть уровней:</p>
+<ul class="simple">
+<li>1 – <code class="docutils literal"><span class="pre">SYSERROR</span></code></li>
+<li>2 – <code class="docutils literal"><span class="pre">ERROR</span></code></li>
+<li>3 – <code class="docutils literal"><span class="pre">CRITICAL</span></code></li>
+<li>4 – <code class="docutils literal"><span class="pre">WARNING</span></code></li>
+<li>5 – <code class="docutils literal"><span class="pre">INFO</span></code></li>
+<li>6 – <code class="docutils literal"><span class="pre">DEBUG</span></code></li>
+</ul>
+<p>С помощью настройки уровня детализации можно включать журналирование всех классов событий выше или ниже указанного уровня. По умолчанию Tarantool выводит свой журнал в стандартный поток ошибок (<code class="docutils literal"><span class="pre">stderr</span></code>), но вывод ошибок можно настроить с помощью параметра <a class="reference internal" href="#cfg-logging-logger"><span class="std std-ref">logger</span></a>.</p>
+<p>Тип значения: integer <br /> По умолчанию: 5 <br /> Динамический: <strong>да</strong> <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-logging-logger"></span><dl class="confval">
+<dt id="confval-logger">
+<code class="descname">logger</code><a class="headerlink" href="#confval-logger" title="Ссылка на это определение">¶</a></dt>
+<dd><p>По умолчанию Tarantool выводит свой журнал в стандартный поток ошибок ( <code class="docutils literal"><span class="pre">stderr</span></code>). С помощью данного параметра вывод ошибок можно перенастроить на вывод в файл, в программный канал (pipe) или в системный регистратор (system logger).</p>
+<p>Пример настроек:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">tarantool.log&#39;</span><span class="p">}</span>
+<span class="c1">-- or</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">file: tarantool.log&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>В результате в Tarantool-директории, используемой по умолчанию, будет открыт на запись файл <code class="docutils literal"><span class="pre">tarantool.log</span></code>. Если префикс в значении параметра <code class="docutils literal"><span class="pre">logger</span></code> не указан или же указан префикс &quot;file:&quot;, то дальнейшая строка интерпретируется как путь к файлу.</p>
+<p>Пример настроек:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">| cronolog tarantool.log&#39;</span><span class="p">}</span>
+<span class="c1">-- или</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">pipe: cronolog tarantool.log&#39;</span><span class="p">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>В результате при запуске Tarantool-сервера будет также запущена программа <code class="docutils literal"><span class="pre">cronolog</span></code>, и все сообщения для журнала буду пересылаться на стандартный ввод (<code class="docutils literal"><span class="pre">stdin</span></code>) программы  <code class="docutils literal"><span class="pre">cronolog</span></code>. Если значение параметра <code class="docutils literal"><span class="pre">logger</span></code> начинается с символа '|' или с префикса &quot;pipe:&quot;, то дальнейшая строка интерпретируется как <a class="reference external" href="https://en.wikipedia.org/wiki/Pipeline_%28Unix%29">Unix-конвейер</a>.</p>
+<p>Пример настроек:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">syslog:identity=tarantool&#39;</span><span class="p">}</span>
+<span class="c1">-- или</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">syslog:facility=user&#39;</span><span class="p">}</span>
+<span class="c1">-- или</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">syslog:identity=tarantool,facility=user&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Если значение параметра <code class="docutils literal"><span class="pre">logger</span></code> начинается с префикса &quot;syslog:&quot;, то дальнейшая строка интерпретируется как сообщение для программы <a class="reference external" href="http://www.rfc-base.org/txt/rfc-5424.txt">syslogd</a>, которая обычно запущена в фоновом режиме на любой Unix-платформе. В этой строке можно задать значения <code class="docutils literal"><span class="pre">identity</span></code>, <code class="docutils literal"><span class="pre">facility</span></code> или оба эти значения сразу. В качестве <code class="docutils literal"><span class="pre">identity</span></code> может быть задана любая строка (значение по умолчанию -- <code class="docutils literal"><span class="pre">tarantool</span></code>), которая будет использоваться как префикс перед всеми сообщениями в журнале. В качестве <code class="docutils literal"><span class="pre">facility</span></code> задается аббревиатура имени одного из типов ПО в программе <a class="reference external" href="https://en.wikipedia.org/wiki/Syslog">syslog</a> (значение по умолчанию -- <code class="docutils literal"><span class="pre">user</span></code>), которая указывает программе <code class="docutils literal"><span class="pre">syslogd</span></code>, куда/кому передавать сообщения.</p>
+<p>Возможные значения <code class="docutils literal"><span class="pre">facility</span></code>: auth, authpriv, cron, daemon, ftp, kern, lpr, mail, news, security, syslog, user, uucp, local0, local1, local2, local3, local4, local5, local6, local7.</p>
+<p>На данный момент значение``facility`` игнорируется, но в будущем оно будет использоваться.</p>
+<p>При записи сообщений в файл Tarantool переоткрывает файл с журналом на каждый SIGHUP. Если журнал является программой, то ее pid-идентификатор сохраняется в переменной <a class="reference internal" href="../../reference_lua/log.html#log-logger-pid"><span class="std std-ref">log.logger_pid</span></a>. Для ротации журнала нужно послать сигнал программе с этим pid-идентификатором.</p>
+<p>Тип значения: string <br /> По умолчанию: null <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-logging-logger-nonblock"></span><dl class="confval">
+<dt id="confval-logger_nonblock">
+<code class="descname">logger_nonblock</code><a class="headerlink" href="#confval-logger_nonblock" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Если в значении параметра <code class="docutils literal"><span class="pre">logger_nonblock</span></code> указано true, то Tarantool не блокирует файл с журналом на запись, и если очередь на запись в ядре оказывается переполнена, то последующие сообщения от Tarantool'а не попадают в очередь и теряются, пока очередь не очистится. Если в параметре <a class="reference internal" href="#cfg-logging-log-level"><span class="std std-ref">log_level</span></a> указан высокий уровень детализации и Tarantool отправляет в очередь на запись много сообщений для журнала, то можно увеличить скорость записи в журнал, выставив значение параметра <code class="docutils literal"><span class="pre">logger_nonblock</span></code> в <cite>true</cite> и пожертвовав некоторым количеством сообщений, которые при этом могут быть потеряны.</p>
+<p>Тип значения: boolean <br /> По умолчанию: true <br /> Динамический: нет <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-logging-too-long-threshold"></span><dl class="confval">
+<dt id="confval-too_long_threshold">
+<code class="descname">too_long_threshold</code><a class="headerlink" href="#confval-too_long_threshold" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Если обработка запроса занимает больше времени, чем указано в этом параметре (в секундах), то в журнал добавляется предупредительная запись. Это происходит, только если уровень детализации, указанный в параметре <a class="reference internal" href="#cfg-logging-log-level"><span class="std std-ref">log_level</span></a>, выше или равен 4 (WARNING).</p>
+<p>Тип значения: float <br /> По умолчанию: 0.5 <br /> Динамический: <strong>да</strong> <br /></p>
+</dd></dl>
+
+<p id="cfg-logging-logging-example"><strong>Пример работы с журналом:</strong></p>
+<p>В этом примере мы покажем, как работает ротация журнала, т.е. что происходит, когда настроена запись в журнал и используются сигналы для архивирования записей.</p>
+<p>Запустите два отдельных терминала, Terminal #1 и Terminal #2.</p>
+<p>В первом терминале (Terminal #1): запустим интерактивную Tarantool-сессию, настроим запись сообщений в журнал <cite>Log_file</cite>, а затем запишем в журнал сообщение &quot;Log Line #1&quot;:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Log_file&#39;</span><span class="p">}</span>
+<span class="n">log</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">log&#39;</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Log Line #1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Во втором терминале (Terminal #2): с помощью команды <code class="docutils literal"><span class="pre">mv</span></code> переименуем файл журнала в <cite>Log_file.bak</cite>. В результате следующее сообщение будет записано уже в файл <cite>Log_file.bak</cite>. <br /></p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">Log_file</span> <span class="n">Log_file</span><span class="o">.</span><span class="n">bak</span>
+</pre></div>
+</div>
+<p>В первом терминале (Terminal #1): запишем в журнал сообщение &quot;Log Line #2&quot;. <br /></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Log Line #2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Во втором терминале (Terminal #2): с помощью команды <code class="docutils literal"><span class="pre">ps</span></code> выясним идентификатор процесса Tarantool-сервера.</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">-</span><span class="n">A</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">tarantool</span>
+</pre></div>
+</div>
+<p>Во втором терминале (Terminal #2): с помощью команды <code class="docutils literal"><span class="pre">kill</span> <span class="pre">-HUP</span></code> пошлем Tarantool-серверу SIGHUP-сигнал.</p>
+<pre class="highlight literal-block">
+kill -HUP <em>process_id</em>
+</pre>
+<p>В первом терминале (Terminal #1): запишем в журнал сообщение &quot;Log Line #3&quot;.</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Log Line #3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Во втором терминале (Terminal #2): с помощью команды <code class="docutils literal"><span class="pre">less</span></code> просмотрим содержимое файлов. Для файла <cite>Log_file.bak</cite> будут выведены следующие строки (если вы выполняете этот пример у себя, то отличаться должны только дата и время):</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="mi">2015</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">30</span> <span class="mi">15</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mf">06.373</span> <span class="p">[</span><span class="mi">27469</span><span class="p">]</span> <span class="n">main</span><span class="o">/</span><span class="mi">101</span><span class="o">/</span><span class="n">interactive</span> <span class="n">I</span><span class="o">&gt;</span> <span class="n">Log</span> <span class="n">Line</span> <span class="c1">#1`</span>
+<span class="mi">2015</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">30</span> <span class="mi">15</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mf">25.973</span> <span class="p">[</span><span class="mi">27469</span><span class="p">]</span> <span class="n">main</span><span class="o">/</span><span class="mi">101</span><span class="o">/</span><span class="n">interactive</span> <span class="n">I</span><span class="o">&gt;</span> <span class="n">Log</span> <span class="n">Line</span> <span class="c1">#2`</span>
+</pre></div>
+</div>
+<p>а для журнала <cite>Log_file</cite> вывод будет следующим:</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="n">file</span> <span class="n">has</span> <span class="n">been</span> <span class="n">reopened</span>
+<span class="mi">2015</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">30</span> <span class="mi">15</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mf">32.629</span> <span class="p">[</span><span class="mi">27469</span><span class="p">]</span> <span class="n">main</span><span class="o">/</span><span class="mi">101</span><span class="o">/</span><span class="n">interactive</span> <span class="n">I</span><span class="o">&gt;</span> <span class="n">Log</span> <span class="n">Line</span> <span class="c1">#3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="local-hot-standby">
+<span id="book-cfg-local-hot-standby"></span><h2><a class="toc-backref" href="#id12">5.5. Режим горячего резервирования</a><a class="headerlink" href="#local-hot-standby" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Режим горячего резервирования позволяет организовать восстановление после сбоя простым образом, без настройки репликации. Для этого запустите на том же компьютере второй экземпляр Tarantool-сервера с теми же настройками <a class="reference internal" href="../box/box_introspection.html#box-introspection-box-cfg"><span class="std std-ref">box.cfg</span></a>, включая директории и не нулевые URI-адреса. В случае успеха должно появиться предупреждение:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>W&gt; primary: [URI] is already in use, will retry binding after [n] seconds
+</pre></div>
+</div>
+<p>Это означает, что второй экземпляр готов заменить первый, если тот выйдет из строя.</p>
+<p>Режим горячего резервирования подразумевает, что на одном компьютере запущены два экземпляра Tarantool-сервера с одинаковой конфигурацией. Первый запущенный экземпляр является &quot;главным&quot; (primary), а второй -- &quot;резервным&quot; (standby). Резервный экземпляр при запуске попытается установить соединение на порту для прослушивания, но у него не получится это сделать, поскольку адрес уже занят главным экземпляром. Таким образом, резервный экземпляр повторяет в цикле следующие действия: зачитывает данные из WAL-файла, который обновляется главным экземпляром (и благодаря этому оба экземпляра всегда синхронизированы между собой) и пытается установить соединение на порту для прослушивания. Если по какой-либо причине главный сервер выходит из строя, то порт для прослушивания освобождается, резервный экземпляр устанавливает на нем соединение и становится главным. Таким образом, время недоступности в случае сбоя оказывается почти незаметным.</p>
+<p>При использовании горячего резервирования (значение параметра <code class="docutils literal"><span class="pre">local_hot_standby</span></code> равно &quot;true&quot;) значение параметра <code class="docutils literal"><span class="pre">wal_mode</span></code> не должно быть равно &quot;none&quot;.</p>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="../replication/index.html"
+           class="b-prev b-ellipsis"
+           title="4. Репликация">4. Репликация</a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../_sources/book/configuration/index.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="../administration.html"
+           class="b-next b-ellipsis"
+           title="6. Администрирование серверной части">6. Администрирование серверной части</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+

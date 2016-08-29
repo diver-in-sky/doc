@@ -1,0 +1,677 @@
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Module tap</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.pin.min.js"></script>
+    <script type="text/javascript" src="../_static/headers.js"></script>
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      <header class="b-header">
+        <div class="b-header-wrapper">
+          <nav class="b-header_menu">
+            
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          </nav>
+        </div>
+      </header>
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2 class="b-section-title b-ellipsis" title="Module tap">
+        Module tap
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../reference_lua/tap.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../ru/reference_lua/tap.html
+  
+"
+           class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox b-doc-reference_lua/tap">
+      <div class="b-cols_content_left">
+        
+<form id="searchbox" role="search" class="search b-search" action="../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Общие сведения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">Руководство пользователя</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Справочник по Lua API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="box.html">Module <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Модуль <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Модуль <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html">Модуль <cite>crypto</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="digest.html">Модуль <cite>digest</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_error.html">Вложенный модуль <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber.html">Модуль <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fiber_ipc.html">Модуль <cite>fiber-ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fio.html">Module <cite>fio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">Module <cite>json</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">Module <cite>log</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="msgpack.html">Модуль <cite>msgpack</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="net_box.html">Модуль <cite>net.box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="box_once.html">Функция <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">Модуль <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="socket.html">Модуль <cite>socket</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="strict.html">Модуль <cite>strict</cite></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module <cite>tap</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarantool.html">Модуль <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="uuid.html">Module <cite>uuid</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Module <cite>yaml</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Разное</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_rock/index.html">Справочник по Lua rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_capi/index.html">Справочник по C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Руководство разработчика</a></li>
+</ul>
+
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Справочник по Lua API
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="Module <cite>tap</cite>" class="b-path_current b-ellipsis">
+          Module <cite>tap</cite>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="module-tap">
+<h1>Module <cite>tap</cite><a class="headerlink" href="#module-tap" title="Ссылка на этот заголовок">¶</a></h1>
+<p>The tap module streamlines the testing of other modules. It allows writing of
+tests in the <a class="reference external" href="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP protocol</a>. The results from the tests can be parsed by
+standard TAP-analyzers so they can be passed to utilities such as <a class="reference external" href="https://metacpan.org/pod/distribution/Test-Harness/bin/prove">prove</a>. Thus
+one can run tests and then use the results for statistics, decision-making, and so on.</p>
+<span class="target" id="lua-module.tap"></span><dl class="function">
+<dt id="lua-функция.tap.test">
+<em class="property"> </em><code class="descclassname">tap.</code><code class="descname">test</code><big>(</big><em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.tap.test" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Initialize.</p>
+<p>The result of <code class="docutils literal"><span class="pre">tap.test</span></code> is an object, which will be called taptest
+in the rest of this discussion, which is necessary for
+<code class="docutils literal"><span class="pre">taptest:plan()</span></code> and all the other methods.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>test-name</strong> (<em>string</em>) -- an arbitrary name to give for the test outputs.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">taptest</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">userdata</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">tap</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tap&#39;</span><span class="p">)</span>
+<span class="n">taptest</span> <span class="o">=</span> <span class="n">tap</span><span class="p">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">test-name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="lua-объект.tap.taptest">
+<em class="property">объект </em><code class="descclassname">tap.</code><code class="descname">taptest</code><a class="headerlink" href="#lua-объект.tap.taptest" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="method">
+<dt id="lua-функция.taptest.plan">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">plan</code><big>(</big><em>count</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.plan" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Indicate how many tests will be performed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>count</strong> (<em>number</em>) -- </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">nil</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.taptest.check">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">check</code><big>(</big><big>)</big><a class="headerlink" href="#lua-функция.taptest.check" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Checks the number of tests performed. This check should only be done
+after all planned tests are complete, so ordinarily <code class="docutils literal"><span class="pre">taptest:check()</span></code>
+will only appear at the end of a script.</p>
+<p>Will display <code class="docutils literal"><span class="pre">#</span> <span class="pre">bad</span> <span class="pre">plan:</span> <span class="pre">...</span></code> if the number of completed tests is not
+equal to the number of tests specified by <code class="docutils literal"><span class="pre">taptest:plan(...)</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">nil</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.taptest.diag">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">diag</code><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.diag" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Display a diagnostic message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>message</strong> (<em>string</em>) -- the message to be displayed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">nil</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.taptest.ok">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">ok</code><big>(</big><em>condition</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.ok" title="Ссылка на это определение">¶</a></dt>
+<dd><p>This is a basic function which is used by other functions. Depending
+on the value of <code class="docutils literal"><span class="pre">condition</span></code>, print 'ok' or 'not ok' along with
+debugging information. Displays the message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>condition</strong> (<em>boolean</em>) -- an expression which is true or false</li>
+<li><strong>test-name</strong> (<em>string</em>) -- name of test</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true or false.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">taptest</span><span class="p">:</span><span class="n">ok</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">x&#39;</span><span class="p">)</span>
+<span class="go">ok - x</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">tap</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tap&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">taptest</span> <span class="o">=</span> <span class="n">tap</span><span class="p">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">test-name&#39;</span><span class="p">)</span>
+<span class="go">TAP version 13</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">taptest</span><span class="p">:</span><span class="n">ok</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">X&#39;</span><span class="p">)</span>
+<span class="go">ok - X</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.taptest.fail">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">fail</code><big>(</big><em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.fail" title="Ссылка на это определение">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">taptest:fail('x')</span></code> is equivalent to <code class="docutils literal"><span class="pre">taptest:ok(false,</span> <span class="pre">'x')</span></code>.
+Displays the message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>test-name</strong> (<em>string</em>) -- name of test</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true or false.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.taptest.skip">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">skip</code><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.skip" title="Ссылка на это определение">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">taptest:skip('x')</span></code> is equivalent to
+<code class="docutils literal"><span class="pre">taptest:ok(true,</span> <span class="pre">'x'</span> <span class="pre">..</span> <span class="pre">'#</span> <span class="pre">skip')</span></code>.
+Displays the message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>test-name</strong> (<em>string</em>) -- name of test</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">nil</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">taptest</span><span class="p">:</span><span class="n">skip</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">message&#39;</span><span class="p">)</span>
+<span class="go">ok - message # skip</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.taptest.is">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">is</code><big>(</big><em>got</em>, <em>expected</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.is" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Check whether the first argument equals the second argument.
+Displays extensive message if the result is false.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>got</strong> (<em>number</em>) -- actual result</li>
+<li><strong>expected</strong> (<em>number</em>) -- expected result</li>
+<li><strong>test-name</strong> (<em>string</em>) -- name of test</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true or false.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.taptest.isnt">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">isnt</code><big>(</big><em>got</em>, <em>expected</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.isnt" title="Ссылка на это определение">¶</a></dt>
+<dd><p>This is the negation of <code class="docutils literal"><span class="pre">taptest:is(...)</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>got</strong> (<em>number</em>) -- actual result</li>
+<li><strong>expected</strong> (<em>number</em>) -- expected result</li>
+<li><strong>test-name</strong> (<em>string</em>) -- name of test</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true or false.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.taptest.isnil">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">isnil</code><big>(</big><em>value</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.isnil" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.taptest.isstring">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">isstring</code><big>(</big><em>value</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.isstring" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.taptest.isnumber">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">isnumber</code><big>(</big><em>value</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.isnumber" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.taptest.istable">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">istable</code><big>(</big><em>value</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.istable" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.taptest.isboolean">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">isboolean</code><big>(</big><em>value</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.isboolean" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.taptest.isudata">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">isudata</code><big>(</big><em>value</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.isudata" title="Ссылка на это определение">¶</a></dt>
+<dt id="lua-функция.taptest.iscdata">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">iscdata</code><big>(</big><em>value</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.iscdata" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Test whether a value has a particular type. Displays a long message if
+the value is not of the specified type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>lua-value</em>) -- </li>
+<li><strong>test-name</strong> (<em>string</em>) -- name of test</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true or false.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lua-функция.taptest.is_deeply">
+<em class="property"> </em><code class="descclassname">taptest:</code><code class="descname">is_deeply</code><big>(</big><em>got</em>, <em>expected</em>, <em>test-name</em><big>)</big><a class="headerlink" href="#lua-функция.taptest.is_deeply" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Recursive version of <code class="docutils literal"><span class="pre">taptest:is(...)</span></code>, which can be be used to
+compare tables as well as scalar values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body"><p class="first">true or false.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first">boolean</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>got</strong> (<em>lua-value</em>) -- actual result</li>
+<li><strong>expected</strong> (<em>lua-value</em>) -- expected result</li>
+<li><strong>test-name</strong> (<em>string</em>) -- name of test</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Ссылка на этот заголовок">¶</a></h2>
+<p>To run this example: put the script in a file named ./tap.lua, then make
+tap.lua executable by saying <code class="docutils literal"><span class="pre">chmod</span> <span class="pre">a+x</span> <span class="pre">./tap.lua</span></code>, then execute using
+Tarantool as a script processor by saying ./tap.lua.</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/tarantool</span>
+<span class="kd">local</span> <span class="n">tap</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tap&#39;</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">tap</span><span class="p">.</span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my test name&quot;</span><span class="p">)</span>
+<span class="n">test</span><span class="p">:</span><span class="n">plan</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">test</span><span class="p">:</span><span class="n">ok</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">2 * 2 is 4&quot;</span><span class="p">)</span>
+<span class="n">test</span><span class="p">:</span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">some subtests for test2&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">:</span><span class="n">plan</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">:</span><span class="n">is</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">2 + 2 is 4&quot;</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">:</span><span class="n">isnt</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">2 + 3 is not 4&quot;</span><span class="p">)</span>
+<span class="k">end</span><span class="p">)</span>
+<span class="n">test</span><span class="p">:</span><span class="n">check</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The output from the above script will look approximately like this:</p>
+<div class="highlight-tap"><div class="highlight"><pre><span></span><span class="nn">TAP version 13</span>
+<span class="kd">1..2</span><span class="c"></span>
+<span class="kr">ok</span> - 2 * 2 is 4
+    # Some subtests for test2
+    1..2
+    ok - 2 + 2 is 4,
+    ok - 2 + 3 is not 4
+    # Some subtests for test2: end
+<span class="kr">ok</span> - some subtests for test2
+</pre></div>
+</div>
+</div>
+</div>
+
+
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="strict.html"
+           class="b-prev b-ellipsis"
+           title="Модуль &lt;cite&gt;strict&lt;/cite&gt;">Модуль <cite>strict</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../_sources/reference_lua/tap.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="tarantool.html"
+           class="b-next b-ellipsis"
+           title="Модуль &lt;cite&gt;tarantool&lt;/cite&gt;">Модуль <cite>tarantool</cite></a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+    <!-- FOOTER > -->
+    <footer class="b-footer">
+      <div class="b-footer-wrapper">
+        <nav class="b-footer_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
+        
+      </li>
+    
+      <li class="b-menu-item">
+        
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+        
+      </li>
+    
+  </ul>
+
+          <div class="b-footer-other">
+            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  <!-- < FOOTER -->
+  </body>
+</html>
+
