@@ -326,6 +326,19 @@ sudo yum -y install tarantool
 </div>
       </li>
       <li class="b-download-list-item">
+        <a href="#" class="b-download-list-item-url">Snappy package</a>
+        <div class="b-download-list-item-drop"><p>You can install Tarantool 1.7.2 (Alpha) from a Snappy package:</p>
+<div class="highlight"><pre><span></span>$ snap install tarantool --channel<span class="o">=</span>edge
+</pre></div>
+<p>Snaps are universal Linux packages which can be installed across
+a range of Linux distributions.</p>
+<p>Snappy package manager is already pre-installed on Ubuntu Xenial and
+newer. For other distros, you may need to install <tt class="docutils literal">snapd</tt>.
+See <a class="reference external" href="http://snapcraft.io/">http://snapcraft.io/</a> for detailed instructions.</p>
+Note: initialization scripts, <tt class="docutils literal">systemd</tt> units and <tt class="docutils literal">tarantoolctl</tt>
+utility are not included in Snappy packages.</div>
+      </li>
+      <li class="b-download-list-item">
         <a href="#" class="b-download-list-item-url">OS X</a>
         <div class="b-download-list-item-drop"><p>You can install Tarantool using <tt class="docutils literal">homebrew</tt>:</p>
 <div class="highlight"><pre><span></span>$ brew install tarantool --HEAD

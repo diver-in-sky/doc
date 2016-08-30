@@ -2199,7 +2199,7 @@ than the number of fields in the primary key, then only the
 passed field-values are compared, so <code class="docutils literal"><span class="pre">select{1,2}</span></code> will match
 a tuple whose primary key is <code class="docutils literal"><span class="pre">{1,2,3}</span></code>.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">tuple</td>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">array of tuples</td>
 </tr>
 </tbody>
 </table>
@@ -3662,7 +3662,7 @@ tuple to start with in the list).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">the tuple or tuples that match the field values.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">tuple set as a Lua table</td>
+<tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">array of tuples</td>
 </tr>
 </tbody>
 </table>
@@ -7103,10 +7103,8 @@ initialization is complete, one can use <a class="reference internal" href="sing
 </div>
 <div class="section" id="configuration-parameters">
 <span id="index-snapshot-daemon"></span><span id="index-wal-mode"></span><span id="index-wal-dir"></span><span id="index-snap-dir"></span><span id="index-replication-source"></span><span id="index-slab-alloc-arena"></span><span id="index-replication-port"></span><span id="index-local-hot-standby"></span><h4><a class="toc-backref" href="#id4">5.4. Configuration parameters</a><a class="headerlink" href="#configuration-parameters" title="Permalink to this headline">¶</a></h4>
-<p>Configuration parameters have the form:</p>
-<pre class="highlight literal-block">
-box.cfg{ <em>key = value</em> [, <em>key = value</em> ...]]
-</pre>
+<p>Configuration parameters have the form: <br />
+<code class="extsamp docutils literal"><strong><span class="pre">box.cfg</span></strong><span class="pre">{[</span><em><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value</span></em> <span class="pre">[,</span> <em><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">...</span></em><span class="pre">]]}</span></code></p>
 <p>Since <code class="docutils literal"><span class="pre">box.cfg</span></code> may contain many configuration parameters and since some of the
 parameters (such as directory addresses) are semi-permanent, it's best to keep
 <code class="docutils literal"><span class="pre">box.cfg</span></code> in a Lua file. Typically this Lua file is the initialization file
