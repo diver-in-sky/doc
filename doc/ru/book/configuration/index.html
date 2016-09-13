@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -282,9 +283,9 @@ $ **tarantool** *файл-инициализации-на-lua* **[** *аргум
 </pre></div>
 </div>
 <p>В нашем примере:</p>
-<p>“Tarantool” -- это имя повторно используемой асинхронной сетевой программной среды.</p>
-<p>Номер версии составлен по стандартной схеме из 3 частей: <code class="docutils literal"><span class="pre">&lt;major&gt;-&lt;minor&gt;-&lt;patch&gt;</span></code>, где <code class="docutils literal"><span class="pre">&lt;major&gt;</span></code> изменяется очень редко, <code class="docutils literal"><span class="pre">&lt;minor&gt;</span></code> увеличивается на каждый milestone и свидетельствует о возможных несовместимостях с предыдущими версиями, а <code class="docutils literal"><span class="pre">&lt;patch&gt;</span></code> указывает количество релизов с доработками с момента текущего milestone'а. Для сборок, не предназначенных для релиза, здесь могут быть добавлены также номер и SHA1-код коммита, которые указывают, насколько сильно текущая сборка отличается от предыдущего релиза.</p>
-<p>“Target” -- это платформа, на которой была сделана данная сборка Tarantool'а. За этой строчкой может следовать информация для данной платформы.</p>
+<p>&quot;Tarantool&quot; — это имя асинхронной сетевой программной среды.</p>
+<p>Номер версии составлен по стандартной схеме из 3 частей: <code class="docutils literal"><span class="pre">&lt;major&gt;-&lt;minor&gt;-&lt;patch&gt;</span></code>, где <code class="docutils literal"><span class="pre">&lt;major&gt;</span></code> изменяется очень редко, <code class="docutils literal"><span class="pre">&lt;minor&gt;</span></code> увеличивается на каждый стабильный релиз (milestone) и свидетельствует о возможных несовместимостях с предыдущими версиями, а <code class="docutils literal"><span class="pre">&lt;patch&gt;</span></code> указывает количество релизов с доработками с момента текущего стабильного релиза (milestone'а). Для сборок, не предназначенных для релиза, здесь могут быть добавлены также номер и SHA1-код коммита, которые указывают, насколько сильно текущая сборка отличается от предыдущего релиза.</p>
+<p>&quot;Target&quot; — это платформа, на которой была сделана данная сборка Tarantool'а. За этой строчкой может следовать информация для данной платформы.</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
 <p class="last">Идентификатор версии (version id) в Tarantool'е получают с помощью команды <a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-describe.html">git describe</a>. По этому идентификатору можно в любой момент извлечь соответствующие исходные файлы из <a class="reference external" href="http://github.com/tarantool/tarantool.git">git-репозитория</a>.</p>
@@ -357,9 +358,8 @@ $ **tarantool** *файл-инициализации-на-lua* **[** *аргум
 </div>
 <div class="section" id="configuration-parameters">
 <span id="index-snapshot-daemon"></span><span id="index-wal-mode"></span><span id="index-wal-dir"></span><span id="index-snap-dir"></span><span id="index-replication-source"></span><span id="index-slab-alloc-arena"></span><span id="index-replication-port"></span><span id="index-local-hot-standby"></span><h2><a class="toc-backref" href="#id4">5.4. Параметры конфигурации</a><a class="headerlink" href="#configuration-parameters" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Configuration parameters have the form: <br />
-<code class="extsamp docutils literal"><strong><span class="pre">box.cfg</span></strong><span class="pre">{[</span><em><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value</span></em> <span class="pre">[,</span> <em><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">...</span></em><span class="pre">]]}</span></code></p>
-<p>Поскольку вызов <code class="docutils literal"><span class="pre">box.cfg</span></code> может содержать много параметров конфигурации, причем некоторые параметры (например, адреса директорий) могут со временем меняться, то имеет смысл хранить <code class="docutils literal"><span class="pre">box.cfg</span></code> в Lua-файле. Обычно это Lua-файл для инициализации, который указывается в командной строке при запуске Tarantool'а.</p>
+<p>Параметры конфигурации задаются следующим образом: <br /> <code class="extsamp docutils literal"><strong><span class="pre">box.cfg</span></strong><span class="pre">{[</span><em><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value</span></em> <span class="pre">[,</span> <em><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">...</span></em><span class="pre">]]}</span></code></p>
+<p>Поскольку вызов <code class="docutils literal"><span class="pre">box.cfg</span></code> может содержать много параметров конфигурации, причем некоторые параметры (например, адреса директорий) могут со временем меняться, то имеет смысл хранить <code class="docutils literal"><span class="pre">box.cfg</span></code> в отдельном Lua-файле. Обычно это Lua-файл для инициализации, который указывается в командной строке при запуске Tarantool'а.</p>
 <p>Большинство параметров конфигурации служат для настройки выделения ресурсов и открытия портов, а также для задания поведение базы данных. Все параметры являются необязательными. Некоторые параметры являются динамическими, т.е. их можно менять во время исполнения с помощью повторного вызова <code class="docutils literal"><span class="pre">box.cfg{}</span></code>.</p>
 <p>Для просмотра все не нулевых значений параметров, введите <code class="docutils literal"><span class="pre">box.cfg</span></code> (без фигурных скобок). Для просмотра значения определенного параметра, например адреса для прослушивания, введите <code class="docutils literal"><span class="pre">box.cfg.listen</span></code>.</p>
 <p>В следующих разделах описаны все параметры, которые служат для настройки основных операций, хранения, создания статических снимков данных, репликации, работы с сетевыми соединениями и журналирования.</p>
@@ -400,7 +400,7 @@ $ **tarantool** *файл-инициализации-на-lua* **[** *аргум
 <dt id="confval-listen">
 <code class="descname">listen</code><a class="headerlink" href="#confval-listen" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Номер порта для чтения/записи данных, либо <a class="reference internal" href="#index-uri"><span class="std std-ref">URI-строка</span></a> (URI = Universal Resource Identifier). Значения по умолчанию у данного параметра нет, поэтому он <strong>обязателен</strong>, если у клиентов должна быть возможность устанавливать соединение с Tarantool-сервером по портам, не являющимся <a class="reference internal" href="../administration.html#administration-admin-ports"><span class="std std-ref">“портами для администрирования”</span></a>. Соединения через <code class="samp docutils literal"><span class="pre">listen=</span><em><span class="pre">URI</span></em></code> иногда называют соединениями по &quot;бинарному протоколу&quot; или по &quot;главному порту&quot;.</p>
-<p>Стандартное значение -- это 3301. Порт для прослушивания можно задавать также для <a class="reference internal" href="#book-cfg-local-hot-standby"><span class="std std-ref">режима горячего резервирования</span></a>.</p>
+<p>Стандартное значение — это 3301. Порт для прослушивания можно задавать также для <a class="reference internal" href="#book-cfg-local-hot-standby"><span class="std std-ref">режима горячего резервирования</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
 <p class="last">Сервер-реплика принимает запросы на соединение на этом же порту. Реплика принимает только запросы на чтение, пока ей не будет назначена роль главного сервера.</p>
@@ -411,7 +411,7 @@ $ **tarantool** *файл-инициализации-на-lua* **[** *аргум
 <span class="target" id="cfg-basic-pid-file"></span><dl class="confval">
 <dt id="confval-pid_file">
 <code class="descname">pid_file</code><a class="headerlink" href="#confval-pid_file" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Сохранить идентификатор процесса в указанный файл. Путь можно указывать относительно рабочей директории (<a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>). Стандартное значение -- это “<code class="file docutils literal"><span class="pre">tarantool.pid</span></code>”.</p>
+<dd><p>Сохранить идентификатор процесса в указанный файл. Путь можно указывать относительно рабочей директории (<a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>). Стандартное значение — это “<code class="file docutils literal"><span class="pre">tarantool.pid</span></code>”.</p>
 <p>Тип значения: string <br /> По умолчанию: null <br /> Динамический: нет <br /></p>
 </dd></dl>
 
@@ -453,7 +453,7 @@ $ **tarantool** *файл-инициализации-на-lua* **[** *аргум
 <span class="target" id="cfg-basic-work-dir"></span><dl class="confval">
 <dt id="confval-work_dir">
 <code class="descname">work_dir</code><a class="headerlink" href="#confval-work_dir" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Директория для хранения рабочих файлов базы данных. После запуска сервер переключается на work_dir с помощью <em class="manpage">chdir(2)</em>. Путь можно указывать относительно текущей директории. Если этот параметр не задан, то по умолчанию используется текущая директория. Относительно work_dir можно указывать другие параметры. Например, если задать <br /> <span class="ccode">box.cfg{work_dir='/home/user/A',wal_dir='B',snap_dir='C'}</span> <br /> то .xlog-файлы будут храниться в директории /home/user/A/B, .snap-файлы -- в директории /home/user/A/C, а все прочие файлы и поддиректории -- в рабочей директории /home/user/A.</p>
+<dd><p>Директория для хранения рабочих файлов базы данных. После запуска сервер переключается на work_dir с помощью <em class="manpage">chdir(2)</em>. Путь можно указывать относительно текущей директории. Если этот параметр не задан, то по умолчанию используется текущая директория. Относительно work_dir можно указывать другие параметры. Например, если задать <br /> <span class="ccode">box.cfg{work_dir='/home/user/A',wal_dir='B',snap_dir='C'}</span> <br /> то .xlog-файлы будут храниться в директории /home/user/A/B, .snap-файлы — в директории /home/user/A/C, а все прочие файлы и поддиректории — в рабочей директории /home/user/A.</p>
 <p>Тип значения: string <br /> По умолчанию: null <br /> Динамический: нет <br /></p>
 </dd></dl>
 
@@ -463,28 +463,28 @@ $ **tarantool** *файл-инициализации-на-lua* **[** *аргум
 <span class="target" id="cfg-storage-slab-alloc-arena"></span><dl class="confval">
 <dt id="confval-slab_alloc_arena">
 <code class="descname">slab_alloc_arena</code><a class="headerlink" href="#confval-slab_alloc_arena" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Объем памяти (в гигабайтах), который Tarantool выделяет для хранения таплов. Когда этот объем памяти оказывается занят, Tarantool-сервер начинает выдавать ошибку <code class="xref std std-errcode docutils literal"><span class="pre">ER_MEMORY_ISSUE</span></code> на запросы INSERT и UPDATE. Данное ограничение относится только к хранению таплов: для хранения индексов и информации об установленных соединениях Tarantool-сервер использует дополнительную память. Таким образом, в зависимости от конкретной конфигурации и нагрузки, фактическое превышение расхода памяти у Tarantool-сервера может составлять до 20% от указанного здесь значения.</p>
+<dd><p>Объем памяти (в гигабайтах), который Tarantool выделяет для хранения кортежей. Когда этот объем памяти оказывается занят, Tarantool-сервер начинает выдавать ошибку <code class="xref std std-errcode docutils literal"><span class="pre">ER_MEMORY_ISSUE</span></code> на запросы INSERT и UPDATE. Данное ограничение относится только к хранению кортежей: для хранения индексов и информации об установленных соединениях Tarantool-сервер использует дополнительную память. Таким образом, в зависимости от конкретной конфигурации и нагрузки, фактическое превышение расхода памяти у Tarantool-сервера может составлять до 20% от указанного здесь значения.</p>
 <p>Тип значения: float <br /> По умолчанию: 1.0 <br /> Динамический: нет <br /></p>
 </dd></dl>
 
 <span class="target" id="cfg-storage-slab-alloc-factor"></span><dl class="confval">
 <dt id="confval-slab_alloc_factor">
 <code class="descname">slab_alloc_factor</code><a class="headerlink" href="#confval-slab_alloc_factor" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Данный параметр используется в качестве множителя при вычислении размера фрагментов памяти, выделяемых для хранения таплов. В некоторых случаях (в зависимости от общего объема памяти и разброса по размеру таплов) вы можете снизить объем выделенной памяти, задав меньшее значение множителя.</p>
+<dd><p>Данный параметр используется в качестве множителя при вычислении размера фрагментов памяти, выделяемых для хранения кортежей. В некоторых случаях (в зависимости от общего объема памяти и разброса по размеру кортежей) вы можете снизить объем выделенной памяти, задав меньшее значение множителя.</p>
 <p>Тип значения: float <br /> По умолчанию: 1.1 <br /> Динамический: нет <br /></p>
 </dd></dl>
 
 <span class="target" id="cfg-storage-slab-alloc-maximal"></span><dl class="confval">
 <dt id="confval-slab_alloc_maximal">
 <code class="descname">slab_alloc_maximal</code><a class="headerlink" href="#confval-slab_alloc_maximal" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Максимально возможный размер фрагмента памяти, выделяемого для одного тапла. Можно задать больший размер, если необходимо хранить таплы большого размера.</p>
+<dd><p>Максимально возможный размер фрагмента памяти, выделяемого для одного кортежа. Можно задать больший размер, если необходимо хранить кортежи большого размера.</p>
 <p>Тип значения: integer <br /> По умолчанию: 1048576 <br /> Динамический: нет <br /></p>
 </dd></dl>
 
 <span class="target" id="cfg-storage-slab-alloc-minimal"></span><dl class="confval">
 <dt id="confval-slab_alloc_minimal">
 <code class="descname">slab_alloc_minimal</code><a class="headerlink" href="#confval-slab_alloc_minimal" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Минимально возможный размер фрагмента памяти, выделяемого для одного тапла. Можно задать меньший размер, если большинство таплов в базе имеют очень маленький размер. Значение может лежать в интервале от 8 до 1048280 включительно.</p>
+<dd><p>Минимально возможный размер фрагмента памяти, выделяемого для одного кортежа. Можно задать меньший размер, если большинство кортежей в базе имеют очень маленький размер. Значение может лежать в интервале от 8 до 1048280 включительно.</p>
 <p>Тип значения: integer <br /> По умолчанию: 16 <br /> Динамический: нет <br /></p>
 </dd></dl>
 
@@ -522,7 +522,7 @@ vinyl = {
 <div class="section" id="snapshot-daemon">
 <span id="book-cfg-snapshot-daemon"></span><h3><a class="toc-backref" href="#id7">5.4.3. Фоновая программа для работы со снимками</a><a class="headerlink" href="#snapshot-daemon" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
-<div><p>Фоновая программа для работы со снимками (snapshot daemon) -- это постоянно запущенный файбер. Он может срабатывать через заданные промежутки времени, создавая новые файлы-снимки (.snap-файлы) и удаляя старые. При удалении файла-снимка удаляются также все WAL-файлы (.xlog), которые старше удаленного файла-снимка и содержат информацию, которая была в удаленном снимке.</p>
+<div><p>Фоновая программа для работы со снимками (snapshot daemon) — это постоянно запущенный файбер. Он может срабатывать через заданные промежутки времени, создавая новые файлы-снимки (.snap-файлы) и удаляя старые. При удалении файла-снимка удаляются также все WAL-файлы (.xlog), которые старше удаленного файла-снимка и содержат информацию, которая была в удаленном снимке.</p>
 <p>Параметры <a class="reference internal" href="#cfg-snapshot-daemon-snapshot-period"><span class="std std-ref">snapshot_period</span></a> и <a class="reference internal" href="#cfg-snapshot-daemon-snapshot-count"><span class="std std-ref">snapshot_count</span></a> указывают длину интервалов для срабатывания фоновой программы и количество сделанных файлов-снимков, после которого можно удалять самый старый снимок.</p>
 </div></blockquote>
 <span class="target" id="cfg-snapshot-daemon-snapshot-period"></span><dl class="confval">
@@ -615,8 +615,8 @@ vinyl = {
 <code class="descname">replication_source</code><a class="headerlink" href="#confval-replication_source" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Источник репликации. Если в параметре <cite>replication_source</cite> указана не пустая строка, то такой Tarantool-сервер считается <a class="reference internal" href="../replication/index.html#index-box-replication"><span class="std std-ref">репликой</span></a>. Сервер-реплика будет пытаться установить соединение с главным сервером, чей адрес указан в параметре <cite>replication_source</cite> в виде <a class="reference internal" href="#index-uri"><span class="std std-ref">URI</span></a> (Universal Resource Identifier), например <code class="samp docutils literal"><em><span class="pre">konstantin</span></em><span class="pre">:</span><em><span class="pre">secret_password</span></em><span class="pre">&#64;</span><em><span class="pre">tarantool.org</span></em><span class="pre">:</span><em><span class="pre">3301</span></em></code>.</p>
 <p>Если в кластере более одного источника репликации, то следует указать массив из URI, например <br /> <code class="samp docutils literal"><span class="pre">box.cfg{replication_source</span> <span class="pre">=</span> <span class="pre">{</span></code><span class="ccodei">uri#1,uri#2</span><span class="ccode">}}</span> <br /></p>
-<p>Если один из URI соответствует текущем серверу -- т.е. тому, на котором сейчас выполняется запрос <cite>box.cfg{}</cite>, -- то такой источник игнорируется. Таким образом, можно использовать одни и те же значения <cite>replication_source</cite> на многих серверах.</p>
-<p>Имя пользователя по умолчанию -- ‘guest’. Сервер-реплика не принимает запросы на изменение данных на порту для прослушивания (параметр <a class="reference internal" href="#cfg-basic-listen"><span class="std std-ref">listen</span></a>). Параметр <cite>replication_source</cite> является динамическим: чтобы перевести реплику в режим главного сервера, нужно только задать пустую строку в <cite>replication_source</cite> и выполнить запрос <code class="code docutils literal"><span class="pre">box.cfg{replication_source=</span></code><code class="samp docutils literal"><em><span class="pre">new-value</span></em></code><code class="code docutils literal"><span class="pre">}</span></code>.</p>
+<p>Если один из URI соответствует текущем серверу — т.е. тому, на котором сейчас выполняется запрос <cite>box.cfg{}</cite>, — то такой источник игнорируется. Таким образом, можно использовать одни и те же значения <cite>replication_source</cite> на многих серверах.</p>
+<p>Имя пользователя по умолчанию — ‘guest’. Сервер-реплика не принимает запросы на изменение данных на порту для прослушивания (параметр <a class="reference internal" href="#cfg-basic-listen"><span class="std std-ref">listen</span></a>). Параметр <cite>replication_source</cite> является динамическим: чтобы перевести реплику в режим главного сервера, нужно только задать пустую строку в <cite>replication_source</cite> и выполнить запрос <code class="code docutils literal"><span class="pre">box.cfg{replication_source=</span></code><code class="samp docutils literal"><em><span class="pre">new-value</span></em></code><code class="code docutils literal"><span class="pre">}</span></code>.</p>
 <p>Тип значения: string <br /> По умолчанию: null <br /> Динамический: <strong>yes</strong> <br /></p>
 </dd></dl>
 
@@ -636,7 +636,7 @@ vinyl = {
 <span class="target" id="cfg-networking-readahead"></span><dl class="confval">
 <dt id="confval-readahead">
 <code class="descname">readahead</code><a class="headerlink" href="#confval-readahead" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Размер буфера предварительного чтения на каждое клиентское соединение. Чем больше размер буфера, тем больше памяти будет потреблять каждое активное соединение и тем больше запросов можно будет зачитать из системного буфера за один системный вызов. Общее правило для определения оптимального размера буфера таково: буфер должен вмещать по крайней мере несколько десятков запросов. Поэтому, если средний размер тапла в запросе у вас большой, например несколько кило- или даже мегабайт, то размер буфера предварительного чтения следует увеличить. Если вы не используете пакетную обработку запросов, то лучше оставить размер буфера по умолчанию.</p>
+<dd><p>Размер буфера предварительного чтения на каждое клиентское соединение. Чем больше размер буфера, тем больше памяти будет потреблять каждое активное соединение и тем больше запросов можно будет зачитать из системного буфера за один системный вызов. Общее правило для определения оптимального размера буфера таково: буфер должен вмещать по крайней мере несколько десятков запросов. Поэтому, если средний размер кортежа в запросе у вас большой, например несколько кило- или даже мегабайт, то размер буфера предварительного чтения следует увеличить. Если вы не используете пакетную обработку запросов, то лучше оставить размер буфера по умолчанию.</p>
 <p>Тип значения: integer <br /> По умолчанию: 16320 <br /> Динамический: <strong>да</strong> <br /></p>
 </dd></dl>
 
@@ -685,7 +685,7 @@ vinyl = {
 <span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">syslog:identity=tarantool,facility=user&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Если значение параметра <code class="docutils literal"><span class="pre">logger</span></code> начинается с префикса &quot;syslog:&quot;, то дальнейшая строка интерпретируется как сообщение для программы <a class="reference external" href="http://www.rfc-base.org/txt/rfc-5424.txt">syslogd</a>, которая обычно запущена в фоновом режиме на любой Unix-платформе. В этой строке можно задать значения <code class="docutils literal"><span class="pre">identity</span></code>, <code class="docutils literal"><span class="pre">facility</span></code> или оба эти значения сразу. В качестве <code class="docutils literal"><span class="pre">identity</span></code> может быть задана любая строка (значение по умолчанию -- <code class="docutils literal"><span class="pre">tarantool</span></code>), которая будет использоваться как префикс перед всеми сообщениями в журнале. В качестве <code class="docutils literal"><span class="pre">facility</span></code> задается аббревиатура имени одного из типов ПО в программе <a class="reference external" href="https://en.wikipedia.org/wiki/Syslog">syslog</a> (значение по умолчанию -- <code class="docutils literal"><span class="pre">user</span></code>), которая указывает программе <code class="docutils literal"><span class="pre">syslogd</span></code>, куда/кому передавать сообщения.</p>
+<p>Если значение параметра <code class="docutils literal"><span class="pre">logger</span></code> начинается с префикса &quot;syslog:&quot;, то дальнейшая строка интерпретируется как сообщение для программы <a class="reference external" href="http://www.rfc-base.org/txt/rfc-5424.txt">syslogd</a>, которая обычно запущена в фоновом режиме на любой Unix-платформе. В этой строке можно задать значения <code class="docutils literal"><span class="pre">identity</span></code>, <code class="docutils literal"><span class="pre">facility</span></code> или оба эти значения сразу. В качестве <code class="docutils literal"><span class="pre">identity</span></code> может быть задана любая строка (значение по умолчанию — <code class="docutils literal"><span class="pre">tarantool</span></code>), которая будет использоваться как префикс перед всеми сообщениями в журнале. В качестве <code class="docutils literal"><span class="pre">facility</span></code> задается аббревиатура имени одного из типов ПО в программе <a class="reference external" href="https://en.wikipedia.org/wiki/Syslog">syslog</a> (значение по умолчанию — <code class="docutils literal"><span class="pre">user</span></code>), которая указывает программе <code class="docutils literal"><span class="pre">syslogd</span></code>, куда/кому передавать сообщения.</p>
 <p>Возможные значения <code class="docutils literal"><span class="pre">facility</span></code>: auth, authpriv, cron, daemon, ftp, kern, lpr, mail, news, security, syslog, user, uucp, local0, local1, local2, local3, local4, local5, local6, local7.</p>
 <p>На данный момент значение``facility`` игнорируется, но в будущем оно будет использоваться.</p>
 <p>При записи сообщений в файл Tarantool переоткрывает файл с журналом на каждый SIGHUP. Если журнал является программой, то ее pid-идентификатор сохраняется в переменной <a class="reference internal" href="../../reference_lua/log.html#log-logger-pid"><span class="std std-ref">log.logger_pid</span></a>. Для ротации журнала нужно послать сигнал программе с этим pid-идентификатором.</p>
@@ -754,7 +754,7 @@ kill -HUP <em>process_id</em>
 </pre></div>
 </div>
 <p>Это означает, что второй экземпляр готов заменить первый, если тот выйдет из строя.</p>
-<p>Режим горячего резервирования подразумевает, что на одном компьютере запущены два экземпляра Tarantool-сервера с одинаковой конфигурацией. Первый запущенный экземпляр является &quot;главным&quot; (primary), а второй -- &quot;резервным&quot; (standby). Резервный экземпляр при запуске попытается установить соединение на порту для прослушивания, но у него не получится это сделать, поскольку адрес уже занят главным экземпляром. Таким образом, резервный экземпляр повторяет в цикле следующие действия: зачитывает данные из WAL-файла, который обновляется главным экземпляром (и благодаря этому оба экземпляра всегда синхронизированы между собой) и пытается установить соединение на порту для прослушивания. Если по какой-либо причине главный сервер выходит из строя, то порт для прослушивания освобождается, резервный экземпляр устанавливает на нем соединение и становится главным. Таким образом, время недоступности в случае сбоя оказывается почти незаметным.</p>
+<p>Режим горячего резервирования подразумевает, что на одном компьютере запущены два экземпляра Tarantool-сервера с одинаковой конфигурацией. Первый запущенный экземпляр является &quot;главным&quot; (primary), а второй — &quot;резервным&quot; (standby). Резервный экземпляр при запуске попытается установить соединение на порту для прослушивания, но у него не получится это сделать, поскольку адрес уже занят главным экземпляром. Таким образом, резервный экземпляр повторяет в цикле следующие действия: зачитывает данные из WAL-файла, который обновляется главным экземпляром (и благодаря этому оба экземпляра всегда синхронизированы между собой) и пытается установить соединение на порту для прослушивания. Если по какой-либо причине главный сервер выходит из строя, то порт для прослушивания освобождается, резервный экземпляр устанавливает на нем соединение и становится главным. Таким образом, время недоступности в случае сбоя оказывается почти незаметным.</p>
 <p>При использовании горячего резервирования (значение параметра <code class="docutils literal"><span class="pre">local_hot_standby</span></code> равно &quot;true&quot;) значение параметра <code class="docutils literal"><span class="pre">wal_mode</span></code> не должно быть равно &quot;none&quot;.</p>
 </div>
 </div>
@@ -763,17 +763,9 @@ kill -HUP <em>process_id</em>
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/configuration/index";
         this.language = "ru"
     };

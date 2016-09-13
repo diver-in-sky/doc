@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>15. Приложение G. Список изменений для версии 1.7</title>
+    <title>15. Приложение G. Версионные изменения</title>
     <link rel="icon" type="image/png" sizes="192x192"
           href="/theme/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32"
@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -134,8 +135,8 @@
         
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
-      <h2 class="b-section-title b-ellipsis" title="15. Приложение G. Список изменений для версии 1.7">
-        15. Приложение G. Список изменений для версии 1.7
+      <h2 class="b-section-title b-ellipsis" title="15. Приложение G. Версионные изменения">
+        15. Приложение G. Версионные изменения
       </h2>
   <div class="b-doc-language_selector">
     <ul class="b-doc-language_selector-list">
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -226,43 +227,36 @@
       
       
       <li class="b-path-list-item">
-        <div title="15. Приложение G. Список изменений для версии 1.7" class="b-path_current b-ellipsis">
-          15. Приложение G. Список изменений для версии 1.7
+        <div title="15. Приложение G. Версионные изменения" class="b-path_current b-ellipsis">
+          15. Приложение G. Версионные изменения
         </div>
       </li>
       
     </ul>
   </div>
 
-  <div class="section" id="appendix-g-some-significant-changes-in-version-1-7">
-<h1>15. Приложение G. Список изменений для версии 1.7<a class="headerlink" href="#appendix-g-some-significant-changes-in-version-1-7" title="Ссылка на этот заголовок">¶</a></h1>
-<p>The disk-based storge engine, which was called &quot;sophia&quot; or &quot;phia&quot;
-in earlier versions, is superseded by the &quot;vinyl&quot; storage engine.</p>
-<p>There are new types for indexed fields.</p>
-<p>The LuaJIT version is updated.</p>
-<p>Automatic replication cluster bootstrap (to make it easier
-to configure a new replication cluster) is supported.</p>
-<p>The space_object:inc() function is removed.</p>
-<p>The space_object:dec() function is removed.</p>
-<p>Smaller feature changes and bug fixes can be seeen by looking
-at github.com closed <a class="reference external" href="https://github.com/tarantool/tarantool/milestones?state=closed">milestones</a>.</p>
+  <div class="section" id="appendix-g-version-specific-changes">
+<h1>15. Приложение G. Версионные изменения<a class="headerlink" href="#appendix-g-version-specific-changes" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Здесь собрана информация о существенных изменениях, которые произошли в конкретных версиях Tarantool'а.</p>
+<p>Более мелкие изменения и исправления дефектов указаны в отчетах о <a class="reference external" href="https://github.com/tarantool/tarantool/milestones?state=closed">выпущенных стабильных релизах (milestone = closed)</a> на GitHub.</p>
+<div class="section" id="changes-in-tarantool-version-1-7">
+<h2>15.1. Изменения в версии Tarantool 1.7<a class="headerlink" href="#changes-in-tarantool-version-1-7" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Дисковый движок, который в более ранних версиях Tarantool'а назывался <cite>sophia</cite> и <cite>phia</cite>, заменен новым движком под названием <cite>vinyl</cite>.</p>
+<p>Добавлены новые типы индексируемых полей.</p>
+<p>Обновлена версия LuaJIT.</p>
+<p>У кластера репликации появилась возможность самонастройки, что существенно упрощает настройку нового кластера.</p>
+<p>Функция <code class="docutils literal"><span class="pre">space_object:inc()</span></code> объявлена устаревшей.</p>
+<p>Функция <code class="docutils literal"><span class="pre">space_object:dec()</span></code> объявлена устаревшей.</p>
+</div>
 </div>
 
 
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/app/g_changes";
         this.language = "ru"
     };

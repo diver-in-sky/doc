@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -236,43 +237,45 @@
 
   <div class="section" id="modules">
 <span id="id1"></span><h1>8. Модули<a class="headerlink" href="#modules" title="Ссылка на этот заголовок">¶</a></h1>
-<div class="section" id="modules-luarocks-and-requiring-modules">
-<span id="modules-modules-luarocks-and-requiring-modules"></span><h2>8.1. Модули, Lua Rocks и модули, подключаемые с помощью require<a class="headerlink" href="#modules-luarocks-and-requiring-modules" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Возможности Tarantool'а можно расширять с помощью модулей. В языке Lua их называют &quot;rocks&quot;. Тем, кто не знаком с языком Lua, мы рекомендуем пройти краткий обучающий курс по Lua (<a class="reference external" href="http://lua-users.org/wiki/ModulesTutorial">Lua-Modules-Tutorial</a>) прежде, чем читать эту главу.</p>
-<p><strong>Install a module</strong></p>
-<p>The modules that come from Tarantool developers and community contributors are
-on <a class="reference external" href="http://rocks.tarantool.org">rocks.tarantool.org</a>. Some of them
--- <a class="reference internal" href="../reference_rock/expirationd.html#expirationd-module"><span class="std std-ref">expirationd</span></a>,
-<a class="reference internal" href="../reference_rock/dbms.html#dbms-modules-mysql-example"><span class="std std-ref">mysql</span></a>,
-<a class="reference internal" href="../reference_rock/dbms.html#dbms-modules-postgresql-example"><span class="std std-ref">postgresql</span></a>,
-<a class="reference internal" href="../reference_rock/shard.html#shard-module"><span class="std std-ref">shard</span></a> --
-are discussed elsewhere in this manual.</p>
-<p>Step 1: Install LuaRocks.
-A general description for installing LuaRocks on a Unix system is in
-the <a class="reference external" href="http://luarocks.org/#quick-start">LuaRocks-Quick-Start-Guide</a>.
-For example on Ubuntu one could say: <br />
-<span class="ccode">$</span> <span class="ccodeb">sudo apt-get install luarocks</span></p>
-<p>Step 2: Add the Tarantool repository to the list of rocks servers.
-This is done by putting rocks.tarantool.org in the .luarocks/config.lua file: <br />
-<span class="ccode">$</span> <span class="ccodeb">mkdir ~/.luarocks</span> <br />
-<span class="ccode">$</span> <span class="ccodeb">echo &quot;rocks_servers = {[[http://rocks.tarantool.org/]]}&quot; &gt;&gt; ~/.luarocks/config.lua</span> <br /></p>
-<p>Once these steps are complete, the repositories can be searched with <br />
-<span class="ccode">$</span> <span class="ccodeb">luarocks search</span> <span class="ccodei">module-name</span> <br />
-and new modules can be added to the local repository with <br />
-<span class="ccode">$</span> <span class="ccodeb">luarocks install</span> <span class="ccodei">module-name</span> <span class="ccode">--local</span> <br />
-and any module can be loaded for Tarantool with <br />
-<span class="ccode">tarantool&gt;</span> <span class="ccodei">local-name</span> <span class="ccode">=</span> <span class="ccodeb">require('</span><span class="ccodei">module-name</span><span class="ccode">')</span> <br />
-... and that is why the examples in the manual's Modules section often begin with <cite>require</cite> requests.
-See <a class="reference external" href="github.com/tarantool/rocks&lt;https://github.com/tarantool/rocks">rocks</a> on github.com/tarantool for more examples
-and information about contributing.</p>
+<p>Возможности Tarantool'а можно расширять с помощью модулей. В языке Lua их называют &quot;rocks&quot;. Если вы незнакомы с языком Lua, то мы рекомендуем пройти <a class="reference external" href="http://lua-users.org/wiki/ModulesTutorial">краткий обучающий курс по Lua</a>, прежде чем читать эту главу.</p>
+<div class="section" id="installing-an-existing-module">
+<h2>8.1. Установка существующего модуля<a class="headerlink" href="#installing-an-existing-module" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Модули, созданные командой Tarantool'а и членами сообщества разработчиков, выложены на <a class="reference external" href="http://rocks.tarantool.org">rocks.tarantool.org</a>. Про некоторые из этих модулей — <a class="reference internal" href="../reference_rock/expirationd.html#expirationd-module"><span class="std std-ref">expirationd</span></a>, <a class="reference internal" href="../reference_rock/dbms.html#dbms-modules-mysql-example"><span class="std std-ref">mysql</span></a>, <a class="reference internal" href="../reference_rock/dbms.html#dbms-modules-postgresql-example"><span class="std std-ref">postgresql</span></a>, <a class="reference internal" href="../reference_rock/shard.html#shard-module"><span class="std std-ref">shard</span></a> -- подробнее говорится в других разделах текущей документации.</p>
+<p><strong>Шаг 1:</strong> Установите LuaRocks. Общее описание того, как установить LuaRocks в Unix-системе, приводится в <a class="reference external" href="http://luarocks.org/#quick-start">кратком руководстве по LuaRocks</a>. Например, установить LuaRocks в Ubuntu можно следующей командой:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install luarocks
+</pre></div>
 </div>
-<div class="section" id="example-making-a-new-lua-module-locally">
-<h2>8.2. Пример: как создать у себя новый модуль на языке Lua<a class="headerlink" href="#example-making-a-new-lua-module-locally" title="Ссылка на этот заголовок">¶</a></h2>
-<p>In this example, create a new Lua file named <cite>mymodule.lua</cite>,
-containing a named function which will be exported.
-Then, in Tarantool: load, examine, and call.</p>
-<p>Lua-файл будет выглядеть следующим образом:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- mymodule - a simple Tarantool module</span>
+<p><strong>Шаг 2:</strong> Добавьте репозиторий Tarantool'а в список rocks-серверов. Для этого добавьте <a class="reference external" href="http://rocks.tarantool.org">rocks.tarantool.org</a> в файл <code class="file docutils literal"><span class="pre">.luarocks/config.lua</span></code>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> mkdir ~/.luarocks
+<span class="gp">$</span> <span class="nb">echo</span> <span class="s2">&quot;rocks_servers = {[[http://rocks.tarantool.org/]]}&quot;</span> &gt;&gt; ~/.luarocks/config.lua
+</pre></div>
+</div>
+<p>Теперь можно:</p>
+<ul>
+<li><p class="first">искать существующие модули в общем репозитории</p>
+<pre class="highlight literal-block">
+$ luarocks search <em>module-name</em>
+</pre>
+</li>
+<li><p class="first">добавлять новые модули в свой локальный репозиторий</p>
+<pre class="highlight literal-block">
+$ luarocks install <em>module-name</em> --local
+</pre>
+</li>
+<li><p class="first">загружать любой модуль для Tarantool'а с помощью <code class="docutils literal"><span class="pre">require</span></code></p>
+<pre class="highlight literal-block">
+tarantool&gt; <em>local-name</em> = require('<em>module-name</em>')
+</pre>
+</li>
+</ul>
+<p>(вот почему многие примеры в этой документации начинаются с вызова <code class="docutils literal"><span class="pre">require</span></code>.)</p>
+<p>Далее на странице <a class="reference external" href="https://github.com/tarantool/rocks">репозитория &quot;tarantool/rocks&quot; на GitHub</a> вы можете посмотреть примеры модулей и инструкции по добавлению собственных модулей в общий репозиторий.</p>
+</div>
+<div class="section" id="creating-a-new-lua-module-locally">
+<h2>8.2. Создание нового модуля на языке Lua<a class="headerlink" href="#creating-a-new-lua-module-locally" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Для примера создадим новый Lua-файл с именем <code class="file docutils literal"><span class="pre">mymodule.lua</span></code>, в котором опишем экспортируемую функцию с некоторым именем, а затем с помощью Tarantool'а загрузим и просмотрим наш новый модуль и вызовем описанную в нем функцию.</p>
+<p>Lua-файл в нашем примере будет таким:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- mymodule - простейший Lua-модуль для Tarantool&#39;а</span>
 <span class="kd">local</span> <span class="n">exports</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">exports</span><span class="p">.</span><span class="n">myfun</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">input_string</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Hello&#39;</span><span class="p">,</span> <span class="n">input_string</span><span class="p">)</span>
@@ -280,118 +283,134 @@ Then, in Tarantool: load, examine, and call.</p>
 <span class="k">return</span> <span class="n">exports</span>
 </pre></div>
 </div>
-<p>The requests to load and examine and call look like this: <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">mymodule = require('mymodule')</span> <br />
-<span class="ccode">&gt;---</span> <br />
-<span class="ccode">&gt;...</span> <br />
-<br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">mymodule</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">&gt;- myfun: 'function: 0x405edf20'</span> <br />
-<span class="ccode">&gt;...</span> <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">mymodule.myfun(os.getenv('USER'))</span> <br />
-<span class="ccode">Hello world</span> <br />
-<span class="ccode">&gt;---</span> <br />
-<span class="ccode">&gt;...</span></p>
+<p>Для загрузки и просмотра модуля, а также вызова описанной в нем функции, выполним следующие команды:</p>
+<pre class="highlight literal-block">
+tarantool&gt; <strong>mymodule = require('mymodule')</strong>
+---
+...
+
+tarantool&gt; <strong>mymodule</strong>
+---
+- myfun: 'function: 0x405edf20'
+...
+
+tarantool&gt; <strong>mymodule.myfun(os.getenv('USER'))</strong>
+Hello world
+---
+...
+</pre>
 </div>
-<div class="section" id="example-making-a-new-c-c-module-locally">
-<span id="modules-example-c"></span><h2>8.3. Пример: как создать у себя новый модуль на языке C/C++<a class="headerlink" href="#example-making-a-new-c-c-module-locally" title="Ссылка на этот заголовок">¶</a></h2>
-<p>In this example, create a new C file named <cite>mycmodule.c</cite>,
-containing a named function which will be exported.
-Then, in Tarantool: load, examine, and call.</p>
-<p>Prerequisite: install <cite>tarantool-dev</cite> first.</p>
-<p>C-файл будет выглядеть следующим образом:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>/* mycmodule - a simple Tarantool module */
-#include &lt;lua.h&gt;
-#include &lt;lauxlib.h&gt;
-#include &lt;lualib.h&gt;
-#include &lt;tarantool.h&gt;
-static int
-myfun(lua_State *L)
-{
-    if (lua_gettop(L) &lt; 1)
-        return luaL_error(L, &quot;Usage: myfun(name)&quot;);
+<div class="section" id="creating-a-new-c-c-module-locally">
+<span id="modules-example-c"></span><h2>8.3. Создание нового модуля на языке C/C++<a class="headerlink" href="#creating-a-new-c-c-module-locally" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Для примера создадим новый C-файл с именем <code class="file docutils literal"><span class="pre">mymodule.c</span></code>, в котором опишем экспортируемую функцию с некоторым именем, а затем с помощью Tarantool'а загрузим и просмотрим наш новый модуль и вызовем описанную в нем функцию.</p>
+<p>Обратите внимание, что для корректной работы требуется заранее установить модуль <code class="docutils literal"><span class="pre">tarantool-dev</span></code>.</p>
+<p>C-файл в нашем примере будет таким:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cm">/* mycmodule - простейший C-модуль для Tarantool&#39;а */</span>
+<span class="cp">#include</span> <span class="cpf">&lt;lua.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;lauxlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;lualib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;tarantool.h&gt;</span><span class="cp"></span>
+<span class="k">static</span> <span class="kt">int</span>
+<span class="nf">myfun</span><span class="p">(</span><span class="n">lua_State</span> <span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">lua_gettop</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">luaL_error</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&quot;Usage: myfun(name)&quot;</span><span class="p">);</span>
 
-    /* Get first argument */
-    const char *name = lua_tostring(L, 1);
+    <span class="cm">/* Get first argument */</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="n">lua_tostring</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-    /* Push one result to Lua stack */
-    lua_pushfstring(L, &quot;Hello, %s&quot;, name);
-    return 1; /* the function returns one result */
-}
+    <span class="cm">/* Push one result to Lua stack */</span>
+    <span class="n">lua_pushfstring</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&quot;Hello, %s&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="cm">/* the function returns one result */</span>
+<span class="p">}</span>
 
-LUA_API int
-luaopen_mycmodule(lua_State *L)
-{
-    static const struct luaL_reg reg[] = {
-        { &quot;myfun&quot;, myfun },
-        { NULL, NULL }
-    };
-    luaL_register(L, &quot;mycmodule&quot;, reg);
-    return 1;
-}
+<span class="n">LUA_API</span> <span class="kt">int</span>
+<span class="nf">luaopen_mycmodule</span><span class="p">(</span><span class="n">lua_State</span> <span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">luaL_reg</span> <span class="n">reg</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span> <span class="s">&quot;myfun&quot;</span><span class="p">,</span> <span class="n">myfun</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="n">luaL_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&quot;mycmodule&quot;</span><span class="p">,</span> <span class="n">reg</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Use <span class="ccode">gcc</span> to compile the code for a shared library (without a &quot;lib&quot; prefix),
-then use <span class="ccode">ls</span> to examine it: <br /></p>
-<p><span class="ccode">$</span> <span class="ccodeb">gcc mycmodule.c -shared -fPIC -I/usr/include/tarantool -o mycmodule.so</span> <br />
-<span class="ccode">$</span> <span class="ccodeb">ls mycmodule.so -l</span> <br />
-<span class="ccode">-rwxr-xr-x 1 roman roman 7272 Jun  3 16:51 mycmodule.so</span></p>
-<p>Tarantool's developers recommend use of Tarantool's <a class="reference external" href="https://github.com/tarantool/http">CMake-scripts</a>
-which will handle some of the build steps automatically.</p>
-<p>The requests to load and examine and call look like this: <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">myсmodule = require('myсmodule')</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">...</span> <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">myсmodule</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">- myfun: 'function: 0x4100ec98'</span> <br />
-<span class="ccode">...</span> <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">mycmodule.myfun(os.getenv('USER'))</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">- Hello, world</span> <br />
-<span class="ccode">...</span> <br /></p>
-<p>One can also make modules with C++, provided that the code does not throw exceptions.</p>
-<p><strong>Tips for special situations</strong></p>
-<p>Lua caches all loaded modules in the <code class="code docutils literal"><span class="pre">package.loaded</span></code> table.
-To reload a module from disk, set its key to <cite>nil</cite>: <br />
-<span class="ccode">tarantool&gt;</span> <span class="ccodeb">package.loaded['</span><span class="ccodei">modulename</span><span class="ccodeb">'] = nil</span></p>
-<p>Use <code class="docutils literal"><span class="pre">package.path</span></code> to search for <code class="docutils literal"><span class="pre">.lua</span></code> modules, and use
-<code class="docutils literal"><span class="pre">package.cpath</span></code> to search for C binary modules. <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">package.path</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">- ./?.lua;./?/init.lua;/home/roman/.luarocks/share/lua/5.1/?.lua;/home/roman/.luarocks/share/lua/5.1/?/init.lua;/home/roman/.luarocks/share/lua/?.lua;/home/roman/.luarocks/share/lua/?/init.lua;/usr/share/tarantool/?.lua;/usr/share/tarantool/?/init.lua;./?.lua;/usr/local/share/luajit-2.0.3/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua</span> <br />
-<span class="ccode">...</span>
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">package.cpath</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">- ./?.so;/home/roman/.luarocks/lib/lua/5.1/?.so;/home/roman/.luarocks/lib/lua/?.so;/usr/lib/tarantool/?.so;./?.so;/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so</span> <br />
-<span class="ccode">...</span> <br />
-Substitute question-mark with <code class="code docutils literal"><span class="pre">modulename</span></code> when calling
-<code class="code docutils literal"><span class="pre">require('modulename')</span></code>.</p>
-<p>To see the internal state from within a Lua module, use <cite>state</cite>
-and create a local variable inside the scope of the file:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>-- mymodule
-local exports = {}
-local state = {}
-exports.myfun = function()
-    state.x = 42 -- use state
-end
-return exports
+<p>С помощью <strong class="program">gcc</strong> скомпилируем наш код в виде shared-библиотеки (без префикса &quot;lib&quot;), а затем просмотрим ее содержимое с помощью <strong class="program">ls</strong>:</p>
+<pre class="highlight literal-block">
+$ <strong>gcc mycmodule.c -shared -fPIC -I/usr/include/tarantool -o mycmodule.so</strong>
+$ <strong>ls mycmodule.so -l</strong>
+-rwxr-xr-x 1 roman roman 7272 Jun  3 16:51 mycmodule.so
+</pre>
+<p>Для автоматизации сборки рекомендуется использовать <a class="reference external" href="https://github.com/tarantool/modulekit">CMake-скрипты для Tarantool'а</a>.</p>
+<p>Для загрузки и просмотра модуля, а также вызова описанной в нем функции, выполним следующие команды:</p>
+<pre class="highlight literal-block">
+tarantool&gt; <strong>myсmodule = require('myсmodule')</strong>
+---
+...
+tarantool&gt; <strong>myсmodule</strong>
+---
+- myfun: 'function: 0x4100ec98'
+...
+tarantool&gt; <strong>mycmodule.myfun(os.getenv('USER'))</strong>
+---
+- Hello, world
+...
+</pre>
+<p>Вы можете аналогичным образом создавать модули на C++ при условии, что в их коде не будут выбрасываться исключения.</p>
+</div>
+<div class="section" id="creating-a-mixed-lua-c-module-locally">
+<h2>8.4. Создание нового модуля на смеси языков Lua/C<a class="headerlink" href="#creating-a-mixed-lua-c-module-locally" title="Ссылка на этот заголовок">¶</a></h2>
+<ol class="arabic simple">
+<li><p class="first">Создайте новый Lua-модуль и назовите его, например, <code class="docutils literal"><span class="pre">myfunmodule</span></code>.</p>
+</li>
+<li><p class="first">Создайте (вложенный) модуль на C и назовите его, например, <code class="docutils literal"><span class="pre">myfunmodule.internal</span></code>.</p>
+</li>
+<li><p class="first">Загрузите новый C-модуль из Lua-кода с помощью <code class="samp docutils literal"><span class="pre">require('myfunmodule.internal')</span></code>, а затем сделайте для него обертку или вызывайте его функции напрямую.</p>
+</li>
+</ol>
+<p>Примеры модулей на смеси языков Lua/C можно посмотреть в <a class="reference external" href="https://github.com/tarantool/http">репозитории &quot;tarantool/http&quot; на GitHub</a>.</p>
+</div>
+<div class="section" id="tips-for-special-situations">
+<h2>8.5. Примечания для особых случаев<a class="headerlink" href="#tips-for-special-situations" title="Ссылка на этот заголовок">¶</a></h2>
+<ul>
+<li><p class="first">В среде Lua все загруженные модули кешируются в таблице <code class="docutils literal"><span class="pre">package.loaded</span></code>. Чтобы перегрузить какой-либо модуль с диска, укажите для его ключа значение <cite>nil</cite>:</p>
+<pre class="highlight literal-block">
+tarantool&gt; package.loaded['<em>modulename</em>'] = nil
+</pre>
+</li>
+<li><p class="first">Для поиска <code class="file docutils literal"><span class="pre">.lua</span></code>-модулей используйте команду <code class="docutils literal"><span class="pre">package.path</span></code>, а для поиска бинарных модулей на C используйте команду <code class="docutils literal"><span class="pre">package.cpath</span></code>.</p>
+<pre class="highlight literal-block">
+tarantool&gt; <strong>package.path</strong>
+---
+- ./?.lua;./?/init.lua;/home/roman/.luarocks/share/lua/5.1/?.lua;/home/roma
+n/.luarocks/share/lua/5.1/?/init.lua;/home/roman/.luarocks/share/lua/?.lua;
+/home/roman/.luarocks/share/lua/?/init.lua;/usr/share/tarantool/?.lua;/usr/
+share/tarantool/?/init.lua;./?.lua;/usr/local/share/luajit-2.0.3/?.lua;/usr
+/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua
+...
+tarantool&gt; <strong>package.cpath</strong>
+---
+- ./?.so;/home/roman/.luarocks/lib/lua/5.1/?.so;/home/roman/.luarocks/lib/l
+ua/?.so;/usr/lib/tarantool/?.so;./?.so;/usr/local/lib/lua/5.1/?.so;/usr/loc
+al/lib/lua/5.1/loadall.so
+...
+</pre>
+<p>Знаки вопроса стоят вместо имени модуля, которое было указано ранее при вызове <code class="extsamp docutils literal"><span class="pre">require('</span><em><span class="pre">имя_модуля</span></em><span class="pre">')</span></code>.</p>
+</li>
+<li><p class="first">Для просмотра внутреннего состояния прямо изнутри Lua-модуля используйте <code class="samp docutils literal"><span class="pre">state</span></code> и соответствующую локальную переменную в рамках модуля:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- mymodule</span>
+<span class="kd">local</span> <span class="n">exports</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="kd">local</span> <span class="n">state</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">exports</span><span class="p">.</span><span class="n">myfun</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+    <span class="n">state</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span> <span class="c1">-- используем state</span>
+<span class="k">end</span>
+<span class="k">return</span> <span class="n">exports</span>
 </pre></div>
 </div>
-<p>Notice that the Lua examples use local variables.
-Use global variables with caution, since the module's users
-may be unaware of them.</p>
-<p>To see a sample Lua + C module, go to <a class="reference external" href="https://github.com/tarantool/http">http</a> on github.com/tarantool.</p>
-</div>
-<div class="section" id="mixed-lua-c-module">
-<h2>8.4. Модули на смеси языков Lua/C<a class="headerlink" href="#mixed-lua-c-module" title="Ссылка на этот заголовок">¶</a></h2>
-<ul class="simple">
-<li>Create a Lua module, say <cite>myfunmodule</cite>.</li>
-<li>Create C module and name it <cite>myfunmodule.internal</cite> or something like
-that (submodule).</li>
-<li>Load C module from Lua code using <cite>require('myfunmodule.internal')</cite> and then
-wrap or use it.</li>
+</li>
+<li><p class="first">Обратите внимание, что в текущей документации в примерах Lua-кода используются <em>локальные</em> переменные. Будьте аккуратны, если в своих модулях вы будете использовать <em>глобальные</em> переменные, поскольку пользователи ваших модулей могут не знать об этих переменных.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -400,17 +419,9 @@ wrap or use it.</li>
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/modules";
         this.language = "ru"
     };

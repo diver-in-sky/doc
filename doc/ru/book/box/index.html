@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -242,14 +243,14 @@
 <p>Если вы уже выполнили тестовое задание из раздела <a class="reference internal" href="../user_guide_getting_started.html#user-guide-getting-started-first-database"><span class="std std-ref">Первичный запуск Tarantool'а и создание базы данных</span></a> в предыдущей главе, то ваша база данных имеет следующий вид:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>+--------------------------------------------+
 |                                            |
-| СПЕЙС &#39;tester&#39;                             |
+| ПРОСТРАНСТВО &#39;tester&#39;                      |
 | +----------------------------------------+ |
 | |                                        | |
-| | НАБОР ТАПЛОВ &#39;tester&#39;                  | |
+| | НАБОР КОРТЕЖЕЙ &#39;tester&#39;                | |
 | | +-----------------------------------+  | |
-| | | Тапл: [ 1 ]                       |  | |
-| | | Тапл: [ 2, &#39;Music&#39; ]              |  | |
-| | | Тапл: [ 3, &#39;length&#39;, 93 ]         |  | |
+| | | Кортеж: [ 1 ]                     |  | |
+| | | Кортеж: [ 2, &#39;Music&#39; ]            |  | |
+| | | Кортеж: [ 3, &#39;length&#39;, 93 ]       |  | |
 | | +-----------------------------------+  | |
 | |                                        | |
 | | ИНДЕКС &#39;primary&#39;                       | |
@@ -264,24 +265,29 @@
 </pre></div>
 </div>
 <div class="section" id="space">
-<h3>3.1.1. Спейс<a class="headerlink" href="#space" title="Ссылка на этот заголовок">¶</a></h3>
-<p><em>Спейс</em> с именем 'tester' в нашем примере -- это контейнер.</p>
-<p>Когда Tarantool используется для хранения данных, то он создает по меньшей мере один спейс. В общем же случае спейсов может быть много. Каждый спейс имеет уникальное имя, заданное пользователем, а также уникальный числовой идентификатор, который может быть задан пользователем, но обычно назначается автоматически самим Tarantool'ом. Спейс всегда содержит один набор таплов и один или более индексов.</p>
+<h3>3.1.1. Пространство<a class="headerlink" href="#space" title="Ссылка на этот заголовок">¶</a></h3>
+<p><em>Пространство</em> с именем 'tester' в нашем примере — это контейнер.</p>
+<p>Когда Tarantool используется для хранения данных, то он создает по меньшей мере одно пространство (space). В общем же случае пространств может быть много. Каждое пространство имеет уникальное имя, заданное пользователем, а также уникальный числовой идентификатор, который тоже может быть задан пользователем, но обычно назначается автоматически самим Tarantool'ом. Пространство всегда содержит один набор кортежей и один или более индексов.</p>
 </div>
 <div class="section" id="tuple-set">
-<h3>3.1.2. Набор таплов<a class="headerlink" href="#tuple-set" title="Ссылка на этот заголовок">¶</a></h3>
-<p><em>Набор таплов</em> -- в нашем примере он назван 'tester' -- это группа таплов.</p>
-<p>Каждый спейс всегда содержит один набор таплов. Идентификатор набора таплов совпадает с именем самого спейса, в нашем примере -- <cite>tester</cite>.</p>
-<p>Тапл выполняет ту же роль, что &quot;строка&quot; или &quot;запись&quot;, а компоненты тапла (которые мы называем &quot;поля&quot;) выполняют ту же роль, что &quot;поле столбца, соответствующее данной строке&quot; или &quot;поле в записи&quot; за тем исключением, что поля тапла могут быть составными (например, они могут быть массивами или отображениями) и им не нужны имена. Поэтому нет необходимости предварительно определять набор таплов при создании спейса, а каждый тапл может иметь различное количество элементов. Таплы хранятся в виде <a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">MsgPack</a>-массивов.</p>
-<p>Тапл может иметь любое количество полей, и это могут быть поля разных типов. Идентификатором поля является его номер. Поля нумеруются, начиная с 1. Так, например, “1” может использоваться в некоторых контекстах для обозначения первого поля тапла.</p>
-<p>Когда Tarantool возвращает значение тапла, он берет строки в одинарные кавычки, отделяет поля с запятыми и заключает тапл в квадратные скобки. Например, <code class="docutils literal"><span class="pre">[</span> <span class="pre">3,</span> <span class="pre">'length',</span> <span class="pre">93</span> <span class="pre">]</span></code>.</p>
+<h3>3.1.2. Tuple set<a class="headerlink" href="#tuple-set" title="Ссылка на этот заголовок">¶</a></h3>
+<p><em>Набор кортежей</em> — в нашем примере он назван 'tester' — это группа кортежей.</p>
+<p>Каждое пространство всегда содержит один набор кортежей. Идентификатор набора кортежей совпадает с именем самого пространства, в нашем примере — <cite>tester</cite>.</p>
+<p>Кортеж (tuple) выполняет ту же роль, что &quot;строка&quot; или &quot;запись&quot;, а компоненты кортежа (его &quot;полЯ&quot;) выполняют ту же роль, что &quot;поле столбца, соответствующее данной строке&quot; или &quot;поле в записи&quot; за тем исключением, что поля кортежа могут быть составными (например, они могут быть массивами или отображениями) и им не нужны имена. Поэтому нет необходимости предварительно определять набор кортежей при создании пространства, а каждый кортеж может иметь различное количество элементов. Кортежи хранятся в виде <a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">MsgPack</a>-массивов.</p>
+<p>Кортеж может иметь любое количество полей, и это могут быть поля разных типов. Идентификатором поля является его номер. Поля нумеруются, начиная с 1. Так, например, “1” может использоваться в некоторых контекстах для обозначения первого поля кортежа.</p>
+<p>When Tarantool returns a tuple value, it surrounds strings with single quotes,
+separates fields with commas, and encloses the tuple inside square brackets.
+For example: <code class="docutils literal"><span class="pre">[3,</span> <span class="pre">'length',</span> <span class="pre">93]</span></code>.</p>
 </div>
 <div class="section" id="index">
 <span id="index-box-index"></span><h3>3.1.3. Индекс<a class="headerlink" href="#index" title="Ссылка на этот заголовок">¶</a></h3>
-<p><em>Индекс</em> -- в нашем примере он первичный -- это совокупность значений ключей и указателей.</p>
-<p>Чтобы набором таплов было можно пользоваться, в спейсе необходим по крайней мере один индекс. Вообще же индексов в спейсе может быть много. Как и в случае со спейсами, пользователь может -- и должен -- указать имя индекса, а Tarantool подставляет уникальный числовой идентификатор («идентификатор индекса»). В нашем примере всего один индекс с именем “primary”.</p>
-<p>Индекс может быть <em>составным</em>. Значение ключа в таком индексе составляется из значений двух или более полей тапла, причем они могут браться в любом порядке. Индекс может быть <em>уникальным</em>. В этом случае один и тот же ключ не может встречаться в индексе более одного раза. Также индекс может быть одного из следующих <em>четырех типов</em>: HASH (он самый быстрый и самый экономный в плане использования памяти, но он должен быть уникальным), TREE (он позволяет делать поиск по части ключа и получать отсортированные результаты), BITSET (он хорош для поиска с '=' и больших количеством AND-условий) или RTREE (для пространственных координат). Первый индекс называется “<em>первичным</em>” (primary) и должен быть уникальным. Все остальные индексы называются “вторичными” (secondary).</p>
-<p>Индекс может содержать идентификаторы полей тапла и типы данных для этих полей. Индексированные поля могут содержать данные следующих типов:</p>
+<p><em>Индекс</em> — в нашем примере он первичный — это совокупность значений ключей и указателей.</p>
+<p>In order for a tuple set to be useful, there must always be at least one index
+in a space. There can be many indexes. As with spaces, the user can and should
+specify the index name, and let Tarantool come up with a unique numeric identifier
+(the &quot;index id&quot;). In our example there is one index and its name is “primary”.</p>
+<p>Индекс может быть <em>составным</em>. Значение ключа в таком индексе составляется из значений двух или более полей кортежа, причем они могут браться в любом порядке. Индекс может быть <em>уникальным</em>. В этом случае один и тот же ключ не может встречаться в индексе более одного раза. Также индекс может быть одного из следующих <em>четырех типов</em>: HASH (он самый быстрый и самый экономный в плане использования памяти, но он должен быть уникальным), TREE (он позволяет делать поиск по части ключа и получать отсортированные результаты), BITSET (он хорош для поиска с '=' и больших количеством AND-условий) или RTREE (для пространственных координат). Первый индекс называется “<em>первичным</em>” (primary) и должен быть уникальным. Все остальные индексы называются “вторичными” (secondary).</p>
+<p>Индекс может содержать идентификаторы полей кортежа и типы данных для этих полей. Индексированные поля могут содержать данные следующих типов:</p>
 <ul class="simple">
 <li><p class="first"><code class="docutils literal"><span class="pre">unsigned</span></code> (беззнаковое целое число в диапазоне от 0 до 18,446,744,073,709,551,615)</p>
 </li>
@@ -300,8 +306,8 @@
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">hash&#39;</span><span class="p">,</span> <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">unsigned&#39;</span><span class="p">}})</span>
 </pre></div>
 </div>
-<p>В результате у всех таплов в спейсе <cite>tester</cite> должно быть поле с номером 1, содержащее беззнаковое целое число.</p>
-<p>Определения спейсов и индексов хранятся в системных спейсах. Можно (с некоторыми ограничениями) на ходу добавлять, удалять и менять эти определения. Правила синтаксиса в определениях спейсов и индексов даны в разделе <a class="reference internal" href="#index-box-library"><span class="std std-ref">Библиотека &quot;box&quot;</span></a>.</p>
+<p>В результате у всех кортежей в пространстве <cite>tester</cite> должно быть поле с номером 1, содержащее беззнаковое целое число.</p>
+<p>Определения пространств и индексов хранятся в системных пространствах. Можно (с некоторыми ограничениями) на ходу добавлять, удалять и менять эти определения. Правила синтаксиса в определениях пространств и индексов даны в разделе <a class="reference internal" href="#index-box-library"><span class="std std-ref">Библиотека &quot;box&quot;</span></a>.</p>
 </div>
 <div class="section" id="data-types">
 <h3>3.1.4. Типы данных<a class="headerlink" href="#data-types" title="Ссылка на этот заголовок">¶</a></h3>
@@ -357,51 +363,63 @@
 </tr>
 </tbody>
 </table>
-<p>В языке Lua тип <em>number</em> (число) -- это число с плавающей точкой двойной точности, но в Tarantool'е можно использовать как целые числа, так и числа с плавающей запятой. Tarantool по возможности сохраняет числовые значения в виде чисел с плавающей точкой, если числовое значение содержит десятичную запятую или если оно очень велико (более 100 триллионов = 1e14). Если в формате с плавающей точкой сохранить не удается, то Tarantool сохраняет такое значение в виде целого числа. Чтобы даже очень большие величины гарантированно обрабатывались как целые числа, используйте функцию <a class="reference internal" href="../../reference_lua/other.html#other-tonumber64"><span class="std std-ref">tonumber64</span></a>, либо приписывайте в конце суффикс LL (Long Long) или ULL (Unsigned Long Long). Вот примеры записи чисел в различных представлениях (обычном, экспоненциальном, с суффиксом ULL и с использованием функции tonumber64): <code class="docutils literal"><span class="pre">-55</span></code>, <code class="docutils literal"><span class="pre">-2.7e+20</span></code>, <code class="docutils literal"><span class="pre">100000000000000ULL</span></code>, <code class="docutils literal"><span class="pre">tonumber64('18446744073709551615')</span></code>.</p>
-<p>Для хранения данных в базе Tarantool использует формат MsgPack. Данные при хранении имеют переменную длину, поэтому для самого маленького числа потребуется только один байт, а самое большее число потребует девять байтов. Если поле имеет индекс 'unsigned', то оно может содержать только целые беззнаковые числа со значениями в диапазоне от 0 до 18,446,744,073,709,551,615.</p>
-<p>Тип <em>string</em> (строка) -- это последовательность байтов, имеющая переменную длину. Как правило, строки представлены в виде алфавитно-числовых символы, заключенных в одинарные кавычки.</p>
+<p>In Lua, a <em>number</em> is double-precision floating-point, but Tarantool allows both
+integer and floating-point values. Tarantool will try to store a number as
+floating-point if the value contains a decimal point or is very large (greater
+than 100 billion = 1e14), otherwise Tarantool will store it as an integer. To
+ensure that even very large numbers will be treated as integers, use the
+<a class="reference internal" href="../../reference_lua/other.html#other-tonumber64"><span class="std std-ref">tonumber64</span></a> function, or the <code class="docutils literal"><span class="pre">LL</span></code> (Long Long) suffix,
+or the <code class="docutils literal"><span class="pre">ULL</span></code> (Unsigned Long Long) suffix. Here are examples of numbers using
+regular notation, exponential notation, the ULL suffix, and the tonumber64
+function: <code class="docutils literal"><span class="pre">-55</span></code>, <code class="docutils literal"><span class="pre">-2.7e+20</span></code>, <code class="docutils literal"><span class="pre">100000000000000ULL</span></code>,
+<code class="docutils literal"><span class="pre">tonumber64('18446744073709551615')</span></code>.</p>
+<p>For database storage, Tarantool uses MsgPack rules. Storage is variable-length,
+so the smallest number requires only one byte but the largest number requires
+nine bytes. When a field has an 'unsigned' index, all values must be unsigned integers
+between 0 and 18,446,744,073,709,551,615.</p>
+<p>Тип <em>string</em> (строка) — это последовательность байтов, имеющая переменную длину. Как правило, строки представлены в виде алфавитно-числовых символы, заключенных в одинарные кавычки.</p>
 <p>Тип <em>boolean</em> (логический) может иметь только значения <code class="docutils literal"><span class="pre">true</span></code> или <code class="docutils literal"><span class="pre">false</span></code>.</p>
 <p>Тип <em>nil</em> (нулевой) может иметь только одно значение, также называемое <em>nil</em>, но часто отображаемое как <em>null</em>. Нулевое значение можно сравнивать со значениями любых типов с помощью операторов == (равен) или ~= (не равен), но никакие другие операции для нулевых значений не доступны. Нулевые значения также нельзя использовать в Lua-таблицах; вместо нулевого значения в таком случае можно указать <a class="reference internal" href="../../reference_lua/yaml.html#yaml-null"><span class="std std-ref">yaml.NULL</span></a>, либо <a class="reference internal" href="../../reference_lua/json.html#json-null"><span class="std std-ref">json.NULL</span></a>, либо <a class="reference internal" href="../../reference_lua/msgpack.html#msgpack-null"><span class="std std-ref">msgpack.NULL</span></a>.</p>
-<p>Тип <em>tuple</em> возвращается в формате YAML, например <code class="docutils literal"><span class="pre">-</span> <span class="pre">[120,</span> <span class="pre">'a',</span> <span class="pre">'b',</span> <span class="pre">'c']</span></code>. Некоторые функции могут возвращать таблицы с несколькими таплами. Скалярная величина может быть конвертирована в тапл с 1 полем. Lua-таблица может содержать все типы полей, разрешенные для таплов, кроме нулевого типа (nil).</p>
+<p>Тип <em>tuple</em> возвращается в формате YAML, например <code class="docutils literal"><span class="pre">-</span> <span class="pre">[120,</span> <span class="pre">'a',</span> <span class="pre">'b',</span> <span class="pre">'c']</span></code>. Некоторые функции могут возвращать таблицы с несколькими кортежами. Скалярная величина может быть конвертирована в кортеж с 1 полем. Lua-таблица может содержать все типы полей, допустимые для кортежей, кроме нулевого типа (nil).</p>
 <p>Некоторые из этих типов данных подходят для <a class="reference internal" href="box_space.html#details-about-index-field-types"><span class="std std-ref">индексируемых полей</span></a>.</p>
-<p>См. также примеры таплов в разделе про пакет <a class="reference internal" href="box_tuple.html#box-tuple"><span class="std std-ref">box.tuple</span></a>.</p>
+<p>См. также примеры кортежей в разделе про модуль <a class="reference internal" href="box_tuple.html#box-tuple"><span class="std std-ref">box.tuple</span></a>.</p>
 </div>
 <div class="section" id="operations">
 <h3>3.1.5. Операции<a class="headerlink" href="#operations" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Основные операции -- это пять операций для изменения данных (INSERT, UPDATE, UPSERT, DELETE, REPLACE) и одна операция для возвращения данных (SELECT). Также в Tarantool'е поддерживаются второстепенные операции типа PING, которые можно использовать только в рамках бинарного протокола. Кроме того, в Tarantool'е есть операции для <a class="reference internal" href="box_index.html#box-index-index-pairs"><span class="std std-ref">индекс-итераторов</span></a>, которые можно использовать только в коде на языке Lua. (Индекс-итераторы нужны для обхода индексов от одного ключа к другому и дают возможность пользоваться преимуществами разных типов индексов, например вычислять значение выражений логического типа при обходе BITSET-индексов или двигаться в порядке убывания значений при обходе TREE-индексов.)</p>
+<p>Основные операции — это пять операций для изменения данных (INSERT, UPDATE, UPSERT, DELETE, REPLACE) и одна операция для возвращения данных (SELECT). Также в Tarantool'е поддерживаются второстепенные операции типа PING, которые можно использовать только в рамках бинарного протокола. Кроме того, в Tarantool'е есть операции для <a class="reference internal" href="box_index.html#box-index-index-pairs"><span class="std std-ref">индекс-итераторов</span></a>, которые можно использовать только в коде на языке Lua. (Индекс-итераторы нужны для обхода индексов от одного ключа к другому и дают возможность пользоваться преимуществами разных типов индексов, например вычислять значение выражений логического типа при обходе BITSET-индексов или двигаться в порядке убывания значений при обходе TREE-индексов.)</p>
 <p>Шесть примеров основных операций:</p>
-<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="go">-- Добавляем новый тапл в набор таплов с именем tester.</span>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="go">-- Добавляем новый кортеж в набор кортежей с именем tester.</span>
 <span class="go">-- Первое поле, field[1], будет равно 999 (тип = unsigned).</span>
 <span class="go">-- Второе поле, field[2], будет равно &#39;Taranto&#39; (тип = string).</span>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">999</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Taranto&#39;</span><span class="p">}</span>
 
-<span class="go">-- Обновляем тапл, меняем значение поля field[2].</span>
+<span class="go">-- Обновляем кортеж, меняем значение поля field[2].</span>
 <span class="go">-- Условие &quot;{999}&quot;, содержащее значение ключа, которое нужно</span>
 <span class="go">-- искать в первичном индексе, построенном по первому полю</span>
-<span class="go">-- тапла, является обязательным, поскольку запросам update()</span>
+<span class="go">-- кортежа, является обязательным, поскольку запросам update()</span>
 <span class="go">-- всегда требуется условие, определяющее значение первичного</span>
 <span class="go">-- ключа, в данном случае field[1].</span>
 <span class="go">-- Условие &quot;{{&#39;=&#39;, 2, &#39;Tarantino&#39;}}&quot; определяет, что полю field[2] нужно</span>
 <span class="go">-- присвоить новое значение.</span>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Tarantino&#39;</span><span class="p">}})</span>
 
-<span class="go">-- Выполняем операцию upsert() для тапла и снова меняем</span>
+<span class="go">-- Выполняем операцию upsert() для кортежа и снова меняем</span>
 <span class="go">-- значение поля field[2].</span>
 <span class="go">-- Синтаксис запроса upsert() аналогичен синтаксису update(),</span>
 <span class="go">-- но возвращаемые значения у этих запросов разные.</span>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">upsert</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Tarantism&#39;</span><span class="p">}})</span>
 
-<span class="go">-- Производим замену тапла с помощью replace(), добавляем новое поле.</span>
+<span class="go">-- Производим замену кортежа с помощью replace(), добавляем новое поле.</span>
 <span class="go">-- Это можно сделать и с помощью запроса update(),</span>
 <span class="go">-- но такой вариант часто оказывается более сложным.</span>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">replace</span><span class="p">{</span><span class="mi">999</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Tarantella&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Tarantula&#39;</span><span class="p">}</span>
 
-<span class="go">-- Возвращаем значение тапла.</span>
+<span class="go">-- Возвращаем значение кортежа.</span>
 <span class="go">-- Условие &quot;{999}&quot; все еще обязательно, хотя оно и не должно</span>
 <span class="go">-- содержать значение первичного ключа.</span>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">999</span><span class="p">}</span>
 
-<span class="go">-- Удаляем тапл.</span>
+<span class="go">-- Удаляем кортеж.</span>
 <span class="go">-- Условие, определяющее значение первичного ключа,</span>
 <span class="go">-- снова является обязательным.</span>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">delete</span><span class="p">{</span><span class="mi">999</span><span class="p">}</span>
@@ -416,33 +434,53 @@
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p class="first">Если запрос делается с удаленного клиента, то клиент разбирает введенное выражение, проверяет на корректность и переводит его в формат инструкций бинарного протокола, которые Tarantool-сервер сможет понять без повторного разбора. Затем клиент отправляет всё в виде пакета на сторону сервера.</p>
-</li>
-<li><p class="first">Поток, выполняющий обработку транзакций на стороне сервера, использует первичный индекс по полю field[1], чтобы найти нужный тапл в памяти. Он проверяет, что данный тапл можно обновить (мы хотим лишь изменить значение не индексированного поля, и вряд ли что-то пойдет не так в таком простом случае).</p>
-</li>
-<li><p class="first">Поток обработки транзакций посылает сообщение другому потоку, который занимается записью в WAL.</p>
-</li>
+<li>If this is happening on a remote client, then the client parses the statement
+and changes it to a binary-protocol instruction which has already been
+checked, and which the server can understand without needing to parse
+everything again. The client ships a packet to the server.</li>
+<li>The server's “transaction processor” thread uses the primary-key index on
+field[1] to find the location of the tuple in memory. It determines that the
+tuple can be updated (not much can go wrong when you're merely changing an
+unindexed field value to something shorter).</li>
+<li>The transaction processor thread sends a message to the write-ahead logging
+(WAL) thread.</li>
 </ol>
-<p>В этот момент происходит <em>передача управления</em> (yield). Чтобы понять важность этого события -- а оно действительно важно, -- нужно пояснить несколько фактов и ввести ряд новых терминов.</p>
+<p>At this point, a <em>yield</em> takes place. To know the significance of that -- and
+it's quite significant -- you have to know a few facts and a few new words.</p>
 <div class="fact admonition">
 <p class="first admonition-title">ФАКТ #1:</p>
-<p class="last">В Tarantool'е есть только один поток обработки транзакций. Многие люди уже привыкли к мысли, что потоков для обработки данных может быть много (например, поток #1 читает данные из строки #x, в то время как поток #2 записывает данные в столбец #y). В случае с Tarantool'ом такого не происходит. доступ к базе есть только у потока обработки транзакций, и на каждый экземпляр Tarantool'а есть только один такой поток.</p>
+<p class="last">There is only one transaction processor thread. Some people are used to the
+idea that there can be multiple threads operating on the database, with
+(say) thread #1 reading row #x while thread #2 writes row #y. With Tarantool
+no such thing ever happens. Only the transaction processor thread can access
+the database, and there is only one transaction processor thread for each
+instance of the server.</p>
 </div>
 <div class="fact admonition">
 <p class="first admonition-title">ФАКТ #2:</p>
-<p class="last">Поток обработки транзакций может управлять множеством <em>файберов</em>. Файбер -- это набор инструкций, среди которых могут быть и сигналы &quot;передать управление&quot;. Поток обработки транзакций выполняет инструкции, пока не увидит такой сигнал, и тогда он переключается на выполнение инструкций из другого файбера. Например, таким образом поток обработки транзакций сначала выполняет чтение данных из строки #x для файбера #1, а затем выполняет запись в строку #y для файбер #2.</p>
+<p class="last">The transaction processor thread can handle many <em>fibers</em>. A fiber is a set
+of computer instructions that may contain &quot;yield&quot; signals. The transaction
+processor thread will execute all computer instructions until a yield, then
+switch to execute the instructions of a different fiber. Thus (say) the
+thread reads row #x for the sake of fiber #1, then writes row #y for the sake
+of fiber #2.</p>
 </div>
 <div class="fact admonition" id="index-yields-must-happen">
 <p class="first admonition-title">ФАКТ #3:</p>
-<p class="last">Без передачи управления не обойтись, т.к. иначе поток обработки транзакций сможет выполнять инструкции только для одного файбера. Передача управления может осуществляться один их двух способов. Первый -- это <a class="reference internal" href="atomic.html#atomic-the-implicit-yield-rules"><span class="std std-ref">неявная передача</span></a>. Она делается при каждой операции, связанной с изменением данных, при каждом обращении к сетевому соединению, а также при каждом запросе, который передается через Tarantool-клиент. Второй способ передачи управления -- это явная передача. Ее можно -- и нужно -- вызывать внутри Lua-функций с помощью инструкции “yield”, чтобы не допустить захвата процессора одним файбером. Это называется <em>взаимная многозадачность</em>.</p>
+<p class="last">Yields must happen, otherwise the transaction processor thread would stick
+permanently on the same fiber. There are <a class="reference internal" href="atomic.html#atomic-the-implicit-yield-rules"><span class="std std-ref">implicit yields</span></a>:
+every data-change operation or network-access causes an implicit yield, and
+every statement that goes through the tarantool client causes an implicit
+yield. And there are explicit yields: in a Lua function one can and should
+add “yield” statements to prevent hogging. This is called <em>cooperative multitasking</em>.</p>
 </div>
-<p>Поскольку все операции, связанные с изменением данных, заканчиваются неявной передачей управления и неявным коммитом, и поскольку каждая такая операция может затрагивать не более одного тапла, то не возникает нужды в блокировках. Для примера рассмотрим следующую Lua-функцию, которая осуществляет три операции в Tarantool'е:</p>
+<p>Поскольку все операции, связанные с изменением данных, заканчиваются неявной передачей управления и неявным коммитом, и поскольку каждая такая операция может затрагивать не более одного кортежа, то не возникает нужды в блокировках. Для примера рассмотрим следующую Lua-функцию, которая осуществляет три операции в Tarantool'е:</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">999</span><span class="p">}</span>             <span class="c1">-- не происходит ни передачи управления, ни коммита</span>
 <span class="n">s</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="o">...</span><span class="p">},{{</span><span class="o">...</span><span class="p">}})</span>   <span class="c1">-- происходит и передача управления, и коммит</span>
 <span class="n">s</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">999</span><span class="p">}</span>             <span class="c1">-- не происходит ни передачи управления, ни коммита</span>
 </pre></div>
 </div>
-<p>Последовательность операций “SELECT + UPDATE” является атомарной транзакцией: функция сохраняет базу данных в согласованном виде, пока не отработает UPDATE. А в случае “UPDATE + SELECT” согласованности нет, поскольку после операции UPDATE поток обработки транзакций может переключится на другой файбер и удалить тот тапл, что был обновлен в рамках предыдущей операции UPDATE.</p>
+<p>Последовательность операций “SELECT + UPDATE” является атомарной транзакцией: функция сохраняет базу данных в согласованном виде, пока не отработает UPDATE. А в случае “UPDATE + SELECT” согласованности нет, поскольку после операции UPDATE поток обработки транзакций может переключится на другой файбер и удалить тот кортеж, что был обновлен в рамках предыдущей операции UPDATE.</p>
 <p>Примечание про движок: в движке vinyl передача управления происходит по-другому, см. раздел про <a class="reference internal" href="vinyl_diff.html#vinyl-diff"><span class="std std-ref">различия между движками memtx и vinyl</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
@@ -451,18 +489,18 @@
 </div>
 <p>Посколько блокировки не используются, а запись на диск производится только при работе с WAL-файлом, то транзакции в Tarantool'е обычно совершаются быстро. Кроме того, если мы имеем дело с мощным многоядерным процессором, то Tarantool-сервер может задействовать для работы не все потоки такого процессора, и продвинутые пользователи могут безболезненно запускать второй Tarantool-сервер на том же процессоре.</p>
 <p>См. также примеры с запросами в регрессионных тестах для Tarantool'а (<a class="reference external" href="https://github.com/tarantool/tarantool/tree/1.7/test/box">https://github.com/tarantool/tarantool/tree/1.7/test/box</a>). Полное описание грамматики поддерживаемых в Tarantool'е функций для манипулирования данными см. далее в этой главе.</p>
-<p>Не все операции в Tarantool'е можно выразить с помощью функций по манипулированию данными или с помощью языка Lua. Чтобы получить доступ ко всем возможностями манипулирования данными, вам понадобится <a class="reference internal" href="../connectors/index.html#index-box-connectors"><span class="std std-ref">коннектор для Perl, PHP, Python или другого языка программирования</span></a>. Клиент-серверный протокол для коннекторов является открытым. Документация доступна в виде аннотированных <a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">BNF-диаграмм</span></a>.</p>
+<p>Не все операции в Tarantool'е можно выразить с помощью функций по манипулированию данными или с помощью языка Lua. Чтобы получить доступ ко всем возможностями манипулирования данными, вам понадобится <a class="reference internal" href="../connectors/index.html#index-box-connectors"><span class="std std-ref">коннектор для Perl, PHP, Python или другого языка программирования</span></a>. Бинарный клиент-серверный протокол для коннекторов является открытым. Документация по нему доступна в виде аннотированных <a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">BNF-диаграмм</span></a>.</p>
 </div>
 <div class="section" id="saving-to-disk">
-<h3>3.1.6. Сохранение данных на диск<a class="headerlink" href="#saving-to-disk" title="Ссылка на этот заголовок">¶</a></h3>
+<h3>3.1.6. Saving to disk<a class="headerlink" href="#saving-to-disk" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Tarantool сохраняет данные и информацию об изменениях в нескольких WAL-файлах (write-ahead log). Записью в WAL занимается отдельный поток. Он ловит все запросы, которые могут привести к изменению данных в базе, например <code class="docutils literal"><span class="pre">box.schema.create</span></code> или <code class="docutils literal"><span class="pre">box.space.insert</span></code>. Как правило, запись о запросе, включая служебные поля и флаги, делается в WAL-файл немедленно. Это обеспечивает сохранность данных, поскольку, даже если данные из памяти утеряны вследствие перебоя в электроснабжении, Tarantool восстановит их автоматически при следующем старте: он загрузит данные из WAL-файлов, а затем применит все записанные в WAL-файлах запросы (это называется &quot;процесс восстановления&quot;). Пользователи могут менять частоту записи или вовсе отключать запись в WAL с помощью параметра <a class="reference internal" href="../configuration/index.html#cfg-binary-logging-snapshots-wal-mode"><span class="std std-ref">wal_mode</span></a>.</p>
-<p>Tarantool также сохраняет ряд файлов со статическими снимками данных (snapshots). Файл со снимком -- это дисковая копия всех данных в базе на какой-то момент. Вместо того, чтобы зачитывать все WAL-файлы, появившиеся с момента создания базы, Tarantool в процессе восстановления может загрузить самый свежий снимок и затем зачитать только те WAL-файлы, которые были сделаны с момента сохранения снимка. Снимки могут делаться автоматически, или же пользователи могут создавать их сами в любой момент с помощью запроса <a class="reference internal" href="admin.html#admin-snapshot"><span class="std std-ref">box.snapshot()</span></a>.</p>
+<p>Tarantool также сохраняет ряд файлов со статическими снимками данных (snapshots). Файл со снимком — это дисковая копия всех данных в базе на какой-то момент. Вместо того, чтобы зачитывать все WAL-файлы, появившиеся с момента создания базы, Tarantool в процессе восстановления может загрузить самый свежий снимок и затем зачитать только те WAL-файлы, которые были сделаны с момента сохранения снимка. Снимки могут делаться автоматически, или же пользователи могут создавать их сами в любой момент с помощью запроса <a class="reference internal" href="admin.html#admin-snapshot"><span class="std std-ref">box.snapshot()</span></a>.</p>
 <p>См. подробности о работе потока записи в WAL в разделе  <a class="reference internal" href="../app/b_internals.html#b-internals"><span class="std std-ref">Детали реализации</span></a>.</p>
 </div>
 <div class="section" id="data-manipulation">
 <h3>3.1.7. Манипулирование данными<a class="headerlink" href="#data-manipulation" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Основные запросы для <em>манипулирования данными</em> -- это <code class="docutils literal"><span class="pre">insert</span></code>, <code class="docutils literal"><span class="pre">replace</span></code>, <code class="docutils literal"><span class="pre">update</span></code>, <code class="docutils literal"><span class="pre">upsert</span></code>, <code class="docutils literal"><span class="pre">delete</span></code>, <code class="docutils literal"><span class="pre">select</span></code>. Все они реализованы в библиотеке <code class="docutils literal"><span class="pre">box</span></code>. Многие из этих запросов могут возвращать данные. Как правило, и вводимые, и возвращаемые значения являются Lua-таблицами.</p>
-<p>Lua-синтаксис в данных функциях может различаться. Далее приводятся варианты таких различий на примере SELECT-запросов. Аналогичные правила существуют и для остальных функций. В каждом из приведенных примеров выполняются следующие действия: производится выборка по набору таплов из спейса с именем 'tester', где значение поля, которое соответствует ключу в первичном индексе, равно 1. Также во всех примерах мы подразумеваем, что числовой идентификатор спейса 'tester' равен 512, но это верно только для нашей тестовой базы.</p>
+<p>Основные запросы для <em>манипулирования данными</em> — это <code class="docutils literal"><span class="pre">insert</span></code>, <code class="docutils literal"><span class="pre">replace</span></code>, <code class="docutils literal"><span class="pre">update</span></code>, <code class="docutils literal"><span class="pre">upsert</span></code>, <code class="docutils literal"><span class="pre">delete</span></code>, <code class="docutils literal"><span class="pre">select</span></code>. Все они реализованы в библиотеке <code class="docutils literal"><span class="pre">box</span></code>. Многие из этих запросов могут возвращать данные. Как правило, и вводимые, и возвращаемые значения являются Lua-таблицами.</p>
+<p>Lua-синтаксис в данных функциях может различаться. Далее приводятся варианты таких различий на примере SELECT-запросов. Аналогичные правила существуют и для остальных функций. В каждом из приведенных примеров выполняются следующие действия: производится выборка по набору кортежей из пространства с именем 'tester', где значение поля, которое соответствует ключу в первичном индексе, равно 1. Также во всех примерах мы подразумеваем, что числовой идентификатор пространства 'tester' равен 512, но это верно только для нашей тестовой базы.</p>
 <p id="index-object-reference">Во-первых, есть пять <em>способов ссылки на объект</em>:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="go">-- #1 имя_модуля . имя_вложенного_модуля . имя_объекта</span>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span>
@@ -479,7 +517,7 @@
 </pre></div>
 </div>
 <p>Для примеров в остальной части документации мы будем, как правило, использовать вариант синтаксиса #1, например &quot;<code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">tester</span></em><span class="pre">:</span></code>&quot;. Но вы можете с тем же успехом пользоваться любым из пяти описанных выше вариантов.</p>
-<p>Также мы в дальнейшем будем использовать синтаксис типа  &quot;<code class="code docutils literal"><span class="pre">space_object:</span></code>&quot; для ссылки на спейсы (как в приведенных выше примерах) и &quot;<code class="code docutils literal"><span class="pre">index_object:</span></code>&quot; для ссылки на индексы (например, <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">tester</span></em><span class="pre">.index.</span><em><span class="pre">primary</span></em><span class="pre">:</span></code>).</p>
+<p>Также мы в дальнейшем будем использовать синтаксис типа  &quot;<code class="code docutils literal"><span class="pre">space_object:</span></code>&quot; для ссылки на пространства (как в приведенных выше примерах) и &quot;<code class="code docutils literal"><span class="pre">index_object:</span></code>&quot; для ссылки на индексы (например, <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">tester</span></em><span class="pre">.index.</span><em><span class="pre">primary</span></em><span class="pre">:</span></code>).</p>
 <p>Во-вторых, есть семь <em>способов задания параметров</em>:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="go">-- #1</span>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span>
@@ -499,24 +537,24 @@
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Значение первичного ключа заключается в фигурные скобки. Если же этот первичный ключ является составным, то и значение будет составным, например <code class="docutils literal"><span class="pre">...select{1,2,3}</span></code>. Фигурные скобки в свою очередь могут заключаться в круглые скобки -- например, <code class="docutils literal"><span class="pre">...select({...})</span></code>. Это опциональный вариант синтаксиса, и он необходим только в том случае, если нужно передать что-то помимо первичного ключа, как в примере #5. Вместо значений-литералов -- например, 1 (скалярное значение) или {1} (Lua-таблица) -- можно использовать имена переменных, как в примерах #6 и #7. Хотя в некоторых случаях фигурные скобки можно опускать, мы рекомендуем всегда их использовать. Так вы явно обозначите, что значение имеет тип &quot;Lua-таблица&quot;. В примерах и описаниях в документации мы везде используем фигурные скобки, например &quot;{1}&quot;.  Но как и в случае со ссылками на объект, вы можете пользоваться любым допустимым вариантом синтаксиса.</p>
-<p>Все функции для манипулирования данными оперируют наборами таплов. Однако, поскольку первичные ключи всегда уникальны, количество таплов в таком наборе всегда равно 0 или 1. Единственным исключением является функция <code class="docutils literal"><span class="pre">box.space...select</span></code>, которая может брать на вход как первичный, так и вторичный ключ.</p>
+<p>Значение первичного ключа заключается в фигурные скобки. Если же этот первичный ключ является составным, то и значение будет составным, например <code class="docutils literal"><span class="pre">...select{1,2,3}</span></code>. Фигурные скобки в свою очередь могут заключаться в круглые скобки — например, <code class="docutils literal"><span class="pre">...select({...})</span></code>. Это опциональный вариант синтаксиса, и он необходим только в том случае, если нужно передать что-то помимо первичного ключа, как в примере #5. Вместо значений-литералов — например, 1 (скалярное значение) или {1} (Lua-таблица) — можно использовать имена переменных, как в примерах #6 и #7. Хотя в некоторых случаях фигурные скобки можно опускать, мы рекомендуем всегда их использовать. Так вы явно обозначите, что значение имеет тип &quot;Lua-таблица&quot;. В примерах и описаниях в документации мы везде используем фигурные скобки, например &quot;{1}&quot;.  Но как и в случае со ссылками на объект, вы можете пользоваться любым допустимым вариантом синтаксиса.</p>
+<p>Все функции для манипулирования данными оперируют наборами кортежей. Однако, поскольку первичные ключи всегда уникальны, количество кортежей в таком наборе всегда равно 0 или 1. Единственным исключением является функция <code class="docutils literal"><span class="pre">box.space...select</span></code>, которая может брать на вход как первичный, так и вторичный ключ.</p>
 </div>
 <div class="section" id="index-operations">
 <h3>3.1.8. Операции с индексами<a class="headerlink" href="#index-operations" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Операции с индексами производятся автоматически. Если запрос по манипулированию данными меняет данные в тапле, то меняются и ключи в индексе для данного тапла. Поэтому пользователю нужно знать только как и зачем задавать индексы.</p>
+<p>Операции с индексами производятся автоматически. Если запрос по манипулированию данными меняет данные в кортеже, то меняются и ключи в индексе для данного кортежа. Поэтому пользователю нужно знать только как и зачем задавать индексы.</p>
 <p>Простая операция для создания индекса, которую мы рассматривали ранее, имела следующий вид:</p>
-<div class="highlight highlight-default"><div class="highlight"><pre><span></span>:samp:`box.space.{имя-спейса}:create_index(&#39;{имя-индекса}&#39;)`
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span>:samp:`box.space.{имя-пространства}:create_index(&#39;{имя-индекса}&#39;)`
 </pre></div>
 </div>
-<p>По умолчанию, при этом создается TREE-индекс по первому полю (обычно его называют &quot;Field#1&quot;) для всех таплов в спейсе. Предполагается, что индексируемое поле является числовым.</p>
+<p>По умолчанию, при этом создается TREE-индекс по первому полю (обычно его называют &quot;Field#1&quot;) для всех кортежей в пространстве. Предполагается, что индексируемое поле является числовым.</p>
 <p>Также возможны следующие варианты:</p>
 <ol class="arabic">
 <li><p class="first">Индексируемое поле может быть строкой, а не числом.</p>
 <pre class="highlight literal-block">
 <code class="extsamp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:create_index('</span><em><span class="pre">index-name</span></em><span class="pre">',</span> <span class="pre">{parts</span> <span class="pre">=</span> <span class="pre">{1,</span> <span class="pre">'string'}})</span></code>
 </pre>
-<p>Обычный индекс, как правило, строится по полям одного из двух типов: 'NUM' = числовой (numeric) = любое неотрицательное целое число, либо 'STR' = строка (string) = любая последовательность байтов. Числа в индексе упорядочены по числовой прямой (например, число 2345 больше, чем число 500), а строки -- по коду первого байта, затем по коду второго, третьего и т.д. (и теперь строка '2345' будет меньше, чем строка '500').</p>
+<p>Обычный индекс, как правило, строится по полям одного из двух типов: 'NUM' = числовой (numeric) = любое неотрицательное целое число, либо 'STR' = строка (string) = любая последовательность байтов. Числа в индексе упорядочены по числовой прямой (например, число 2345 больше, чем число 500), а строки — по коду первого байта, затем по коду второго, третьего и т.д. (и теперь строка '2345' будет меньше, чем строка '500').</p>
 <p>Подробнее о других типах индексов см. в описании функции <a class="reference internal" href="box_space.html#box-space-create-index"><span class="std std-ref">create_index</span></a>.</p>
 </li>
 <li><p class="first">Индекс может строиться по нескольким полям.</p>
@@ -531,21 +569,21 @@
 <pre class="highlight literal-block">
 box.space.*space-name*:create_index('<em>index-name</em>', { unique = false })
 </pre>
-<p>Первичный индекс для тапла должен строиться по уникальным значениям полей, но остальные (вторичные) индексы могут строиться по неуникальным значениям.</p>
+<p>Первичный индекс для кортежа должен строиться по уникальным значениям полей, но остальные (вторичные) индексы могут строиться по неуникальным значениям.</p>
 </li>
 <li><p class="first">Индекс может представлять собой не только дерево.</p>
 <pre class="highlight literal-block">
 box.space.*space-name*:create_index('<em>index-name</em>', { type = 'hash' })
 </pre>
-<p>Чаще всего индекс -- это дерево (по умолчанию) или хеш (в этом случае индекс должен быть уникальным; в определенных случаях такой индекс занимает меньше места и поиск по нему работает быстрее). Третий тип индекса -- это набор битов (bitset); это неуникальный индекс, предназначенный для работы с различными бинарными значениями. Четвертый тип индекса -- это R-дерево; это тоже неуникальный индекс, предназначенный для работы с массивами, а не со строками или беззнаковыми числами.</p>
+<p>Чаще всего индекс — это дерево (по умолчанию) или хеш (в этом случае индекс должен быть уникальным; в определенных случаях такой индекс занимает меньше места и поиск по нему работает быстрее). Третий тип индекса — это набор битов (bitset); это неуникальный индекс, предназначенный для работы с различными бинарными значениями. Четвертый тип индекса — это R-дерево; это тоже неуникальный индекс, предназначенный для работы с массивами, а не со строками или беззнаковыми числами.</p>
 </li>
 </ol>
 <p>Наличие индексов никак не влияет на синтаксис запросов на изменение данных. А вот SELECT-запросы, благодаря индексам, становятся более разнообразными.</p>
 <p>Вот простой SELECT-запрос, который мы рассматривали ранее:</p>
-<div class="highlight highlight-default"><div class="highlight"><pre><span></span>:extsamp:`box.space.{*{имя-спейса}*}:select({*{значение}*})`
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span>:extsamp:`box.space.{*{имя-пространства}*}:select({*{значение}*})`
 </pre></div>
 </div>
-<p>По умолчанию, такой запрос ищет нужный тапл по значению в первом (первичном) индексе. Поскольку первичный индекс всегда уникален, то данный запрос вернет не более одного тапла.</p>
+<p>По умолчанию, такой запрос ищет нужный кортеж по значению в первом (первичном) индексе. Поскольку первичный индекс всегда уникален, то данный запрос вернет не более одного кортежа.</p>
 <p>Также возможны следующие варианты:</p>
 <ol class="arabic">
 <li><p class="first">Помимо условия равенства, при поиске могут использоваться и другие условия сравнения.</p>
@@ -553,7 +591,7 @@ box.space.*space-name*:create_index('<em>index-name</em>', { type = 'hash' })
 <code class="extsamp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:select(value,</span> <span class="pre">{iterator</span> <span class="pre">=</span> <span class="pre">'GT'})</span></code>
 </pre>
 <p>Можно использовать следующие операторы сравнения: LT (меньше), LE (меньше или равно), EQ (равно), REQ (неравно), GE (больше или равно), GT (больше). Сравнения имеют смысл только для индексов типа 'tree'.</p>
-<p>Этот вариант поиска может вернуть более одного тапла. В таком случае таплы будут отсортированы в порядке убывания по ключу (если использовался оператор LT, LE или REQ), либо в порядке возрастания (во всех остальных случаях).</p>
+<p>Этот вариант поиска может вернуть более одного кортежа. В таком случае кортежи будут отсортированы в порядке убывания по ключу (если использовался оператор LT, LE или REQ), либо в порядке возрастания (во всех остальных случаях).</p>
 </li>
 <li><p class="first">Поиск может производиться по вторичному индексу.</p>
 <pre class="highlight literal-block">
@@ -587,7 +625,7 @@ box.space.*space-name*:create_index('<em>index-name</em>', { type = 'hash' })
 <pre class="highlight literal-block">
 <code class="samp docutils literal"><span class="pre">box.space.</span><em><span class="pre">space-name</span></em><span class="pre">:select(1)</span></code>
 </pre>
-<p>Во втором случае Tarantool вернет два тапла: <code class="docutils literal"><span class="pre">{1,</span> <span class="pre">'A'}</span></code> и <code class="docutils literal"><span class="pre">{1,</span> <span class="pre">'B'}</span></code>. При необходимости можно задать даже нулевые поля, в результате чего Tarantool вернет все три тапла.</p>
+<p>Во втором случае Tarantool вернет два кортежа: <code class="docutils literal"><span class="pre">{1,</span> <span class="pre">'A'}</span></code> и <code class="docutils literal"><span class="pre">{1,</span> <span class="pre">'B'}</span></code>. При необходимости можно задать даже нулевые поля, в результате чего Tarantool вернет все три кортежа.</p>
 </li>
 </ol>
 <p><strong>Примеры:</strong></p>
@@ -640,7 +678,7 @@ box.space.*space-name*:create_index('<em>index-name</em>', { type = 'hash' })
 </div>
 <div class="section" id="submodules-of-the-box-library">
 <h2>3.2. Вложенные модули из библиотеки &quot;box&quot;<a class="headerlink" href="#submodules-of-the-box-library" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Содержимое библиотеки``box`` можно просматривать во время исполнения с помощью команды <code class="docutils literal"><span class="pre">box</span></code> (без аргументов). Библиотека <code class="docutils literal"><span class="pre">box</span></code> содержит следующие вложенные модули: <code class="docutils literal"><span class="pre">box.schema</span></code>, <code class="docutils literal"><span class="pre">box.tuple</span></code>, <code class="docutils literal"><span class="pre">box.space</span></code>, <code class="docutils literal"><span class="pre">box.index</span></code>, <code class="docutils literal"><span class="pre">box.cfg</span></code>, <code class="docutils literal"><span class="pre">box.info</span></code>, <code class="docutils literal"><span class="pre">box.slab</span></code>, <code class="docutils literal"><span class="pre">box.stat</span></code>. Каждый вложенный модуль содержит по крайней мере одну Lua-функцию, а некоторые вложенные модули также содержат поля-члены. Функции во вложенных модулях предназначены для определения данных (операции CREATE и DROP), манипулирования данными (INSERT DELETE UPDATE UPSERT SELECT REPLACE) и просмотра данных (просмотр содержимого спейсов и конфигурации сервера).</p>
+<p>Содержимое библиотеки``box`` можно просматривать во время исполнения с помощью команды <code class="docutils literal"><span class="pre">box</span></code> (без аргументов). Библиотека <code class="docutils literal"><span class="pre">box</span></code> содержит следующие вложенные модули: <code class="docutils literal"><span class="pre">box.schema</span></code>, <code class="docutils literal"><span class="pre">box.tuple</span></code>, <code class="docutils literal"><span class="pre">box.space</span></code>, <code class="docutils literal"><span class="pre">box.index</span></code>, <code class="docutils literal"><span class="pre">box.cfg</span></code>, <code class="docutils literal"><span class="pre">box.info</span></code>, <code class="docutils literal"><span class="pre">box.slab</span></code>, <code class="docutils literal"><span class="pre">box.stat</span></code>. Каждый вложенный модуль содержит по крайней мере одну Lua-функцию, а некоторые вложенные модули также содержат поля-члены. Функции во вложенных модулях предназначены для определения данных (операции CREATE и DROP), манипулирования данными (INSERT DELETE UPDATE UPSERT SELECT REPLACE) и просмотра данных (просмотр содержимого пространств и конфигурации сервера).</p>
 <div class="table container">
 <p><strong>Факторы, которые могут влиять на быстродействие функций для манипулирования данными из библиотеки box</strong></p>
 <table border="1" class="left-align-column-1 left-align-column-2 docutils">
@@ -651,22 +689,22 @@ box.space.*space-name*:create_index('<em>index-name</em>', { type = 'hash' })
 <tbody valign="top">
 <tr class="row-odd"><td><p class="first last">Размер индекса</p>
 </td>
-<td><p class="first last">Количество ключей в индексе равно количеству таплов в наборе данных. В случае с TREE-индексом: с ростом количества ключей увеличивается время поиска, хотя зависимость здесь, конечно же, не линейная. В случае с HASH-индексом: с ростом количества ключей увеличивается объем используемой памяти, но количество низкоуровневых шагов остается примерно тем же.</p>
+<td><p class="first last">Количество ключей в индексе равно количеству кортежей в наборе данных. В случае с TREE-индексом: с ростом количества ключей увеличивается время поиска, хотя зависимость здесь, конечно же, не линейная. В случае с HASH-индексом: с ростом количества ключей увеличивается объем используемой памяти, но количество низкоуровневых шагов остается примерно тем же.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p class="first last">Тип индекса</p>
 </td>
-<td><p class="first last">Как правило, поиск по HASH-индексу работает быстрее, чем по TREE-индексу, если в наборе есть более одного тапла.</p>
+<td><p class="first last">Как правило, поиск по HASH-индексу работает быстрее, чем по TREE-индексу, если в наборе есть более одного кортежа.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p class="first last">Количество обращений к индексам</p>
 </td>
-<td><p class="first last">Обычно для выборки значений одного тапла используется только один индекс. Но при обновлении значений в тапле требуется N обращений, если у набора таплов есть N индексов.</p>
+<td><p class="first last">Обычно для выборки значений одного кортежа используется только один индекс. Но при обновлении значений в кортеже требуется N обращений, если у набора кортежей есть N индексов.</p>
 </td>
 </tr>
-<tr class="row-even"><td><p class="first last">Количество обращений к таплам</p>
+<tr class="row-even"><td><p class="first last">Количество обращений к кортежам</p>
 </td>
-<td><p class="first last">Некоторые запросы, например SELECT, могут возвращать несколько таплов. Как правило, это наименее важный фактор из всех.</p>
+<td><p class="first last">Некоторые запросы, например SELECT, могут возвращать несколько кортежей. Как правило, это наименее важный фактор из всех.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p class="first last">Настройки WAL</p>
@@ -681,10 +719,10 @@ box.space.*space-name*:create_index('<em>index-name</em>', { type = 'hash' })
 </div>
 <div class="section" id="the-two-storage-engines-memtx-and-vinyl">
 <span id="index-two-storage-engines"></span><h2>3.3. Два движка базы данных: memtx и vinyl<a class="headerlink" href="#the-two-storage-engines-memtx-and-vinyl" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Движок для работы с данными -- это набор инструкций очень низкого уровня, которые задают логику хранения и доступа к значениям полей таплов. В Tarantool'е есть 2 движка: memtx (для работы с данными в памяти) и vinyl (для работы с данными на диске). Чтобы в конфигурации Tarantool'а указать движок vinyl, добавьте условие <code class="docutils literal"><span class="pre">engine</span> <span class="pre">=</span> <span class="pre">'vinyl'</span></code>. В текущей документации главный акцент сделан на использовании движка memtx, поскольку он используется по умолчанию и появился раньше vinyl'а. В то же время vinyl является полностью рабочим движком для работы с данными вида &quot;ключ-значение&quot;, и он подойдет тем, кто хочет хранить данные непосредственно на диске и таким образом уменьшить время восстановления и получить возможность работы с базой большего объема. Пояснения по архитектуре и результаты сравнительных тестов на быстродействие приведены в Приложении D: <a class="reference internal" href="../app/d_vinyl/index.html#index-vinyl"><span class="std std-ref">vinyl</span></a>. С другой стороны, в vinyl'е нет некоторых функций и опций, которые есть в memtx'е. Далее в документации для всех таких случаев даны примечания, начинающиеся со слов &quot;Примечание про движок: vinyl&quot;. А в конце данной главы приведен обзор всех <a class="reference internal" href="vinyl_diff.html#vinyl-diff"><span class="std std-ref">отличий между движками memtx и vinyl</span></a>.</p>
+<p>Движок для работы с данными — это набор инструкций очень низкого уровня, которые задают логику хранения и доступа к значениям полей кортежей. В Tarantool'е есть 2 движка: memtx (для работы с данными в памяти) и vinyl (для работы с данными на диске). Чтобы в конфигурации Tarantool'а указать движок vinyl, добавьте условие <code class="docutils literal"><span class="pre">engine</span> <span class="pre">=</span> <span class="pre">'vinyl'</span></code>. В текущей документации главный акцент сделан на использовании движка memtx, поскольку он используется по умолчанию и появился раньше vinyl'а. В то же время vinyl является полностью рабочим движком для работы с данными вида &quot;ключ-значение&quot;, и он подойдет тем, кто хочет хранить данные непосредственно на диске и таким образом уменьшить время восстановления и получить возможность работы с базой большего объема. Пояснения по архитектуре и результаты сравнительных тестов на быстродействие приведены в Приложении D: <a class="reference internal" href="../app/d_vinyl/index.html#index-vinyl"><span class="std std-ref">vinyl</span></a>. С другой стороны, в vinyl'е нет некоторых функций и опций, которые есть в memtx'е. Далее в документации для всех таких случаев даны примечания, начинающиеся со слов &quot;Примечание про движок: vinyl&quot;. А в конце данной главы приведен обзор всех <a class="reference internal" href="vinyl_diff.html#vinyl-diff"><span class="std std-ref">отличий между движками memtx и vinyl</span></a>.</p>
 </div>
 <div class="section" id="library-reference">
-<h2>3.4. Справочник по библиотекам<a class="headerlink" href="#library-reference" title="Ссылка на этот заголовок">¶</a></h2>
+<h2>3.4. Library reference<a class="headerlink" href="#library-reference" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="box_schema.html">3.4.1. Вложенный модуль <cite>box.schema</cite></a></li>
@@ -708,17 +746,9 @@ box.space.*space-name*:create_index('<em>index-name</em>', { type = 'hash' })
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/box/index";
         this.language = "ru"
     };

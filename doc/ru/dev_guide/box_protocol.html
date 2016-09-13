@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Протокол IProto</title>
+    <title>Бинарный протокол в Tarantool'е</title>
     <link rel="icon" type="image/png" sizes="192x192"
           href="/theme/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32"
@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -134,8 +135,8 @@
         
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
-      <h2 class="b-section-title b-ellipsis" title="Протокол IProto">
-        Протокол IProto
+      <h2 class="b-section-title b-ellipsis" title="Бинарный протокол в Tarantool'е">
+        Бинарный протокол в Tarantool'е
       </h2>
   <div class="b-doc-language_selector">
     <ul class="b-doc-language_selector-list">
@@ -191,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="building_documentation.html">Сборка документации</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer_guidelines.html">Соглашения по разработке</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation_guidelines.html">Соглашения по документации</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Протокол IProto</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Бинарный протокол в Tarantool'е</a></li>
 <li class="toctree-l2"><a class="reference internal" href="c_style_guide.html">Соглашения по разработке на языке C</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_style_guide.html">Соглашения по разработке на языке Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release_management.html">Работа с релизами</a></li>
@@ -220,18 +221,18 @@
       
       
       <li class="b-path-list-item">
-        <div title="Протокол IProto" class="b-path_current b-ellipsis">
-          Протокол IProto
+        <div title="Бинарный протокол в Tarantool'е" class="b-path_current b-ellipsis">
+          Бинарный протокол в Tarantool'е
         </div>
       </li>
       
     </ul>
   </div>
 
-  <div class="section" id="iproto-protocol">
-<span id="box-protocol-iproto-protocol"></span><h1>Протокол IProto<a class="headerlink" href="#iproto-protocol" title="Ссылка на этот заголовок">¶</a></h1>
+  <div class="section" id="tarantool-s-binary-protocol">
+<span id="box-protocol-iproto-protocol"></span><h1>Бинарный протокол в Tarantool'е<a class="headerlink" href="#tarantool-s-binary-protocol" title="Ссылка на этот заголовок">¶</a></h1>
 <div class="section" id="notion-in-diagrams">
-<h2>Диаграмма общей схемы данных<a class="headerlink" href="#notion-in-diagrams" title="Ссылка на этот заголовок">¶</a></h2>
+<h2>Обозначения на диаграммах<a class="headerlink" href="#notion-in-diagrams" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="highlight-none"><div class="highlight"><pre><span></span>0    X
 +----+
 |    | - X байт
@@ -251,21 +252,26 @@
 </div>
 <p>Типы данных из библиотеки MsgPack:</p>
 <ul class="simple">
-<li><p class="first"><strong>MP_INT</strong> - целое число</p>
+<li><p class="first"><strong>MP_INT</strong> - целое число (integer)</p>
 </li>
-<li><strong>MP_MAP</strong> - Map</li>
-<li><strong>MP_ARR</strong> - Array</li>
-<li><strong>MP_STRING</strong> - String</li>
-<li><strong>MP_FIXSTR</strong> - Fixed size string</li>
-<li><strong>MP_OBJECT</strong> - Any MsgPack object</li>
+<li><p class="first"><strong>MP_MAP</strong> - соответствие (map)</p>
+</li>
+<li><p class="first"><strong>MP_ARR</strong> - массив (array)</p>
+</li>
+<li><p class="first"><strong>MP_STRING</strong> - строка (string)</p>
+</li>
+<li><p class="first"><strong>MP_FIXSTR</strong> - строка фиксированной длины (fixed size string)</p>
+</li>
+<li><p class="first"><strong>MP_OBJECT</strong> - объект типа MsgPack (MsgPack object)</p>
+</li>
 </ul>
 </div>
 <div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Ссылка на этот заголовок">¶</a></h2>
-<p>IPROTO is a binary request/response protocol.</p>
+<h2>Общие сведения о протоколе<a class="headerlink" href="#overview" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Бинарный протокол в Tarantool'е -- это бинарный протокол для обмена запросами и ответами.</p>
 </div>
 <div class="section" id="greeting-packet">
-<h2>Greeting Packet<a class="headerlink" href="#greeting-packet" title="Ссылка на этот заголовок">¶</a></h2>
+<h2>Пакет-приветствие<a class="headerlink" href="#greeting-packet" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="highlight-none"><div class="highlight"><pre><span></span>TARANTOOL&#39;S GREETING:
 
 0                                     63
@@ -770,17 +776,9 @@ the following schema:</p>
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "dev_guide/box_protocol";
         this.language = "ru"
     };

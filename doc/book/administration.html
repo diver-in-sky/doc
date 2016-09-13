@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -195,7 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Appendix D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Appendix E. Cookbook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Appendix F. C tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Appendix G. Some significant changes in version 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Appendix G. Version-specific changes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Lua reference</a></li>
@@ -1036,40 +1037,38 @@ Linux distribution.</li>
 exports its functions for CALL.</p>
 <p>For example, <code class="file docutils literal"><span class="pre">/usr/share/tarantool/myapp.lua</span></code>:</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="k">function</span> <span class="nf">start</span><span class="p">()</span>
-<span class="c1">-- Initial version</span>
-<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.1.0&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">somedata&quot;</span><span class="p">)</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">primary&quot;</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="k">end</span>
+  <span class="c1">-- Initial version</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.1.0&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">somedata&quot;</span><span class="p">)</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">primary&quot;</span><span class="p">)</span>
+  <span class="o">...</span>
 
-<span class="c1">-- migration code from 1.0 to 1.1</span>
-<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.1&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="k">end</span>
+  <span class="c1">-- migration code from 1.0 to 1.1</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.1&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="o">...</span>
 
-<span class="c1">-- migration code from 1.1 to 1.2</span>
-<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.2&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">space</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">insert</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="o">...</span>
+  <span class="c1">-- migration code from 1.1 to 1.2</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.2&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">space</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">insert</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="o">...</span>
 <span class="k">end</span>
 
 <span class="c1">-- start some background fibers if you need</span>
 
 <span class="kd">local</span> <span class="k">function</span> <span class="nf">stop</span><span class="p">()</span>
-<span class="c1">-- stop all background fibers and cleanup resources</span>
+  <span class="c1">-- stop all background fibers and cleanup resources</span>
 <span class="k">end</span>
 
 <span class="kd">local</span> <span class="k">function</span> <span class="nf">api_for_call</span><span class="p">(</span><span class="n">xxx</span><span class="p">)</span>
-<span class="c1">-- do some business</span>
+  <span class="c1">-- do some business</span>
 <span class="k">end</span>
 
 <span class="k">return</span> <span class="p">{</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
-<span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="p">;</span>
-<span class="n">api_for_call</span> <span class="o">=</span> <span class="n">api_for_call</span><span class="p">;</span>
+  <span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+  <span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="p">;</span>
+  <span class="n">api_for_call</span> <span class="o">=</span> <span class="n">api_for_call</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1085,17 +1084,17 @@ If needed, you can split applications into standalone files and/or modules.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
 <span class="n">box</span><span class="p">.</span><span class="n">cfg</span> <span class="p">{</span>
-<span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">;</span>
+  <span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">if</span> <span class="n">myapp</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="k">then</span>
-<span class="c1">-- hot code reload using tarantoolctl or dofile()</span>
+  <span class="c1">-- hot code reload using tarantoolctl or dofile()</span>
 
-<span class="c1">-- unload old application</span>
-<span class="n">myapp</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
-<span class="c1">-- clear cache for loaded modules and dependencies</span>
-<span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">myapp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span>
-<span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">somedep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">;</span> <span class="c1">-- dependency of &#39;myapp&#39;</span>
+  <span class="c1">-- unload old application</span>
+  <span class="n">myapp</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
+  <span class="c1">-- clear cache for loaded modules and dependencies</span>
+  <span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">myapp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span>
+  <span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">somedep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">;</span> <span class="c1">-- dependency of &#39;myapp&#39;</span>
 <span class="k">end</span>
 
 <span class="c1">-- load a new version of app and all dependencies</span>
@@ -1199,17 +1198,9 @@ is shown.</p>
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/administration";
         this.language = "en"
     };

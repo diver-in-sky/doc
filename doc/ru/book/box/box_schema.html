@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -336,17 +337,6 @@ duplicate name</td>
 </tbody>
 </table>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
-<li><strong>space-id</strong> (<em>num</em>) -- the numeric identifier established by box.schema.space.create</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 <p>There are five <a class="reference internal" href="index.html#index-object-reference"><span class="std std-ref">syntax variations</span></a> for object references targeting
 space objects, for example <code class="samp docutils literal"><span class="pre">box.schema.space.drop(</span><em><span class="pre">space-id</span></em><span class="pre">)</span></code>
 will drop a space. However, the common approach is to use functions
@@ -370,6 +360,8 @@ attached to the space objects, for example
 <span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">space55&#39;</span><span class="p">,</span> <span class="p">{</span>
 <span class="gp">         &gt; </span>  <span class="n">if_not_exists</span> <span class="o">=</span> <span class="kc">true</span>
 <span class="gp">         &gt; </span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
 </pre></div>
 </div>
 <p>For an illustration with the <code class="docutils literal"><span class="pre">format</span></code> clause, see
@@ -399,7 +391,7 @@ and should not contain special characters</li>
 </tr>
 </tbody>
 </table>
-<p><strong>Example:</strong></p>
+<p><strong>Примеры:</strong></p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">)</span>
 <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">X&#39;</span><span class="p">})</span>
 <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">if_not_exists</span> <span class="o">=</span> <span class="kc">false</span><span class="p">})</span>
@@ -425,7 +417,7 @@ section <a class="reference internal" href="authentication.html#authentication-u
 </tr>
 </tbody>
 </table>
-<p><strong>Example:</strong></p>
+<p><strong>Примеры:</strong></p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">)</span>
 <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,{</span><span class="n">if_exists</span><span class="o">=</span><span class="kc">false</span><span class="p">})</span>
 </pre></div>
@@ -860,17 +852,9 @@ section <a class="reference internal" href="authentication.html#authentication-f
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/box/box_schema";
         this.language = "ru"
     };

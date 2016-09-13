@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -195,7 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Appendix D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Appendix E. Cookbook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Appendix F. C tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Appendix G. Some significant changes in version 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Appendix G. Version-specific changes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Lua reference</a></li>
@@ -255,11 +256,11 @@ Once again, the detailed instructions about each module in chapter 3 &quot;Datab
 can be regarded as reference material.</p>
 <p>Chapter 5 &quot;Configuration reference&quot; and Chapter 6 &quot;Server administration&quot;
 are primarily for administrators; however, every user should know something
-about how the server is configured, so the section about box.cfg is not skippable.
-Chapter 7 &quot;Connectors&quot; is strictly for users who are connecting from a different
+about how the server is configured, so the section about box.cfg is not skippable.</p>
+<p>Chapter 7 &quot;Connectors&quot; is strictly for users who are connecting from a different
 language such as C or Perl or Python -- other users will find no immediate need
-for this chapter.
-Chapter 8 &quot;Modules&quot; shows how to install modules (libraries)
+for this chapter.</p>
+<p>Chapter 8 &quot;Modules&quot; shows how to install modules (libraries)
 and how to create new ones in Lua or C.</p>
 <p>The first two Appendices, A and B, contain reference information about
 Tarantool's code errors, internal file formats and internal processes (recovery
@@ -272,6 +273,8 @@ who may not consider themselves experts at either Lua or NoSQL database manageme
 engine named <cite>vinyl</cite>.</p>
 <p>Appendix E &quot;Cookbook&quot; shows some code contributions for common or difficult tasks.</p>
 <p>Appendix F has one long tutorial: &quot;C stored procedures&quot;.</p>
+<p>Appendix G &quot;Version-specific changes&quot; summarizes significant changes introduced
+in newer Tarantool versions.</p>
 <p>For experienced users, there are also Reference documents plus a Developer Guide,
 and an extensive set of comments in the source code.</p>
 </div>
@@ -289,17 +292,9 @@ or in a Tarantool discussion group
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/intro";
         this.language = "en"
     };

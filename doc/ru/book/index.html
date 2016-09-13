@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -246,7 +247,7 @@
 <li class="toctree-l2"><a class="reference internal" href="box/index.html#document-data-model">3.1. Модель данных</a></li>
 <li class="toctree-l2"><a class="reference internal" href="box/index.html#submodules-of-the-box-library">3.2. Вложенные модули из библиотеки &quot;box&quot;</a></li>
 <li class="toctree-l2"><a class="reference internal" href="box/index.html#the-two-storage-engines-memtx-and-vinyl">3.3. Два движка базы данных: memtx и vinyl</a></li>
-<li class="toctree-l2"><a class="reference internal" href="box/index.html#library-reference">3.4. Справочник по библиотекам</a></li>
+<li class="toctree-l2"><a class="reference internal" href="box/index.html#library-reference">3.4. Library reference</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="replication/index.html">4. Репликация</a><ul>
@@ -286,8 +287,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="connectors/index.html">7. Коннекторы</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="connectors/index.html#protocol">7.1. Протокол</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connectors/index.html#packet-example">7.2. Пример пакета</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connectors/index.html#setting-up-the-server-for-connector-examples">7.3. Примеры настроек для различных коннекторов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectors/index.html#packet-example">7.2. Пример пакета данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectors/index.html#setting-up-the-server-for-connector-examples">7.3. Настройка окружения для примеров работы с коннекторами</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connectors/index.html#java">7.4. Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connectors/index.html#go">7.5. Go</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connectors/index.html#r">7.6. R</a></li>
@@ -299,10 +300,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">8. Модули</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#modules-luarocks-and-requiring-modules">8.1. Модули, Lua Rocks и модули, подключаемые с помощью require</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#example-making-a-new-lua-module-locally">8.2. Пример: как создать у себя новый модуль на языке Lua</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#example-making-a-new-c-c-module-locally">8.3. Пример: как создать у себя новый модуль на языке C/C++</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#mixed-lua-c-module">8.4. Модули на смеси языков Lua/C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#installing-an-existing-module">8.1. Установка существующего модуля</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#creating-a-new-lua-module-locally">8.2. Создание нового модуля на языке Lua</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#creating-a-new-c-c-module-locally">8.3. Создание нового модуля на языке C/C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#creating-a-mixed-lua-c-module-locally">8.4. Создание нового модуля на смеси языков Lua/C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#tips-for-special-situations">8.5. Примечания для особых случаев</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="app/a_errcodes.html">9. Приложение A. Коды ошибок</a></li>
@@ -314,8 +316,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="app/c_lua_tutorial.html">11. Приложение C. Учебные примеры на языке Lua</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="app/c_lua_tutorial.html#insert-one-million-tuples-with-a-lua-stored-procedure">11.1. Вставка 1 млн таплов с помощью хранимой процедуры на языке Lua</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/c_lua_tutorial.html#sum-a-json-field-for-all-tuples">11.2. Подсчет суммы по JSON-полям во всех таплах</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/c_lua_tutorial.html#insert-one-million-tuples-with-a-lua-stored-procedure">11.1. Вставка 1 млн кортежей с помощью хранимой процедуры на языке Lua</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/c_lua_tutorial.html#sum-a-json-field-for-all-tuples">11.2. Подсчет суммы по JSON-полям во всех кортежах</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/c_lua_tutorial.html#indexed-pattern-search">11.3. Индексированный поиск по шаблонам</a></li>
 </ul>
 </li>
@@ -329,7 +331,10 @@
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html#c-stored-procedures">14.1. Работа с хранимыми процедурами на языке C</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Версионные изменения</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html#changes-in-tarantool-version-1-7">15.1. Изменения в версии Tarantool 1.7</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -338,17 +343,9 @@
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/index";
         this.language = "ru"
     };

@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -265,11 +266,11 @@
 <p>Название процесса Tarantool-сервера состоит из следующих частей:</p>
 <p><code class="extsamp docutils literal"><strong><span class="pre">имя_программы</span></strong> <span class="pre">[</span><strong><span class="pre">имя_файла_инициализации</span></strong><span class="pre">]</span> <strong><span class="pre">&lt;имя_роли&gt;</span></strong> <span class="pre">[</span><strong><span class="pre">название_процесса</span></strong><span class="pre">]</span></code></p>
 <ul class="simple">
-<li><p class="first"><strong>имя_программы</strong> -- это, как правило, &quot;tarantool&quot;.</p>
+<li><p class="first"><strong>имя_программы</strong> — это, как правило, &quot;tarantool&quot;.</p>
 </li>
-<li><p class="first"><strong>имя_файла_инициализации</strong> -- это имя  <a class="reference internal" href="configuration/index.html#index-init-label"><span class="std std-ref">файла инициализации на Lua</span></a>, если этот файл был указан при запуске.</p>
+<li><p class="first"><strong>имя_файла_инициализации</strong> — это имя  <a class="reference internal" href="configuration/index.html#index-init-label"><span class="std std-ref">файла инициализации на Lua</span></a>, если этот файл был указан при запуске.</p>
 </li>
-<li><p class="first"><strong>имя_роли</strong> -- это может быть один из следующих вариантов:</p>
+<li><p class="first"><strong>имя_роли</strong> — это может быть один из следующих вариантов:</p>
 <ul>
 <li><p class="first">&quot;running&quot; (узел находится в режиме &quot;готов к принятию запросов&quot;),</p>
 </li>
@@ -283,7 +284,7 @@
 </li>
 </ul>
 </li>
-<li><p class="first"><strong>название_процесса</strong> -- это необязательное название Tarantool-процесса в системе, которое берется из конфигурационного параметра <a class="reference internal" href="configuration/index.html#cfg-basic-custom-proc-title"><span class="std std-ref">custom_proc_title</span></a>, если он указан.</p>
+<li><p class="first"><strong>название_процесса</strong> — это необязательное название Tarantool-процесса в системе, которое берется из конфигурационного параметра <a class="reference internal" href="configuration/index.html#cfg-basic-custom-proc-title"><span class="std std-ref">custom_proc_title</span></a>, если он указан.</p>
 </li>
 </ul>
 <p>Например:</p>
@@ -298,7 +299,7 @@
 <p>В этом разделе описаны синтаксические правила для ввода запросов в консоли Tarantool'а, с примечаниями и примерами. Другие клиентские программы могут иметь схожие параметры и синтаксис запросов. Некоторые сведения из этого раздела дублируются в главе <a class="reference internal" href="configuration/index.html#index-book-cfg"><span class="std std-ref">Справочник по конфигурированию</span></a>.</p>
 <div class="section" id="conventions-used-in-this-section">
 <h3>6.3.1. Условные обозначения, используемые в этом разделе<a class="headerlink" href="#conventions-used-in-this-section" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Токены -- это последовательности символов, которые рассматриваются как синтаксические единицы в рамках запроса. Квадратные скобки [ и ] используются для обозначения необязательных токенов. Три точки в строке ... означают, что предыдущие токены могут повторяться. Вертикальная черта | означает, что предыдущие и последующие токены являются взаимоисключающими альтернативами.</p>
+<p>Токены — это последовательности символов, которые рассматриваются как синтаксические единицы в рамках запроса. Квадратные скобки [ и ] используются для обозначения необязательных токенов. Три точки в строке ... означают, что предыдущие токены могут повторяться. Вертикальная черта | означает, что предыдущие и последующие токены являются взаимоисключающими альтернативами.</p>
 </div>
 <div class="section" id="options-when-starting-client-from-the-command-line">
 <h3>6.3.2. Параметры запуска клиента из командной строки<a class="headerlink" href="#options-when-starting-client-from-the-command-line" title="Ссылка на этот заголовок">¶</a></h3>
@@ -310,8 +311,8 @@ $ tarantool опции
 $ tarantool файл-инициализации-на-lua [ аргументы ]
 </pre></div>
 </div>
-<p><em>файл-инициализации-на-lua</em> -- это любой скрипт, содержащий логику инициализации. Код из этого файла выполняется при запуске Tarantool'а.  Например: <code class="samp docutils literal"><span class="pre">init.lua</span></code>. <br /> Примечания: При использовании скрипта, Tarantool не выводит приглашение командной строки. Скрипт должен содержать конфигурационные настройки, в т.ч. <code class="samp docutils literal"><span class="pre">box.cfg</span><em><span class="pre">...listen=...</span></em></code> или <code class="samp docutils literal"><span class="pre">box.listen(...)</span></code>, чтобы внешние программы могли установить соединение с Tarantool-сервером на одном из указанных портов.</p>
-<p><em>Опция</em> -- это одно из следующих значений (указаны в алфавитном порядке, по полному имени опции):</p>
+<p><em>файл-инициализации-на-lua</em> — это любой скрипт, содержащий логику инициализации. Код из этого файла выполняется при запуске Tarantool'а.  Например: <code class="samp docutils literal"><span class="pre">init.lua</span></code>. <br /> Примечания: При использовании скрипта, Tarantool не выводит приглашение командной строки. Скрипт должен содержать конфигурационные настройки, в т.ч. <code class="samp docutils literal"><span class="pre">box.cfg</span><em><span class="pre">...listen=...</span></em></code> или <code class="samp docutils literal"><span class="pre">box.listen(...)</span></code>, чтобы внешние программы могли установить соединение с Tarantool-сервером на одном из указанных портов.</p>
+<p><em>Опция</em> — это одно из следующих значений (указаны в алфавитном порядке, по полному имени опции):</p>
 <dl class="option">
 <dt id="cmdoption-tarantool-?">
 <span id="cmdoption-tarantool-h"></span><span id="cmdoption-tarantool--help"></span><code class="descname">-?</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-tarantool-?" title="Ссылка на это определение">¶</a></dt>
@@ -327,15 +328,15 @@ $ tarantool файл-инициализации-на-lua [ аргументы ]
 </div>
 <div class="section" id="tokens-requests-and-special-key-combinations">
 <h3>6.3.3. Токены, запросы и специальные комбинации клавиш<a class="headerlink" href="#tokens-requests-and-special-key-combinations" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Идентификатором процедуры может быть любая последовательность букв, цифр и/или подчеркиваний, которая отвечает правилам именования идентификаторов в Lua. Термин &quot;идентификаторы процедур&quot; также применяют к именам функций. <br /> Примечание: в случае с именами функций регистр имеет значение, поэтому <code class="docutils literal"><span class="pre">insert</span></code> и <code class="docutils literal"><span class="pre">Insert</span></code> -- это не одно и то же.</p>
+<p>Идентификатором процедуры может быть любая последовательность букв, цифр и/или подчеркиваний, которая отвечает правилам именования идентификаторов в Lua. Термин &quot;идентификаторы процедур&quot; также применяют к именам функций. <br /> Примечание: в случае с именами функций регистр имеет значение, поэтому <code class="docutils literal"><span class="pre">insert</span></code> и <code class="docutils literal"><span class="pre">Insert</span></code> — это не одно и то же.</p>
 <p>Строковым литералом может быть любая последовательность из нуля и более символов, которая заключена в <em>одинарные кавычки</em>. <em>Двойные кавычки</em> также допустимы, но предпочтительным вариантом являются одинарные кавычки. А <em>двойные квадратные скобки</em> нужны для многострочных литералов (см. <a class="reference external" href="http://www.lua.org/pil/2.4.html">документацию по языку Lua</a>). <br /> Например: 'Hello, world', 'A', [[A\B!]].</p>
 <p>Числовым литералом может быть любая последовательность символов, состоящая из одной и более цифр с необязательным знаком + или - в начале. В состав больших числовых литералов, а также числовых литералов с плавающей точкой может входить десятичный разделитель (запятая или точка), символы для экспоненциального представления и суффиксы. <br /> Например: 500, -500, 5e2, 500.1, 5LL, 5ULL.</p>
 <p>Однобайтовым символом может быть запятая, открывающая или закрывающая круглая скобка, а также арифметический оператор. <br /> Например: * , ( ).</p>
-<p>Токены должны разделяться одним или бОльшим количеством пробелов. Исключением являются однобайтовые токены и строковые литералы -- вокруг них пробелы не нужны.</p>
+<p>Токены должны разделяться одним или бОльшим количеством пробелов. Исключением являются однобайтовые токены и строковые литералы — вокруг них пробелы не нужны.</p>
 </div>
 <div class="section" id="requests">
 <span id="administration-setting-delimiter"></span><h3>6.3.4. Запросы<a class="headerlink" href="#requests" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Запросы вводятся после приглашения командной строки, когда Tarantool работает в интерактивном режиме. (Приглашение -- это слово tarantool и знак &quot;больше&quot;, вот так: <code class="samp docutils literal"><span class="pre">tarantool&gt;</span></code>). Маркером конца запроса по умолчанию является перевод строки.</p>
+<p>Запросы вводятся после приглашения командной строки, когда Tarantool работает в интерактивном режиме. (Приглашение — это слово tarantool и знак &quot;больше&quot;, вот так: <code class="samp docutils literal"><span class="pre">tarantool&gt;</span></code>). Маркером конца запроса по умолчанию является перевод строки.</p>
 <p>Для ввода многострочных запросов можно задать другой маркер конца запроса. Для этого введите команду следующего вида: <code class="samp docutils literal"><span class="pre">console</span> <span class="pre">=</span> <span class="pre">require('console');</span> <span class="pre">console.delimiter(</span><em><span class="pre">новый-маркер</span></em><span class="pre">)</span></code>. В качестве нового маркера укажите строковый литерал в одинарных кавычках. После этого вам нужно будет вводить указанный маркер в конце каждого запроса, потому что Tarantool перестанет интерпретировать перевод строки как конец запроса. Чтобы вернуться к обычному режиму, введите: <code class="samp docutils literal"><span class="pre">console.delimiter('')</span><em><span class="pre">string-literal</span></em></code>. Как правило, задавать свой маркер нет необходимости, поскольку Tarantool сам распознает, что запрос введен не полностью (скажем, когда Tarantool не встречает слова <code class="samp docutils literal"><span class="pre">end</span></code> в объявлении функции). Например:</p>
 <div class="highlight-lua_tarantool"><div class="highlight"><pre><span></span><span class="n">console</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">console&#39;</span><span class="p">);</span> <span class="n">console</span><span class="p">.</span><span class="n">delimiter</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">!&#39;</span><span class="p">)</span>
 <span class="k">function</span> <span class="nf">f</span> <span class="p">()</span>
@@ -381,7 +382,7 @@ $ tarantool файл-инициализации-на-lua [ аргументы ]
 </li>
 <li><p class="first">Вывод объекта в Tarantool'е всегда начинается со строки &quot;<code class="docutils literal"><span class="pre">---</span></code>&quot; и заканчивается строкой &quot;<code class="docutils literal"><span class="pre">...</span></code>&quot;.</p>
 </li>
-<li><p class="first">По запросу на вставку данных возвращается объект типа тапл (tuple), и в этом случае перед выводом будет стоять одиночное тире ('<code class="docutils literal"><span class="pre">-</span></code>'). А по запросу на выборку данных возвращается объект типа таблица таплов (table of tuples), и в этом случае перед выводом будут стоять два тире ('<code class="docutils literal"><span class="pre">-</span> <span class="pre">-</span></code>').</p>
+<li><p class="first">По запросу на вставку данных возвращается объект типа кортеж (tuple), и в этом случае перед выводом будет стоять одиночное тире ('<code class="docutils literal"><span class="pre">-</span></code>'). А по запросу на выборку данных возвращается объект типа таблица кортежей (table of tuples), и в этом случае перед выводом будут стоять два тире ('<code class="docutils literal"><span class="pre">-</span> <span class="pre">-</span></code>').</p>
 </li>
 </ul>
 </div>
@@ -557,8 +558,8 @@ $ tarantool файл-инициализации-на-lua [ аргументы ]
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">({</span><span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="n">iterator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">GE&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
-<p>... и увидим те несколько таплов, которые создало приложение <code class="docutils literal"><span class="pre">my_app</span></code>.</p>
-<p>Всё. Теперь остановим приложение <code class="docutils literal"><span class="pre">my_app</span></code>. Единственный корректный способ -- это использовать <strong class="program">tarantoolctl</strong>:</p>
+<p>... и увидим те несколько кортежей, которые создало приложение <code class="docutils literal"><span class="pre">my_app</span></code>.</p>
+<p>Всё. Теперь остановим приложение <code class="docutils literal"><span class="pre">my_app</span></code>. Единственный корректный способ — это использовать <strong class="program">tarantoolctl</strong>:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo tarantoolctl stop my_app
 </pre></div>
 </div>
@@ -581,13 +582,13 @@ tarantoolctl connect <em>URI</em>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> tarantoolctl connect username:password@127.0.0.1:3306
 </pre></div>
 </div>
-<p>Вместо <strong class="program">tarantoolctl connect</strong> вы можете использовать модули <a class="reference internal" href="../reference_lua/console.html#console-module"><span class="std std-ref">console</span></a> или <a class="reference internal" href="../reference_lua/net_box.html#net-box-module"><span class="std std-ref">net.box</span></a> из библиотеки Tarantool'а. Еще одна альтернатива -- это написать клиентскую программу под любой из существующих Tarantool-коннекторов. Но для большинства примеров в текущей документации мы используем <strong class="program">tarantoolctl connect</strong> или <a class="reference internal" href="#administration-using-tarantool-as-a-client"><span class="std std-ref">Tarantool-сервер в качестве клиента</span></a>.</p>
+<p>Вместо <strong class="program">tarantoolctl connect</strong> вы можете использовать модули <a class="reference internal" href="../reference_lua/console.html#console-module"><span class="std std-ref">console</span></a> или <a class="reference internal" href="../reference_lua/net_box.html#net-box-module"><span class="std std-ref">net.box</span></a> из библиотеки Tarantool'а. Еще одна альтернатива — это написать клиентскую программу под любой из существующих Tarantool-коннекторов. Но для большинства примеров в текущей документации мы используем <strong class="program">tarantoolctl connect</strong> или <a class="reference internal" href="#administration-using-tarantool-as-a-client"><span class="std std-ref">Tarantool-сервер в качестве клиента</span></a>.</p>
 <p>Всё, что написано о поведении <a class="reference internal" href="../reference_lua/console.html#console-connect"><span class="std std-ref">console.connect()</span></a>, в большинстве случаев верно и для <strong class="program">tarantoolctl connect</strong>. Например, <a class="reference internal" href="box/triggers.html#triggers-authentication-triggers"><span class="std std-ref">триггер аутентификации</span></a> активируется при каждом запуске и завершении программы <strong class="program">tarantoolctl connect</strong>.</p>
 </div>
 <div class="section" id="admin-ports">
 <span id="administration-admin-ports"></span><h2>6.6. Порты для администрирования<a class="headerlink" href="#admin-ports" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Термины &quot;порт для администрирования&quot;, &quot;консоль для администрирования&quot;, &quot;текстовый протокол&quot; относятся к установке соединения с помощью <a class="reference internal" href="../reference_lua/console.html#console-listen"><span class="std std-ref">console.listen(...)</span></a> для ввода запросов от администраторов.</p>
-<p>Термины &quot;бинарный порт&quot;, &quot;бинарный протокол&quot;, &quot;первичный порт&quot; относятся к другому виду соединения -- тому, что устанавливается с помощью параметра <a class="reference internal" href="configuration/index.html#cfg-basic-listen"><span class="std std-ref">box.cfg{listen=...}</span></a> и предназначено для ввода запросов от любых пользователей.</p>
+<p>Термины &quot;бинарный порт&quot;, &quot;бинарный протокол&quot;, &quot;первичный порт&quot; относятся к другому виду соединения — тому, что устанавливается с помощью параметра <a class="reference internal" href="configuration/index.html#cfg-basic-listen"><span class="std std-ref">box.cfg{listen=...}</span></a> и предназначено для ввода запросов от любых пользователей.</p>
 <p>Для обычных соединений с Tarantool-сервером должен использоваться бинарный протокол. А порты для администрирования нужны для особых случаев, когда повышены требования к безопасности.</p>
 <p>При установке соединение через порт для администрирования:</p>
 <ul class="simple">
@@ -888,40 +889,38 @@ tarantoolctl connect <em>URI</em>
 <p>Во-первых, вынесите всю бизнес-логику своего приложения в отдельный Tarantool-модуль на языке Lua так, чтобы все нужные функции были доступны для вызова извне (CALL).</p>
 <p>Вот пример такого модуля, файл <code class="file docutils literal"><span class="pre">/usr/share/tarantool/myapp.lua</span></code>:</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="k">function</span> <span class="nf">start</span><span class="p">()</span>
-<span class="c1">-- Первоначальная версия</span>
-<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.1.0&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">somedata&quot;</span><span class="p">)</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">primary&quot;</span><span class="p">)</span>
-<span class="o">...</span>
+  <span class="c1">-- Initial version</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.1.0&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">somedata&quot;</span><span class="p">)</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">primary&quot;</span><span class="p">)</span>
+  <span class="o">...</span>
+
+  <span class="c1">-- migration code from 1.0 to 1.1</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.1&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="o">...</span>
+
+  <span class="c1">-- migration code from 1.1 to 1.2</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.2&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">space</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">insert</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="o">...</span>
 <span class="k">end</span>
 
-<span class="c1">-- Код для миграции с 1.0 на 1.1</span>
-<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.1&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="k">end</span>
-
-<span class="c1">-- Код для миграции с 1.1 на 1.2</span>
-<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.2&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">space</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">insert</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="k">end</span>
-
-<span class="c1">-- Если нужно, запустить файберы в фоновом режиме</span>
+<span class="c1">-- start some background fibers if you need</span>
 
 <span class="kd">local</span> <span class="k">function</span> <span class="nf">stop</span><span class="p">()</span>
-<span class="c1">-- Остановить все фоновые файберы и освободить ресурсы</span>
+  <span class="c1">-- stop all background fibers and cleanup resources</span>
 <span class="k">end</span>
 
 <span class="kd">local</span> <span class="k">function</span> <span class="nf">api_for_call</span><span class="p">(</span><span class="n">xxx</span><span class="p">)</span>
-<span class="c1">-- Сделать что-то полезное</span>
+  <span class="c1">-- do some business</span>
 <span class="k">end</span>
 
 <span class="k">return</span> <span class="p">{</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
-<span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="p">;</span>
-<span class="n">api_for_call</span> <span class="o">=</span> <span class="n">api_for_call</span><span class="p">;</span>
+  <span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+  <span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="p">;</span>
+  <span class="n">api_for_call</span> <span class="o">=</span> <span class="n">api_for_call</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -931,20 +930,20 @@ tarantoolctl connect <em>URI</em>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
 <span class="n">box</span><span class="p">.</span><span class="n">cfg</span> <span class="p">{</span>
-<span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">;</span>
+  <span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">if</span> <span class="n">myapp</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="k">then</span>
-<span class="c1">-- &quot;Горячая&quot; загрузка кода с помощью tarantoolctl или dofile()</span>
+  <span class="c1">-- hot code reload using tarantoolctl or dofile()</span>
 
-<span class="c1">-- Выгрузка старого приложения</span>
-<span class="n">myapp</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
-<span class="c1">-- Очистка кеша от загруженных модулей и зависимостей</span>
-<span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">myapp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span>
-<span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">somedep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">;</span> <span class="c1">-- dependency of &#39;myapp&#39;</span>
+  <span class="c1">-- unload old application</span>
+  <span class="n">myapp</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
+  <span class="c1">-- clear cache for loaded modules and dependencies</span>
+  <span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">myapp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span>
+  <span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">somedep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">;</span> <span class="c1">-- dependency of &#39;myapp&#39;</span>
 <span class="k">end</span>
 
-<span class="c1">-- Загрузка новой версии приложения и всех зависимостей</span>
+<span class="c1">-- load a new version of app and all dependencies</span>
 <span class="n">myapp</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">myapp&#39;</span><span class="p">).</span><span class="n">start</span><span class="p">({</span><span class="n">some</span> <span class="n">app</span> <span class="n">options</span> <span class="n">controlled</span> <span class="n">by</span> <span class="n">sysadmins</span><span class="p">})</span>
 </pre></div>
 </div>
@@ -1006,17 +1005,9 @@ tarantoolctl connect <em>URI</em>
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/administration";
         this.language = "ru"
     };

@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -405,11 +406,11 @@ Once again, the detailed instructions about each module in chapter 3 &quot;Datab
 can be regarded as reference material.</p>
 <p>Chapter 5 &quot;Configuration reference&quot; and Chapter 6 &quot;Server administration&quot;
 are primarily for administrators; however, every user should know something
-about how the server is configured, so the section about box.cfg is not skippable.
-Chapter 7 &quot;Connectors&quot; is strictly for users who are connecting from a different
+about how the server is configured, so the section about box.cfg is not skippable.</p>
+<p>Chapter 7 &quot;Connectors&quot; is strictly for users who are connecting from a different
 language such as C or Perl or Python -- other users will find no immediate need
-for this chapter.
-Chapter 8 &quot;Modules&quot; shows how to install modules (libraries)
+for this chapter.</p>
+<p>Chapter 8 &quot;Modules&quot; shows how to install modules (libraries)
 and how to create new ones in Lua or C.</p>
 <p>The first two Appendices, A and B, contain reference information about
 Tarantool's code errors, internal file formats and internal processes (recovery
@@ -422,6 +423,8 @@ who may not consider themselves experts at either Lua or NoSQL database manageme
 engine named <cite>vinyl</cite>.</p>
 <p>Appendix E &quot;Cookbook&quot; shows some code contributions for common or difficult tasks.</p>
 <p>Appendix F has one long tutorial: &quot;C stored procedures&quot;.</p>
+<p>Appendix G &quot;Version-specific changes&quot; summarizes significant changes introduced
+in newer Tarantool versions.</p>
 <p>For experienced users, there are also Reference documents plus a Developer Guide,
 and an extensive set of comments in the source code.</p>
 </div>
@@ -656,7 +659,7 @@ but usually is assigned automatically by Tarantool. Spaces always contain one
 tuple set and one or more indexes.</p>
 </div>
 <div class="section" id="tuple-set">
-<h5>3.1.2. Tuple Set<a class="headerlink" href="#tuple-set" title="Permalink to this headline">¶</a></h5>
+<h5>3.1.2. Tuple set<a class="headerlink" href="#tuple-set" title="Permalink to this headline">¶</a></h5>
 <p>A <em>tuple set</em> -- 'tester' in the example -- is a group of tuples.</p>
 <p>There is always one tuple set in a space. The identifier of a tuple set is the
 same as the space name -- 'tester' in the example.</p>
@@ -671,14 +674,14 @@ of types. The identifier of a field is the field's number, base 1. For example
 “1” can be used in some contexts to refer to the first field of a tuple.</p>
 <p>When Tarantool returns a tuple value, it surrounds strings with single quotes,
 separates fields with commas, and encloses the tuple inside square brackets.
-For example: <code class="docutils literal"><span class="pre">[</span> <span class="pre">3,</span> <span class="pre">'length',</span> <span class="pre">93</span> <span class="pre">]</span></code>.</p>
+For example: <code class="docutils literal"><span class="pre">[3,</span> <span class="pre">'length',</span> <span class="pre">93]</span></code>.</p>
 </div>
 <div class="section" id="index">
 <span id="index-box-index"></span><h5>3.1.3. Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h5>
 <p>An <em>index</em> -- 'primary' in the example -- is a group of key values and pointers.</p>
 <p>In order for a tuple set to be useful, there must always be at least one index
-in a space. There can be many. As with spaces, the user can and should specify
-the index name, and let Tarantool come up with a unique numeric identifier
+in a space. There can be many indexes. As with spaces, the user can and should
+specify the index name, and let Tarantool come up with a unique numeric identifier
 (the &quot;index id&quot;). In our example there is one index and its name is “primary”.</p>
 <p>An index may be <em>multi-part</em>, that is, the user can declare that an index key
 value is taken from two or more fields in the tuple, in any order. An index may
@@ -760,7 +763,7 @@ restrictions. The syntax details for defining spaces and indexes are in section
 </tr>
 </tbody>
 </table>
-<p>In Lua a <em>number</em> is double-precision floating-point, but Tarantool allows both
+<p>In Lua, a <em>number</em> is double-precision floating-point, but Tarantool allows both
 integer and floating-point values. Tarantool will try to store a number as
 floating-point if the value contains a decimal point or is very large (greater
 than 100 billion = 1e14), otherwise Tarantool will store it as an integer. To
@@ -770,7 +773,7 @@ or the <code class="docutils literal"><span class="pre">ULL</span></code> (Unsig
 regular notation, exponential notation, the ULL suffix, and the tonumber64
 function: <code class="docutils literal"><span class="pre">-55</span></code>, <code class="docutils literal"><span class="pre">-2.7e+20</span></code>, <code class="docutils literal"><span class="pre">100000000000000ULL</span></code>,
 <code class="docutils literal"><span class="pre">tonumber64('18446744073709551615')</span></code>.</p>
-<p>For database storage Tarantool uses MsgPack rules. Storage is variable-length,
+<p>For database storage, Tarantool uses MsgPack rules. Storage is variable-length,
 so the smallest number requires only one byte but the largest number requires
 nine bytes. When a field has an 'unsigned' index, all values must be unsigned integers
 between 0 and 18,446,744,073,709,551,615.</p>
@@ -844,40 +847,40 @@ indexes.)</p>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>if this is happening on a remote client, then the client parses the statement
+<li>If this is happening on a remote client, then the client parses the statement
 and changes it to a binary-protocol instruction which has already been
 checked, and which the server can understand without needing to parse
 everything again. The client ships a packet to the server.</li>
-<li>the server's “transaction processor” thread uses the primary-key index on
+<li>The server's “transaction processor” thread uses the primary-key index on
 field[1] to find the location of the tuple in memory. It determines that the
 tuple can be updated (not much can go wrong when you're merely changing an
 unindexed field value to something shorter).</li>
-<li>the transaction processor thread sends a message to the write-ahead logging
+<li>The transaction processor thread sends a message to the write-ahead logging
 (WAL) thread.</li>
 </ol>
-<p>At this point a <em>yield</em> takes place. To know the significance of that -- and
+<p>At this point, a <em>yield</em> takes place. To know the significance of that -- and
 it's quite significant -- you have to know a few facts and a few new words.</p>
 <div class="fact admonition">
 <p class="first admonition-title">FACT 1:</p>
-<p class="last">there is only one transaction processor thread. Some people are used to the
+<p class="last">There is only one transaction processor thread. Some people are used to the
 idea that there can be multiple threads operating on the database, with
-(say) thread #1 reading row #x while thread#2 writes row#y. With Tarantool
+(say) thread #1 reading row #x while thread #2 writes row #y. With Tarantool
 no such thing ever happens. Only the transaction processor thread can access
 the database, and there is only one transaction processor thread for each
 instance of the server.</p>
 </div>
 <div class="fact admonition">
 <p class="first admonition-title">FACT 2:</p>
-<p class="last">the transaction processor thread can handle many <em>fibers</em>. A fiber is a set
+<p class="last">The transaction processor thread can handle many <em>fibers</em>. A fiber is a set
 of computer instructions that may contain &quot;yield&quot; signals. The transaction
 processor thread will execute all computer instructions until a yield, then
 switch to execute the instructions of a different fiber. Thus (say) the
-thread reads row#x for the sake of fiber#1, then writes row#y for the sake
-of fiber#2.</p>
+thread reads row #x for the sake of fiber #1, then writes row #y for the sake
+of fiber #2.</p>
 </div>
 <div class="fact admonition" id="index-yields-must-happen">
 <p class="first admonition-title">FACT 3:</p>
-<p class="last">yields must happen, otherwise the transaction processor thread would stick
+<p class="last">Yields must happen, otherwise the transaction processor thread would stick
 permanently on the same fiber. There are <a class="reference internal" href="singlehtml.html#atomic-the-implicit-yield-rules"><span class="std std-ref">implicit yields</span></a>:
 every data-change operation or network-access causes an implicit yield, and
 every statement that goes through the tarantool client causes an implicit
@@ -921,7 +924,7 @@ The client/server protocol is open and documented. See this
 <a class="reference internal" href="singlehtml.html#box-protocol-iproto-protocol"><span class="std std-ref">annotated BNF</span></a>.</p>
 </div>
 <div class="section" id="saving-to-disk">
-<h5>3.1.6. Saving To Disk<a class="headerlink" href="#saving-to-disk" title="Permalink to this headline">¶</a></h5>
+<h5>3.1.6. Saving to disk<a class="headerlink" href="#saving-to-disk" title="Permalink to this headline">¶</a></h5>
 <p>Tarantool maintains a set of write-ahead log (WAL) files. There is a separate
 thread -- the WAL writer -- which catches all requests that can change a
 database, such as <code class="docutils literal"><span class="pre">box.schema.create</span></code> or <code class="docutils literal"><span class="pre">box.space.insert</span></code>. Ordinarily the
@@ -1252,7 +1255,7 @@ description will contain a note beginning with the words
 for all <a class="reference internal" href="singlehtml.html#vinyl-diff"><span class="std std-ref">the differences between memtx and vinyl</span></a>.</p>
 </div>
 <div class="section" id="library-reference">
-<h4>3.4. Library Reference<a class="headerlink" href="#library-reference" title="Permalink to this headline">¶</a></h4>
+<h4>3.4. Library reference<a class="headerlink" href="#library-reference" title="Permalink to this headline">¶</a></h4>
 <div class="toctree-wrapper compound">
 <span id="document-book/box/box_schema"></span><div class="section" id="lua-module.box.schema">
 <span id="submodule-box-schema"></span><span id="box-schema"></span><h5>3.4.1. Submodule <cite>box.schema</cite><a class="headerlink" href="#lua-module.box.schema" title="Permalink to this headline">¶</a></h5>
@@ -1338,17 +1341,6 @@ duplicate name</td>
 </tbody>
 </table>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>space-id</strong> (<em>num</em>) -- the numeric identifier established by box.schema.space.create</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 <p>There are five <a class="reference internal" href="singlehtml.html#index-object-reference"><span class="std std-ref">syntax variations</span></a> for object references targeting
 space objects, for example <code class="samp docutils literal"><span class="pre">box.schema.space.drop(</span><em><span class="pre">space-id</span></em><span class="pre">)</span></code>
 will drop a space. However, the common approach is to use functions
@@ -1372,6 +1364,8 @@ attached to the space objects, for example
 <span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">space55&#39;</span><span class="p">,</span> <span class="p">{</span>
 <span class="gp">         &gt; </span>  <span class="n">if_not_exists</span> <span class="o">=</span> <span class="kc">true</span>
 <span class="gp">         &gt; </span><span class="p">})</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
 </pre></div>
 </div>
 <p>For an illustration with the <code class="docutils literal"><span class="pre">format</span></code> clause, see
@@ -1401,7 +1395,7 @@ and should not contain special characters</li>
 </tr>
 </tbody>
 </table>
-<p><strong>Example:</strong></p>
+<p><strong>Examples:</strong></p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">)</span>
 <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">X&#39;</span><span class="p">})</span>
 <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">if_not_exists</span> <span class="o">=</span> <span class="kc">false</span><span class="p">})</span>
@@ -1427,7 +1421,7 @@ section <a class="reference internal" href="singlehtml.html#authentication-users
 </tr>
 </tbody>
 </table>
-<p><strong>Example:</strong></p>
+<p><strong>Examples:</strong></p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">)</span>
 <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Lena&#39;</span><span class="p">,{</span><span class="n">if_exists</span><span class="o">=</span><span class="kc">false</span><span class="p">})</span>
 </pre></div>
@@ -1958,6 +1952,10 @@ source code is available in file
 <tr class="row-odd"><td><a class="reference internal" href="#box-space-cluster"><span class="std std-ref">box.space._cluster</span></a></td>
 <td>.(Metadata) List of clusters</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="#box-space-func"><span class="std std-ref">box.space._func</span></a></td>
+<td>.(Metadata) List of function
+tuples</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -2361,8 +2359,7 @@ to show that the effect is the converse of <code class="docutils literal"><span 
 </table>
 <p>Possible errors: If a different tuple with the same unique-key
 value already exists, returns <code class="xref std std-errcode docutils literal"><span class="pre">ER_TUPLE_FOUND</span></code>. (This
-will only happen if there is a secondary index. By default
-secondary indexes are unique.)</p>
+will only happen if there is a unique secondary index.)</p>
 <p><strong>Complexity Factors:</strong> Index size, Index type,
 Number of indexes accessed, WAL settings.</p>
 <p><strong>Example:</strong></p>
@@ -2432,14 +2429,12 @@ affected field is field <code class="docutils literal"><span class="pre">1</span
 <code class="docutils literal"><span class="pre">55</span></code>, the second affected field is field <code class="docutils literal"><span class="pre">3</span></code> and the value which will be
 assigned to it is <code class="docutils literal"><span class="pre">'x'</span></code>.</p>
 <p><strong>Example:</strong></p>
-<p>Assume that the initial state of the database is <code class="docutils literal"><span class="pre">tester</span></code> that has
-one tuple set and one primary key whose type is <code class="docutils literal"><span class="pre">unsigned</span></code>.
+<p>Assume that initially there is a space named <code class="docutils literal"><span class="pre">tester</span></code>
+with a primary-key index whose type is <code class="docutils literal"><span class="pre">unsigned</span></code>.
 There is one tuple, with <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code> and <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'A'</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">B&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>The first argument is <code class="docutils literal"><span class="pre">tester</span></code>, that is, the affected space is <code class="docutils literal"><span class="pre">tester</span></code>.
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update(999,</span> <span class="pre">{{'=',</span> <span class="pre">2,</span> <span class="pre">'B'}})</span></code> <br />
+The first argument is <code class="docutils literal"><span class="pre">tester</span></code>, that is, the affected space is <code class="docutils literal"><span class="pre">tester</span></code>.
 The second argument is <code class="docutils literal"><span class="pre">999</span></code>, that is, the affected tuple is identified by
 primary key value = 999.
 The third argument is <code class="docutils literal"><span class="pre">=</span></code>, that is, there is one operation —
@@ -2447,61 +2442,47 @@ The third argument is <code class="docutils literal"><span class="pre">=</span><
 The fourth argument is <code class="docutils literal"><span class="pre">2</span></code>, that is, the affected field is <code class="docutils literal"><span class="pre">field[2]</span></code>.
 The fifth argument is <code class="docutils literal"><span class="pre">'B'</span></code>, that is, <code class="docutils literal"><span class="pre">field[2]</span></code> contents change to <code class="docutils literal"><span class="pre">'B'</span></code>.
 Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code> and <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'B'</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">B&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>the arguments are the same, except that the key is passed as a Lua table
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'=',</span> <span class="pre">2,</span> <span class="pre">'B'}})</span></code> <br />
+the arguments are the same, except that the key is passed as a Lua table
 (inside braces). This is unnecessary when the primary key has only one
 field, but would be necessary if the primary key had more than one field.
 Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code> and <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'B'</span></code> (no change).</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>the arguments are the same, except that the fourth argument is <code class="docutils literal"><span class="pre">3</span></code>,
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'=',</span> <span class="pre">3,</span> <span class="pre">1}})</span></code> <br />
+the arguments are the same, except that the fourth argument is <code class="docutils literal"><span class="pre">3</span></code>,
 that is, the affected field is <code class="docutils literal"><span class="pre">field[3]</span></code>. It is okay that, until now,
 <code class="docutils literal"><span class="pre">field[3]</span></code> has not existed. It gets added. Therefore, after this update,
 <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>, <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'B'</span></code>, <code class="docutils literal"><span class="pre">field[3]</span></code> = <code class="docutils literal"><span class="pre">1</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">+&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>the arguments are the same, except that the third argument is <code class="docutils literal"><span class="pre">'+'</span></code>,
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'+',</span> <span class="pre">3,</span> <span class="pre">1}})</span></code> <br />
+the arguments are the same, except that the third argument is <code class="docutils literal"><span class="pre">'+'</span></code>,
 that is, the operation is addition rather than assignment. Since
 <code class="docutils literal"><span class="pre">field[3]</span></code> previously contained <code class="docutils literal"><span class="pre">1</span></code>, this means we're adding <code class="docutils literal"><span class="pre">1</span></code>
 to <code class="docutils literal"><span class="pre">1</span></code>. Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>,
 <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'B'</span></code>, <code class="docutils literal"><span class="pre">field[3]</span></code> = <code class="docutils literal"><span class="pre">2</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">|&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">C&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>the idea is to modify two fields at once. The formats are <code class="docutils literal"><span class="pre">'|'</span></code> and
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'|',</span> <span class="pre">3,</span> <span class="pre">1},</span> <span class="pre">{'=',</span> <span class="pre">2,</span> <span class="pre">'C'}})</span></code> <br />
+the idea is to modify two fields at once. The formats are <code class="docutils literal"><span class="pre">'|'</span></code> and
 <code class="docutils literal"><span class="pre">=</span></code>, that is, there are two operations, OR and assignment. The fourth
 and fifth arguments mean that <code class="docutils literal"><span class="pre">field[3]</span></code> gets OR'ed with <code class="docutils literal"><span class="pre">1</span></code>. The
 seventh and eighth arguments mean that <code class="docutils literal"><span class="pre">field[2]</span></code> gets assigned <code class="docutils literal"><span class="pre">'C'</span></code>.
 Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>, <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'C'</span></code>,
 <code class="docutils literal"><span class="pre">field[3]</span></code> = <code class="docutils literal"><span class="pre">3</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">#&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;</span><span class="s">-&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>The idea is to delete <code class="docutils literal"><span class="pre">field[2]</span></code>, then subtract <code class="docutils literal"><span class="pre">3</span></code> from <code class="docutils literal"><span class="pre">field[3]</span></code>.
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'#',</span> <span class="pre">2,</span> <span class="pre">1},</span> <span class="pre">{'-',</span> <span class="pre">2,</span> <span class="pre">3}})</span></code> <br />
+The idea is to delete <code class="docutils literal"><span class="pre">field[2]</span></code>, then subtract <code class="docutils literal"><span class="pre">3</span></code> from <code class="docutils literal"><span class="pre">field[3]</span></code>.
 But after the delete, there is a renumbering, so <code class="docutils literal"><span class="pre">field[3]</span></code> becomes
 <code class="docutils literal"><span class="pre">field[2]`</span></code> before we subtract <code class="docutils literal"><span class="pre">3</span></code> from it, and that's why the
 seventh argument is <code class="docutils literal"><span class="pre">2</span></code>, not <code class="docutils literal"><span class="pre">3</span></code>. Therefore, after this update,
 <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>, <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">0</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">XYZ&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>we're making a long string so that splice will work in the next example.
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'=',</span> <span class="pre">2,</span> <span class="pre">'XYZ'}})</span></code> <br />
+we're making a long string so that splice will work in the next example.
 Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>, <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'XYZ'</span></code>.</p>
-<p>In the update</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">:&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">!!&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>The third argument is <code class="docutils literal"><span class="pre">':'</span></code>, that is, this is the example of splice.
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{':',</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">'!!'}})</span></code> <br />
+The third argument is <code class="docutils literal"><span class="pre">':'</span></code>, that is, this is the example of splice.
 The fourth argument is <code class="docutils literal"><span class="pre">2</span></code> because the change will occur in <code class="docutils literal"><span class="pre">field[2]</span></code>.
 The fifth argument is 2 because deletion will begin with the second byte.
 The sixth argument is 1 because the number of bytes to delete is 1.
@@ -2860,7 +2841,9 @@ Number of indexes accessed, WAL settings.</p>
 <dt id="lua-data.box.space._space">
 <em class="property"> </em><code class="descclassname">box.space.</code><code class="descname">_space</code><a class="headerlink" href="#lua-data.box.space._space" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">_space</span></code> is a system tuple set. Its tuples contain these fields: <code class="docutils literal"><span class="pre">id</span></code>,
-<code class="docutils literal"><span class="pre">uid</span></code>, <code class="docutils literal"><span class="pre">space-name</span></code>, <code class="docutils literal"><span class="pre">engine</span></code>, <code class="docutils literal"><span class="pre">field_count</span></code>, <code class="docutils literal"><span class="pre">temporary</span></code>, <code class="docutils literal"><span class="pre">format</span></code>.
+<code class="docutils literal"><span class="pre">owner</span></code> (= id of user who owns the space),
+<code class="docutils literal"><span class="pre">name</span></code>, <code class="docutils literal"><span class="pre">engine</span></code>, <code class="docutils literal"><span class="pre">field_count</span></code>,
+<code class="docutils literal"><span class="pre">flags</span></code> (e.g. temporary), <code class="docutils literal"><span class="pre">format</span></code>.
 These fields are established by <a class="reference internal" href="singlehtml.html#box-schema-space-create"><span class="std std-ref">space.create()</span></a>.</p>
 <p><strong>Example:</strong></p>
 <p>The following function will display all simple fields in all tuples of <code class="docutils literal"><span class="pre">_space</span></code>.</p>
@@ -2908,6 +2891,7 @@ Then it retrieves the _space tuple for the new space.
 This illustrates the typical use of the <code class="docutils literal"><span class="pre">format</span></code> clause,
 it shows the recommended names and data types for the fields.</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">TM&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">id</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">,</span>
 <span class="gp">         &gt; </span>  <span class="n">format</span> <span class="o">=</span> <span class="p">{</span>
 <span class="gp">         &gt; </span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="s2">&quot;</span><span class="s">name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">field_1&quot;</span><span class="p">},</span>
 <span class="gp">         &gt; </span>    <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="s2">&quot;</span><span class="s">type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">unsigned&quot;</span><span class="p">}</span>
@@ -2917,16 +2901,16 @@ it shows the recommended names and data types for the fields.</p>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">index</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
   <span class="l l-Scalar l-Scalar-Plain">on_replace</span><span class="p p-Indicator">:</span> <span class="s">&#39;function:</span><span class="nv"> </span><span class="s">0x41c67338&#39;</span>
   <span class="l l-Scalar l-Scalar-Plain">temporary</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">522</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12345</span>
   <span class="l l-Scalar l-Scalar-Plain">engine</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">memtx</span>
   <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">TM</span>
   <span class="l l-Scalar l-Scalar-Plain">field_count</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">created</span>
 <span class="nn">...</span>
-<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">_space</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="mi">522</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">_space</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
 <span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">522</span><span class="p p-Indicator">,</span> <span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;TM&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;memtx&#39;</span><span class="p p-Indicator">,</span> <span class="nv">0</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">{},</span> <span class="p p-Indicator">[{</span><span class="s">&#39;name&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;field_1&#39;</span><span class="p p-Indicator">},</span> <span class="p p-Indicator">{</span><span class="s">&#39;type&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;unsigned&#39;</span><span class="p p-Indicator">}]]</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">12345</span><span class="p p-Indicator">,</span> <span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;TM&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;memtx&#39;</span><span class="p p-Indicator">,</span> <span class="nv">0</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">{},</span> <span class="p p-Indicator">[{</span><span class="s">&#39;name&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;field_1&#39;</span><span class="p p-Indicator">},</span> <span class="p p-Indicator">{</span><span class="s">&#39;type&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;unsigned&#39;</span><span class="p p-Indicator">}]]</span>
 <span class="nn">...</span>
 </pre></div>
 </div>
@@ -2936,8 +2920,9 @@ it shows the recommended names and data types for the fields.</p>
 <dt id="lua-data.box.space._index">
 <em class="property"> </em><code class="descclassname">box.space.</code><code class="descname">_index</code><a class="headerlink" href="#lua-data.box.space._index" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">_index</span></code> is a system tuple set. Its tuples contain these fields:
-<code class="docutils literal"><span class="pre">space-id</span> <span class="pre">index-id</span> <span class="pre">index-name</span> <span class="pre">index-type</span> <span class="pre">is-index-unique</span>
-<span class="pre">[tuple-field-no,</span> <span class="pre">tuple-field-type</span> <span class="pre">...]</span></code>.</p>
+<code class="docutils literal"><span class="pre">id</span></code> (= id of space), <code class="docutils literal"><span class="pre">iid</span></code> (= index number within space),
+<code class="docutils literal"><span class="pre">name</span></code>, <code class="docutils literal"><span class="pre">type</span></code>, <code class="docutils literal"><span class="pre">opts</span></code> (e.g. unique option),
+[<code class="docutils literal"><span class="pre">tuple-field-no</span></code>, <code class="docutils literal"><span class="pre">tuple-field-type</span></code> ...].</p>
 <p>The following function will display all fields in all tuples of <code class="docutils literal"><span class="pre">_index</span></code>:
 (notice that the fifth field gets special treatment as a map value and
 the sixth or later fields get special treatment as arrays):</p>
@@ -3029,6 +3014,13 @@ support of the <a class="reference internal" href="singlehtml.html#authenticatio
 <em class="property"> </em><code class="descclassname">box.space.</code><code class="descname">_cluster</code><a class="headerlink" href="#lua-data.box.space._cluster" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">_cluster</span></code> is a system tuple set
 for support of the <a class="reference internal" href="singlehtml.html#index-box-replication"><span class="std std-ref">replication feature</span></a>.</p>
+</dd></dl>
+
+<span class="target" id="box-space-func"></span><dl class="data">
+<dt id="lua-data.box.space._func">
+<em class="property"> </em><code class="descclassname">box.space.</code><code class="descname">_func</code><a class="headerlink" href="#lua-data.box.space._func" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">_func</span></code> is a system tuple set
+with function tuples made by <a class="reference internal" href="singlehtml.html#box-schema-func-create"><span class="std std-ref">box.schema.func.create</span></a>.</p>
 </dd></dl>
 
 <div class="section" id="example-use-box-space-functions-to-read-space-tuples">
@@ -8514,40 +8506,38 @@ Linux distribution.</li>
 exports its functions for CALL.</p>
 <p>For example, <code class="file docutils literal"><span class="pre">/usr/share/tarantool/myapp.lua</span></code>:</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="k">function</span> <span class="nf">start</span><span class="p">()</span>
-<span class="c1">-- Initial version</span>
-<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.1.0&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-<span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">somedata&quot;</span><span class="p">)</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">primary&quot;</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="k">end</span>
+  <span class="c1">-- Initial version</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.1.0&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">somedata&quot;</span><span class="p">)</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">primary&quot;</span><span class="p">)</span>
+  <span class="o">...</span>
 
-<span class="c1">-- migration code from 1.0 to 1.1</span>
-<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.1&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="k">end</span>
+  <span class="c1">-- migration code from 1.0 to 1.1</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.1&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">primary</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="o">...</span>
 
-<span class="c1">-- migration code from 1.1 to 1.2</span>
-<span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.2&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">space</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">insert</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="o">...</span>
+  <span class="c1">-- migration code from 1.1 to 1.2</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">once</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myapp:.v1.2&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">.</span><span class="n">space</span><span class="p">:</span><span class="n">alter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">somedata</span><span class="p">:</span><span class="n">insert</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="o">...</span>
 <span class="k">end</span>
 
 <span class="c1">-- start some background fibers if you need</span>
 
 <span class="kd">local</span> <span class="k">function</span> <span class="nf">stop</span><span class="p">()</span>
-<span class="c1">-- stop all background fibers and cleanup resources</span>
+  <span class="c1">-- stop all background fibers and cleanup resources</span>
 <span class="k">end</span>
 
 <span class="kd">local</span> <span class="k">function</span> <span class="nf">api_for_call</span><span class="p">(</span><span class="n">xxx</span><span class="p">)</span>
-<span class="c1">-- do some business</span>
+  <span class="c1">-- do some business</span>
 <span class="k">end</span>
 
 <span class="k">return</span> <span class="p">{</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
-<span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="p">;</span>
-<span class="n">api_for_call</span> <span class="o">=</span> <span class="n">api_for_call</span><span class="p">;</span>
+  <span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+  <span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="p">;</span>
+  <span class="n">api_for_call</span> <span class="o">=</span> <span class="n">api_for_call</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -8563,17 +8553,17 @@ If needed, you can split applications into standalone files and/or modules.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
 <span class="n">box</span><span class="p">.</span><span class="n">cfg</span> <span class="p">{</span>
-<span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">;</span>
+  <span class="n">listen</span> <span class="o">=</span> <span class="mi">3301</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">if</span> <span class="n">myapp</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="k">then</span>
-<span class="c1">-- hot code reload using tarantoolctl or dofile()</span>
+  <span class="c1">-- hot code reload using tarantoolctl or dofile()</span>
 
-<span class="c1">-- unload old application</span>
-<span class="n">myapp</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
-<span class="c1">-- clear cache for loaded modules and dependencies</span>
-<span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">myapp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span>
-<span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">somedep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">;</span> <span class="c1">-- dependency of &#39;myapp&#39;</span>
+  <span class="c1">-- unload old application</span>
+  <span class="n">myapp</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
+  <span class="c1">-- clear cache for loaded modules and dependencies</span>
+  <span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">myapp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span>
+  <span class="nb">package.loaded</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">somedep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">;</span> <span class="c1">-- dependency of &#39;myapp&#39;</span>
 <span class="k">end</span>
 
 <span class="c1">-- load a new version of app and all dependencies</span>
@@ -8677,25 +8667,29 @@ is shown.</p>
 <p>This chapter documents APIs for various programming languages.</p>
 <div class="section" id="protocol">
 <h4>7.1. Protocol<a class="headerlink" href="#protocol" title="Permalink to this headline">¶</a></h4>
-<p>Tarantool protocol was designed with a focus on asynchronous I/O and easy integration
-with proxies. Each client request starts with a variable-length binary header,
-containing request id, request type, server id, log sequence number, and so on.</p>
+<p>Tarantool's binary protocol was designed with a focus on asynchronous I/O and
+easy integration with proxies. Each client request starts with a variable-length
+binary header, containing request id, request type, server id, log sequence
+number, and so on.</p>
 <p>The mandatory length, present in request header simplifies client or proxy I/O.
 A response to a request is sent to the client as soon as it is ready. It always
 carries in its header the same type and id as in the request. The id makes it
-possible to match a request to a response, even if the latter arrived out of order.</p>
-<p>Unless implementing a client driver, one needn't concern oneself with the
+possible to match a request to a response, even if the latter arrived out of
+order.</p>
+<p>Unless implementing a client driver, you needn't concern yourself with the
 complications of the binary protocol. Language-specific drivers provide a
 friendly way to store domain language data structures in Tarantool. A complete
 description of the binary protocol is maintained in annotated Backus-Naur form
-in the source tree: please see <a class="reference internal" href="singlehtml.html#box-protocol-iproto-protocol"><span class="std std-ref">iproto protocol</span></a>.</p>
+in the source tree: please see the page about
+<a class="reference internal" href="singlehtml.html#box-protocol-iproto-protocol"><span class="std std-ref">Tarantool's binary protocol</span></a>.</p>
 </div>
 <div class="section" id="packet-example">
 <h4>7.2. Packet example<a class="headerlink" href="#packet-example" title="Permalink to this headline">¶</a></h4>
 <p>The Tarantool API exists so that a client program can send a request packet to
 the server, and receive a response. Here is an example of a what the client
-would send for <code class="code docutils literal"><span class="pre">box.space[513]:insert{'A',</span> <span class="pre">'BB'}</span></code>. The BNF description of the
-components is in file <a class="reference internal" href="singlehtml.html#box-protocol-iproto-protocol"><span class="std std-ref">iproto protocol</span></a>.</p>
+would send for <code class="samp docutils literal"><span class="pre">box.space[513]:insert</span><em><span class="pre">'A',</span> <span class="pre">'BB'</span></em></code>. The BNF description of
+the components is on the page about
+<a class="reference internal" href="singlehtml.html#box-protocol-iproto-protocol"><span class="std std-ref">Tarantool's binary protocol</span></a>.</p>
 <blockquote>
 <div><div class="table container">
 <table border="1" class="left-align-column-1 right-align-column-2 right-align-column-3 right-align-column-4 docutils">
@@ -8761,22 +8755,28 @@ components is in file <a class="reference internal" href="singlehtml.html#box-pr
 </table>
 </div>
 </div></blockquote>
-<p>Now, one could send that packet to the tarantool server, and interpret the response
-(<a class="reference internal" href="singlehtml.html#box-protocol-iproto-protocol"><span class="std std-ref">iproto protocol</span></a> has a description of the packet format for responses as
-well as requests). But it would be easier, and less error-prone, if one could invoke
-a routine that formats the packet according to typed parameters. Something like
-<code class="code docutils literal"><span class="pre">response=tarantool_routine(&quot;insert&quot;,513,&quot;A&quot;,&quot;B&quot;);</span></code>. And that is why APIs exist for
-drivers for Perl, Python, PHP, and so on.</p>
+<p>Now, you could send that packet to the Tarantool server, and interpret the
+response (the page about
+<a class="reference internal" href="singlehtml.html#box-protocol-iproto-protocol"><span class="std std-ref">Tarantool's binary protocol</span></a> has a
+description of the packet format for responses as well as requests). But it
+would be easier, and less error-prone, if you could invoke a routine that
+formats the packet according to typed parameters. Something like
+<code class="samp docutils literal"><span class="pre">response=tarantool_routine(&quot;insert&quot;,513,&quot;A&quot;,&quot;B&quot;);</span></code>. And that is why APIs
+exist for drivers for Perl, Python, PHP, and so on.</p>
 </div>
 <div class="section" id="setting-up-the-server-for-connector-examples">
 <span id="index-connector-setting"></span><h4>7.3. Setting up the server for connector examples<a class="headerlink" href="#setting-up-the-server-for-connector-examples" title="Permalink to this headline">¶</a></h4>
 <p>This chapter has examples that show how to connect to the Tarantool server via
-the Perl, PHP, Python, and C connectors. The examples contain hard code that will
-work if and only if the server (tarantool) is running on localhost (127.0.0.1)
-and is listening on port 3301 (<code class="code docutils literal"><span class="pre">box.cfg.listen</span> <span class="pre">=</span> <span class="pre">'3301'</span></code>) and space 'examples'
-has id = 999 (<code class="code docutils literal"><span class="pre">box.space.examples.id</span> <span class="pre">=</span> <span class="pre">999</span></code>), and space 'examples' has a
-primary-key index for a numeric field (<code class="code docutils literal"><span class="pre">box.space[999].index[0].parts[1].type</span>
-<span class="pre">=</span> <span class="pre">&quot;unsigned&quot;</span></code>) and user 'guest' has privileges for reading and writing.</p>
+the Perl, PHP, Python, and C connectors. The examples contain hard code that
+will work if and only if the following conditions are met:</p>
+<ul class="simple">
+<li>the server (tarantool) is running on localhost (127.0.0.1) and is listening on
+port 3301 (<code class="samp docutils literal"><span class="pre">box.cfg.listen</span> <span class="pre">=</span> <span class="pre">'3301'</span></code>),</li>
+<li>space <code class="docutils literal"><span class="pre">examples</span></code> has id = 999 (<code class="samp docutils literal"><span class="pre">box.space.examples.id</span> <span class="pre">=</span> <span class="pre">999</span></code>) and has
+a primary-key index for a numeric field
+(<code class="samp docutils literal"><span class="pre">box.space[999].index[0].parts[1].type</span> <span class="pre">=</span> <span class="pre">&quot;unsigned&quot;</span></code>),</li>
+<li>user 'guest' has privileges for reading and writing.</li>
+</ul>
 <p>It is easy to meet all the conditions by starting the server and executing this
 script:</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span><span class="o">=</span><span class="mi">3301</span><span class="p">}</span>
@@ -8793,7 +8793,7 @@ script:</p>
 </div>
 <div class="section" id="go">
 <h4>7.5. Go<a class="headerlink" href="#go" title="Permalink to this headline">¶</a></h4>
-<p>Please see <a class="reference external" href="https://github.com/mialinx/go-tarantool-1.6">https://github.com/mialinx/go-tarantool-1.6</a>.</p>
+<p>Please see <a class="reference external" href="https://github.com/mialinx/go-tarantool">https://github.com/mialinx/go-tarantool</a>.</p>
 </div>
 <div class="section" id="r">
 <h4>7.6. R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h4>
@@ -8801,10 +8801,12 @@ script:</p>
 </div>
 <div class="section" id="perl">
 <h4>7.7. Perl<a class="headerlink" href="#perl" title="Permalink to this headline">¶</a></h4>
-<p>The most commonly used Perl driver is <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a>. It is not supplied as
-part of the Tarantool repository; it must be installed separately. The most
-common way to install it is with <a class="reference external" href="https://en.wikipedia.org/wiki/Cpan">CPAN, the Comprehensive Perl Archive Network</a>.
-<a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a> requires other modules which should be installed first. For
+<p>The most commonly used Perl driver is
+<a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a>. It is not
+supplied as part of the Tarantool repository; it must be installed separately.
+The most common way to install it is with
+<a class="reference external" href="https://en.wikipedia.org/wiki/Cpan">CPAN, the Comprehensive Perl Archive Network</a>.
+<code class="docutils literal"><span class="pre">DR::Tarantool</span></code> requires other modules which should be installed first. For
 example, on Ubuntu, the installation could look like this:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo cpan install AnyEvent
 <span class="gp">$</span> sudo cpan install Devel::GlobalDestruction
@@ -8816,15 +8818,17 @@ example, on Ubuntu, the installation could look like this:</p>
 <span class="gp">$</span> sudo cpan install DR::Tarantool
 </pre></div>
 </div>
-<p>Here is a complete Perl program that inserts [99999,'BB'] into space[999] via
-the Perl API. Before trying to run, check that the server is listening and
-that <code class="code docutils literal"><span class="pre">examples</span></code> exists, as <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>. To run, paste the code into
-a file named example.pl and say <code class="code docutils literal"><span class="pre">perl</span> <span class="pre">example.pl</span></code>. The program will connect
-using an application-specific definition of the space. The program will open a
-socket connection with the tarantool server at localhost:3301, then send an
-INSERT request, then — if all is well — end without displaying any messages.
-If tarantool is not running on localhost with listen address = 3301, the program
-will print “Connection refused”.</p>
+<p>Here is a complete Perl program that inserts <code class="docutils literal"><span class="pre">[99999,'BB']</span></code> into <code class="docutils literal"><span class="pre">space[999]</span></code>
+via the Perl API. Before trying to run, check that the server is listening at
+<code class="docutils literal"><span class="pre">localhost:3301</span></code> and that the space <code class="docutils literal"><span class="pre">examples</span></code> exists, as
+<a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
+To run, paste the code into a file named <code class="file docutils literal"><span class="pre">example.pl</span></code> and say
+<code class="samp docutils literal"><span class="pre">perl</span> <span class="pre">example.pl</span></code>. The program will connect using an application-specific
+definition of the space. The program will open a socket connection with the
+Tarantool server at <code class="docutils literal"><span class="pre">localhost:3301</span></code>, then send an INSERT request, then — if
+all is well — end without displaying any messages. If Tarantool is not running
+on <code class="docutils literal"><span class="pre">localhost</span></code> with listen port = 3301, the program will print “Connection
+refused”.</p>
 <div class="highlight-perl"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/perl</span>
 <span class="k">use</span> <span class="nn">DR::</span><span class="n">Tarantool</span> <span class="s">&#39;:constant&#39;</span><span class="p">,</span> <span class="s">&#39;tarantool&#39;</span><span class="p">;</span>
 <span class="k">use</span> <span class="nn">DR::</span><span class="n">Tarantool</span> <span class="s">&#39;:all&#39;</span><span class="p">;</span>
@@ -8850,15 +8854,17 @@ will print “Connection refused”.</p>
 </div>
 <p>The example program uses field type names 'STR' and 'NUM'
 instead of 'string' and 'unsigned', due to a temporary Perl limitation.</p>
-<p>The example program only shows one command and does not show all that's
-necessary for good practice. For that, please see <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a> CPAN repository.</p>
+<p>The example program only shows one request and does not show all that's
+necessary for good practice. For that, please see
+<a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool CPAN repository</a>.</p>
 </div>
 <div class="section" id="php">
 <h4>7.8. PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h4>
-<p>The PHP driver is <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a>. It is not supplied as part of the Tarantool
-repository; it must be installed separately. It can be installed with git. It
-requires other modules which should be installed first. For example, on Ubuntu,
-the installation could look like this:</p>
+<p>The PHP driver is <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a>.
+It is not supplied as part of the Tarantool repository; it must be installed
+separately. It can be installed with <strong class="program">git</strong>. It requires other modules
+which should be installed first. For example, on Ubuntu, the installation could
+look like this:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install php5-cli
 <span class="gp">$</span> sudo apt-get install php5-dev
 <span class="gp">$</span> sudo apt-get install php-pear
@@ -8871,16 +8877,19 @@ the installation could look like this:</p>
 <span class="gp">$</span> <span class="c1"># make install is optional</span>
 </pre></div>
 </div>
-<p>At this point there is a file named <code class="code docutils literal"><span class="pre">~/tarantool-php/modules/tarantool.so</span></code>.
-PHP will only find it if the PHP initialization file <code class="code docutils literal"><span class="pre">php.ini</span></code> contains a
-line like <code class="code docutils literal"><span class="pre">extension=./tarantool.so</span></code>, or if PHP is started with the option
-<code class="code docutils literal"><span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span></code>.</p>
-<p>Here is a complete PHP program that inserts [99999,'BB'] into a space named 'examples'
-via the PHP API. Before trying to run, check that the server is listening and that
-<code class="code docutils literal"><span class="pre">examples</span></code> exists, as <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>. To run, paste the code into a file named
-example.php and say <code class="code docutils literal"><span class="pre">php</span> <span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span> <span class="pre">example.php</span></code>. The program will open a socket connection with
-the tarantool server at localhost:3301, then send an INSERT request, then — if all is
-well — print &quot;Insert succeeded&quot;. If the tuple already exists, the program will print
+<p>At this point there is a file named <code class="file docutils literal"><span class="pre">~/tarantool-php/modules/tarantool.so</span></code>.
+PHP will only find it if the PHP initialization file <code class="file docutils literal"><span class="pre">php.ini</span></code> contains a
+line like <code class="samp docutils literal"><span class="pre">extension=./tarantool.so</span></code>, or if PHP is started with the option
+<code class="samp docutils literal"><span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span></code>.</p>
+<p>Here is a complete PHP program that inserts <code class="docutils literal"><span class="pre">[99999,'BB']</span></code> into a space named
+<code class="docutils literal"><span class="pre">examples</span></code> via the PHP API. Before trying to run, check that the server is
+listening at <code class="docutils literal"><span class="pre">localhost:3301</span></code> and that the space <code class="docutils literal"><span class="pre">examples</span></code> exists, as
+<a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>. To run, paste the code into
+a file named <code class="file docutils literal"><span class="pre">example.php</span></code> and say
+<code class="samp docutils literal"><span class="pre">php</span> <span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span> <span class="pre">example.php</span></code>.
+The program will open a socket connection with the Tarantool server at
+<code class="docutils literal"><span class="pre">localhost:3301</span></code>, then send an INSERT request, then — if all is well — print
+&quot;Insert succeeded&quot;. If the tuple already exists, the program will print
 “Duplicate key exists in unique index 'primary' in space 'examples'”.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$tarantool</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tarantool</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">3301</span><span class="p">);</span>
@@ -8893,13 +8902,14 @@ well — print &quot;Insert succeeded&quot;. If the tuple already exists, the pr
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The example program only shows one command and does not show all that's necessary
-for good practice. For that, please see <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a> project at GitHub.</p>
+<p>The example program only shows one request and does not show all that's
+necessary for good practice. For that, please see
+<a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php project at GitHub</a>.</p>
 </div>
 <div class="section" id="python">
 <h4>7.9. Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h4>
-<p>Here is a complete Python program that inserts <code class="code docutils literal"><span class="pre">[99999,'Value','Value']</span></code> into
-space <code class="code docutils literal"><span class="pre">examples</span></code> via the high-level Python API.</p>
+<p>Here is a complete Python program that inserts <code class="docutils literal"><span class="pre">[99999,'Value','Value']</span></code> into
+space <code class="docutils literal"><span class="pre">examples</span></code> via the high-level Python API.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 <span class="kn">from</span> <span class="nn">tarantool</span> <span class="kn">import</span> <span class="n">Connection</span>
 
@@ -8908,23 +8918,26 @@ space <code class="code docutils literal"><span class="pre">examples</span></cod
 <span class="k">print</span> <span class="n">result</span>
 </pre></div>
 </div>
-<p>To prepare, paste the code into a file named example.py and install
-tarantool-python with either <code class="code docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool\&gt;0.4</span></code> to install
-in <code class="code docutils literal"><span class="pre">/usr</span></code> (requires <strong>root</strong> privilege) or <code class="code docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool\&gt;0.4</span> <span class="pre">--user</span></code>
-to install in <code class="code docutils literal"><span class="pre">~</span></code> i.e. user's default directory. Before trying to run,
-check that the server is listening and that examples exists, as <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
-To run the program, say <code class="code docutils literal"><span class="pre">python</span> <span class="pre">example.py</span></code>. The program will connect
-to the server, will send the request, and will not throw an exception if
+<p>To prepare, paste the code into a file named <code class="file docutils literal"><span class="pre">example.py</span></code> and install
+the <code class="docutils literal"><span class="pre">tarantool-python</span></code> connector with either <code class="samp docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool&gt;0.4</span></code>
+to install in <code class="file docutils literal"><span class="pre">/usr</span></code> (requires <strong>root</strong> privilege) or
+<code class="samp docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool&gt;0.4</span> <span class="pre">--user</span></code> to install in <code class="file docutils literal"><span class="pre">~</span></code> i.e. user's
+default directory. Before trying to run, check that the server is listening at
+<code class="docutils literal"><span class="pre">localhost:3301</span></code> and that the space <code class="docutils literal"><span class="pre">examples</span></code> exists, as
+<a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
+To run the program, say <code class="samp docutils literal"><span class="pre">python</span> <span class="pre">example.py</span></code>. The program will connect
+to the server, will send the request, and will not throw any exception if
 all went well. If the tuple already exists, the program will throw
-<code class="code docutils literal"><span class="pre">tarantool.error.DatabaseError:</span> <span class="pre">(3,</span> <span class="pre">&quot;Duplicate</span> <span class="pre">key</span> <span class="pre">exists</span> <span class="pre">in</span> <span class="pre">unique</span> <span class="pre">index</span> <span class="pre">'primary'</span> <span class="pre">in</span> <span class="pre">space</span> <span class="pre">'examples'&quot;)</span></code>.</p>
+<code class="docutils literal"><span class="pre">tarantool.error.DatabaseError:</span> <span class="pre">(3,</span> <span class="pre">&quot;Duplicate</span> <span class="pre">key</span> <span class="pre">exists</span> <span class="pre">in</span> <span class="pre">unique</span> <span class="pre">index</span> <span class="pre">'primary'</span> <span class="pre">in</span> <span class="pre">space</span> <span class="pre">'examples'&quot;)</span></code>.</p>
 <p>The example program only shows one request and does not show all that's
-necessary for good practice. For that, see <a class="reference external" href="http://github.com/tarantool/tarantool-python">http://github.com/tarantool/tarantool-python</a>.
-For an example of a Python API for <a class="reference external" href="https://github.com/tarantool/queue">Queue managers on Tarantool</a>, see
-<a class="reference external" href="https://github.com/tarantool/tarantool-queue-python">https://github.com/tarantool/tarantool-queue-python</a>.</p>
+necessary for good practice. For that, please see
+<a class="reference external" href="http://github.com/tarantool/tarantool-python">tarantool-python project at GitHub</a>.
+For an example of using Python API with
+<a class="reference external" href="https://github.com/tarantool/queue">queue managers for Tarantool</a>, see
+<a class="reference external" href="https://github.com/tarantool/queue-python">queue-python project at GitHub</a>.</p>
 </div>
 <div class="section" id="c">
 <h4>7.10. C<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="http://tarantool.github.io/tarantool-c/connection.html#c.tnt_connect" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_connect()</span></code></a></p>
 <p>Here follow two examples of using Tarantool's high-level C API.</p>
 <div class="section" id="example-1">
 <h5>7.10.1. Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h5>
@@ -8977,14 +8990,15 @@ One way to install <code class="docutils literal"><span class="pre">tarantool-c<
 </pre></div>
 </div>
 <p>Before trying to run,
-check that the server is listening and that the space <code class="code docutils literal"><span class="pre">examples</span></code> exists, as
+check that the server is listening at <code class="docutils literal"><span class="pre">localhost:3301</span></code> and that the space
+<code class="docutils literal"><span class="pre">examples</span></code> exists, as
 <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
-To run the program, say <code class="code docutils literal"><span class="pre">./example</span></code>. The program will connect
+To run the program, say <code class="samp docutils literal"><span class="pre">./example</span></code>. The program will connect
 to the server, and will send the request.
 If Tarantool is not running on localhost with listen address = 3301, the program
 will print “Connection refused”.
 If the insert fails, the program will print &quot;Insert failed&quot; and an error number
-(see all error codes in the file
+(see all error codes in the source file
 <a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/box/errcode.h">/src/box/errcode.h</a>).</p>
 <p>Here are notes corresponding to comments in the example program.</p>
 <p><strong>SETUP:</strong> The setup begins by creating a stream.</p>
@@ -8992,8 +9006,8 @@ If the insert fails, the program will print &quot;Insert failed&quot; and an err
 <span class="n">tnt_set</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="n">TNT_OPT_URI</span><span class="p">,</span> <span class="s">&quot;localhost:3301&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>In this program, the stream will be named <code class="code docutils literal"><span class="pre">tnt</span></code>.
-Before connecting on the <code class="code docutils literal"><span class="pre">tnt</span></code> stream, some options may have to be set.
+<p>In this program, the stream will be named <code class="docutils literal"><span class="pre">tnt</span></code>.
+Before connecting on the <code class="docutils literal"><span class="pre">tnt</span></code> stream, some options may have to be set.
 The most important option is TNT_OPT_URI.
 In this program, the URI is <code class="docutils literal"><span class="pre">localhost:3301</span></code>, since that is where the
 Tarantool server is supposed to be listening.</p>
@@ -9014,7 +9028,7 @@ int tnt_connect(struct tnt_stream *s)
 </pre>
 <p>The connection might fail for a variety of reasons, such as:
 the server is not running, or the URI contains an invalid password.
-If the connect fails, the return value will be -1.</p>
+If the connection fails, the return value will be -1.</p>
 <p><strong>MAKE REQUEST:</strong> Most requests require passing a structured value, such as
 the contents of a tuple.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tuple</span> <span class="o">=</span> <span class="n">tnt_object</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
@@ -9041,8 +9055,8 @@ requests in the box library.</p>
 </div>
 <p>In this program, the choice is to do an INSERT request, so
 the program passes the <code class="docutils literal"><span class="pre">tnt_stream</span></code> that was used for connection
-(<code class="code docutils literal"><span class="pre">tnt</span></code>) and the stream that was set up with <a class="reference external" href="http://tarantool.github.io/tarantool-c/msgpackobject.html#c.tnt_object_format" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_object_format()</span></code></a>
-(<code class="code docutils literal"><span class="pre">tuple</span></code>).</p>
+(<code class="docutils literal"><span class="pre">tnt</span></code>) and the <code class="docutils literal"><span class="pre">tnt_stream</span></code> that was set up with
+<a class="reference external" href="http://tarantool.github.io/tarantool-c/msgpackobject.html#c.tnt_object_format" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_object_format()</span></code></a> (<code class="docutils literal"><span class="pre">tuple</span></code>).</p>
 <p>Function description:</p>
 <pre class="highlight literal-block">
 ssize_t tnt_insert(struct tnt_stream *s, uint32_t space, struct tnt_stream *tuple)
@@ -9069,8 +9083,8 @@ tnt-&gt;read_reply(struct tnt_stream *s, struct tnt_reply *r)
 void tnt_reply_free(struct tnt_reply *r)
 </pre>
 <p><strong>TEARDOWN:</strong> When a session ends, the connection that was made with
-<a class="reference external" href="http://tarantool.github.io/tarantool-c/connection.html#c.tnt_connect" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_connect()</span></code></a> should be closed, and the objects that were made in the setup
-should be destroyed.</p>
+<a class="reference external" href="http://tarantool.github.io/tarantool-c/connection.html#c.tnt_connect" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_connect()</span></code></a> should be closed, and the objects that were
+made in the setup should be destroyed.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">tnt_close</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
 <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span>
 <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
@@ -9084,10 +9098,11 @@ void tnt_stream_free(struct tnt_stream *s)
 </div>
 <div class="section" id="example-2">
 <h5>7.10.2. Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h5>
-<p>Here is a complete C program that selects, using index key <code class="code docutils literal"><span class="pre">[99999]</span></code>, from
-space <code class="code docutils literal"><span class="pre">examples</span></code> via the high-level C API.
+<p>Here is a complete C program that selects, using index key <code class="docutils literal"><span class="pre">[99999]</span></code>, from
+space <code class="docutils literal"><span class="pre">examples</span></code> via the high-level C API.
 To display the results, the program uses functions in the
-<a class="reference external" href="http://rtsisyk.github.io/msgpuck/">MsgPuck</a> library which allow decoding of <a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">MessagePack</a>  arrays.</p>
+<a class="reference external" href="http://rtsisyk.github.io/msgpuck/">MsgPuck</a> library which allow decoding of
+<a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">MessagePack</a>  arrays.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;tarantool/tarantool.h&gt;</span><span class="cp"></span>
@@ -9160,17 +9175,17 @@ To display the results, the program uses functions in the
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> gcc -o example2 example2.c -ltarantool
 </pre></div>
 </div>
-<p>To run the program, say <code class="code docutils literal"><span class="pre">./example2</span></code>.</p>
+<p>To run the program, say <code class="samp docutils literal"><span class="pre">./example2</span></code>.</p>
 <p>The two example programs only show a few requests and do not show all that's
-necessary for good practice. See more in the <code class="docutils literal"><span class="pre">tarantool-c</span></code> documentation at
-<a class="reference external" href="http://github.com/tarantool/tarantool-c">http://github.com/tarantool/tarantool-c</a>.</p>
+necessary for good practice. See more in the
+<a class="reference external" href="http://github.com/tarantool/tarantool-c">tarantool-c documentation at GitHub</a>.</p>
 </div>
 </div>
 <div class="section" id="interpreting-function-return-values">
 <h4>7.11. Interpreting function return values<a class="headerlink" href="#interpreting-function-return-values" title="Permalink to this headline">¶</a></h4>
-<p>For all Connectors, calling a function via Tarantool causes a return in MsgPack
-format. If the function is called using the connector's API, some conversions
-may occur. All scalar values are returned as tuples (with a MsgPack
+<p>For all connectors, calling a function via Tarantool causes a return in the
+MsgPack format. If the function is called using the connector's API, some
+conversions may occur. All scalar values are returned as tuples (with a MsgPack
 type-identifier followed by a value); all non-scalar values are returned as a
 group of tuples (with a MsgPack array-identifier followed by the scalar values).
 If the function is called via the binary protocol command layer -- &quot;eval&quot; --
@@ -9178,8 +9193,8 @@ rather than via the connector's API, no conversions occur.</p>
 <p>In the following example, a Lua function will be created. Since it will be
 accessed externally by a 'guest' user, a <code class="docutils literal"><span class="pre">grant</span></code> of an execute privilege will
 be necessary. The function returns an empty array, a scalar string, two booleans,
-and a short integer. The values are the ones described in the msgpack section in
-the table <a class="reference internal" href="singlehtml.html#msgpack-common-types-and-msgpack-encodings"><span class="std std-ref">Common Types and MsgPack Encodings</span></a>.</p>
+and a short integer. The values are the ones described in the table
+<a class="reference internal" href="singlehtml.html#msgpack-common-types-and-msgpack-encodings"><span class="std std-ref">Common Types and MsgPack Encodings</span></a>.</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span><span class="o">=</span><span class="mi">3301</span><span class="p">}</span>
 <span class="go">2016-03-03 18:45:52.802 [27381] main/101/interactive I&gt; ready to accept requests</span>
 <span class="nn">---</span>
@@ -9237,52 +9252,71 @@ written in Perl, PHP, Python, Go, or Java.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>When this program is executed, it will print: <br />
-<span class="ccode">dd 0 0 0 5 90 91 a1 61 91 c2 91 c3 91 7f</span> <br />
-The first five bytes -- <span class="ccode">dd 0 0 0 5</span> -- are the msgpack encoding
-for &quot;32-bit array header with value 5&quot; (see the msgpack <a class="reference external" href="http://github.com/msgpack/msgpack/blob/master/spec.md">Specification</a> page).
-The rest are as described in the Common Types and MsgPack Encodings table.</p>
+<p>When this program is executed, it will print:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dd 0 0 0 5 90 91 a1 61 91 c2 91 c3 91 7f</span>
+</pre></div>
+</div>
+<p>The first five bytes -- <code class="docutils literal"><span class="pre">dd</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">5</span></code> -- are the MsgPack encoding for
+&quot;32-bit array header with value 5&quot; (see
+<a class="reference external" href="http://github.com/msgpack/msgpack/blob/master/spec.md">MsgPack specification</a>).
+The rest are as described in the
+table <a class="reference internal" href="singlehtml.html#msgpack-common-types-and-msgpack-encodings"><span class="std std-ref">Common Types and MsgPack Encodings</span></a>.</p>
 </div>
 </div>
 <span id="document-book/modules"></span><div class="section" id="modules">
 <span id="id1"></span><h3>8. Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="modules-luarocks-and-requiring-modules">
-<span id="modules-modules-luarocks-and-requiring-modules"></span><h4>8.1. Modules, LuaRocks, and requiring modules<a class="headerlink" href="#modules-luarocks-and-requiring-modules" title="Permalink to this headline">¶</a></h4>
-<p>To extend Tarantool there are modules,
-which in Lua are also called &quot;rocks&quot;.
+<p>To extend Tarantool, there are modules which in Lua are also called &quot;rocks&quot;.
 Users who are unfamiliar with Lua modules may benefit from following
-the <a class="reference external" href="http://lua-users.org/wiki/ModulesTutorial">Lua-Modules-Tutorial</a>
+the <a class="reference external" href="http://lua-users.org/wiki/ModulesTutorial">Lua modules tutorial</a>
 before reading this section.</p>
-<p><strong>Install a module</strong></p>
-<p>The modules that come from Tarantool developers and community contributors are
-on <a class="reference external" href="http://rocks.tarantool.org">rocks.tarantool.org</a>. Some of them
+<div class="section" id="installing-an-existing-module">
+<h4>8.1. Installing an existing module<a class="headerlink" href="#installing-an-existing-module" title="Permalink to this headline">¶</a></h4>
+<p>Modules that come from Tarantool developers and community contributors are
+available at <a class="reference external" href="http://rocks.tarantool.org">rocks.tarantool.org</a>. Some of them
 -- <a class="reference internal" href="singlehtml.html#expirationd-module"><span class="std std-ref">expirationd</span></a>,
 <a class="reference internal" href="singlehtml.html#dbms-modules-mysql-example"><span class="std std-ref">mysql</span></a>,
 <a class="reference internal" href="singlehtml.html#dbms-modules-postgresql-example"><span class="std std-ref">postgresql</span></a>,
 <a class="reference internal" href="singlehtml.html#shard-module"><span class="std std-ref">shard</span></a> --
 are discussed elsewhere in this manual.</p>
-<p>Step 1: Install LuaRocks.
-A general description for installing LuaRocks on a Unix system is in
-the <a class="reference external" href="http://luarocks.org/#quick-start">LuaRocks-Quick-Start-Guide</a>.
-For example on Ubuntu one could say: <br />
-<span class="ccode">$</span> <span class="ccodeb">sudo apt-get install luarocks</span></p>
-<p>Step 2: Add the Tarantool repository to the list of rocks servers.
-This is done by putting rocks.tarantool.org in the .luarocks/config.lua file: <br />
-<span class="ccode">$</span> <span class="ccodeb">mkdir ~/.luarocks</span> <br />
-<span class="ccode">$</span> <span class="ccodeb">echo &quot;rocks_servers = {[[http://rocks.tarantool.org/]]}&quot; &gt;&gt; ~/.luarocks/config.lua</span> <br /></p>
-<p>Once these steps are complete, the repositories can be searched with <br />
-<span class="ccode">$</span> <span class="ccodeb">luarocks search</span> <span class="ccodei">module-name</span> <br />
-and new modules can be added to the local repository with <br />
-<span class="ccode">$</span> <span class="ccodeb">luarocks install</span> <span class="ccodei">module-name</span> <span class="ccode">--local</span> <br />
-and any module can be loaded for Tarantool with <br />
-<span class="ccode">tarantool&gt;</span> <span class="ccodei">local-name</span> <span class="ccode">=</span> <span class="ccodeb">require('</span><span class="ccodei">module-name</span><span class="ccode">')</span> <br />
-... and that is why the examples in the manual's Modules section often begin with <cite>require</cite> requests.
-See <a class="reference external" href="github.com/tarantool/rocks&lt;https://github.com/tarantool/rocks">rocks</a> on github.com/tarantool for more examples
-and information about contributing.</p>
+<p><strong>Step 1:</strong> Install LuaRocks.
+A general description of installing LuaRocks on a Unix system is given in
+the <a class="reference external" href="http://luarocks.org/#quick-start">LuaRocks Quick Start Guide</a>.
+For example, on Ubuntu you could say:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install luarocks
+</pre></div>
 </div>
-<div class="section" id="example-making-a-new-lua-module-locally">
-<h4>8.2. Example: making a new Lua module locally<a class="headerlink" href="#example-making-a-new-lua-module-locally" title="Permalink to this headline">¶</a></h4>
-<p>In this example, create a new Lua file named <cite>mymodule.lua</cite>,
+<p><strong>Step 2:</strong> Add the Tarantool repository to the list of rocks servers.
+This is done by putting <a class="reference external" href="http://rocks.tarantool.org">rocks.tarantool.org</a> in
+the <code class="file docutils literal"><span class="pre">.luarocks/config.lua</span></code> file:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> mkdir ~/.luarocks
+<span class="gp">$</span> <span class="nb">echo</span> <span class="s2">&quot;rocks_servers = {[[http://rocks.tarantool.org/]]}&quot;</span> &gt;&gt; ~/.luarocks/config.lua
+</pre></div>
+</div>
+<p>Once these steps are complete, you can:</p>
+<ul>
+<li><p class="first">search the repositories with</p>
+<pre class="highlight literal-block">
+$ luarocks search <em>module-name</em>
+</pre>
+</li>
+<li><p class="first">add new modules to the local repository with</p>
+<pre class="highlight literal-block">
+$ luarocks install <em>module-name</em> --local
+</pre>
+</li>
+<li><p class="first">load any module for Tarantool with</p>
+<pre class="highlight literal-block">
+tarantool&gt; <em>local-name</em> = require('<em>module-name</em>')
+</pre>
+</li>
+</ul>
+<p>... and that is why examples in this manual often begin with <code class="docutils literal"><span class="pre">require</span></code> requests.</p>
+<p>See <a class="reference external" href="https://github.com/tarantool/rocks">&quot;tarantool/rocks&quot; repository at GitHub</a>
+for more examples and information about contributing.</p>
+</div>
+<div class="section" id="creating-a-new-lua-module-locally">
+<h4>8.2. Creating a new Lua module locally<a class="headerlink" href="#creating-a-new-lua-module-locally" title="Permalink to this headline">¶</a></h4>
+<p>As an example, let's create a new Lua file named <code class="file docutils literal"><span class="pre">mymodule.lua</span></code>,
 containing a named function which will be exported.
 Then, in Tarantool: load, examine, and call.</p>
 <p>The Lua file should look like this:</p>
@@ -9294,118 +9328,146 @@ Then, in Tarantool: load, examine, and call.</p>
 <span class="k">return</span> <span class="n">exports</span>
 </pre></div>
 </div>
-<p>The requests to load and examine and call look like this: <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">mymodule = require('mymodule')</span> <br />
-<span class="ccode">&gt;---</span> <br />
-<span class="ccode">&gt;...</span> <br />
-<br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">mymodule</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">&gt;- myfun: 'function: 0x405edf20'</span> <br />
-<span class="ccode">&gt;...</span> <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">mymodule.myfun(os.getenv('USER'))</span> <br />
-<span class="ccode">Hello world</span> <br />
-<span class="ccode">&gt;---</span> <br />
-<span class="ccode">&gt;...</span></p>
+<p>The requests to load, examine and call look like this:</p>
+<pre class="highlight literal-block">
+tarantool&gt; <strong>mymodule = require('mymodule')</strong>
+---
+...
+
+tarantool&gt; <strong>mymodule</strong>
+---
+- myfun: 'function: 0x405edf20'
+...
+
+tarantool&gt; <strong>mymodule.myfun(os.getenv('USER'))</strong>
+Hello world
+---
+...
+</pre>
 </div>
-<div class="section" id="example-making-a-new-c-c-module-locally">
-<span id="modules-example-c"></span><h4>8.3. Example: making a new C/C++ module locally<a class="headerlink" href="#example-making-a-new-c-c-module-locally" title="Permalink to this headline">¶</a></h4>
-<p>In this example, create a new C file named <cite>mycmodule.c</cite>,
+<div class="section" id="creating-a-new-c-c-module-locally">
+<span id="modules-example-c"></span><h4>8.3. Creating a new C/C++ module locally<a class="headerlink" href="#creating-a-new-c-c-module-locally" title="Permalink to this headline">¶</a></h4>
+<p>As an example, let's create a new C file named <code class="file docutils literal"><span class="pre">mycmodule.c</span></code>,
 containing a named function which will be exported.
 Then, in Tarantool: load, examine, and call.</p>
-<p>Prerequisite: install <cite>tarantool-dev</cite> first.</p>
+<p>Prerequisite: install <code class="docutils literal"><span class="pre">tarantool-dev</span></code> first.</p>
 <p>The C file should look like this:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>/* mycmodule - a simple Tarantool module */
-#include &lt;lua.h&gt;
-#include &lt;lauxlib.h&gt;
-#include &lt;lualib.h&gt;
-#include &lt;tarantool.h&gt;
-static int
-myfun(lua_State *L)
-{
-    if (lua_gettop(L) &lt; 1)
-        return luaL_error(L, &quot;Usage: myfun(name)&quot;);
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cm">/* mycmodule - a simple Tarantool module */</span>
+<span class="cp">#include</span> <span class="cpf">&lt;lua.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;lauxlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;lualib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;tarantool.h&gt;</span><span class="cp"></span>
+<span class="k">static</span> <span class="kt">int</span>
+<span class="nf">myfun</span><span class="p">(</span><span class="n">lua_State</span> <span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">lua_gettop</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">luaL_error</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&quot;Usage: myfun(name)&quot;</span><span class="p">);</span>
 
-    /* Get first argument */
-    const char *name = lua_tostring(L, 1);
+    <span class="cm">/* Get first argument */</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="n">lua_tostring</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-    /* Push one result to Lua stack */
-    lua_pushfstring(L, &quot;Hello, %s&quot;, name);
-    return 1; /* the function returns one result */
-}
+    <span class="cm">/* Push one result to Lua stack */</span>
+    <span class="n">lua_pushfstring</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&quot;Hello, %s&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="cm">/* the function returns one result */</span>
+<span class="p">}</span>
 
-LUA_API int
-luaopen_mycmodule(lua_State *L)
-{
-    static const struct luaL_reg reg[] = {
-        { &quot;myfun&quot;, myfun },
-        { NULL, NULL }
-    };
-    luaL_register(L, &quot;mycmodule&quot;, reg);
-    return 1;
-}
+<span class="n">LUA_API</span> <span class="kt">int</span>
+<span class="nf">luaopen_mycmodule</span><span class="p">(</span><span class="n">lua_State</span> <span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">luaL_reg</span> <span class="n">reg</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span> <span class="s">&quot;myfun&quot;</span><span class="p">,</span> <span class="n">myfun</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="n">luaL_register</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s">&quot;mycmodule&quot;</span><span class="p">,</span> <span class="n">reg</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Use <span class="ccode">gcc</span> to compile the code for a shared library (without a &quot;lib&quot; prefix),
-then use <span class="ccode">ls</span> to examine it: <br /></p>
-<p><span class="ccode">$</span> <span class="ccodeb">gcc mycmodule.c -shared -fPIC -I/usr/include/tarantool -o mycmodule.so</span> <br />
-<span class="ccode">$</span> <span class="ccodeb">ls mycmodule.so -l</span> <br />
-<span class="ccode">-rwxr-xr-x 1 roman roman 7272 Jun  3 16:51 mycmodule.so</span></p>
-<p>Tarantool's developers recommend use of Tarantool's <a class="reference external" href="https://github.com/tarantool/http">CMake-scripts</a>
+<p>Use <strong class="program">gcc</strong> to compile the code for a shared library (without a &quot;lib&quot;
+prefix), then use <strong class="program">ls</strong> to examine it:</p>
+<pre class="highlight literal-block">
+$ <strong>gcc mycmodule.c -shared -fPIC -I/usr/include/tarantool -o mycmodule.so</strong>
+$ <strong>ls mycmodule.so -l</strong>
+-rwxr-xr-x 1 roman roman 7272 Jun  3 16:51 mycmodule.so
+</pre>
+<p>Tarantool's developers recommend using Tarantool's
+<a class="reference external" href="https://github.com/tarantool/modulekit">CMake scripts</a>
 which will handle some of the build steps automatically.</p>
-<p>The requests to load and examine and call look like this: <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">myсmodule = require('myсmodule')</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">...</span> <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">myсmodule</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">- myfun: 'function: 0x4100ec98'</span> <br />
-<span class="ccode">...</span> <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">mycmodule.myfun(os.getenv('USER'))</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">- Hello, world</span> <br />
-<span class="ccode">...</span> <br /></p>
-<p>One can also make modules with C++, provided that the code does not throw exceptions.</p>
-<p><strong>Tips for special situations</strong></p>
-<p>Lua caches all loaded modules in the <code class="code docutils literal"><span class="pre">package.loaded</span></code> table.
-To reload a module from disk, set its key to <cite>nil</cite>: <br />
-<span class="ccode">tarantool&gt;</span> <span class="ccodeb">package.loaded['</span><span class="ccodei">modulename</span><span class="ccodeb">'] = nil</span></p>
-<p>Use <code class="docutils literal"><span class="pre">package.path</span></code> to search for <code class="docutils literal"><span class="pre">.lua</span></code> modules, and use
-<code class="docutils literal"><span class="pre">package.cpath</span></code> to search for C binary modules. <br />
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">package.path</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">- ./?.lua;./?/init.lua;/home/roman/.luarocks/share/lua/5.1/?.lua;/home/roman/.luarocks/share/lua/5.1/?/init.lua;/home/roman/.luarocks/share/lua/?.lua;/home/roman/.luarocks/share/lua/?/init.lua;/usr/share/tarantool/?.lua;/usr/share/tarantool/?/init.lua;./?.lua;/usr/local/share/luajit-2.0.3/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua</span> <br />
-<span class="ccode">...</span>
-<span class="ccode">tarantool&gt;</span><span class="ccodeb">package.cpath</span> <br />
-<span class="ccode">---</span> <br />
-<span class="ccode">- ./?.so;/home/roman/.luarocks/lib/lua/5.1/?.so;/home/roman/.luarocks/lib/lua/?.so;/usr/lib/tarantool/?.so;./?.so;/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so</span> <br />
-<span class="ccode">...</span> <br />
-Substitute question-mark with <code class="code docutils literal"><span class="pre">modulename</span></code> when calling
-<code class="code docutils literal"><span class="pre">require('modulename')</span></code>.</p>
-<p>To see the internal state from within a Lua module, use <cite>state</cite>
+<p>The requests to load, examine and call look like this:</p>
+<pre class="highlight literal-block">
+tarantool&gt; <strong>myсmodule = require('myсmodule')</strong>
+---
+...
+tarantool&gt; <strong>myсmodule</strong>
+---
+- myfun: 'function: 0x4100ec98'
+...
+tarantool&gt; <strong>mycmodule.myfun(os.getenv('USER'))</strong>
+---
+- Hello, world
+...
+</pre>
+<p>You can also create modules with C++, provided that the code does not throw
+exceptions.</p>
+</div>
+<div class="section" id="creating-a-mixed-lua-c-module-locally">
+<h4>8.4. Creating a mixed Lua/C module locally<a class="headerlink" href="#creating-a-mixed-lua-c-module-locally" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Create a Lua module and name it as you like, say <code class="docutils literal"><span class="pre">myfunmodule</span></code>.</li>
+<li>Create a C module (submodule) and name it <code class="docutils literal"><span class="pre">myfunmodule.internal</span></code> or
+something like that.</li>
+<li>Load the C module from your Lua code using
+<code class="samp docutils literal"><span class="pre">require('myfunmodule.internal')</span></code> and then wrap or use it.</li>
+</ol>
+<p>For a sample of a mixed Lua/C module, see
+<a class="reference external" href="https://github.com/tarantool/http">&quot;tarantool/http&quot; repository at GitHub</a>.</p>
+</div>
+<div class="section" id="tips-for-special-situations">
+<h4>8.5. Tips for special situations<a class="headerlink" href="#tips-for-special-situations" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Lua caches all loaded modules in the <code class="docutils literal"><span class="pre">package.loaded</span></code> table.
+To reload a module from disk, set its key to <cite>nil</cite>:</p>
+<pre class="highlight literal-block">
+tarantool&gt; package.loaded['<em>modulename</em>'] = nil
+</pre>
+</li>
+<li><p class="first">Use <code class="docutils literal"><span class="pre">package.path</span></code> to search for <code class="file docutils literal"><span class="pre">.lua</span></code> modules, and use
+<code class="docutils literal"><span class="pre">package.cpath</span></code> to search for C binary modules.</p>
+<pre class="highlight literal-block">
+tarantool&gt; <strong>package.path</strong>
+---
+- ./?.lua;./?/init.lua;/home/roman/.luarocks/share/lua/5.1/?.lua;/home/roma
+n/.luarocks/share/lua/5.1/?/init.lua;/home/roman/.luarocks/share/lua/?.lua;
+/home/roman/.luarocks/share/lua/?/init.lua;/usr/share/tarantool/?.lua;/usr/
+share/tarantool/?/init.lua;./?.lua;/usr/local/share/luajit-2.0.3/?.lua;/usr
+/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua
+...
+tarantool&gt; <strong>package.cpath</strong>
+---
+- ./?.so;/home/roman/.luarocks/lib/lua/5.1/?.so;/home/roman/.luarocks/lib/l
+ua/?.so;/usr/lib/tarantool/?.so;./?.so;/usr/local/lib/lua/5.1/?.so;/usr/loc
+al/lib/lua/5.1/loadall.so
+...
+</pre>
+<p>Question-marks stand for the module name that was specified earlier when
+saying <code class="extsamp docutils literal"><span class="pre">require('</span><em><span class="pre">modulename</span></em><span class="pre">')</span></code>.</p>
+</li>
+<li><p class="first">To see the internal state from within a Lua module, use <code class="samp docutils literal"><span class="pre">state</span></code>
 and create a local variable inside the scope of the file:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>-- mymodule
-local exports = {}
-local state = {}
-exports.myfun = function()
-    state.x = 42 -- use state
-end
-return exports
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="c1">-- mymodule</span>
+<span class="kd">local</span> <span class="n">exports</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="kd">local</span> <span class="n">state</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">exports</span><span class="p">.</span><span class="n">myfun</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+    <span class="n">state</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span> <span class="c1">-- use state</span>
+<span class="k">end</span>
+<span class="k">return</span> <span class="n">exports</span>
 </pre></div>
 </div>
-<p>Notice that the Lua examples use local variables.
-Use global variables with caution, since the module's users
+</li>
+<li><p class="first">Notice that Lua examples in this manual use <em>local</em> variables.
+Use <em>global</em> variables with caution, since the module's users
 may be unaware of them.</p>
-<p>To see a sample Lua + C module, go to <a class="reference external" href="https://github.com/tarantool/http">http</a> on github.com/tarantool.</p>
-</div>
-<div class="section" id="mixed-lua-c-module">
-<h4>8.4. Mixed Lua/C module<a class="headerlink" href="#mixed-lua-c-module" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Create a Lua module, say <cite>myfunmodule</cite>.</li>
-<li>Create C module and name it <cite>myfunmodule.internal</cite> or something like
-that (submodule).</li>
-<li>Load C module from Lua code using <cite>require('myfunmodule.internal')</cite> and then
-wrap or use it.</li>
+</li>
 </ul>
 </div>
 </div>
@@ -11461,18 +11523,24 @@ use C stored procedures, and they must work,
 because releases don't happen if Tarantool doesn't pass the tests.</p>
 </div>
 </div>
-<span id="document-book/app/g_changes"></span><div class="section" id="appendix-g-some-significant-changes-in-version-1-7">
-<h3>15. Appendix G. Some significant changes in version 1.7<a class="headerlink" href="#appendix-g-some-significant-changes-in-version-1-7" title="Permalink to this headline">¶</a></h3>
-<p>The disk-based storge engine, which was called &quot;sophia&quot; or &quot;phia&quot;
-in earlier versions, is superseded by the &quot;vinyl&quot; storage engine.</p>
+<span id="document-book/app/g_changes"></span><div class="section" id="appendix-g-version-specific-changes">
+<h3>15. Appendix G. Version-specific changes<a class="headerlink" href="#appendix-g-version-specific-changes" title="Permalink to this headline">¶</a></h3>
+<p>This appendix summarizes significant changes introduced in specific versions of
+Tarantool.</p>
+<p>For smaller feature changes and bug fixes, see closed
+<a class="reference external" href="https://github.com/tarantool/tarantool/milestones?state=closed">milestones</a>
+at GitHub.</p>
+<div class="section" id="changes-in-tarantool-version-1-7">
+<h4>15.1. Changes in Tarantool version 1.7<a class="headerlink" href="#changes-in-tarantool-version-1-7" title="Permalink to this headline">¶</a></h4>
+<p>The disk-based storge engine, which was called <cite>sophia</cite> or <cite>phia</cite>
+in earlier versions, is superseded by the <cite>vinyl</cite> storage engine.</p>
 <p>There are new types for indexed fields.</p>
 <p>The LuaJIT version is updated.</p>
 <p>Automatic replication cluster bootstrap (to make it easier
 to configure a new replication cluster) is supported.</p>
-<p>The space_object:inc() function is removed.</p>
-<p>The space_object:dec() function is removed.</p>
-<p>Smaller feature changes and bug fixes can be seeen by looking
-at github.com closed <a class="reference external" href="https://github.com/tarantool/tarantool/milestones?state=closed">milestones</a>.</p>
+<p>The <code class="docutils literal"><span class="pre">space_object:inc()</span></code> function is removed.</p>
+<p>The <code class="docutils literal"><span class="pre">space_object:dec()</span></code> function is removed.</p>
+</div>
 </div>
 </div>
 </div>
@@ -17067,7 +17135,7 @@ luarocks install mysql [MYSQL_LIBDIR = <em>path</em>]
 <div class="highlight-bash"><div class="highlight"><pre><span></span>luarocks install mysql <span class="nv">MYSQL_LIBDIR</span><span class="o">=</span>/usr/local/mysql/lib
 </pre></div>
 </div>
-<p>See also <a class="reference internal" href="singlehtml.html#modules-modules-luarocks-and-requiring-modules"><span class="std std-ref">Modules, LuaRocks, and requiring modules</span></a>.</p>
+<p>See also <a class="reference internal" href="singlehtml.html#modules"><span class="std std-ref">Modules</span></a>.</p>
 </div>
 <div class="section" id="with-github">
 <h6>With GitHub<a class="headerlink" href="#with-github" title="Permalink to this headline">¶</a></h6>
@@ -17360,7 +17428,7 @@ luarocks install pg [POSTGRESQL_LIBDIR = <em>path</em>]
 <div class="highlight-bash"><div class="highlight"><pre><span></span>luarocks install pg <span class="nv">POSTGRESQL_LIBDIR</span><span class="o">=</span>/usr/local/postgresql/lib
 </pre></div>
 </div>
-<p>See also <a class="reference internal" href="singlehtml.html#modules-modules-luarocks-and-requiring-modules"><span class="std std-ref">Modules, LuaRocks, and requiring modules</span></a>.</p>
+<p>See also <a class="reference internal" href="singlehtml.html#modules"><span class="std std-ref">Modules</span></a>.</p>
 </div>
 <div class="section" id="id3">
 <h6>With GitHub<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h6>
@@ -21347,8 +21415,8 @@ run immediately.</p>
 </div>
 </div>
 </div>
-<span id="document-dev_guide/box_protocol"></span><div class="section" id="iproto-protocol">
-<span id="box-protocol-iproto-protocol"></span><h3>IProto Protocol<a class="headerlink" href="#iproto-protocol" title="Permalink to this headline">¶</a></h3>
+<span id="document-dev_guide/box_protocol"></span><div class="section" id="tarantool-s-binary-protocol">
+<span id="box-protocol-iproto-protocol"></span><h3>Tarantool's binary protocol<a class="headerlink" href="#tarantool-s-binary-protocol" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="notion-in-diagrams">
 <h4>Notion in diagrams<a class="headerlink" href="#notion-in-diagrams" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-none"><div class="highlight"><pre><span></span>0    X
@@ -21380,7 +21448,7 @@ run immediately.</p>
 </div>
 <div class="section" id="overview">
 <h4>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h4>
-<p>IPROTO is a binary request/response protocol.</p>
+<p>Tarantool's binary protocol is a binary request/response protocol.</p>
 </div>
 <div class="section" id="greeting-packet">
 <h4>Greeting Packet<a class="headerlink" href="#greeting-packet" title="Permalink to this headline">¶</a></h4>
@@ -23474,17 +23542,9 @@ Alert the driver to target bugs and blueprints to the new milestone.</p>
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "singlehtml";
         this.language = "en"
     };

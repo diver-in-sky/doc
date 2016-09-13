@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -351,6 +352,10 @@ source code is available in file
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#box-space-cluster"><span class="std std-ref">box.space._cluster</span></a></td>
 <td>.(Metadata) List of clusters</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#box-space-func"><span class="std std-ref">box.space._func</span></a></td>
+<td>.(Metadata) List of function
+tuples</td>
 </tr>
 </tbody>
 </table>
@@ -755,8 +760,7 @@ to show that the effect is the converse of <code class="docutils literal"><span 
 </table>
 <p>Possible errors: If a different tuple with the same unique-key
 value already exists, returns <code class="xref std std-errcode docutils literal"><span class="pre">ER_TUPLE_FOUND</span></code>. (This
-will only happen if there is a secondary index. By default
-secondary indexes are unique.)</p>
+will only happen if there is a unique secondary index.)</p>
 <p><strong>Complexity Factors:</strong> Index size, Index type,
 Number of indexes accessed, WAL settings.</p>
 <p><strong>Example:</strong></p>
@@ -826,14 +830,12 @@ affected field is field <code class="docutils literal"><span class="pre">1</span
 <code class="docutils literal"><span class="pre">55</span></code>, the second affected field is field <code class="docutils literal"><span class="pre">3</span></code> and the value which will be
 assigned to it is <code class="docutils literal"><span class="pre">'x'</span></code>.</p>
 <p><strong>Example:</strong></p>
-<p>Assume that the initial state of the database is <code class="docutils literal"><span class="pre">tester</span></code> that has
-one tuple set and one primary key whose type is <code class="docutils literal"><span class="pre">unsigned</span></code>.
+<p>Assume that initially there is a space named <code class="docutils literal"><span class="pre">tester</span></code>
+with a primary-key index whose type is <code class="docutils literal"><span class="pre">unsigned</span></code>.
 There is one tuple, with <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code> and <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'A'</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">B&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>The first argument is <code class="docutils literal"><span class="pre">tester</span></code>, that is, the affected space is <code class="docutils literal"><span class="pre">tester</span></code>.
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update(999,</span> <span class="pre">{{'=',</span> <span class="pre">2,</span> <span class="pre">'B'}})</span></code> <br />
+The first argument is <code class="docutils literal"><span class="pre">tester</span></code>, that is, the affected space is <code class="docutils literal"><span class="pre">tester</span></code>.
 The second argument is <code class="docutils literal"><span class="pre">999</span></code>, that is, the affected tuple is identified by
 primary key value = 999.
 The third argument is <code class="docutils literal"><span class="pre">=</span></code>, that is, there is one operation —
@@ -841,61 +843,47 @@ The third argument is <code class="docutils literal"><span class="pre">=</span><
 The fourth argument is <code class="docutils literal"><span class="pre">2</span></code>, that is, the affected field is <code class="docutils literal"><span class="pre">field[2]</span></code>.
 The fifth argument is <code class="docutils literal"><span class="pre">'B'</span></code>, that is, <code class="docutils literal"><span class="pre">field[2]</span></code> contents change to <code class="docutils literal"><span class="pre">'B'</span></code>.
 Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code> and <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'B'</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">B&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>the arguments are the same, except that the key is passed as a Lua table
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'=',</span> <span class="pre">2,</span> <span class="pre">'B'}})</span></code> <br />
+the arguments are the same, except that the key is passed as a Lua table
 (inside braces). This is unnecessary when the primary key has only one
 field, but would be necessary if the primary key had more than one field.
 Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code> and <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'B'</span></code> (no change).</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>the arguments are the same, except that the fourth argument is <code class="docutils literal"><span class="pre">3</span></code>,
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'=',</span> <span class="pre">3,</span> <span class="pre">1}})</span></code> <br />
+the arguments are the same, except that the fourth argument is <code class="docutils literal"><span class="pre">3</span></code>,
 that is, the affected field is <code class="docutils literal"><span class="pre">field[3]</span></code>. It is okay that, until now,
 <code class="docutils literal"><span class="pre">field[3]</span></code> has not existed. It gets added. Therefore, after this update,
 <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>, <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'B'</span></code>, <code class="docutils literal"><span class="pre">field[3]</span></code> = <code class="docutils literal"><span class="pre">1</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">+&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>the arguments are the same, except that the third argument is <code class="docutils literal"><span class="pre">'+'</span></code>,
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'+',</span> <span class="pre">3,</span> <span class="pre">1}})</span></code> <br />
+the arguments are the same, except that the third argument is <code class="docutils literal"><span class="pre">'+'</span></code>,
 that is, the operation is addition rather than assignment. Since
 <code class="docutils literal"><span class="pre">field[3]</span></code> previously contained <code class="docutils literal"><span class="pre">1</span></code>, this means we're adding <code class="docutils literal"><span class="pre">1</span></code>
 to <code class="docutils literal"><span class="pre">1</span></code>. Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>,
 <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'B'</span></code>, <code class="docutils literal"><span class="pre">field[3]</span></code> = <code class="docutils literal"><span class="pre">2</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">|&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">C&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>the idea is to modify two fields at once. The formats are <code class="docutils literal"><span class="pre">'|'</span></code> and
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'|',</span> <span class="pre">3,</span> <span class="pre">1},</span> <span class="pre">{'=',</span> <span class="pre">2,</span> <span class="pre">'C'}})</span></code> <br />
+the idea is to modify two fields at once. The formats are <code class="docutils literal"><span class="pre">'|'</span></code> and
 <code class="docutils literal"><span class="pre">=</span></code>, that is, there are two operations, OR and assignment. The fourth
 and fifth arguments mean that <code class="docutils literal"><span class="pre">field[3]</span></code> gets OR'ed with <code class="docutils literal"><span class="pre">1</span></code>. The
 seventh and eighth arguments mean that <code class="docutils literal"><span class="pre">field[2]</span></code> gets assigned <code class="docutils literal"><span class="pre">'C'</span></code>.
 Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>, <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'C'</span></code>,
 <code class="docutils literal"><span class="pre">field[3]</span></code> = <code class="docutils literal"><span class="pre">3</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">#&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;</span><span class="s">-&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>The idea is to delete <code class="docutils literal"><span class="pre">field[2]</span></code>, then subtract <code class="docutils literal"><span class="pre">3</span></code> from <code class="docutils literal"><span class="pre">field[3]</span></code>.
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'#',</span> <span class="pre">2,</span> <span class="pre">1},</span> <span class="pre">{'-',</span> <span class="pre">2,</span> <span class="pre">3}})</span></code> <br />
+The idea is to delete <code class="docutils literal"><span class="pre">field[2]</span></code>, then subtract <code class="docutils literal"><span class="pre">3</span></code> from <code class="docutils literal"><span class="pre">field[3]</span></code>.
 But after the delete, there is a renumbering, so <code class="docutils literal"><span class="pre">field[3]</span></code> becomes
 <code class="docutils literal"><span class="pre">field[2]`</span></code> before we subtract <code class="docutils literal"><span class="pre">3</span></code> from it, and that's why the
 seventh argument is <code class="docutils literal"><span class="pre">2</span></code>, not <code class="docutils literal"><span class="pre">3</span></code>. Therefore, after this update,
 <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>, <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">0</span></code>.</p>
-<p>In the update:</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">=&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">XYZ&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>we're making a long string so that splice will work in the next example.
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{'=',</span> <span class="pre">2,</span> <span class="pre">'XYZ'}})</span></code> <br />
+we're making a long string so that splice will work in the next example.
 Therefore, after this update, <code class="docutils literal"><span class="pre">field[1]</span></code> = <code class="docutils literal"><span class="pre">999</span></code>, <code class="docutils literal"><span class="pre">field[2]</span></code> = <code class="docutils literal"><span class="pre">'XYZ'</span></code>.</p>
-<p>In the update</p>
-<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="n">update</span><span class="p">({</span><span class="mi">999</span><span class="p">},</span> <span class="p">{{</span><span class="s1">&#39;</span><span class="s">:&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">!!&#39;</span><span class="p">}})</span>
-</pre></div>
-</div>
-<p>The third argument is <code class="docutils literal"><span class="pre">':'</span></code>, that is, this is the example of splice.
+<p>In the update: <br />
+<code class="docutils literal"><span class="pre">box.space.tester:update({999},</span> <span class="pre">{{':',</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">'!!'}})</span></code> <br />
+The third argument is <code class="docutils literal"><span class="pre">':'</span></code>, that is, this is the example of splice.
 The fourth argument is <code class="docutils literal"><span class="pre">2</span></code> because the change will occur in <code class="docutils literal"><span class="pre">field[2]</span></code>.
 The fifth argument is 2 because deletion will begin with the second byte.
 The sixth argument is 1 because the number of bytes to delete is 1.
@@ -1254,7 +1242,9 @@ Number of indexes accessed, WAL settings.</p>
 <dt id="lua-data.box.space._space">
 <em class="property"> </em><code class="descclassname">box.space.</code><code class="descname">_space</code><a class="headerlink" href="#lua-data.box.space._space" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">_space</span></code> is a system tuple set. Its tuples contain these fields: <code class="docutils literal"><span class="pre">id</span></code>,
-<code class="docutils literal"><span class="pre">uid</span></code>, <code class="docutils literal"><span class="pre">space-name</span></code>, <code class="docutils literal"><span class="pre">engine</span></code>, <code class="docutils literal"><span class="pre">field_count</span></code>, <code class="docutils literal"><span class="pre">temporary</span></code>, <code class="docutils literal"><span class="pre">format</span></code>.
+<code class="docutils literal"><span class="pre">owner</span></code> (= id of user who owns the space),
+<code class="docutils literal"><span class="pre">name</span></code>, <code class="docutils literal"><span class="pre">engine</span></code>, <code class="docutils literal"><span class="pre">field_count</span></code>,
+<code class="docutils literal"><span class="pre">flags</span></code> (e.g. temporary), <code class="docutils literal"><span class="pre">format</span></code>.
 These fields are established by <a class="reference internal" href="box_schema.html#box-schema-space-create"><span class="std std-ref">space.create()</span></a>.</p>
 <p><strong>Example:</strong></p>
 <p>The following function will display all simple fields in all tuples of <code class="docutils literal"><span class="pre">_space</span></code>.</p>
@@ -1302,6 +1292,7 @@ Then it retrieves the _space tuple for the new space.
 This illustrates the typical use of the <code class="docutils literal"><span class="pre">format</span></code> clause,
 it shows the recommended names and data types for the fields.</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">TM&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">         &gt; </span>  <span class="n">id</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">,</span>
 <span class="gp">         &gt; </span>  <span class="n">format</span> <span class="o">=</span> <span class="p">{</span>
 <span class="gp">         &gt; </span>    <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="s2">&quot;</span><span class="s">name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">field_1&quot;</span><span class="p">},</span>
 <span class="gp">         &gt; </span>    <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="s2">&quot;</span><span class="s">type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">unsigned&quot;</span><span class="p">}</span>
@@ -1311,16 +1302,16 @@ it shows the recommended names and data types for the fields.</p>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">index</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
   <span class="l l-Scalar l-Scalar-Plain">on_replace</span><span class="p p-Indicator">:</span> <span class="s">&#39;function:</span><span class="nv"> </span><span class="s">0x41c67338&#39;</span>
   <span class="l l-Scalar l-Scalar-Plain">temporary</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">522</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12345</span>
   <span class="l l-Scalar l-Scalar-Plain">engine</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">memtx</span>
   <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">TM</span>
   <span class="l l-Scalar l-Scalar-Plain">field_count</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">created</span>
 <span class="nn">...</span>
-<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">_space</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="mi">522</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">_space</span><span class="p">:</span><span class="nb">select</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
 <span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">522</span><span class="p p-Indicator">,</span> <span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;TM&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;memtx&#39;</span><span class="p p-Indicator">,</span> <span class="nv">0</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">{},</span> <span class="p p-Indicator">[{</span><span class="s">&#39;name&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;field_1&#39;</span><span class="p p-Indicator">},</span> <span class="p p-Indicator">{</span><span class="s">&#39;type&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;unsigned&#39;</span><span class="p p-Indicator">}]]</span>
+<span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">12345</span><span class="p p-Indicator">,</span> <span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;TM&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;memtx&#39;</span><span class="p p-Indicator">,</span> <span class="nv">0</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">{},</span> <span class="p p-Indicator">[{</span><span class="s">&#39;name&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;field_1&#39;</span><span class="p p-Indicator">},</span> <span class="p p-Indicator">{</span><span class="s">&#39;type&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;unsigned&#39;</span><span class="p p-Indicator">}]]</span>
 <span class="nn">...</span>
 </pre></div>
 </div>
@@ -1330,8 +1321,9 @@ it shows the recommended names and data types for the fields.</p>
 <dt id="lua-data.box.space._index">
 <em class="property"> </em><code class="descclassname">box.space.</code><code class="descname">_index</code><a class="headerlink" href="#lua-data.box.space._index" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">_index</span></code> is a system tuple set. Its tuples contain these fields:
-<code class="docutils literal"><span class="pre">space-id</span> <span class="pre">index-id</span> <span class="pre">index-name</span> <span class="pre">index-type</span> <span class="pre">is-index-unique</span>
-<span class="pre">[tuple-field-no,</span> <span class="pre">tuple-field-type</span> <span class="pre">...]</span></code>.</p>
+<code class="docutils literal"><span class="pre">id</span></code> (= id of space), <code class="docutils literal"><span class="pre">iid</span></code> (= index number within space),
+<code class="docutils literal"><span class="pre">name</span></code>, <code class="docutils literal"><span class="pre">type</span></code>, <code class="docutils literal"><span class="pre">opts</span></code> (e.g. unique option),
+[<code class="docutils literal"><span class="pre">tuple-field-no</span></code>, <code class="docutils literal"><span class="pre">tuple-field-type</span></code> ...].</p>
 <p>The following function will display all fields in all tuples of <code class="docutils literal"><span class="pre">_index</span></code>:
 (notice that the fifth field gets special treatment as a map value and
 the sixth or later fields get special treatment as arrays):</p>
@@ -1423,6 +1415,13 @@ support of the <a class="reference internal" href="authentication.html#authentic
 <em class="property"> </em><code class="descclassname">box.space.</code><code class="descname">_cluster</code><a class="headerlink" href="#lua-data.box.space._cluster" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">_cluster</span></code> is a system tuple set
 for support of the <a class="reference internal" href="../replication/index.html#index-box-replication"><span class="std std-ref">replication feature</span></a>.</p>
+</dd></dl>
+
+<span class="target" id="box-space-func"></span><dl class="data">
+<dt id="lua-data.box.space._func">
+<em class="property"> </em><code class="descclassname">box.space.</code><code class="descname">_func</code><a class="headerlink" href="#lua-data.box.space._func" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">_func</span></code> is a system tuple set
+with function tuples made by <a class="reference internal" href="box_schema.html#box-schema-func-create"><span class="std std-ref">box.schema.func.create</span></a>.</p>
 </dd></dl>
 
 <div class="section" id="example-use-box-space-functions-to-read-space-tuples">
@@ -1531,17 +1530,9 @@ this <cite>for</cite> loop will do the organizing: <br />
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/box/box_space";
         this.language = "en"
     };

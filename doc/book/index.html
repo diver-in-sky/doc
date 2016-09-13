@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -195,7 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Appendix D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Appendix E. Cookbook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Appendix F. C tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Appendix G. Some significant changes in version 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Appendix G. Version-specific changes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Lua reference</a></li>
@@ -245,7 +246,7 @@
 <li class="toctree-l2"><a class="reference internal" href="box/index.html#document-data-model">3.1. Document data model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="box/index.html#submodules-of-the-box-library">3.2. Submodules of the box library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="box/index.html#the-two-storage-engines-memtx-and-vinyl">3.3. The two storage engines: memtx and vinyl</a></li>
-<li class="toctree-l2"><a class="reference internal" href="box/index.html#library-reference">3.4. Library Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="box/index.html#library-reference">3.4. Library reference</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="replication/index.html">4. Replication</a><ul>
@@ -298,10 +299,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">8. Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#modules-luarocks-and-requiring-modules">8.1. Modules, LuaRocks, and requiring modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#example-making-a-new-lua-module-locally">8.2. Example: making a new Lua module locally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#example-making-a-new-c-c-module-locally">8.3. Example: making a new C/C++ module locally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#mixed-lua-c-module">8.4. Mixed Lua/C module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#installing-an-existing-module">8.1. Installing an existing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#creating-a-new-lua-module-locally">8.2. Creating a new Lua module locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#creating-a-new-c-c-module-locally">8.3. Creating a new C/C++ module locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#creating-a-mixed-lua-c-module-locally">8.4. Creating a mixed Lua/C module locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#tips-for-special-situations">8.5. Tips for special situations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="app/a_errcodes.html">9. Appendix A. List of error codes</a></li>
@@ -328,7 +330,10 @@
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html#c-stored-procedures">14.1. C stored procedures</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="app/g_changes.html">15. Appendix G. Some significant changes in version 1.7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app/g_changes.html">15. Appendix G. Version-specific changes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html#changes-in-tarantool-version-1-7">15.1. Changes in Tarantool version 1.7</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -337,17 +342,9 @@
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/index";
         this.language = "en"
     };

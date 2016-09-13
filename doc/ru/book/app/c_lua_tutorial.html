@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_changes.html">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -241,7 +242,7 @@
 <a class="reference internal" href="#c-lua-tutorial-sum-a-json-field"><span class="std std-ref">Sum a JSON field for all tuples</span></a>,
 <a class="reference internal" href="#c-lua-tutorial-indexed-pattern-search"><span class="std std-ref">Indexed pattern search</span></a>.</p>
 <div class="section" id="insert-one-million-tuples-with-a-lua-stored-procedure">
-<span id="c-lua-tutorial-insert-one-million-tuples"></span><h2>11.1. Вставка 1 млн таплов с помощью хранимой процедуры на языке Lua<a class="headerlink" href="#insert-one-million-tuples-with-a-lua-stored-procedure" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="c-lua-tutorial-insert-one-million-tuples"></span><h2>11.1. Вставка 1 млн кортежей с помощью хранимой процедуры на языке Lua<a class="headerlink" href="#insert-one-million-tuples-with-a-lua-stored-procedure" title="Ссылка на этот заголовок">¶</a></h2>
 <p>This is an exercise assignment: “Insert one million tuples. Each tuple should
 have a constantly-increasing numeric primary-key field and a random alphabetic
 10-character string field.”</p>
@@ -449,7 +450,7 @@ a function in Tarantool's library of Lua functions.</p>
 The first field is numeric: 1. The second field is a random string. Once again
 the <code class="docutils literal"><span class="pre">string_function()</span></code> can be invoked from <code class="docutils literal"><span class="pre">main_function()</span></code> which can be
 invoked with  <code class="docutils literal"><span class="pre">main_function()</span></code>.</p>
-<p>См. также примеры таплов в разделе про вложенный модуль <a class="reference internal" href="../box/box_tuple.html#box-tuple"><span class="std std-ref">box.tuple</span></a>.</p>
+<p>См. также примеры кортежей в разделе про вложенный модуль <a class="reference internal" href="../box/box_tuple.html#box-tuple"><span class="std std-ref">box.tuple</span></a>.</p>
 <p>Теперь вывод на экране выглядит следующим образом:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="k">function</span> <span class="nf">main_function</span><span class="p">()</span>
 <span class="gp">         &gt; </span><span class="kd">local</span> <span class="n">string_value</span><span class="p">,</span> <span class="n">t</span>
@@ -628,7 +629,7 @@ running the test, one can reduce the elapsed time to 4 seconds.</p>
 </div>
 </div>
 <div class="section" id="sum-a-json-field-for-all-tuples">
-<span id="c-lua-tutorial-sum-a-json-field"></span><h2>11.2. Подсчет суммы по JSON-полям во всех таплах<a class="headerlink" href="#sum-a-json-field-for-all-tuples" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="c-lua-tutorial-sum-a-json-field"></span><h2>11.2. Подсчет суммы по JSON-полям во всех кортежах<a class="headerlink" href="#sum-a-json-field-for-all-tuples" title="Ссылка на этот заголовок">¶</a></h2>
 <p>This is an exercise assignment: “Assume that inside every tuple there is a
 string formatted as JSON. Inside that string there is a JSON numeric field.
 For each tuple, find the numeric field's value and add it to a 'sum' variable.
@@ -959,17 +960,9 @@ The result will be: <br />
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/app/c_lua_tutorial";
         this.language = "ru"
     };

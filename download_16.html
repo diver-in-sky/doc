@@ -116,6 +116,9 @@ the '# install' comment):</p>
 <div class="highlight"><pre><span></span>curl http://download.tarantool.org/tarantool/1.6/gpgkey <span class="p">|</span> sudo apt-key add -
 <span class="nv">release</span><span class="o">=</span><span class="sb">`</span>lsb_release -c -s<span class="sb">`</span>
 
+<span class="c1"># install https download transport for APT</span>
+sudo apt-get -y install apt-transport-https
+
 <span class="c1"># append two lines to a list of source repositories</span>
 sudo rm -f /etc/apt/sources.list.d/*tarantool*.list
 sudo tee /etc/apt/sources.list.d/tarantool_1_6.list <span class="s">&lt;&lt;- EOF</span>
@@ -140,6 +143,9 @@ will contain the Debian version code (e.g. &quot;jessie&quot;).</p>
 <p>Copy and paste the script below to the terminal prompt:</p>
 <div class="highlight"><pre><span></span>curl http://download.tarantool.org/tarantool/1.6/gpgkey <span class="p">|</span> sudo apt-key add -
 <span class="nv">release</span><span class="o">=</span><span class="sb">`</span>lsb_release -c -s<span class="sb">`</span>
+
+<span class="c1"># install https download transport for APT</span>
+sudo apt-get -y install apt-transport-https
 
 <span class="c1"># append two lines to a list of source repositories</span>
 sudo rm -f /etc/apt/sources.list.d/*tarantool*.list
@@ -354,8 +360,9 @@ Also, look at the <a class="reference external" href="http://freshports.org/data
       </li>
       <li class="b-download-list-item">
         <a href="#" class="b-download-list-item-url">Building from source</a>
-        <div class="b-download-list-item-drop"><p>Visit the Tarantool repository at GitHub to download the latest
-source files for version <a class="reference external" href="http://github.com/tarantool/tarantool/tree/1.6">1.6</a>.</p>
+        <div class="b-download-list-item-drop"><p>To get the latest source files for version 1.6, you can
+clone or download them from the Tarantool repository at <a class="reference external" href="http://github.com/tarantool/tarantool/tree/1.6">GitHub</a>, or
+download them as a <a class="reference external" href="http://download.tarantool.org/tarantool/1.6/src/">tarball</a>.</p>
 Please consult with the Tarantool documentation for
 <a class="reference external" href="http://tarantool.org/doc/book/user_guide_getting_started.html#downloading-and-installing-a-binary-package">build-from-source</a> instructions on your system.</div>
       </li>

@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>IProto Protocol</title>
+    <title>Tarantool's binary protocol</title>
     <link rel="icon" type="image/png" sizes="192x192"
           href="/theme/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32"
@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -133,8 +134,8 @@
         
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
-      <h2 class="b-section-title b-ellipsis" title="IProto Protocol">
-        IProto Protocol
+      <h2 class="b-section-title b-ellipsis" title="Tarantool's binary protocol">
+        Tarantool's binary protocol
       </h2>
   <div class="b-doc-language_selector">
     <ul class="b-doc-language_selector-list">
@@ -190,7 +191,7 @@
 <li class="toctree-l2"><a class="reference internal" href="building_documentation.html">Building documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer_guidelines.html">Developer guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation_guidelines.html">Documentation guidelines</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">IProto Protocol</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tarantool's binary protocol</a></li>
 <li class="toctree-l2"><a class="reference internal" href="c_style_guide.html">C Style Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_style_guide.html">Python Style Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release_management.html">Release management</a></li>
@@ -219,16 +220,16 @@
       
       
       <li class="b-path-list-item">
-        <div title="IProto Protocol" class="b-path_current b-ellipsis">
-          IProto Protocol
+        <div title="Tarantool's binary protocol" class="b-path_current b-ellipsis">
+          Tarantool's binary protocol
         </div>
       </li>
       
     </ul>
   </div>
 
-  <div class="section" id="iproto-protocol">
-<span id="box-protocol-iproto-protocol"></span><h1>IProto Protocol<a class="headerlink" href="#iproto-protocol" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="tarantool-s-binary-protocol">
+<span id="box-protocol-iproto-protocol"></span><h1>Tarantool's binary protocol<a class="headerlink" href="#tarantool-s-binary-protocol" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="notion-in-diagrams">
 <h2>Notion in diagrams<a class="headerlink" href="#notion-in-diagrams" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-none"><div class="highlight"><pre><span></span>0    X
@@ -260,7 +261,7 @@
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>IPROTO is a binary request/response protocol.</p>
+<p>Tarantool's binary protocol is a binary request/response protocol.</p>
 </div>
 <div class="section" id="greeting-packet">
 <h2>Greeting Packet<a class="headerlink" href="#greeting-packet" title="Permalink to this headline">¶</a></h2>
@@ -768,17 +769,9 @@ the following schema:</p>
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "dev_guide/box_protocol";
         this.language = "en"
     };

@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -195,7 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../app/d_vinyl/index.html">12. Appendix D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../app/e_cookbook.html">13. Appendix E. Cookbook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../app/f_c_tutorial.html">14. Appendix F. C tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Appendix G. Some significant changes in version 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Appendix G. Version-specific changes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Lua reference</a></li>
@@ -238,25 +239,29 @@
 <p>This chapter documents APIs for various programming languages.</p>
 <div class="section" id="protocol">
 <h2>7.1. Protocol<a class="headerlink" href="#protocol" title="Permalink to this headline">¶</a></h2>
-<p>Tarantool protocol was designed with a focus on asynchronous I/O and easy integration
-with proxies. Each client request starts with a variable-length binary header,
-containing request id, request type, server id, log sequence number, and so on.</p>
+<p>Tarantool's binary protocol was designed with a focus on asynchronous I/O and
+easy integration with proxies. Each client request starts with a variable-length
+binary header, containing request id, request type, server id, log sequence
+number, and so on.</p>
 <p>The mandatory length, present in request header simplifies client or proxy I/O.
 A response to a request is sent to the client as soon as it is ready. It always
 carries in its header the same type and id as in the request. The id makes it
-possible to match a request to a response, even if the latter arrived out of order.</p>
-<p>Unless implementing a client driver, one needn't concern oneself with the
+possible to match a request to a response, even if the latter arrived out of
+order.</p>
+<p>Unless implementing a client driver, you needn't concern yourself with the
 complications of the binary protocol. Language-specific drivers provide a
 friendly way to store domain language data structures in Tarantool. A complete
 description of the binary protocol is maintained in annotated Backus-Naur form
-in the source tree: please see <a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">iproto protocol</span></a>.</p>
+in the source tree: please see the page about
+<a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">Tarantool's binary protocol</span></a>.</p>
 </div>
 <div class="section" id="packet-example">
 <h2>7.2. Packet example<a class="headerlink" href="#packet-example" title="Permalink to this headline">¶</a></h2>
 <p>The Tarantool API exists so that a client program can send a request packet to
 the server, and receive a response. Here is an example of a what the client
-would send for <code class="code docutils literal"><span class="pre">box.space[513]:insert{'A',</span> <span class="pre">'BB'}</span></code>. The BNF description of the
-components is in file <a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">iproto protocol</span></a>.</p>
+would send for <code class="samp docutils literal"><span class="pre">box.space[513]:insert</span><em><span class="pre">'A',</span> <span class="pre">'BB'</span></em></code>. The BNF description of
+the components is on the page about
+<a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">Tarantool's binary protocol</span></a>.</p>
 <blockquote>
 <div><div class="table container">
 <table border="1" class="left-align-column-1 right-align-column-2 right-align-column-3 right-align-column-4 docutils">
@@ -322,22 +327,28 @@ components is in file <a class="reference internal" href="../../dev_guide/box_pr
 </table>
 </div>
 </div></blockquote>
-<p>Now, one could send that packet to the tarantool server, and interpret the response
-(<a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">iproto protocol</span></a> has a description of the packet format for responses as
-well as requests). But it would be easier, and less error-prone, if one could invoke
-a routine that formats the packet according to typed parameters. Something like
-<code class="code docutils literal"><span class="pre">response=tarantool_routine(&quot;insert&quot;,513,&quot;A&quot;,&quot;B&quot;);</span></code>. And that is why APIs exist for
-drivers for Perl, Python, PHP, and so on.</p>
+<p>Now, you could send that packet to the Tarantool server, and interpret the
+response (the page about
+<a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">Tarantool's binary protocol</span></a> has a
+description of the packet format for responses as well as requests). But it
+would be easier, and less error-prone, if you could invoke a routine that
+formats the packet according to typed parameters. Something like
+<code class="samp docutils literal"><span class="pre">response=tarantool_routine(&quot;insert&quot;,513,&quot;A&quot;,&quot;B&quot;);</span></code>. And that is why APIs
+exist for drivers for Perl, Python, PHP, and so on.</p>
 </div>
 <div class="section" id="setting-up-the-server-for-connector-examples">
 <span id="index-connector-setting"></span><h2>7.3. Setting up the server for connector examples<a class="headerlink" href="#setting-up-the-server-for-connector-examples" title="Permalink to this headline">¶</a></h2>
 <p>This chapter has examples that show how to connect to the Tarantool server via
-the Perl, PHP, Python, and C connectors. The examples contain hard code that will
-work if and only if the server (tarantool) is running on localhost (127.0.0.1)
-and is listening on port 3301 (<code class="code docutils literal"><span class="pre">box.cfg.listen</span> <span class="pre">=</span> <span class="pre">'3301'</span></code>) and space 'examples'
-has id = 999 (<code class="code docutils literal"><span class="pre">box.space.examples.id</span> <span class="pre">=</span> <span class="pre">999</span></code>), and space 'examples' has a
-primary-key index for a numeric field (<code class="code docutils literal"><span class="pre">box.space[999].index[0].parts[1].type</span>
-<span class="pre">=</span> <span class="pre">&quot;unsigned&quot;</span></code>) and user 'guest' has privileges for reading and writing.</p>
+the Perl, PHP, Python, and C connectors. The examples contain hard code that
+will work if and only if the following conditions are met:</p>
+<ul class="simple">
+<li>the server (tarantool) is running on localhost (127.0.0.1) and is listening on
+port 3301 (<code class="samp docutils literal"><span class="pre">box.cfg.listen</span> <span class="pre">=</span> <span class="pre">'3301'</span></code>),</li>
+<li>space <code class="docutils literal"><span class="pre">examples</span></code> has id = 999 (<code class="samp docutils literal"><span class="pre">box.space.examples.id</span> <span class="pre">=</span> <span class="pre">999</span></code>) and has
+a primary-key index for a numeric field
+(<code class="samp docutils literal"><span class="pre">box.space[999].index[0].parts[1].type</span> <span class="pre">=</span> <span class="pre">&quot;unsigned&quot;</span></code>),</li>
+<li>user 'guest' has privileges for reading and writing.</li>
+</ul>
 <p>It is easy to meet all the conditions by starting the server and executing this
 script:</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span><span class="o">=</span><span class="mi">3301</span><span class="p">}</span>
@@ -354,7 +365,7 @@ script:</p>
 </div>
 <div class="section" id="go">
 <h2>7.5. Go<a class="headerlink" href="#go" title="Permalink to this headline">¶</a></h2>
-<p>Please see <a class="reference external" href="https://github.com/mialinx/go-tarantool-1.6">https://github.com/mialinx/go-tarantool-1.6</a>.</p>
+<p>Please see <a class="reference external" href="https://github.com/mialinx/go-tarantool">https://github.com/mialinx/go-tarantool</a>.</p>
 </div>
 <div class="section" id="r">
 <h2>7.6. R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h2>
@@ -362,10 +373,12 @@ script:</p>
 </div>
 <div class="section" id="perl">
 <h2>7.7. Perl<a class="headerlink" href="#perl" title="Permalink to this headline">¶</a></h2>
-<p>The most commonly used Perl driver is <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a>. It is not supplied as
-part of the Tarantool repository; it must be installed separately. The most
-common way to install it is with <a class="reference external" href="https://en.wikipedia.org/wiki/Cpan">CPAN, the Comprehensive Perl Archive Network</a>.
-<a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a> requires other modules which should be installed first. For
+<p>The most commonly used Perl driver is
+<a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a>. It is not
+supplied as part of the Tarantool repository; it must be installed separately.
+The most common way to install it is with
+<a class="reference external" href="https://en.wikipedia.org/wiki/Cpan">CPAN, the Comprehensive Perl Archive Network</a>.
+<code class="docutils literal"><span class="pre">DR::Tarantool</span></code> requires other modules which should be installed first. For
 example, on Ubuntu, the installation could look like this:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo cpan install AnyEvent
 <span class="gp">$</span> sudo cpan install Devel::GlobalDestruction
@@ -377,15 +390,17 @@ example, on Ubuntu, the installation could look like this:</p>
 <span class="gp">$</span> sudo cpan install DR::Tarantool
 </pre></div>
 </div>
-<p>Here is a complete Perl program that inserts [99999,'BB'] into space[999] via
-the Perl API. Before trying to run, check that the server is listening and
-that <code class="code docutils literal"><span class="pre">examples</span></code> exists, as <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>. To run, paste the code into
-a file named example.pl and say <code class="code docutils literal"><span class="pre">perl</span> <span class="pre">example.pl</span></code>. The program will connect
-using an application-specific definition of the space. The program will open a
-socket connection with the tarantool server at localhost:3301, then send an
-INSERT request, then — if all is well — end without displaying any messages.
-If tarantool is not running on localhost with listen address = 3301, the program
-will print “Connection refused”.</p>
+<p>Here is a complete Perl program that inserts <code class="docutils literal"><span class="pre">[99999,'BB']</span></code> into <code class="docutils literal"><span class="pre">space[999]</span></code>
+via the Perl API. Before trying to run, check that the server is listening at
+<code class="docutils literal"><span class="pre">localhost:3301</span></code> and that the space <code class="docutils literal"><span class="pre">examples</span></code> exists, as
+<a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
+To run, paste the code into a file named <code class="file docutils literal"><span class="pre">example.pl</span></code> and say
+<code class="samp docutils literal"><span class="pre">perl</span> <span class="pre">example.pl</span></code>. The program will connect using an application-specific
+definition of the space. The program will open a socket connection with the
+Tarantool server at <code class="docutils literal"><span class="pre">localhost:3301</span></code>, then send an INSERT request, then — if
+all is well — end without displaying any messages. If Tarantool is not running
+on <code class="docutils literal"><span class="pre">localhost</span></code> with listen port = 3301, the program will print “Connection
+refused”.</p>
 <div class="highlight-perl"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/perl</span>
 <span class="k">use</span> <span class="nn">DR::</span><span class="n">Tarantool</span> <span class="s">&#39;:constant&#39;</span><span class="p">,</span> <span class="s">&#39;tarantool&#39;</span><span class="p">;</span>
 <span class="k">use</span> <span class="nn">DR::</span><span class="n">Tarantool</span> <span class="s">&#39;:all&#39;</span><span class="p">;</span>
@@ -411,15 +426,17 @@ will print “Connection refused”.</p>
 </div>
 <p>The example program uses field type names 'STR' and 'NUM'
 instead of 'string' and 'unsigned', due to a temporary Perl limitation.</p>
-<p>The example program only shows one command and does not show all that's
-necessary for good practice. For that, please see <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a> CPAN repository.</p>
+<p>The example program only shows one request and does not show all that's
+necessary for good practice. For that, please see
+<a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool CPAN repository</a>.</p>
 </div>
 <div class="section" id="php">
 <h2>7.8. PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h2>
-<p>The PHP driver is <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a>. It is not supplied as part of the Tarantool
-repository; it must be installed separately. It can be installed with git. It
-requires other modules which should be installed first. For example, on Ubuntu,
-the installation could look like this:</p>
+<p>The PHP driver is <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a>.
+It is not supplied as part of the Tarantool repository; it must be installed
+separately. It can be installed with <strong class="program">git</strong>. It requires other modules
+which should be installed first. For example, on Ubuntu, the installation could
+look like this:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install php5-cli
 <span class="gp">$</span> sudo apt-get install php5-dev
 <span class="gp">$</span> sudo apt-get install php-pear
@@ -432,16 +449,19 @@ the installation could look like this:</p>
 <span class="gp">$</span> <span class="c1"># make install is optional</span>
 </pre></div>
 </div>
-<p>At this point there is a file named <code class="code docutils literal"><span class="pre">~/tarantool-php/modules/tarantool.so</span></code>.
-PHP will only find it if the PHP initialization file <code class="code docutils literal"><span class="pre">php.ini</span></code> contains a
-line like <code class="code docutils literal"><span class="pre">extension=./tarantool.so</span></code>, or if PHP is started with the option
-<code class="code docutils literal"><span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span></code>.</p>
-<p>Here is a complete PHP program that inserts [99999,'BB'] into a space named 'examples'
-via the PHP API. Before trying to run, check that the server is listening and that
-<code class="code docutils literal"><span class="pre">examples</span></code> exists, as <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>. To run, paste the code into a file named
-example.php and say <code class="code docutils literal"><span class="pre">php</span> <span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span> <span class="pre">example.php</span></code>. The program will open a socket connection with
-the tarantool server at localhost:3301, then send an INSERT request, then — if all is
-well — print &quot;Insert succeeded&quot;. If the tuple already exists, the program will print
+<p>At this point there is a file named <code class="file docutils literal"><span class="pre">~/tarantool-php/modules/tarantool.so</span></code>.
+PHP will only find it if the PHP initialization file <code class="file docutils literal"><span class="pre">php.ini</span></code> contains a
+line like <code class="samp docutils literal"><span class="pre">extension=./tarantool.so</span></code>, or if PHP is started with the option
+<code class="samp docutils literal"><span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span></code>.</p>
+<p>Here is a complete PHP program that inserts <code class="docutils literal"><span class="pre">[99999,'BB']</span></code> into a space named
+<code class="docutils literal"><span class="pre">examples</span></code> via the PHP API. Before trying to run, check that the server is
+listening at <code class="docutils literal"><span class="pre">localhost:3301</span></code> and that the space <code class="docutils literal"><span class="pre">examples</span></code> exists, as
+<a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>. To run, paste the code into
+a file named <code class="file docutils literal"><span class="pre">example.php</span></code> and say
+<code class="samp docutils literal"><span class="pre">php</span> <span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span> <span class="pre">example.php</span></code>.
+The program will open a socket connection with the Tarantool server at
+<code class="docutils literal"><span class="pre">localhost:3301</span></code>, then send an INSERT request, then — if all is well — print
+&quot;Insert succeeded&quot;. If the tuple already exists, the program will print
 “Duplicate key exists in unique index 'primary' in space 'examples'”.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$tarantool</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tarantool</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">3301</span><span class="p">);</span>
@@ -454,13 +474,14 @@ well — print &quot;Insert succeeded&quot;. If the tuple already exists, the pr
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The example program only shows one command and does not show all that's necessary
-for good practice. For that, please see <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a> project at GitHub.</p>
+<p>The example program only shows one request and does not show all that's
+necessary for good practice. For that, please see
+<a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php project at GitHub</a>.</p>
 </div>
 <div class="section" id="python">
 <h2>7.9. Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
-<p>Here is a complete Python program that inserts <code class="code docutils literal"><span class="pre">[99999,'Value','Value']</span></code> into
-space <code class="code docutils literal"><span class="pre">examples</span></code> via the high-level Python API.</p>
+<p>Here is a complete Python program that inserts <code class="docutils literal"><span class="pre">[99999,'Value','Value']</span></code> into
+space <code class="docutils literal"><span class="pre">examples</span></code> via the high-level Python API.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 <span class="kn">from</span> <span class="nn">tarantool</span> <span class="kn">import</span> <span class="n">Connection</span>
 
@@ -469,23 +490,26 @@ space <code class="code docutils literal"><span class="pre">examples</span></cod
 <span class="k">print</span> <span class="n">result</span>
 </pre></div>
 </div>
-<p>To prepare, paste the code into a file named example.py and install
-tarantool-python with either <code class="code docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool\&gt;0.4</span></code> to install
-in <code class="code docutils literal"><span class="pre">/usr</span></code> (requires <strong>root</strong> privilege) or <code class="code docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool\&gt;0.4</span> <span class="pre">--user</span></code>
-to install in <code class="code docutils literal"><span class="pre">~</span></code> i.e. user's default directory. Before trying to run,
-check that the server is listening and that examples exists, as <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
-To run the program, say <code class="code docutils literal"><span class="pre">python</span> <span class="pre">example.py</span></code>. The program will connect
-to the server, will send the request, and will not throw an exception if
+<p>To prepare, paste the code into a file named <code class="file docutils literal"><span class="pre">example.py</span></code> and install
+the <code class="docutils literal"><span class="pre">tarantool-python</span></code> connector with either <code class="samp docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool&gt;0.4</span></code>
+to install in <code class="file docutils literal"><span class="pre">/usr</span></code> (requires <strong>root</strong> privilege) or
+<code class="samp docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool&gt;0.4</span> <span class="pre">--user</span></code> to install in <code class="file docutils literal"><span class="pre">~</span></code> i.e. user's
+default directory. Before trying to run, check that the server is listening at
+<code class="docutils literal"><span class="pre">localhost:3301</span></code> and that the space <code class="docutils literal"><span class="pre">examples</span></code> exists, as
+<a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
+To run the program, say <code class="samp docutils literal"><span class="pre">python</span> <span class="pre">example.py</span></code>. The program will connect
+to the server, will send the request, and will not throw any exception if
 all went well. If the tuple already exists, the program will throw
-<code class="code docutils literal"><span class="pre">tarantool.error.DatabaseError:</span> <span class="pre">(3,</span> <span class="pre">&quot;Duplicate</span> <span class="pre">key</span> <span class="pre">exists</span> <span class="pre">in</span> <span class="pre">unique</span> <span class="pre">index</span> <span class="pre">'primary'</span> <span class="pre">in</span> <span class="pre">space</span> <span class="pre">'examples'&quot;)</span></code>.</p>
+<code class="docutils literal"><span class="pre">tarantool.error.DatabaseError:</span> <span class="pre">(3,</span> <span class="pre">&quot;Duplicate</span> <span class="pre">key</span> <span class="pre">exists</span> <span class="pre">in</span> <span class="pre">unique</span> <span class="pre">index</span> <span class="pre">'primary'</span> <span class="pre">in</span> <span class="pre">space</span> <span class="pre">'examples'&quot;)</span></code>.</p>
 <p>The example program only shows one request and does not show all that's
-necessary for good practice. For that, see <a class="reference external" href="http://github.com/tarantool/tarantool-python">http://github.com/tarantool/tarantool-python</a>.
-For an example of a Python API for <a class="reference external" href="https://github.com/tarantool/queue">Queue managers on Tarantool</a>, see
-<a class="reference external" href="https://github.com/tarantool/tarantool-queue-python">https://github.com/tarantool/tarantool-queue-python</a>.</p>
+necessary for good practice. For that, please see
+<a class="reference external" href="http://github.com/tarantool/tarantool-python">tarantool-python project at GitHub</a>.
+For an example of using Python API with
+<a class="reference external" href="https://github.com/tarantool/queue">queue managers for Tarantool</a>, see
+<a class="reference external" href="https://github.com/tarantool/queue-python">queue-python project at GitHub</a>.</p>
 </div>
 <div class="section" id="c">
 <h2>7.10. C<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://tarantool.github.io/tarantool-c/connection.html#c.tnt_connect" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_connect()</span></code></a></p>
 <p>Here follow two examples of using Tarantool's high-level C API.</p>
 <div class="section" id="example-1">
 <h3>7.10.1. Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
@@ -538,14 +562,15 @@ One way to install <code class="docutils literal"><span class="pre">tarantool-c<
 </pre></div>
 </div>
 <p>Before trying to run,
-check that the server is listening and that the space <code class="code docutils literal"><span class="pre">examples</span></code> exists, as
+check that the server is listening at <code class="docutils literal"><span class="pre">localhost:3301</span></code> and that the space
+<code class="docutils literal"><span class="pre">examples</span></code> exists, as
 <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
-To run the program, say <code class="code docutils literal"><span class="pre">./example</span></code>. The program will connect
+To run the program, say <code class="samp docutils literal"><span class="pre">./example</span></code>. The program will connect
 to the server, and will send the request.
 If Tarantool is not running on localhost with listen address = 3301, the program
 will print “Connection refused”.
 If the insert fails, the program will print &quot;Insert failed&quot; and an error number
-(see all error codes in the file
+(see all error codes in the source file
 <a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/box/errcode.h">/src/box/errcode.h</a>).</p>
 <p>Here are notes corresponding to comments in the example program.</p>
 <p><strong>SETUP:</strong> The setup begins by creating a stream.</p>
@@ -553,8 +578,8 @@ If the insert fails, the program will print &quot;Insert failed&quot; and an err
 <span class="n">tnt_set</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="n">TNT_OPT_URI</span><span class="p">,</span> <span class="s">&quot;localhost:3301&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>In this program, the stream will be named <code class="code docutils literal"><span class="pre">tnt</span></code>.
-Before connecting on the <code class="code docutils literal"><span class="pre">tnt</span></code> stream, some options may have to be set.
+<p>In this program, the stream will be named <code class="docutils literal"><span class="pre">tnt</span></code>.
+Before connecting on the <code class="docutils literal"><span class="pre">tnt</span></code> stream, some options may have to be set.
 The most important option is TNT_OPT_URI.
 In this program, the URI is <code class="docutils literal"><span class="pre">localhost:3301</span></code>, since that is where the
 Tarantool server is supposed to be listening.</p>
@@ -575,7 +600,7 @@ int tnt_connect(struct tnt_stream *s)
 </pre>
 <p>The connection might fail for a variety of reasons, such as:
 the server is not running, or the URI contains an invalid password.
-If the connect fails, the return value will be -1.</p>
+If the connection fails, the return value will be -1.</p>
 <p><strong>MAKE REQUEST:</strong> Most requests require passing a structured value, such as
 the contents of a tuple.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tuple</span> <span class="o">=</span> <span class="n">tnt_object</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
@@ -602,8 +627,8 @@ requests in the box library.</p>
 </div>
 <p>In this program, the choice is to do an INSERT request, so
 the program passes the <code class="docutils literal"><span class="pre">tnt_stream</span></code> that was used for connection
-(<code class="code docutils literal"><span class="pre">tnt</span></code>) and the stream that was set up with <a class="reference external" href="http://tarantool.github.io/tarantool-c/msgpackobject.html#c.tnt_object_format" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_object_format()</span></code></a>
-(<code class="code docutils literal"><span class="pre">tuple</span></code>).</p>
+(<code class="docutils literal"><span class="pre">tnt</span></code>) and the <code class="docutils literal"><span class="pre">tnt_stream</span></code> that was set up with
+<a class="reference external" href="http://tarantool.github.io/tarantool-c/msgpackobject.html#c.tnt_object_format" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_object_format()</span></code></a> (<code class="docutils literal"><span class="pre">tuple</span></code>).</p>
 <p>Function description:</p>
 <pre class="highlight literal-block">
 ssize_t tnt_insert(struct tnt_stream *s, uint32_t space, struct tnt_stream *tuple)
@@ -630,8 +655,8 @@ tnt-&gt;read_reply(struct tnt_stream *s, struct tnt_reply *r)
 void tnt_reply_free(struct tnt_reply *r)
 </pre>
 <p><strong>TEARDOWN:</strong> When a session ends, the connection that was made with
-<a class="reference external" href="http://tarantool.github.io/tarantool-c/connection.html#c.tnt_connect" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_connect()</span></code></a> should be closed, and the objects that were made in the setup
-should be destroyed.</p>
+<a class="reference external" href="http://tarantool.github.io/tarantool-c/connection.html#c.tnt_connect" title="(in tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_connect()</span></code></a> should be closed, and the objects that were
+made in the setup should be destroyed.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">tnt_close</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
 <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span>
 <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
@@ -645,10 +670,11 @@ void tnt_stream_free(struct tnt_stream *s)
 </div>
 <div class="section" id="example-2">
 <h3>7.10.2. Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
-<p>Here is a complete C program that selects, using index key <code class="code docutils literal"><span class="pre">[99999]</span></code>, from
-space <code class="code docutils literal"><span class="pre">examples</span></code> via the high-level C API.
+<p>Here is a complete C program that selects, using index key <code class="docutils literal"><span class="pre">[99999]</span></code>, from
+space <code class="docutils literal"><span class="pre">examples</span></code> via the high-level C API.
 To display the results, the program uses functions in the
-<a class="reference external" href="http://rtsisyk.github.io/msgpuck/">MsgPuck</a> library which allow decoding of <a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">MessagePack</a>  arrays.</p>
+<a class="reference external" href="http://rtsisyk.github.io/msgpuck/">MsgPuck</a> library which allow decoding of
+<a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">MessagePack</a>  arrays.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;tarantool/tarantool.h&gt;</span><span class="cp"></span>
@@ -721,17 +747,17 @@ To display the results, the program uses functions in the
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> gcc -o example2 example2.c -ltarantool
 </pre></div>
 </div>
-<p>To run the program, say <code class="code docutils literal"><span class="pre">./example2</span></code>.</p>
+<p>To run the program, say <code class="samp docutils literal"><span class="pre">./example2</span></code>.</p>
 <p>The two example programs only show a few requests and do not show all that's
-necessary for good practice. See more in the <code class="docutils literal"><span class="pre">tarantool-c</span></code> documentation at
-<a class="reference external" href="http://github.com/tarantool/tarantool-c">http://github.com/tarantool/tarantool-c</a>.</p>
+necessary for good practice. See more in the
+<a class="reference external" href="http://github.com/tarantool/tarantool-c">tarantool-c documentation at GitHub</a>.</p>
 </div>
 </div>
 <div class="section" id="interpreting-function-return-values">
 <h2>7.11. Interpreting function return values<a class="headerlink" href="#interpreting-function-return-values" title="Permalink to this headline">¶</a></h2>
-<p>For all Connectors, calling a function via Tarantool causes a return in MsgPack
-format. If the function is called using the connector's API, some conversions
-may occur. All scalar values are returned as tuples (with a MsgPack
+<p>For all connectors, calling a function via Tarantool causes a return in the
+MsgPack format. If the function is called using the connector's API, some
+conversions may occur. All scalar values are returned as tuples (with a MsgPack
 type-identifier followed by a value); all non-scalar values are returned as a
 group of tuples (with a MsgPack array-identifier followed by the scalar values).
 If the function is called via the binary protocol command layer -- &quot;eval&quot; --
@@ -739,8 +765,8 @@ rather than via the connector's API, no conversions occur.</p>
 <p>In the following example, a Lua function will be created. Since it will be
 accessed externally by a 'guest' user, a <code class="docutils literal"><span class="pre">grant</span></code> of an execute privilege will
 be necessary. The function returns an empty array, a scalar string, two booleans,
-and a short integer. The values are the ones described in the msgpack section in
-the table <a class="reference internal" href="../../reference_lua/msgpack.html#msgpack-common-types-and-msgpack-encodings"><span class="std std-ref">Common Types and MsgPack Encodings</span></a>.</p>
+and a short integer. The values are the ones described in the table
+<a class="reference internal" href="../../reference_lua/msgpack.html#msgpack-common-types-and-msgpack-encodings"><span class="std std-ref">Common Types and MsgPack Encodings</span></a>.</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span><span class="o">=</span><span class="mi">3301</span><span class="p">}</span>
 <span class="go">2016-03-03 18:45:52.802 [27381] main/101/interactive I&gt; ready to accept requests</span>
 <span class="nn">---</span>
@@ -798,11 +824,15 @@ written in Perl, PHP, Python, Go, or Java.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>When this program is executed, it will print: <br />
-<span class="ccode">dd 0 0 0 5 90 91 a1 61 91 c2 91 c3 91 7f</span> <br />
-The first five bytes -- <span class="ccode">dd 0 0 0 5</span> -- are the msgpack encoding
-for &quot;32-bit array header with value 5&quot; (see the msgpack <a class="reference external" href="http://github.com/msgpack/msgpack/blob/master/spec.md">Specification</a> page).
-The rest are as described in the Common Types and MsgPack Encodings table.</p>
+<p>When this program is executed, it will print:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dd 0 0 0 5 90 91 a1 61 91 c2 91 c3 91 7f</span>
+</pre></div>
+</div>
+<p>The first five bytes -- <code class="docutils literal"><span class="pre">dd</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">5</span></code> -- are the MsgPack encoding for
+&quot;32-bit array header with value 5&quot; (see
+<a class="reference external" href="http://github.com/msgpack/msgpack/blob/master/spec.md">MsgPack specification</a>).
+The rest are as described in the
+table <a class="reference internal" href="../../reference_lua/msgpack.html#msgpack-common-types-and-msgpack-encodings"><span class="std std-ref">Common Types and MsgPack Encodings</span></a>.</p>
 </div>
 </div>
 
@@ -810,17 +840,9 @@ The rest are as described in the Common Types and MsgPack Encodings table.</p>
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/connectors/index";
         this.language = "en"
     };

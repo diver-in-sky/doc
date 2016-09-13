@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app/g_changes.html">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -239,25 +240,13 @@
 <p>В этой главе описаны API для различных языков программирования.</p>
 <div class="section" id="protocol">
 <h2>7.1. Протокол<a class="headerlink" href="#protocol" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Tarantool protocol was designed with a focus on asynchronous I/O and easy integration
-with proxies. Each client request starts with a variable-length binary header,
-containing request id, request type, server id, log sequence number, and so on.</p>
-<p>The mandatory length, present in request header simplifies client or proxy I/O.
-A response to a request is sent to the client as soon as it is ready. It always
-carries in its header the same type and id as in the request. The id makes it
-possible to match a request to a response, even if the latter arrived out of order.</p>
-<p>Unless implementing a client driver, one needn't concern oneself with the
-complications of the binary protocol. Language-specific drivers provide a
-friendly way to store domain language data structures in Tarantool. A complete
-description of the binary protocol is maintained in annotated Backus-Naur form
-in the source tree: please see <a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">iproto protocol</span></a>.</p>
+<p>Бинарный протокол для передачи данных в Tarantool'е был разработан с учетом потребностей асинхронного ввода-вывода. Основная его задача — облегчить интеграцию Tarantool'а с клиентскими приложениями. Клиентский запрос в Tarantool-протоколе начинается с бинарного заголовка переменной длины. В заголовке указывается идентификатор и тип запроса, идентификатор сервера, номер записи в журнале и т.д.</p>
+<p>Также в заголовке обязательно указывается длина запроса, что облегчает обработку данных. Ответ на запрос посылается по мере готовности. В заголовке ответа указывается тот же идентификатор и тип запроса, что и в изначальном запросе. По идентификатору можно легко соотнести запрос с ответом, даже если ответ был получен не в порядке отсылки запросов.</p>
+<p>Вдаваться в тонкости реализации Tarantool-протокола нужно только при разработке нового коннектора для Tarantool'а — см. <a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">полное описание бинарного протокола в Tarantool'е</span></a> в виде аннотированных BNF-диаграмм (Backus-Naur Form). В остальных случаях достаточно взять уже существующий коннектор для нужного вам языка программирования. Такие коннекторы позволяют легко хранить структуры данных из разных языков в формате Tarantool'а.</p>
 </div>
 <div class="section" id="packet-example">
-<h2>7.2. Пример пакета<a class="headerlink" href="#packet-example" title="Ссылка на этот заголовок">¶</a></h2>
-<p>The Tarantool API exists so that a client program can send a request packet to
-the server, and receive a response. Here is an example of a what the client
-would send for <code class="code docutils literal"><span class="pre">box.space[513]:insert{'A',</span> <span class="pre">'BB'}</span></code>. The BNF description of the
-components is in file <a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">iproto protocol</span></a>.</p>
+<h2>7.2. Пример пакета данных<a class="headerlink" href="#packet-example" title="Ссылка на этот заголовок">¶</a></h2>
+<p>С помощью Tarantool API клиентские программы могут посылать в адрес Tarantool-сервера пакеты с запросами и получать на них ответы. Вот пример исходящего пакета, который будет сформирован для запроса <code class="code docutils literal"><span class="pre">box.space[513]:insert{'A',</span> <span class="pre">'BB'}</span></code>. Описания компонентов запроса (в виде BNF-диаграмм) вы найдете на странице о <a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">бинарном протоколе в Tarantool'е</span></a>.</p>
 <blockquote>
 <div><div class="table container">
 <table border="1" class="left-align-column-1 right-align-column-2 right-align-column-3 right-align-column-4 docutils">
@@ -269,51 +258,63 @@ components is in file <a class="reference internal" href="../../dev_guide/box_pr
 <col width="13%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Component</th>
-<th class="head">Byte #0</th>
-<th class="head">Byte #1</th>
-<th class="head">Byte #2</th>
-<th class="head">Byte #3</th>
+<tr class="row-odd"><th class="head"><p class="first last">Компонент</p>
+</th>
+<th class="head"><p class="first last">Байт #0</p>
+</th>
+<th class="head"><p class="first last">Байт #1</p>
+</th>
+<th class="head"><p class="first last">Байт #2</p>
+</th>
+<th class="head"><p class="first last">Байт #3</p>
+</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>code for insert</td>
+<tr class="row-even"><td><p class="first last">код для вставки</p>
+</td>
 <td>02</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>rest of header</td>
+<tr class="row-odd"><td><p class="first last">остаток заголовка</p>
+</td>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 </tr>
-<tr class="row-even"><td>2-digit number: space id</td>
+<tr class="row-even"><td><p class="first last">число из 2 цифр: ID пространства</p>
+</td>
 <td>cd</td>
 <td>02</td>
 <td>01</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>code for tuple</td>
+<tr class="row-odd"><td><p class="first last">код для кортежа</p>
+</td>
 <td>21</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>1-digit number: field count = 2</td>
+<tr class="row-even"><td><p class="first last">число из 1 цифры: количество полей = 2</p>
+</td>
 <td>92</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>1-character string: field[1]</td>
+<tr class="row-odd"><td><p class="first last">строка из 1 символа: поле[1]</p>
+</td>
 <td>a1</td>
 <td>41</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>2-character string: field[2]</td>
+<tr class="row-even"><td><p class="first last">строка из 2 символов: поле[2]</p>
+</td>
 <td>a2</td>
 <td>42</td>
 <td>42</td>
@@ -323,24 +324,20 @@ components is in file <a class="reference internal" href="../../dev_guide/box_pr
 </table>
 </div>
 </div></blockquote>
-<p>Now, one could send that packet to the tarantool server, and interpret the response
-(<a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">iproto protocol</span></a> has a description of the packet format for responses as
-well as requests). But it would be easier, and less error-prone, if one could invoke
-a routine that formats the packet according to typed parameters. Something like
-<code class="code docutils literal"><span class="pre">response=tarantool_routine(&quot;insert&quot;,513,&quot;A&quot;,&quot;B&quot;);</span></code>. And that is why APIs exist for
-drivers for Perl, Python, PHP, and so on.</p>
+<p>Теперь получившийся пакет можно послать Tarantool-серверу и затем проинтерпретировать полученный ответ (описания компонентов ответа вы найдете на той же странице о <a class="reference internal" href="../../dev_guide/box_protocol.html#box-protocol-iproto-protocol"><span class="std std-ref">бинарном протоколе в Tarantool'е</span></a>). Но более простым и верным способом будет вызвать процедуру, которая за вас сформирует готовый пакет с заданными параметрами. Что-то вроде <code class="samp docutils literal"><span class="pre">response=tarantool_routine(&quot;insert&quot;,513,&quot;A&quot;,&quot;B&quot;);</span></code>. Для этого в Tarantool'е существуют API для Perl, Python, PHP и других программных языков.</p>
 </div>
 <div class="section" id="setting-up-the-server-for-connector-examples">
-<span id="index-connector-setting"></span><h2>7.3. Примеры настроек для различных коннекторов<a class="headerlink" href="#setting-up-the-server-for-connector-examples" title="Ссылка на этот заголовок">¶</a></h2>
-<p>This chapter has examples that show how to connect to the Tarantool server via
-the Perl, PHP, Python, and C connectors. The examples contain hard code that will
-work if and only if the server (tarantool) is running on localhost (127.0.0.1)
-and is listening on port 3301 (<code class="code docutils literal"><span class="pre">box.cfg.listen</span> <span class="pre">=</span> <span class="pre">'3301'</span></code>) and space 'examples'
-has id = 999 (<code class="code docutils literal"><span class="pre">box.space.examples.id</span> <span class="pre">=</span> <span class="pre">999</span></code>), and space 'examples' has a
-primary-key index for a numeric field (<code class="code docutils literal"><span class="pre">box.space[999].index[0].parts[1].type</span>
-<span class="pre">=</span> <span class="pre">&quot;unsigned&quot;</span></code>) and user 'guest' has privileges for reading and writing.</p>
-<p>It is easy to meet all the conditions by starting the server and executing this
-script:</p>
+<span id="index-connector-setting"></span><h2>7.3. Настройка окружения для примеров работы с коннекторами<a class="headerlink" href="#setting-up-the-server-for-connector-examples" title="Ссылка на этот заголовок">¶</a></h2>
+<p>В этой главе приводятся примеры того, как можно установить соединение с Tarantool-сервером с помощью коннекторов для языков Perl, PHP, Python и C. Обратите внимание, что в примерах исходного кода указаны фиксированные значения для элементов тестового окружения, поэтому для корректной работы всех примеров нужно соблюсти следующие условия:</p>
+<ul class="simple">
+<li><p class="first">Tarantool-сервер запущен на локальной машине (<code class="docutils literal"><span class="pre">localhost</span> <span class="pre">=</span> <span class="pre">127.0.0.1</span></code>), а прослушивание для него настроено на порту 3301 (<code class="samp docutils literal"><span class="pre">box.cfg.listen</span> <span class="pre">=</span> <span class="pre">'3301'</span></code>),</p>
+</li>
+<li><p class="first">в базе есть пространство <code class="docutils literal"><span class="pre">examples</span></code> с идентификатором 999 (<code class="samp docutils literal"><span class="pre">box.space.examples.id</span> <span class="pre">=</span> <span class="pre">999</span></code>) и у него есть первичный индекс, построенный по ключу числового типа (<code class="samp docutils literal"><span class="pre">box.space[999].index[0].parts[1].type</span> <span class="pre">=</span> <span class="pre">&quot;unsigned&quot;</span></code>),</p>
+</li>
+<li><p class="first">для пользователя 'guest' настроены привилегии на чтение и запись.</p>
+</li>
+</ul>
+<p>Такое тестовое окружение легко настроить, запустив Tarantool-сервер локально и выполнив следующие запросы:</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span><span class="o">=</span><span class="mi">3301</span><span class="p">}</span>
 <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">examples&#39;</span><span class="p">,{</span><span class="n">id</span><span class="o">=</span><span class="mi">999</span><span class="p">})</span>
 <span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">examples</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">hash&#39;</span><span class="p">,</span> <span class="n">parts</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">unsigned&#39;</span><span class="p">}})</span>
@@ -351,23 +348,19 @@ script:</p>
 </div>
 <div class="section" id="java">
 <h2>7.4. Java<a class="headerlink" href="#java" title="Ссылка на этот заголовок">¶</a></h2>
-<p>See <a class="reference external" href="http://github.com/tarantool/tarantool-java/">http://github.com/tarantool/tarantool-java/</a>.</p>
+<p>См. <a class="reference external" href="http://github.com/tarantool/tarantool-java/">http://github.com/tarantool/tarantool-java/</a>.</p>
 </div>
 <div class="section" id="go">
 <h2>7.5. Go<a class="headerlink" href="#go" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Please see <a class="reference external" href="https://github.com/mialinx/go-tarantool-1.6">https://github.com/mialinx/go-tarantool-1.6</a>.</p>
+<p>См. <a class="reference external" href="https://github.com/mialinx/go-tarantool">https://github.com/mialinx/go-tarantool</a>.</p>
 </div>
 <div class="section" id="r">
 <h2>7.6. R<a class="headerlink" href="#r" title="Ссылка на этот заголовок">¶</a></h2>
-<p>See <a class="reference external" href="https://github.com/thekvs/tarantoolr">https://github.com/thekvs/tarantoolr</a>.</p>
+<p>См. <a class="reference external" href="https://github.com/thekvs/tarantoolr">https://github.com/thekvs/tarantoolr</a>.</p>
 </div>
 <div class="section" id="perl">
 <h2>7.7. Perl<a class="headerlink" href="#perl" title="Ссылка на этот заголовок">¶</a></h2>
-<p>The most commonly used Perl driver is <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a>. It is not supplied as
-part of the Tarantool repository; it must be installed separately. The most
-common way to install it is with <a class="reference external" href="https://en.wikipedia.org/wiki/Cpan">CPAN, the Comprehensive Perl Archive Network</a>.
-<a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a> requires other modules which should be installed first. For
-example, on Ubuntu, the installation could look like this:</p>
+<p>Наиболее популярным Tarantool-коннектором для языка Perl является <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a>. Он устанавливается отдельно от Tarantool'а, например с помощью <strong class="program">cpan</strong> (см. <a class="reference external" href="https://en.wikipedia.org/wiki/Cpan">CPAN, the Comprehensive Perl Archive Network</a>), и требует предварительной установки еще несколько зависимых модулей. Вот пример установки этого коннектора под Ubuntu:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo cpan install AnyEvent
 <span class="gp">$</span> sudo cpan install Devel::GlobalDestruction
 <span class="gp">$</span> sudo cpan install Coro
@@ -378,49 +371,36 @@ example, on Ubuntu, the installation could look like this:</p>
 <span class="gp">$</span> sudo cpan install DR::Tarantool
 </pre></div>
 </div>
-<p>Here is a complete Perl program that inserts [99999,'BB'] into space[999] via
-the Perl API. Before trying to run, check that the server is listening and
-that <code class="code docutils literal"><span class="pre">examples</span></code> exists, as <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>. To run, paste the code into
-a file named example.pl and say <code class="code docutils literal"><span class="pre">perl</span> <span class="pre">example.pl</span></code>. The program will connect
-using an application-specific definition of the space. The program will open a
-socket connection with the tarantool server at localhost:3301, then send an
-INSERT request, then — if all is well — end without displaying any messages.
-If tarantool is not running on localhost with listen address = 3301, the program
-will print “Connection refused”.</p>
+<p>Далее приводится пример полноценной программы на языке Perl, которая осуществляет вставку кортежа <code class="docutils literal"><span class="pre">[99999,'BB']</span></code> в пространство <code class="docutils literal"><span class="pre">space[999]</span></code> с помощью Tarantool API для языка Perl. Перед запуском данной программы проверьте, что ваше тестовое окружение настроено так, как <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">описано выше</span></a> (у Tarantool-сервера задан порт для прослушивания и в базе создано пространство <code class="docutils literal"><span class="pre">examples</span></code>). Чтобы запустить тестовую программу, сохраните ее исходный код в файл с именем <code class="file docutils literal"><span class="pre">example.pl</span></code> и выполните команду <code class="samp docutils literal"><span class="pre">perl</span> <span class="pre">example.pl</span></code>. Программа установит соединение, используя указанное в ней описание пространства, откроет сокет для соединения с Tarantool-сервером по адресу <code class="docutils literal"><span class="pre">localhost:3301</span></code>, пошлет INSERT-запрос, а затем — если всё хорошо — закончит работу без каких-либо сообщений. Если окажется, что Tarantool-сервер не запущен на прослушивание по указанному адресу, то программа выдаст сообщение об ошибке “Connection refused”.</p>
 <div class="highlight-perl"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/perl</span>
 <span class="k">use</span> <span class="nn">DR::</span><span class="n">Tarantool</span> <span class="s">&#39;:constant&#39;</span><span class="p">,</span> <span class="s">&#39;tarantool&#39;</span><span class="p">;</span>
 <span class="k">use</span> <span class="nn">DR::</span><span class="n">Tarantool</span> <span class="s">&#39;:all&#39;</span><span class="p">;</span>
 <span class="k">use</span> <span class="nn">DR::Tarantool::MsgPack::</span><span class="n">SyncClient</span><span class="p">;</span>
 
 <span class="k">my</span> <span class="nv">$tnt</span> <span class="o">=</span> <span class="nn">DR::Tarantool::MsgPack::</span><span class="n">SyncClient</span><span class="o">-&gt;</span><span class="nb">connect</span><span class="p">(</span>
-  <span class="n">host</span>    <span class="o">=&gt;</span> <span class="s">&#39;127.0.0.1&#39;</span><span class="p">,</span>                      <span class="c1"># look for tarantool on localhost</span>
-  <span class="n">port</span>    <span class="o">=&gt;</span> <span class="mi">3301</span><span class="p">,</span>                             <span class="c1"># on port 3301</span>
-  <span class="n">user</span>    <span class="o">=&gt;</span> <span class="s">&#39;guest&#39;</span><span class="p">,</span>                          <span class="c1"># username. one could also say &#39;password=&gt;...&#39;</span>
+  <span class="n">host</span>    <span class="o">=&gt;</span> <span class="s">&#39;127.0.0.1&#39;</span><span class="p">,</span>                      <span class="c1"># поиск Tarantool-сервера по адресу localhost</span>
+  <span class="n">port</span>    <span class="o">=&gt;</span> <span class="mi">3301</span><span class="p">,</span>                             <span class="c1"># на порту 3301</span>
+  <span class="n">user</span>    <span class="o">=&gt;</span> <span class="s">&#39;guest&#39;</span><span class="p">,</span>                          <span class="c1"># имя пользователя; здесь же можно добавить &#39;password=&gt;...&#39;</span>
 
   <span class="n">spaces</span>  <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="mi">999</span> <span class="o">=&gt;</span> <span class="p">{</span>                                   <span class="c1"># definition of space[999] ...</span>
-      <span class="n">name</span> <span class="o">=&gt;</span> <span class="s">&#39;examples&#39;</span><span class="p">,</span>                      <span class="c1">#   space[999] name = &#39;examples&#39;</span>
-      <span class="n">default_type</span> <span class="o">=&gt;</span> <span class="s">&#39;STR&#39;</span><span class="p">,</span>                   <span class="c1">#   space[999] field type is &#39;STR&#39; if undefined</span>
-      <span class="n">fields</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="p">{</span>                            <span class="c1">#   definition of space[999].fields ...</span>
-          <span class="n">name</span> <span class="o">=&gt;</span> <span class="s">&#39;field1&#39;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=&gt;</span> <span class="s">&#39;NUM&#39;</span> <span class="p">}</span> <span class="p">],</span> <span class="c1">#     space[999].field[1] name=&#39;field1&#39;,type=&#39;NUM&#39;</span>
-      <span class="n">indexes</span> <span class="o">=&gt;</span> <span class="p">{</span>                             <span class="c1">#   definition of space[999] indexes ...</span>
+    <span class="mi">999</span> <span class="o">=&gt;</span> <span class="p">{</span>                                   <span class="c1"># определение пространства space[999] ...</span>
+      <span class="n">name</span> <span class="o">=&gt;</span> <span class="s">&#39;examples&#39;</span><span class="p">,</span>                      <span class="c1"># имя пространства space[999] = &#39;examples&#39;</span>
+      <span class="n">default_type</span> <span class="o">=&gt;</span> <span class="s">&#39;STR&#39;</span><span class="p">,</span>                   <span class="c1"># если тип поля в space[999] не задан, то = &#39;STR&#39;</span>
+      <span class="n">fields</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="p">{</span>                            <span class="c1"># определение полей в пространстве space[999] ...</span>
+          <span class="n">name</span> <span class="o">=&gt;</span> <span class="s">&#39;field1&#39;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=&gt;</span> <span class="s">&#39;NUM&#39;</span> <span class="p">}</span> <span class="p">],</span> <span class="c1"># имя поля space[999].field[1]=&#39;field1&#39;, тип =&#39;NUM&#39;</span>
+      <span class="n">indexes</span> <span class="o">=&gt;</span> <span class="p">{</span>                             <span class="c1"># определение индексов пространства space[999] ...</span>
         <span class="mi">0</span> <span class="o">=&gt;</span> <span class="p">{</span>
           <span class="n">name</span> <span class="o">=&gt;</span> <span class="s">&#39;primary&#39;</span><span class="p">,</span> <span class="n">fields</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s">&#39;field1&#39;</span> <span class="p">]</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span> <span class="p">);</span>
 
 <span class="nv">$tnt</span><span class="o">-&gt;</span><span class="n">insert</span><span class="p">(</span><span class="s">&#39;examples&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="mi">99999</span><span class="p">,</span> <span class="s">&#39;BB&#39;</span> <span class="p">]);</span>
 </pre></div>
 </div>
-<p>The example program uses field type names 'STR' and 'NUM'
-instead of 'string' and 'unsigned', due to a temporary Perl limitation.</p>
-<p>The example program only shows one command and does not show all that's
-necessary for good practice. For that, please see <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a> CPAN repository.</p>
+<p>Из-за существующих ограничений в языке Perl, вместо полей типа 'string' и 'unsigned' в тестовой программе указаны поля типа 'STR' и 'NUM'.</p>
+<p>В этой программе мы привели пример использования лишь одного запроса. Для полноценной работы с Tarantool'ом с помощью Perl API, пожалуйста, обратитесь к документации из <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">CPAN-репозитория DR::Tarantool</a>.</p>
 </div>
 <div class="section" id="php">
 <h2>7.8. PHP<a class="headerlink" href="#php" title="Ссылка на этот заголовок">¶</a></h2>
-<p>The PHP driver is <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a>. It is not supplied as part of the Tarantool
-repository; it must be installed separately. It can be installed with git. It
-requires other modules which should be installed first. For example, on Ubuntu,
-the installation could look like this:</p>
+<p>Tarantool-коннектор для языка PHP называется <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a>. Он устанавливается отдельно от Tarantool'а с помощью <strong class="program">git</strong> и требует предварительной установки еще несколько зависимых модулей. Вот пример установки этого коннектора под Ubuntu:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install php5-cli
 <span class="gp">$</span> sudo apt-get install php5-dev
 <span class="gp">$</span> sudo apt-get install php-pear
@@ -433,17 +413,8 @@ the installation could look like this:</p>
 <span class="gp">$</span> <span class="c1"># make install is optional</span>
 </pre></div>
 </div>
-<p>At this point there is a file named <code class="code docutils literal"><span class="pre">~/tarantool-php/modules/tarantool.so</span></code>.
-PHP will only find it if the PHP initialization file <code class="code docutils literal"><span class="pre">php.ini</span></code> contains a
-line like <code class="code docutils literal"><span class="pre">extension=./tarantool.so</span></code>, or if PHP is started with the option
-<code class="code docutils literal"><span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span></code>.</p>
-<p>Here is a complete PHP program that inserts [99999,'BB'] into a space named 'examples'
-via the PHP API. Before trying to run, check that the server is listening and that
-<code class="code docutils literal"><span class="pre">examples</span></code> exists, as <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>. To run, paste the code into a file named
-example.php and say <code class="code docutils literal"><span class="pre">php</span> <span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span> <span class="pre">example.php</span></code>. The program will open a socket connection with
-the tarantool server at localhost:3301, then send an INSERT request, then — if all is
-well — print &quot;Insert succeeded&quot;. If the tuple already exists, the program will print
-“Duplicate key exists in unique index 'primary' in space 'examples'”.</p>
+<p>После отработки всех команд будет создан файл с именем <code class="file docutils literal"><span class="pre">~/tarantool-php/modules/tarantool.so</span></code>. PHP увидит его, только если в файле инициализации <code class="file docutils literal"><span class="pre">php.ini</span></code> есть строка вида <code class="samp docutils literal"><span class="pre">extension=./tarantool.so</span></code>, либо если при запуске PHP вы укажете опцию <code class="samp docutils literal"><span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span></code>.</p>
+<p>Далее приводится пример полноценной программы на языке PHP, которая осуществляет вставку кортежа <code class="docutils literal"><span class="pre">[99999,'BB']</span></code> в пространство <code class="docutils literal"><span class="pre">examples</span></code> с помощью Tarantool API для языка PHP. Перед запуском данной программы проверьте, что ваше тестовое окружение настроено так, как <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">описано выше</span></a> (у Tarantool-сервера задан порт для прослушивания и в базе создано пространство <code class="docutils literal"><span class="pre">examples</span></code>). Чтобы запустить тестовую программу, сохраните ее исходный код в файл с именем <code class="file docutils literal"><span class="pre">example.php</span></code> и выполните команду <code class="samp docutils literal"><span class="pre">php</span> <span class="pre">-d</span> <span class="pre">extension=~/tarantool-php/modules/tarantool.so</span> <span class="pre">example.php</span></code>. Программа откроет сокет для соединения с Tarantool-сервером по адресу <code class="docutils literal"><span class="pre">localhost:3301</span></code>, пошлет INSERT-запрос, а затем — если всё хорошо — выдаст сообщение &quot;Insert succeeded&quot;. Если окажется, что такой кортеж уже существует, то программа выдаст сообщение об ошибке “Duplicate key exists in unique index 'primary' in space 'examples'”.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$tarantool</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tarantool</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">3301</span><span class="p">);</span>
 
@@ -455,13 +426,11 @@ well — print &quot;Insert succeeded&quot;. If the tuple already exists, the pr
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The example program only shows one command and does not show all that's necessary
-for good practice. For that, please see <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a> project at GitHub.</p>
+<p>В этой программе мы привели пример использования лишь одного запроса. Для полноценной работы с Tarantool'ом с помощью PHP API, пожалуйста, обратитесь к документации из <a class="reference external" href="https://github.com/tarantool/tarantool-php">проекта tarantool-php на GitHub</a>.</p>
 </div>
 <div class="section" id="python">
 <h2>7.9. Python<a class="headerlink" href="#python" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Here is a complete Python program that inserts <code class="code docutils literal"><span class="pre">[99999,'Value','Value']</span></code> into
-space <code class="code docutils literal"><span class="pre">examples</span></code> via the high-level Python API.</p>
+<p>Далее приводится пример полноценной программы на языке Python, которая осуществляет вставку кортежа <code class="docutils literal"><span class="pre">[99999,'Value','Value']</span></code> в пространство <code class="docutils literal"><span class="pre">examples</span></code> с помощью высокоуровневого Tarantool API для языка Python.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 <span class="kn">from</span> <span class="nn">tarantool</span> <span class="kn">import</span> <span class="n">Connection</span>
 
@@ -470,28 +439,15 @@ space <code class="code docutils literal"><span class="pre">examples</span></cod
 <span class="k">print</span> <span class="n">result</span>
 </pre></div>
 </div>
-<p>To prepare, paste the code into a file named example.py and install
-tarantool-python with either <code class="code docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool\&gt;0.4</span></code> to install
-in <code class="code docutils literal"><span class="pre">/usr</span></code> (requires <strong>root</strong> privilege) or <code class="code docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool\&gt;0.4</span> <span class="pre">--user</span></code>
-to install in <code class="code docutils literal"><span class="pre">~</span></code> i.e. user's default directory. Before trying to run,
-check that the server is listening and that examples exists, as <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
-To run the program, say <code class="code docutils literal"><span class="pre">python</span> <span class="pre">example.py</span></code>. The program will connect
-to the server, will send the request, and will not throw an exception if
-all went well. If the tuple already exists, the program will throw
-<code class="code docutils literal"><span class="pre">tarantool.error.DatabaseError:</span> <span class="pre">(3,</span> <span class="pre">&quot;Duplicate</span> <span class="pre">key</span> <span class="pre">exists</span> <span class="pre">in</span> <span class="pre">unique</span> <span class="pre">index</span> <span class="pre">'primary'</span> <span class="pre">in</span> <span class="pre">space</span> <span class="pre">'examples'&quot;)</span></code>.</p>
-<p>The example program only shows one request and does not show all that's
-necessary for good practice. For that, see <a class="reference external" href="http://github.com/tarantool/tarantool-python">http://github.com/tarantool/tarantool-python</a>.
-For an example of a Python API for <a class="reference external" href="https://github.com/tarantool/queue">Queue managers on Tarantool</a>, see
-<a class="reference external" href="https://github.com/tarantool/tarantool-queue-python">https://github.com/tarantool/tarantool-queue-python</a>.</p>
+<p>Перед запуском данной программы проверьте, что ваше тестовое окружение настроено так, как <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">описано выше</span></a> (у Tarantool-сервера задан порт для прослушивания и в базе создано пространство <code class="docutils literal"><span class="pre">examples</span></code>), и установите коннектор <code class="docutils literal"><span class="pre">tarantool-python</span></code>. Для установки коннектора воспользуйтесь либо командой <code class="samp docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool&gt;0.4</span></code> (для установки в директорию <code class="file docutils literal"><span class="pre">/usr</span></code>; вам потребуются права уровня  <strong>root</strong>), либо командой <code class="samp docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tarantool&gt;0.4</span> <span class="pre">--user</span></code> (для установки в директорию <code class="file docutils literal"><span class="pre">~</span></code>, т.е. в используемую по умолчанию директорию текущего пользователя). Чтобы запустить тестовую программу, сохраните ее исходный код в файл с именем <code class="file docutils literal"><span class="pre">example.py</span></code> и выполните команду <code class="samp docutils literal"><span class="pre">python</span> <span class="pre">example.py</span></code>. Программа установит соединение с Tarantool-сервером, пошлет запрос и не сгенерирует никакого исключения, если всё прошло хорошо. Если окажется, что такой кортеж уже существует, то программа сгенерирует исключение <code class="samp docutils literal"><span class="pre">tarantool.error.DatabaseError:</span> <span class="pre">(3,</span> <span class="pre">&quot;Duplicate</span> <span class="pre">key</span> <span class="pre">exists</span> <span class="pre">in</span> <span class="pre">unique</span> <span class="pre">index</span> <span class="pre">'primary'</span> <span class="pre">in</span> <span class="pre">space</span> <span class="pre">'examples'&quot;)</span></code>.</p>
+<p>В этой программе мы привели пример использования лишь одного запроса. Для полноценной работы с Tarantool'ом с помощью Python API, пожалуйста, обратитесь к документации из <a class="reference external" href="http://github.com/tarantool/tarantool-python">проекта tarantool-python на GitHub</a>. А на странице <a class="reference external" href="https://github.com/tarantool/queue-python">проекта queue-python на GitHub</a> вы сможете найти примеры использования Python API для работы с <a class="reference external" href="https://github.com/tarantool/queue">очередями сообщений в Tarantool'е</a>.</p>
 </div>
 <div class="section" id="c">
 <h2>7.10. C<a class="headerlink" href="#c" title="Ссылка на этот заголовок">¶</a></h2>
-<p><a class="reference external" href="http://tarantool.github.io/tarantool-c/connection.html#c.tnt_connect" title="(в tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_connect()</span></code></a></p>
-<p>Here follow two examples of using Tarantool's high-level C API.</p>
+<p>В этом разделе даны два примера использования высокоуровневого API для Tarantool'а и языка C.</p>
 <div class="section" id="example-1">
 <h3>7.10.1. Пример 1<a class="headerlink" href="#example-1" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Here is a complete C program that inserts <code class="code docutils literal"><span class="pre">[99999,'B']</span></code> into
-space <code class="code docutils literal"><span class="pre">examples</span></code> via the high-level C API.</p>
+<p>Далее приводится пример полноценной программы на языке C, которая осуществляет вставку кортежа <code class="docutils literal"><span class="pre">[99999,'B']</span></code> в пространство <code class="docutils literal"><span class="pre">examples</span></code> с помощью высокоуровневого Tarantool API для языка C.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 
@@ -500,29 +456,28 @@ space <code class="code docutils literal"><span class="pre">examples</span></cod
 <span class="cp">#include</span> <span class="cpf">&lt;tarantool/tnt_opt.h&gt;</span><span class="cp"></span>
 
 <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-   <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tnt</span> <span class="o">=</span> <span class="n">tnt_net</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>          <span class="cm">/* See note = SETUP */</span>
+   <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tnt</span> <span class="o">=</span> <span class="n">tnt_net</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>          <span class="cm">/* См. ниже = НАСТРОЙКА */</span>
    <span class="n">tnt_set</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="n">TNT_OPT_URI</span><span class="p">,</span> <span class="s">&quot;localhost:3301&quot;</span><span class="p">);</span>
-   <span class="k">if</span> <span class="p">(</span><span class="n">tnt_connect</span><span class="p">(</span><span class="n">tnt</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>                      <span class="cm">/* See note = CONNECT */</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">tnt_connect</span><span class="p">(</span><span class="n">tnt</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>                      <span class="cm">/* См. ниже = СОЕДИНЕНИЕ */</span>
        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Connection refused</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
    <span class="p">}</span>
-   <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tuple</span> <span class="o">=</span> <span class="n">tnt_object</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>     <span class="cm">/* See note = MAKE REQUEST */</span>
+   <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tuple</span> <span class="o">=</span> <span class="n">tnt_object</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>     <span class="cm">/* См. ниже = СОЗДАНИЕ ЗАПРОСА */</span>
    <span class="n">tnt_object_format</span><span class="p">(</span><span class="n">tuple</span><span class="p">,</span> <span class="s">&quot;[%d%s]&quot;</span><span class="p">,</span> <span class="mi">99999</span><span class="p">,</span> <span class="s">&quot;B&quot;</span><span class="p">);</span>
-   <span class="n">tnt_insert</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="n">tuple</span><span class="p">);</span>                     <span class="cm">/* See note = SEND REQUEST */</span>
+   <span class="n">tnt_insert</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="n">tuple</span><span class="p">);</span>                     <span class="cm">/* См. ниже = ОТПРАВКА ЗАПРОСА */</span>
    <span class="n">tnt_flush</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
-   <span class="k">struct</span> <span class="n">tnt_reply</span> <span class="n">reply</span><span class="p">;</span>  <span class="n">tnt_reply_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">reply</span><span class="p">);</span> <span class="cm">/* See note = GET REPLY */</span>
+   <span class="k">struct</span> <span class="n">tnt_reply</span> <span class="n">reply</span><span class="p">;</span>  <span class="n">tnt_reply_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">reply</span><span class="p">);</span> <span class="cm">/* См. ниже = ПОЛУЧЕНИЕ ОТВЕТА */</span>
    <span class="n">tnt</span><span class="o">-&gt;</span><span class="n">read_reply</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">reply</span><span class="p">);</span>
    <span class="k">if</span> <span class="p">(</span><span class="n">reply</span><span class="p">.</span><span class="n">code</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Insert failed %lu.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">reply</span><span class="p">.</span><span class="n">code</span><span class="p">);</span>
    <span class="p">}</span>
-   <span class="n">tnt_close</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>                                  <span class="cm">/* See below = TEARDOWN */</span>
+   <span class="n">tnt_close</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>                                  <span class="cm">/* См. ниже = ЗАВЕРШЕНИЕ */</span>
    <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span>
    <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Paste the code into a file named <code class="file docutils literal"><span class="pre">example.c</span></code> and install <code class="docutils literal"><span class="pre">tarantool-c</span></code>.
-One way to install <code class="docutils literal"><span class="pre">tarantool-c</span></code> (using Ubuntu) is:</p>
+<p>Скопируйте исходный код программы в файл с именем <code class="file docutils literal"><span class="pre">example.c</span></code> и установите коннектор <code class="docutils literal"><span class="pre">tarantool-c</span></code>. Вот один из способов установки <code class="docutils literal"><span class="pre">tarantool-c</span></code> (под Ubuntu):</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone git://github.com/tarantool/tarantool-c.git ~/tarantool-c
 <span class="gp">$</span> <span class="nb">cd</span> ~/tarantool-c
 <span class="gp">$</span> git submodule init
@@ -532,80 +487,52 @@ One way to install <code class="docutils literal"><span class="pre">tarantool-c<
 <span class="gp">$</span> make install
 </pre></div>
 </div>
-<p>To compile and link the program, say:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="c1"># sometimes this is necessary:</span>
+<p>Чтобы скомпилировать и слинковать тестовую программу, выполните следующую команду:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="c1"># иногда это необходимо:</span>
 <span class="gp">$</span> <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/lib
 <span class="gp">$</span> gcc -o example example.c -ltarantool
 </pre></div>
 </div>
-<p>Before trying to run,
-check that the server is listening and that the space <code class="code docutils literal"><span class="pre">examples</span></code> exists, as
-<a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
-To run the program, say <code class="code docutils literal"><span class="pre">./example</span></code>. The program will connect
-to the server, and will send the request.
-If Tarantool is not running on localhost with listen address = 3301, the program
-will print “Connection refused”.
-If the insert fails, the program will print &quot;Insert failed&quot; and an error number
-(see all error codes in the file
-<a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/box/errcode.h">/src/box/errcode.h</a>).</p>
-<p>Here are notes corresponding to comments in the example program.</p>
-<p><strong>SETUP:</strong> The setup begins by creating a stream.</p>
+<p>Перед запуском программы проверьте, что ваше тестовое окружение настроено так, как <a class="reference internal" href="#index-connector-setting"><span class="std std-ref">описано выше</span></a> (у Tarantool-сервера задан порт для прослушивания и в базе создано пространство <code class="docutils literal"><span class="pre">examples</span></code>). Чтобы запустить тестовую программу, выполните команду <code class="samp docutils literal"><span class="pre">./example</span></code>. Программа установит соединение с Tarantool-сервером и пошлет запрос. Если окажется, что Tarantool-сервер не запущен на прослушивание по указанному адресу, то программа выдаст сообщение об ошибке “Connection refused”. А если не пройдет INSERT-запрос, то программа выдаст сообщение &quot;Insert failed&quot; и код ошибки (все коды ошибок в Tarantool'е см. в исходном файле <a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/box/errcode.h">/src/box/errcode.h</a>).</p>
+<p>Далее следуют примечания, на которые мы ссылались в комментариях к исходному коду тестовой программы.</p>
+<p><strong>НАСТРОЙКА:</strong> Настройка начинается с создания потока (<code class="docutils literal"><span class="pre">tnt_stream</span></code>).</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tnt</span> <span class="o">=</span> <span class="n">tnt_net</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
 <span class="n">tnt_set</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="n">TNT_OPT_URI</span><span class="p">,</span> <span class="s">&quot;localhost:3301&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>In this program, the stream will be named <code class="code docutils literal"><span class="pre">tnt</span></code>.
-Before connecting on the <code class="code docutils literal"><span class="pre">tnt</span></code> stream, some options may have to be set.
-The most important option is TNT_OPT_URI.
-In this program, the URI is <code class="docutils literal"><span class="pre">localhost:3301</span></code>, since that is where the
-Tarantool server is supposed to be listening.</p>
-<p>Function description:</p>
+<p>В нашей тестовой программе поток назван <code class="docutils literal"><span class="pre">tnt</span></code>. Перед установкой соединения нужно задать ряд настроечных опций. Самая важная из них — TNT_OPT_URI. Для этой опции указана URI-строка <code class="docutils literal"><span class="pre">localhost:3301</span></code>, т.е. адрес, по которому должно быть настроено прослушивание на стороне Tarantool-сервера.</p>
+<p>Описание функции:</p>
 <pre class="highlight literal-block">
 <cite>struct tnt_stream *tnt_net(struct tnt_stream *s)</cite>
 <cite>int tnt_set(struct tnt_stream *s, int option, variant option-value)</cite>
 </pre>
-<p><strong>CONNECT:</strong> Now that the stream named <code class="docutils literal"><span class="pre">tnt</span></code> exists and is associated with a
-URI, this example program can connect to the server.</p>
+<p><strong>СОЕДИНЕНИЕ:</strong> Теперь когда мы создали поток с именем <code class="docutils literal"><span class="pre">tnt</span></code> и связали его с конкретным URI, наша программа может устанавливать соединение с Tarantool-сервером.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">tnt_connect</span><span class="p">(</span><span class="n">tnt</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
    <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Connection refused</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
 </pre></div>
 </div>
-<p>Function description:</p>
+<p>Описание функции:</p>
 <pre class="highlight literal-block">
 int tnt_connect(struct tnt_stream *s)
 </pre>
-<p>The connection might fail for a variety of reasons, such as:
-the server is not running, or the URI contains an invalid password.
-If the connect fails, the return value will be -1.</p>
-<p><strong>MAKE REQUEST:</strong> Most requests require passing a structured value, such as
-the contents of a tuple.</p>
+<p>Попытка соединения может и не удаться, например если Tarantool-сервер не запущен или в URI-строке указан неверный пароль. В случае неудачи функция <code class="docutils literal"><span class="pre">tnt_connect()</span></code> вернет -1.</p>
+<p><strong>СОЗДАНИЕ ЗАПРОСА:</strong> В большинстве запросов требуется передавать структурированные данные, например содержимое кортежа.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tuple</span> <span class="o">=</span> <span class="n">tnt_object</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
 <span class="n">tnt_object_format</span><span class="p">(</span><span class="n">tuple</span><span class="p">,</span> <span class="s">&quot;[%d%s]&quot;</span><span class="p">,</span> <span class="mi">99999</span><span class="p">,</span> <span class="s">&quot;B&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>In this program, the request will
-be an INSERT, and the tuple contents will be an integer
-and a string. This is a simple serial set of values, that
-is, there are no sub-structures or arrays. Therefore it
-is easy in this case to format what will be passed using
-the same sort of arguments that one would use with a C
-<code class="docutils literal"><span class="pre">printf()</span></code> function: <code class="docutils literal"><span class="pre">%d</span></code> for the integer, <code class="docutils literal"><span class="pre">%s</span></code> for the string,
-then the integer value, then a pointer to the string value.</p>
-<p>Function description:</p>
+<p>В данной программе мы используем запрос INSERT, а кортеж содержит целое число и строку.  Это простой набор значений без каких-либо вложенных структур или массивов. И передаваемые значения мы можем указать самым простым образом — аналогично тому, как это сделано в стандартной C-функции <code class="docutils literal"><span class="pre">printf()</span></code>: <code class="docutils literal"><span class="pre">%d</span></code> для обозначения целого числа, <code class="docutils literal"><span class="pre">%s</span></code> для обозначения строки, затем числовое значение, затем указатель на строковое значение.</p>
+<p>Описание функции:</p>
 <pre class="highlight literal-block">
 ssize_t tnt_object_format(struct tnt_stream *s, const char *fmt, ...)
 </pre>
-<p><strong>SEND REQUEST:</strong> The database-manipulation requests are analogous to the
-requests in the box library.</p>
+<p><strong>ОТПРАВКА ЗАПРОСА:</strong> Отправка запросов на изменение данных в базе делается аналогично тому, как это делается в Tarantool-библиотеке <code class="docutils literal"><span class="pre">box</span></code>.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">tnt_insert</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="n">tuple</span><span class="p">);</span>
 <span class="n">tnt_flush</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>In this program, the choice is to do an INSERT request, so
-the program passes the <code class="docutils literal"><span class="pre">tnt_stream</span></code> that was used for connection
-(<code class="code docutils literal"><span class="pre">tnt</span></code>) and the stream that was set up with <a class="reference external" href="http://tarantool.github.io/tarantool-c/msgpackobject.html#c.tnt_object_format" title="(в tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_object_format()</span></code></a>
-(<code class="code docutils literal"><span class="pre">tuple</span></code>).</p>
-<p>Function description:</p>
+<p>В данной программе мы делаем INSERT-запрос. В этом запросе мы передаем поток <code class="docutils literal"><span class="pre">tnt</span></code>, который ранее использовали для установки соединения, и поток <code class="code docutils literal"><span class="pre">tuple</span></code>, который также ранее настроили с помощью функции <a class="reference external" href="http://tarantool.github.io/tarantool-c/msgpackobject.html#c.tnt_object_format" title="(в tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_object_format()</span></code></a>.</p>
+<p>Описание функции:</p>
 <pre class="highlight literal-block">
 ssize_t tnt_insert(struct tnt_stream *s, uint32_t space, struct tnt_stream *tuple)
 ssize_t tnt_replace(struct tnt_stream *s, uint32_t space, struct tnt_stream *tuple)
@@ -615,30 +542,27 @@ ssize_t tnt_select(struct tnt_stream *s, uint32_t space, uint32_t index,
 ssize_t tnt_update(struct tnt_stream *s, uint32_t space, uint32_t index,
                    struct tnt_stream *key, struct tnt_stream *ops)
 </pre>
-<p><strong>GET REPLY:</strong> For most requests, the client will receive a reply containing some
-indication whether the result was successful, and a set of tuples.</p>
+<p><strong>ПОЛУЧЕНИЕ ОТВЕТА:</strong> На большинство запросов клиент получает ответ, который содержит информацию о том, был ли данный запрос успешно выполнен, а также содержит набор кортежей.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tnt_reply</span> <span class="n">reply</span><span class="p">;</span>  <span class="n">tnt_reply_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">reply</span><span class="p">);</span>
 <span class="n">tnt</span><span class="o">-&gt;</span><span class="n">read_reply</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">reply</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">reply</span><span class="p">.</span><span class="n">code</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
    <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Insert failed %lu.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">reply</span><span class="p">.</span><span class="n">code</span><span class="p">);</span> <span class="p">}</span>
 </pre></div>
 </div>
-<p>This program checks for success but does not decode the rest of the reply.</p>
-<p>Function description:</p>
+<p>Данная программа проверяет, был ли запрос выполнен успешно, но никак не интерпретирует оставшуюся часть ответа.</p>
+<p>Описание функции:</p>
 <pre class="highlight literal-block">
 struct tnt_reply *tnt_reply_init(struct tnt_reply *r)
 tnt-&gt;read_reply(struct tnt_stream *s, struct tnt_reply *r)
 void tnt_reply_free(struct tnt_reply *r)
 </pre>
-<p><strong>TEARDOWN:</strong> When a session ends, the connection that was made with
-<a class="reference external" href="http://tarantool.github.io/tarantool-c/connection.html#c.tnt_connect" title="(в tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_connect()</span></code></a> should be closed, and the objects that were made in the setup
-should be destroyed.</p>
+<p><strong>ЗАВЕРШЕНИЕ:</strong> По окончании сессии нам нужно закрыть соединение, созданное с помощью функции <a class="reference external" href="http://tarantool.github.io/tarantool-c/connection.html#c.tnt_connect" title="(в tarantool-c v1.0)"><code class="docutils literal"><span class="pre">tnt_connect()</span></code></a>, и удалить объекты, созданные на этапе настройки.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">tnt_close</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
 <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span>
 <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Function description:</p>
+<p>Описание функции:</p>
 <pre class="highlight literal-block">
 void tnt_close(struct tnt_stream *s)
 void tnt_stream_free(struct tnt_stream *s)
@@ -646,10 +570,7 @@ void tnt_stream_free(struct tnt_stream *s)
 </div>
 <div class="section" id="example-2">
 <h3>7.10.2. Пример 2<a class="headerlink" href="#example-2" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Here is a complete C program that selects, using index key <code class="code docutils literal"><span class="pre">[99999]</span></code>, from
-space <code class="code docutils literal"><span class="pre">examples</span></code> via the high-level C API.
-To display the results, the program uses functions in the
-<a class="reference external" href="http://rtsisyk.github.io/msgpuck/">MsgPuck</a> library which allow decoding of <a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">MessagePack</a>  arrays.</p>
+<p>Далее приводится еще один пример полноценной программы на языке C, которая осуществляет выборку по индекс-ключу <code class="docutils literal"><span class="pre">[99999]</span></code> из пространства <code class="docutils literal"><span class="pre">examples</span></code> с помощью высокоуровневого Tarantool API для языка C. Для вывода результатов в этой программе используются функции из библиотеки <a class="reference external" href="http://rtsisyk.github.io/msgpuck/">MsgPuck</a>. Эти функции нужны для декодирования массивов значений в формате <a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">MessagePack</a>.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;tarantool/tarantool.h&gt;</span><span class="cp"></span>
@@ -667,7 +588,7 @@ To display the results, the program uses functions in the
         <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tuple</span> <span class="o">=</span> <span class="n">tnt_object</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
-    <span class="n">tnt_object_format</span><span class="p">(</span><span class="n">tuple</span><span class="p">,</span> <span class="s">&quot;[%d]&quot;</span><span class="p">,</span> <span class="mi">99999</span><span class="p">);</span> <span class="cm">/* tuple = search key */</span>
+    <span class="n">tnt_object_format</span><span class="p">(</span><span class="n">tuple</span><span class="p">,</span> <span class="s">&quot;[%d]&quot;</span><span class="p">,</span> <span class="mi">99999</span><span class="p">);</span> <span class="cm">/* кортеж tuple = ключ для поиска */</span>
     <span class="n">tnt_select</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tuple</span><span class="p">);</span>
     <span class="n">tnt_flush</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
     <span class="k">struct</span> <span class="n">tnt_reply</span> <span class="n">reply</span><span class="p">;</span> <span class="n">tnt_reply_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">reply</span><span class="p">);</span>
@@ -716,32 +637,19 @@ To display the results, the program uses functions in the
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Similarly to the first example, paste the code into a file named
-<code class="file docutils literal"><span class="pre">example2.c</span></code>.</p>
-<p>To compile and link the program, say:</p>
+<p>Аналогично первому примеру, сохраните исходный код программы в файле с именем <code class="file docutils literal"><span class="pre">example2.c</span></code>.</p>
+<p>Чтобы скомпилировать и слинковать тестовую программу, выполните следующую команду:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> gcc -o example2 example2.c -ltarantool
 </pre></div>
 </div>
-<p>To run the program, say <code class="code docutils literal"><span class="pre">./example2</span></code>.</p>
-<p>The two example programs only show a few requests and do not show all that's
-necessary for good practice. See more in the <code class="docutils literal"><span class="pre">tarantool-c</span></code> documentation at
-<a class="reference external" href="http://github.com/tarantool/tarantool-c">http://github.com/tarantool/tarantool-c</a>.</p>
+<p>Для запуска программы выполните команду <code class="samp docutils literal"><span class="pre">./example2</span></code>.</p>
+<p>В этих двух программах мы привели пример использования лишь двух запросов. Для полноценной работы с Tarantool'ом с помощью C API, пожалуйста, обратитесь к документации из <a class="reference external" href="http://github.com/tarantool/tarantool-c">проекта tarantool-c на GitHub</a>.</p>
 </div>
 </div>
 <div class="section" id="interpreting-function-return-values">
 <h2>7.11. Интерпретация возвращаемых значений<a class="headerlink" href="#interpreting-function-return-values" title="Ссылка на этот заголовок">¶</a></h2>
-<p>For all Connectors, calling a function via Tarantool causes a return in MsgPack
-format. If the function is called using the connector's API, some conversions
-may occur. All scalar values are returned as tuples (with a MsgPack
-type-identifier followed by a value); all non-scalar values are returned as a
-group of tuples (with a MsgPack array-identifier followed by the scalar values).
-If the function is called via the binary protocol command layer -- &quot;eval&quot; --
-rather than via the connector's API, no conversions occur.</p>
-<p>In the following example, a Lua function will be created. Since it will be
-accessed externally by a 'guest' user, a <code class="docutils literal"><span class="pre">grant</span></code> of an execute privilege will
-be necessary. The function returns an empty array, a scalar string, two booleans,
-and a short integer. The values are the ones described in the msgpack section in
-the table <a class="reference internal" href="../../reference_lua/msgpack.html#msgpack-common-types-and-msgpack-encodings"><span class="std std-ref">Common Types and MsgPack Encodings</span></a>.</p>
+<p>При работе с любым Tarantool-коннектором функции, вызванные с помощью Tarantool'а, возвращают значения в формате MsgPack. Если функция была вызвана через API коннектора, то формат возвращаемых значений будет следующим: скалярные значения возвращаются в виде кортежей (сначала идет идентификатор типа из формата MsgPack, а затем идет значение); все прочие (не скалярные) значения возвращаются в виде групп кортежей (сначала идет идентификатор массива в формате MsgPack, а затем идут скалярные значения). Но если функция была вызвана в рамках бинарного протокола (с помощью команды <code class="docutils literal"><span class="pre">eval</span></code>), а не через API коннектора, то подобных изменений формата возвращаемых значений не происходит.</p>
+<p>Далее приводится пример создания Lua-функции. Поскольку эту функцию будет вызывать внешний пользователь 'guest', то нужно настроить привилегии на исполнение с помощью <code class="docutils literal"><span class="pre">grant</span></code>. Эта функция возвращает пустой массив, строку-скаляр, два логических значения и короткое целое число. Значение будут теми же, что описаны в разделе про MsgPack в таблице <a class="reference internal" href="../../reference_lua/msgpack.html#msgpack-common-types-and-msgpack-encodings"><span class="std std-ref">Стандартные типы в MsgPack-кодировке</span></a>.</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">listen</span><span class="o">=</span><span class="mi">3301</span><span class="p">}</span>
 <span class="go">2016-03-03 18:45:52.802 [27381] main/101/interactive I&gt; ready to accept requests</span>
 <span class="nn">---</span>
@@ -757,53 +665,51 @@ the table <a class="reference internal" href="../../reference_lua/msgpack.html#m
 <span class="nn">...</span>
 </pre></div>
 </div>
-<p>Here is a C program which calls the function. Although C is being used for the
-example, the result would be precisely the same if the calling program was
-written in Perl, PHP, Python, Go, or Java.</p>
+<p>Далее идет пример программы на C, из который мы вызываем эту Lua-функцию. Хотя в примере использован код на C, результат будет одинаковым, на каком бы языке ни была написана вызываемая программа: Perl, PHP, Python, Go или Java.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;tarantool/tarantool.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;tarantool/tnt_net.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;tarantool/tnt_opt.h&gt;</span><span class="cp"></span>
 <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tnt</span> <span class="o">=</span> <span class="n">tnt_net</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>            <span class="cm">/* SETUP */</span>
+  <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tnt</span> <span class="o">=</span> <span class="n">tnt_net</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>            <span class="cm">/* НАСТРОЙКА */</span>
   <span class="n">tnt_set</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="n">TNT_OPT_URI</span><span class="p">,</span> <span class="s">&quot;localhost:3301&quot;</span><span class="p">);</span>
-   <span class="k">if</span> <span class="p">(</span><span class="n">tnt_connect</span><span class="p">(</span><span class="n">tnt</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>                        <span class="cm">/* CONNECT */</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">tnt_connect</span><span class="p">(</span><span class="n">tnt</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>                        <span class="cm">/* СОЕДИНЕНИЕ */</span>
        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Connection refused</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
    <span class="p">}</span>
-   <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tuple</span> <span class="o">=</span> <span class="n">tnt_object</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>       <span class="cm">/* MAKE REQUEST */</span>
+   <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">tuple</span> <span class="o">=</span> <span class="n">tnt_object</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>       <span class="cm">/* СОЗДАНИЕ ЗАПРОСА */</span>
    <span class="k">struct</span> <span class="n">tnt_stream</span> <span class="o">*</span><span class="n">arg</span><span class="p">;</span> <span class="n">arg</span> <span class="o">=</span> <span class="n">tnt_object</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
    <span class="n">tnt_object_add_array</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-   <span class="k">struct</span> <span class="n">tnt_request</span> <span class="o">*</span><span class="n">req1</span> <span class="o">=</span> <span class="n">tnt_request_call</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span> <span class="cm">/* CALL function f() */</span>
+   <span class="k">struct</span> <span class="n">tnt_request</span> <span class="o">*</span><span class="n">req1</span> <span class="o">=</span> <span class="n">tnt_request_call</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span> <span class="cm">/* ВЫЗОВ function f() */</span>
    <span class="n">tnt_request_set_funcz</span><span class="p">(</span><span class="n">req1</span><span class="p">,</span> <span class="s">&quot;f&quot;</span><span class="p">);</span>
    <span class="n">tnt_request_set_tuple</span><span class="p">(</span><span class="n">req1</span><span class="p">,</span> <span class="n">arg</span><span class="p">);</span>
    <span class="kt">uint64_t</span> <span class="n">sync1</span> <span class="o">=</span> <span class="n">tnt_request_compile</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="n">req1</span><span class="p">);</span>
-   <span class="n">tnt_flush</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>                                    <span class="cm">/* SEND REQUEST */</span>
-   <span class="k">struct</span> <span class="n">tnt_reply</span> <span class="n">reply</span><span class="p">;</span>  <span class="n">tnt_reply_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">reply</span><span class="p">);</span>   <span class="cm">/* GET REPLY */</span>
+   <span class="n">tnt_flush</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>                                    <span class="cm">/* ОТПРАВКА ЗАПРОСА */</span>
+   <span class="k">struct</span> <span class="n">tnt_reply</span> <span class="n">reply</span><span class="p">;</span>  <span class="n">tnt_reply_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">reply</span><span class="p">);</span>   <span class="cm">/* ПОЛУЧЕНИЕ ОТВЕТА */</span>
    <span class="n">tnt</span><span class="o">-&gt;</span><span class="n">read_reply</span><span class="p">(</span><span class="n">tnt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">reply</span><span class="p">);</span>
    <span class="k">if</span> <span class="p">(</span><span class="n">reply</span><span class="p">.</span><span class="n">code</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
      <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Call failed %lu.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">reply</span><span class="p">.</span><span class="n">code</span><span class="p">);</span>
      <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
    <span class="p">}</span>
-   <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">reply</span><span class="p">.</span><span class="n">data</span><span class="p">;</span><span class="cm">/* PRINT REPLY */</span>
+   <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">reply</span><span class="p">.</span><span class="n">data</span><span class="p">;</span><span class="cm">/* ВЫВОД ОТВЕТА */</span>
    <span class="k">while</span> <span class="p">(</span><span class="n">p</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">reply</span><span class="p">.</span><span class="n">data_end</span><span class="p">)</span>
    <span class="p">{</span>
      <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%x &quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span>
      <span class="o">++</span><span class="n">p</span><span class="p">;</span>
    <span class="p">}</span>
    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-   <span class="n">tnt_close</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>                                    <span class="cm">/* TEARDOWN */</span>
+   <span class="n">tnt_close</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>                                    <span class="cm">/* ЗАВЕРШЕНИЕ */</span>
    <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tuple</span><span class="p">);</span>
    <span class="n">tnt_stream_free</span><span class="p">(</span><span class="n">tnt</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>When this program is executed, it will print: <br />
-<span class="ccode">dd 0 0 0 5 90 91 a1 61 91 c2 91 c3 91 7f</span> <br />
-The first five bytes -- <span class="ccode">dd 0 0 0 5</span> -- are the msgpack encoding
-for &quot;32-bit array header with value 5&quot; (see the msgpack <a class="reference external" href="http://github.com/msgpack/msgpack/blob/master/spec.md">Specification</a> page).
-The rest are as described in the Common Types and MsgPack Encodings table.</p>
+<p>По завершении программа выведет на экран следующие значения:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dd 0 0 0 5 90 91 a1 61 91 c2 91 c3 91 7f</span>
+</pre></div>
+</div>
+<p>Первые пять байт — <code class="docutils literal"><span class="pre">dd</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">5</span></code> — это фрагмент данных в формате MsgPack, означающий &quot;32-битный заголовок массива со значением 5&quot; (см. <a class="reference external" href="http://github.com/msgpack/msgpack/blob/master/spec.md">спецификацию на формат MsgPack</a>). Остальные значения описаны в таблице <a class="reference internal" href="../../reference_lua/msgpack.html#msgpack-common-types-and-msgpack-encodings"><span class="std std-ref">Стандартные типы в MsgPack-кодировке</span></a>.</p>
 </div>
 </div>
 
@@ -811,17 +717,9 @@ The rest are as described in the Common Types and MsgPack Encodings table.</p>
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/connectors/index";
         this.language = "ru"
     };

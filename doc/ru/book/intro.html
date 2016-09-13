@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -241,13 +242,16 @@
 <h2>1.1. Как пользоваться документацией<a class="headerlink" href="#how-to-read-the-documentation" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Знакомство с Tarantool'ом вы можете начать с того, что скачаете готовый установочный пакет (как описано в начале главы 2 &quot;Начало работы&quot;) или воспользуетесь нашим онлайн-стендом на <a class="reference external" href="http://try.tarantool.org">http://try.tarantool.org</a>. В любом случае для первого знакомства вы можете выполнить тренировочные примеры из второй части главы 2 &quot;Первичный запуск Tarantool'а и создание базы данных&quot;.</p>
 <p>В главе 3 &quot;Функционал СУБД&quot; рассказано о возможностях Tarantool'а как NoSQL СУБД. В конце этой главы также приводится справочник по библиотекам Tarantool'а. Но если вы собираетесь использовать Tarantool только как сервер приложений Lua, то вы можете пропустить и эту, и следующую за ней главу 4 &quot;Репликация&quot;.</p>
-<p>Глава 5 &quot;Справочник по конфигурированию&quot; и глава 6 &quot;Администрирование серверной части&quot; предназначены в первую очередь для системных администраторов. Тем не менее любому пользователю Tarantool'а полезно знать, как производится настройка Tarantool-сервера, поэтому мы настоятельно рекомендуем прочесть раздел про параметры <code class="docutils literal"><span class="pre">box.cfg</span></code>. Глава 7 &quot;Коннекторы&quot; нужна только тем пользователям, кто хочет устанавливать соединение с Tarantool'ом с помощью программ на других языках программирования (например C, Perl или Python) -- для прочих пользователей эта глава неактуальна.</p>
+<p>Глава 5 &quot;Справочник по конфигурированию&quot; и глава 6 &quot;Администрирование серверной части&quot; предназначены в первую очередь для системных администраторов. Тем не менее любому пользователю Tarantool'а полезно знать, как производится настройка Tarantool-сервера, поэтому мы настоятельно рекомендуем прочесть раздел про параметры <code class="docutils literal"><span class="pre">box.cfg</span></code>.</p>
+<p>Глава 7 &quot;Коннекторы&quot; актуальна только для тех пользователей, которые хотят устанавливать соединение с Tarantool'ом с помощью программ на других языках программирования (например C, Perl или Python) — для прочих пользователей эта глава неактуальна.</p>
+<p>В главе 8 &quot;Модули&quot; показано, как устанавливать существующие модули (библиотеки) и разрабатывать новые модули на языках языках Lua и C.</p>
 <p>В первых двух Приложениях, A и B, приводится справочная информация по внутренней реализации Tarantool'а: коды ошибок, логика внутренних процессов (восстановления и репликации) и собственные форматы файлов.</p>
-<p>Три длинных учебных примера в Приложении C -- &quot;Вставка 1 млн таплов с помощью хранимой процедуры на языке Lua&quot;, &quot;Подсчет суммы по JSON-полям во всех таплах&quot; и &quot;Индексированный поиск по шаблонам&quot;-- предназначены для пользователей, которые еще плохо знакомы с языком Lua или NoSQL СУБД.</p>
+<p>Три длинных учебных примера в Приложении C — &quot;Вставка 1 млн кортежей с помощью хранимой процедуры на языке Lua&quot;, &quot;Подсчет суммы по JSON-полям во всех кортежах&quot; и &quot;Индексированный поиск по шаблонам&quot; — предназначены для пользователей, которые еще плохо знакомы с языком Lua или NoSQL СУБД.</p>
 <p>В Приложении D &quot;Vinyl&quot; подробно рассказывается про дисковый движок Tarantool'а под названием <cite>vinyl</cite>.</p>
 <p>В Приложении E &quot;Готовые рецепты&quot; собраны рабочие фрагменты кода, которые пригодятся для решения типичных или, наоборот, особо трудных задач.</p>
 <p>В Приложении F содержится один длинный учебный пример по работе с хранимыми процедурами на языке C.
 Опытным пользователям могут быть интересны Справочники и Руководство разработчика, а также подробные комментарии в исходном коде.</p>
+<p>В Приложении G &quot;Версионные изменения&quot; приводится список существенных изменений для конкретных версий Tarantool'а.</p>
 <p>Опытным же пользователям могут пригодиться Справочники и Руководство разработчика.</p>
 </div>
 <div class="section" id="getting-in-touch-with-the-tarantool-community">
@@ -261,17 +265,9 @@
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/intro";
         this.language = "ru"
     };

@@ -25,7 +25,8 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-      var disqus_developer = 1;
+      
+      
     </script>
     <script id="dsq-count-scr"
             src="//tarantooldb.disqus.com/count.js" async/>
@@ -196,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="app/d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app/f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Список изменений для версии 1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">15. Приложение G. Версионные изменения</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_lua/index.html">Справочник по Lua API</a></li>
@@ -242,7 +243,7 @@
 <p>После установки вы можете сразу опробовать Tarantool в действии. Ниже вы найдете инструкции по созданию безопасной тестовой среды. Всего за несколько минут вы сможете запустить Tarantool-сервер и задать несколько инструкций по манипулированию данными. См. раздел &quot;<a class="reference internal" href="#user-guide-getting-started-first-database"><span class="std std-ref">Первичный запуск Tarantool'а и создание базы данных</span></a>”.</p>
 <div class="section" id="downloading-and-installing-a-binary-package">
 <span id="user-guide-getting-started-downloading-and-installing-a-binary-package"></span><h2>2.1. Скачивание и установка бинарного пакета<a class="headerlink" href="#downloading-and-installing-a-binary-package" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Бинарные пакеты для двух версий Tarantool'а -- стабильной 1.6 и самой свежей 1.7 -- выложены на странице <a class="reference external" href="http://tarantool.org/download.html">http://tarantool.org/download.html</a>. При каждом изменении исходного кода на GitHub (репозиторий <a class="reference external" href="http://github.com/tarantool/tarantool">http://github.com/tarantool/tarantool</a>, ветка &quot;1.7&quot;) происходит сборка, автоматическое тестирование и выкладка бинарных пакетов на вышеуказанную страницу.</p>
+<p>Бинарные пакеты для двух версий Tarantool'а — стабильной 1.6 и самой свежей 1.7 — выложены на странице <a class="reference external" href="http://tarantool.org/download.html">http://tarantool.org/download.html</a>. При каждом изменении исходного кода на GitHub (репозиторий <a class="reference external" href="http://github.com/tarantool/tarantool">http://github.com/tarantool/tarantool</a>, ветка &quot;1.7&quot;) происходит сборка, автоматическое тестирование и выкладка бинарных пакетов на вышеуказанную страницу.</p>
 <p>Чтобы скачать и установить бинарный пакет для вашей операционной системы, откройте терминал с командной строкой и введите инструкции, которые даны для вашей операционной системы на странице <a class="reference external" href="http://tarantool.org/download.html">http://tarantool.org/download.html</a>.</p>
 </div>
 <div class="section" id="starting-tarantool-and-making-your-first-database">
@@ -254,7 +255,7 @@
 </pre></div>
 </div>
 <p>Далее рассказывается, как создать простую тестовую базу данных после установки Tarantool'а.</p>
-<p>Запустите Tarantool-сервер. Имя программы -- tarantool.</p>
+<p>Запустите Tarantool-сервер. Имя программы — <strong class="program">tarantool</strong>.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="c1"># Если вы скачали бинарный пакет с помощью apt-get или yum, введите:</span>
 <span class="gp">$</span> /usr/bin/tarantool
 <span class="gp">$</span> <span class="c1"># Если вы скачали бинарный пакет в формате TAR</span>
@@ -287,7 +288,7 @@
 </pre></div>
 </div>
 <p>но пока что будет лучше оставить Tarantool-сервер работать в интерактивном режиме. На промышленных серверах <a class="reference internal" href="administration.html#administration-using-tarantool-as-a-client"><span class="std std-ref">интерактивный режим</span></a> нужен лишь для администрирования, однако для наглядности большинство примеров в данном руководстве даны именно в интерактивном режиме. Итак, Tarantool ждет от вас ввода инструкций.</p>
-<p>Создайте первый спейс и первый <a class="reference internal" href="box/box_index.html#box-index"><span class="std std-ref">индекс</span></a>:</p>
+<p>Создайте первое пространство и первый <a class="reference internal" href="box/box_index.html#box-index"><span class="std std-ref">индекс</span></a>:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">tester&#39;</span><span class="p">)</span>
 <span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">create_index</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">primary&#39;</span><span class="p">,</span> <span class="p">{</span>
 <span class="gp">         &gt; </span>  <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">hash&#39;</span><span class="p">,</span>
@@ -295,13 +296,13 @@
 <span class="gp">         &gt; </span><span class="p">})</span>
 </pre></div>
 </div>
-<p>Выполните вставку трех &quot;таплов&quot; (так в Tarantool'е называются &quot;записи&quot;) в первый &quot;спейс&quot; из вашей базы данных:</p>
+<p>Выполните вставку трех &quot;кортежей&quot; (tuple) в первое &quot;пространство&quot; (space) из вашей базы данных:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">({</span><span class="mi">1</span><span class="p">})</span>
 <span class="gp">tarantool&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Music&#39;</span><span class="p">})</span>
 <span class="gp">tarantool&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">({</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Length&#39;</span><span class="p">,</span> <span class="mi">93</span><span class="p">})</span>
 </pre></div>
 </div>
-<p>Произведите выборку тапла из первого спейса в базе по первому указанному ключу:</p>
+<p>Произведите выборку кортежа из первого пространства в базе по первому указанному ключу:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -336,7 +337,7 @@
 </div>
 <div class="section" id="connecting-remotely">
 <h2>2.3. Установка удаленного соединения<a class="headerlink" href="#connecting-remotely" title="Ссылка на этот заголовок">¶</a></h2>
-<p>В предыдущем разделе ваш первый запрос был <code class="code docutils literal"><span class="pre">box.cfg{listen</span> <span class="pre">=</span> <span class="pre">3301}</span></code>. Значением <code class="code docutils literal"><span class="pre">listen</span></code> может быть любой URI (универсальный код ресурса), в данном случае -- просто номер локального порта (3301). Вы можете отправлять запросы на URI для прослушивания с помощью:</p>
+<p>В предыдущем разделе ваш первый запрос был <code class="samp docutils literal"><span class="pre">box.cfg</span><em><span class="pre">listen</span> <span class="pre">=</span> <span class="pre">3301</span></em></code>. Значением <code class="docutils literal"><span class="pre">listen</span></code> может быть любой URI (универсальный код ресурса), в данном случае — просто номер локального порта (3301). Вы можете отправлять запросы на URI для прослушивания с помощью:</p>
 <ol class="loweralpha simple">
 <li>telnet,</li>
 <li><p class="first">коннектора (см. главу &quot;<a class="reference internal" href="connectors/index.html#index-box-connectors"><span class="std std-ref">Коннекторы</span></a>&quot;),</p>
@@ -356,7 +357,7 @@
 <pre class="highlight literal-block">
 tarantool&gt; {<strong>{box.space.tester:select{2}}</strong>}
 </pre>
-<p>Это означает &quot;послать запрос тому Tarantool-серверу и вывести результат на экран.&quot; Результатом в данном случае будет один из таплов, что вы вставляли ранее. На терминале теперь должно отображаться примерно следующее:</p>
+<p>Это означает &quot;послать запрос тому Tarantool-серверу и вывести результат на экран.&quot; Результатом в данном случае будет один из кортежей, что вы вставляли ранее. На терминале теперь должно отображаться примерно следующее:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">$</span> tarantoolctl connect 3301
 <span class="go">/usr/local/bin/tarantoolctl: connected to localhost:3301</span>
 <span class="gp">localhost:3301&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">tester</span><span class="p">:</span><span class="nb">select</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span>
@@ -367,8 +368,8 @@ tarantool&gt; {<strong>{box.space.tester:select{2}}</strong>}
 <span class="go">localhost:3301&gt;</span>
 </pre></div>
 </div>
-<p>Вы можете повторно вводить команды <code class="code docutils literal"><span class="pre">box.space...:insert{}</span></code> и <code class="code docutils literal"><span class="pre">box.space...:select{}</span></code> сколько угодно раз, на любом экземпляре Tarantool'а. В конце тестирования воспользуйтесь следующими командами. Чтобы удалить спейс: <code class="code docutils literal"><span class="pre">s:drop()</span></code>. Чтобы остановить  <code class="docutils literal"><span class="pre">tarantoolctl</span></code>: Ctrl+C или Ctrl+D. Чтобы остановить Tarantool (альтернативный вариант): <a class="reference internal" href="../reference_lua/os.html#os-exit"><span class="std std-ref">os.exit()</span></a>. Чтобы остановить Tarantool (с другого терминала): <code class="code docutils literal"><span class="pre">sudo</span> <span class="pre">pkill</span> <span class="pre">-f</span> <span class="pre">tarantool</span></code>. Чтобы удалить тестовую базу: <code class="code docutils literal"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">~/tarantool_sandbox</span></code>.</p>
-<p>Если вы выполнили все инструкции из этой главы, то к данному моменту вы уже установили Tarantool (из бинарного пакета, либо из исходных файлов), запустили Tarantool-сервер, а также выполнили вставку и выборку таплов.</p>
+<p>Вы можете повторно вводить команды <code class="code docutils literal"><span class="pre">box.space...:insert{}</span></code> и <code class="code docutils literal"><span class="pre">box.space...:select{}</span></code> сколько угодно раз, на любом экземпляре Tarantool'а. В конце тестирования воспользуйтесь следующими командами. Чтобы удалить пространство: <code class="code docutils literal"><span class="pre">s:drop()</span></code>. Чтобы остановить  <code class="docutils literal"><span class="pre">tarantoolctl</span></code>: Ctrl+C или Ctrl+D. Чтобы остановить Tarantool (альтернативный вариант): <a class="reference internal" href="../reference_lua/os.html#os-exit"><span class="std std-ref">os.exit()</span></a>. Чтобы остановить Tarantool (с другого терминала): <code class="code docutils literal"><span class="pre">sudo</span> <span class="pre">pkill</span> <span class="pre">-f</span> <span class="pre">tarantool</span></code>. Чтобы удалить тестовую базу: <code class="code docutils literal"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">~/tarantool_sandbox</span></code>.</p>
+<p>Если вы выполнили все инструкции из этой главы, то к данному моменту вы уже установили Tarantool (из бинарного пакета, либо из исходных файлов), запустили Tarantool-сервер, а также выполнили вставку и выборку кортежей.</p>
 </div>
 </div>
 
@@ -376,17 +377,9 @@ tarantool&gt; {<strong>{box.space.tester:select{2}}</strong>}
           
   <div id="disqus_thread"></div>
   <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES:
-    *  EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES
-    *  FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-    *  https://disqus.com/admin/universalcode/#configuration-variables
-    */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
         // this.page.url = PAGE_URL;
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "book/user_guide_getting_started";
         this.language = "ru"
     };
