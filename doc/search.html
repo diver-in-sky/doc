@@ -3,11 +3,14 @@
 
 
 
+
+
 <!doctype html>
 <html>
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Search</title>
     <link rel="icon" type="image/png" sizes="192x192"
           href="/theme/favicon/android-icon-192x192.png">
@@ -19,27 +22,33 @@
           href="/theme/favicon/favicon-16x16.png">
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '1.7.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        URL_ROOT:       '',
+        VERSION:        '1.7.1',
+        COLLAPSE_INDEX:  false,
+        FILE_SUFFIX:    '.html',
+        HAS_SOURCE:      true
       };
       
       
+      var disqus_config = function () {
+          // Replace PAGE_URL with your page's canonical URL variable
+          // this.page.url = PAGE_URL;
+          this.page.identifier = "search";
+          this.language = "en"
+      };
     </script>
-    <script id="dsq-count-scr"
-            src="//tarantooldb.disqus.com/count.js" async/>
-    </script>
+    <script id="dsq-count-scr" src="https://tarantooldb.disqus.com/count.js" async/></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/searchtools.js"></script>
     <script type="text/javascript" src="_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="_static/headers.js"></script>
+    <script type="text/javascript" src="/js/menu.js"></script>
+    <script type="text/javascript" src="/js/mobile_menu.js"></script>
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
     <link rel="stylesheet" href="/theme/design.css">
     <link rel="stylesheet" href="/theme/pygmentize.css">
-    <link rel="stylesheet" href="/theme/font-awesome.min.css">
     <link rel="stylesheet" href="_static/sphinx_design.css">
     
   <script type="text/javascript">
@@ -92,61 +101,101 @@
   
     <div class="b-wrapper">
       <!-- HEADER > -->
-      <header class="b-header">
-        <div class="b-header-wrapper">
-          <nav class="b-header_menu">
-            
+      
+  <header class="b-header">
+    <div class="b-header_menu_mobile">
+      <div class="b-burger-button">
+        <span></span>
+      </div>
+      <form action="" class="b-header-search">
+        <input type="search">
+      </form>
+    </div>
+    <div class="b-menu_mobile">
+      <div class="b-menu_mobile__wrapper">
+        <nav class="b-header_menu">
+          
   <ul class="b-menu">
     
       <li class="b-menu-item">
-        
-        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
-        
+        <a href="/" class="b-menu-item-url">Overview</a>
       </li>
     
       <li class="b-menu-item">
-        
         <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
-        
       </li>
     
       <li class="b-menu-item">
-        
-        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
-        
+        <a href="/doc/" class="b-menu-item-url">Documentation</a>
       </li>
     
       <li class="b-menu-item">
-        
-        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
-        
+        <a href="/download.html" class="b-menu-item-url">Download</a>
       </li>
     
       <li class="b-menu-item">
-        
-        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
-        
+        <a href="/careers.html" class="b-menu-item-url">Careers</a>
       </li>
     
       <li class="b-menu-item">
-        
         <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
-        
       </li>
     
   </ul>
 
-          </nav>
-        </div>
-      </header>
+        </nav>
+      </div>
+      <div class="b-menu__close">
+        <!-- empty -->
+      </div>
+      <div class="b-header-wrapper">
+        <nav class="b-header_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="/" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/doc/" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
       <!-- < HEADER -->
 
       <div class="b-content b-clearbox">
         
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
-      <h2 class="b-section-title b-ellipsis" title="Search">
-        Search
+      <h2
+      
+        class="b-section-title b-ellipsis toggle-navigation"
+      
+        title="Search">
+          Search
       </h2>
   <div class="b-doc-language_selector">
     <ul class="b-doc-language_selector-list">
@@ -240,13 +289,8 @@
           
   <div id="disqus_thread"></div>
   <script>
-    var disqus_config = function () {
-        // Replace PAGE_URL with your page's canonical URL variable
-        // this.page.url = PAGE_URL;
-        this.page.identifier = "search";
-        this.language = "en"
-    };
-    (function() {  // DON'T EDIT BELOW THIS LINE
+    // DON'T EDIT
+    (function() {
         var d = document, s = d.createElement('script');
         s.src = '//tarantooldb.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
@@ -265,63 +309,51 @@
       </div>
     </div>
   
-  <script>
-  </script>
 
       </div>
     </div>
 
-    <!-- FOOTER > -->
-    <footer class="b-footer">
-      <div class="b-footer-wrapper">
-        <nav class="b-footer_menu">
-          
+  <!-- FOOTER > -->
+  
+<footer class="b-footer">
+  <div class="b-footer-wrapper">
+    <nav class="b-footer_menu">
+      
   <ul class="b-menu">
     
       <li class="b-menu-item">
-        
-        <a href="http://tarantool.org" class="b-menu-item-url">Overview</a>
-        
+        <a href="/" class="b-menu-item-url">Overview</a>
       </li>
     
       <li class="b-menu-item">
-        
         <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
-        
       </li>
     
       <li class="b-menu-item">
-        
-        <a href="http://tarantool.org/doc/" class="b-menu-item-url p-active">Documentation</a>
-        
+        <a href="/doc/" class="b-menu-item-url">Documentation</a>
       </li>
     
       <li class="b-menu-item">
-        
-        <a href="http://tarantool.org/download.html" class="b-menu-item-url">Download</a>
-        
+        <a href="/download.html" class="b-menu-item-url">Download</a>
       </li>
     
       <li class="b-menu-item">
-        
-        <a href="http://tarantool.org/careers.html" class="b-menu-item-url">Careers</a>
-        
+        <a href="/careers.html" class="b-menu-item-url">Careers</a>
       </li>
     
       <li class="b-menu-item">
-        
         <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
-        
       </li>
     
   </ul>
 
-          <div class="b-footer-other">
-            <a href="http://stable.tarantool.org">1.5 web site and downloads</a>
-          </div>
-        </nav>
+      <div class="b-footer-other">
+        <a href="http://15.tarantool.org">1.5 web site and downloads</a>
       </div>
-    </footer>
+    </nav>
+  </div>
+</footer>
+
   <!-- < FOOTER -->
   </body>
 </html>

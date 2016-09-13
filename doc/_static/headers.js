@@ -122,8 +122,35 @@ $(document).ready(function () {
       $(table).empty().remove();
     }
   );
+
   $("dl.function").each(
   );
+
+  if (!String.prototype.startsWith) {
+    Object.defineProperty(String.prototype, 'startsWith', {
+        enumerable: false,
+        configurable: false,
+        writable: false,
+        value: function(searchString, position) {
+          position = position || 0;
+          return this.lastIndexOf(searchString, position) === position;
+        }
+    });
+  }
+
+  $(function() {
+    $("ul.b-menu a").each(function() {
+      console.log(window.location.pathname);
+      console.log($(this).attr('href'));
+      if (($(this).attr('href') === window.location.pathname) ||
+          ($(this).attr('href').startsWith("/doc/") &&
+           window.location.pathname.startsWith("/doc/")) ||
+          ($(this).attr('href').startsWith("/download") &&
+           window.location.pathname.startsWith("/download"))) {
+        $(this).addClass("p-active");
+      }
+    });
+  });
 });
 
 // vim: syntax=javascript ts=2 sts=2 sw=2 expandtab
