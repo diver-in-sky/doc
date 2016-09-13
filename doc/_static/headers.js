@@ -123,9 +123,6 @@ $(document).ready(function () {
     }
   );
 
-  $("dl.function").each(
-  );
-
   if (!String.prototype.startsWith) {
     Object.defineProperty(String.prototype, 'startsWith', {
         enumerable: false,
