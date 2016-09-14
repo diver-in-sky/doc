@@ -137,8 +137,6 @@ $(document).ready(function () {
 
   $(function() {
     $("ul.b-menu a").each(function() {
-      console.log(window.location.pathname);
-      console.log($(this).attr('href'));
       if (($(this).attr('href') === window.location.pathname) ||
           ($(this).attr('href').startsWith("/doc/") &&
            window.location.pathname.startsWith("/doc/")) ||
@@ -147,6 +145,16 @@ $(document).ready(function () {
         $(this).addClass("p-active");
       }
     });
+  });
+
+  $(function() {
+    $(".b-header-search input").focusin(function() {
+      $(this).attr("placeholder", "Search this manual");
+    });
+    $(".b-header-search input").focusout(function() {
+      $(this).attr("placeholder", "");
+    });
+    $(".b-doc-search .b-header-search input").focus();
   });
 });
 

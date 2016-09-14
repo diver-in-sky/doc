@@ -67,7 +67,4 @@ $(document).ready(function() {
     if ($('#details-about-index-field-types').length) {
         $('#details-about-index-field-types table').stacktable();
     }
-
-    console.log(213124)
 });
-

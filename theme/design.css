@@ -1738,13 +1738,13 @@ ul.b-social_block a:hover {
         line-height: 40px;
     }
 
-    .b-header-search iinput:focus {
+    .b-header-search input:focus {
         position: absolute;
         background: #fff;
         right: 25px;
         outline: none;
         border-radius: 3px;
-        width: calc(100% - 103px);;
+        width: calc(100% - 103px);
         padding: 0 5px;
         border: 1px solid #212121;
     }
