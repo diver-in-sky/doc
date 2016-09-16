@@ -156,6 +156,40 @@ $(document).ready(function () {
     });
     $(".b-doc-search .b-header-search input").focus();
   });
+
+  $(function() {
+    function apply_accordion(selector) {
+      $(selector).accordion({
+          icons: {"header":"icon icon-plus", "activeHeader":"icon icon-minus"},
+          heightStyle: "content",
+          collapsible: true,
+          animate: 400,
+          event: "mouseover",
+      })
+      $(selector + ">a.ui-state-active").mouseover()
+    }
+    apply_accordion(".b-cols_content_left li.toctree-l6:has(ul li)");
+    apply_accordion(".b-cols_content_left li.toctree-l5:has(ul li)");
+    apply_accordion(".b-cols_content_left li.toctree-l4:has(ul li)");
+    apply_accordion(".b-cols_content_left li.toctree-l3:has(ul li)");
+    apply_accordion(".b-cols_content_left li.toctree-l2:has(ul li)");
+    apply_accordion(".b-cols_content_left li.toctree-l1:has(ul li)");
+    $(".b-cols_content_left a.current").each(function() {
+      $(this).mouseover()
+      $(this).parents("ul.current").prev().mouseover();
+    })
+    $(".b-cols_content_left li:has(.icon)>a").each(function() {
+       $(this).css("margin-left", "-14px");
+    })
+    /*
+    $(".b-cols_content_left li>a:has(.icon)").each(function() {
+      $(this).children(".icon").insertBefore($(this));
+    })
+    $("a.ui-accordion-header").on('click', function(){
+      window.location = $(this).attr('href');
+    });
+    */
+  });
 });
 
 // vim: syntax=javascript ts=2 sts=2 sw=2 expandtab

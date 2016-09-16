@@ -4,7 +4,6 @@
 
 
 
-
 <!doctype html>
 <html>
   <head>
@@ -44,12 +43,14 @@
     <script type="text/javascript" src="../../_static/translations.js"></script>
     <script type="text/javascript" src="../../_static/jquery.pin.min.js"></script>
     <script type="text/javascript" src="../../_static/headers.js"></script>
+    <script type="text/javascript" src="../../_static/jquery-ui.js"></script>
     <script type="text/javascript" src="/js/menu.js"></script>
     <script type="text/javascript" src="/js/mobile_menu.js"></script>
     <link rel="stylesheet" href="/theme/font-awesome.min.css">
     <link rel="stylesheet" href="/theme/design.css">
     <link rel="stylesheet" href="/theme/pygmentize.css">
     <link rel="stylesheet" href="../../_static/sphinx_design.css">
+    <link rel="stylesheet" href="../../_static/jquery-ui.css">
      
     <!--[if lt IE 9]>
       <script src="/js/ie8.js"></script>
@@ -227,32 +228,566 @@
   <input type="hidden" name="area" value="default" />
 </form>
 
-
-        <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Общие сведения</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Вопросы и ответы</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Руководство пользователя</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../intro.html">1. Предисловие</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide_getting_started.html">2. Начало работы</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../box/index.html">3. Функционал СУБД</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../replication/index.html">4. Репликация</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">5. Справочник по конфигурированию</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administration.html">6. Администрирование серверной части</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../connectors/index.html">7. Коннекторы</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules.html">8. Модули</a></li>
-<li class="toctree-l2"><a class="reference internal" href="a_errcodes.html">9. Приложение A. Коды ошибок</a></li>
-<li class="toctree-l2"><a class="reference internal" href="b_internals.html">10. Приложение B. Детали реализации</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">11. Приложение C. Учебные примеры на языке Lua</a></li>
-<li class="toctree-l2"><a class="reference internal" href="d_vinyl/index.html">12. Приложение D. Vinyl</a></li>
-<li class="toctree-l2"><a class="reference internal" href="e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
-<li class="toctree-l2"><a class="reference internal" href="f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="g_changes.html">15. Приложение G. Версионные изменения</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Общие сведения</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#an-application-server-together-with-a-database-manager">Сервер приложений + СУБД</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#database-features">Возможности СУБД</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Справочник по Lua rocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">Справочник по C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Руководство разработчика</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Руководство пользователя</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">1. Предисловие</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro.html#how-to-read-the-documentation">1.1. Как пользоваться документацией</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro.html#getting-in-touch-with-the-tarantool-community">1.2. Как связаться с сообществом разработчиков Tarantool'а</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide_getting_started.html">2. Начало работы</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide_getting_started.html#downloading-and-installing-a-binary-package">2.1. Скачивание и установка бинарного пакета</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide_getting_started.html#starting-tarantool-and-making-your-first-database">2.2. Первичный запуск Tarantool'а и создание базы данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide_getting_started.html#connecting-remotely">2.3. Установка удаленного соединения</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../box/index.html">3. Функционал СУБД</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../box/index.html#document-data-model">3.1. Модель данных</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../box/index.html#space">3.1.1. Пространство</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/index.html#tuple-set">3.1.2. Tuple set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/index.html#index">3.1.3. Индекс</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/index.html#data-types">3.1.4. Типы данных</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/index.html#operations">3.1.5. Операции</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/index.html#saving-to-disk">3.1.6. Saving to disk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/index.html#data-manipulation">3.1.7. Манипулирование данными</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/index.html#index-operations">3.1.8. Операции с индексами</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/index.html#the-box-library">3.1.9. Библиотека &quot;box&quot;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../box/index.html#submodules-of-the-box-library">3.2. Вложенные модули из библиотеки &quot;box&quot;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../box/index.html#the-two-storage-engines-memtx-and-vinyl">3.3. Два движка базы данных: memtx и vinyl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../box/index.html#library-reference">3.4. Library reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_schema.html">3.4.1. Вложенный модуль <cite>box.schema</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_schema.html#example">3.4.1.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_space.html">3.4.2. Вложенный модуль <cite>box.space</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_space.html#example-use-box-space-functions-to-read-space-tuples">3.4.2.1. Example: use box.space functions to read _space tuples</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_space.html#example-use-box-space-functions-to-organize-a-space-tuple">3.4.2.2. Example: use box.space functions to organize a _space tuple</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_index.html">3.4.3. Вложенный модуль <cite>box.index</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_index.html#example-showing-use-of-the-box-functions">3.4.3.1. Example showing use of the box functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_index.html#example-showing-a-user-defined-iterator">3.4.3.2. Example showing a user-defined iterator</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_index.html#submodule-box-index-with-index-type-rtree-for-spatial-searches">3.4.3.3. Submodule <cite>box.index</cite> with index type = RTREE for spatial searches</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_session.html">3.4.4. Вложенный модуль <cite>box.session</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_session.html#example">3.4.4.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_tuple.html">3.4.5. Вложенный модуль <cite>box.tuple</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_tuple.html#example">3.4.5.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_introspection.html">3.4.6. Просмотр состояния сервера</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_introspection.html#lua-module.box.cfg">3.4.6.1. Submodule <cite>box.cfg</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_introspection.html#lua-module.box.info">3.4.6.2. Submodule <cite>box.info</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_introspection.html#lua-module.box.slab">3.4.6.3. Submodule <cite>box.slab</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/box_introspection.html#submodule-box-stat">3.4.6.4. Submodule <cite>box.stat</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/admin.html">3.4.7. Служебные запросы</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/atomic.html">3.4.8. Атомарные операции</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/atomic.html#cooperative-multitasking-environment">3.4.8.1. Среда взаимной многозадачности</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/atomic.html#example">3.4.8.2. Пример</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/atomic.html#the-implicit-yield-rules">3.4.8.3. Правила неявной передачи управления</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/authentication.html">3.4.9. Ограничение доступа</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/authentication.html#passwords">3.4.9.1. Passwords</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/authentication.html#users-and-the-user-space">3.4.9.2. Users and the _user space</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/authentication.html#privileges-and-the-priv-space">3.4.9.3. Privileges and the _priv space</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/authentication.html#functions-and-the-func-space">3.4.9.4. Functions and the _func space</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/authentication.html#box-session-and-security">3.4.9.5. <code class="docutils literal"><span class="pre">box.session</span></code> and security</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/authentication.html#roles">3.4.9.6. Roles</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/authentication.html#example-showing-a-role-within-a-role">3.4.9.7. Example showing a role within a role</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/triggers.html">3.4.10. Триггеры</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/triggers.html#connection-triggers">3.4.10.1. Connection triggers</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../box/triggers.html#example">3.4.10.1.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../box/triggers.html#authentication-triggers">3.4.10.2. Authentication triggers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/triggers.html#lua-module.box.space">3.4.10.3. Replace triggers</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../box/triggers.html#id1">3.4.10.3.1. Пример</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../box/triggers.html#another-example">3.4.10.3.2. Another Example</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../box/triggers.html#getting-a-list-of-triggers">3.4.10.4. Getting a list of triggers</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/limitations.html">3.4.11. Ограничения</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/vinyl_diff.html">3.4.12. Различия между движками memtx и vinyl</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../replication/index.html">4. Репликация</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#replication-architecture">4.1. Архитектура механизма репликации</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#setting-up-the-master">4.2. Настройка главного сервера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#setting-up-a-replica">4.3. Настройка сервера-реплики</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#recovering-from-a-degraded-state">4.4. Восстановление после сбоя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#instructions-for-quick-startup-of-a-new-two-server-simple-cluster">4.5. Инструкции по быстрому запуску простого кластера из двух серверов с нуля</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#monitoring-a-replica-s-actions">4.6. Мониторинг действий реплики</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#preventing-duplicate-actions">4.7. Предотвращение дублирующихся действий</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#master-master-replication">4.8. Репликация по схеме master-master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#all-the-what-if-questions">4.9. Ответы на вопросы &quot;Что если?&quot;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../replication/index.html#hands-on-replication-tutorial">4.10. Практическое руководство по репликации</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">5. Справочник по конфигурированию</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html#command-options">5.1. Опции командной строки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html#uri">5.2. Универсальный код ресурса (URI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html#initialization-file">5.3. Файл инициализации</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html#configuration-parameters">5.4. Параметры конфигурации</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#basic-parameters">5.4.1. Основные параметры</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#configuring-the-storage">5.4.2. Настройка хранилища данных</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#snapshot-daemon">5.4.3. Фоновая программа для работы со снимками</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#binary-logging-and-snapshots">5.4.4. Журналирование и снимки в бинарном формате</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#replication">5.4.5. Репликация</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#networking">5.4.6. Работа с сетевыми соединениями</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#logging">5.4.7. Запись в журнал</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html#local-hot-standby">5.5. Режим горячего резервирования</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administration.html">6. Администрирование серверной части</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#server-signal-handling">6.1. Обработка сигналов от сервера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#process-title">6.2. Название процесса</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#using-tarantool-as-a-client">6.3. Использование tarantool в качестве клиента</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#conventions-used-in-this-section">6.3.1. Условные обозначения, используемые в этом разделе</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#options-when-starting-client-from-the-command-line">6.3.2. Параметры запуска клиента из командной строки</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#tokens-requests-and-special-key-combinations">6.3.3. Токены, запросы и специальные комбинации клавиш</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#requests">6.3.4. Запросы</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#utility-tarantoolctl">6.4. Утилита tarantoolctl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#configuration-for-tarantoolctl">6.4.1. Конфигурирование tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#commands-for-tarantoolctl">6.4.2. Команды для tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#typical-code-snippets-for-tarantoolctl">6.4.3. Примеры кода для tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#a-detailed-example-for-tarantoolctl">6.4.4. Подробный пример для tarantoolctl</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#utility-tarantoolctl-connect">6.5. Утилита tarantoolctl connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#admin-ports">6.6. Порты для администрирования</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#system-specific-administration-notes">6.7. Заметки по администрированию для разных платформ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#debian-gnu-linux-and-ubuntu">6.7.1. Debian GNU/Linux and Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#fedora-rhel-centos">6.7.2. Fedora, RHEL, CentOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#freebsd">6.7.3. FreeBSD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#mac-os-x">6.7.4. Mac OS X</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#notes-for-systemd-users">6.8. Заметки для пользователей systemd</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#instance-management">6.8.1. Управление экземплярами</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../administration.html#creating-instances">6.8.1.1. Создание экземпляров</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../administration.html#starting-instances">6.8.1.2. Запуск экземпляров</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../administration.html#monitoring-instances">6.8.1.3. Мониторинг экземпляров</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../administration.html#attaching-to-instances">6.8.1.4. Подсоединение к экземплярам</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../administration.html#checking-logs">6.8.1.5. Проверка журнала</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../administration.html#stopping-instances">6.8.1.6. Остановка экземпляров</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#daemon-supervision">6.8.2. Контроль за фоновыми программами</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#customizing-the-service-file">6.8.3. Правка настроек сервисного файла</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#debugging">6.8.4. Отладка</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administration.html#precautions">6.8.5. Особые указания</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#updating-tarantool-in-production">6.9. Обновление Tarantool'а в условиях эксплуатации</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#backups">6.10. Резервное копирование</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administration.html#upgrades">6.11. Обновление Tarantool'а</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors/index.html">7. Коннекторы</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#protocol">7.1. Протокол</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#packet-example">7.2. Пример пакета данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#setting-up-the-server-for-connector-examples">7.3. Настройка окружения для примеров работы с коннекторами</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#java">7.4. Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#go">7.5. Go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#r">7.6. R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#perl">7.7. Perl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#php">7.8. PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#python">7.9. Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#c">7.10. C</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../connectors/index.html#example-1">7.10.1. Пример 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../connectors/index.html#example-2">7.10.2. Пример 2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../connectors/index.html#interpreting-function-return-values">7.11. Интерпретация возвращаемых значений</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../modules.html">8. Модули</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../modules.html#installing-an-existing-module">8.1. Установка существующего модуля</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules.html#creating-a-new-lua-module-locally">8.2. Создание нового модуля на языке Lua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules.html#creating-a-new-c-c-module-locally">8.3. Создание нового модуля на языке C/C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules.html#creating-a-mixed-lua-c-module-locally">8.4. Создание нового модуля на смеси языков Lua/C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules.html#tips-for-special-situations">8.5. Примечания для особых случаев</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="a_errcodes.html">9. Приложение A. Коды ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_internals.html">10. Приложение B. Детали реализации</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="b_internals.html#data-persistence-and-the-wal-file-format">10.1. Сохранность данных и формат WAL-файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="b_internals.html#the-snapshot-file-format">10.2. Формат статического файла-снимка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="b_internals.html#the-recovery-process">10.3. Процесс восстановления</a></li>
+<li class="toctree-l3"><a class="reference internal" href="b_internals.html#server-startup-with-replication">10.4. Запуск сервера с репликацией</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11. Приложение C. Учебные примеры на языке Lua</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#insert-one-million-tuples-with-a-lua-stored-procedure">11.1. Вставка 1 млн кортежей с помощью хранимой процедуры на языке Lua</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configure">11.1.1. Configure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delimiter">11.1.2. Delimiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-function-that-returns-a-string">11.1.3. Create a function that returns a string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-function-that-calls-another-function-and-sets-a-variable">11.1.4. Create a function that calls another function and sets a variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modify-the-function-so-it-returns-a-one-letter-random-string">11.1.5. Modify the function so it returns a one-letter random string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modify-the-function-so-it-returns-a-ten-letter-random-string">11.1.6. Modify the function so it returns a ten-letter random string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-a-tuple-out-of-a-number-and-a-string">11.1.7. Make a tuple out of a number and a string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modify-main-function-to-insert-a-tuple-into-the-database">11.1.8. Modify main_function to insert a tuple into the database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modify-main-function-to-insert-a-million-tuples-into-the-database">11.1.9. Modify main_function to insert a million tuples into the database</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sum-a-json-field-for-all-tuples">11.2. Подсчет суммы по JSON-полям во всех кортежах</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indexed-pattern-search">11.3. Индексированный поиск по шаблонам</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="d_vinyl/index.html">12. Приложение D. Vinyl</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="d_vinyl/index.html#introduction">12.1. Введение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="d_vinyl/index.html#under-the-hood">12.2. А что там &quot;под капотом&quot;?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="d_vinyl/index.html#inserting-the-first-200-000-keys">12.2.1. Inserting the first 200.000 keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="d_vinyl/index.html#inserting-the-next-300-000-keys">12.2.2. Inserting the next 300.000 keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="d_vinyl/index.html#inserting-the-next-200-000-keys">12.2.3. Inserting the next 200.000 keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="d_vinyl/index.html#inserting-the-last-300-000-keys">12.2.4. Inserting the last 300.000 keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="d_vinyl/index.html#reading-million-keys">12.2.5. Reading million keys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="e_cookbook.html">13. Приложение E. Готовые рецепты</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f_c_tutorial.html">14. Приложение F. Учебные примеры на языке C</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="f_c_tutorial.html#c-stored-procedures">14.1. Работа с хранимыми процедурами на языке C</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="g_changes.html">15. Приложение G. Версионные изменения</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="g_changes.html#changes-in-tarantool-version-1-7">15.1. Изменения в версии Tarantool 1.7</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_lua/index.html">Справочник по Lua API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/box.html">Module <cite>box</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../box/box_schema.html">3.4.1. Вложенный модуль <cite>box.schema</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_schema.html#example">3.4.1.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../box/box_space.html">3.4.2. Вложенный модуль <cite>box.space</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_space.html#example-use-box-space-functions-to-read-space-tuples">3.4.2.1. Example: use box.space functions to read _space tuples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_space.html#example-use-box-space-functions-to-organize-a-space-tuple">3.4.2.2. Example: use box.space functions to organize a _space tuple</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../box/box_index.html">3.4.3. Вложенный модуль <cite>box.index</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_index.html#example-showing-use-of-the-box-functions">3.4.3.1. Example showing use of the box functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_index.html#example-showing-a-user-defined-iterator">3.4.3.2. Example showing a user-defined iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_index.html#submodule-box-index-with-index-type-rtree-for-spatial-searches">3.4.3.3. Submodule <cite>box.index</cite> with index type = RTREE for spatial searches</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../box/box_session.html">3.4.4. Вложенный модуль <cite>box.session</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_session.html#example">3.4.4.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../box/box_tuple.html">3.4.5. Вложенный модуль <cite>box.tuple</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_tuple.html#example">3.4.5.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../box/box_introspection.html">3.4.6. Просмотр состояния сервера</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_introspection.html#lua-module.box.cfg">3.4.6.1. Submodule <cite>box.cfg</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_introspection.html#lua-module.box.info">3.4.6.2. Submodule <cite>box.info</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_introspection.html#lua-module.box.slab">3.4.6.3. Submodule <cite>box.slab</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/box_introspection.html#submodule-box-stat">3.4.6.4. Submodule <cite>box.stat</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../box/triggers.html">3.4.10. Триггеры</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../box/triggers.html#connection-triggers">3.4.10.1. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/triggers.html#example">3.4.10.1.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/triggers.html#authentication-triggers">3.4.10.2. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../box/triggers.html#lua-module.box.space">3.4.10.3. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../box/triggers.html#id1">3.4.10.3.1. Пример</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box/triggers.html#another-example">3.4.10.3.2. Another Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../box/triggers.html#getting-a-list-of-triggers">3.4.10.4. Getting a list of triggers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/clock.html">Модуль <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/console.html">Модуль <cite>console</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/crypto.html">Модуль <cite>crypto</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/crypto.html#incremental-methods-in-the-crypto-module">Incremental methods in the crypto module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/crypto.html#getting-the-same-results-from-digest-and-crypto-modules">Getting the same results from digest and crypto modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/csv.html">Module <cite>csv</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/digest.html">Модуль <cite>digest</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/digest.html#incremental-methods-in-the-digest-module">Incremental methods in the digest module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/digest.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/box_error.html">Вложенный модуль <cite>box.error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fiber.html">Модуль <cite>fiber</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/fiber.html#example-of-fiber-use">Example Of Fiber Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fiber_ipc.html">Модуль <cite>fiber-ipc</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/fiber_ipc.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fio.html">Module <cite>fio</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/fio.html#common-pathname-manipulations">Common pathname manipulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/fio.html#common-file-manipulations">Common file manipulations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/fun.html">Module <cite>fun</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/jit.html">Module <cite>jit</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/json.html">Module <cite>json</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/json.html#configuration-settings">Configuration settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/log.html">Module <cite>log</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/log.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/msgpack.html">Модуль <cite>msgpack</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/msgpack.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/net_box.html">Модуль <cite>net.box</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/net_box.html#example-showing-use-of-most-of-the-net-box-methods">Example showing use of most of the net.box methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/box_once.html">Функция <cite>box.once</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/os.html">Module <cite>os</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/pickle.html">Модуль <cite>pickle</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/socket.html">Модуль <cite>socket</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/socket.html#example">Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">Use of a TCP socket over the Internet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_lua/socket.html#use-of-a-udp-socket-on-localhost">Use of a UDP socket on localhost</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">Use tcp_server to accept file contents sent with socat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/strict.html">Модуль <cite>strict</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/tap.html">Module <cite>tap</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/tap.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/tarantool.html">Модуль <cite>tarantool</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/uuid.html">Module <cite>uuid</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/uuid.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/yaml.html">Module <cite>yaml</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_lua/yaml.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_lua/other.html">Разное</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_rock/index.html">Справочник по Lua rocks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_rock/dbms.html">Модули SQL СУБД</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_rock/dbms.html#mysql-example">MySQL Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#installation">Installation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../reference_rock/dbms.html#with-luarocks">With LuaRocks</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../reference_rock/dbms.html#with-github">With GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#connecting">Connecting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#how-to-ping">How to ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#executing-a-statement">Executing a statement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#closing-connection">Closing connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_rock/dbms.html#postgresql-example">PostgreSQL Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#id1">Installation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../reference_rock/dbms.html#id2">With LuaRocks</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../reference_rock/dbms.html#id3">With GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#id4">Connecting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#id5">How to ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#id6">Executing a statement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#id7">Closing connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference_rock/dbms.html#id8">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_rock/expirationd.html">Модуль <cite>expirationd</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_rock/shard.html">Модуль <cite>shard</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_rock/shard.html#example-shard-init-syntax-for-one-shard">Example: shard.init syntax for one shard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_rock/shard.html#example-shard-init-syntax-for-three-shards">Example: shard.init syntax for three shards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_rock/shard.html#example-shard-minimal-configuration">Example: Shard, Minimal Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_rock/shard.html#example-shard-scaling-out">Example: Shard, Scaling Out</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_rock/tdb.html">Module <cite>tdb</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_rock/tdb.html#debugger-commands">Debugger Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference_rock/tdb.html#example-session">Example Session</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_capi/index.html">Справочник по C API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/box.html">Модуль <cite>box</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/clock.html">Модуль <cite>clock</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/coio.html">Модуль <cite>coio</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/error.html">Модуль <cite>error</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/fiber.html">Модуль <cite>fiber</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/box_index.html">Модуль <cite>index</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/latch.html">Модуль <cite>latch</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/utils.html">Модуль <cite>lua/utils</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/say.html">Модуль <cite>say</cite> (логирование)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/schema.html">Модуль <cite>schema</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/trivia.html">Модуль <cite>trivia/config</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/tuple.html">Модуль <cite>tuple</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_capi/txn.html">Модуль <cite>txn</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Руководство разработчика</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/intro.html">Состав документации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/building_from_source.html">Сборка из исходных файлов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/building_documentation.html">Сборка документации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/developer_guidelines.html">Соглашения по разработке</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/developer_guidelines.html#how-to-work-on-a-bug">How to work on a bug</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html">Соглашения по документации</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#markup-issues">Markup issues</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#wrapping-text">Wrapping text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#formatting-code-snippets">Formatting code snippets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#using-separated-links">Using separated links</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#creating-labels-for-local-links">Creating labels for local links</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#making-comments">Making comments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#language-and-style-issues">Language and style issues</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#us-vs-british-spelling">US vs British spelling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#examples-and-templates">Examples and templates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#module-and-function">Module and function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#module-class-and-method">Module, class and method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/box_protocol.html">Бинарный протокол в Tarantool'е</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/box_protocol.html#notion-in-diagrams">Обозначения на диаграммах</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/box_protocol.html#overview">Общие сведения о протоколе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/box_protocol.html#greeting-packet">Пакет-приветствие</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/box_protocol.html#unified-packet-structure">Unified packet structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/box_protocol.html#authentication">Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/box_protocol.html#requests">Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/box_protocol.html#response-packet-structure">Response packet structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/box_protocol.html#replication-packet-structure">Replication packet structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/box_protocol.html#xlog-snap">XLOG / SNAP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/c_style_guide.html">Соглашения по разработке на языке C</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/c_style_guide.html#general-guidelines">General guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#commenting-style">Commenting style</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#header-files">Header files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#allocating-memory">Allocating memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#other">Other</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/c_style_guide.html#linux-kernel-coding-style">Linux kernel coding style</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-1-indentation">Chapter 1: Indentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-2-breaking-long-lines-and-strings">Chapter 2: Breaking long lines and strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-3-placing-braces-and-spaces">Chapter 3: Placing Braces and Spaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-3-1-spaces">Chapter 3.1:  Spaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-4-naming">Chapter 4: Naming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-5-typedefs">Chapter 5: Typedefs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-6-functions">Chapter 6: Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-7-centralized-exiting-of-functions">Chapter 7: Centralized exiting of functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-8-commenting">Chapter 8: Commenting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">Chapter 9: You've made a mess of it</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-10-kconfig-configuration-files">Chapter 10: Kconfig configuration files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-11-data-structures">Chapter 11: Data structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-12-macros-enums-and-rtl">Chapter 12: Macros, Enums and RTL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-13-printing-kernel-messages">Chapter 13: Printing kernel messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-14-allocating-memory">Chapter 14: Allocating memory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-15-the-inline-disease">Chapter 15: The inline disease</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-16-function-return-values-and-names">Chapter 16: Function return values and names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">Chapter 17:  Don't re-invent the kernel macros</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-18-editor-modelines-and-other-cruft">Chapter 18:  Editor modelines and other cruft</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#appendix-i-references">Appendix I: References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/python_style_guide.html">Соглашения по разработке на языке Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html#a-foolish-consistency-is-the-hobgoblin-of-little-minds">A Foolish Consistency is the Hobgoblin of Little Minds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html#code-lay-out">Code lay-out</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#indentation">Indentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#tabs-or-spaces">Tabs or Spaces?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#maximum-line-length">Maximum Line Length</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#blank-lines">Blank Lines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#encodings-pep-263">Encodings (PEP 263)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#imports">Imports</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html#whitespace-in-expressions-and-statements">Whitespace in Expressions and Statements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#pet-peeves">Pet Peeves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#other-recommendations">Other Recommendations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html#comments">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#block-comments">Block Comments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#inline-comments">Inline Comments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#documentation-strings">Documentation Strings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html#version-bookkeeping">Version Bookkeeping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html#naming-conventions">Naming Conventions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#descriptive-naming-styles">Descriptive: Naming Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#prescriptive-naming-conventions">Prescriptive: Naming Conventions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#names-to-avoid">Names to Avoid</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#package-and-module-names">Package and Module Names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#class-names">Class Names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#exception-names">Exception Names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#global-variable-names">Global Variable Names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#function-names">Function Names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#function-and-method-arguments">Function and method arguments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#method-names-and-instance-variables">Method Names and Instance Variables</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#constants">Constants</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#designing-for-inheritance">Designing for inheritance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html#references">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html#copyright">Copyright</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/release_management.html">Работа с релизами</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/release_management.html#how-to-make-a-minor-release">How to make a minor release</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
       </div>
