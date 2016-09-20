@@ -1,8 +1,8 @@
 .. _user_guide_getting_started:
 
--------------------------------------------------------------------------------
-                        Getting started
--------------------------------------------------------------------------------
+===============================================================================
+Getting started
+===============================================================================
 
 This chapter shows how to download, how to install, and how to start Tarantool
 for the first time.
@@ -12,24 +12,26 @@ This will ensure that you have the same build of the same version that the
 developers have. That makes analysis easier if later you need to report a problem,
 and avoids subtle problems that might happen if you used different tools or
 different parameters when building from source. The section about binaries is
-“:ref:`user_guide_getting_started-downloading_and_installing_a_binary_package` ”.
+":ref:`user_guide_getting_started-downloading_and_installing_a_binary_package`".
 
 For development, you will want to download a source package and make the binary
 by yourself using a C/C++ compiler and common tools. Although this is a bit harder,
 it gives more control. And the source packages include additional files, for example
-the Tarantool test suite. The section about source is “:ref:`building_from_source` ”.
+the Tarantool test suite. The section about source is
+":ref:`Building from source <building_from_source>`" in
+:ref:`Contributor's Guide <contrib_guide>`.
 
 If the installation has already been done, then you should try it out. So we've
 provided some instructions that you can use to make a temporary “sandbox”. In a
 few minutes you can start the server and type in some database-manipulation
 statements. The section about the sandbox is
-“:ref:`user_guide_getting_started-first_database` ”.
+":ref:`user_guide_getting_started-first_database`".
 
 .. _user_guide_getting_started-downloading_and_installing_a_binary_package:
 
-=====================================================================
-            Downloading and installing a binary package
-=====================================================================
+-------------------------------------------------------------------------------
+Downloading and installing a binary package
+-------------------------------------------------------------------------------
 
 Binary packages for two Tarantool versions -- for the stable 1.6 and the latest
 1.7 -- are provided at http://tarantool.org/download.html. An automatic build
@@ -41,9 +43,9 @@ at http://tarantool.org/download.html.
 
 .. _user_guide_getting_started-first_database:
 
-=====================================================================
-        Starting Tarantool and making your first database
-=====================================================================
+-------------------------------------------------------------------------------
+Starting Tarantool and making your first database
+-------------------------------------------------------------------------------
 
 Here is how to create a simple test database after installing.
 
@@ -166,9 +168,9 @@ Now, to prepare for the example in the next section, try this:
 
     tarantool> box.schema.user.grant('guest', 'read,write,execute', 'universe')
 
-=====================================================================
-                       Connecting remotely
-=====================================================================
+-------------------------------------------------------------------------------
+Connecting remotely
+-------------------------------------------------------------------------------
 
 In the previous section the first request was with ``box.cfg{listen = 3301}``.
 The ``listen`` value can be any form of URI (uniform resource identifier);

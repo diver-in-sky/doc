@@ -1,0 +1,1622 @@
+
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>3. Configuration reference</title>
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/theme/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="/theme/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="/theme/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="/theme/favicon/favicon-16x16.png">
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:       '',
+        VERSION:        '1.7.1',
+        COLLAPSE_INDEX:  false,
+        FILE_SUFFIX:    '.html',
+        HAS_SOURCE:      true
+      };
+      
+      
+      var disqus_config = function () {
+          // Replace PAGE_URL with your page's canonical URL variable
+          // this.page.url = PAGE_URL;
+          this.page.identifier = "reference/configuration/index";
+          this.language = "ru"
+      };
+    </script>
+    <script id="dsq-count-scr" src="https://tarantooldb.disqus.com/count.js" async/></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/headers.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.sticky-kit.min.js"></script>
+    <script type="text/javascript" src="/js/menu.js"></script>
+    <script type="text/javascript" src="/js/mobile_menu.js"></script>
+    <link rel="stylesheet" href="/theme/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/design.css">
+    <link rel="stylesheet" href="/theme/pygmentize.css">
+    <link rel="stylesheet" href="../../_static/sphinx_design.css">
+     
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+  </head>
+  
+  <body class="p-cols_design b-doc-reference/configuration/index">
+  
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      
+  <header class="b-header">
+    <div class="b-header_menu_mobile">
+      <div class="b-burger-button">
+        <span></span>
+      </div>
+      <form role="search" class="b-header-search" action="../../search.html" method="get">
+        <input name="q" type="search">
+      </form>
+    </div>
+    <div class="b-menu_mobile">
+      <div class="b-menu_mobile__wrapper">
+        <nav class="b-header_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="/" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/doc/" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+        </nav>
+      </div>
+      
+    </div>
+    <div class="b-header-wrapper">
+      <nav class="b-header_menu">
+        
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="/" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/doc/" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      </nav>
+    </div>
+  </header>
+
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+    <div class="b-block-wrapper">
+      <h2
+      
+        class="b-section-title b-ellipsis toggle-navigation"
+      
+        title="3. Configuration reference">
+          3. Configuration reference
+      </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../reference/configuration/index.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="#" class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+  </section>
+  
+    <div class="b-cols_content b-clearbox">
+      <div class="b-cols_content_left">
+        <div class="b-menu-toc">
+          
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Общие сведения</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#database-features">Database features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Вопросы и ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/lua_tutorials.html">1. Lua tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#insert-one-million-tuples-with-a-lua-stored-procedure">1.1. Insert one million tuples with a Lua stored procedure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#configure">1.1.1. Configure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#delimiter">1.1.2. Delimiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#create-a-function-that-returns-a-string">1.1.3. Create a function that returns a string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#create-a-function-that-calls-another-function-and-sets-a-variable">1.1.4. Create a function that calls another function and sets a variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#modify-the-function-so-it-returns-a-one-letter-random-string">1.1.5. Modify the function so it returns a one-letter random string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#modify-the-function-so-it-returns-a-ten-letter-random-string">1.1.6. Modify the function so it returns a ten-letter random string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#make-a-tuple-out-of-a-number-and-a-string">1.1.7. Make a tuple out of a number and a string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-tuple-into-the-database">1.1.8. Modify main_function to insert a tuple into the database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-million-tuples-into-the-database">1.1.9. Modify main_function to insert a million tuples into the database</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#tutorial-sum-a-json-field-for-all-tuples">1.2. Tutorial: Sum a JSON field for all tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#indexed-pattern-search">1.3. Indexed pattern search</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/c_tutorial.html">2. C tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/c_tutorial.html#c-stored-procedures">2.1. C stored procedures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/index.html">User's Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../book/intro.html">1. Предисловие</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/intro.html#how-to-read-the-documentation">1.1. Как пользоваться документацией</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/intro.html#getting-in-touch-with-the-tarantool-community">1.2. Как связаться с сообществом разработчиков Tarantool'а</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/user_guide_getting_started.html">2. Начало работы</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/user_guide_getting_started.html#downloading-and-installing-a-binary-package">2.1. Скачивание и установка бинарного пакета</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/user_guide_getting_started.html#starting-tarantool-and-making-your-first-database">2.2. Первичный запуск Tarantool'а и создание базы данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/user_guide_getting_started.html#connecting-remotely">2.3. Установка удаленного соединения</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/box/index.html">3. Функционал СУБД</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#data-model">3.1. Data model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#space">3.1.1. Пространство</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#tuple-set">3.1.2. Tuple set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#index">3.1.3. Индекс</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#data-types">3.1.4. Типы данных</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#operations">3.1.5. Операции</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#persistence">3.1.6. Persistence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#data-manipulation">3.1.7. Манипулирование данными</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#index-operations">3.1.8. Операции с индексами</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#the-box-library">3.2. Библиотека &quot;box&quot;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#transaction-control">3.3. Transaction control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#cooperative-multitasking-environment">3.3.1. Среда взаимной многозадачности</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#example">3.3.1.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#implicit-yields">3.3.2. Implicit yields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#access-control">3.4. Ограничение доступа</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#passwords">3.4.1. Passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#users-and-the-user-space">3.4.2. Users and the _user space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#privileges-and-the-priv-space">3.4.3. Privileges and the _priv space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#functions-and-the-func-space">3.4.4. Functions and the _func space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#box-session-and-security">3.4.5. box.session and security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#roles">3.4.6. Roles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#example-showing-a-role-within-a-role">3.4.6.1. Example showing a role within a role</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#triggers">3.5. Триггеры</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#connection-triggers">3.5.1. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#id1">3.5.1.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#authentication-triggers">3.5.2. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#lua-module.box.space">3.5.3. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#id2">3.5.3.1. Пример</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#another-example">3.5.3.2. Another example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#getting-a-list-of-triggers">3.5.4. Getting a list of triggers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#limitations">3.6. Ограничения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#vinyl-storage-engine">3.7. Vinyl storage engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.7.1. Различия между движками memtx и vinyl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#vinyl-features">3.7.2. Vinyl features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#under-the-hood">3.7.3. А что там &quot;под капотом&quot;?</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-first-200-000-keys">3.7.3.1. Inserting the first 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-next-300-000-keys">3.7.3.2. Inserting the next 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-next-200-000-keys">3.7.3.3. Inserting the next 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-last-300-000-keys">3.7.3.4. Inserting the last 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#reading-million-keys">3.7.3.5. Reading million keys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/app_server.html">4. Application server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#about-modules-rocks">4.1. About modules/rocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#installing-an-existing-module">4.2. Установка существующего модуля</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#creating-a-new-lua-module-locally">4.3. Создание нового модуля на языке Lua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#creating-a-new-c-c-module-locally">4.4. Создание нового модуля на языке C/C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#creating-a-mixed-lua-c-module-locally">4.5. Создание нового модуля на смеси языков Lua/C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#tips-for-special-situations">4.6. Примечания для особых случаев</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#cookbook-recipes">4.7. Cookbook recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/administration.html">5. Администрирование серверной части</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#using-tarantool-as-a-client">5.1. Использование tarantool в качестве клиента</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#conventions-used-in-this-section">5.1.1. Условные обозначения, используемые в этом разделе</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#options-when-starting-client-from-the-command-line">5.1.2. Параметры запуска клиента из командной строки</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#tokens-requests-and-special-key-combinations">5.1.3. Токены, запросы и специальные комбинации клавиш</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#requests">5.1.4. Запросы</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#utility-tarantoolctl">5.2. Утилита tarantoolctl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#configuration-for-tarantoolctl">5.2.1. Конфигурирование tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#commands-for-tarantoolctl">5.2.2. Команды для tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#typical-code-snippets-for-tarantoolctl">5.2.3. Примеры кода для tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#a-detailed-example-for-tarantoolctl">5.2.4. Подробный пример для tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#an-example-for-tarantoolctl-connect">5.2.5. An example for tarantoolctl connect</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#administrative-ports">5.3. Administrative ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#administrative-requests">5.4. Служебные запросы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#server-introspection">5.5. Просмотр состояния сервера</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#lua-module.box.cfg">5.5.1. Submodule <cite>box.cfg</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#lua-module.box.info">5.5.2. Submodule <cite>box.info</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#lua-module.box.slab">5.5.3. Submodule <cite>box.slab</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#submodule-box-stat">5.5.4. Submodule <cite>box.stat</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#replication">5.6. Репликация</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#replication-architecture">5.6.1. Архитектура механизма репликации</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#setting-up-a-master">5.6.2. Setting up a master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#setting-up-a-replica">5.6.3. Настройка сервера-реплики</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#recovering-from-a-degraded-state">5.6.4. Восстановление после сбоя</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#quick-startup-of-a-new-simple-two-server-cluster">5.6.5. Quick startup of a new simple two-server cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#monitoring-a-replica-s-actions">5.6.6. Мониторинг действий реплики</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#preventing-duplicate-actions">5.6.7. Предотвращение дублирующихся действий</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#master-master-replication">5.6.8. Репликация по схеме master-master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#all-the-what-if-questions">5.6.9. Ответы на вопросы &quot;Что если?&quot;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#hands-on-replication-tutorial">5.6.10. Практическое руководство по репликации</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#backups">5.7. Резервное копирование</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#cold-backup">5.7.1. Cold backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#continuous-remote-backup">5.7.2. Continuous remote backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#hot-backup">5.7.3. Hot backup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#updates-upgrades">5.8. Updates/upgrades</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#updating-tarantool-in-production">5.8.1. Обновление Tarantool'а в условиях эксплуатации</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#upgrading-a-tarantool-database">5.8.2. Upgrading a Tarantool database</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#server-signal-handling">5.9. Обработка сигналов от сервера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#process-title">5.10. Название процесса</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#system-specific-administration-notes">5.11. Заметки по администрированию для разных платформ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#debian-gnu-linux-and-ubuntu">5.11.1. Debian GNU/Linux and Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#fedora-rhel-centos">5.11.2. Fedora, RHEL, CentOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#freebsd">5.11.3. FreeBSD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#mac-os-x">5.11.4. Mac OS X</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#notes-for-systemd-users">5.12. Заметки для пользователей systemd</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#instance-management">5.12.1. Управление экземплярами</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#creating-instances">5.12.1.1. Создание экземпляров</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#starting-instances">5.12.1.2. Запуск экземпляров</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#monitoring-instances">5.12.1.3. Мониторинг экземпляров</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#attaching-to-instances">5.12.1.4. Подсоединение к экземплярам</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#checking-logs">5.12.1.5. Проверка журнала</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#stopping-instances">5.12.1.6. Остановка экземпляров</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#daemon-supervision">5.12.2. Контроль за фоновыми программами</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#customizing-the-service-file">5.12.3. Правка настроек сервисного файла</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#debugging">5.12.4. Отладка</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#precautions">5.12.5. Особые указания</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/connectors/index.html">6. Коннекторы</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#protocol">6.1. Протокол</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#packet-example">6.2. Пример пакета данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#setting-up-the-server-for-connector-examples">6.3. Настройка окружения для примеров работы с коннекторами</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#java">6.4. Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#go">6.5. Go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#r">6.6. R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#perl">6.7. Perl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#php">6.8. PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#python">6.9. Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#c">6.10. C</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/connectors/index.html#example-1">6.10.1. Пример 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/connectors/index.html#example-2">6.10.2. Пример 2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#interpreting-function-return-values">6.11. Интерпретация возвращаемых значений</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/app/a_errcodes.html">7. Приложение A. Коды ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/app/g_changes.html">8. Appendix B. Version-specific changes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app/g_changes.html#changes-in-tarantool-version-1-7">8.1. Изменения в версии Tarantool 1.7</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../reference_lua/index.html">1. Library reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/box.html">1.1. Module <cite>box</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_schema.html">1.1.1. Вложенный модуль <cite>box.schema</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_space.html">1.1.2. Вложенный модуль <cite>box.space</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_space.html#example-use-box-space-functions-to-read-space-tuples">1.1.2.1. Example: use box.space functions to read _space tuples</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_space.html#example-use-box-space-functions-to-organize-a-space-tuple">1.1.2.2. Example: use box.space functions to organize a _space tuple</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_index.html">1.1.3. Вложенный модуль <cite>box.index</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_index.html#example-showing-use-of-the-box-functions">1.1.3.1. Example showing use of the box functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_index.html#example-showing-a-user-defined-iterator">1.1.3.2. Example showing a user-defined iterator</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_index.html#submodule-box-index-with-index-type-rtree-for-spatial-searches">1.1.3.3. Submodule <cite>box.index</cite> with index type = RTREE for spatial searches</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_session.html">1.1.4. Вложенный модуль <cite>box.session</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_session.html#example">1.1.4.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_tuple.html">1.1.5. Вложенный модуль <cite>box.tuple</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_tuple.html#example">1.1.5.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_introspection.html">1.1.6. Submodule <cite>box.cfg</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_introspection.html#lua-module.box.info">1.1.7. Submodule <cite>box.info</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_introspection.html#lua-module.box.slab">1.1.8. Submodule <cite>box.slab</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_introspection.html#submodule-box-stat">1.1.9. Submodule <cite>box.stat</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/triggers.html">1.1.10. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/triggers.html#example">1.1.10.1. Пример</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/triggers.html#authentication-triggers">1.1.11. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/triggers.html#lua-module.box.space">1.1.12. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/triggers.html#id1">1.1.12.1. Пример</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/triggers.html#another-example">1.1.12.2. Another example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/triggers.html#getting-a-list-of-triggers">1.1.13. Getting a list of triggers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/clock.html">1.2. Module <cite>clock</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/console.html">1.3. Module <cite>console</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/crypto.html">1.4. Module <cite>crypto</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/crypto.html#incremental-methods-in-the-crypto-module">1.4.1. Incremental methods in the crypto module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/crypto.html#getting-the-same-results-from-digest-and-crypto-modules">1.4.2. Getting the same results from digest and crypto modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/csv.html">1.5. Module <cite>csv</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/digest.html">1.6. Module <cite>digest</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/digest.html#incremental-methods-in-the-digest-module">1.6.1. Incremental methods in the digest module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/digest.html#example">1.6.2. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/box_error.html">1.7. Submodule <cite>box.error</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/fiber.html">1.8. Module <cite>fiber</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/fiber.html#example-of-fiber-use">1.8.1. Example Of Fiber Use</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/fiber_ipc.html">1.9. Submodule <cite>fiber-ipc</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/fiber_ipc.html#example">1.9.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/fio.html">1.10. Module <cite>fio</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/fio.html#common-pathname-manipulations">1.10.1. Common pathname manipulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/fio.html#common-file-manipulations">1.10.2. Common file manipulations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/fun.html">1.11. Module <cite>fun</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/jit.html">1.12. Module <cite>jit</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/json.html">1.13. Module <cite>json</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/json.html#configuration-settings">1.13.1. Configuration settings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/log.html">1.14. Module <cite>log</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/log.html#example">1.14.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/msgpack.html">1.15. Module <cite>msgpack</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/msgpack.html#example">1.15.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/net_box.html">1.16. Module <cite>net.box</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/net_box.html#example-showing-use-of-most-of-the-net-box-methods">1.16.1. Example showing use of most of the net.box methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/box_once.html">1.17. Function <cite>box.once</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/os.html">1.18. Module <cite>os</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/pickle.html">1.19. Module <cite>pickle</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/socket.html">1.20. Module <cite>socket</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/socket.html#example">1.20.1. Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.20.1.1. Use of a TCP socket over the Internet</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.20.1.2. Use of a UDP socket on localhost</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.20.1.3. Use tcp_server to accept file contents sent with socat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/strict.html">1.21. Module <cite>strict</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/tap.html">1.22. Module <cite>tap</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/tap.html#example">1.22.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/tarantool.html">1.23. Module <cite>tarantool</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/uuid.html">1.24. Module <cite>uuid</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/uuid.html#example">1.24.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/yaml.html">1.25. Module <cite>yaml</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_lua/yaml.html#example">1.25.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_lua/other.html">1.26. Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference_rock/index.html">2. Rocks reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference_rock/dbms.html">2.1. SQL DBMS Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/dbms.html#mysql-example">2.1.1. MySQL Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#installation">2.1.1.1. Installation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../reference_rock/dbms.html#with-luarocks">2.1.1.1.1. With LuaRocks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../reference_rock/dbms.html#with-github">2.1.1.1.2. With GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#connecting">2.1.1.2. Connecting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#how-to-ping">2.1.1.3. How to ping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#executing-a-statement">2.1.1.4. Executing a statement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#closing-connection">2.1.1.5. Closing connection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#example">2.1.1.6. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/dbms.html#postgresql-example">2.1.2. PostgreSQL Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id1">2.1.2.1. Installation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../reference_rock/dbms.html#id2">2.1.2.1.1. With LuaRocks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../reference_rock/dbms.html#id3">2.1.2.1.2. With GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id4">2.1.2.2. Connecting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id5">2.1.2.3. How to ping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id6">2.1.2.4. Executing a statement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id7">2.1.2.5. Closing connection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id8">2.1.2.6. Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_rock/expirationd.html">2.2. Module <cite>expirationd</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_rock/shard.html">2.3. Module <cite>shard</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/shard.html#example-shard-init-syntax-for-one-shard">2.3.1. Example: shard.init syntax for one shard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/shard.html#example-shard-init-syntax-for-three-shards">2.3.2. Example: shard.init syntax for three shards</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/shard.html#example-shard-minimal-configuration">2.3.3. Example: Shard, Minimal Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/shard.html#example-shard-scaling-out">2.3.4. Example: Shard, Scaling Out</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_rock/tdb.html">2.4. Module <cite>tdb</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/tdb.html#debugger-commands">2.4.1. Debugger Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/tdb.html#example-session">2.4.2. Example Session</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Configuration reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#command-options">3.1. Command options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uri">3.2. URI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialization-file">3.3. Initialization file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-parameters">3.4. Configuration parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-parameters">3.4.1. Basic parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-storage">3.4.2. Configuring the storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#snapshot-daemon">3.4.3. Snapshot daemon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#binary-logging-and-snapshots">3.4.4. Binary logging and snapshots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replication">3.4.5. Replication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#networking">3.4.6. Networking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logging">3.4.7. Logging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Contributor's Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/reference_capi/index.html">1. C API reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/box.html">1.1. Module <cite>box</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/clock.html">1.2. Module <cite>clock</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/coio.html">1.3. Module <cite>coio</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/error.html">1.4. Module <cite>error</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/fiber.html">1.5. Module <cite>fiber</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/box_index.html">1.6. Module <cite>index</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/latch.html">1.7. Module <cite>latch</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/utils.html">1.8. Module <cite>lua/utils</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/say.html">1.9. Module <cite>say</cite> (logging)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/schema.html">1.10. Module <cite>schema</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/trivia.html">1.11. Module <cite>trivia/config</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/tuple.html">1.12. Module <cite>tuple</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/txn.html">1.13. Module <cite>txn</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/internals_index.html">2. Internals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#tarantool-s-binary-protocol">2.1. Бинарный протокол в Tarantool'е</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#notion-in-diagrams">2.1.1. Обозначения на диаграммах</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#greeting-packet">2.1.2. Greeting packet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#unified-packet-structure">2.1.3. Unified packet structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#authentication">2.1.4. Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#requests">2.1.5. Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#response-packet-structure">2.1.6. Response packet structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#replication-packet-structure">2.1.7. Replication packet structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#xlog-snap">2.1.8. XLOG / SNAP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#data-persistence-and-the-wal-file-format">2.2. Data persistence and the WAL file format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#the-snapshot-file-format">2.3. The snapshot file format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#the-recovery-process">2.4. The recovery process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#server-startup-with-replication">2.5. Server startup with replication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/build_contribute_index.html">3. Build and contribute</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/building_from_source.html">3.1. Сборка из исходных файлов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/building_documentation.html">3.2. Сборка документации</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/release_management.html">3.3. Работа с релизами</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/release_management.html#how-to-make-a-minor-release">3.3.1. How to make a minor release</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/guidelines_index.html">4. Guidelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/developer_guidelines.html">4.1. Соглашения по разработке</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/developer_guidelines.html#how-to-work-on-a-bug">4.1.1. How to work on a bug</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html">4.2. Соглашения по документации</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#markup-issues">4.2.1. Markup issues</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#wrapping-text">4.2.1.1. Wrapping text</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#formatting-code-snippets">4.2.1.2. Formatting code snippets</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#using-separated-links">4.2.1.3. Using separated links</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#creating-labels-for-local-links">4.2.1.4. Creating labels for local links</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#making-comments">4.2.1.5. Making comments</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#language-and-style-issues">4.2.2. Language and style issues</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#us-vs-british-spelling">4.2.2.1. US vs British spelling</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#examples-and-templates">4.2.3. Examples and templates</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#module-and-function">4.2.3.1. Module and function</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#module-class-and-method">4.2.3.2. Module, class and method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/c_style_guide.html">4.3. Соглашения по разработке на языке C</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#general-guidelines">4.3.1. General guidelines</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#commenting-style">4.3.1.1. Commenting style</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#header-files">4.3.1.2. Header files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#allocating-memory">4.3.1.3. Allocating memory</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#other">4.3.1.4. Other</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#linux-kernel-coding-style">4.3.2. Linux kernel coding style</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-1-indentation">4.3.2.1. Chapter 1: Indentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-2-breaking-long-lines-and-strings">4.3.2.2. Chapter 2: Breaking long lines and strings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-3-placing-braces-and-spaces">4.3.2.3. Chapter 3: Placing Braces and Spaces</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-3-1-spaces">4.3.2.4. Chapter 3.1:  Spaces</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-4-naming">4.3.2.5. Chapter 4: Naming</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-5-typedefs">4.3.2.6. Chapter 5: Typedefs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-6-functions">4.3.2.7. Chapter 6: Functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-7-centralized-exiting-of-functions">4.3.2.8. Chapter 7: Centralized exiting of functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-8-commenting">4.3.2.9. Chapter 8: Commenting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You've made a mess of it</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-10-kconfig-configuration-files">4.3.2.11. Chapter 10: Kconfig configuration files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-11-data-structures">4.3.2.12. Chapter 11: Data structures</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-12-macros-enums-and-rtl">4.3.2.13. Chapter 12: Macros, Enums and RTL</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-13-printing-kernel-messages">4.3.2.14. Chapter 13: Printing kernel messages</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-14-allocating-memory">4.3.2.15. Chapter 14: Allocating memory</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-15-the-inline-disease">4.3.2.16. Chapter 15: The inline disease</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-16-function-return-values-and-names">4.3.2.17. Chapter 16: Function return values and names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don't re-invent the kernel macros</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-18-editor-modelines-and-other-cruft">4.3.2.19. Chapter 18:  Editor modelines and other cruft</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#appendix-i-references">4.3.2.20. Appendix I: References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html">4.4. Соглашения по разработке на языке Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#introduction">4.4.1. Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#a-foolish-consistency-is-the-hobgoblin-of-little-minds">4.4.2. A Foolish Consistency is the Hobgoblin of Little Minds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#code-lay-out">4.4.3. Code lay-out</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#indentation">4.4.3.1. Indentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#tabs-or-spaces">4.4.3.2. Tabs or Spaces?</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#maximum-line-length">4.4.3.3. Maximum Line Length</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#blank-lines">4.4.3.4. Blank Lines</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#encodings-pep-263">4.4.3.5. Encodings (PEP 263)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#imports">4.4.3.6. Imports</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#whitespace-in-expressions-and-statements">4.4.4. Whitespace in Expressions and Statements</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#pet-peeves">4.4.4.1. Pet Peeves</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#other-recommendations">4.4.4.2. Other Recommendations</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#comments">4.4.5. Comments</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#block-comments">4.4.5.1. Block Comments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#inline-comments">4.4.5.2. Inline Comments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#documentation-strings">4.4.5.3. Documentation Strings</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#version-bookkeeping">4.4.6. Version Bookkeeping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#naming-conventions">4.4.7. Naming Conventions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#descriptive-naming-styles">4.4.7.1. Descriptive: Naming Styles</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#prescriptive-naming-conventions">4.4.7.2. Prescriptive: Naming Conventions</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#names-to-avoid">4.4.7.2.1. Names to Avoid</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#package-and-module-names">4.4.7.2.2. Package and Module Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#class-names">4.4.7.2.3. Class Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#exception-names">4.4.7.2.4. Exception Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#global-variable-names">4.4.7.2.5. Global Variable Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#function-names">4.4.7.2.6. Function Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#function-and-method-arguments">4.4.7.2.7. Function and method arguments</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#method-names-and-instance-variables">4.4.7.2.8. Method Names and Instance Variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#constants">4.4.7.2.9. Constants</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#designing-for-inheritance">4.4.7.2.10. Designing for inheritance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#references">4.4.8. References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#copyright">4.4.9. Copyright</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="b-cols_content_right">
+        <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Reference
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="3. Configuration reference" class="b-path_current b-ellipsis">
+          3. Configuration reference
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section" id="configuration-reference">
+<span id="index-book-cfg"></span><h1>3. Configuration reference<a class="headerlink" href="#configuration-reference" title="Ссылка на этот заголовок">¶</a></h1>
+<p>This reference covers all options and parameters which can be set for Tarantool
+on the command line or in an initialization file.</p>
+<p>Tarantool is started by entering the following command:</p>
+<pre class="highlight literal-block">
+$ <strong>tarantool</strong>
+# OR
+$ <strong>tarantool</strong> <em>options</em>
+# OR
+$ <strong>tarantool</strong> <em>lua-initialization-file</em> <strong>[</strong> <em>arguments</em> <strong>]</strong>
+</pre>
+<div class="section" id="command-options">
+<h2>3.1. Command options<a class="headerlink" href="#command-options" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-h">
+<span id="cmdoption--help"></span><code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Print an annotated list of all available options and exit.</p>
+</dd></dl>
+
+<span class="target" id="index-tarantool-version"></span><dl class="option">
+<dt id="cmdoption-V">
+<span id="cmdoption--version"></span><code class="descname">-V</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--version</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-V" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Print product name and version, for example:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ./tarantool --version
+<span class="go">Tarantool 1.7.0-1216-g73f7154</span>
+<span class="go">Target: Linux-x86_64-Debug</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+<p>In this example:</p>
+<p>“Tarantool” is the name of the reusable asynchronous networking
+programming framework.</p>
+<p>The 3-number version follows the standard <code class="docutils literal"><span class="pre">&lt;major&gt;-&lt;minor&gt;-&lt;patch&gt;</span></code>
+scheme, in which <code class="docutils literal"><span class="pre">&lt;major&gt;</span></code> number is changed only rarely, <code class="docutils literal"><span class="pre">&lt;minor&gt;</span></code> is
+incremented for each new milestone and indicates possible incompatible
+changes, and <code class="docutils literal"><span class="pre">&lt;patch&gt;</span></code> stands for the number of bug fix releases made after
+the start of the milestone. For non-released versions only, there may be a
+commit number and commit SHA1 to indicate how much this particular build has
+diverged from the last release.</p>
+<p>“Target” is the platform tarantool was built on. Some platform-specific details
+may follow this line.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Tarantool uses
+<a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-describe.html">git describe</a>
+to produce its version id, and this id can be used at any time to check
+out the corresponding source from our
+<a class="reference external" href="http://github.com/tarantool/tarantool.git">git repository</a>.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="uri">
+<span id="index-uri"></span><h2>3.2. URI<a class="headerlink" href="#uri" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Some configuration parameters and some functions depend on a URI, or
+&quot;Universal Resource Identifier&quot;. The URI string format is similar to the
+<a class="reference external" href="http://en.wikipedia.org/wiki/URI_scheme#Generic_syntax">generic syntax for a URI schema</a>.
+So it may contain (in order) a user name
+for login, a password, a host name or host IP address, and a port number. Only
+the port number is always mandatory. The password is mandatory if the user
+name is specified, unless the user name is 'guest'. So, formally, the URI
+syntax is <code class="docutils literal"><span class="pre">[host:]port</span></code> or <code class="docutils literal"><span class="pre">[username:password&#64;]host:port</span></code>.
+If host is omitted, then '0.0.0.0' or '[::]' is assumed,
+meaning respectively any IPv4 address or any IPv6 address,
+on the local machine.
+If username:password is omitted, then 'guest' is assumed. Some examples:</p>
+<blockquote>
+<div><div class="table container">
+<table border="1" class="left-align-column-1 left-align-column-2 docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URI fragment</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>port</td>
+<td>3301</td>
+</tr>
+<tr class="row-odd"><td>host:port</td>
+<td>127.0.0.1:3301</td>
+</tr>
+<tr class="row-even"><td>username:password&#64;host:port</td>
+<td>notguest:sesame&#64;mail.ru:3301</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></blockquote>
+<p>In certain circumstances a Unix domain socket may be used
+where a URI is expected, for example &quot;unix/:/tmp/unix_domain_socket.sock&quot; or
+simply &quot;/tmp/unix_domain_socket.sock&quot;.</p>
+<p>A method for parsing URIs is illustrated in <a class="reference internal" href="../../book/app_server.html#e-cookbook-uri-parse"><span class="std std-ref">Appendix E: Cookbook</span></a>.</p>
+</div>
+<div class="section" id="initialization-file">
+<span id="index-init-label"></span><h2>3.3. Initialization file<a class="headerlink" href="#initialization-file" title="Ссылка на этот заголовок">¶</a></h2>
+<p>If the command to start Tarantool includes <span class="ccodei">lua-initialization-file</span>, then
+Tarantool begins by invoking the Lua program in the file, which by convention
+may have the name &quot;<code class="docutils literal"><span class="pre">script.lua</span></code>&quot;. The Lua program may get further arguments
+from the command line or may use operating-system functions, such as <code class="docutils literal"><span class="pre">getenv()</span></code>.
+The Lua program almost always begins by invoking <code class="docutils literal"><span class="pre">box.cfg()</span></code>, if the database
+server will be used or if ports need to be opened. For example, suppose
+<code class="docutils literal"><span class="pre">script.lua</span></code> contains the lines</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span>
+    <span class="n">listen</span>              <span class="o">=</span> <span class="nb">os.getenv</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">LISTEN_URI&quot;</span><span class="p">),</span>
+    <span class="n">slab_alloc_arena</span>    <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">pid_file</span>            <span class="o">=</span> <span class="s2">&quot;</span><span class="s">tarantool.pid&quot;</span><span class="p">,</span>
+    <span class="n">rows_per_wal</span>        <span class="o">=</span> <span class="mi">50</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Starting &#39;</span><span class="p">,</span> <span class="n">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>and suppose the environment variable LISTEN_URI contains 3301,
+and suppose the command line is <code class="docutils literal"><span class="pre">~/tarantool/src/tarantool</span> <span class="pre">script.lua</span> <span class="pre">ARG</span></code>.
+Then the screen might look like this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">LISTEN_URI</span><span class="o">=</span>3301
+<span class="gp">$</span> ~/tarantool/src/tarantool script.lua ARG
+<span class="go">... main/101/script.lua C&gt; version 1.7.0-1216-g73f7154</span>
+<span class="go">... main/101/script.lua C&gt; log level 5</span>
+<span class="go">... main/101/script.lua I&gt; mapping 107374184 bytes for a shared arena...</span>
+<span class="go">... main/101/script.lua I&gt; recovery start</span>
+<span class="go">... main/101/script.lua I&gt; recovering from &#39;./00000000000000000000.snap&#39;</span>
+<span class="go">... main/101/script.lua I&gt; primary: bound to 0.0.0.0:3301</span>
+<span class="go">... main/102/leave_local_hot_standby I&gt; ready to accept requests</span>
+<span class="go">Starting  ARG</span>
+<span class="go">... main C&gt; entering the event loop</span>
+</pre></div>
+</div>
+<p>If one wishes to start an interactive session on the same terminal after
+initialization is complete, one can use <a class="reference internal" href="../reference_lua/console.html#console-start"><span class="std std-ref">console.start()</span></a>.</p>
+</div>
+<div class="section" id="configuration-parameters">
+<span id="index-snapshot-daemon"></span><span id="index-wal-mode"></span><span id="index-wal-dir"></span><span id="index-snap-dir"></span><span id="index-replication-source"></span><span id="index-slab-alloc-arena"></span><span id="index-replication-port"></span><span id="index-local-hot-standby"></span><h2>3.4. Configuration parameters<a class="headerlink" href="#configuration-parameters" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Configuration parameters have the form: <br />
+<code class="extsamp docutils literal"><strong><span class="pre">box.cfg</span></strong><span class="pre">{[</span><em><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value</span></em> <span class="pre">[,</span> <em><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">...</span></em><span class="pre">]]}</span></code></p>
+<p>Since <code class="docutils literal"><span class="pre">box.cfg</span></code> may contain many configuration parameters and since some of the
+parameters (such as directory addresses) are semi-permanent, it's best to keep
+<code class="docutils literal"><span class="pre">box.cfg</span></code> in a Lua file. Typically this Lua file is the initialization file
+which is specified on the tarantool command line.</p>
+<p>Most configuration parameters are for allocating resources, opening ports, and
+specifying database behavior. All parameters are optional. A few parameters are
+dynamic, that is, they can be changed at runtime by calling <code class="docutils literal"><span class="pre">box.cfg{}</span></code>
+a second time.</p>
+<p>To see all the non-null parameters, say <code class="docutils literal"><span class="pre">box.cfg</span></code> (no parentheses). To see a
+particular parameter, for example the listen address, say <code class="docutils literal"><span class="pre">box.cfg.listen</span></code>.</p>
+<p>The following sections describe all parameters for basic operation, for storage,
+for binary logging and snapshots, for replication, for networking, and for logging.</p>
+<div class="section" id="basic-parameters">
+<h3>3.4.1. Basic parameters<a class="headerlink" href="#basic-parameters" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="confval">
+<dt id="confval-background">
+<code class="descname">background</code><a class="headerlink" href="#confval-background" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Run the server as a background task. The <a class="reference internal" href="#cfg-logging-logger"><span class="std std-ref">logger</span></a> and
+<a class="reference internal" href="#cfg-basic-pid-file"><span class="std std-ref">pid_file</span></a> parameters must be non-null for this to work.</p>
+<p>Type: boolean <br />
+Default: false <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-coredump">
+<code class="descname">coredump</code><a class="headerlink" href="#confval-coredump" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Deprecated. Do not use.</p>
+<p>Type: boolean <br />
+Default: false <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-custom-proc-title"></span><dl class="confval">
+<dt id="confval-custom_proc_title">
+<code class="descname">custom_proc_title</code><a class="headerlink" href="#confval-custom_proc_title" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Add the given string to the server's <a class="reference internal" href="../../book/administration.html#administration-proctitle"><span class="std std-ref">Process title</span></a>
+(what’s shown in the COMMAND column for <code class="samp docutils literal"><span class="pre">ps</span> <span class="pre">-ef</span></code> and <code class="samp docutils literal"><span class="pre">top</span> <span class="pre">-c</span></code> commands).</p>
+<p>For example, ordinarily <code class="samp docutils literal"><span class="pre">ps</span> <span class="pre">-ef</span></code> shows the Tarantool server process thus:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ps -ef <span class="p">|</span> grep tarantool
+<span class="go">1000     14939 14188  1 10:53 pts/2    00:00:13 tarantool &lt;running&gt;</span>
+</pre></div>
+</div>
+<p>But if the configuration parameters include
+<code class="docutils literal"><span class="pre">custom_proc_title='sessions'</span></code> then the output looks like:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ps -ef <span class="p">|</span> grep tarantool
+<span class="go">1000     14939 14188  1 10:53 pts/2    00:00:16 tarantool &lt;running&gt;: sessions</span>
+</pre></div>
+</div>
+<p>Type: string <br />
+Default: null <br />
+Dynamic: yes <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-listen"></span><dl class="confval">
+<dt id="confval-listen">
+<code class="descname">listen</code><a class="headerlink" href="#confval-listen" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The read/write data port number or <a class="reference internal" href="#index-uri"><span class="std std-ref">URI</span></a> (Universal Resource Identifier)
+string. Has no default value, so <strong>must be specified</strong> if connections will
+occur from remote clients that do not use the <a class="reference internal" href="../../book/administration.html#administration-admin-ports"><span class="std std-ref">“admin port”</span></a>.
+Connections made with <code class="samp docutils literal"><span class="pre">listen=</span><em><span class="pre">URI</span></em></code> are sometimes called &quot;binary protocol&quot; or &quot;primary port&quot; connections.</p>
+<p>A typical value is 3301. The listen parameter may also be set for
+local hot standby.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">A replica also binds to this port, and accepts connections, but these
+connections can only serve reads until the replica becomes a master.</p>
+</div>
+<p>Type: integer or string <br />
+Default: null <br />
+Dynamic: yes <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-pid-file"></span><dl class="confval">
+<dt id="confval-pid_file">
+<code class="descname">pid_file</code><a class="headerlink" href="#confval-pid_file" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Store the process id in this file. Can be relative to <a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>.
+A typical value is “<code class="file docutils literal"><span class="pre">tarantool.pid</span></code>”.</p>
+<p>Type: string <br />
+Default: null <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-read-only"></span><dl class="confval">
+<dt id="confval-read_only">
+<code class="descname">read_only</code><a class="headerlink" href="#confval-read_only" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Put the server in read-only mode. After this, any requests that try to change
+data will fail with error ER_READONLY.</p>
+<p>Type: boolean <br />
+Default: false <br />
+Dynamic: yes <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-snap-dir"></span><dl class="confval">
+<dt id="confval-snap_dir">
+<code class="descname">snap_dir</code><a class="headerlink" href="#confval-snap_dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A directory where snapshot (.snap) files will be stored. Can be relative to
+<a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>. If not specified, defaults to work_dir.
+See also <a class="reference internal" href="#cfg-basic-wal-dir"><span class="std std-ref">wal_dir</span></a>.</p>
+<p>Type: string <br />
+Default: &quot;.&quot; <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-vinyl-dir"></span><dl class="confval">
+<dt id="confval-vinyl_dir">
+<code class="descname">vinyl_dir</code><a class="headerlink" href="#confval-vinyl_dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A directory where vinyl files or subdirectories will be stored. Can be relative to
+<a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>. If not specified, defaults to work_dir.</p>
+<p>Type: string <br />
+Default: &quot;.&quot; <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-username">
+<code class="descname">username</code><a class="headerlink" href="#confval-username" title="Ссылка на это определение">¶</a></dt>
+<dd><p>UNIX user name to switch to after start.</p>
+<p>Type: string <br />
+Default: null <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-wal-dir"></span><dl class="confval">
+<dt id="confval-wal_dir">
+<code class="descname">wal_dir</code><a class="headerlink" href="#confval-wal_dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A directory where write-ahead log (.xlog) files are stored. Can be
+relative to <a class="reference internal" href="#cfg-basic-work-dir"><span class="std std-ref">work_dir</span></a>. Sometimes wal_dir
+and <a class="reference internal" href="#cfg-basic-snap-dir"><span class="std std-ref">snap_dir</span></a> are specified with different values, so that
+write-ahead log files and snapshot files can be stored on different disks. If not
+specified, defaults to work_dir.</p>
+<p>Type: string <br />
+Default: &quot;.&quot; <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-basic-work-dir"></span><dl class="confval">
+<dt id="confval-work_dir">
+<code class="descname">work_dir</code><a class="headerlink" href="#confval-work_dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A directory where database working files will be stored. The server
+switches to work_dir with <em class="manpage">chdir(2)</em> after start. Can be
+relative to the current directory. If not specified, defaults to
+the current directory. Other directory parameters may be relative to work_dir,
+for example <br />
+<span class="ccode">box.cfg{work_dir='/home/user/A',wal_dir='B',snap_dir='C'}</span> <br />
+will put xlog files in /home/user/A/B, snapshot files in /home/user/A/C,
+and all other files or subdirectories in /home/user/A.</p>
+<p>Type: string <br />
+Default: null <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="configuring-the-storage">
+<h3>3.4.2. Configuring the storage<a class="headerlink" href="#configuring-the-storage" title="Ссылка на этот заголовок">¶</a></h3>
+<span class="target" id="cfg-storage-slab-alloc-arena"></span><dl class="confval">
+<dt id="confval-slab_alloc_arena">
+<code class="descname">slab_alloc_arena</code><a class="headerlink" href="#confval-slab_alloc_arena" title="Ссылка на это определение">¶</a></dt>
+<dd><p>How much memory Tarantool allocates to actually store tuples, in gigabytes.
+When the limit is reached, INSERT or UPDATE requests begin failing with
+error <code class="xref std std-errcode docutils literal"><span class="pre">ER_MEMORY_ISSUE</span></code>. While the server does not go beyond the defined
+limit to allocate tuples, there is additional memory used to store indexes
+and connection information. Depending on actual configuration and workload,
+Tarantool can consume up to 20% more than the limit set here.</p>
+<p>Type: float <br />
+Default: 1.0 <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-storage-slab-alloc-factor"></span><dl class="confval">
+<dt id="confval-slab_alloc_factor">
+<code class="descname">slab_alloc_factor</code><a class="headerlink" href="#confval-slab_alloc_factor" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Use slab_alloc_factor as the multiplier for computing the sizes of memory
+chunks that tuples are stored in. A lower value may result in less wasted
+memory depending on the total amount of memory available and the
+distribution of item sizes.</p>
+<p>Type: float <br />
+Default: 1.1 <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-storage-slab-alloc-maximal"></span><dl class="confval">
+<dt id="confval-slab_alloc_maximal">
+<code class="descname">slab_alloc_maximal</code><a class="headerlink" href="#confval-slab_alloc_maximal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Size of the largest allocation unit. It can be increased if it
+is necessary to store large tuples.</p>
+<p>Type: integer <br />
+Default: 1048576 <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-storage-slab-alloc-minimal"></span><dl class="confval">
+<dt id="confval-slab_alloc_minimal">
+<code class="descname">slab_alloc_minimal</code><a class="headerlink" href="#confval-slab_alloc_minimal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Size of the smallest allocation unit. It can be decreased if most
+of the tuples are very small. The value must be between 8 and 1048280 inclusive.</p>
+<p>Type: integer <br />
+Default: 16 <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-storage-vinyl"></span><dl class="confval">
+<dt id="confval-vinyl">
+<code class="descname">vinyl</code><a class="headerlink" href="#confval-vinyl" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The default vinyl configuration can be changed with</p>
+<pre class="highlight literal-block">
+vinyl = {
+  run_age_wm = <em>number</em>,
+  run_age_period = <em>number of seconds</em>,
+  memory_limit = <em>number of gigabytes</em>,
+  compact_wm = <em>number</em>,
+  threads = <em>number</em>,
+  run_age = <em>number</em>,
+  run_prio = <em>number</em>,
+}
+</pre>
+<p>This method may change in the future.</p>
+<p>Default values are:</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">vinyl</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">run_age_wm</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">run_age_period</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">memory_limit</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="n">compact_wm</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="n">threads</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="n">run_age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">run_prio</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="snapshot-daemon">
+<span id="book-cfg-snapshot-daemon"></span><h3>3.4.3. Snapshot daemon<a class="headerlink" href="#snapshot-daemon" title="Ссылка на этот заголовок">¶</a></h3>
+<p>The snapshot daemon is a fiber which is constantly running.
+At intervals, it may make new snapshot (.snap) files and
+then may remove old snapshot files. If the snapshot daemon
+removes an old snapshot file, it will also remove any
+write-ahead log (.xlog) files that are older than the
+snapshot file and contain information that is present in
+the snapshot file.</p>
+<p>The <a class="reference internal" href="#cfg-snapshot-daemon-snapshot-period"><span class="std std-ref">snapshot_period</span></a> and
+<a class="reference internal" href="#cfg-snapshot-daemon-snapshot-count"><span class="std std-ref">snapshot_count</span></a>
+configuration settings determine how long the intervals are,
+and how many snapshots should exist before removals occur.</p>
+<span class="target" id="cfg-snapshot-daemon-snapshot-period"></span><dl class="confval">
+<dt id="confval-snapshot_period">
+<code class="descname">snapshot_period</code><a class="headerlink" href="#confval-snapshot_period" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The interval between actions by the snapshot daemon, in seconds.
+If <code class="docutils literal"><span class="pre">snapshot_period</span></code> is set to a value greater than zero,
+and there is activity which causes change to a database,
+then the snapshot daemon will call <a class="reference internal" href="../../book/administration.html#admin-snapshot"><span class="std std-ref">box.snapshot</span></a> every
+<code class="docutils literal"><span class="pre">snapshot_period</span></code> seconds, creating a new snapshot file each time.</p>
+<p>For example: <code class="docutils literal"><span class="pre">box.cfg{snapshot_period=3600}</span></code>
+will cause the snapshot daemon to create a new database snapshot
+once per hour.</p>
+<p>Type: integer <br />
+Default: 0 <br />
+Dynamic: yes <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-snapshot-daemon-snapshot-count"></span><dl class="confval">
+<dt id="confval-snapshot_count">
+<code class="descname">snapshot_count</code><a class="headerlink" href="#confval-snapshot_count" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The maximum number of snapshots that may exist on the snap_dir
+directory before the snapshot daemon will remove old snapshots.
+If snapshot_count equals zero, then the snapshot daemon does not remove
+old snapshots.
+For example:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span>
+    <span class="n">snapshot_period</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">,</span>
+    <span class="n">snapshot_count</span>  <span class="o">=</span> <span class="mi">10</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>will cause the snapshot daemon to create a new snapshot each hour until
+it has created ten snapshots. After that, it will remove the oldest
+snapshot (and any associated write-ahead-log files) after creating a new one.</p>
+<p>Type: integer <br />
+Default: 6 <br />
+Dynamic: yes <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="binary-logging-and-snapshots">
+<h3>3.4.4. Binary logging and snapshots<a class="headerlink" href="#binary-logging-and-snapshots" title="Ссылка на этот заголовок">¶</a></h3>
+<blockquote>
+<div><a class="reference internal" href="#cfg-binary-logging-snapshots-panic-on-snap-error"><span class="std std-ref">panic_on_snap_error</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-panic-on-wal-error"><span class="std std-ref">panic_on_wal_error</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-rows-per-wal"><span class="std std-ref">rows_per_wal</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-snap-io-rate-limit"><span class="std std-ref">snap_io_rate_limit</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-wal-mode"><span class="std std-ref">wal_mode</span></a>, <br />
+<a class="reference internal" href="#cfg-binary-logging-snapshots-wal-dir-rescan-delay"><span class="std std-ref">wal_dir_rescan_delay</span></a> <br /></div></blockquote>
+<span class="target" id="cfg-binary-logging-snapshots-panic-on-snap-error"></span><dl class="confval">
+<dt id="confval-panic_on_snap_error">
+<code class="descname">panic_on_snap_error</code><a class="headerlink" href="#confval-panic_on_snap_error" title="Ссылка на это определение">¶</a></dt>
+<dd><p>If there is an error while reading the snapshot file
+(at server start), abort.</p>
+<p>Type: boolean <br />
+Default: true <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-panic-on-wal-error"></span><dl class="confval">
+<dt id="confval-panic_on_wal_error">
+<code class="descname">panic_on_wal_error</code><a class="headerlink" href="#confval-panic_on_wal_error" title="Ссылка на это определение">¶</a></dt>
+<dd><p>If there is an error while reading a write-ahead log
+file (at server start or to relay to a replica), abort.</p>
+<p>Type: boolean <br />
+Default: true <br />
+Dynamic: yes <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-rows-per-wal"></span><dl class="confval">
+<dt id="confval-rows_per_wal">
+<code class="descname">rows_per_wal</code><a class="headerlink" href="#confval-rows_per_wal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>How many log records to store in a single write-ahead log file.
+When this limit is reached, Tarantool creates another WAL file
+named <code class="samp docutils literal"><em><span class="pre">&lt;first-lsn-in-wal&gt;</span></em><span class="pre">.xlog</span></code>. This can be useful for
+simple rsync-based backups.</p>
+<p>Type: integer <br />
+Default: 500000 <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-snap-io-rate-limit"></span><dl class="confval">
+<dt id="confval-snap_io_rate_limit">
+<code class="descname">snap_io_rate_limit</code><a class="headerlink" href="#confval-snap_io_rate_limit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Reduce the throttling effect of <a class="reference internal" href="../../book/administration.html#admin-snapshot"><span class="std std-ref">box.snapshot</span></a> on
+INSERT/UPDATE/DELETE performance by setting a limit on how many
+megabytes per second it can write to disk. The same can be
+achieved by splitting <a class="reference internal" href="#cfg-basic-wal-dir"><span class="std std-ref">wal_dir</span></a> and <a class="reference internal" href="#cfg-basic-snap-dir"><span class="std std-ref">snap_dir</span></a>
+locations and moving snapshots to a separate disk.</p>
+<p>Type: float <br />
+Default: null <br />
+Dynamic: <strong>yes</strong> <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-wal-mode"></span><dl class="confval">
+<dt id="confval-wal_mode">
+<code class="descname">wal_mode</code><a class="headerlink" href="#confval-wal_mode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Specify fiber-WAL-disk synchronization mode as:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">none</span></code>: write-ahead log is not maintained;</li>
+<li><code class="docutils literal"><span class="pre">write</span></code>: fibers wait for their data to be written to
+the write-ahead log (no <em class="manpage">fsync(2)</em>);</li>
+<li><code class="docutils literal"><span class="pre">fsync</span></code>: fibers wait for their data, <em class="manpage">fsync(2)</em>
+follows each <em class="manpage">write(2)</em>;</li>
+</ul>
+<p>Type: string <br />
+Default: &quot;write&quot; <br />
+Dynamic: <strong>yes</strong> <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-binary-logging-snapshots-wal-dir-rescan-delay"></span><dl class="confval">
+<dt id="confval-wal_dir_rescan_delay">
+<code class="descname">wal_dir_rescan_delay</code><a class="headerlink" href="#confval-wal_dir_rescan_delay" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Number of seconds between periodic scans of the write-ahead-log
+file directory, when checking for changes to write-ahead-log
+files for the sake of replication or local hot standby.</p>
+<p>Type: float <br />
+Default: 2 <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="replication">
+<h3>3.4.5. Replication<a class="headerlink" href="#replication" title="Ссылка на этот заголовок">¶</a></h3>
+<span class="target" id="cfg-replication-replication-source"></span><dl class="confval">
+<dt id="confval-replication_source">
+<code class="descname">replication_source</code><a class="headerlink" href="#confval-replication_source" title="Ссылка на это определение">¶</a></dt>
+<dd><p>If replication_source is not an empty string, the server is considered
+to be a Tarantool <a class="reference internal" href="../../book/administration.html#index-box-replication"><span class="std std-ref">replica</span></a>. The replica server will try to connect to the
+master which replication_source specifies with a <a class="reference internal" href="#index-uri"><span class="std std-ref">URI</span></a> (Universal
+Resource Identifier), for example <code class="samp docutils literal"><em><span class="pre">konstantin</span></em><span class="pre">:</span><em><span class="pre">secret_password</span></em><span class="pre">&#64;</span><em><span class="pre">tarantool.org</span></em><span class="pre">:</span><em><span class="pre">3301</span></em></code>.</p>
+<p>If there is more than one replication source in a cluster, specify an
+array of URIs, for example <br />
+<span class="ccode">box.cfg{replication_source = {</span><span class="ccodei">uri#1,uri#2</span><span class="ccode">}}</span> <br /></p>
+<p>If one of the URIs is &quot;self&quot; -- that is, if one of
+the URIs is for the same server that <span class="ccode">box.cfg{}</span> is being executed on --
+then it is ignored. Thus it is possible to use the same replication_source
+specification on multiple servers.</p>
+<p>The default user name is ‘guest’.
+A replica server does not accept data-change requests on the <a class="reference internal" href="#cfg-basic-listen"><span class="std std-ref">listen</span></a> port.
+The replication_source parameter is
+dynamic, that is, to enter master mode, simply set replication_source
+to an empty string and issue <code class="code docutils literal"><span class="pre">box.cfg{replication_source=</span></code><code class="samp docutils literal"><em><span class="pre">new-value</span></em></code><code class="code docutils literal"><span class="pre">}</span></code>.</p>
+<p>Type: string <br />
+Default: null <br />
+Dynamic: <strong>yes</strong> <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="networking">
+<h3>3.4.6. Networking<a class="headerlink" href="#networking" title="Ссылка на этот заголовок">¶</a></h3>
+<blockquote>
+<div><a class="reference internal" href="#cfg-networking-io-collect-interval"><span class="std std-ref">io_collect_interval</span></a>, <br />
+<a class="reference internal" href="#cfg-networking-readahead"><span class="std std-ref">readahead</span></a>  <br /></div></blockquote>
+<span class="target" id="cfg-networking-io-collect-interval"></span><dl class="confval">
+<dt id="confval-io_collect_interval">
+<code class="descname">io_collect_interval</code><a class="headerlink" href="#confval-io_collect_interval" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The server will sleep for io_collect_interval seconds between iterations
+of the event loop. Can be used to reduce CPU load in deployments in which
+the number of client connections is large, but requests are not so frequent
+(for example, each connection issues just a handful of requests per second).</p>
+<p>Type: float <br />
+Default: null <br />
+Dynamic: <strong>yes</strong> <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-networking-readahead"></span><dl class="confval">
+<dt id="confval-readahead">
+<code class="descname">readahead</code><a class="headerlink" href="#confval-readahead" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The size of the read-ahead buffer associated with a client connection. The
+larger the buffer, the more memory an active connection consumes and the
+more requests can be read from the operating system buffer in a single
+system call. The rule of thumb is to make sure the buffer can contain at
+least a few dozen requests. Therefore, if a typical tuple in a request is
+large, e.g. a few kilobytes or even megabytes, the read-ahead buffer size
+should be increased. If batched request processing is not used, it’s prudent
+to leave this setting at its default.</p>
+<p>Type: integer <br />
+Default: 16320 <br />
+Dynamic: <strong>yes</strong> <br /></p>
+</dd></dl>
+
+</div>
+<div class="section" id="logging">
+<h3>3.4.7. Logging<a class="headerlink" href="#logging" title="Ссылка на этот заголовок">¶</a></h3>
+<span class="target" id="cfg-logging-log-level"></span><dl class="confval">
+<dt id="confval-log_level">
+<code class="descname">log_level</code><a class="headerlink" href="#confval-log_level" title="Ссылка на это определение">¶</a></dt>
+<dd><p>How verbose the logging is. There are six log verbosity classes:</p>
+<ul class="simple">
+<li>1 – <code class="docutils literal"><span class="pre">SYSERROR</span></code></li>
+<li>2 – <code class="docutils literal"><span class="pre">ERROR</span></code></li>
+<li>3 – <code class="docutils literal"><span class="pre">CRITICAL</span></code></li>
+<li>4 – <code class="docutils literal"><span class="pre">WARNING</span></code></li>
+<li>5 – <code class="docutils literal"><span class="pre">INFO</span></code></li>
+<li>6 – <code class="docutils literal"><span class="pre">DEBUG</span></code></li>
+</ul>
+<p>By setting log_level, one can enable logging of all classes below
+or equal to the given level. Tarantool prints its logs to the standard
+error stream by default, but this can be changed with the <a class="reference internal" href="#cfg-logging-logger"><span class="std std-ref">logger</span></a>
+configuration parameter.</p>
+<p>Type: integer <br />
+Default: 5 <br />
+Dynamic: <strong>yes</strong> <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-logging-logger"></span><dl class="confval">
+<dt id="confval-logger">
+<code class="descname">logger</code><a class="headerlink" href="#confval-logger" title="Ссылка на это определение">¶</a></dt>
+<dd><p>By default, the log is sent to the standard error stream (<code class="docutils literal"><span class="pre">stderr</span></code>). If
+<code class="docutils literal"><span class="pre">logger</span></code> is specified, the log is sent to a file, or to a pipe, or to
+the system logger.</p>
+<p>Example setting:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">tarantool.log&#39;</span><span class="p">}</span>
+<span class="c1">-- or</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">file: tarantool.log&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This will open the file <code class="docutils literal"><span class="pre">tarantool.log</span></code> for output on the server’s default
+directory. If the <code class="docutils literal"><span class="pre">logger</span></code> string has no prefix or has the prefix &quot;file:&quot;,
+then the string is interpreted as a file path.</p>
+<p>Example setting:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">| cronolog tarantool.log&#39;</span><span class="p">}</span>
+<span class="c1">-- or</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">pipe: cronolog tarantool.log&#39;</span><span class="p">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>This will start the program <code class="docutils literal"><span class="pre">cronolog</span></code> when the server starts, and
+will send all log messages to the standard input (<code class="docutils literal"><span class="pre">stdin</span></code>) of cronolog.
+If the <code class="docutils literal"><span class="pre">logger</span></code> string begins with '|' or has the prefix &quot;pipe:&quot;,
+then the string is interpreted as a Unix
+<a class="reference external" href="https://en.wikipedia.org/wiki/Pipeline_%28Unix%29">pipeline</a>.</p>
+<p>Example setting:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">syslog:identity=tarantool&#39;</span><span class="p">}</span>
+<span class="c1">-- or</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">syslog:facility=user&#39;</span><span class="p">}</span>
+<span class="c1">-- or</span>
+<span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">syslog:identity=tarantool,facility=user&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If the <code class="docutils literal"><span class="pre">logger</span></code> string has the prefix &quot;syslog:&quot;, then the string is
+interpreted as a message for the
+<a class="reference external" href="http://www.rfc-base.org/txt/rfc-5424.txt">syslogd</a> program which normally
+is running in the background of any Unix-like platform. One can optionally
+specify an <code class="docutils literal"><span class="pre">identity</span></code>, a <code class="docutils literal"><span class="pre">facility</span></code>, or both. The <code class="docutils literal"><span class="pre">identity</span></code> is an
+arbitrary string, default value = <code class="docutils literal"><span class="pre">tarantool</span></code>, which will be placed at
+the beginning of all messages. The facility is an abbreviation for the
+name of one of the <a class="reference external" href="https://en.wikipedia.org/wiki/Syslog">syslog</a>
+facilities, default value = <code class="docutils literal"><span class="pre">user</span></code>, which
+tell syslogd where the message should go.</p>
+<p>Possible values for <code class="docutils literal"><span class="pre">facility</span></code> are: auth, authpriv, cron, daemon, ftp,
+kern, lpr, mail, news, security, syslog, user, uucp, local0, local1, local2,
+local3, local4, local5, local6, local7.</p>
+<p>The <code class="docutils literal"><span class="pre">facility</span></code> setting is currently ignored but will be used in the future.</p>
+<p>When logging to a file, tarantool reopens the log on SIGHUP. When log is
+a program, its pid is saved in the <a class="reference internal" href="../reference_lua/log.html#log-logger-pid"><span class="std std-ref">log.logger_pid</span></a> variable. You need
+to send it a signal to rotate logs.</p>
+<p>Type: string <br />
+Default: null <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-logging-logger-nonblock"></span><dl class="confval">
+<dt id="confval-logger_nonblock">
+<code class="descname">logger_nonblock</code><a class="headerlink" href="#confval-logger_nonblock" title="Ссылка на это определение">¶</a></dt>
+<dd><p>If <code class="docutils literal"><span class="pre">logger_nonblock</span></code> equals true, Tarantool does not block on the log
+file descriptor when it’s not ready for write, and drops the message
+instead. If <a class="reference internal" href="#cfg-logging-log-level"><span class="std std-ref">log_level</span></a> is high, and a lot of messages go to the
+log file, setting <code class="docutils literal"><span class="pre">logger_nonblock</span></code> to true may improve logging
+performance at the cost of some log messages getting lost.</p>
+<p>Type: boolean <br />
+Default: true <br />
+Dynamic: no <br /></p>
+</dd></dl>
+
+<span class="target" id="cfg-logging-too-long-threshold"></span><dl class="confval">
+<dt id="confval-too_long_threshold">
+<code class="descname">too_long_threshold</code><a class="headerlink" href="#confval-too_long_threshold" title="Ссылка на это определение">¶</a></dt>
+<dd><p>If processing a request takes longer than the given value (in seconds),
+warn about it in the log. Has effect only if <a class="reference internal" href="#cfg-logging-log-level"><span class="std std-ref">log_level</span></a> is
+more than or equal to 4 (WARNING).</p>
+<p>Type: float <br />
+Default: 0.5 <br />
+Dynamic: <strong>yes</strong> <br /></p>
+</dd></dl>
+
+<p id="cfg-logging-logging-example"><strong>Logging example:</strong></p>
+<p>This will illustrate how &quot;rotation&quot; works, that is, what happens when
+the server is writing to a log and signals are used when archiving it.</p>
+<p>Start with two terminal shells, Terminal #1 and Terminal #2.</p>
+<p>On Terminal #1: start an interactive Tarantool session, then say the logging will
+go to <cite>Log_file</cite>, then put a message &quot;Log Line #1&quot; in the log file:</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span><span class="n">logger</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Log_file&#39;</span><span class="p">}</span>
+<span class="n">log</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">log&#39;</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Log Line #1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On Terminal #2: use <code class="docutils literal"><span class="pre">mv</span></code> so the log file is now named <cite>Log_file.bak</cite>.
+The result of this is: the next log message will go to <cite>Log_file.bak</cite>. <br /></p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">Log_file</span> <span class="n">Log_file</span><span class="o">.</span><span class="n">bak</span>
+</pre></div>
+</div>
+<p>On Terminal #1: put a message &quot;Log Line #2&quot; in the log file. <br /></p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Log Line #2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On Terminal #2: use <code class="docutils literal"><span class="pre">ps</span></code> to find the process ID of the Tarantool server. <br /></p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">-</span><span class="n">A</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">tarantool</span>
+</pre></div>
+</div>
+<p>On Terminal #2: use <code class="docutils literal"><span class="pre">kill</span> <span class="pre">-HUP</span></code> to send a SIGHUP signal to the Tarantool server.
+The result of this is: Tarantool will open <cite>Log_file</cite> again, and
+the next log message will go to <cite>Log_file</cite>.
+(The same effect could be accomplished by executing log.rotate() on the server.) <br /></p>
+<pre class="highlight literal-block">
+kill -HUP <em>process_id</em>
+</pre>
+<p>On Terminal #1: put a message &quot;Log Line #3&quot; in the log file.</p>
+<div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Log Line #3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On Terminal #2: use <code class="docutils literal"><span class="pre">less</span></code> to examine files. <cite>Log_file.bak</cite> will have these lines,
+except that the date and time will depend on when the example is done:</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="mi">2015</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">30</span> <span class="mi">15</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mf">06.373</span> <span class="p">[</span><span class="mi">27469</span><span class="p">]</span> <span class="n">main</span><span class="o">/</span><span class="mi">101</span><span class="o">/</span><span class="n">interactive</span> <span class="n">I</span><span class="o">&gt;</span> <span class="n">Log</span> <span class="n">Line</span> <span class="c1">#1`</span>
+<span class="mi">2015</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">30</span> <span class="mi">15</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mf">25.973</span> <span class="p">[</span><span class="mi">27469</span><span class="p">]</span> <span class="n">main</span><span class="o">/</span><span class="mi">101</span><span class="o">/</span><span class="n">interactive</span> <span class="n">I</span><span class="o">&gt;</span> <span class="n">Log</span> <span class="n">Line</span> <span class="c1">#2`</span>
+</pre></div>
+</div>
+<p>and <cite>Log_file</cite> will have</p>
+<div class="highlight highlight-default"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="n">file</span> <span class="n">has</span> <span class="n">been</span> <span class="n">reopened</span>
+<span class="mi">2015</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">30</span> <span class="mi">15</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mf">32.629</span> <span class="p">[</span><span class="mi">27469</span><span class="p">]</span> <span class="n">main</span><span class="o">/</span><span class="mi">101</span><span class="o">/</span><span class="n">interactive</span> <span class="n">I</span><span class="o">&gt;</span> <span class="n">Log</span> <span class="n">Line</span> <span class="c1">#3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          
+          
+  <div id="disqus_thread"></div>
+  <script>
+    // DON'T EDIT
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//tarantooldb.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+      comments powered by Disqus.
+    </a>
+  </noscript>
+
+          
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="../reference_rock/tdb.html"
+           class="b-prev b-ellipsis"
+           title="2.4. Module &lt;cite&gt;tdb&lt;/cite&gt;">2.4. Module <cite>tdb</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../_sources/reference/configuration/index.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="../../dev_guide/index.html"
+           class="b-next b-ellipsis"
+           title="Contributor&#39;s Guide">Contributor's Guide</a>
+      </div>
+    
+    </div>
+  
+</div>
+      </div>
+    </div>
+  
+
+      </div>
+    </div>
+
+  <!-- FOOTER > -->
+  
+<footer class="b-footer">
+  <div class="b-footer-wrapper">
+    <nav class="b-footer_menu">
+      
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="/" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/doc/" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="/careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      <div class="b-footer-other">
+        <a href="http://15.tarantool.org">1.5 web site and downloads</a>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+  <!-- < FOOTER -->
+  <div id="mobile-checker"></div>
+  </body>
+</html>
+
