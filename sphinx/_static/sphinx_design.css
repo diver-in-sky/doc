@@ -184,9 +184,6 @@ a.headerlink {
 .b-page_over-head {
     margin: -13px 0 0 0;
 }
-.b-page_over-tail {
-    margin: 25px 0 -50px 0;
-}
 
 .b-article ul {
     margin: 10px 0 10px 0;
@@ -275,31 +272,6 @@ table.docutils.footnote {
 
 tr.field td p {
     padding: 0px;
-}
-
-.b-cols_content {
-    width:960px;
-    margin:0 auto;
-    padding:0 0 30px 0;
-}
-.b-cols_content_left {
-    position:relative;
-    float:left;
-    width:295px;
-    padding:15px 0 0 0;
-}
-.b-cols_content_right {
-    float:right;
-    width:100%;
-    margin:0 0 0 -295px;
-}
-.b-cols_content_right-slot {
-    margin:0 0 0 340px;
-    padding:18px 0 0 0;
-}
-
-.p-cols_design .b-wrapper {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAEAAAAAARAQMAAABnOfukAAAABlBMVEUAAAD19fWydBufAAAAAXRSTlMAQObYZgAAADZJREFUaN7t0gEBAAAIAiD/n7YBTRA2kO4InwDruiMIgAAIgAAIgAAIsK47ggAIgAAIgAAIwAHksoxHlAvP9AAAAABJRU5ErkJggg==') 50% -0px repeat-y;
 }
 
 .b-cols_content_left .toctree-l1 {
@@ -393,26 +365,12 @@ ul.search li div.context {
     margin-top: 5px;
 }
 
-div.b-cols_content_left #searchbox {
-    width: 267px;
-}
-
-div.b-cols_content_left .b-search-text {
-    width: 240px;
-}
-
 .b-documentation_top .b-section-title {
-    float: left;
     max-width: 820px;
 }
 
 .b-documentation_top .b-search {
     float: right;
-}
-
-.b-cols_content_left>.b-menu-toc {
-    float: left;
-    position: relative;
 }
 
 .b-switcher-item-url {

@@ -31,15 +31,16 @@
       {{ menu.i_header() }}
       <!-- < HEADER -->
 
-      <div class="b-content b-clearbox">
+      <div class="b-content">
         {% block content %}
         {% endblock content %}
       </div>
+
+      <!-- FOOTER > -->
+      {{ menu.i_footer() }}
+      <!-- < FOOTER -->
     </div>
 
-  <!-- FOOTER > -->
-  {{ menu.i_footer() }}
-  <!-- < FOOTER -->
   </body>
 </html>
 

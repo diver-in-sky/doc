@@ -67,14 +67,13 @@
       {{ menu.i_header() }}
       <!-- < HEADER -->
 
-      <div class="b-content b-clearbox">
-        {% block content %} {% endblock content %}
-      </div>
+      {% block content %} {% endblock content %}
+
+      <!-- FOOTER > -->
+      {{ menu.i_footer() }}
+      <!-- < FOOTER -->
     </div>
 
-  <!-- FOOTER > -->
-  {{ menu.i_footer() }}
-  <!-- < FOOTER -->
   <div id="mobile-checker"></div>
   </body>
 </html>

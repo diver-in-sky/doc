@@ -41,11 +41,9 @@
       </div>
       #}
     </div>
-    <div class="b-header-wrapper">
-      <nav class="b-header_menu">
-        {{ i_menu() }}
-      </nav>
-    </div>
+    <nav class="b-header_menu">
+      {{ i_menu() }}
+    </nav>
   </header>
 {% endmacro %}
 

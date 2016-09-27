@@ -30,8 +30,9 @@
 {% endset %}
 
 {% block content %}
-  <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
+  <section class="b-lightgray_block b-documentation_top p-documentation_in">
     <div class="b-block-wrapper">
+      {{- language_selector() -}}
       <h2
       {% if main_page %}
         class="b-section-title b-ellipsis"
@@ -41,7 +42,6 @@
         title="{{ title | cleantitle }}">
           {{ title | cleantitle }}
       </h2>
-      {{- language_selector() -}}
     </div>
   </section>
   {% if main_page %}
@@ -52,22 +52,22 @@
       </div>
     </section>
   {% else %}
-    <div class="b-cols_content b-clearbox">
-      <div class="b-cols_content_left">
-        <div class="b-menu-toc">
-          {% include "searchbox.html" %}
-          {{- toctree(maxdepth=-1, collapse=false, includehidden=true) }}
+    <div class="b-cols_content">
+      <div class="b-cols_content_left_">
+        <div class="b-cols_content_left">
+          <div class="b-menu-toc">
+            {% include "searchbox.html" %}
+            {{- toctree(maxdepth=-1, collapse=false, includehidden=true) }}
+          </div>
         </div>
       </div>
       <div class="b-cols_content_right">
-        <div class="b-cols_content_right-slot">
-          {{- breadcrumbs() -}}
-          {{  content_pane   }}
-          {% if pagename not in ["search", "genindex", "modindex"] %}
-          {{    disqus()     }}
-          {% endif %}
-          {{- navbar(False) -}}
-        </div>
+        {{- breadcrumbs() -}}
+        {{  content_pane   }}
+        {% if pagename not in ["search", "genindex", "modindex"] %}
+        {{    disqus()     }}
+        {% endif %}
+        {{- navbar(False) -}}
       </div>
     </div>
   {% endif %}
