@@ -86,7 +86,6 @@ h1, h2, h3, h4, h5 {
 }
 .b-header_menu .b-menu-item-url:hover,
 .b-header_menu .b-menu-item-url.p-active,
-.b-follow,
 .b-news-list-item-title-url-alt,
 .b-social_ico,
 .b-cust_logo:before,
@@ -220,9 +219,6 @@ h1, h2, h3, h4, h5 {
 .b-wrapper:after {
     height:35px;
 }
-.p-cols_design .b-wrapper {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAEAAAAAARAQMAAABnOfukAAAABlBMVEUAAAD19fWydBufAAAAAXRSTlMAQObYZgAAADZJREFUaN7t0gEBAAAIAiD/n7YBTRA2kO4InwDruiMIgAAIgAAIgAAIsK47ggAIgAAIgAAIwAHksoxHlAvP9AAAAABJRU5ErkJggg==') 50% -0px repeat-y;
-}
 .p-lightgray_bg .b-wrapper {
     background: #404040;
 }
@@ -260,38 +256,6 @@ h1, h2, h3, h4, h5 {
 .b-Tarantool_title-note,
 .b-Tarantool_title-text {
     text-align:center;
-}
-.b-follow {
-    background:#168de2;
-    color:#FFF;
-    font-size:14px;
-    display:block;
-    width:105px;
-    height:85px;
-    -webkit-border-radius: 53px;
-    -moz-border-radius: 53px;
-    border-radius: 53px;
-    text-decoration:none;
-    text-align:center;
-    padding:20px 0 0 0;
-}
-.b-follow:hover {
-    color:#FFF;
-    background:#2296e9;
-}
-.b-follow:after {
-    content:'';
-    display:block;
-    margin:6px auto 0 auto;
-    width: 55px;
-    height: 43px;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAArCAMAAADrEeCUAAAAbFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8+T+BWAAAAI3RSTlMAMy71OvuYH0An7t5uTkYO1bGKA2YUzb+moYMHkHZbe1LJS0YxdKkAAAGRSURBVEjHndTpcoIwFIbhkA0CBpF91/a7/3tshBls7eSQ9h0d//BwIBjYz3Q3J+xXk9VtyYgaBaB4lzYDkFaEy7E1RI+yazNAtPpSd9jihKvhz/7TPQhnCRdR60I4Q7gL4Yqrl3EFotnrNKiEb+AkQLZ6XAQ6TawKVeFxI+iEx804yePKM+fZEnfQpZ556z/XxYCufwdxFMVsinJFu1vkjnPHXnckJQ97EOsOGM+l2XZPIqV05+JTRrGO8chNc8c+fdXw145MFLGazWvfmPe/+EP4mEgYlek8z4D7zT48GX7NVDdbUS+JLNl9fr+lx/XpxTaMbFHHTfDDKU6IY6LY1/b7A2mrU1dlSLfTf+JbSchAqL5ennfnPp37CuB+7q7FMWUByg9gdD/svPiAFtA3QIY5Vj30RzsUUMnuYmBkwfXAyy3hTgM5MDhngEu4mzfX93915eb0AHDg/qf7k8A4b24IZlygzYG1djyDMIHMCmRcQzWxQskzpFGYi61hXD3XY4SKq3ydWHCmlswla89FfgEfrH0P7hDG2QAAAABJRU5ErkJggg==');
-}
-.b-gray_block .b-follow {
-    position:absolute;
-    right:27px;
-    top:50%;
-    margin-top:-53px;
 }
 .b-section-title {
     font-size:32px;
