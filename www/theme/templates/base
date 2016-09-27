@@ -25,7 +25,7 @@
     {% endblock header_scripts %}
     {% include "script" ignore missing %}
   </head>
-  <body class="p-main">
+  <body>
     <div class="b-wrapper">
       <!-- HEADER > -->
       {{ menu.i_header() }}

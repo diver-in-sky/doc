@@ -208,23 +208,16 @@ h1, h2, h3, h4, h5 {
     float:right;
     display:inline;
 }
-.p-main .b-footer,
 .b-footer {
     height: 50px;
     margin: -50px auto 0 auto;
 }
-.p-main .b-footer-copyright {
-    /*float:none;*/
-    float:left;
-    padding: 0;
-    /*padding:15px 0 0 0;*/
-}
-.p-main .b-footer_menu {
+.b-footer_menu {
     text-align:center;
     float:none;
     width:auto;
 }
-.p-main .b-wrapper:after {
+.b-wrapper:after {
     height:35px;
 }
 .p-cols_design .b-wrapper {
@@ -1885,7 +1878,7 @@ ul.b-social_block a:hover {
         margin: 0 auto;
         overflow: hidden;
     }
-    .p-main .b-footer {
+    .b-footer {
         margin: -55px auto 0 auto;
     }
 
@@ -2427,7 +2420,6 @@ ul.b-social_block a:hover {
     .b-footer_menu .b-menu-item a {
         line-height: 20px;
     }
-    .p-main .b-footer,
     .b-footer {
         height: 80px;
     }
