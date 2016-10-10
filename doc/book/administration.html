@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:       '',
-        VERSION:        '1.7.1',
+        VERSION:        '1.7.2',
         COLLAPSE_INDEX:  false,
         FILE_SUFFIX:    '.html',
         HAS_SOURCE:      true
@@ -40,8 +40,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/stacktable.min.js"></script>
     <script type="text/javascript" src="../_static/headers.js"></script>
-    <script type="text/javascript" src="../_static/jquery.sticky-kit.min.js"></script>
     <script type="text/javascript" src="/js/menu.js"></script>
     <script type="text/javascript" src="/js/mobile_menu.js"></script>
     <link rel="stylesheet" href="/theme/font-awesome.min.css">
@@ -87,9 +87,10 @@
   
   <body class="p-cols_design b-doc-book/administration">
   
-    <div class="b-wrapper">
-      <!-- HEADER > -->
-      
+    <div class="b-scrollview">
+        <div class="b-wrapper">
+        <!-- HEADER > -->
+        
   <header class="b-header">
     <div class="b-header_menu_mobile">
       <div class="b-burger-button">
@@ -170,10 +171,10 @@
     </div>
   </header>
 
-      <!-- < HEADER -->
+        <!-- < HEADER -->
 
-      <div class="b-content b-clearbox">
-        
+        <div class="b-content b-clearbox">
+            
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
       <h2
@@ -220,12 +221,15 @@
 </form>
 
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s new?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../whats_new.html#what-s-new-in-tarantool-1-7">What&#8217;s new in Tarantool 1.7?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro.html#database-features">Database features</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/lua_tutorials.html">1. Lua tutorials</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#insert-one-million-tuples-with-a-lua-stored-procedure">1.1. Insert one million tuples with a Lua stored procedure</a><ul>
@@ -240,7 +244,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-million-tuples-into-the-database">1.1.9. Modify main_function to insert a million tuples into the database</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#tutorial-sum-a-json-field-for-all-tuples">1.2. Tutorial: Sum a JSON field for all tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#sum-a-json-field-for-all-tuples">1.2. Sum a JSON field for all tuples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#indexed-pattern-search">1.3. Indexed pattern search</a></li>
 </ul>
 </li>
@@ -250,7 +254,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">User's Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User&#8217;s Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">1. Preface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="intro.html#how-to-read-the-documentation">1.1. How to read the documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="intro.html#getting-in-touch-with-the-tarantool-community">1.2. Getting in touch with the Tarantool community</a></li>
@@ -274,51 +278,50 @@
 <li class="toctree-l4"><a class="reference internal" href="box/index.html#index-operations">3.1.8. Index operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#the-box-library">3.2. The box library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#transaction-control">3.3. Transaction control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#cooperative-multitasking-environment">3.3.1. Cooperative multitasking environment</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#example">3.3.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#transaction-control">3.2. Transaction control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#cooperative-multitasking-environment">3.2.1. Cooperative multitasking environment</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#example">3.2.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#implicit-yields">3.3.2. Implicit yields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#implicit-yields">3.2.2. Implicit yields</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#access-control">3.4. Access control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#passwords">3.4.1. Passwords</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#users-and-the-user-space">3.4.2. Users and the _user space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#privileges-and-the-priv-space">3.4.3. Privileges and the _priv space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#functions-and-the-func-space">3.4.4. Functions and the _func space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#box-session-and-security">3.4.5. box.session and security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#roles">3.4.6. Roles</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#example-showing-a-role-within-a-role">3.4.6.1. Example showing a role within a role</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#access-control">3.3. Access control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#passwords">3.3.1. Passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#users-and-the-user-space">3.3.2. Users and the _user space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#privileges-and-the-priv-space">3.3.3. Privileges and the _priv space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#functions-and-the-func-space">3.3.4. Functions and the _func space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#box-session-and-security">3.3.5. box.session and security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#roles">3.3.6. Roles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#example-showing-a-role-within-a-role">3.3.6.1. Example showing a role within a role</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#triggers">3.5. Triggers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#connection-triggers">3.5.1. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#id1">3.5.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#triggers">3.4. Triggers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#connection-triggers">3.4.1. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#id3">3.4.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#authentication-triggers">3.5.2. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#lua-module.box.space">3.5.3. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#id2">3.5.3.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#another-example">3.5.3.2. Another example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#authentication-triggers">3.4.2. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#lua-module.box.space">3.4.3. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#id4">3.4.3.1. Example</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#another-example">3.4.3.2. Another example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#getting-a-list-of-triggers">3.5.4. Getting a list of triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#getting-a-list-of-triggers">3.4.4. Getting a list of triggers</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#limitations">3.6. Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#vinyl-storage-engine">3.7. Vinyl storage engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.7.1. Differences between memtx and vinyl storage engines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#vinyl-features">3.7.2. Vinyl features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#under-the-hood">3.7.3. Under the hood</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-first-200-000-keys">3.7.3.1. Inserting the first 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-next-300-000-keys">3.7.3.2. Inserting the next 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-next-200-000-keys">3.7.3.3. Inserting the next 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-last-300-000-keys">3.7.3.4. Inserting the last 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#reading-million-keys">3.7.3.5. Reading million keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#limitations">3.5. Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#vinyl-storage-engine">3.6. Vinyl storage engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.6.1. Differences between memtx and vinyl storage engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#vinyl-features">3.6.2. Vinyl features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#under-the-hood">3.6.3. Under the hood</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-first-200-000-keys">3.6.3.1. Inserting the first 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-next-300-000-keys">3.6.3.2. Inserting the next 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-next-200-000-keys">3.6.3.3. Inserting the next 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-last-300-000-keys">3.6.3.4. Inserting the last 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#reading-million-keys">3.6.3.5. Reading million keys</a></li>
 </ul>
 </li>
 </ul>
@@ -332,7 +335,35 @@
 <li class="toctree-l3"><a class="reference internal" href="app_server.html#creating-a-new-c-c-module-locally">4.4. Creating a new C/C++ module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="app_server.html#creating-a-mixed-lua-c-module-locally">4.5. Creating a mixed Lua/C module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="app_server.html#tips-for-special-situations">4.6. Tips for special situations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_server.html#cookbook-recipes">4.7. Cookbook recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_server.html#cookbook-recipes">4.7. Cookbook recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#hello-world-lua">4.7.1. hello_world.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#console-start-lua">4.7.2. console_start.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#fio-read-lua">4.7.3. fio_read.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#fio-write-lua">4.7.4. fio_write.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#ffi-printf-lua">4.7.5. ffi_printf.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#ffi-gettimeofday-lua">4.7.6. ffi_gettimeofday.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#ffi-zlib-lua">4.7.7. ffi_zlib.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#ffi-meta-lua">4.7.8. ffi_meta.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#print-arrays-lua">4.7.9. print_arrays.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#count-array-lua">4.7.10. count_array.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#count-array-with-nils-lua">4.7.11. count_array_with_nils.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#count-array-with-nulls-lua">4.7.12. count_array_with_nulls.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#count-map-lua">4.7.13. count_map.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#swap-lua">4.7.14. swap.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#uri-lua">4.7.15. uri.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#class-lua">4.7.16. class.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#garbage-lua">4.7.17. garbage.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#fiber-producer-and-consumer-lua">4.7.18. fiber_producer_and_consumer.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#socket-tcpconnect-lua">4.7.19. socket_tcpconnect.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#socket-tcp-echo-lua">4.7.20. socket_tcp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#getaddrinfo-lua">4.7.21. getaddrinfo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#socket-udp-echo-lua">4.7.22. socket_udp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#http-get-lua">4.7.23. http_get.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#http-send-lua">4.7.24. http_send.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#http-server-lua">4.7.25. http_server.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_server.html#http-generate-html-lua">4.7.26. http_generate_html.lua</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5. Server administration</a><ul>
@@ -366,10 +397,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#setting-up-a-replica">5.6.3. Setting up a replica</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#recovering-from-a-degraded-state">5.6.4. Recovering from a degraded state</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#quick-startup-of-a-new-simple-two-server-cluster">5.6.5. Quick startup of a new simple two-server cluster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica's actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica&#8217;s actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#preventing-duplicate-actions">5.6.7. Preventing duplicate actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#master-master-replication">5.6.8. Master-master replication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#all-the-what-if-questions">5.6.9. All the &quot;What If?&quot; questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#all-the-what-if-questions">5.6.9. All the &#8220;What If?&#8221; questions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#hands-on-replication-tutorial">5.6.10. Hands-on replication tutorial</a></li>
 </ul>
 </li>
@@ -407,6 +438,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#customizing-the-service-file">5.12.3. Customizing the service file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#debugging">5.12.4. Debugging</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#precautions">5.12.5. Precautions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limitations">5.12.6. Limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sysvinit-systemd-conversion">5.12.7. sysvinit -&gt; systemd conversion</a></li>
 </ul>
 </li>
 </ul>
@@ -429,15 +462,11 @@
 <li class="toctree-l3"><a class="reference internal" href="connectors/index.html#interpreting-function-return-values">6.11. Interpreting function return values</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="app/a_errcodes.html">7. Appendix A. List of error codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">8. Appendix B. Version-specific changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="app/g_changes.html#changes-in-tarantool-version-1-7">8.1. Changes in Tarantool version 1.7</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">7. FAQ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../reference/reference_lua/index.html">1. Library reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/reference_lua/index.html">1. Built-in library reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box.html">1.1. Module <cite>box</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="box/box_schema.html">1.1.1. Submodule <cite>box.schema</cite></a></li>
 <li class="toctree-l4"><a class="reference internal" href="box/box_space.html">1.1.2. Submodule <cite>box.space</cite></a><ul>
@@ -459,21 +488,6 @@
 <li class="toctree-l5"><a class="reference internal" href="box/box_tuple.html#example">1.1.5.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="box/box_introspection.html">1.1.6. Submodule <cite>box.cfg</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/box_introspection.html#lua-module.box.info">1.1.7. Submodule <cite>box.info</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/box_introspection.html#lua-module.box.slab">1.1.8. Submodule <cite>box.slab</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/box_introspection.html#submodule-box-stat">1.1.9. Submodule <cite>box.stat</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/triggers.html">1.1.10. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/triggers.html#example">1.1.10.1. Example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="box/triggers.html#authentication-triggers">1.1.11. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/triggers.html#lua-module.box.space">1.1.12. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/triggers.html#id1">1.1.12.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/triggers.html#another-example">1.1.12.2. Another example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="box/triggers.html#getting-a-list-of-triggers">1.1.13. Getting a list of triggers</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -498,13 +512,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_ipc.html#example">1.9.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fio.html">1.10. Module <cite>fio</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-pathname-manipulations">1.10.1. Common pathname manipulations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-file-manipulations">1.10.2. Common file manipulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html">1.10. Submodule <cite>fiber-cond</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html#example">1.10.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fun.html">1.11. Module <cite>fun</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/jit.html">1.12. Module <cite>jit</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fio.html">1.11. Module <cite>fio</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-pathname-manipulations">1.11.1. Common pathname manipulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-file-manipulations">1.11.2. Common file manipulations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fun.html">1.12. Module <cite>fun</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/json.html">1.13. Module <cite>json</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/json.html#configuration-settings">1.13.1. Configuration settings</a></li>
 </ul>
@@ -522,32 +539,32 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box_once.html">1.17. Function <cite>box.once</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/os.html">1.18. Module <cite>os</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/pickle.html">1.19. Module <cite>pickle</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/socket.html">1.20. Module <cite>socket</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/socket.html#example">1.20.1. Example</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.20.1.1. Use of a TCP socket over the Internet</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.20.1.2. Use of a UDP socket on localhost</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.20.1.3. Use tcp_server to accept file contents sent with socat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/pickle.html">1.18. Module <cite>pickle</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/socket.html">1.19. Module <cite>socket</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/socket.html#example">1.19.1. Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.19.1.1. Use of a TCP socket over the Internet</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.19.1.2. Use of a UDP socket on localhost</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.19.1.3. Use tcp_server to accept file contents sent with socat</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/strict.html">1.21. Module <cite>strict</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tap.html">1.22. Module <cite>tap</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/tap.html#example">1.22.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/strict.html">1.20. Module <cite>strict</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tap.html">1.21. Module <cite>tap</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/tap.html#example">1.21.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tarantool.html">1.23. Module <cite>tarantool</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/uuid.html">1.24. Module <cite>uuid</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/uuid.html#example">1.24.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tarantool.html">1.22. Module <cite>tarantool</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/uuid.html">1.23. Module <cite>uuid</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/uuid.html#example">1.23.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/yaml.html">1.25. Module <cite>yaml</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/yaml.html#example">1.25.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/yaml.html">1.24. Module <cite>yaml</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/yaml.html#example">1.24.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/other.html">1.26. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/other.html">1.25. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/errcodes.html">1.26. Database error codes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/reference_rock/index.html">2. Rocks reference</a><ul>
@@ -613,7 +630,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributor's Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributor&#8217;s Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dev_guide/reference_capi/index.html">1. C API reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../dev_guide/reference_capi/box.html">1.1. Module <cite>box</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dev_guide/reference_capi/clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -631,8 +648,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../dev_guide/internals_index.html">2. Internals</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../dev_guide/internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool's binary protocol</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#notion-in-diagrams">2.1.1. Notion in diagrams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev_guide/internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool&#8217;s binary protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#notation-in-diagrams">2.1.1. Notation in diagrams</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#greeting-packet">2.1.2. Greeting packet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#unified-packet-structure">2.1.3. Unified packet structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#authentication">2.1.4. Authentication</a></li>
@@ -700,7 +717,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-6-functions">4.3.2.7. Chapter 6: Functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-7-centralized-exiting-of-functions">4.3.2.8. Chapter 7: Centralized exiting of functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-8-commenting">4.3.2.9. Chapter 8: Commenting</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You've made a mess of it</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You&#8217;ve made a mess of it</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-10-kconfig-configuration-files">4.3.2.11. Chapter 10: Kconfig configuration files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-11-data-structures">4.3.2.12. Chapter 11: Data structures</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-12-macros-enums-and-rtl">4.3.2.13. Chapter 12: Macros, Enums and RTL</a></li>
@@ -708,7 +725,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-14-allocating-memory">4.3.2.15. Chapter 14: Allocating memory</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-15-the-inline-disease">4.3.2.16. Chapter 15: The inline disease</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-16-function-return-values-and-names">4.3.2.17. Chapter 16: Function return values and names</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don't re-invent the kernel macros</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don&#8217;t re-invent the kernel macros</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-18-editor-modelines-and-other-cruft">4.3.2.19. Chapter 18:  Editor modelines and other cruft</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#appendix-i-references">4.3.2.20. Appendix I: References</a></li>
 </ul>
@@ -782,7 +799,7 @@
         <li class="b-path-list-item">
           <a href="index.html"
              class="b-path-list-item-url b-ellipsis">
-            User's Guide
+            User&#8217;s Guide
           </a>
         </li>
       
@@ -797,14 +814,14 @@
   </div>
 
   <div class="section" id="server-administration">
-<h1>5. Server administration<a class="headerlink" href="#server-administration" title="Permalink to this headline">¶</a></h1>
+<span id="server-admin"></span><h1>5. Server administration<a class="headerlink" href="#server-administration" title="Permalink to this headline">¶</a></h1>
 <p>Typical server administration tasks include starting and stopping the server,
 reloading configuration, taking snapshots, log rotation.</p>
 <div class="section" id="using-tarantool-as-a-client">
 <span id="administration-using-tarantool-as-a-client"></span><h2>5.1. Using tarantool as a client<a class="headerlink" href="#using-tarantool-as-a-client" title="Permalink to this headline">¶</a></h2>
 <p>If <strong class="program">tarantool</strong> is started without an <a class="reference internal" href="../reference/configuration/index.html#index-init-label"><span class="std std-ref">initialization file</span></a>,
 or if the initialization file contains <a class="reference internal" href="../reference/reference_lua/console.html#console-start"><span class="std std-ref">console.start()</span></a>, then
-<strong class="program">tarantool</strong> enters interactive mode. There will be a prompt (&quot;<code class="docutils literal"><span class="pre">tarantool&gt;</span></code>&quot;)
+<strong class="program">tarantool</strong> enters interactive mode. There will be a prompt (&#8220;<code class="docutils literal"><span class="pre">tarantool&gt;</span></code>&#8221;)
 and it will be possible to enter requests. When used this way, <strong class="program">tarantool</strong>
 can be a client for a remote server.</p>
 <p>This section shows all legal syntax for the <strong class="program">tarantool</strong> program, with
@@ -864,7 +881,7 @@ same thing.</p>
 single quotes. Double quotes are legal but single quotes are preferred.
 Enclosing in double square brackets is good for multi-line strings as
 described in <a class="reference external" href="http://www.lua.org/pil/2.4.html">Lua documentation</a>. <br />
-Examples: 'Hello, world', 'A', [[A\B!]].</p>
+Examples: &#8216;Hello, world&#8217;, &#8216;A&#8217;, [[A\B!]].</p>
 <p>Numeric literals are: Any sequence of one or more digits, not enclosed in
 quotes, optionally preceded by - (minus sign).
 Large or floating-point numeric
@@ -878,7 +895,7 @@ spaces are not necessary around single-byte tokens or string literals.</p>
 <div class="section" id="requests">
 <span id="administration-setting-delimiter"></span><h3>5.1.4. Requests<a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h3>
 <p>Generally requests are entered following the prompt in interactive mode while
-<strong class="program">tarantool</strong> is running. (A prompt will be the word 'tarantool' and a
+<strong class="program">tarantool</strong> is running. (A prompt will be the word &#8216;tarantool&#8217; and a
 greater-than sign, for example <code class="samp docutils literal"><span class="pre">tarantool&gt;</span></code>). The end-of-request marker is
 by default a newline (line feed).</p>
 <p>For multi-line requests, it is possible to change the end-of-request marker.
@@ -936,24 +953,24 @@ an interactive-mode Tarantool client session:</p>
 this result is displayed on the screen. If the request had assigned the result
 to a variable, for example <code class="samp docutils literal"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">box.cfg</span><em><span class="pre">listen=3301</span></em></code>, then the result
 would not have been displayed on the screen.</li>
-<li>A display of an object always begins with &quot;<code class="docutils literal"><span class="pre">---</span></code>&quot; and ends with &quot;<code class="docutils literal"><span class="pre">...</span></code>&quot;.</li>
+<li>A display of an object always begins with &#8220;<code class="docutils literal"><span class="pre">---</span></code>&#8221; and ends with &#8220;<code class="docutils literal"><span class="pre">...</span></code>&#8221;.</li>
 <li>The insert request returns an object of type = tuple, so the object display
-line begins with a single dash ('<code class="docutils literal"><span class="pre">-</span></code>'). However, the select request returns
+line begins with a single dash (&#8216;<code class="docutils literal"><span class="pre">-</span></code>&#8216;). However, the select request returns
 an object of type = table of tuples, so the object display line begins with
-two dashes ('<code class="docutils literal"><span class="pre">-</span> <span class="pre">-</span></code>').</li>
+two dashes (&#8216;<code class="docutils literal"><span class="pre">-</span> <span class="pre">-</span></code>&#8216;).</li>
 </ul>
 </div>
 </div>
 <div class="section" id="utility-tarantoolctl">
 <span id="administration-tarantoolctl"></span><h2>5.2. Utility tarantoolctl<a class="headerlink" href="#utility-tarantoolctl" title="Permalink to this headline">¶</a></h2>
-<p>With <strong class="program">tarantoolctl</strong>, you can say: &quot;start an instance of the Tarantool
+<p>With <strong class="program">tarantoolctl</strong>, you can say: &#8220;start an instance of the Tarantool
 server which runs a single user-written Lua program, allocating disk resources
-specifically for that program, via a standardized deployment method.&quot;</p>
+specifically for that program, via a standardized deployment method.&#8221;</p>
 <p>If Tarantool was installed with Debian or
 Red Hat installation packages, the script is
 in <code class="file docutils literal"><span class="pre">/usr/bin/tarantoolctl</span></code> or <code class="file docutils literal"><span class="pre">/usr/local/bin/tarantoolctl</span></code>.
 The script handles such things as:
-starting, stopping, rotating logs, logging in to the application's console,
+starting, stopping, rotating logs, logging in to the application&#8217;s console,
 and checking status.</p>
 <p>Also, you can use <strong class="program">tarantoolctl</strong>
 <a class="reference internal" href="#administration-tarantoolctl-connect"><span class="std std-ref">as a client</span></a> to connect to another
@@ -962,7 +979,7 @@ instance of Tarantool server and pass requests.</p>
 <h3>5.2.1. Configuration for tarantoolctl<a class="headerlink" href="#configuration-for-tarantoolctl" title="Permalink to this headline">¶</a></h3>
 <p>The <strong class="program">tarantoolctl</strong> script will look for a configuration file
 in the current directory (<code class="file docutils literal"><span class="pre">$PWD/.tarantoolctl</span></code>).
-If that fails, it looks in the current user's home directory
+If that fails, it looks in the current user&#8217;s home directory
 (<code class="file docutils literal"><span class="pre">$HOME/.config/tarantool/tarantool</span></code>).
 If that fails, it looks in the SYSCONFDIR directory (usually
 <code class="file docutils literal"><span class="pre">/etc/sysconfig/tarantool</span></code>, but it may be different on some platforms).
@@ -985,26 +1002,26 @@ settings, would look like this:</p>
 <dl class="docutils">
 <dt><code class="docutils literal"><span class="pre">pid_file</span></code></dt>
 <dd>The directory for the pid file and control-socket file. The
-script will add &quot;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em></code>&quot; to the directory name.</dd>
+script will add &#8220;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em></code>&#8221; to the directory name.</dd>
 <dt><code class="docutils literal"><span class="pre">wal_dir</span></code></dt>
 <dd>The directory for the write-ahead <code class="file docutils literal"><span class="pre">*.xlog</span></code> files. The
-script will add &quot;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em></code>&quot; to the directory-name.</dd>
+script will add &#8220;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em></code>&#8221; to the directory-name.</dd>
 <dt><code class="docutils literal"><span class="pre">snap_dir</span></code></dt>
 <dd>The directory for the snapshot <code class="file docutils literal"><span class="pre">*.snap</span></code> files. The script
-will add &quot;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em></code>&quot; to the directory-name.</dd>
+will add &#8220;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em></code>&#8221; to the directory-name.</dd>
 <dt><code class="docutils literal"><span class="pre">vinyl_dir</span></code></dt>
 <dd>The directory for the vinyl-storage-engine files. The script
-will add &quot;<code class="samp docutils literal"><span class="pre">/vinyl/</span><em><span class="pre">instance-name</span></em></code>&quot; to the directory-name.</dd>
+will add &#8220;<code class="samp docutils literal"><span class="pre">/vinyl/</span><em><span class="pre">instance-name</span></em></code>&#8221; to the directory-name.</dd>
 <dt><code class="docutils literal"><span class="pre">logger</span></code></dt>
 <dd>The place where the application log will go. The script will
-add &quot;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em><span class="pre">.log</span></code>&quot; to the name.</dd>
+add &#8220;<code class="samp docutils literal"><span class="pre">/</span><em><span class="pre">instance-name</span></em><span class="pre">.log</span></code>&#8221; to the name.</dd>
 <dt><code class="docutils literal"><span class="pre">username</span></code></dt>
 <dd>The user that runs the Tarantool server. This is the operating-system
 user name rather than the Tarantool-client user name.</dd>
 <dt><code class="docutils literal"><span class="pre">instance_dir</span></code></dt>
 <dd>The directory where all applications for this host are stored. The user
 who writes an application for <strong class="program">tarantoolctl</strong> must put the
-application's source code in this directory, or a symbolic link. For
+application&#8217;s source code in this directory, or a symbolic link. For
 examples in this section the application name <code class="docutils literal"><span class="pre">my_app</span></code> will be used, and
 its source will have to be in <code class="samp docutils literal"><em><span class="pre">instance_dir</span></em><span class="pre">/my_app.lua</span></code>.</dd>
 </dl>
@@ -1028,19 +1045,19 @@ operation is one of: start, stop, enter, logrotate, status, eval. Thus ...</p>
 <dl class="option">
 <dt id="cmdoption-tarantoolctl-arg-enter">
 <code class="descname">enter</code><code class="descclassname"> &lt;application&gt;</code><a class="headerlink" href="#cmdoption-tarantoolctl-arg-enter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Show application's admin console</p>
+<dd><p>Show application&#8217;s admin console</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-tarantoolctl-arg-logrotate">
 <code class="descname">logrotate</code><code class="descclassname"> &lt;application&gt;</code><a class="headerlink" href="#cmdoption-tarantoolctl-arg-logrotate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Rotate application's log files (make new, remove old)</p>
+<dd><p>Rotate application&#8217;s log files (make new, remove old)</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-tarantoolctl-arg-status">
 <code class="descname">status</code><code class="descclassname"> &lt;application&gt;</code><a class="headerlink" href="#cmdoption-tarantoolctl-arg-status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check application's status</p>
+<dd><p>Check application&#8217;s status</p>
 </dd></dl>
 
 <dl class="option">
@@ -1087,11 +1104,11 @@ operation is one of: start, stop, enter, logrotate, status, eval. Thus ...</p>
 </div>
 <div class="section" id="a-detailed-example-for-tarantoolctl">
 <h3>5.2.4. A detailed example for tarantoolctl<a class="headerlink" href="#a-detailed-example-for-tarantoolctl" title="Permalink to this headline">¶</a></h3>
-<p>The example's objective is to make a temporary directory where
+<p>The example&#8217;s objective is to make a temporary directory where
 <strong class="program">tarantoolctl</strong> can start a long-running application and monitor it.</p>
 <p>The assumptions are: the root password is known, the computer is only being used
 for tests, the Tarantool server is ready to run but is not currently running,
-tarantoolctl is installed along the user's path,
+tarantoolctl is installed along the user&#8217;s path,
 and there currently is no directory named <code class="file docutils literal"><span class="pre">tarantool_test</span></code>.</p>
 <p>Create a directory named <code class="file docutils literal"><span class="pre">/tarantool_test</span></code>:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo mkdir /tarantool_test
@@ -1141,7 +1158,7 @@ Let the file contents be:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo less /tarantool_test/log/my_app.log
 </pre></div>
 </div>
-<p>... expect to see the contents of <code class="docutils literal"><span class="pre">my_app</span></code>'s log, including error messages, if
+<p>... expect to see the contents of <code class="docutils literal"><span class="pre">my_app</span></code>&#8216;s log, including error messages, if
 any. Then ...</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /tarantool_test
 <span class="gp">$</span> <span class="c1"># assume that &#39;tarantool&#39; invokes the tarantool server</span>
@@ -1171,7 +1188,7 @@ and ...</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">There are alternatives to <strong class="program">tarantoolctl connect</strong> -- you can use
+<p class="last">There are alternatives to <strong class="program">tarantoolctl connect</strong> &#8211; you can use
 the <a class="reference internal" href="../reference/reference_lua/console.html#console-module"><span class="std std-ref">console module</span></a> or the
 <a class="reference internal" href="../reference/reference_lua/net_box.html#net-box-module"><span class="std std-ref">net.box module</span></a> from a Tarantool server.
 Also, you can write your client programs with any of the
@@ -1183,11 +1200,11 @@ usage with either <strong class="program">tarantoolctl connect</strong> or with
 </div>
 <div class="section" id="administrative-ports">
 <span id="administration-admin-ports"></span><h2>5.3. Administrative ports<a class="headerlink" href="#administrative-ports" title="Permalink to this headline">¶</a></h2>
-<p>&quot;Admin port&quot;, &quot;admin console&quot;, and &quot;text protocol&quot; all
+<p>&#8220;Admin port&#8221;, &#8220;admin console&#8221;, and &#8220;text protocol&#8221; all
 refer to the same thing: a connection which is set up
 with <a class="reference internal" href="../reference/reference_lua/console.html#console-listen"><span class="std std-ref">console.listen(...)</span></a> for entry of requests by
 administrators.</p>
-<p>&quot;Binary port&quot;, &quot;binary protocol&quot;, and &quot;primary port&quot;
+<p>&#8220;Binary port&#8221;, &#8220;binary protocol&#8221;, and &#8220;primary port&#8221;
 all refer to a different thing: a connection which is set up
 with <a class="reference internal" href="../reference/configuration/index.html#cfg-basic-listen"><span class="std std-ref">box.cfg{listen=...}</span></a> for entry of requests by
 anyone.</p>
@@ -1196,7 +1213,7 @@ But admin ports are useful for special cases involving security.</p>
 <p>When you connect to an admin port:</p>
 <ul class="simple">
 <li>No password is necessary</li>
-<li>The user is automatically 'admin', a user with many privileges.</li>
+<li>The user is automatically &#8216;admin&#8217;, a user with many privileges.</li>
 </ul>
 <p>Therefore you must set up admin ports very cautiously.
 If it is a TCP port, it should only be opened for a specific IP.
@@ -1216,11 +1233,11 @@ Alternatively both setup and connection can be done with
 <a class="reference internal" href="#administration-tarantoolctl"><span class="std std-ref">tarantoolctl</span></a>.</p>
 <p>If no administrator password exists which could be given out to users,
 and admin ports are restricted or are sockets,
-then requests which require 'admin' privileges can only occur locally,
+then requests which require &#8216;admin&#8217; privileges can only occur locally,
 and are subject to Unix security and monitoring.</p>
 <p>For additional security, some requests are illegal.
-For example, <a class="reference internal" href="../reference/reference_lua/net_box.html#net-box-eval"><span class="std std-ref">&quot;conn:eval&quot;</span></a>  will result in the error message
-&quot;- error: console does not support this request type&quot;
+For example, <a class="reference internal" href="../reference/reference_lua/net_box.html#net-box-eval"><span class="std std-ref">&#8220;conn:eval&#8221;</span></a>  will result in the error message
+&#8220;- error: console does not support this request type&#8221;
 because <code class="docutils literal"><span class="pre">conn:eval</span></code> requires the binary protocol.</p>
 <p>If security via admin ports is not necessary, it is still possible
 to be an admin user by
@@ -1232,12 +1249,12 @@ For example:</p>
 <span class="go">Trying 0.0.0.0...</span>
 <span class="go">Connected to 0.</span>
 <span class="go">Escape character is &#39;^]&#39;.</span>
-<span class="go">Tarantool 1.7.1-70-gbc479ad (Lua console)</span>
+<span class="go">Tarantool 1.7.2-70-gbc479ad (Lua console)</span>
 <span class="go">type &#39;help&#39; for interactive help</span>
 </pre></div>
 </div>
-<p>In this example the response does not include the word &quot;binary&quot;
-and does include the words &quot;Lua console&quot;. Therefore it is
+<p>In this example the response does not include the word &#8220;binary&#8221;
+and does include the words &#8220;Lua console&#8221;. Therefore it is
 clear that this is a successful connection to an admin
 port, and admin requests can now be entered on this terminal.</p>
 </div>
@@ -1271,7 +1288,7 @@ a fork, which could cause occasional latency spikes. Starting with
 Tarantool version 1.6.6, the snapshot process creates a consistent
 read view and writes this view to the snapshot file from a separate thread.</p>
 <p>Although box.snapshot() does not cause a fork, there is a separate fiber
-which may produce snapshots at regular intervals -- see the discussion of
+which may produce snapshots at regular intervals &#8211; see the discussion of
 the <a class="reference internal" href="../reference/configuration/index.html#book-cfg-snapshot-daemon"><span class="std std-ref">snapshot daemon</span></a>.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="n">version</span>
@@ -1312,9 +1329,9 @@ take some time. Mainly useful for debugging.</p>
 <div class="section" id="lua-module.box.cfg">
 <span id="submodule-box-cfg"></span><span id="box-introspection-box-cfg"></span><h3>5.5.1. Submodule <cite>box.cfg</cite><a class="headerlink" href="#lua-module.box.cfg" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">box.cfg</span></code> submodule is for administrators to specify all the server
-configuration parameters; the full description of the parameters is in
-section <a class="reference internal" href="../reference/configuration/index.html#index-book-cfg"><span class="std std-ref">book-cfg</span></a>. Use <code class="docutils literal"><span class="pre">box.cfg</span></code> without braces to get read-only
-access to those parameters.</p>
+configuration parameters (see &#8220;Configuration reference&#8221; for
+<a class="reference internal" href="../reference/configuration/index.html#box-cfg-params"><span class="std std-ref">a complete description of all configuration parameters</span></a>).
+Use <code class="docutils literal"><span class="pre">box.cfg</span></code> without braces to get read-only access to those parameters.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span>
 <span class="nn">---</span>
@@ -1329,22 +1346,41 @@ access to those parameters.</p>
 </div>
 </div>
 <div class="section" id="lua-module.box.info">
-<span id="submodule-box-info"></span><h3>5.5.2. Submodule <cite>box.info</cite><a class="headerlink" href="#lua-module.box.info" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">box.info</span></code> submodule provides access to information about server variables.
-Some important ones:</p>
+<span id="submodule-box-info"></span><span id="box-introspection-box-info"></span><h3>5.5.2. Submodule <cite>box.info</cite><a class="headerlink" href="#lua-module.box.info" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">box.info</span></code> submodule provides access to information about server variables.</p>
 <ul class="simple">
-<li><strong>server.uuid</strong> holds the unique identifier of the server. This value is also
+<li><strong>server.lsn</strong> Log Sequence Number for the latest entry in the WAL.</li>
+<li><strong>server.ro</strong>  True if the server is in &#8220;read_only&#8221; mode
+(same as <a class="reference internal" href="../reference/configuration/index.html#cfg-basic-read-only"><span class="std std-ref">read_only</span></a> in box.cfg).</li>
+<li><strong>server.uuid</strong> The unique identifier of this server,
+as stored in the database. This value is also
 in the <a class="reference internal" href="box/box_space.html#box-space-cluster"><span class="std std-ref">box.space._cluster</span></a> system space.</li>
-<li><strong>pid</strong> is the process ID of the server. This value is also shown by the
-<a class="reference internal" href="../reference/reference_lua/tarantool.html#tarantool-build"><span class="std std-ref">tarantool</span></a> module.</li>
-<li><strong>version</strong> is the Tarantool version. This value is also shown by
-<a class="reference internal" href="../reference/configuration/index.html#index-tarantool-version"><span class="std std-ref">tarantool --version</span></a>.</li>
-<li><strong>uptime</strong> is the number of seconds since the server started.</li>
+<li><strong>server.id</strong> The number of this server within a cluster.</li>
+<li><strong>version</strong> Tarantool version. This value is also shown by
+<a class="reference internal" href="../reference/configuration/index.html#index-tarantool-version"><span class="std std-ref">tarantool &#8211;version</span></a>.</li>
+<li><strong>status</strong> Usually this is &#8216;running&#8217;, but it can be &#8216;loading&#8217;, &#8216;orphan&#8217;, or &#8216;hot_standby&#8217;.</li>
+<li><strong>vclock</strong> Same as replication.vclock.</li>
+<li><strong>pid</strong> Process ID. This value is also shown by the
+<a class="reference internal" href="../reference/reference_lua/tarantool.html#tarantool-build"><span class="std std-ref">tarantool</span></a> module.
+This value is also shown by the Linux &#8220;ps -A&#8221; command.</li>
+<li><strong>cluster.uuid</strong> UUID of the cluster. Every server in a cluster will have the same cluster.uuid value.
+This value is also in the <a class="reference internal" href="box/box_space.html#box-space-schema"><span class="std std-ref">box.space._schema</span></a> system space.</li>
+<li><strong>vinyl()</strong> Returns runtime statistics for the vinyl storage engine.</li>
+<li><strong>replication.lag</strong> Number of seconds that the replica is behind the master.</li>
+<li><strong>replication.status</strong> Usually this is &#8216;follow&#8217;, but it can be
+&#8216;off&#8217;, &#8216;stopped&#8217;, &#8216;connecting&#8217;, &#8216;auth&#8217;, or &#8216;disconnected&#8217;.</li>
+<li><strong>replication.idle</strong> Number of seconds that the server has been idle.</li>
+<li><strong>replication.vclock</strong> See the <a class="reference internal" href="../dev_guide/internals_index.html#internals-vector"><span class="std std-ref">discussion of &#8220;vector clock&#8221;</span></a> in the Internals section.</li>
+<li><strong>replication.uuid</strong> The unique identifier of a master to which this server is connected.</li>
+<li><strong>replication.uptime</strong> Number of seconds since the server started.
+This value can also be retrieved with <a class="reference internal" href="../reference/reference_lua/tarantool.html#tarantool-build"><span class="std std-ref">tarantool.uptime()</span></a>.</li>
 </ul>
-<span class="target" id="box-introspection-box-info"></span><dl class="function">
+<p>The replication fields are blank unless the server is a <a class="reference internal" href="#index-box-replication"><span class="std std-ref">replica</span></a>.
+The replication fields are in an array if the server is a replica for more than one master.</p>
+<dl class="function">
 <dt id="lua-function.box.info">
 <em class="property"> </em><code class="descclassname">box.</code><code class="descname">info</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.box.info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Since <code class="docutils literal"><span class="pre">box.info</span></code> contents are dynamic, it's not possible to iterate over
+<dd><p>Since <code class="docutils literal"><span class="pre">box.info</span></code> contents are dynamic, it&#8217;s not possible to iterate over
 keys with the Lua <code class="docutils literal"><span class="pre">pairs()</span></code> function. For this purpose, <code class="docutils literal"><span class="pre">box.info()</span></code>
 builds and returns a Lua table with all keys and values provided in the
 submodule.</p>
@@ -1366,7 +1402,7 @@ submodule.</p>
     <span class="l l-Scalar l-Scalar-Plain">ro</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
     <span class="l l-Scalar l-Scalar-Plain">uuid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">a2684219-b2b1-4334-88ab-50b0722283fd</span>
     <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.7.0-1216-g73f7154</span>
+  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.7.2-435-g6ba8500</span>
   <span class="l l-Scalar l-Scalar-Plain">pid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12932</span>
   <span class="l l-Scalar l-Scalar-Plain">status</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">running</span>
   <span class="l l-Scalar l-Scalar-Plain">vclock</span><span class="p p-Indicator">:</span>
@@ -1389,7 +1425,7 @@ submodule.</p>
 <span class="nn">...</span>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="n">version</span>
 <span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1.7.0-66-g9093daa</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1.7.2-435-g6ba8500</span>
 <span class="nn">...</span>
 </pre></div>
 </div>
@@ -1397,11 +1433,11 @@ submodule.</p>
 
 </div>
 <div class="section" id="lua-module.box.slab">
-<span id="submodule-box-slab"></span><h3>5.5.3. Submodule <cite>box.slab</cite><a class="headerlink" href="#lua-module.box.slab" title="Permalink to this headline">¶</a></h3>
+<span id="submodule-box-slab"></span><span id="box-introspection-box-slab"></span><h3>5.5.3. Submodule <cite>box.slab</cite><a class="headerlink" href="#lua-module.box.slab" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">box.slab</span></code> submodule provides access to slab allocator statistics. The
 slab allocator is the main allocator used to store tuples. This can be used
 to monitor the total memory use and memory fragmentation.</p>
-<p>The display of slabs is broken down by the slab size -- 64-byte, 136-byte,
+<p>The display of slabs is broken down by the slab size &#8211; 64-byte, 136-byte,
 and so on. The example omits the slabs which are empty. The example display
 is saying that: there are 16 items stored in the 64-byte slab (and 16*64=102
 so bytes_used = 1024); there is 1 item stored in the 136-byte slab
@@ -1524,9 +1560,9 @@ requests since startup, broken down by request type and network events statistic
 <p id="index-box-replication">Replication allows multiple Tarantool servers to work on copies of the same
 databases. The databases are kept in synch because each server can communicate
 its changes to all the other servers. Servers which share the same databases
-are a &quot;cluster&quot;. Each server in a cluster also has a numeric identifier which
-is unique within the cluster, known as the &quot;server id&quot;.</p>
-<p>To set up replication, it's necessary to set up the master servers which
+are a &#8220;cluster&#8221;. Each server in a cluster also has a numeric identifier which
+is unique within the cluster, known as the &#8220;server id&#8221;.</p>
+<p>To set up replication, it&#8217;s necessary to set up the master servers which
 make the original data-change requests, set up the replica servers which
 copy data-change requests from masters, and establish procedures for
 recovery from a degraded state.</p>
@@ -1545,9 +1581,9 @@ not cause replication to go out of sync.</p>
 </div>
 <div class="section" id="setting-up-a-master">
 <h3>5.6.2. Setting up a master<a class="headerlink" href="#setting-up-a-master" title="Permalink to this headline">¶</a></h3>
-<p>To prepare the master for connections from the replica, it's only necessary
-to include &quot;<a class="reference internal" href="../reference/configuration/index.html#cfg-basic-listen"><span class="std std-ref">listen</span></a>&quot; in the initial <code class="docutils literal"><span class="pre">box.cfg</span></code> request,
-for example <code class="docutils literal"><span class="pre">box.cfg{listen=3301}</span></code>. A master with enabled &quot;listen&quot; URI can accept
+<p>To prepare the master for connections from the replica, it&#8217;s only necessary
+to include &#8220;<a class="reference internal" href="../reference/configuration/index.html#cfg-basic-listen"><span class="std std-ref">listen</span></a>&#8221; in the initial <code class="docutils literal"><span class="pre">box.cfg</span></code> request,
+for example <code class="docutils literal"><span class="pre">box.cfg{listen=3301}</span></code>. A master with enabled &#8220;listen&#8221; URI can accept
 connections from as many replicas as necessary on that URI. Each replica
 has its own <a class="reference internal" href="#index-monitoring-replica-actions"><span class="std std-ref">replication state</span></a>.</p>
 </div>
@@ -1555,9 +1591,9 @@ has its own <a class="reference internal" href="#index-monitoring-replica-action
 <h3>5.6.3. Setting up a replica<a class="headerlink" href="#setting-up-a-replica" title="Permalink to this headline">¶</a></h3>
 <p>A server requires a valid snapshot (.snap) file. A snapshot file is created
 for a server the first time that <code class="docutils literal"><span class="pre">box.cfg</span></code> occurs for it. If this first
-<code class="docutils literal"><span class="pre">box.cfg</span></code> request occurs without a &quot;replication source&quot; clause, then the
+<code class="docutils literal"><span class="pre">box.cfg</span></code> request occurs without a &#8220;replication source&#8221; clause, then the
 server is a master and starts its own new cluster with a new unique UUID.
-If this first <code class="docutils literal"><span class="pre">box.cfg</span></code> request occurs with a &quot;replication source&quot; clause,
+If this first <code class="docutils literal"><span class="pre">box.cfg</span></code> request occurs with a &#8220;replication source&#8221; clause,
 then the server is a replica and its snapshot file, along with the cluster
 information, is constructed from the write-ahead logs of the master.
 Therefore, to start replication, specify <a class="reference internal" href="../reference/configuration/index.html#cfg-replication-replication-source"><span class="std std-ref">replication_source</span></a>
@@ -1566,20 +1602,20 @@ it becomes part of a cluster. On subsequent occasions, it should always contact
 a master in the same cluster.</p>
 <p>Once connected to the master, the replica requests all changes that happened
 after the latest local LSN. It is therefore necessary to keep WAL files on
-the master host as long as there are replicas that haven't applied them yet.
-A replica can be &quot;re-seeded&quot; by deleting all its files (the snapshot .snap
+the master host as long as there are replicas that haven&#8217;t applied them yet.
+A replica can be &#8220;re-seeded&#8221; by deleting all its files (the snapshot .snap
 file and the WAL .xlog files), then starting replication again - the replica
-will then catch up with the master by retrieving all the master's tuples.
-Again, this procedure works only if the master's WAL files are present.</p>
+will then catch up with the master by retrieving all the master&#8217;s tuples.
+Again, this procedure works only if the master&#8217;s WAL files are present.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Replication parameters are &quot;dynamic&quot;, which allows the replica to become
+<p class="last">Replication parameters are &#8220;dynamic&#8221;, which allows the replica to become
 a master and vice versa with the help of the
-<a class="reference internal" href="box/box_introspection.html#box-introspection-box-cfg"><span class="std std-ref">box.cfg</span></a> statement.</p>
+<a class="reference internal" href="#box-introspection-box-cfg"><span class="std std-ref">box.cfg</span></a> statement.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The replica does not inherit the master's configuration parameters, such
+<p class="last">The replica does not inherit the master&#8217;s configuration parameters, such
 as the ones that cause the <a class="reference internal" href="../reference/configuration/index.html#book-cfg-snapshot-daemon"><span class="std std-ref">snapshot daemon</span></a>
 to run on the master. To get the same behavior, one would have to set the
 relevant parameters explicitly so that they are the same on both master and
@@ -1596,14 +1632,14 @@ who will start the replica.</p>
 </div>
 <div class="section" id="recovering-from-a-degraded-state">
 <h3>5.6.4. Recovering from a degraded state<a class="headerlink" href="#recovering-from-a-degraded-state" title="Permalink to this headline">¶</a></h3>
-<p>&quot;Degraded state&quot; is a situation when the master becomes unavailable - due to
+<p>&#8220;Degraded state&#8221; is a situation when the master becomes unavailable - due to
 hardware or network failure, or due to a programming bug. There is no automatic
 way for a replica to detect that the master is gone forever, since sources of
 failure and replication environments vary significantly. So the detection of
 degraded state requires a human inspection.</p>
 <p>However, once a master failure is detected, the recovery is simple: declare
 that the replica is now the new master, by saying
-<span class="ccode">box.cfg{... listen=</span><span class="ccodei">URI &lt;index-uri&gt;</span><span class="ccode">}</span>.
+<span class="ccode">box.cfg{... listen=</span><span class="ccodei">URI</span><span class="ccode">}</span>.
 Then, if there are updates on the old master that were not propagated before
 the old master went down, they would have to be re-applied manually.</p>
 </div>
@@ -1617,11 +1653,11 @@ box.schema.user.grant('guest', 'read,write,execute', 'universe')
 box.snapshot()
 </pre>
 <p>... Now a new cluster exists.</p>
-<p>Step 2. Check where the second server's files will go by looking at its
+<p>Step 2. Check where the second server&#8217;s files will go by looking at its
 directories (<a class="reference internal" href="../reference/configuration/index.html#cfg-basic-snap-dir"><span class="std std-ref">snap_dir</span></a> for snapshot files, <a class="reference internal" href="../reference/configuration/index.html#cfg-basic-wal-dir"><span class="std std-ref">wal_dir</span></a> for .xlog files).
 They must be empty - when the second server joins for the first time, it
 has to be working with a clean state so that the initial copy of the first
-server's databases can happen without conflicts.</p>
+server&#8217;s databases can happen without conflicts.</p>
 <p>Step 3. Start the second server thus:</p>
 <pre class="highlight literal-block">
 box.cfg{
@@ -1630,9 +1666,9 @@ box.cfg{
 }
 </pre>
 <p>... where <code class="docutils literal"><span class="pre">uri#1</span></code> = the <a class="reference internal" href="../reference/configuration/index.html#index-uri"><span class="std std-ref">URI</span></a> that the first server is listening on.</p>
-<p>That's all.</p>
-<p>In this configuration, the first server is the &quot;master&quot; and the second server
-is the &quot;replica&quot;. Henceforth every change that happens on the master will be
+<p>That&#8217;s all.</p>
+<p>In this configuration, the first server is the &#8220;master&#8221; and the second server
+is the &#8220;replica&#8221;. Henceforth every change that happens on the master will be
 visible on the replica. A simple two-server cluster with the master on one
 computer and the replica on a different computer is very common and provides
 two benefits: FAILOVER (because if the master goes down then the replica can
@@ -1641,12 +1677,11 @@ or the replica for select requests). Sometimes the replica may be configured wit
 the additional parameter <a class="reference internal" href="../reference/configuration/index.html#cfg-basic-read-only"><span class="std std-ref">read_only = true</span></a>.</p>
 </div>
 <div class="section" id="monitoring-a-replica-s-actions">
-<span id="index-monitoring-replica-actions"></span><h3>5.6.6. Monitoring a replica's actions<a class="headerlink" href="#monitoring-a-replica-s-actions" title="Permalink to this headline">¶</a></h3>
-<p>In <a class="reference internal" href="box/box_introspection.html#box-introspection-box-info"><span class="std std-ref">box.info</span></a> there is a <code class="docutils literal"><span class="pre">box.info.replication.status</span></code> field:
-&quot;off&quot;, &quot;stopped&quot;, &quot;connecting&quot;, &quot;auth&quot;, &quot;follow&quot;, or &quot;disconnected&quot;. <br />
-If a replica's status is &quot;follow&quot;, then there will be two more fields: <br />
-<code class="docutils literal"><span class="pre">box.info.replication.idle</span></code> = the number of seconds the replica has been idle, <br />
-<code class="docutils literal"><span class="pre">box.info.replication.lag</span></code> = the number of seconds the replica is behind the master.</p>
+<span id="index-monitoring-replica-actions"></span><h3>5.6.6. Monitoring a replica&#8217;s actions<a class="headerlink" href="#monitoring-a-replica-s-actions" title="Permalink to this headline">¶</a></h3>
+<p>In <a class="reference internal" href="#box-introspection-box-info"><span class="std std-ref">box.info</span></a> there is a <code class="docutils literal"><span class="pre">box.info.replication.status</span></code> field:
+&#8220;off&#8221;, &#8220;stopped&#8221;, &#8220;connecting&#8221;, &#8220;auth&#8221;, &#8220;follow&#8221;, or &#8220;disconnected&#8221;. <br />
+If a replica&#8217;s status is &#8220;follow&#8221;, then there will be more fields &#8211;
+the list is in the section <a class="reference internal" href="#box-introspection-box-info"><span class="std std-ref">Submodule box.info</span></a>.</p>
 <p>In the <a class="reference internal" href="../reference/reference_lua/log.html#log"><span class="std std-ref">log</span></a> there is a record of replication activity.
 If a primary server is started with:</p>
 <pre class="highlight literal-block">
@@ -1656,7 +1691,7 @@ box.cfg{
   &lt;...&gt;
 }
 </pre>
-<p>then there will be lines in the log file, containing the word &quot;relay&quot;,
+<p>then there will be lines in the log file, containing the word &#8220;relay&#8221;,
 when a replica connects or disconnects.</p>
 </div>
 <div class="section" id="preventing-duplicate-actions">
@@ -1664,7 +1699,7 @@ when a replica connects or disconnects.</p>
 <p>Suppose that the replica tries to do something that the master has already done.
 For example: <br />
 <code class="docutils literal"><span class="pre">box.schema.space.create('X')</span></code> <br />
-This would cause an error, &quot;Space X exists&quot;.
+This would cause an error, &#8220;Space X exists&#8221;.
 For this particular situation, the code could be changed to: <br />
 <code class="docutils literal"><span class="pre">box.schema.space.create('X',</span> <span class="pre">{if_not_exists=true})</span></code> <br />
 But there is a more general solution: the
@@ -1684,29 +1719,29 @@ which is executed via <code class="docutils literal"><span class="pre">box.once(
 </div>
 <div class="section" id="master-master-replication">
 <h3>5.6.8. Master-master replication<a class="headerlink" href="#master-master-replication" title="Permalink to this headline">¶</a></h3>
-<p>In the simple master-replica configuration, the master's changes are seen by
+<p>In the simple master-replica configuration, the master&#8217;s changes are seen by
 the replica, but not vice versa, because the master was specified as the sole
 replication source. In the master-master configuration,
 also sometimes called multi-master configuration,
-it's possible to go both ways.
+it&#8217;s possible to go both ways.
 Starting with the simple configuration, the first server has to say:</p>
 <pre class="highlight literal-block">
 box.cfg{ replication_source = <em>uri#2</em> }
 </pre>
-<p>This request can be performed at any time --
+<p>This request can be performed at any time &#8211;
 <a class="reference internal" href="../reference/configuration/index.html#cfg-replication-replication-source"><span class="std std-ref">replication_source</span></a> is a dynamic parameter.</p>
-<p>In this configuration, both servers are &quot;masters&quot; and both servers are
-&quot;replicas&quot;. Henceforth every change that happens on either server will
+<p>In this configuration, both servers are &#8220;masters&#8221; and both servers are
+&#8220;replicas&#8221;. Henceforth every change that happens on either server will
 be visible on the other. The failover benefit is still present, and the
 load-balancing benefit is enhanced (because clients can connect to either
 server for data-change requests as well as select requests).</p>
-<p>If two operations for the same tuple take place &quot;concurrently&quot; (which can
+<p>If two operations for the same tuple take place &#8220;concurrently&#8221; (which can
 involve a long interval because replication is asynchronous), and one of
 the operations is <code class="docutils literal"><span class="pre">delete</span></code> or <code class="docutils literal"><span class="pre">replace</span></code>, there is a possibility that
 servers will end up with different contents.</p>
 </div>
 <div class="section" id="all-the-what-if-questions">
-<h3>5.6.9. All the &quot;What If?&quot; questions<a class="headerlink" href="#all-the-what-if-questions" title="Permalink to this headline">¶</a></h3>
+<h3>5.6.9. All the &#8220;What If?&#8221; questions<a class="headerlink" href="#all-the-what-if-questions" title="Permalink to this headline">¶</a></h3>
 <p>Q: What if there are more than two servers with master-master? <br />
 A: On each server, specify the <a class="reference internal" href="../reference/configuration/index.html#cfg-replication-replication-source"><span class="std std-ref">replication_source</span></a> for all the
 others. For example, server #3 would have a request: <br />
@@ -1721,7 +1756,7 @@ A: The other servers carry on. If the wayward server rejoins, it will
 receive all the updates that the other servers made while it was away.</p>
 <p>Q: What if two servers both change the same tuple? <br />
 A: The last changer wins. For example, suppose that server#1 changes the
-tuple, then server#2 changes the tuple. In that case server#2's change
+tuple, then server#2 changes the tuple. In that case server#2&#8217;s change
 overrides whatever server#1 did. In order to keep track of who came last,
 Tarantool implements a <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_clock">vector clock</a>.</p>
 <p>Q: What if two servers both insert the same tuple? <br />
@@ -1732,21 +1767,21 @@ It will have to be restarted manually.</p>
 A: A message will appear on the replica stating that the connection is
 lost. The replica must now become independent, which can be done by
 saying <code class="docutils literal"><span class="pre">box.cfg{replication_source=''}</span></code>.</p>
-<p>Q: What if it's necessary to know what cluster a server is in? <br />
+<p>Q: What if it&#8217;s necessary to know what cluster a server is in? <br />
 A: The identification of the cluster is a UUID which is generated when the
 first master starts for the first time. This UUID is stored in a tuple
 of the <a class="reference internal" href="box/box_space.html#box-space-schema"><span class="std std-ref">box.space._schema</span></a> system space. So to see it, say:
 <code class="docutils literal"><span class="pre">box.space._schema:select{'cluster'}</span></code></p>
-<p>Q: What if it's necessary to know what other servers belong in the cluster? <br />
+<p>Q: What if it&#8217;s necessary to know what other servers belong in the cluster? <br />
 A: The universal identification of a server is a UUID in <code class="docutils literal"><span class="pre">box.info.server.uuid</span></code>.
 The ordinal identification of a server within a cluster is a number in <code class="docutils literal"><span class="pre">box.info.server.id</span></code>.
 To see all the servers in the cluster, say:
 <code class="docutils literal"><span class="pre">box.space._cluster:select{}</span></code>. This will return a table with all
 {server.id, server.uuid} tuples for every server that has ever joined
 the cluster.</p>
-<p>Q: What if one of the server's files is corrupted or deleted? <br />
+<p>Q: What if one of the server&#8217;s files is corrupted or deleted? <br />
 A: Stop the server, destroy all the database files (the ones with extension
-&quot;snap&quot; or &quot;xlog&quot; or &quot;.inprogress&quot;), restart the server, and catch up
+&#8220;snap&#8221; or &#8220;xlog&#8221; or &#8221;.inprogress&#8221;), restart the server, and catch up
 with the master by contacting it again (just say
 <code class="docutils literal"><span class="pre">box.cfg{...replication_source=...}</span></code>).</p>
 <p>Q: What if replication causes security concerns? <br />
@@ -1758,14 +1793,14 @@ parameter will always have to have the long form <br />
 <code class="docutils literal"><span class="pre">replication_source='username:password&#64;host:port'</span></code></p>
 <p>Q: What if advanced users want to understand better how it all works? <br />
 A: See the description of server startup with replication in the
-<a class="reference internal" href="../dev_guide/internals_index.html#b-internals-replication"><span class="std std-ref">Internals</span></a> appendix.</p>
+<a class="reference internal" href="../dev_guide/internals_index.html#internals-replication"><span class="std std-ref">Internals</span></a> section.</p>
 </div>
 <div class="section" id="hands-on-replication-tutorial">
 <h3>5.6.10. Hands-on replication tutorial<a class="headerlink" href="#hands-on-replication-tutorial" title="Permalink to this headline">¶</a></h3>
 <p>After following the steps here, an administrator will have experience creating
 a cluster and adding a replica.</p>
 <p>Start two shells. Put them side by side on the screen. (This manual has a tabbed
-display showing &quot;Terminal #1&quot;. Click the &quot;Terminal #2&quot; tab to switch to the
+display showing &#8220;Terminal #1&#8221;. Click the &#8220;Terminal #2&#8221; tab to switch to the
 display of the other shell.)</p>
 <div class="b-block-wrapper-doc container">
 <div class="b-doc-catalog container" id="catalog-1">
@@ -1790,7 +1825,7 @@ display of the other shell.)</p>
 </div>
 </div>
 </div>
-<p>On the first shell, which we'll call Terminal #1, execute these commands:</p>
+<p>On the first shell, which we&#8217;ll call Terminal #1, execute these commands:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="c1"># Terminal 1</span>
 <span class="gp">$</span> mkdir -p ~/tarantool_test_node_1
 <span class="gp">$</span> <span class="nb">cd</span> ~/tarantool_test_node_1
@@ -1802,7 +1837,7 @@ display of the other shell.)</p>
 <span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">space</span><span class="p">.</span><span class="n">_cluster</span><span class="p">:</span><span class="nb">select</span><span class="p">({</span><span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="n">iterator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">GE&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
-<p>The result is that a new cluster is set up, and the server's UUID is displayed. Now the
+<p>The result is that a new cluster is set up, and the server&#8217;s UUID is displayed. Now the
 screen looks like this: (except that UUID values are always different):</p>
 <div class="b-block-wrapper-doc container">
 <div class="b-doc-catalog container" id="catalog-2">
@@ -1846,7 +1881,7 @@ screen looks like this: (except that UUID values are always different):</p>
 </div>
 </div>
 </div>
-<p>On the second shell, which we'll call Terminal #2, execute these commands:</p>
+<p>On the second shell, which we&#8217;ll call Terminal #2, execute these commands:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="c1"># Terminal 2</span>
 <span class="gp">$</span> mkdir -p ~/tarantool_test_node_2
 <span class="gp">$</span> <span class="nb">cd</span> ~/tarantool_test_node_2
@@ -2015,7 +2050,7 @@ on Terminal #2.</p>
 <span class="gp">tarantool&gt; </span><span class="n">s</span><span class="p">:</span><span class="n">insert</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Tuple inserted on Terminal #2&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Now the screen looks like this (remember to click on the &quot;Terminal #2&quot; tab when looking at Terminal #2 results):</p>
+<p>Now the screen looks like this (remember to click on the &#8220;Terminal #2&#8221; tab when looking at Terminal #2 results):</p>
 <div class="b-block-wrapper-doc container">
 <div class="b-doc-catalog container" id="catalog-5">
 <ul class="b-tab_switcher">
@@ -2273,7 +2308,7 @@ messages):</p>
 </div>
 </div>
 <p>The master has reconnected to the cluster, and has NOT found what the replica
-wrote while the master was away. That is not a surprise -- the replica has not
+wrote while the master was away. That is not a surprise &#8211; the replica has not
 been asked to act as a replication source.</p>
 <p>On Terminal #1, say:</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">box</span><span class="p">.</span><span class="n">cfg</span><span class="p">{</span>
@@ -2373,7 +2408,7 @@ been asked to act as a replication source.</p>
 </script></div>
 <p>This shows that the two servers are once again in synch, and that each server
 sees what the other server wrote.</p>
-<p>To clean up, say &quot;<code class="docutils literal"><span class="pre">os.exit()</span></code>&quot; on both Terminal #1 and Terminal #2, and then
+<p>To clean up, say &#8220;<code class="docutils literal"><span class="pre">os.exit()</span></code>&#8221; on both Terminal #1 and Terminal #2, and then
 on either terminal say:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ~
 <span class="gp">$</span> rm -R ~/tarantool_test_node_1
@@ -2423,7 +2458,7 @@ is useful for backup as well as for load balancing.
 Therefore taking a backup is a matter of ensuring that any given
 replica is up to date, and doing a cold backup on it.
 Since all the other replicas continue to operate, this is not a
-cold backup from the end user's point of view. This could be
+cold backup from the end user&#8217;s point of view. This could be
 done on a regular basis, with a cron job or with a Tarantool fiber.</p>
 </div>
 <div class="section" id="hot-backup">
@@ -2431,7 +2466,7 @@ done on a regular basis, with a cron job or with a Tarantool fiber.</p>
 <p>In essence:
 The logged changes done since the last cold backup must be
 secured, while the system is running.</p>
-<p>For this purpose you need a &quot;file copy&quot; utility that will
+<p>For this purpose you need a &#8220;file copy&#8221; utility that will
 do the copying remotely and continuously, copying only the
 parts of a file that are changing. One such utility is
 <a class="reference external" href="https://en.wikipedia.org/wiki/rsync">rsync</a>.</p>
@@ -2445,7 +2480,7 @@ new WAL files as changes occur, so that only the new files need to be copied.</p
 <h2>5.8. Updates/upgrades<a class="headerlink" href="#updates-upgrades" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="updating-tarantool-in-production">
 <h3>5.8.1. Updating Tarantool in production<a class="headerlink" href="#updating-tarantool-in-production" title="Permalink to this headline">¶</a></h3>
-<p>First, put your application's business logic in a Tarantool-Lua module that
+<p>First, put your application&#8217;s business logic in a Tarantool-Lua module that
 exports its functions for CALL.</p>
 <p>For example, <code class="file docutils literal"><span class="pre">/usr/share/tarantool/myapp.lua</span></code>:</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="k">function</span> <span class="nf">start</span><span class="p">()</span>
@@ -2484,7 +2519,7 @@ exports its functions for CALL.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>This file is maintained by the application's developers. On its side,
+<p>This file is maintained by the application&#8217;s developers. On its side,
 Tarantool Team provides templates for you to
 <a class="reference external" href="https://github.com/tarantool/modulekit">assemble deb/rpm packages</a>
 and utilities to quickly
@@ -2526,7 +2561,7 @@ manually reload the <code class="file docutils literal"><span class="pre">myappc
 </div>
 <p>After that, you need to manually flush the cache of <code class="docutils literal"><span class="pre">package.loaded</span></code> modules.</p>
 <p>For deb/rpm packages, you can add the <code class="docutils literal"><span class="pre">tarantoolctl</span> <span class="pre">eval</span></code> instruction directly
-into Tarantool's specification in <code class="file docutils literal"><span class="pre">RPM.spec</span></code> and the
+into Tarantool&#8217;s specification in <code class="file docutils literal"><span class="pre">RPM.spec</span></code> and the
 <code class="file docutils literal"><span class="pre">/debian</span></code> directory.</p>
 <p>Finally, clients make a CALL to <code class="docutils literal"><span class="pre">myapp.api_for_call</span></code> and other API functions.</p>
 <p>In the case of <code class="docutils literal"><span class="pre">tarantool-http</span></code>, there is no need to start the binary protocol
@@ -2558,7 +2593,7 @@ is shown.</p>
 <dl class="glossary docutils">
 <dt id="term-sighup">SIGHUP</dt>
 <dd>may cause log file rotation, see
-<a class="reference internal" href="../reference/configuration/index.html#cfg-logging-logging-example"><span class="std std-ref">the example in section &quot;Logging&quot;</span></a>.</dd>
+<a class="reference internal" href="../reference/configuration/index.html#cfg-logging-logging-example"><span class="std std-ref">the example in section &#8220;Logging&#8221;</span></a>.</dd>
 <dt id="term-sigusr1">SIGUSR1</dt>
 <dd>may cause saving of a snapshot, see the description of
 <a class="reference internal" href="#admin-snapshot"><span class="std std-ref">box.snapshot</span></a>.</dd>
@@ -2579,18 +2614,18 @@ long-running procedure which prevents return to the main thread event loop.</p>
 which otherwise contains the program name. Tarantool uses this feature to help
 meet the needs of system administration, such as figuring out what services are
 running on a host, their status, and so on.</p>
-<p>A Tarantool server's process title has these components:</p>
+<p>A Tarantool server&#8217;s process title has these components:</p>
 <p><code class="extsamp docutils literal"><strong><span class="pre">program_name</span></strong> <span class="pre">[</span><strong><span class="pre">initialization_file_name</span></strong><span class="pre">]</span> <strong><span class="pre">&lt;role_name&gt;</span></strong> <span class="pre">[</span><strong><span class="pre">custom_proc_title</span></strong><span class="pre">]</span></code></p>
 <ul class="simple">
-<li><strong>program_name</strong> is typically &quot;tarantool&quot;.</li>
+<li><strong>program_name</strong> is typically &#8220;tarantool&#8221;.</li>
 <li><strong>initialization_file_name</strong> is the name of an
 <a class="reference internal" href="../reference/configuration/index.html#index-init-label"><span class="std std-ref">initialization file</span></a>, if one was specified.</li>
 <li><strong>role_name</strong> is:<ul>
-<li>&quot;running&quot; (ordinary node &quot;ready to accept requests&quot;),</li>
-<li>&quot;loading&quot; (ordinary node recovering from old snap and wal files),</li>
-<li>&quot;orphan&quot; (not in a cluster),</li>
-<li>&quot;hot_standby&quot;, or</li>
-<li>&quot;dumper&quot; + process-id (saving a snapshot).</li>
+<li>&#8220;running&#8221; (ordinary node &#8220;ready to accept requests&#8221;),</li>
+<li>&#8220;loading&#8221; (ordinary node recovering from old snap and wal files),</li>
+<li>&#8220;orphan&#8221; (not in a cluster),</li>
+<li>&#8220;hot_standby&#8221;, or</li>
+<li>&#8220;dumper&#8221; + process-id (saving a snapshot).</li>
 </ul>
 </li>
 <li><strong>custom_proc_title</strong> is taken from the
@@ -2630,19 +2665,19 @@ particular Linux distribution.</p>
 <div class="section" id="fedora-rhel-centos">
 <h3>5.11.2. Fedora, RHEL, CentOS<a class="headerlink" href="#fedora-rhel-centos" title="Permalink to this headline">¶</a></h3>
 <p>There are no known permanent issues. For transient issues, go to
-<a class="reference external" href="http://github.com/tarantool/tarantool/issues">http://github.com/tarantool/tarantool/issues</a> and enter &quot;RHEL&quot; or
-&quot;CentOS&quot; or &quot;Fedora&quot; or &quot;Red Hat&quot; in the search box.</p>
+<a class="reference external" href="http://github.com/tarantool/tarantool/issues">http://github.com/tarantool/tarantool/issues</a> and enter &#8220;RHEL&#8221; or
+&#8220;CentOS&#8221; or &#8220;Fedora&#8221; or &#8220;Red Hat&#8221; in the search box.</p>
 </div>
 <div class="section" id="freebsd">
 <h3>5.11.3. FreeBSD<a class="headerlink" href="#freebsd" title="Permalink to this headline">¶</a></h3>
 <p>There are no known permanent issues. For transient issues, go to
-<a class="reference external" href="http://github.com/tarantool/tarantool/issues">http://github.com/tarantool/tarantool/issues</a> and enter &quot;FreeBSD&quot;
+<a class="reference external" href="http://github.com/tarantool/tarantool/issues">http://github.com/tarantool/tarantool/issues</a> and enter &#8220;FreeBSD&#8221;
 in the search box.</p>
 </div>
 <div class="section" id="mac-os-x">
 <h3>5.11.4. Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h3>
 <p>There are no known permanent issues. For transient issues, go to
-<a class="reference external" href="http://github.com/tarantool/tarantool/issues">http://github.com/tarantool/tarantool/issues</a> and enter &quot;OS X&quot; in
+<a class="reference external" href="http://github.com/tarantool/tarantool/issues">http://github.com/tarantool/tarantool/issues</a> and enter &#8220;OS X&#8221; in
 the search box.</p>
 </div>
 </div>
@@ -2726,7 +2761,7 @@ the <strong class="program">tarantoolctl</strong> utility:</p>
 <div class="section" id="checking-logs">
 <h4>5.12.1.5. Checking logs<a class="headerlink" href="#checking-logs" title="Permalink to this headline">¶</a></h4>
 <p>Tarantool logs important events to <code class="file docutils literal"><span class="pre">/var/log/tarantool/$</span><em><span class="pre">MYAPP</span></em><span class="pre">.log</span></code>.</p>
-<p>Let's write something to the log file:</p>
+<p>Let&#8217;s write something to the log file:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> tarantoolctl enter example
 <span class="go">/bin/tarantoolctl: Found example.lua in /etc/tarantool/instances.available</span>
 <span class="go">/bin/tarantoolctl: Connecting to /var/run/tarantool/example.control</span>
@@ -2766,7 +2801,7 @@ behavior.</p>
 <div class="section" id="daemon-supervision">
 <h3>5.12.2. Daemon supervision<a class="headerlink" href="#daemon-supervision" title="Permalink to this headline">¶</a></h3>
 <p>All instances are automatically restarted by <strong class="program">systemd</strong> in case of failure.</p>
-<p>Let's try to destroy an instance:</p>
+<p>Let&#8217;s try to destroy an instance:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> systemctl status tarantool@example<span class="p">|</span>grep PID
 <span class="go">Main PID: 5885 (tarantool)</span>
 <span class="gp">$</span> tarantoolctl enter example
@@ -2777,12 +2812,12 @@ behavior.</p>
 <span class="go">/bin/tarantoolctl: unix/:/var/run/tarantool/example.control: Remote host closed connection</span>
 </pre></div>
 </div>
-<p>Now let's make sure that <strong class="program">systemd</strong> has revived our Tarantool instance:</p>
+<p>Now let&#8217;s make sure that <strong class="program">systemd</strong> has revived our Tarantool instance:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> systemctl status tarantool@example<span class="p">|</span>grep PID
 <span class="go">Main PID: 5914 (tarantool)</span>
 </pre></div>
 </div>
-<p>Finally, let's check the boot logs:</p>
+<p>Finally, let&#8217;s check the boot logs:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> journalctl -u tarantool@example -n 8
 <span class="go">-- Logs begin at Fri 2016-01-08 12:21:53 MSK, end at Thu 2016-01-21 21:09:45 MSK. --</span>
 <span class="go">Jan 21 21:09:45 localhost.localdomain systemd[1]: tarantool@example.service: Unit entered failed state.</span>
@@ -2798,7 +2833,7 @@ behavior.</p>
 </div>
 <div class="section" id="customizing-the-service-file">
 <h3>5.12.3. Customizing the service file<a class="headerlink" href="#customizing-the-service-file" title="Permalink to this headline">¶</a></h3>
-<p>Please don't modify the <code class="file docutils literal"><span class="pre">tarantool&#64;.service</span></code> file in-place, because it will be
+<p>Please don&#8217;t modify the <code class="file docutils literal"><span class="pre">tarantool&#64;.service</span></code> file in-place, because it will be
 overwritten during package upgrades. It is recommended to copy this file to
 <code class="file docutils literal"><span class="pre">/etc/systemd/system</span></code> and then modify the required settings. Alternatively,
 you can create a directory named <code class="file docutils literal"><span class="pre">unit.d/</span></code> within <code class="file docutils literal"><span class="pre">/etc/systemd/system</span></code> and
@@ -2879,7 +2914,7 @@ Tarantool daemon:</p>
 <span class="go">openssl-libs-1.0.2e-3.fc24.x86_64</span>
 </pre></div>
 </div>
-<p>Symbol names are present in stack traces even if you don't have the
+<p>Symbol names are present in stack traces even if you don&#8217;t have the
 <code class="docutils literal"><span class="pre">tarantool-debuginfo</span></code> package installed.</p>
 <p>For additional information, please refer to the documentation provided with your
 Linux distribution.</p>
@@ -2887,19 +2922,52 @@ Linux distribution.</p>
 <div class="section" id="precautions">
 <h3>5.12.5. Precautions<a class="headerlink" href="#precautions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Please don't use <code class="docutils literal"><span class="pre">tarantoolctl</span> <span class="pre">{start,stop,restart}</span></code> to control instances
+<li>Please don&#8217;t use <code class="docutils literal"><span class="pre">tarantoolctl</span> <span class="pre">{start,stop,restart}</span></code> to control instances
 started by <strong class="program">systemd</strong>. It is still possible to use
 <strong class="program">tarantoolctl</strong> to start and stop instances from your local directories
 (e.g. <code class="file docutils literal"><span class="pre">$</span><em><span class="pre">HOME</span></em></code>) without obtaining <code class="docutils literal"><span class="pre">ROOT</span></code> access.</li>
 <li><strong class="program">tarantoolctl</strong> is configured to work properly with <strong class="program">systemd</strong>.
-Please don't modify system-wide settings of <strong class="program">tarantoolctl</strong>, such as
+Please don&#8217;t modify system-wide settings of <strong class="program">tarantoolctl</strong>, such as
 paths, directory permissions and usernames. Otherwise, you have a chance to
 shoot yourself in the foot.</li>
 <li><strong class="program">systemd</strong> scripts are maintained by the Tarantool Team
-(<a class="reference external" href="http://tarantool.org">http://tarantool.org</a>). Please file tickets directly to the upstream's bug
+(<a class="reference external" href="http://tarantool.org">http://tarantool.org</a>). Please file tickets directly to the upstream&#8217;s bug
 tracker (<a class="reference external" href="https://github.com/tarantool/tarantool/issues/">https://github.com/tarantool/tarantool/issues/</a>) rather than to your
 Linux distribution.</li>
 </ul>
+</div>
+<div class="section" id="limitations">
+<h3>5.12.6. Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h3>
+<p>These limitations exist due to decisions by packagers
+to support systemd alongside sysvinit.</p>
+<p><code class="docutils literal"><span class="pre">/etc/init.d/tarantool</span> <span class="pre">start</span></code> under systemd,
+or <code class="docutils literal"><span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">tarantool</span></code> (without an &#64;instance argument),
+will start only those instances which were enabled before reboot
+or before the last time that systemd was reloaded with <code class="docutils literal"><span class="pre">systemctl</span> <span class="pre">daemon-reload</span></code>.</p>
+<p>(<code class="docutils literal"><span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">tarantool</span></code>, without an &#64;instance argument,
+is provided only for interoperability with sysvinit scripts.
+Please use <code class="docutils literal"><span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">tarantool&#64;instance</span></code> instead.)</p>
+<p><code class="docutils literal"><span class="pre">/etc/init.d/tarantool</span> <span class="pre">stop</span></code> under systemd,
+or <code class="docutils literal"><span class="pre">systemctl</span> <span class="pre">tarantool</span> <span class="pre">stop</span></code> (without an &#64;instance argument),
+will do nothing.</p>
+<p>Starting with Tarantool version 1.7.1.42, a new version of
+tarantool-common is required.
+(tarantool-common is a downloadable package which provides
+scripts to work with tarantool configuration and log files.)
+An attempt to upgrade tarantool-common will cause restart of all instances.</p>
+</div>
+<div class="section" id="sysvinit-systemd-conversion">
+<h3>5.12.7. sysvinit -&gt; systemd conversion<a class="headerlink" href="#sysvinit-systemd-conversion" title="Permalink to this headline">¶</a></h3>
+<p>These instructions apply only for Debian/Ubuntu distros
+where both sysvinit and systemd exist.</p>
+<p>Install new systemd-enabled packages.</p>
+<p>#For each instancename in /etc/tarantool/instances.enabled/: <br />
+#To enable the instance to be automatically loaded by systemd: <br />
+<code class="docutils literal"><span class="pre">systemctl</span> <span class="pre">enable</span> <span class="pre">tarantool&#64;instancename</span></code></p>
+<p>#The following command does nothing but is recommended for consistency: <br />
+<code class="docutils literal"><span class="pre">/etc/init.d/tarantool</span> <span class="pre">stop</span></code></p>
+<p>#Disable sysvinit-compatible wrappers: <br />
+<code class="docutils literal"><span class="pre">systemctl</span> <span class="pre">disable</span> <span class="pre">tarantool;</span> <span class="pre">update-rc.d</span> <span class="pre">tarantool</span> <span class="pre">remove</span></code></p>
 </div>
 </div>
 </div>
@@ -2958,11 +3026,11 @@ Linux distribution.</li>
     </div>
   
 
-      </div>
-    </div>
+        </div>
+        </div>
 
-  <!-- FOOTER > -->
-  
+    <!-- FOOTER > -->
+    
 <footer class="b-footer">
   <div class="b-footer-wrapper">
     <nav class="b-footer_menu">
@@ -3002,8 +3070,9 @@ Linux distribution.</li>
   </div>
 </footer>
 
-  <!-- < FOOTER -->
-  <div id="mobile-checker"></div>
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </div>
   </body>
 </html>
 

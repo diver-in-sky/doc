@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:       '',
-        VERSION:        '1.7.1',
+        VERSION:        '1.7.2',
         COLLAPSE_INDEX:  false,
         FILE_SUFFIX:    '.html',
         HAS_SOURCE:      true
@@ -40,8 +40,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/stacktable.min.js"></script>
     <script type="text/javascript" src="../_static/headers.js"></script>
-    <script type="text/javascript" src="../_static/jquery.sticky-kit.min.js"></script>
     <script type="text/javascript" src="/js/menu.js"></script>
     <script type="text/javascript" src="/js/mobile_menu.js"></script>
     <link rel="stylesheet" href="/theme/font-awesome.min.css">
@@ -87,9 +87,10 @@
   
   <body class="p-cols_design b-doc-book/app_server">
   
-    <div class="b-wrapper">
-      <!-- HEADER > -->
-      
+    <div class="b-scrollview">
+        <div class="b-wrapper">
+        <!-- HEADER > -->
+        
   <header class="b-header">
     <div class="b-header_menu_mobile">
       <div class="b-burger-button">
@@ -170,10 +171,10 @@
     </div>
   </header>
 
-      <!-- < HEADER -->
+        <!-- < HEADER -->
 
-      <div class="b-content b-clearbox">
-        
+        <div class="b-content b-clearbox">
+            
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
       <h2
@@ -220,12 +221,15 @@
 </form>
 
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s new?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../whats_new.html#what-s-new-in-tarantool-1-7">What&#8217;s new in Tarantool 1.7?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro.html#database-features">Database features</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/lua_tutorials.html">1. Lua tutorials</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#insert-one-million-tuples-with-a-lua-stored-procedure">1.1. Insert one million tuples with a Lua stored procedure</a><ul>
@@ -240,7 +244,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-million-tuples-into-the-database">1.1.9. Modify main_function to insert a million tuples into the database</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#tutorial-sum-a-json-field-for-all-tuples">1.2. Tutorial: Sum a JSON field for all tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#sum-a-json-field-for-all-tuples">1.2. Sum a JSON field for all tuples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#indexed-pattern-search">1.3. Indexed pattern search</a></li>
 </ul>
 </li>
@@ -250,7 +254,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">User's Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User&#8217;s Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">1. Preface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="intro.html#how-to-read-the-documentation">1.1. How to read the documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="intro.html#getting-in-touch-with-the-tarantool-community">1.2. Getting in touch with the Tarantool community</a></li>
@@ -274,51 +278,50 @@
 <li class="toctree-l4"><a class="reference internal" href="box/index.html#index-operations">3.1.8. Index operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#the-box-library">3.2. The box library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#transaction-control">3.3. Transaction control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#cooperative-multitasking-environment">3.3.1. Cooperative multitasking environment</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#example">3.3.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#transaction-control">3.2. Transaction control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#cooperative-multitasking-environment">3.2.1. Cooperative multitasking environment</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#example">3.2.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#implicit-yields">3.3.2. Implicit yields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#implicit-yields">3.2.2. Implicit yields</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#access-control">3.4. Access control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#passwords">3.4.1. Passwords</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#users-and-the-user-space">3.4.2. Users and the _user space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#privileges-and-the-priv-space">3.4.3. Privileges and the _priv space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#functions-and-the-func-space">3.4.4. Functions and the _func space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#box-session-and-security">3.4.5. box.session and security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#roles">3.4.6. Roles</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#example-showing-a-role-within-a-role">3.4.6.1. Example showing a role within a role</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#access-control">3.3. Access control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#passwords">3.3.1. Passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#users-and-the-user-space">3.3.2. Users and the _user space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#privileges-and-the-priv-space">3.3.3. Privileges and the _priv space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#functions-and-the-func-space">3.3.4. Functions and the _func space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#box-session-and-security">3.3.5. box.session and security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#roles">3.3.6. Roles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#example-showing-a-role-within-a-role">3.3.6.1. Example showing a role within a role</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#triggers">3.5. Triggers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#connection-triggers">3.5.1. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#id1">3.5.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#triggers">3.4. Triggers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#connection-triggers">3.4.1. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#id3">3.4.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#authentication-triggers">3.5.2. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#lua-module.box.space">3.5.3. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#id2">3.5.3.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#another-example">3.5.3.2. Another example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#authentication-triggers">3.4.2. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#lua-module.box.space">3.4.3. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#id4">3.4.3.1. Example</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#another-example">3.4.3.2. Another example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#getting-a-list-of-triggers">3.5.4. Getting a list of triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#getting-a-list-of-triggers">3.4.4. Getting a list of triggers</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#limitations">3.6. Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="box/index.html#vinyl-storage-engine">3.7. Vinyl storage engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.7.1. Differences between memtx and vinyl storage engines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#vinyl-features">3.7.2. Vinyl features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/index.html#under-the-hood">3.7.3. Under the hood</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-first-200-000-keys">3.7.3.1. Inserting the first 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-next-300-000-keys">3.7.3.2. Inserting the next 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-next-200-000-keys">3.7.3.3. Inserting the next 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-last-300-000-keys">3.7.3.4. Inserting the last 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/index.html#reading-million-keys">3.7.3.5. Reading million keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#limitations">3.5. Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="box/index.html#vinyl-storage-engine">3.6. Vinyl storage engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.6.1. Differences between memtx and vinyl storage engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#vinyl-features">3.6.2. Vinyl features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="box/index.html#under-the-hood">3.6.3. Under the hood</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-first-200-000-keys">3.6.3.1. Inserting the first 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-next-300-000-keys">3.6.3.2. Inserting the next 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-next-200-000-keys">3.6.3.3. Inserting the next 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#inserting-the-last-300-000-keys">3.6.3.4. Inserting the last 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="box/index.html#reading-million-keys">3.6.3.5. Reading million keys</a></li>
 </ul>
 </li>
 </ul>
@@ -332,7 +335,35 @@
 <li class="toctree-l3"><a class="reference internal" href="#creating-a-new-c-c-module-locally">4.4. Creating a new C/C++ module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#creating-a-mixed-lua-c-module-locally">4.5. Creating a mixed Lua/C module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tips-for-special-situations">4.6. Tips for special situations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cookbook-recipes">4.7. Cookbook recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cookbook-recipes">4.7. Cookbook recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hello-world-lua">4.7.1. hello_world.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#console-start-lua">4.7.2. console_start.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fio-read-lua">4.7.3. fio_read.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fio-write-lua">4.7.4. fio_write.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ffi-printf-lua">4.7.5. ffi_printf.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ffi-gettimeofday-lua">4.7.6. ffi_gettimeofday.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ffi-zlib-lua">4.7.7. ffi_zlib.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ffi-meta-lua">4.7.8. ffi_meta.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#print-arrays-lua">4.7.9. print_arrays.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#count-array-lua">4.7.10. count_array.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#count-array-with-nils-lua">4.7.11. count_array_with_nils.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#count-array-with-nulls-lua">4.7.12. count_array_with_nulls.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#count-map-lua">4.7.13. count_map.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#swap-lua">4.7.14. swap.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uri-lua">4.7.15. uri.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class-lua">4.7.16. class.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#garbage-lua">4.7.17. garbage.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fiber-producer-and-consumer-lua">4.7.18. fiber_producer_and_consumer.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#socket-tcpconnect-lua">4.7.19. socket_tcpconnect.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#socket-tcp-echo-lua">4.7.20. socket_tcp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getaddrinfo-lua">4.7.21. getaddrinfo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#socket-udp-echo-lua">4.7.22. socket_udp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#http-get-lua">4.7.23. http_get.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#http-send-lua">4.7.24. http_send.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#http-server-lua">4.7.25. http_server.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#http-generate-html-lua">4.7.26. http_generate_html.lua</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="administration.html">5. Server administration</a><ul>
@@ -366,10 +397,10 @@
 <li class="toctree-l4"><a class="reference internal" href="administration.html#setting-up-a-replica">5.6.3. Setting up a replica</a></li>
 <li class="toctree-l4"><a class="reference internal" href="administration.html#recovering-from-a-degraded-state">5.6.4. Recovering from a degraded state</a></li>
 <li class="toctree-l4"><a class="reference internal" href="administration.html#quick-startup-of-a-new-simple-two-server-cluster">5.6.5. Quick startup of a new simple two-server cluster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica's actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica&#8217;s actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="administration.html#preventing-duplicate-actions">5.6.7. Preventing duplicate actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="administration.html#master-master-replication">5.6.8. Master-master replication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="administration.html#all-the-what-if-questions">5.6.9. All the &quot;What If?&quot; questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration.html#all-the-what-if-questions">5.6.9. All the &#8220;What If?&#8221; questions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="administration.html#hands-on-replication-tutorial">5.6.10. Hands-on replication tutorial</a></li>
 </ul>
 </li>
@@ -407,6 +438,8 @@
 <li class="toctree-l4"><a class="reference internal" href="administration.html#customizing-the-service-file">5.12.3. Customizing the service file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="administration.html#debugging">5.12.4. Debugging</a></li>
 <li class="toctree-l4"><a class="reference internal" href="administration.html#precautions">5.12.5. Precautions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration.html#limitations">5.12.6. Limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="administration.html#sysvinit-systemd-conversion">5.12.7. sysvinit -&gt; systemd conversion</a></li>
 </ul>
 </li>
 </ul>
@@ -429,15 +462,11 @@
 <li class="toctree-l3"><a class="reference internal" href="connectors/index.html#interpreting-function-return-values">6.11. Interpreting function return values</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="app/a_errcodes.html">7. Appendix A. List of error codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app/g_changes.html">8. Appendix B. Version-specific changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="app/g_changes.html#changes-in-tarantool-version-1-7">8.1. Changes in Tarantool version 1.7</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">7. FAQ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../reference/reference_lua/index.html">1. Library reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/reference_lua/index.html">1. Built-in library reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box.html">1.1. Module <cite>box</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="box/box_schema.html">1.1.1. Submodule <cite>box.schema</cite></a></li>
 <li class="toctree-l4"><a class="reference internal" href="box/box_space.html">1.1.2. Submodule <cite>box.space</cite></a><ul>
@@ -459,21 +488,6 @@
 <li class="toctree-l5"><a class="reference internal" href="box/box_tuple.html#example">1.1.5.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="box/box_introspection.html">1.1.6. Submodule <cite>box.cfg</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/box_introspection.html#lua-module.box.info">1.1.7. Submodule <cite>box.info</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/box_introspection.html#lua-module.box.slab">1.1.8. Submodule <cite>box.slab</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/box_introspection.html#submodule-box-stat">1.1.9. Submodule <cite>box.stat</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/triggers.html">1.1.10. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/triggers.html#example">1.1.10.1. Example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="box/triggers.html#authentication-triggers">1.1.11. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="box/triggers.html#lua-module.box.space">1.1.12. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="box/triggers.html#id1">1.1.12.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="box/triggers.html#another-example">1.1.12.2. Another example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="box/triggers.html#getting-a-list-of-triggers">1.1.13. Getting a list of triggers</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -498,13 +512,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_ipc.html#example">1.9.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fio.html">1.10. Module <cite>fio</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-pathname-manipulations">1.10.1. Common pathname manipulations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-file-manipulations">1.10.2. Common file manipulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html">1.10. Submodule <cite>fiber-cond</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html#example">1.10.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fun.html">1.11. Module <cite>fun</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/jit.html">1.12. Module <cite>jit</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fio.html">1.11. Module <cite>fio</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-pathname-manipulations">1.11.1. Common pathname manipulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-file-manipulations">1.11.2. Common file manipulations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fun.html">1.12. Module <cite>fun</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/json.html">1.13. Module <cite>json</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/json.html#configuration-settings">1.13.1. Configuration settings</a></li>
 </ul>
@@ -522,32 +539,32 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box_once.html">1.17. Function <cite>box.once</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/os.html">1.18. Module <cite>os</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/pickle.html">1.19. Module <cite>pickle</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/socket.html">1.20. Module <cite>socket</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/socket.html#example">1.20.1. Example</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.20.1.1. Use of a TCP socket over the Internet</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.20.1.2. Use of a UDP socket on localhost</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.20.1.3. Use tcp_server to accept file contents sent with socat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/pickle.html">1.18. Module <cite>pickle</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/socket.html">1.19. Module <cite>socket</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/socket.html#example">1.19.1. Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.19.1.1. Use of a TCP socket over the Internet</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.19.1.2. Use of a UDP socket on localhost</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.19.1.3. Use tcp_server to accept file contents sent with socat</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/strict.html">1.21. Module <cite>strict</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tap.html">1.22. Module <cite>tap</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/tap.html#example">1.22.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/strict.html">1.20. Module <cite>strict</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tap.html">1.21. Module <cite>tap</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/tap.html#example">1.21.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tarantool.html">1.23. Module <cite>tarantool</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/uuid.html">1.24. Module <cite>uuid</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/uuid.html#example">1.24.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tarantool.html">1.22. Module <cite>tarantool</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/uuid.html">1.23. Module <cite>uuid</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/uuid.html#example">1.23.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/yaml.html">1.25. Module <cite>yaml</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/yaml.html#example">1.25.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/yaml.html">1.24. Module <cite>yaml</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/yaml.html#example">1.24.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/other.html">1.26. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/other.html">1.25. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/errcodes.html">1.26. Database error codes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/reference_rock/index.html">2. Rocks reference</a><ul>
@@ -613,7 +630,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributor's Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/index.html">Contributor&#8217;s Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dev_guide/reference_capi/index.html">1. C API reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../dev_guide/reference_capi/box.html">1.1. Module <cite>box</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dev_guide/reference_capi/clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -631,8 +648,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../dev_guide/internals_index.html">2. Internals</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../dev_guide/internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool's binary protocol</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#notion-in-diagrams">2.1.1. Notion in diagrams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev_guide/internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool&#8217;s binary protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#notation-in-diagrams">2.1.1. Notation in diagrams</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#greeting-packet">2.1.2. Greeting packet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#unified-packet-structure">2.1.3. Unified packet structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../dev_guide/internals_index.html#authentication">2.1.4. Authentication</a></li>
@@ -700,7 +717,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-6-functions">4.3.2.7. Chapter 6: Functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-7-centralized-exiting-of-functions">4.3.2.8. Chapter 7: Centralized exiting of functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-8-commenting">4.3.2.9. Chapter 8: Commenting</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You've made a mess of it</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You&#8217;ve made a mess of it</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-10-kconfig-configuration-files">4.3.2.11. Chapter 10: Kconfig configuration files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-11-data-structures">4.3.2.12. Chapter 11: Data structures</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-12-macros-enums-and-rtl">4.3.2.13. Chapter 12: Macros, Enums and RTL</a></li>
@@ -708,7 +725,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-14-allocating-memory">4.3.2.15. Chapter 14: Allocating memory</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-15-the-inline-disease">4.3.2.16. Chapter 15: The inline disease</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-16-function-return-values-and-names">4.3.2.17. Chapter 16: Function return values and names</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don't re-invent the kernel macros</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don&#8217;t re-invent the kernel macros</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#chapter-18-editor-modelines-and-other-cruft">4.3.2.19. Chapter 18:  Editor modelines and other cruft</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../dev_guide/c_style_guide.html#appendix-i-references">4.3.2.20. Appendix I: References</a></li>
 </ul>
@@ -782,7 +799,7 @@
         <li class="b-path-list-item">
           <a href="index.html"
              class="b-path-list-item-url b-ellipsis">
-            User's Guide
+            User&#8217;s Guide
           </a>
         </li>
       
@@ -804,8 +821,8 @@
 as an application server. This means that you can write your own logic, install
 it as a module in Tarantool — and see Tarantool perform your logic.
 So, a module is an optional library which enhances Tarantool functionality.</p>
-<p>Tarantool's native language for writing modules is Lua.
-Modules in Lua are also called &quot;rocks&quot;.
+<p>Tarantool&#8217;s native language for writing modules is Lua.
+Modules in Lua are also called &#8220;rocks&#8221;.
 If you are new to Lua, we recommend following this
 <a class="reference external" href="http://lua-users.org/wiki/ModulesTutorial">Lua modules tutorial</a> before
 reading this section.</p>
@@ -814,10 +831,10 @@ reading this section.</p>
 <h2>4.2. Installing an existing module<a class="headerlink" href="#installing-an-existing-module" title="Permalink to this headline">¶</a></h2>
 <p>Modules that come from Tarantool developers and community contributors are
 available at <a class="reference external" href="http://rocks.tarantool.org">rocks.tarantool.org</a>. Some of them
--- <a class="reference internal" href="../reference/reference_rock/expirationd.html#expirationd-module"><span class="std std-ref">expirationd</span></a>,
+&#8211; <a class="reference internal" href="../reference/reference_rock/expirationd.html#expirationd-module"><span class="std std-ref">expirationd</span></a>,
 <a class="reference internal" href="../reference/reference_rock/dbms.html#dbms-modules-mysql-example"><span class="std std-ref">mysql</span></a>,
 <a class="reference internal" href="../reference/reference_rock/dbms.html#dbms-modules-postgresql-example"><span class="std std-ref">postgresql</span></a>,
-<a class="reference internal" href="../reference/reference_rock/shard.html#shard-module"><span class="std std-ref">shard</span></a> --
+<a class="reference internal" href="../reference/reference_rock/shard.html#shard-module"><span class="std std-ref">shard</span></a> &#8211;
 are discussed elsewhere in this manual.</p>
 <p><strong>Step 1:</strong> Install LuaRocks.
 A general description of installing LuaRocks on a Unix system is given in
@@ -852,14 +869,14 @@ tarantool&gt; <em>local-name</em> = require('<em>module-name</em>')
 </li>
 </ul>
 <p>... and that is why examples in this manual often begin with <code class="docutils literal"><span class="pre">require</span></code> requests.</p>
-<p>See <a class="reference external" href="https://github.com/tarantool/rocks">&quot;tarantool/rocks&quot; repository at GitHub</a>
+<p>See <a class="reference external" href="https://github.com/tarantool/rocks">&#8220;tarantool/rocks&#8221; repository at GitHub</a>
 for more examples and information about contributing.</p>
 <p>For developers, we provide
 <a class="reference internal" href="#develop-modules"><span class="std std-ref">instructions on creating their own Tarantool modules in Lua, C/C++ and Lua+C</span></a>.</p>
 </div>
 <div class="section" id="creating-a-new-lua-module-locally">
 <span id="develop-modules"></span><h2>4.3. Creating a new Lua module locally<a class="headerlink" href="#creating-a-new-lua-module-locally" title="Permalink to this headline">¶</a></h2>
-<p>As an example, let's create a new Lua file named <code class="file docutils literal"><span class="pre">mymodule.lua</span></code>,
+<p>As an example, let&#8217;s create a new Lua file named <code class="file docutils literal"><span class="pre">mymodule.lua</span></code>,
 containing a named function which will be exported.
 Then, in Tarantool: load, examine, and call.</p>
 <p>The Lua file should look like this:</p>
@@ -890,7 +907,7 @@ Hello world
 </div>
 <div class="section" id="creating-a-new-c-c-module-locally">
 <span id="modules-example-c"></span><h2>4.4. Creating a new C/C++ module locally<a class="headerlink" href="#creating-a-new-c-c-module-locally" title="Permalink to this headline">¶</a></h2>
-<p>As an example, let's create a new C file named <code class="file docutils literal"><span class="pre">mycmodule.c</span></code>,
+<p>As an example, let&#8217;s create a new C file named <code class="file docutils literal"><span class="pre">mycmodule.c</span></code>,
 containing a named function which will be exported.
 Then, in Tarantool: load, examine, and call.</p>
 <p>Prerequisite: install <code class="docutils literal"><span class="pre">tarantool-dev</span></code> first.</p>
@@ -926,14 +943,14 @@ Then, in Tarantool: load, examine, and call.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Use <strong class="program">gcc</strong> to compile the code for a shared library (without a &quot;lib&quot;
+<p>Use <strong class="program">gcc</strong> to compile the code for a shared library (without a &#8220;lib&#8221;
 prefix), then use <strong class="program">ls</strong> to examine it:</p>
 <pre class="highlight literal-block">
 $ <strong>gcc mycmodule.c -shared -fPIC -I/usr/include/tarantool -o mycmodule.so</strong>
 $ <strong>ls mycmodule.so -l</strong>
 -rwxr-xr-x 1 roman roman 7272 Jun  3 16:51 mycmodule.so
 </pre>
-<p>Tarantool's developers recommend using Tarantool's
+<p>Tarantool&#8217;s developers recommend using Tarantool&#8217;s
 <a class="reference external" href="https://github.com/tarantool/modulekit">CMake scripts</a>
 which will handle some of the build steps automatically.</p>
 <p>The requests to load, examine and call look like this:</p>
@@ -963,7 +980,7 @@ something like that.</li>
 <code class="samp docutils literal"><span class="pre">require('myfunmodule.internal')</span></code> and then wrap or use it.</li>
 </ol>
 <p>For a sample of a mixed Lua/C module, see
-<a class="reference external" href="https://github.com/tarantool/http">&quot;tarantool/http&quot; repository at GitHub</a>.</p>
+<a class="reference external" href="https://github.com/tarantool/http">&#8220;tarantool/http&#8221; repository at GitHub</a>.</p>
 </div>
 <div class="section" id="tips-for-special-situations">
 <h2>4.6. Tips for special situations<a class="headerlink" href="#tips-for-special-situations" title="Permalink to this headline">¶</a></h2>
@@ -1008,7 +1025,7 @@ and create a local variable inside the scope of the file:</p>
 </div>
 </li>
 <li><p class="first">Notice that Lua examples in this manual use <em>local</em> variables.
-Use <em>global</em> variables with caution, since the module's users
+Use <em>global</em> variables with caution, since the module&#8217;s users
 may be unaware of them.</p>
 </li>
 </ul>
@@ -1019,19 +1036,22 @@ may be unaware of them.</p>
 <p>Any of the programs can be executed by copying the code into a .lua file,
 and then entering <code class="samp docutils literal"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">./</span><em><span class="pre">program-name</span></em><span class="pre">.lua</span></code>
 and <code class="samp docutils literal"><span class="pre">./</span><em><span class="pre">program-name</span></em><span class="pre">.lua</span></code> on the terminal.
-As is usual for Tarantool/Lua programs, the first line is a &quot;hashbang&quot; <br />
+As is usual for Tarantool/Lua programs, the first line is a &#8220;hashbang&#8221; <br />
 #!/usr/bin/env tarantool <br />
 This runs the Tarantool Lua application server, which should be on the
 execution path.</p>
 <p>Use freely.</p>
-<p><strong>hello_world.lua</strong></p>
+<div class="section" id="hello-world-lua">
+<span id="cookbook-hello-world"></span><h3>4.7.1. hello_world.lua<a class="headerlink" href="#hello-world-lua" title="Permalink to this headline">¶</a></h3>
 <p>The standard example of a simple program.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Hello, World!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>console_start.lua</strong></p>
+</div>
+<div class="section" id="console-start-lua">
+<span id="cookbook-console-start"></span><h3>4.7.2. console_start.lua<a class="headerlink" href="#console-start-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use <a class="reference internal" href="../reference/reference_lua/box_once.html#box-once"><span class="std std-ref">box.once()</span></a> to initialize a database
 (creating spaces) if this is the first time the server has been run.
 Then use <a class="reference internal" href="../reference/reference_lua/console.html#console-start"><span class="std std-ref">console.start()</span></a> to start interactive mode.</p>
@@ -1051,7 +1071,9 @@ Then use <a class="reference internal" href="../reference/reference_lua/console.
 <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">console&#39;</span><span class="p">).</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>fio_read.lua</strong></p>
+</div>
+<div class="section" id="fio-read-lua">
+<span id="cookbook-fio-read"></span><h3>4.7.3. fio_read.lua<a class="headerlink" href="#fio-read-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference internal" href="../reference/reference_lua/fio.html#fio-module"><span class="std std-ref">fio module</span></a> to open, read, and close a file.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
@@ -1066,7 +1088,9 @@ Then use <a class="reference internal" href="../reference/reference_lua/console.
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>fio_write.lua</strong></p>
+</div>
+<div class="section" id="fio-write-lua">
+<span id="cookbook-fio-write"></span><h3>4.7.4. fio_write.lua<a class="headerlink" href="#fio-write-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference internal" href="../reference/reference_lua/fio.html#fio-module"><span class="std std-ref">fio module</span></a> to open, write, and close a file.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
@@ -1081,7 +1105,9 @@ Then use <a class="reference internal" href="../reference/reference_lua/console.
 <span class="n">f</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p id="e-cookbook-ffi-printf"><strong>ffi_printf.lua</strong></p>
+</div>
+<div class="section" id="ffi-printf-lua">
+<span id="cookbook-ffi-printf"></span><h3>4.7.5. ffi_printf.lua<a class="headerlink" href="#ffi-printf-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference external" href="http://luajit.org/ext_ffi.html">LuaJIT ffi library</a> to call a C built-in function: printf().
 (For help understanding ffi, see the <a class="reference external" href="http://luajit.org/ext_ffi_tutorial.html">FFI tutorial</a>.)</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
@@ -1094,10 +1120,12 @@ Then use <a class="reference internal" href="../reference/reference_lua/console.
 <span class="n">ffi</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Hello, %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="nb">os.getenv</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">USER&quot;</span><span class="p">));</span>
 </pre></div>
 </div>
-<p><strong>ffi_gettimeofday.lua</strong></p>
+</div>
+<div class="section" id="ffi-gettimeofday-lua">
+<span id="cookbook-ffi-gettimeofday"></span><h3>4.7.6. ffi_gettimeofday.lua<a class="headerlink" href="#ffi-gettimeofday-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference external" href="http://luajit.org/ext_ffi.html">LuaJIT ffi library</a> to call a C function: gettimeofday().
 This delivers time with millisecond precision, unlike the time function in
-Tarantool's <a class="reference internal" href="../reference/reference_lua/clock.html#clock-module"><span class="std std-ref">clock module</span></a>.</p>
+Tarantool&#8217;s <a class="reference internal" href="../reference/reference_lua/clock.html#clock-module"><span class="std std-ref">clock module</span></a>.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
 <span class="kd">local</span> <span class="n">ffi</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">ffi&#39;</span><span class="p">)</span>
@@ -1117,7 +1145,9 @@ Tarantool's <a class="reference internal" href="../reference/reference_lua/clock
 <span class="k">end</span>
 </pre></div>
 </div>
-<p><strong>ffi_zlib.lua</strong></p>
+</div>
+<div class="section" id="ffi-zlib-lua">
+<span id="cookbook-ffi-zlib"></span><h3>4.7.7. ffi_zlib.lua<a class="headerlink" href="#ffi-zlib-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference external" href="http://luajit.org/ext_ffi.html">LuaJIT ffi library</a> to call a C library function.
 (For help understanding ffi, see the <a class="reference external" href="http://luajit.org/ext_ffi_tutorial.html">FFI tutorial</a>.)</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
@@ -1160,7 +1190,9 @@ Tarantool's <a class="reference internal" href="../reference/reference_lua/clock
 <span class="nb">assert</span><span class="p">(</span><span class="n">txt2</span> <span class="o">==</span> <span class="n">txt</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>ffi_meta.lua</strong></p>
+</div>
+<div class="section" id="ffi-meta-lua">
+<span id="cookbook-ffi-meta"></span><h3>4.7.8. ffi_meta.lua<a class="headerlink" href="#ffi-meta-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference external" href="http://luajit.org/ext_ffi.html">LuaJIT ffi library</a> to
 access a C object via a metamethod (a method which is defined with
 a metatable).</p>
@@ -1189,14 +1221,16 @@ a metatable).</p>
 <span class="nb">print</span><span class="p">(</span><span class="o">#</span><span class="n">b</span><span class="p">)</span>        <span class="c1">--&gt; 12.5</span>
 </pre></div>
 </div>
-<p><strong>print_arrays.lua</strong></p>
+</div>
+<div class="section" id="print-arrays-lua">
+<span id="cookbook-print-arrays"></span><h3>4.7.9. print_arrays.lua<a class="headerlink" href="#print-arrays-lua" title="Permalink to this headline">¶</a></h3>
 <p>Create Lua tables, and print them.
-Notice that for the 'array' table the iterator function
-is ipairs(), while for the 'map' table the iterator function
+Notice that for the &#8216;array&#8217; table the iterator function
+is ipairs(), while for the &#8216;map&#8217; table the iterator function
 is pairs(). (<cite>ipairs()</cite> is faster than <cite>pairs()</cite>, but pairs()
 is recommended for map-like tables or mixed tables.)
 The display will look like:
-&quot;1 Apple | 2 Orange | 3 Grapefruit | 4 Banana | k3 v3 | k1 v1 | k2 v2&quot;.</p>
+&#8220;1 Apple | 2 Orange | 3 Grapefruit | 4 Banana | k3 v3 | k1 v1 | k2 v2&#8221;.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
 <span class="n">array</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;</span><span class="s">Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Orange&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Grapefruit&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">Banana&#39;</span><span class="p">}</span>
@@ -1206,8 +1240,10 @@ The display will look like:
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">map</span><span class="p">)</span> <span class="k">do</span> <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">end</span>
 </pre></div>
 </div>
-<p><strong>count_array.lua</strong></p>
-<p>Use the '#' operator to get the number of items in an array-like Lua table.
+</div>
+<div class="section" id="count-array-lua">
+<span id="cookbook-count-array"></span><h3>4.7.10. count_array.lua<a class="headerlink" href="#count-array-lua" title="Permalink to this headline">¶</a></h3>
+<p>Use the &#8216;#&#8217; operator to get the number of items in an array-like Lua table.
 This operation has O(log(N)) complexity.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
@@ -1215,14 +1251,16 @@ This operation has O(log(N)) complexity.</p>
 <span class="nb">print</span><span class="p">(</span><span class="o">#</span><span class="n">array</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>count_array_with_nils.lua</strong></p>
-<p>Missing elements in arrays, which Lua treats a &quot;nil&quot;s,
-cause the simple &quot;#&quot; operator to deliver improper results.
-The &quot;print(#t)&quot; instruction will print &quot;4&quot;;
-the &quot;print(counter)&quot; instruction will print &quot;3&quot;;
-the &quot;print(max)&quot; instruction will print &quot;10&quot;.
+</div>
+<div class="section" id="count-array-with-nils-lua">
+<span id="cookbook-count-array-with-nils"></span><h3>4.7.11. count_array_with_nils.lua<a class="headerlink" href="#count-array-with-nils-lua" title="Permalink to this headline">¶</a></h3>
+<p>Missing elements in arrays, which Lua treats a &#8220;nil&#8221;s,
+cause the simple &#8220;#&#8221; operator to deliver improper results.
+The &#8220;print(#t)&#8221; instruction will print &#8220;4&#8221;;
+the &#8220;print(counter)&#8221; instruction will print &#8220;3&#8221;;
+the &#8220;print(max)&#8221; instruction will print &#8220;10&#8221;.
 Other table functions, such as table.sort(), will
-also misbehave when &quot;nils&quot; are present.</p>
+also misbehave when &#8220;nils&#8221; are present.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
 <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1238,8 +1276,10 @@ also misbehave when &quot;nils&quot; are present.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">max</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>count_array_with_nulls.lua</strong></p>
-<p>Use explicit <code class="docutils literal"><span class="pre">NULL</span></code> values to avoid the problems caused by Lua's
+</div>
+<div class="section" id="count-array-with-nulls-lua">
+<span id="cookbook-count-array-with-nulls"></span><h3>4.7.12. count_array_with_nulls.lua<a class="headerlink" href="#count-array-with-nulls-lua" title="Permalink to this headline">¶</a></h3>
+<p>Use explicit <code class="docutils literal"><span class="pre">NULL</span></code> values to avoid the problems caused by Lua&#8217;s
 nil == missing value behavior. Although <code class="code docutils literal"><span class="pre">json.NULL</span> <span class="pre">==</span> <span class="pre">nil</span></code> is
 <code class="code docutils literal"><span class="pre">true</span></code>, all the print instructions in this program will print
 the correct value: 10.</p>
@@ -1261,7 +1301,9 @@ the correct value: 10.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">max</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>count_map.lua</strong></p>
+</div>
+<div class="section" id="count-map-lua">
+<span id="cookbook-count-map"></span><h3>4.7.13. count_map.lua<a class="headerlink" href="#count-map-lua" title="Permalink to this headline">¶</a></h3>
 <p>Get the number of elements in a map-like table.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
@@ -1271,7 +1313,9 @@ the correct value: 10.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>swap.lua</strong></p>
+</div>
+<div class="section" id="swap-lua">
+<span id="cookbook-swap"></span><h3>4.7.14. swap.lua<a class="headerlink" href="#swap-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use a Lua peculiarity to swap two variables without needing a third variable.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
@@ -1281,7 +1325,9 @@ the correct value: 10.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<p id="e-cookbook-uri-parse"><strong>uri.lua</strong></p>
+</div>
+<div class="section" id="uri-lua">
+<span id="cookbook-uri"></span><h3>4.7.15. uri.lua<a class="headerlink" href="#uri-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use built-in function <code class="code docutils literal"><span class="pre">uri_parse</span></code> to see what is in a <cite>URI &lt;configuration-uri&gt;</cite>:</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
 
@@ -1297,7 +1343,9 @@ the correct value: 10.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">r.host=&#39;</span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="n">host</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>class.lua</strong></p>
+</div>
+<div class="section" id="class-lua">
+<span id="cookbook-class"></span><h3>4.7.16. class.lua<a class="headerlink" href="#class-lua" title="Permalink to this headline">¶</a></h3>
 <p>Create a class, create a metatable for the class, create an instance of the class.
 Another illustration is at <a class="reference external" href="http://lua-users.org/wiki/LuaClassesWithMetatable">http://lua-users.org/wiki/LuaClassesWithMetatable</a>.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
@@ -1329,7 +1377,9 @@ Another illustration is at <a class="reference external" href="http://lua-users.
 <span class="nb">print</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>garbage.lua</strong></p>
+</div>
+<div class="section" id="garbage-lua">
+<span id="cookbook-garbage"></span><h3>4.7.17. garbage.lua<a class="headerlink" href="#garbage-lua" title="Permalink to this headline">¶</a></h3>
 <p>Force Lua <a class="reference external" href="https://www.lua.org/manual/5.1/manual.html#2.10">garbage collection</a>
 with the <a class="reference external" href="https://www.lua.org/manual/5.1/manual.html#pdf-collectgarbage">collectgarbage function</a>.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
@@ -1337,7 +1387,9 @@ with the <a class="reference external" href="https://www.lua.org/manual/5.1/manu
 <span class="nb">collectgarbage</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">collect&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>fiber_producer_and_consumer.lua</strong></p>
+</div>
+<div class="section" id="fiber-producer-and-consumer-lua">
+<span id="cookbook-fiber-producer-and-consumer"></span><h3>4.7.18. fiber_producer_and_consumer.lua<a class="headerlink" href="#fiber-producer-and-consumer-lua" title="Permalink to this headline">¶</a></h3>
 <p>Start one fiber for producer and one fiber for consumer.
 Use <a class="reference internal" href="../reference/reference_lua/fiber_ipc.html#fiber-ipc-channel"><span class="std std-ref">fiber.channel()</span></a> to exchange data and synchronize.
 One can tweak the channel size (<code class="code docutils literal"><span class="pre">ch_size</span></code> in the program code)
@@ -1391,7 +1443,9 @@ to control the number of simultaneous tasks waiting for processing.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">started&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>socket_tcpconnect.lua</strong></p>
+</div>
+<div class="section" id="socket-tcpconnect-lua">
+<span id="cookbook-socket-tcpconnect"></span><h3>4.7.19. socket_tcpconnect.lua<a class="headerlink" href="#socket-tcpconnect-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use <a class="reference internal" href="../reference/reference_lua/socket.html#socket-tcp-connect"><span class="std std-ref">socket.tcp_connect()</span></a>
 to connect to a remote host via TCP.
 Display the connection details and the result of a GET request.</p>
@@ -1408,7 +1462,9 @@ Display the connection details and the result of a GET request.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">:</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s">&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p><strong>socket_tcp_echo.lua</strong></p>
+</div>
+<div class="section" id="socket-tcp-echo-lua">
+<span id="cookbook-socket-tcp-echo"></span><h3>4.7.20. socket_tcp_echo.lua<a class="headerlink" href="#socket-tcp-echo-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use <a class="reference internal" href="../reference/reference_lua/socket.html#socket-tcp-connect"><span class="std std-ref">socket.tcp_connect()</span></a>
 to set up a simple TCP server, by creating
 a function that handles requests and echos them,
@@ -1434,10 +1490,12 @@ with each client getting a separate fiber.</p>
 <span class="kd">local</span> <span class="n">server</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">socket&#39;</span><span class="p">).</span><span class="n">tcp_server</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">localhost&#39;</span><span class="p">,</span> <span class="mi">3311</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>getaddrinfo.lua</strong></p>
+</div>
+<div class="section" id="getaddrinfo-lua">
+<span id="cookbook-getaddrinfo"></span><h3>4.7.21. getaddrinfo.lua<a class="headerlink" href="#getaddrinfo-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use <a class="reference internal" href="../reference/reference_lua/socket.html#socket-getaddrinfo"><span class="std std-ref">socket.getaddrinfo()</span></a> to perform
 non-blocking DNS resolution, getting both the AF_INET6 and AF_INET
-information for 'google.com'.
+information for &#8216;google.com&#8217;.
 This technique is not always necessary for tcp connections because
 <a class="reference internal" href="../reference/reference_lua/socket.html#socket-tcp-connect"><span class="std std-ref">socket.tcp_connect()</span></a>
 performs <cite>socket.getaddrinfo</cite> under the hood,
@@ -1457,7 +1515,9 @@ before trying to connect to the first available address.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">port=&#39;</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">port</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>socket_udp_echo.lua</strong></p>
+</div>
+<div class="section" id="socket-udp-echo-lua">
+<span id="cookbook-socket-udp-echo"></span><h3>4.7.22. socket_udp_echo.lua<a class="headerlink" href="#socket-udp-echo-lua" title="Permalink to this headline">¶</a></h3>
 <p>Tarantool does not currently have a <cite>udp_server</cite> function,
 therefore socket_udp_echo.lua is more complicated than
 socket_tcp_echo.lua.
@@ -1528,7 +1588,9 @@ look something like this ...</p>
 <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">console&#39;</span><span class="p">).</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>http_get.lua</strong></p>
+</div>
+<div class="section" id="http-get-lua">
+<span id="cookbook-http-get"></span><h3>4.7.23. http_get.lua<a class="headerlink" href="#http-get-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference external" href="https://github.com/tarantool/http/">http</a> <a class="reference external" href="http://rocks.tarantool.org/">rock</a> (which must first be installed)
 to get data via HTTP.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
@@ -1544,7 +1606,9 @@ to get data via HTTP.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">Oakland wind speed: &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="n">wind</span><span class="p">.</span><span class="n">speed</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>http_send.lua</strong></p>
+</div>
+<div class="section" id="http-send-lua">
+<span id="cookbook-http-send"></span><h3>4.7.24. http_send.lua<a class="headerlink" href="#http-send-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference external" href="https://github.com/tarantool/http/">http</a> <a class="reference external" href="http://rocks.tarantool.org/">rock</a> (which must first be installed)
 to send data via HTTP.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
@@ -1559,7 +1623,9 @@ to send data via HTTP.</p>
 <span class="k">end</span>
 </pre></div>
 </div>
-<p><strong>http_server.lua</strong></p>
+</div>
+<div class="section" id="http-server-lua">
+<span id="cookbook-http-server"></span><h3>4.7.25. http_server.lua<a class="headerlink" href="#http-server-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference external" href="https://github.com/tarantool/http/">http</a> <a class="reference external" href="http://rocks.tarantool.org/">rock</a> (which must first be installed)
 to turn Tarantool into a web server.</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env tarantool</span>
@@ -1574,7 +1640,9 @@ to turn Tarantool into a web server.</p>
 <span class="c1">-- connect to localhost:8080 and see json</span>
 </pre></div>
 </div>
-<p><strong>http_generate_html.lua</strong></p>
+</div>
+<div class="section" id="http-generate-html-lua">
+<span id="cookbook-generate-html"></span><h3>4.7.26. http_generate_html.lua<a class="headerlink" href="#http-generate-html-lua" title="Permalink to this headline">¶</a></h3>
 <p>Use the <a class="reference external" href="https://github.com/tarantool/http/">http</a> <cite>rock</cite> (which must first be installed)
 to generate HTML pages from templates.
 The <a class="reference external" href="https://github.com/tarantool/http/">http</a> <a class="reference external" href="http://rocks.tarantool.org/">rock</a> has a fairly simple template engine which allows execution
@@ -1592,8 +1660,8 @@ to learn new languages in order to write templates.</p>
 <span class="n">server</span><span class="p">:</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>An &quot;HTML&quot; file for this server, including Lua, could look like this
-(it would produce &quot;1 Apple | 2 Orange | 3 Grapefruit | 4 Banana&quot;).</p>
+<p>An &#8220;HTML&#8221; file for this server, including Lua, could look like this
+(it would produce &#8220;1 Apple | 2 Orange | 3 Grapefruit | 4 Banana&#8221;).</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;html&gt;
 &lt;body&gt;
     &lt;table <span class="nv">border</span><span class="o">=</span><span class="s2">&quot;1&quot;</span>&gt;
@@ -1607,6 +1675,7 @@ to learn new languages in order to write templates.</p>
 &lt;/body&gt;
 &lt;/html&gt;
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1665,11 +1734,11 @@ to learn new languages in order to write templates.</p>
     </div>
   
 
-      </div>
-    </div>
+        </div>
+        </div>
 
-  <!-- FOOTER > -->
-  
+    <!-- FOOTER > -->
+    
 <footer class="b-footer">
   <div class="b-footer-wrapper">
     <nav class="b-footer_menu">
@@ -1709,8 +1778,9 @@ to learn new languages in order to write templates.</p>
   </div>
 </footer>
 
-  <!-- < FOOTER -->
-  <div id="mobile-checker"></div>
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </div>
   </body>
 </html>
 

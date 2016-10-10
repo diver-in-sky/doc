@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>1.20. Module socket</title>
+    <title>1.19. Module socket</title>
     <link rel="icon" type="image/png" sizes="192x192"
           href="/theme/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32"
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:       '',
-        VERSION:        '1.7.1',
+        VERSION:        '1.7.2',
         COLLAPSE_INDEX:  false,
         FILE_SUFFIX:    '.html',
         HAS_SOURCE:      true
@@ -40,8 +40,8 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/stacktable.min.js"></script>
     <script type="text/javascript" src="../../_static/headers.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.sticky-kit.min.js"></script>
     <script type="text/javascript" src="/js/menu.js"></script>
     <script type="text/javascript" src="/js/mobile_menu.js"></script>
     <link rel="stylesheet" href="/theme/font-awesome.min.css">
@@ -87,9 +87,10 @@
   
   <body class="p-cols_design b-doc-reference/reference_lua/socket">
   
-    <div class="b-wrapper">
-      <!-- HEADER > -->
-      
+    <div class="b-scrollview">
+        <div class="b-wrapper">
+        <!-- HEADER > -->
+        
   <header class="b-header">
     <div class="b-header_menu_mobile">
       <div class="b-burger-button">
@@ -170,18 +171,18 @@
     </div>
   </header>
 
-      <!-- < HEADER -->
+        <!-- < HEADER -->
 
-      <div class="b-content b-clearbox">
-        
+        <div class="b-content b-clearbox">
+            
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
       <h2
       
         class="b-section-title b-ellipsis toggle-navigation"
       
-        title="1.20. Module socket">
-          1.20. Module socket
+        title="1.19. Module socket">
+          1.19. Module socket
       </h2>
   <div class="b-doc-language_selector">
     <ul class="b-doc-language_selector-list">
@@ -220,12 +221,15 @@
 </form>
 
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../whats_new.html">What&#8217;s new?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../whats_new.html#what-s-new-in-tarantool-1-7">What&#8217;s new in Tarantool 1.7?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../intro.html#database-features">Database features</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/lua_tutorials.html">1. Lua tutorials</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#insert-one-million-tuples-with-a-lua-stored-procedure">1.1. Insert one million tuples with a Lua stored procedure</a><ul>
@@ -240,7 +244,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-million-tuples-into-the-database">1.1.9. Modify main_function to insert a million tuples into the database</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#tutorial-sum-a-json-field-for-all-tuples">1.2. Tutorial: Sum a JSON field for all tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#sum-a-json-field-for-all-tuples">1.2. Sum a JSON field for all tuples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#indexed-pattern-search">1.3. Indexed pattern search</a></li>
 </ul>
 </li>
@@ -250,7 +254,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../book/index.html">User's Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../book/index.html">User&#8217;s Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../book/intro.html">1. Preface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../book/intro.html#how-to-read-the-documentation">1.1. How to read the documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../book/intro.html#getting-in-touch-with-the-tarantool-community">1.2. Getting in touch with the Tarantool community</a></li>
@@ -274,51 +278,50 @@
 <li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#index-operations">3.1.8. Index operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#the-box-library">3.2. The box library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#transaction-control">3.3. Transaction control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#cooperative-multitasking-environment">3.3.1. Cooperative multitasking environment</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#example">3.3.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#transaction-control">3.2. Transaction control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#cooperative-multitasking-environment">3.2.1. Cooperative multitasking environment</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#example">3.2.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#implicit-yields">3.3.2. Implicit yields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#implicit-yields">3.2.2. Implicit yields</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#access-control">3.4. Access control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#passwords">3.4.1. Passwords</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#users-and-the-user-space">3.4.2. Users and the _user space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#privileges-and-the-priv-space">3.4.3. Privileges and the _priv space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#functions-and-the-func-space">3.4.4. Functions and the _func space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#box-session-and-security">3.4.5. box.session and security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#roles">3.4.6. Roles</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#example-showing-a-role-within-a-role">3.4.6.1. Example showing a role within a role</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#access-control">3.3. Access control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#passwords">3.3.1. Passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#users-and-the-user-space">3.3.2. Users and the _user space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#privileges-and-the-priv-space">3.3.3. Privileges and the _priv space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#functions-and-the-func-space">3.3.4. Functions and the _func space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#box-session-and-security">3.3.5. box.session and security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#roles">3.3.6. Roles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#example-showing-a-role-within-a-role">3.3.6.1. Example showing a role within a role</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#triggers">3.5. Triggers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#connection-triggers">3.5.1. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#id1">3.5.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#triggers">3.4. Triggers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#connection-triggers">3.4.1. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#id3">3.4.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#authentication-triggers">3.5.2. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#lua-module.box.space">3.5.3. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#id2">3.5.3.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#another-example">3.5.3.2. Another example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#authentication-triggers">3.4.2. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#lua-module.box.space">3.4.3. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#id4">3.4.3.1. Example</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#another-example">3.4.3.2. Another example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#getting-a-list-of-triggers">3.5.4. Getting a list of triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#getting-a-list-of-triggers">3.4.4. Getting a list of triggers</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#limitations">3.6. Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#vinyl-storage-engine">3.7. Vinyl storage engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.7.1. Differences between memtx and vinyl storage engines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#vinyl-features">3.7.2. Vinyl features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#under-the-hood">3.7.3. Under the hood</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-first-200-000-keys">3.7.3.1. Inserting the first 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-next-300-000-keys">3.7.3.2. Inserting the next 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-next-200-000-keys">3.7.3.3. Inserting the next 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-last-300-000-keys">3.7.3.4. Inserting the last 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#reading-million-keys">3.7.3.5. Reading million keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#limitations">3.5. Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#vinyl-storage-engine">3.6. Vinyl storage engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.6.1. Differences between memtx and vinyl storage engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#vinyl-features">3.6.2. Vinyl features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#under-the-hood">3.6.3. Under the hood</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-first-200-000-keys">3.6.3.1. Inserting the first 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-next-300-000-keys">3.6.3.2. Inserting the next 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-next-200-000-keys">3.6.3.3. Inserting the next 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-last-300-000-keys">3.6.3.4. Inserting the last 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#reading-million-keys">3.6.3.5. Reading million keys</a></li>
 </ul>
 </li>
 </ul>
@@ -332,7 +335,35 @@
 <li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#creating-a-new-c-c-module-locally">4.4. Creating a new C/C++ module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#creating-a-mixed-lua-c-module-locally">4.5. Creating a mixed Lua/C module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#tips-for-special-situations">4.6. Tips for special situations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#cookbook-recipes">4.7. Cookbook recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#cookbook-recipes">4.7. Cookbook recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#hello-world-lua">4.7.1. hello_world.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#console-start-lua">4.7.2. console_start.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#fio-read-lua">4.7.3. fio_read.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#fio-write-lua">4.7.4. fio_write.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#ffi-printf-lua">4.7.5. ffi_printf.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#ffi-gettimeofday-lua">4.7.6. ffi_gettimeofday.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#ffi-zlib-lua">4.7.7. ffi_zlib.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#ffi-meta-lua">4.7.8. ffi_meta.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#print-arrays-lua">4.7.9. print_arrays.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#count-array-lua">4.7.10. count_array.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#count-array-with-nils-lua">4.7.11. count_array_with_nils.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#count-array-with-nulls-lua">4.7.12. count_array_with_nulls.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#count-map-lua">4.7.13. count_map.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#swap-lua">4.7.14. swap.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#uri-lua">4.7.15. uri.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#class-lua">4.7.16. class.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#garbage-lua">4.7.17. garbage.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#fiber-producer-and-consumer-lua">4.7.18. fiber_producer_and_consumer.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#socket-tcpconnect-lua">4.7.19. socket_tcpconnect.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#socket-tcp-echo-lua">4.7.20. socket_tcp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#getaddrinfo-lua">4.7.21. getaddrinfo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#socket-udp-echo-lua">4.7.22. socket_udp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#http-get-lua">4.7.23. http_get.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#http-send-lua">4.7.24. http_send.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#http-server-lua">4.7.25. http_server.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#http-generate-html-lua">4.7.26. http_generate_html.lua</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../book/administration.html">5. Server administration</a><ul>
@@ -366,10 +397,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#setting-up-a-replica">5.6.3. Setting up a replica</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#recovering-from-a-degraded-state">5.6.4. Recovering from a degraded state</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#quick-startup-of-a-new-simple-two-server-cluster">5.6.5. Quick startup of a new simple two-server cluster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica's actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica&#8217;s actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#preventing-duplicate-actions">5.6.7. Preventing duplicate actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#master-master-replication">5.6.8. Master-master replication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#all-the-what-if-questions">5.6.9. All the &quot;What If?&quot; questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#all-the-what-if-questions">5.6.9. All the &#8220;What If?&#8221; questions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#hands-on-replication-tutorial">5.6.10. Hands-on replication tutorial</a></li>
 </ul>
 </li>
@@ -407,6 +438,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#customizing-the-service-file">5.12.3. Customizing the service file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#debugging">5.12.4. Debugging</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#precautions">5.12.5. Precautions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#limitations">5.12.6. Limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#sysvinit-systemd-conversion">5.12.7. sysvinit -&gt; systemd conversion</a></li>
 </ul>
 </li>
 </ul>
@@ -429,15 +462,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#interpreting-function-return-values">6.11. Interpreting function return values</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../book/app/a_errcodes.html">7. Appendix A. List of error codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../book/app/g_changes.html">8. Appendix B. Version-specific changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../book/app/g_changes.html#changes-in-tarantool-version-1-7">8.1. Changes in Tarantool version 1.7</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/faq.html">7. FAQ</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">1. Library reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">1. Built-in library reference</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="box.html">1.1. Module <cite>box</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../book/box/box_schema.html">1.1.1. Submodule <cite>box.schema</cite></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../book/box/box_space.html">1.1.2. Submodule <cite>box.space</cite></a><ul>
@@ -459,21 +488,6 @@
 <li class="toctree-l5"><a class="reference internal" href="../../book/box/box_tuple.html#example">1.1.5.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_introspection.html">1.1.6. Submodule <cite>box.cfg</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_introspection.html#lua-module.box.info">1.1.7. Submodule <cite>box.info</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_introspection.html#lua-module.box.slab">1.1.8. Submodule <cite>box.slab</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_introspection.html#submodule-box-stat">1.1.9. Submodule <cite>box.stat</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/triggers.html">1.1.10. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/triggers.html#example">1.1.10.1. Example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/triggers.html#authentication-triggers">1.1.11. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/triggers.html#lua-module.box.space">1.1.12. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/triggers.html#id1">1.1.12.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../book/box/triggers.html#another-example">1.1.12.2. Another example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../../book/box/triggers.html#getting-a-list-of-triggers">1.1.13. Getting a list of triggers</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -498,13 +512,16 @@
 <li class="toctree-l4"><a class="reference internal" href="fiber_ipc.html#example">1.9.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="fio.html">1.10. Module <cite>fio</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="fio.html#common-pathname-manipulations">1.10.1. Common pathname manipulations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fio.html#common-file-manipulations">1.10.2. Common file manipulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fiber_cond.html">1.10. Submodule <cite>fiber-cond</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fiber_cond.html#example">1.10.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="fun.html">1.11. Module <cite>fun</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="jit.html">1.12. Module <cite>jit</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fio.html">1.11. Module <cite>fio</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fio.html#common-pathname-manipulations">1.11.1. Common pathname manipulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fio.html#common-file-manipulations">1.11.2. Common file manipulations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fun.html">1.12. Module <cite>fun</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="json.html">1.13. Module <cite>json</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="json.html#configuration-settings">1.13.1. Configuration settings</a></li>
 </ul>
@@ -522,32 +539,32 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="box_once.html">1.17. Function <cite>box.once</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="os.html">1.18. Module <cite>os</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pickle.html">1.19. Module <cite>pickle</cite></a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">1.20. Module <cite>socket</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#example">1.20.1. Example</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#use-of-a-tcp-socket-over-the-internet">1.20.1.1. Use of a TCP socket over the Internet</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#use-of-a-udp-socket-on-localhost">1.20.1.2. Use of a UDP socket on localhost</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#use-tcp-server-to-accept-file-contents-sent-with-socat">1.20.1.3. Use tcp_server to accept file contents sent with socat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pickle.html">1.18. Module <cite>pickle</cite></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.19. Module <cite>socket</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example">1.19.1. Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#use-of-a-tcp-socket-over-the-internet">1.19.1.1. Use of a TCP socket over the Internet</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#use-of-a-udp-socket-on-localhost">1.19.1.2. Use of a UDP socket on localhost</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#use-tcp-server-to-accept-file-contents-sent-with-socat">1.19.1.3. Use tcp_server to accept file contents sent with socat</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="strict.html">1.21. Module <cite>strict</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tap.html">1.22. Module <cite>tap</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="tap.html#example">1.22.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strict.html">1.20. Module <cite>strict</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tap.html">1.21. Module <cite>tap</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tap.html#example">1.21.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="tarantool.html">1.23. Module <cite>tarantool</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="uuid.html">1.24. Module <cite>uuid</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="uuid.html#example">1.24.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tarantool.html">1.22. Module <cite>tarantool</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="uuid.html">1.23. Module <cite>uuid</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uuid.html#example">1.23.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="yaml.html">1.25. Module <cite>yaml</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="yaml.html#example">1.25.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html">1.24. Module <cite>yaml</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#example">1.24.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="other.html">1.26. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="other.html">1.25. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="errcodes.html">1.26. Database error codes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference_rock/index.html">2. Rocks reference</a><ul>
@@ -613,7 +630,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Contributor's Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Contributor&#8217;s Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../dev_guide/reference_capi/index.html">1. C API reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/box.html">1.1. Module <cite>box</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -631,8 +648,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../dev_guide/internals_index.html">2. Internals</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool's binary protocol</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#notion-in-diagrams">2.1.1. Notion in diagrams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool&#8217;s binary protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#notation-in-diagrams">2.1.1. Notation in diagrams</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#greeting-packet">2.1.2. Greeting packet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#unified-packet-structure">2.1.3. Unified packet structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#authentication">2.1.4. Authentication</a></li>
@@ -700,7 +717,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-6-functions">4.3.2.7. Chapter 6: Functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-7-centralized-exiting-of-functions">4.3.2.8. Chapter 7: Centralized exiting of functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-8-commenting">4.3.2.9. Chapter 8: Commenting</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You've made a mess of it</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You&#8217;ve made a mess of it</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-10-kconfig-configuration-files">4.3.2.11. Chapter 10: Kconfig configuration files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-11-data-structures">4.3.2.12. Chapter 11: Data structures</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-12-macros-enums-and-rtl">4.3.2.13. Chapter 12: Macros, Enums and RTL</a></li>
@@ -708,7 +725,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-14-allocating-memory">4.3.2.15. Chapter 14: Allocating memory</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-15-the-inline-disease">4.3.2.16. Chapter 15: The inline disease</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-16-function-return-values-and-names">4.3.2.17. Chapter 16: Function return values and names</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don't re-invent the kernel macros</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don&#8217;t re-invent the kernel macros</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-18-editor-modelines-and-other-cruft">4.3.2.19. Chapter 18:  Editor modelines and other cruft</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#appendix-i-references">4.3.2.20. Appendix I: References</a></li>
 </ul>
@@ -789,14 +806,14 @@
         <li class="b-path-list-item">
           <a href="index.html"
              class="b-path-list-item-url b-ellipsis">
-            1. Library reference
+            1. Built-in library reference
           </a>
         </li>
       
       
       <li class="b-path-list-item">
-        <div title="1.20. Module <cite>socket</cite>" class="b-path_current b-ellipsis">
-          1.20. Module <cite>socket</cite>
+        <div title="1.19. Module <cite>socket</cite>" class="b-path_current b-ellipsis">
+          1.19. Module <cite>socket</cite>
         </div>
       </li>
       
@@ -804,7 +821,7 @@
   </div>
 
   <div class="section" id="module-socket">
-<span id="socket-module"></span><h1>1.20. Module <cite>socket</cite><a class="headerlink" href="#module-socket" title="Permalink to this headline">¶</a></h1>
+<span id="socket-module"></span><h1>1.19. Module <cite>socket</cite><a class="headerlink" href="#module-socket" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal"><span class="pre">socket</span></code> module allows exchanging data via BSD sockets with a local or
 remote host in connection-oriented (TCP) or datagram-oriented (UDP) mode.
 Semantics of the calls in the <code class="docutils literal"><span class="pre">socket</span></code> API closely follow semantics of the
@@ -834,92 +851,95 @@ are <code class="docutils literal"><span class="pre">errno</span></code>, <code 
 <tr class="row-even"><td>setup</td>
 <td><a class="reference internal" href="#socket-socket"><span class="std std-ref">socket()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-tcp-connect"><span class="std std-ref">socket.tcp_connect()</span></a></td>
 </tr>
-<tr class="row-even"><td>&quot;&quot;</td>
+<tr class="row-even"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-tcp-server"><span class="std std-ref">socket.tcp_server()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-sysconnect"><span class="std std-ref">socket_object:sysconnect()</span></a></td>
 </tr>
-<tr class="row-even"><td>&quot;&quot;</td>
+<tr class="row-even"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-send"><span class="std std-ref">socket_object:send()</span></a></td>
 </tr>
 <tr class="row-odd"><td>sending</td>
 <td><a class="reference internal" href="#socket-sendto"><span class="std std-ref">socket_object:sendto()</span></a></td>
 </tr>
-<tr class="row-even"><td>&quot;&quot;</td>
+<tr class="row-even"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-send"><span class="std std-ref">socket_object:write()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-syswrite"><span class="std std-ref">socket_object:syswrite()</span></a></td>
 </tr>
 <tr class="row-even"><td>receiving</td>
 <td><a class="reference internal" href="#socket-recv"><span class="std std-ref">socket_object:recv()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-recvfrom"><span class="std std-ref">socket_object:recvfrom()</span></a></td>
 </tr>
-<tr class="row-even"><td>&quot;&quot;</td>
+<tr class="row-even"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-read"><span class="std std-ref">socket_object:read()</span></a></td>
 </tr>
 <tr class="row-odd"><td>flag setting</td>
 <td><a class="reference internal" href="#socket-nonblock"><span class="std std-ref">socket_object:nonblock()</span></a></td>
 </tr>
-<tr class="row-even"><td>&quot;&quot;</td>
+<tr class="row-even"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-setsockopt"><span class="std std-ref">socket_object:setsockopt()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-linger"><span class="std std-ref">socket_object:linger()</span></a></td>
 </tr>
 <tr class="row-even"><td>client/server</td>
 <td><a class="reference internal" href="#socket-listen"><span class="std std-ref">socket_object:listen()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-accept"><span class="std std-ref">socket_object:accept()</span></a></td>
 </tr>
 <tr class="row-even"><td>teardown</td>
 <td><a class="reference internal" href="#socket-shutdown"><span class="std std-ref">socket_object:shutdown()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-close"><span class="std std-ref">socket_object:close()</span></a></td>
 </tr>
 <tr class="row-even"><td>error checking</td>
 <td><a class="reference internal" href="#socket-error"><span class="std std-ref">socket_object:error()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-error"><span class="std std-ref">socket_object:errno()</span></a></td>
 </tr>
 <tr class="row-even"><td>information</td>
 <td><a class="reference internal" href="#socket-getaddrinfo"><span class="std std-ref">socket.getaddrinfo()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-getsockopt"><span class="std std-ref">socket_object:getsockopt()</span></a></td>
 </tr>
-<tr class="row-even"><td>&quot;&quot;</td>
+<tr class="row-even"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-peer"><span class="std std-ref">socket_object:peer()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-name"><span class="std std-ref">socket_object:name()</span></a></td>
 </tr>
 <tr class="row-even"><td>state checking</td>
 <td><a class="reference internal" href="#socket-readable"><span class="std std-ref">socket_object:readable()</span></a></td>
 </tr>
-<tr class="row-odd"><td>&quot;&quot;</td>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-writable"><span class="std std-ref">socket_object:writable()</span></a></td>
 </tr>
-<tr class="row-even"><td>&quot;&quot;</td>
+<tr class="row-even"><td>&#8220;&#8221;</td>
 <td><a class="reference internal" href="#socket-wait"><span class="std std-ref">socket_object:wait()</span></a></td>
+</tr>
+<tr class="row-odd"><td>&#8220;&#8221;</td>
+<td><a class="reference internal" href="#socket-iowait"><span class="std std-ref">socket.iowait()</span></a></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>Typically a socket session will begin with the setup functions, will set one
 or more flags, will have a loop with sending and receiving functions, will
-end with the teardown functions -- as an example at the end of this section
+end with the teardown functions &#8211; as an example at the end of this section
 will show. Throughout, there may be error-checking and waiting functions for
-synchronization. To prevent a fiber containing socket functions from &quot;blocking&quot;
+synchronization. To prevent a fiber containing socket functions from &#8220;blocking&#8221;
 other fibers, the <a class="reference internal" href="../../book/box/index.html#atomic-the-implicit-yield-rules"><span class="std std-ref">implicit yield rules</span></a>
 will cause a yield so that other processes
 may take over, as is the norm for cooperative multitasking.</p>
@@ -948,15 +968,16 @@ are the same as in the <a class="reference external" href="http://man7.org/linux
 
 <span class="target" id="socket-tcp-connect"></span><dl class="function">
 <dt id="lua-function.socket.tcp_connect">
-<em class="property"> </em><code class="descclassname">socket.</code><code class="descname">tcp_connect</code><big>(</big><em>host</em><span class="optional">[</span>, <em>port</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket.tcp_connect" title="Permalink to this definition">¶</a></dt>
+<em class="property"> </em><code class="descclassname">socket.</code><code class="descname">tcp_connect</code><big>(</big><em>host</em><span class="optional">[</span>, <em>port</em><span class="optional">[</span>, <em>timeout</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket.tcp_connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect a socket to a remote host.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>host</strong> (<em>string</em>) -- URL or IP address</li>
-<li><strong>port</strong> (<em>number</em>) -- port number</li>
+<li><strong>host</strong> (<em>string</em>) &#8211; URL or IP address</li>
+<li><strong>port</strong> (<em>number</em>) &#8211; port number</li>
+<li><strong>timeout</strong> (<em>number</em>) &#8211; timeout</li>
 </ul>
 </td>
 </tr>
@@ -984,7 +1005,7 @@ about a remote site so that the correct arguments for
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">A table containing these fields: &quot;host&quot;, &quot;family&quot;, &quot;type&quot;, &quot;protocol&quot;, &quot;port&quot;.</td>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">A table containing these fields: &#8220;host&#8221;, &#8220;family&#8221;, &#8220;type&#8221;, &#8220;protocol&#8221;, &#8220;port&#8221;.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">table</td>
 </tr>
@@ -1046,7 +1067,7 @@ or an IPv6 address;</li>
 <li><dl class="first docutils">
 <dt>Or:</dt>
 <dd><ul class="first last simple">
-<li>host - a string containing &quot;unix/&quot;;</li>
+<li>host - a string containing &#8220;unix/&#8221;;</li>
 <li>port - a string containing a path to a unix socket.</li>
 </ul>
 </dd>
@@ -1055,8 +1076,8 @@ or an IPv6 address;</li>
 <li><dl class="first docutils">
 <dt>Or:</dt>
 <dd><ul class="first last simple">
-<li>host - a number, 0 (zero), meaning &quot;all local
-interfaces&quot;;</li>
+<li>host - a number, 0 (zero), meaning &#8220;all local
+interfaces&#8221;;</li>
 <li>port - a number. If a port number is 0 (zero),
 the socket will be bound to a random local port.</li>
 </ul>
@@ -1095,7 +1116,7 @@ the socket will be bound to a random local port.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>string</em>) -- </li>
+<li><strong>data</strong> (<em>string</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
@@ -1127,7 +1148,7 @@ buffer is used to reduce the cost of this call.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>size</strong> (<em>integer</em>) -- </li>
+<li><strong>size</strong> (<em>integer</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
@@ -1142,7 +1163,7 @@ buffer is used to reduce the cost of this call.</p>
 <p>Possible errors: On error, returns an empty string, followed by status,
 errno, errstr. In case the writing side has closed its
 end, returns the remainder read from the socket (possibly
-an empty string), followed by &quot;eof&quot; status.</p>
+an empty string), followed by &#8220;eof&#8221; status.</p>
 </dd></dl>
 
 <span class="target" id="socket-read"></span><dl class="method">
@@ -1165,12 +1186,12 @@ has been read, or a timeout has expired.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>limit</strong> (<em>integer</em>) -- maximum number of bytes to read for
-example 50 means &quot;stop after 50 bytes&quot;</li>
-<li><strong>delimiter</strong> (<em>string</em>) -- separator for example
-'?' means &quot;stop after a question mark&quot;</li>
-<li><strong>timeout</strong> (<em>number</em>) -- maximum number of seconds to wait for
-example 50 means &quot;stop after 50 seconds&quot;.</li>
+<li><strong>limit</strong> (<em>integer</em>) &#8211; maximum number of bytes to read for
+example 50 means &#8220;stop after 50 bytes&#8221;</li>
+<li><strong>delimiter</strong> (<em>string</em>) &#8211; separator for example
+&#8216;?&#8217; means &#8220;stop after a question mark&#8221;</li>
+<li><strong>timeout</strong> (<em>number</em>) &#8211; maximum number of seconds to wait for
+example 50 means &#8220;stop after 50 seconds&#8221;.</li>
 </ul>
 </td>
 </tr>
@@ -1206,8 +1227,8 @@ been put in listen mode.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>host</strong> -- </li>
-<li><strong>port</strong> -- </li>
+<li><strong>host</strong> &#8211; </li>
+<li><strong>port</strong> &#8211; </li>
 </ul>
 </td>
 </tr>
@@ -1231,7 +1252,7 @@ been put in listen mode.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>backlog</strong> -- On Linux the listen <code class="docutils literal"><span class="pre">backlog</span></code> backlog may be from
+<li><strong>backlog</strong> &#8211; On Linux the listen <code class="docutils literal"><span class="pre">backlog</span></code> backlog may be from
 /proc/sys/net/core/somaxconn, on BSD the backlog
 may be <code class="docutils literal"><span class="pre">SOMAXCONN</span></code>.</li>
 </ul>
@@ -1251,7 +1272,7 @@ may be <code class="docutils literal"><span class="pre">SOMAXCONN</span></code>.
 <dt id="lua-function.socket_object.accept">
 <em class="property"> </em><code class="descclassname">socket_object:</code><code class="descname">accept</code><big>(</big><big>)</big><a class="headerlink" href="#lua-function.socket_object.accept" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accept a new client connection and create a new connected socket.
-It is good practice to set the socket's blocking mode explicitly
+It is good practice to set the socket&#8217;s blocking mode explicitly
 after accepting.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1275,9 +1296,9 @@ after accepting.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>host</strong> (<em>string</em>) -- </li>
-<li><strong>port</strong> (<em>number</em>) -- </li>
-<li><strong>data</strong> (<em>string</em>) -- </li>
+<li><strong>host</strong> (<em>string</em>) &#8211; </li>
+<li><strong>port</strong> (<em>number</em>) &#8211; </li>
+<li><strong>data</strong> (<em>string</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
@@ -1301,11 +1322,11 @@ after accepting.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>limit</strong> (<em>integer</em>) -- </li>
+<li><strong>limit</strong> (<em>integer</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">message, a table containing &quot;host&quot;, &quot;family&quot; and &quot;port&quot; fields.</p>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first">message, a table containing &#8220;host&#8221;, &#8220;family&#8221; and &#8220;port&#8221; fields.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Rtype:</th><td class="field-body"><p class="first last">string, table</p>
@@ -1316,7 +1337,7 @@ after accepting.</p>
 <p>Possible errors: on error, returns status, errno, errstr.</p>
 <p><strong>Example:</strong></p>
 <p>After <code class="docutils literal"><span class="pre">message_content,</span> <span class="pre">message_sender</span> <span class="pre">=</span> <span class="pre">recvfrom(1)</span></code>
-the value of <code class="docutils literal"><span class="pre">message_content</span></code> might be a string containing 'X' and
+the value of <code class="docutils literal"><span class="pre">message_content</span></code> might be a string containing &#8216;X&#8217; and
 the value of <code class="docutils literal"><span class="pre">message_sender</span></code> might be a table containing</p>
 <div class="highlight-lua"><div class="highlight"><pre><span></span><span class="n">message_sender</span><span class="p">.</span><span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">18.44.0.1&#39;</span>
 <span class="n">message_sender</span><span class="p">.</span><span class="n">family</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">AF_INET&#39;</span>
@@ -1334,7 +1355,7 @@ the value of <code class="docutils literal"><span class="pre">message_sender</sp
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>how</strong> -- socket.SHUT_RD, socket.SHUT_WR, or socket.SHUT_RDWR.</li>
+<li><strong>how</strong> &#8211; socket.SHUT_RD, socket.SHUT_WR, or socket.SHUT_RDWR.</li>
 </ul>
 </td>
 </tr>
@@ -1440,7 +1461,7 @@ the <a class="reference external" href="http://man7.org/linux/man-pages/man1/log
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>active</strong> (<em>boolean</em>) -- </li>
+<li><strong>active</strong> (<em>boolean</em>) &#8211; </li>
 </ul>
 </td>
 </tr>
@@ -1499,7 +1520,7 @@ otherwise block indefinitely.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">'R' if the socket is now readable, 'W' if the socket is now writable, 'RW' if the socket is now both readable and writable, '' (empty string) if timeout expired;</td>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">&#8216;R&#8217; if the socket is now readable, &#8216;W&#8217; if the socket is now writable, &#8216;RW&#8217; if the socket is now both readable and writable, &#8216;&#8217; (empty string) if timeout expired;</td>
 </tr>
 </tbody>
 </table>
@@ -1516,7 +1537,7 @@ The equivalent POSIX function is <code class="docutils literal"><span class="pre
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">A table containing these fields: &quot;host&quot;, &quot;family&quot;, &quot;type&quot;, &quot;protocol&quot;, &quot;port&quot;.</td>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">A table containing these fields: &#8220;host&#8221;, &#8220;family&#8221;, &#8220;type&#8221;, &#8220;protocol&#8221;, &#8220;port&#8221;.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">table</td>
 </tr>
@@ -1535,7 +1556,7 @@ The equivalent POSIX function is <code class="docutils literal"><span class="pre
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">A table containing these fields: &quot;host&quot;, &quot;family&quot;, &quot;type&quot;, &quot;protocol&quot;, &quot;port&quot;.</td>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body">A table containing these fields: &#8220;host&#8221;, &#8220;family&#8221;, &#8220;type&#8221;, &#8220;protocol&#8221;, &#8220;port&#8221;.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Rtype:</th><td class="field-body">table</td>
 </tr>
@@ -1545,13 +1566,40 @@ The equivalent POSIX function is <code class="docutils literal"><span class="pre
 
 </dd></dl>
 
+<span class="target" id="socket-iowait"></span><dl class="function">
+<dt id="lua-function.socket.iowait">
+<em class="property"> </em><code class="descclassname">socket.</code><code class="descname">iowait</code><big>(</big><em>fd</em>, <em>read-or-write-flags</em><span class="optional">[</span>, <em>timeout</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.socket.iowait" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal"><span class="pre">socket.iowait()</span></code> function is used to wait until read-or-write activity
+occurs for a file descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fd</strong> &#8211; file descriptor</li>
+<li><strong>read-or-write-flags</strong> &#8211; &#8216;R&#8217; or 1 = read, &#8216;W&#8217; or 2 = write, &#8216;RW&#8217; or 3 = read|write.</li>
+<li><strong>timeout</strong> &#8211; number of seconds to wait</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If the fd parameter is nil, then there will be a sleep until the timeout.
+If the timeout parameter is nil or unspecified, then timeout is infinite.</p>
+<p>Ordinarily the return value is the activity that occurred (&#8216;R&#8217; or &#8216;W&#8217; or &#8216;RW&#8217; or 1 or 2 or 3).
+If the timeout period goes by without any reading or writing, the
+return is an error = ETIMEDOUT.</p>
+<p>Example: <code class="docutils literal"><span class="pre">socket.iowait(sock:fd(),</span> <span class="pre">'r',</span> <span class="pre">1.11)</span></code></p>
+</dd></dl>
+
 <div class="section" id="example">
-<h2>1.20.1. Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<h2>1.19.1. Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="use-of-a-tcp-socket-over-the-internet">
-<h3>1.20.1.1. Use of a TCP socket over the Internet<a class="headerlink" href="#use-of-a-tcp-socket-over-the-internet" title="Permalink to this headline">¶</a></h3>
+<h3>1.19.1.1. Use of a TCP socket over the Internet<a class="headerlink" href="#use-of-a-tcp-socket-over-the-internet" title="Permalink to this headline">¶</a></h3>
 <p>In this example a connection is made over the internet between the Tarantool
-server and tarantool.org, then an HTTP &quot;head&quot; message is sent, and a response
-is received: &quot;<code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">200</span> <span class="pre">OK</span></code>&quot;. This is not a useful way to communicate
+server and tarantool.org, then an HTTP &#8220;head&#8221; message is sent, and a response
+is received: &#8220;<code class="docutils literal"><span class="pre">HTTP/1.1</span> <span class="pre">200</span> <span class="pre">OK</span></code>&#8221; or something else if the site has moved.
+This is not a useful way to communicate
 with this particular site, but shows that the system works.</p>
 <div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">socket</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">socket&#39;</span><span class="p">)</span>
 <span class="nn">---</span>
@@ -1567,13 +1615,13 @@ with this particular site, but shows that the system works.</p>
 <span class="nn">---</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
 <span class="nn">...</span>
-<span class="gp">tarantool&gt; </span><span class="n">sock</span><span class="p">:</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">HEAD / HTTP/1.0rnHost: tarantool.orgrnrn&quot;</span><span class="p">)</span>
+<span class="gp">tarantool&gt; </span><span class="n">sock</span><span class="p">:</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">HEAD / HTTP/1.0</span><span class="se">\r\n</span><span class="s">Host: tarantool.org</span><span class="se">\r\n\r\n</span><span class="s">&quot;</span><span class="p">)</span>
 <span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">40</span>
 <span class="nn">...</span>
 <span class="gp">tarantool&gt; </span><span class="n">sock</span><span class="p">:</span><span class="n">read</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
 <span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="s">&quot;HTTP/1.1</span><span class="nv"> </span><span class="s">200</span><span class="nv"> </span><span class="s">OKrn&quot;</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">HTTP/1.1 302 Move</span>
 <span class="nn">...</span>
 <span class="gp">tarantool&gt; </span><span class="n">sock</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
 <span class="nn">---</span>
@@ -1583,7 +1631,7 @@ with this particular site, but shows that the system works.</p>
 </div>
 </div>
 <div class="section" id="use-of-a-udp-socket-on-localhost">
-<h3>1.20.1.2. Use of a UDP socket on localhost<a class="headerlink" href="#use-of-a-udp-socket-on-localhost" title="Permalink to this headline">¶</a></h3>
+<h3>1.19.1.2. Use of a UDP socket on localhost<a class="headerlink" href="#use-of-a-udp-socket-on-localhost" title="Permalink to this headline">¶</a></h3>
 <p>Here is an example with datagrams. Set up two connections on 127.0.0.1
 (localhost): <code class="docutils literal"><span class="pre">sock_1</span></code> and <code class="docutils literal"><span class="pre">sock_2</span></code>. Using <code class="docutils literal"><span class="pre">sock_2</span></code>, send a message
 to <code class="docutils literal"><span class="pre">sock_1</span></code>. Using <code class="docutils literal"><span class="pre">sock_1</span></code>, receive a message. Display the received
@@ -1625,7 +1673,7 @@ computer to communicate with itself, but shows that the system works.</p>
 </div>
 </div>
 <div class="section" id="use-tcp-server-to-accept-file-contents-sent-with-socat">
-<h3>1.20.1.3. Use tcp_server to accept file contents sent with socat<a class="headerlink" href="#use-tcp-server-to-accept-file-contents-sent-with-socat" title="Permalink to this headline">¶</a></h3>
+<h3>1.19.1.3. Use tcp_server to accept file contents sent with socat<a class="headerlink" href="#use-tcp-server-to-accept-file-contents-sent-with-socat" title="Permalink to this headline">¶</a></h3>
 <p>Here is an example of the tcp_server function, reading
 strings from the client and printing them. On the client
 side, the Linux socat utility will be used to ship a
@@ -1650,20 +1698,20 @@ The second shell will be the client.</p>
 <p>The above code means: use <cite>tcp_server()</cite> to wait for a
 connection from any host on port 3302. When it happens,
 enter a loop that reads on the socket and prints what it
-reads. The &quot;delimiter&quot; for the read function is &quot;\n&quot; so
+reads. The &#8220;delimiter&#8221; for the read function is &#8220;\n&#8221; so
 each <cite>read()</cite> will read a string as far as the next line feed,
 including the line feed.</p>
 <p>On the second shell, create a file that contains a few
-lines. The contents don't matter. Suppose the first line
+lines. The contents don&#8217;t matter. Suppose the first line
 contains A, the second line contains B, the third line
-contains C. Call this file &quot;tmp.txt&quot;.</p>
+contains C. Call this file &#8220;tmp.txt&#8221;.</p>
 <p>On the second shell, use the socat utility to ship the
-tmp.txt file to the server's host and port:</p>
+tmp.txt file to the server&#8217;s host and port:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> socat TCP:localhost:3302 ./tmp.txt
 </pre></div>
 </div>
 <p>Now watch what happens on the first shell.
-The strings &quot;A&quot;, &quot;B&quot;, &quot;C&quot; are printed.</p>
+The strings &#8220;A&#8221;, &#8220;B&#8221;, &#8220;C&#8221; are printed.</p>
 </div>
 </div>
 </div>
@@ -1697,7 +1745,7 @@ The strings &quot;A&quot;, &quot;B&quot;, &quot;C&quot; are printed.</p>
       <div class="b-page_over-prev">
         <a href="pickle.html"
            class="b-prev b-ellipsis"
-           title="1.19. Module &lt;cite&gt;pickle&lt;/cite&gt;">1.19. Module <cite>pickle</cite></a>
+           title="1.18. Module &lt;cite&gt;pickle&lt;/cite&gt;">1.18. Module <cite>pickle</cite></a>
       </div>
     
     <div class="b-page_over-lang">
@@ -1712,7 +1760,7 @@ The strings &quot;A&quot;, &quot;B&quot;, &quot;C&quot; are printed.</p>
       <div class="b-page_over-next">
         <a href="strict.html"
            class="b-next b-ellipsis"
-           title="1.21. Module &lt;cite&gt;strict&lt;/cite&gt;">1.21. Module <cite>strict</cite></a>
+           title="1.20. Module &lt;cite&gt;strict&lt;/cite&gt;">1.20. Module <cite>strict</cite></a>
       </div>
     
     </div>
@@ -1722,11 +1770,11 @@ The strings &quot;A&quot;, &quot;B&quot;, &quot;C&quot; are printed.</p>
     </div>
   
 
-      </div>
-    </div>
+        </div>
+        </div>
 
-  <!-- FOOTER > -->
-  
+    <!-- FOOTER > -->
+    
 <footer class="b-footer">
   <div class="b-footer-wrapper">
     <nav class="b-footer_menu">
@@ -1766,8 +1814,9 @@ The strings &quot;A&quot;, &quot;B&quot;, &quot;C&quot; are printed.</p>
   </div>
 </footer>
 
-  <!-- < FOOTER -->
-  <div id="mobile-checker"></div>
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </div>
   </body>
 </html>
 

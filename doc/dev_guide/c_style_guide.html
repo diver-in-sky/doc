@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:       '',
-        VERSION:        '1.7.1',
+        VERSION:        '1.7.2',
         COLLAPSE_INDEX:  false,
         FILE_SUFFIX:    '.html',
         HAS_SOURCE:      true
@@ -40,8 +40,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/stacktable.min.js"></script>
     <script type="text/javascript" src="../_static/headers.js"></script>
-    <script type="text/javascript" src="../_static/jquery.sticky-kit.min.js"></script>
     <script type="text/javascript" src="/js/menu.js"></script>
     <script type="text/javascript" src="/js/mobile_menu.js"></script>
     <link rel="stylesheet" href="/theme/font-awesome.min.css">
@@ -87,9 +87,10 @@
   
   <body class="p-cols_design b-doc-dev_guide/c_style_guide">
   
-    <div class="b-wrapper">
-      <!-- HEADER > -->
-      
+    <div class="b-scrollview">
+        <div class="b-wrapper">
+        <!-- HEADER > -->
+        
   <header class="b-header">
     <div class="b-header_menu_mobile">
       <div class="b-burger-button">
@@ -170,10 +171,10 @@
     </div>
   </header>
 
-      <!-- < HEADER -->
+        <!-- < HEADER -->
 
-      <div class="b-content b-clearbox">
-        
+        <div class="b-content b-clearbox">
+            
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
       <h2
@@ -220,12 +221,15 @@
 </form>
 
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s new?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../whats_new.html#what-s-new-in-tarantool-1-7">What&#8217;s new in Tarantool 1.7?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro.html#database-features">Database features</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/lua_tutorials.html">1. Lua tutorials</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#insert-one-million-tuples-with-a-lua-stored-procedure">1.1. Insert one million tuples with a Lua stored procedure</a><ul>
@@ -240,7 +244,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-million-tuples-into-the-database">1.1.9. Modify main_function to insert a million tuples into the database</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#tutorial-sum-a-json-field-for-all-tuples">1.2. Tutorial: Sum a JSON field for all tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#sum-a-json-field-for-all-tuples">1.2. Sum a JSON field for all tuples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#indexed-pattern-search">1.3. Indexed pattern search</a></li>
 </ul>
 </li>
@@ -250,7 +254,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User's Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User&#8217;s Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../book/intro.html">1. Preface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../book/intro.html#how-to-read-the-documentation">1.1. How to read the documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../book/intro.html#getting-in-touch-with-the-tarantool-community">1.2. Getting in touch with the Tarantool community</a></li>
@@ -274,51 +278,50 @@
 <li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#index-operations">3.1.8. Index operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#the-box-library">3.2. The box library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#transaction-control">3.3. Transaction control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#cooperative-multitasking-environment">3.3.1. Cooperative multitasking environment</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example">3.3.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#transaction-control">3.2. Transaction control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#cooperative-multitasking-environment">3.2.1. Cooperative multitasking environment</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example">3.2.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#implicit-yields">3.3.2. Implicit yields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#implicit-yields">3.2.2. Implicit yields</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#access-control">3.4. Access control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#passwords">3.4.1. Passwords</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#users-and-the-user-space">3.4.2. Users and the _user space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#privileges-and-the-priv-space">3.4.3. Privileges and the _priv space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#functions-and-the-func-space">3.4.4. Functions and the _func space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#box-session-and-security">3.4.5. box.session and security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#roles">3.4.6. Roles</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example-showing-a-role-within-a-role">3.4.6.1. Example showing a role within a role</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#access-control">3.3. Access control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#passwords">3.3.1. Passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#users-and-the-user-space">3.3.2. Users and the _user space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#privileges-and-the-priv-space">3.3.3. Privileges and the _priv space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#functions-and-the-func-space">3.3.4. Functions and the _func space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#box-session-and-security">3.3.5. box.session and security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#roles">3.3.6. Roles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example-showing-a-role-within-a-role">3.3.6.1. Example showing a role within a role</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#triggers">3.5. Triggers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#connection-triggers">3.5.1. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id1">3.5.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#triggers">3.4. Triggers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#connection-triggers">3.4.1. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id3">3.4.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#authentication-triggers">3.5.2. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#lua-module.box.space">3.5.3. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id2">3.5.3.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#another-example">3.5.3.2. Another example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#authentication-triggers">3.4.2. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#lua-module.box.space">3.4.3. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id4">3.4.3.1. Example</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#another-example">3.4.3.2. Another example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#getting-a-list-of-triggers">3.5.4. Getting a list of triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#getting-a-list-of-triggers">3.4.4. Getting a list of triggers</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#limitations">3.6. Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#vinyl-storage-engine">3.7. Vinyl storage engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.7.1. Differences between memtx and vinyl storage engines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#vinyl-features">3.7.2. Vinyl features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#under-the-hood">3.7.3. Under the hood</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-first-200-000-keys">3.7.3.1. Inserting the first 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-300-000-keys">3.7.3.2. Inserting the next 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-200-000-keys">3.7.3.3. Inserting the next 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-last-300-000-keys">3.7.3.4. Inserting the last 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#reading-million-keys">3.7.3.5. Reading million keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#limitations">3.5. Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#vinyl-storage-engine">3.6. Vinyl storage engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.6.1. Differences between memtx and vinyl storage engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#vinyl-features">3.6.2. Vinyl features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#under-the-hood">3.6.3. Under the hood</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-first-200-000-keys">3.6.3.1. Inserting the first 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-300-000-keys">3.6.3.2. Inserting the next 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-200-000-keys">3.6.3.3. Inserting the next 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-last-300-000-keys">3.6.3.4. Inserting the last 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#reading-million-keys">3.6.3.5. Reading million keys</a></li>
 </ul>
 </li>
 </ul>
@@ -332,7 +335,35 @@
 <li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#creating-a-new-c-c-module-locally">4.4. Creating a new C/C++ module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#creating-a-mixed-lua-c-module-locally">4.5. Creating a mixed Lua/C module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#tips-for-special-situations">4.6. Tips for special situations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#cookbook-recipes">4.7. Cookbook recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#cookbook-recipes">4.7. Cookbook recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#hello-world-lua">4.7.1. hello_world.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#console-start-lua">4.7.2. console_start.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#fio-read-lua">4.7.3. fio_read.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#fio-write-lua">4.7.4. fio_write.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-printf-lua">4.7.5. ffi_printf.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-gettimeofday-lua">4.7.6. ffi_gettimeofday.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-zlib-lua">4.7.7. ffi_zlib.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-meta-lua">4.7.8. ffi_meta.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#print-arrays-lua">4.7.9. print_arrays.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-array-lua">4.7.10. count_array.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-array-with-nils-lua">4.7.11. count_array_with_nils.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-array-with-nulls-lua">4.7.12. count_array_with_nulls.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-map-lua">4.7.13. count_map.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#swap-lua">4.7.14. swap.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#uri-lua">4.7.15. uri.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#class-lua">4.7.16. class.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#garbage-lua">4.7.17. garbage.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#fiber-producer-and-consumer-lua">4.7.18. fiber_producer_and_consumer.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#socket-tcpconnect-lua">4.7.19. socket_tcpconnect.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#socket-tcp-echo-lua">4.7.20. socket_tcp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#getaddrinfo-lua">4.7.21. getaddrinfo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#socket-udp-echo-lua">4.7.22. socket_udp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-get-lua">4.7.23. http_get.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-send-lua">4.7.24. http_send.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-server-lua">4.7.25. http_server.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-generate-html-lua">4.7.26. http_generate_html.lua</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../book/administration.html">5. Server administration</a><ul>
@@ -366,10 +397,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#setting-up-a-replica">5.6.3. Setting up a replica</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#recovering-from-a-degraded-state">5.6.4. Recovering from a degraded state</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#quick-startup-of-a-new-simple-two-server-cluster">5.6.5. Quick startup of a new simple two-server cluster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica's actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica&#8217;s actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#preventing-duplicate-actions">5.6.7. Preventing duplicate actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#master-master-replication">5.6.8. Master-master replication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#all-the-what-if-questions">5.6.9. All the &quot;What If?&quot; questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#all-the-what-if-questions">5.6.9. All the &#8220;What If?&#8221; questions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#hands-on-replication-tutorial">5.6.10. Hands-on replication tutorial</a></li>
 </ul>
 </li>
@@ -407,6 +438,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#customizing-the-service-file">5.12.3. Customizing the service file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#debugging">5.12.4. Debugging</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#precautions">5.12.5. Precautions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#limitations">5.12.6. Limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#sysvinit-systemd-conversion">5.12.7. sysvinit -&gt; systemd conversion</a></li>
 </ul>
 </li>
 </ul>
@@ -429,15 +462,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#interpreting-function-return-values">6.11. Interpreting function return values</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../book/app/a_errcodes.html">7. Appendix A. List of error codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../book/app/g_changes.html">8. Appendix B. Version-specific changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../book/app/g_changes.html#changes-in-tarantool-version-1-7">8.1. Changes in Tarantool version 1.7</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../book/faq.html">7. FAQ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../reference/reference_lua/index.html">1. Library reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/reference_lua/index.html">1. Built-in library reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box.html">1.1. Module <cite>box</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../book/box/box_schema.html">1.1.1. Submodule <cite>box.schema</cite></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/box/box_space.html">1.1.2. Submodule <cite>box.space</cite></a><ul>
@@ -459,21 +488,6 @@
 <li class="toctree-l5"><a class="reference internal" href="../book/box/box_tuple.html#example">1.1.5.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/box_introspection.html">1.1.6. Submodule <cite>box.cfg</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/box_introspection.html#lua-module.box.info">1.1.7. Submodule <cite>box.info</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/box_introspection.html#lua-module.box.slab">1.1.8. Submodule <cite>box.slab</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/box_introspection.html#submodule-box-stat">1.1.9. Submodule <cite>box.stat</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/triggers.html">1.1.10. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/triggers.html#example">1.1.10.1. Example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/triggers.html#authentication-triggers">1.1.11. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/triggers.html#lua-module.box.space">1.1.12. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/triggers.html#id1">1.1.12.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/triggers.html#another-example">1.1.12.2. Another example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/triggers.html#getting-a-list-of-triggers">1.1.13. Getting a list of triggers</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -498,13 +512,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_ipc.html#example">1.9.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fio.html">1.10. Module <cite>fio</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-pathname-manipulations">1.10.1. Common pathname manipulations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-file-manipulations">1.10.2. Common file manipulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html">1.10. Submodule <cite>fiber-cond</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html#example">1.10.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fun.html">1.11. Module <cite>fun</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/jit.html">1.12. Module <cite>jit</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fio.html">1.11. Module <cite>fio</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-pathname-manipulations">1.11.1. Common pathname manipulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-file-manipulations">1.11.2. Common file manipulations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fun.html">1.12. Module <cite>fun</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/json.html">1.13. Module <cite>json</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/json.html#configuration-settings">1.13.1. Configuration settings</a></li>
 </ul>
@@ -522,32 +539,32 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box_once.html">1.17. Function <cite>box.once</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/os.html">1.18. Module <cite>os</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/pickle.html">1.19. Module <cite>pickle</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/socket.html">1.20. Module <cite>socket</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/socket.html#example">1.20.1. Example</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.20.1.1. Use of a TCP socket over the Internet</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.20.1.2. Use of a UDP socket on localhost</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.20.1.3. Use tcp_server to accept file contents sent with socat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/pickle.html">1.18. Module <cite>pickle</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/socket.html">1.19. Module <cite>socket</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/socket.html#example">1.19.1. Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.19.1.1. Use of a TCP socket over the Internet</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.19.1.2. Use of a UDP socket on localhost</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.19.1.3. Use tcp_server to accept file contents sent with socat</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/strict.html">1.21. Module <cite>strict</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tap.html">1.22. Module <cite>tap</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/tap.html#example">1.22.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/strict.html">1.20. Module <cite>strict</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tap.html">1.21. Module <cite>tap</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/tap.html#example">1.21.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tarantool.html">1.23. Module <cite>tarantool</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/uuid.html">1.24. Module <cite>uuid</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/uuid.html#example">1.24.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tarantool.html">1.22. Module <cite>tarantool</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/uuid.html">1.23. Module <cite>uuid</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/uuid.html#example">1.23.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/yaml.html">1.25. Module <cite>yaml</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/yaml.html#example">1.25.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/yaml.html">1.24. Module <cite>yaml</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/yaml.html#example">1.24.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/other.html">1.26. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/other.html">1.25. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/errcodes.html">1.26. Database error codes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/reference_rock/index.html">2. Rocks reference</a><ul>
@@ -613,7 +630,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contributor's Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contributor&#8217;s Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="reference_capi/index.html">1. C API reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference_capi/box.html">1.1. Module <cite>box</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference_capi/clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -631,8 +648,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="internals_index.html">2. Internals</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool's binary protocol</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="internals_index.html#notion-in-diagrams">2.1.1. Notion in diagrams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool&#8217;s binary protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internals_index.html#notation-in-diagrams">2.1.1. Notation in diagrams</a></li>
 <li class="toctree-l4"><a class="reference internal" href="internals_index.html#greeting-packet">2.1.2. Greeting packet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="internals_index.html#unified-packet-structure">2.1.3. Unified packet structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="internals_index.html#authentication">2.1.4. Authentication</a></li>
@@ -700,7 +717,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#chapter-6-functions">4.3.2.7. Chapter 6: Functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#chapter-7-centralized-exiting-of-functions">4.3.2.8. Chapter 7: Centralized exiting of functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#chapter-8-commenting">4.3.2.9. Chapter 8: Commenting</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You've made a mess of it</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You&#8217;ve made a mess of it</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#chapter-10-kconfig-configuration-files">4.3.2.11. Chapter 10: Kconfig configuration files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#chapter-11-data-structures">4.3.2.12. Chapter 11: Data structures</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#chapter-12-macros-enums-and-rtl">4.3.2.13. Chapter 12: Macros, Enums and RTL</a></li>
@@ -708,7 +725,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#chapter-14-allocating-memory">4.3.2.15. Chapter 14: Allocating memory</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#chapter-15-the-inline-disease">4.3.2.16. Chapter 15: The inline disease</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#chapter-16-function-return-values-and-names">4.3.2.17. Chapter 16: Function return values and names</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don't re-invent the kernel macros</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don&#8217;t re-invent the kernel macros</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#chapter-18-editor-modelines-and-other-cruft">4.3.2.19. Chapter 18:  Editor modelines and other cruft</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#appendix-i-references">4.3.2.20. Appendix I: References</a></li>
 </ul>
@@ -782,7 +799,7 @@
         <li class="b-path-list-item">
           <a href="index.html"
              class="b-path-list-item-url b-ellipsis">
-            Contributor's Guide
+            Contributor&#8217;s Guide
           </a>
         </li>
       
@@ -805,7 +822,7 @@
 
   <div class="section" id="c-style-guide">
 <h1>4.3. C Style Guide<a class="headerlink" href="#c-style-guide" title="Permalink to this headline">¶</a></h1>
-<p>The project's coding style is based on a version of the Linux kernel coding style.</p>
+<p>The project&#8217;s coding style is based on a version of the Linux kernel coding style.</p>
 <p>The latest version of the Linux style can be found at:
 <a class="reference external" href="http://www.kernel.org/doc/Documentation/CodingStyle">http://www.kernel.org/doc/Documentation/CodingStyle</a></p>
 <p>Since it is open for changes, the version of style that we follow,
@@ -813,16 +830,16 @@ one from 2007-July-13, will be also copied later in this document.</p>
 <p>There are a few additional guidelines, either unique
 to Tarantool or deviating from the Kernel guidelines.</p>
 <ol class="upperalpha simple">
-<li>Chapters 10 &quot;Kconfig configuration files&quot;, 11 &quot;Data structures&quot;,
-13 &quot;Printing kernel messages&quot;, 14 &quot;Allocating memory&quot; and 17
-&quot;Don't re-invent the kernel macros&quot; do not apply, since they are
+<li>Chapters 10 &#8220;Kconfig configuration files&#8221;, 11 &#8220;Data structures&#8221;,
+13 &#8220;Printing kernel messages&#8221;, 14 &#8220;Allocating memory&#8221; and 17
+&#8220;Don&#8217;t re-invent the kernel macros&#8221; do not apply, since they are
 specific to Linux kernel programming environment.</li>
 <li>The rest of Linux Kernel Coding Style is amended as follows:</li>
 </ol>
 <div class="section" id="general-guidelines">
 <h2>4.3.1. General guidelines<a class="headerlink" href="#general-guidelines" title="Permalink to this headline">¶</a></h2>
 <p>We use Git for revision control. The latest development is happening in the
-'master' branch. Our git repository is hosted on github, and can be checked
+&#8216;master&#8217; branch. Our git repository is hosted on github, and can be checked
 out with git clone git://github.com/tarantool/tarantool.git # anonymous read-only access</p>
 <p>If you have any questions about Tarantool internals, please post them on the
 developer discussion list, <a class="reference external" href="https://groups.google.com/forum/#!forum/tarantool">https://groups.google.com/forum/#!forum/tarantool</a>. However,
@@ -858,7 +875,7 @@ before the copyright or declarations. Use all-uppercase name for the header
 guard. Derive the header guard name from the file name, and append _INCLUDED
 to get a macro name. For example, core/log_io.h -&gt; CORE_LOG_IO_H_INCLUDED. In
 <code class="docutils literal"><span class="pre">.c</span></code> (implementation) file, include the respective declaration header before all
-other headers, to ensure that the header is self- sufficient. Header &quot;header.h&quot;
+other headers, to ensure that the header is self- sufficient. Header &#8220;header.h&#8221;
 is self-sufficient if the following compiles without errors:</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;header.h&quot;</span><span class="cp"></span>
 </pre></div>
@@ -870,14 +887,14 @@ is self-sufficient if the following compiles without errors:</p>
 for any performance-intensive or large  memory allocations. Repetitive use of
 malloc()/free() can lead to memory fragmentation and should therefore be avoided.</p>
 <p>Always free all allocated memory, even allocated  at start-up. We aim at being
-valgrind leak-check clean, and in most cases it's just as easy to free() the
+valgrind leak-check clean, and in most cases it&#8217;s just as easy to free() the
 allocated memory as it is to write a valgrind suppression. Freeing all allocated
 memory is also dynamic-load friendly: assuming a plug-in can be dynamically loaded
 and unloaded multiple times, reload should not lead to a memory leak.</p>
 </div>
 <div class="section" id="other">
 <h3>4.3.1.4. Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h3>
-<p>Select GNU C99 extensions are acceptable. It's OK to mix declarations and statements,
+<p>Select GNU C99 extensions are acceptable. It&#8217;s OK to mix declarations and statements,
 use true and false.</p>
 <p>The not-so-current list of all GCC C extensions can be found at:
 <a class="reference external" href="http://gcc.gnu.org/onlinedocs/gcc-4.3.5/gcc/C-Extensions.html">http://gcc.gnu.org/onlinedocs/gcc-4.3.5/gcc/C-Extensions.html</a></p>
@@ -886,12 +903,12 @@ use true and false.</p>
 <div class="section" id="linux-kernel-coding-style">
 <h2>4.3.2. Linux kernel coding style<a class="headerlink" href="#linux-kernel-coding-style" title="Permalink to this headline">¶</a></h2>
 <p>This is a short document describing the preferred coding style for the
-linux kernel.  Coding style is very personal, and I won't _force_ my
+linux kernel.  Coding style is very personal, and I won&#8217;t _force_ my
 views on anybody, but this is what goes for anything that I have to be
-able to maintain, and I'd prefer it for most other things too.  Please
+able to maintain, and I&#8217;d prefer it for most other things too.  Please
 at least consider the points made here.</p>
-<p>First off, I'd suggest printing out a copy of the GNU coding standards,
-and NOT read it.  Burn them, it's a great symbolic gesture.</p>
+<p>First off, I&#8217;d suggest printing out a copy of the GNU coding standards,
+and NOT read it.  Burn them, it&#8217;s a great symbolic gesture.</p>
 <p>Anyway, here goes:</p>
 <div class="section" id="chapter-1-indentation">
 <h3>4.3.2.1. Chapter 1: Indentation<a class="headerlink" href="#chapter-1-indentation" title="Permalink to this headline">¶</a></h3>
@@ -900,20 +917,20 @@ There are heretic movements that try to make indentations 4 (or even 2!)
 characters deep, and that is akin to trying to define the value of PI to
 be 3.</p>
 <p>Rationale: The whole idea behind indentation is to clearly define where
-a block of control starts and ends.  Especially when you've been looking
-at your screen for 20 straight hours, you'll find it a lot easier to see
+a block of control starts and ends.  Especially when you&#8217;ve been looking
+at your screen for 20 straight hours, you&#8217;ll find it a lot easier to see
 how the indentation works if you have large indentations.</p>
 <p>Now, some people will claim that having 8-character indentations makes
 the code move too far to the right, and makes it hard to read on a
 80-character terminal screen.  The answer to that is that if you need
-more than 3 levels of indentation, you're screwed anyway, and should fix
+more than 3 levels of indentation, you&#8217;re screwed anyway, and should fix
 your program.</p>
 <p>In short, 8-char indents make things easier to read, and have the added
-benefit of warning you when you're nesting your functions too deep.
+benefit of warning you when you&#8217;re nesting your functions too deep.
 Heed that warning.</p>
 <p>The preferred way to ease multiple indentation levels in a switch statement is
-to align the &quot;switch&quot; and its subordinate &quot;case&quot; labels in the same column
-instead of &quot;double-indenting&quot; the &quot;case&quot; labels. e.g.:</p>
+to align the &#8220;switch&#8221; and its subordinate &#8220;case&#8221; labels in the same column
+instead of &#8220;double-indenting&#8221; the &#8220;case&#8221; labels. e.g.:</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">suffix</span><span class="p">)</span> <span class="p">{</span>
 <span class="k">case</span> <span class="sc">&#39;G&#39;</span><span class="o">:</span>
 <span class="k">case</span> <span class="sc">&#39;g&#39;</span><span class="o">:</span>
@@ -932,17 +949,17 @@ instead of &quot;double-indenting&quot; the &quot;case&quot; labels. e.g.:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Don't put multiple statements on a single line unless you have
+<p>Don&#8217;t put multiple statements on a single line unless you have
 something to hide:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>if (condition) do_this;
   do_something_everytime;
 </pre></div>
 </div>
-<p>Don't put multiple assignments on a single line either. Kernel coding style
+<p>Don&#8217;t put multiple assignments on a single line either. Kernel coding style
 is super simple. Avoid tricky expressions.</p>
 <p>Outside of comments, documentation and except in Kconfig, spaces are never
 used for indentation, and the above example is deliberately broken.</p>
-<p>Get a decent editor and don't leave whitespace at the end of lines.</p>
+<p>Get a decent editor and don&#8217;t leave whitespace at the end of lines.</p>
 </div>
 <div class="section" id="chapter-2-breaking-long-lines-and-strings">
 <h3>4.3.2.2. Chapter 2: Breaking long lines and strings<a class="headerlink" href="#chapter-2-breaking-long-lines-and-strings" title="Permalink to this headline">¶</a></h3>
@@ -1005,10 +1022,10 @@ opening brace at the beginning of the next line, thus:</p>
 <p>Heretic people all over the world have claimed that this inconsistency
 is ...  well ...  inconsistent, but all right-thinking people know that
 (a) K&amp;R are _right_ and (b) K&amp;R are right.  Besides, functions are
-special anyway (you can't nest them in C).</p>
+special anyway (you can&#8217;t nest them in C).</p>
 <p>Note that the closing brace is empty on a line of its own, _except_ in
 the cases where it is followed by a continuation of the same statement,
-ie a &quot;while&quot; in a do-statement or an &quot;else&quot; in an if-statement, like
+ie a &#8220;while&#8221; in a do-statement or an &#8220;else&#8221; in an if-statement, like
 this:</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">do</span> <span class="p">{</span>
     <span class="n">body</span> <span class="n">of</span> <span class="k">do</span><span class="o">-</span><span class="n">loop</span><span class="p">;</span>
@@ -1053,8 +1070,8 @@ statement. Use braces in both branches.</p>
 function-versus-keyword usage.  Use a space after (most) keywords.  The
 notable exceptions are sizeof, typeof, alignof, and __attribute__, which look
 somewhat like functions (and are usually used with parentheses in Linux,
-although they are not required in the language, as in: &quot;sizeof info&quot; after
-&quot;struct fileinfo info;&quot; is declared).</p>
+although they are not required in the language, as in: &#8220;sizeof info&#8221; after
+&#8220;struct fileinfo info;&#8221; is declared).</p>
 <p>So use a space after these keywords: if, switch, case, for, do, while
 but not with sizeof, typeof, alignof, or __attribute__.  E.g.,</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">file</span><span class="p">);</span>
@@ -1066,7 +1083,7 @@ but not with sizeof, typeof, alignof, or __attribute__.  E.g.,</p>
 </pre></div>
 </div>
 <p>When declaring pointer data or a function that returns a pointer type, the
-preferred use of '*' is adjacent to the data name or function name and not
+preferred use of &#8216;*&#8217; is adjacent to the data name or function name and not
 adjacent to the type name.  Examples:</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">linux_banner</span><span class="p">;</span>
 <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="nf">memparse</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">retptr</span><span class="p">);</span>
@@ -1082,13 +1099,13 @@ such as any of these:</p>
 <div>&amp;  *  +  -  ~  !  sizeof  typeof  alignof  __attribute__  defined</div></blockquote>
 <p>no space before the postfix increment &amp; decrement unary operators:</p>
 <blockquote>
-<div>++  --</div></blockquote>
+<div>++  &#8211;</div></blockquote>
 <p>no space after the prefix increment &amp; decrement unary operators:</p>
 <blockquote>
-<div>++  --</div></blockquote>
-<p>and no space around the '.' and &quot;-&gt;&quot; structure member operators.</p>
+<div>++  &#8211;</div></blockquote>
+<p>and no space around the &#8216;.&#8217; and &#8220;-&gt;&#8221; structure member operators.</p>
 <p>Do not leave trailing whitespace at the ends of lines.  Some editors with
-&quot;smart&quot; indentation will insert whitespace at the beginning of new lines as
+&#8220;smart&#8221; indentation will insert whitespace at the beginning of new lines as
 appropriate, so you can start typing the next line of code right away.
 However, some such editors do not remove the whitespace if you end up not
 putting a line of code there, such as if you leave a blank line.  As a result,
@@ -1103,23 +1120,23 @@ context lines.</p>
 <p>C is a Spartan language, and so should your naming be.  Unlike Modula-2
 and Pascal programmers, C programmers do not use cute names like
 ThisVariableIsATemporaryCounter.  A C programmer would call that
-variable &quot;tmp&quot;, which is much easier to write, and not the least more
+variable &#8220;tmp&#8221;, which is much easier to write, and not the least more
 difficult to understand.</p>
 <p>HOWEVER, while mixed-case names are frowned upon, descriptive names for
-global variables are a must.  To call a global function &quot;foo&quot; is a
+global variables are a must.  To call a global function &#8220;foo&#8221; is a
 shooting offense.</p>
 <p>GLOBAL variables (to be used only if you _really_ need them) need to
 have descriptive names, as do global functions.  If you have a function
 that counts the number of active users, you should call that
-&quot;count_active_users()&quot; or similar, you should _not_ call it &quot;cntusr()&quot;.</p>
+&#8220;count_active_users()&#8221; or similar, you should _not_ call it &#8220;cntusr()&#8221;.</p>
 <p>Encoding the type of a function into the name (so-called Hungarian
 notation) is brain damaged - the compiler knows the types anyway and can
 check those, and it only confuses the programmer.  No wonder MicroSoft
 makes buggy programs.</p>
 <p>LOCAL variable names should be short, and to the point.  If you have
-some random integer loop counter, it should probably be called &quot;i&quot;.
-Calling it &quot;loop_counter&quot; is non-productive, if there is no chance of it
-being mis-understood.  Similarly, &quot;tmp&quot; can be just about any type of
+some random integer loop counter, it should probably be called &#8220;i&#8221;.
+Calling it &#8220;loop_counter&#8221; is non-productive, if there is no chance of it
+being mis-understood.  Similarly, &#8220;tmp&#8221; can be just about any type of
 variable that is used to hold a temporary value.</p>
 <p>If you are afraid to mix up your local variable names, you have another
 problem, which is called the function-growth-hormone-imbalance syndrome.
@@ -1127,8 +1144,8 @@ See chapter 6 (Functions).</p>
 </div>
 <div class="section" id="chapter-5-typedefs">
 <h3>4.3.2.6. Chapter 5: Typedefs<a class="headerlink" href="#chapter-5-typedefs" title="Permalink to this headline">¶</a></h3>
-<p>Please don't use things like &quot;vps_t&quot;.</p>
-<p>It's a _mistake_ to use typedef for structures and pointers. When you see a</p>
+<p>Please don&#8217;t use things like &#8220;vps_t&#8221;.</p>
+<p>It&#8217;s a _mistake_ to use typedef for structures and pointers. When you see a</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">vps_t</span> <span class="n">a</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -1137,30 +1154,30 @@ See chapter 6 (Functions).</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">virtual_container</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>you can actually tell what &quot;a&quot; is.</p>
-<p>Lots of people think that typedefs &quot;help readability&quot;. Not so. They are
+<p>you can actually tell what &#8220;a&#8221; is.</p>
+<p>Lots of people think that typedefs &#8220;help readability&#8221;. Not so. They are
 useful only for:</p>
 <ol class="loweralpha">
 <li><p class="first">totally opaque objects (where the typedef is actively used to _hide_
 what the object is).</p>
-<p>Example: &quot;pte_t&quot; etc. opaque objects that you can only access using
+<p>Example: &#8220;pte_t&#8221; etc. opaque objects that you can only access using
 the proper accessor functions.</p>
-<p>NOTE! Opaqueness and &quot;accessor functions&quot; are not good in themselves.
+<p>NOTE! Opaqueness and &#8220;accessor functions&#8221; are not good in themselves.
 The reason we have them for things like pte_t etc. is that there
 really is absolutely _zero_ portably accessible information there.</p>
 </li>
 <li><p class="first">Clear integer types, where the abstraction _helps_ avoid confusion
-whether it is &quot;int&quot; or &quot;long&quot;.</p>
+whether it is &#8220;int&#8221; or &#8220;long&#8221;.</p>
 <p>u8/u16/u32 are perfectly fine typedefs, although they fit into
 category (d) better than here.</p>
 <p>NOTE! Again - there needs to be a _reason_ for this. If something is
-&quot;unsigned long&quot;, then there's no reason to do</p>
+&#8220;unsigned long&#8221;, then there&#8217;s no reason to do</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">myflags_t</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>but if there is a clear reason for why it under certain circumstances
-might be an &quot;unsigned int&quot; and under other configurations might be
-&quot;unsigned long&quot;, then by all means go ahead and use a typedef.</p>
+might be an &#8220;unsigned int&#8221; and under other configurations might be
+&#8220;unsigned long&#8221;, then by all means go ahead and use a typedef.</p>
 </li>
 <li><p class="first">when you use sparse to literally create a _new_ type for
 type-checking.</p>
@@ -1168,18 +1185,18 @@ type-checking.</p>
 <li><p class="first">New types which are identical to standard C99 types, in certain
 exceptional circumstances.</p>
 <p>Although it would only take a short amount of time for the eyes and
-brain to become accustomed to the standard types like 'uint32_t',
+brain to become accustomed to the standard types like &#8216;uint32_t&#8217;,
 some people object to their use anyway.</p>
-<p>Therefore, the Linux-specific 'u8/u16/u32/u64' types and their
+<p>Therefore, the Linux-specific &#8216;u8/u16/u32/u64&#8217; types and their
 signed equivalents which are identical to standard types are
-permitted -- although they are not mandatory in new code of your
+permitted &#8211; although they are not mandatory in new code of your
 own.</p>
 <p>When editing existing code which already uses one or the other set
 of types, you should conform to the existing choices in that code.</p>
 </li>
 <li><p class="first">Types safe for use in userspace.</p>
 <p>In certain structures which are visible to userspace, we cannot
-require C99 types and cannot use the 'u32' form above. Thus, we
+require C99 types and cannot use the &#8216;u32&#8217; form above. Thus, we
 use __u32 and similar types in all structures which are shared
 with userspace.</p>
 </li>
@@ -1198,19 +1215,19 @@ as we all know), and do one thing and do that well.</p>
 complexity and indentation level of that function.  So, if you have a
 conceptually simple function that is just one long (but simple)
 case-statement, where you have to do lots of small things for a lot of
-different cases, it's OK to have a longer function.</p>
+different cases, it&#8217;s OK to have a longer function.</p>
 <p>However, if you have a complex function, and you suspect that a
 less-than-gifted first-year high-school student might not even
 understand what the function is all about, you should adhere to the
 maximum limits all the more closely.  Use helper functions with
 descriptive names (you can ask the compiler to in-line them if you think
-it's performance-critical, and it will probably do a better job of it
+it&#8217;s performance-critical, and it will probably do a better job of it
 than you would have done).</p>
 <p>Another measure of the function is the number of local variables.  They
-shouldn't exceed 5-10, or you're doing something wrong.  Re-think the
+shouldn&#8217;t exceed 5-10, or you&#8217;re doing something wrong.  Re-think the
 function, and split it into smaller pieces.  A human brain can
 generally easily keep track of about 7 different things, anything more
-and it gets confu/sed.  You know you're brilliant, but maybe you'd like
+and it gets confu/sed.  You know you&#8217;re brilliant, but maybe you&#8217;d like
 to understand what you did 2 weeks from now.</p>
 <p>In source files, separate functions with one blank line.  If the function is
 exported, the EXPORT* macro for it should follow immediately after the closing
@@ -1266,8 +1283,8 @@ modifications are prevented</li>
 <div class="section" id="chapter-8-commenting">
 <h3>4.3.2.9. Chapter 8: Commenting<a class="headerlink" href="#chapter-8-commenting" title="Permalink to this headline">¶</a></h3>
 <p>Comments are good, but there is also a danger of over-commenting. NEVER
-try to explain HOW your code works in a comment: it's much better to
-write the code so that the _working_ is obvious, and it's a waste of
+try to explain HOW your code works in a comment: it&#8217;s much better to
+write the code so that the _working_ is obvious, and it&#8217;s a waste of
 time to explain badly written code.
 с
 Generally, you want your comments to tell WHAT your code does, not HOW.
@@ -1282,7 +1299,7 @@ it.</p>
 See the files Documentation/kernel-doc-nano-HOWTO.txt and scripts/kernel-doc
 for details.</p>
 <p>Linux style for comments is the C89 <code class="docutils literal"><span class="pre">&quot;/\*</span> <span class="pre">...</span> <span class="pre">\*/&quot;</span></code> style.
-Don't use C99-style <code class="docutils literal"><span class="pre">&quot;//</span> <span class="pre">...&quot;</span></code> comments.</p>
+Don&#8217;t use C99-style <code class="docutils literal"><span class="pre">&quot;//</span> <span class="pre">...&quot;</span></code> comments.</p>
 <p>The preferred style for long (multi-line) comments is:</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * This is the preferred style for multi-line</span>
@@ -1294,16 +1311,16 @@ Don't use C99-style <code class="docutils literal"><span class="pre">&quot;//</s
 <span class="cm"> */</span>
 </pre></div>
 </div>
-<p>It's also important to comment data, whether they are basic types or derived
+<p>It&#8217;s also important to comment data, whether they are basic types or derived
 types.  To this end, use just one data declaration per line (no commas for
 multiple data declarations).  This leaves you room for a small comment on each
 item, explaining its use.</p>
 </div>
 <div class="section" id="chapter-9-you-ve-made-a-mess-of-it">
-<h3>4.3.2.10. Chapter 9: You've made a mess of it<a class="headerlink" href="#chapter-9-you-ve-made-a-mess-of-it" title="Permalink to this headline">¶</a></h3>
-<p>That's OK, we all do.  You've probably been told by your long-time Unix
-user helper that &quot;GNU emacs&quot; automatically formats the C sources for
-you, and you've noticed that yes, it does do that, but the defaults it
+<h3>4.3.2.10. Chapter 9: You&#8217;ve made a mess of it<a class="headerlink" href="#chapter-9-you-ve-made-a-mess-of-it" title="Permalink to this headline">¶</a></h3>
+<p>That&#8217;s OK, we all do.  You&#8217;ve probably been told by your long-time Unix
+user helper that &#8220;GNU emacs&#8221; automatically formats the C sources for
+you, and you&#8217;ve noticed that yes, it does do that, but the defaults it
 uses are less than desirable (in fact, they are worse than random
 typing - an infinite number of monkeys typing into GNU emacs would never
 make a good program).</p>
@@ -1342,22 +1359,22 @@ values.  To do the latter, you can stick the following in your .emacs file:</p>
 <p>This will make emacs go better with the kernel coding style for C
 files below ~/src/linux-trees.</p>
 <p>But even if you fail in getting emacs to do sane formatting, not
-everything is lost: use &quot;indent&quot;.</p>
+everything is lost: use &#8220;indent&#8221;.</p>
 <p>Now, again, GNU indent has the same brain-dead settings that GNU emacs
 has, which is why you need to give it a few command line options.
-However, that's not too bad, because even the makers of GNU indent
-recognize the authority of K&amp;R (the GNU people aren't evil, they are
+However, that&#8217;s not too bad, because even the makers of GNU indent
+recognize the authority of K&amp;R (the GNU people aren&#8217;t evil, they are
 just severely misguided in this matter), so you just give indent the
-options &quot;-kr -i8&quot; (stands for &quot;K&amp;R, 8 character indents&quot;), or use
-&quot;scripts/Lindent&quot;, which indents in the latest style.</p>
-<p>&quot;indent&quot; has a lot of options, and especially when it comes to comment
+options &#8220;-kr -i8&#8221; (stands for &#8220;K&amp;R, 8 character indents&#8221;), or use
+&#8220;scripts/Lindent&#8221;, which indents in the latest style.</p>
+<p>&#8220;indent&#8221; has a lot of options, and especially when it comes to comment
 re-formatting you may want to take a look at the man page.  But
-remember: &quot;indent&quot; is not a fix for bad programming.</p>
+remember: &#8220;indent&#8221; is not a fix for bad programming.</p>
 </div>
 <div class="section" id="chapter-10-kconfig-configuration-files">
 <h3>4.3.2.11. Chapter 10: Kconfig configuration files<a class="headerlink" href="#chapter-10-kconfig-configuration-files" title="Permalink to this headline">¶</a></h3>
 <p>For all of the Kconfig* configuration files throughout the source tree,
-the indentation is somewhat different.  Lines under a &quot;config&quot; definition
+the indentation is somewhat different.  Lines under a &#8220;config&#8221; definition
 are indented with one tab, while help text is indented an additional two
 spaces. Example:</p>
 <div class="highlight-kconfig"><div class="highlight"><pre><span></span><span class="k">config</span> AUDIT
@@ -1371,7 +1388,7 @@ spaces. Example:</p>
 </pre></div>
 </div>
 <p>Features that might still be considered unstable should be defined as
-dependent on &quot;EXPERIMENTAL&quot;:</p>
+dependent on &#8220;EXPERIMENTAL&#8221;:</p>
 <div class="highlight-kconfig"><div class="highlight"><pre><span></span><span class="k">config</span> SLUB
     <span class="k">depends on</span> EXPERIMENTAL <span class="o">&amp;&amp;</span> <span class="o">!</span>ARCH_USES_SLAB_PAGE_STRUCT
     <span class="nb">bool</span> <span class="s2">&quot;SLUB (Unqueued Allocator)&quot;</span>
@@ -1393,7 +1410,7 @@ Documentation/kbuild/kconfig-language.txt.</p>
 <h3>4.3.2.12. Chapter 11: Data structures<a class="headerlink" href="#chapter-11-data-structures" title="Permalink to this headline">¶</a></h3>
 <p>Data structures that have visibility outside the single-threaded
 environment they are created and destroyed in should always have
-reference counts.  In the kernel, garbage collection doesn't exist (and
+reference counts.  In the kernel, garbage collection doesn&#8217;t exist (and
 outside the kernel garbage collection is slow and inefficient), which
 means that you absolutely _have_ to reference count all your uses.</p>
 <p>Reference counting means that you can avoid locking, and allows multiple
@@ -1405,13 +1422,13 @@ Locking is used to keep data structures coherent, while reference
 counting is a memory management technique.  Usually both are needed, and
 they are not to be confused with each other.</p>
 <p>Many data structures can indeed have two levels of reference counting,
-when there are users of different &quot;classes&quot;.  The subclass count counts
+when there are users of different &#8220;classes&#8221;.  The subclass count counts
 the number of subclass users, and decrements the global count just once
 when the subclass count goes to zero.</p>
-<p>Examples of this kind of &quot;multi-level-reference-counting&quot; can be found in
-memory management (&quot;struct mm_struct&quot;: mm_users and mm_count), and in
-filesystem code (&quot;struct super_block&quot;: s_count and s_active).</p>
-<p>Remember: if another thread can find your data structure, and you don't
+<p>Examples of this kind of &#8220;multi-level-reference-counting&#8221; can be found in
+memory management (&#8220;struct mm_struct&#8221;: mm_users and mm_count), and in
+filesystem code (&#8220;struct super_block&#8221;: s_count and s_active).</p>
+<p>Remember: if another thread can find your data structure, and you don&#8217;t
 have a reference count on it, you almost certainly have a bug.</p>
 </div>
 <div class="section" id="chapter-12-macros-enums-and-rtl">
@@ -1442,15 +1459,15 @@ may be named in lower case.</p>
 <span class="cp">    } while(0)</span>
 </pre></div>
 </div>
-<p>is a _very_ bad idea.  It looks like a function call but exits the &quot;calling&quot;
-function; don't break the internal parsers of those who will read the code.</p>
+<p>is a _very_ bad idea.  It looks like a function call but exits the &#8220;calling&#8221;
+function; don&#8217;t break the internal parsers of those who will read the code.</p>
 </li>
 <li><p class="first">macros that depend on having a local variable with a magic name:</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#define FOO(val) bar(index, val)</span>
 </pre></div>
 </div>
-<p>might look like a good thing, but it's confusing as hell when one reads the
-code and it's prone to breakage from seemingly innocent changes.</p>
+<p>might look like a good thing, but it&#8217;s confusing as hell when one reads the
+code and it&#8217;s prone to breakage from seemingly innocent changes.</p>
 </li>
 <li><p class="first">macros with arguments that are used as l-values: FOO(x) = y; will
 bite you if somebody e.g. turns FOO into an inline function.</p>
@@ -1471,20 +1488,20 @@ covers RTL which is used frequently with assembly language in the kernel.</p>
 <h3>4.3.2.14. Chapter 13: Printing kernel messages<a class="headerlink" href="#chapter-13-printing-kernel-messages" title="Permalink to this headline">¶</a></h3>
 <p>Kernel developers like to be seen as literate. Do mind the spelling
 of kernel messages to make a good impression. Do not use crippled
-words like &quot;dont&quot;; use &quot;do not&quot; or &quot;don't&quot; instead.  Make the messages
+words like &#8220;dont&#8221;; use &#8220;do not&#8221; or &#8220;don&#8217;t&#8221; instead.  Make the messages
 concise, clear, and unambiguous.</p>
 <p>Kernel messages do not have to be terminated with a period.</p>
 <p>Printing numbers in parentheses (%d) adds no value and should be avoided.</p>
 <p>There are a number of driver model diagnostic macros in &lt;linux/device.h&gt;
 which you should use to make sure messages are matched to the right device
 and driver, and are tagged with the right level:  dev_err(), dev_warn(),
-dev_info(), and so forth.  For messages that aren't associated with a
+dev_info(), and so forth.  For messages that aren&#8217;t associated with a
 particular device, &lt;linux/kernel.h&gt; defines pr_debug() and pr_info().</p>
 <p>Coming up with good debugging messages can be quite a challenge; and once
 you have them, they can be a huge help for remote troubleshooting.  Such
 messages should be compiled out when the DEBUG symbol is not defined (that
 is, by default they are not included).  When you use dev_dbg() or pr_debug(),
-that's automatic.  Many subsystems have Kconfig options to turn on -DDEBUG.
+that&#8217;s automatic.  Many subsystems have Kconfig options to turn on -DDEBUG.
 A related convention uses VERBOSE_DEBUG to add dev_vdbg() messages to the
 ones already enabled by DEBUG.</p>
 </div>
@@ -1506,8 +1523,8 @@ language.</p>
 </div>
 <div class="section" id="chapter-15-the-inline-disease">
 <h3>4.3.2.16. Chapter 15: The inline disease<a class="headerlink" href="#chapter-15-the-inline-disease" title="Permalink to this headline">¶</a></h3>
-<p>There appears to be a common misperception that gcc has a magic &quot;make me
-faster&quot; speedup option called &quot;inline&quot;. While the use of inlines can be
+<p>There appears to be a common misperception that gcc has a magic &#8220;make me
+faster&#8221; speedup option called &#8220;inline&#8221;. While the use of inlines can be
 appropriate (for example as a means of replacing macros, see Chapter 12), it
 very often is not. Abundant use of the inline keyword leads to a much bigger
 kernel, which in turn slows the system as a whole down, due to a bigger
@@ -1533,22 +1550,22 @@ something it would have done anyway.</p>
 <p>Functions can return values of many different kinds, and one of the
 most common is a value indicating whether the function succeeded or
 failed.  Such a value can be represented as an error-code integer
-(-Exxx = failure, 0 = success) or a &quot;succeeded&quot; boolean (0 = failure,
+(-Exxx = failure, 0 = success) or a &#8220;succeeded&#8221; boolean (0 = failure,
 non-zero = success).</p>
 <p>Mixing up these two sorts of representations is a fertile source of
 difficult-to-find bugs.  If the C language included a strong distinction
 between integers and booleans then the compiler would find these mistakes
-for us... but it doesn't.  To help prevent such bugs, always follow this
+for us... but it doesn&#8217;t.  To help prevent such bugs, always follow this
 convention:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">action</span> <span class="ow">or</span> <span class="n">an</span> <span class="n">imperative</span> <span class="n">command</span><span class="p">,</span>
 <span class="n">the</span> <span class="n">function</span> <span class="n">should</span> <span class="k">return</span> <span class="n">an</span> <span class="n">error</span><span class="o">-</span><span class="n">code</span> <span class="n">integer</span><span class="o">.</span>  <span class="n">If</span> <span class="n">the</span> <span class="n">name</span>
 <span class="ow">is</span> <span class="n">a</span> <span class="n">predicate</span><span class="p">,</span> <span class="n">the</span> <span class="n">function</span> <span class="n">should</span> <span class="k">return</span> <span class="n">a</span> <span class="s2">&quot;succeeded&quot;</span> <span class="n">boolean</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>For example, &quot;add work&quot; is a command, and the add_work() function returns 0
-for success or -EBUSY for failure.  In the same way, &quot;PCI device present&quot; is
+<p>For example, &#8220;add work&#8221; is a command, and the add_work() function returns 0
+for success or -EBUSY for failure.  In the same way, &#8220;PCI device present&#8221; is
 a predicate, and the pci_dev_present() function returns 1 if it succeeds in
-finding a matching device or 0 if it doesn't.</p>
+finding a matching device or 0 if it doesn&#8217;t.</p>
 <p>All EXPORTed functions must respect this convention, and so should all
 public functions.  Private (static) functions need not, but it is
 recommended that they do.</p>
@@ -1559,7 +1576,7 @@ result.  Typical examples would be functions that return pointers; they use
 NULL or the ERR_PTR mechanism to report failure.</p>
 </div>
 <div class="section" id="chapter-17-don-t-re-invent-the-kernel-macros">
-<h3>4.3.2.18. Chapter 17:  Don't re-invent the kernel macros<a class="headerlink" href="#chapter-17-don-t-re-invent-the-kernel-macros" title="Permalink to this headline">¶</a></h3>
+<h3>4.3.2.18. Chapter 17:  Don&#8217;t re-invent the kernel macros<a class="headerlink" href="#chapter-17-don-t-re-invent-the-kernel-macros" title="Permalink to this headline">¶</a></h3>
 <p>The header file include/linux/kernel.h contains a number of macros that
 you should use, rather than explicitly coding some variant of them yourself.
 For example, if you need to calculate the length of an array, take advantage
@@ -1573,7 +1590,7 @@ of the macro</p>
 </div>
 <p>There are also min() and max() macros that do strict type checking if you
 need them.  Feel free to peruse that header file to see what else is already
-defined that you shouldn't reproduce in your code.</p>
+defined that you shouldn&#8217;t reproduce in your code.</p>
 </div>
 <div class="section" id="chapter-18-editor-modelines-and-other-cruft">
 <h3>4.3.2.19. Chapter 18:  Editor modelines and other cruft<a class="headerlink" href="#chapter-18-editor-modelines-and-other-cruft" title="Permalink to this headline">¶</a></h3>
@@ -1676,11 +1693,11 @@ language C</a></li>
     </div>
   
 
-      </div>
-    </div>
+        </div>
+        </div>
 
-  <!-- FOOTER > -->
-  
+    <!-- FOOTER > -->
+    
 <footer class="b-footer">
   <div class="b-footer-wrapper">
     <nav class="b-footer_menu">
@@ -1720,8 +1737,9 @@ language C</a></li>
   </div>
 </footer>
 
-  <!-- < FOOTER -->
-  <div id="mobile-checker"></div>
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </div>
   </body>
 </html>
 

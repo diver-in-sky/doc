@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:       '',
-        VERSION:        '1.7.1',
+        VERSION:        '1.7.2',
         COLLAPSE_INDEX:  false,
         FILE_SUFFIX:    '.html',
         HAS_SOURCE:      true
@@ -40,8 +40,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/stacktable.min.js"></script>
     <script type="text/javascript" src="../_static/headers.js"></script>
-    <script type="text/javascript" src="../_static/jquery.sticky-kit.min.js"></script>
     <script type="text/javascript" src="/js/menu.js"></script>
     <script type="text/javascript" src="/js/mobile_menu.js"></script>
     <link rel="stylesheet" href="/theme/font-awesome.min.css">
@@ -87,9 +87,10 @@
   
   <body class="p-cols_design b-doc-dev_guide/internals_index">
   
-    <div class="b-wrapper">
-      <!-- HEADER > -->
-      
+    <div class="b-scrollview">
+        <div class="b-wrapper">
+        <!-- HEADER > -->
+        
   <header class="b-header">
     <div class="b-header_menu_mobile">
       <div class="b-burger-button">
@@ -170,10 +171,10 @@
     </div>
   </header>
 
-      <!-- < HEADER -->
+        <!-- < HEADER -->
 
-      <div class="b-content b-clearbox">
-        
+        <div class="b-content b-clearbox">
+            
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
       <h2
@@ -220,12 +221,15 @@
 </form>
 
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s new?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../whats_new.html#what-s-new-in-tarantool-1-7">What&#8217;s new in Tarantool 1.7?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro.html#database-features">Database features</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/lua_tutorials.html">1. Lua tutorials</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#insert-one-million-tuples-with-a-lua-stored-procedure">1.1. Insert one million tuples with a Lua stored procedure</a><ul>
@@ -240,7 +244,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-million-tuples-into-the-database">1.1.9. Modify main_function to insert a million tuples into the database</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#tutorial-sum-a-json-field-for-all-tuples">1.2. Tutorial: Sum a JSON field for all tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#sum-a-json-field-for-all-tuples">1.2. Sum a JSON field for all tuples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#indexed-pattern-search">1.3. Indexed pattern search</a></li>
 </ul>
 </li>
@@ -250,7 +254,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User's Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User&#8217;s Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../book/intro.html">1. Preface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../book/intro.html#how-to-read-the-documentation">1.1. How to read the documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../book/intro.html#getting-in-touch-with-the-tarantool-community">1.2. Getting in touch with the Tarantool community</a></li>
@@ -274,51 +278,50 @@
 <li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#index-operations">3.1.8. Index operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#the-box-library">3.2. The box library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#transaction-control">3.3. Transaction control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#cooperative-multitasking-environment">3.3.1. Cooperative multitasking environment</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example">3.3.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#transaction-control">3.2. Transaction control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#cooperative-multitasking-environment">3.2.1. Cooperative multitasking environment</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example">3.2.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#implicit-yields">3.3.2. Implicit yields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#implicit-yields">3.2.2. Implicit yields</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#access-control">3.4. Access control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#passwords">3.4.1. Passwords</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#users-and-the-user-space">3.4.2. Users and the _user space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#privileges-and-the-priv-space">3.4.3. Privileges and the _priv space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#functions-and-the-func-space">3.4.4. Functions and the _func space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#box-session-and-security">3.4.5. box.session and security</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#roles">3.4.6. Roles</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example-showing-a-role-within-a-role">3.4.6.1. Example showing a role within a role</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#access-control">3.3. Access control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#passwords">3.3.1. Passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#users-and-the-user-space">3.3.2. Users and the _user space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#privileges-and-the-priv-space">3.3.3. Privileges and the _priv space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#functions-and-the-func-space">3.3.4. Functions and the _func space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#box-session-and-security">3.3.5. box.session and security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#roles">3.3.6. Roles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example-showing-a-role-within-a-role">3.3.6.1. Example showing a role within a role</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#triggers">3.5. Triggers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#connection-triggers">3.5.1. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id1">3.5.1.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#triggers">3.4. Triggers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#connection-triggers">3.4.1. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id3">3.4.1.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#authentication-triggers">3.5.2. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#lua-module.box.space">3.5.3. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id2">3.5.3.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#another-example">3.5.3.2. Another example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#authentication-triggers">3.4.2. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#lua-module.box.space">3.4.3. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id4">3.4.3.1. Example</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#another-example">3.4.3.2. Another example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#getting-a-list-of-triggers">3.5.4. Getting a list of triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#getting-a-list-of-triggers">3.4.4. Getting a list of triggers</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#limitations">3.6. Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#vinyl-storage-engine">3.7. Vinyl storage engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.7.1. Differences between memtx and vinyl storage engines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#vinyl-features">3.7.2. Vinyl features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#under-the-hood">3.7.3. Under the hood</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-first-200-000-keys">3.7.3.1. Inserting the first 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-300-000-keys">3.7.3.2. Inserting the next 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-200-000-keys">3.7.3.3. Inserting the next 200.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-last-300-000-keys">3.7.3.4. Inserting the last 300.000 keys</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#reading-million-keys">3.7.3.5. Reading million keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#limitations">3.5. Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#vinyl-storage-engine">3.6. Vinyl storage engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.6.1. Differences between memtx and vinyl storage engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#vinyl-features">3.6.2. Vinyl features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#under-the-hood">3.6.3. Under the hood</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-first-200-000-keys">3.6.3.1. Inserting the first 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-300-000-keys">3.6.3.2. Inserting the next 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-200-000-keys">3.6.3.3. Inserting the next 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-last-300-000-keys">3.6.3.4. Inserting the last 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#reading-million-keys">3.6.3.5. Reading million keys</a></li>
 </ul>
 </li>
 </ul>
@@ -332,7 +335,35 @@
 <li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#creating-a-new-c-c-module-locally">4.4. Creating a new C/C++ module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#creating-a-mixed-lua-c-module-locally">4.5. Creating a mixed Lua/C module locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#tips-for-special-situations">4.6. Tips for special situations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#cookbook-recipes">4.7. Cookbook recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#cookbook-recipes">4.7. Cookbook recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#hello-world-lua">4.7.1. hello_world.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#console-start-lua">4.7.2. console_start.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#fio-read-lua">4.7.3. fio_read.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#fio-write-lua">4.7.4. fio_write.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-printf-lua">4.7.5. ffi_printf.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-gettimeofday-lua">4.7.6. ffi_gettimeofday.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-zlib-lua">4.7.7. ffi_zlib.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-meta-lua">4.7.8. ffi_meta.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#print-arrays-lua">4.7.9. print_arrays.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-array-lua">4.7.10. count_array.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-array-with-nils-lua">4.7.11. count_array_with_nils.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-array-with-nulls-lua">4.7.12. count_array_with_nulls.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-map-lua">4.7.13. count_map.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#swap-lua">4.7.14. swap.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#uri-lua">4.7.15. uri.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#class-lua">4.7.16. class.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#garbage-lua">4.7.17. garbage.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#fiber-producer-and-consumer-lua">4.7.18. fiber_producer_and_consumer.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#socket-tcpconnect-lua">4.7.19. socket_tcpconnect.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#socket-tcp-echo-lua">4.7.20. socket_tcp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#getaddrinfo-lua">4.7.21. getaddrinfo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#socket-udp-echo-lua">4.7.22. socket_udp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-get-lua">4.7.23. http_get.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-send-lua">4.7.24. http_send.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-server-lua">4.7.25. http_server.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-generate-html-lua">4.7.26. http_generate_html.lua</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../book/administration.html">5. Server administration</a><ul>
@@ -366,10 +397,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#setting-up-a-replica">5.6.3. Setting up a replica</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#recovering-from-a-degraded-state">5.6.4. Recovering from a degraded state</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#quick-startup-of-a-new-simple-two-server-cluster">5.6.5. Quick startup of a new simple two-server cluster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica's actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica&#8217;s actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#preventing-duplicate-actions">5.6.7. Preventing duplicate actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#master-master-replication">5.6.8. Master-master replication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#all-the-what-if-questions">5.6.9. All the &quot;What If?&quot; questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#all-the-what-if-questions">5.6.9. All the &#8220;What If?&#8221; questions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#hands-on-replication-tutorial">5.6.10. Hands-on replication tutorial</a></li>
 </ul>
 </li>
@@ -407,6 +438,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#customizing-the-service-file">5.12.3. Customizing the service file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#debugging">5.12.4. Debugging</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/administration.html#precautions">5.12.5. Precautions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#limitations">5.12.6. Limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#sysvinit-systemd-conversion">5.12.7. sysvinit -&gt; systemd conversion</a></li>
 </ul>
 </li>
 </ul>
@@ -429,15 +462,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#interpreting-function-return-values">6.11. Interpreting function return values</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../book/app/a_errcodes.html">7. Appendix A. List of error codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../book/app/g_changes.html">8. Appendix B. Version-specific changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../book/app/g_changes.html#changes-in-tarantool-version-1-7">8.1. Changes in Tarantool version 1.7</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../book/faq.html">7. FAQ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../reference/reference_lua/index.html">1. Library reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/reference_lua/index.html">1. Built-in library reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box.html">1.1. Module <cite>box</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../book/box/box_schema.html">1.1.1. Submodule <cite>box.schema</cite></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../book/box/box_space.html">1.1.2. Submodule <cite>box.space</cite></a><ul>
@@ -459,21 +488,6 @@
 <li class="toctree-l5"><a class="reference internal" href="../book/box/box_tuple.html#example">1.1.5.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/box_introspection.html">1.1.6. Submodule <cite>box.cfg</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/box_introspection.html#lua-module.box.info">1.1.7. Submodule <cite>box.info</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/box_introspection.html#lua-module.box.slab">1.1.8. Submodule <cite>box.slab</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/box_introspection.html#submodule-box-stat">1.1.9. Submodule <cite>box.stat</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/triggers.html">1.1.10. Connection triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/triggers.html#example">1.1.10.1. Example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/triggers.html#authentication-triggers">1.1.11. Authentication triggers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/triggers.html#lua-module.box.space">1.1.12. Replace triggers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/triggers.html#id1">1.1.12.1. Example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../book/box/triggers.html#another-example">1.1.12.2. Another example</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../book/box/triggers.html#getting-a-list-of-triggers">1.1.13. Getting a list of triggers</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -498,13 +512,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_ipc.html#example">1.9.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fio.html">1.10. Module <cite>fio</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-pathname-manipulations">1.10.1. Common pathname manipulations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-file-manipulations">1.10.2. Common file manipulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html">1.10. Submodule <cite>fiber-cond</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html#example">1.10.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fun.html">1.11. Module <cite>fun</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/jit.html">1.12. Module <cite>jit</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fio.html">1.11. Module <cite>fio</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-pathname-manipulations">1.11.1. Common pathname manipulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-file-manipulations">1.11.2. Common file manipulations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fun.html">1.12. Module <cite>fun</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/json.html">1.13. Module <cite>json</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/json.html#configuration-settings">1.13.1. Configuration settings</a></li>
 </ul>
@@ -522,32 +539,32 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box_once.html">1.17. Function <cite>box.once</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/os.html">1.18. Module <cite>os</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/pickle.html">1.19. Module <cite>pickle</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/socket.html">1.20. Module <cite>socket</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/socket.html#example">1.20.1. Example</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.20.1.1. Use of a TCP socket over the Internet</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.20.1.2. Use of a UDP socket on localhost</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.20.1.3. Use tcp_server to accept file contents sent with socat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/pickle.html">1.18. Module <cite>pickle</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/socket.html">1.19. Module <cite>socket</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/socket.html#example">1.19.1. Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.19.1.1. Use of a TCP socket over the Internet</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.19.1.2. Use of a UDP socket on localhost</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.19.1.3. Use tcp_server to accept file contents sent with socat</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/strict.html">1.21. Module <cite>strict</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tap.html">1.22. Module <cite>tap</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/tap.html#example">1.22.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/strict.html">1.20. Module <cite>strict</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tap.html">1.21. Module <cite>tap</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/tap.html#example">1.21.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tarantool.html">1.23. Module <cite>tarantool</cite></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/uuid.html">1.24. Module <cite>uuid</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/uuid.html#example">1.24.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tarantool.html">1.22. Module <cite>tarantool</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/uuid.html">1.23. Module <cite>uuid</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/uuid.html#example">1.23.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/yaml.html">1.25. Module <cite>yaml</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/yaml.html#example">1.25.1. Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/yaml.html">1.24. Module <cite>yaml</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/yaml.html#example">1.24.1. Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/other.html">1.26. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/other.html">1.25. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/errcodes.html">1.26. Database error codes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/reference_rock/index.html">2. Rocks reference</a><ul>
@@ -613,7 +630,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contributor's Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contributor&#8217;s Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="reference_capi/index.html">1. C API reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference_capi/box.html">1.1. Module <cite>box</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference_capi/clock.html">1.2. Module <cite>clock</cite></a></li>
@@ -631,8 +648,8 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2. Internals</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tarantool-s-binary-protocol">2.1. Tarantool's binary protocol</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#notion-in-diagrams">2.1.1. Notion in diagrams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tarantool-s-binary-protocol">2.1. Tarantool&#8217;s binary protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#notation-in-diagrams">2.1.1. Notation in diagrams</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#greeting-packet">2.1.2. Greeting packet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#unified-packet-structure">2.1.3. Unified packet structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#authentication">2.1.4. Authentication</a></li>
@@ -700,7 +717,7 @@
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-6-functions">4.3.2.7. Chapter 6: Functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-7-centralized-exiting-of-functions">4.3.2.8. Chapter 7: Centralized exiting of functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-8-commenting">4.3.2.9. Chapter 8: Commenting</a></li>
-<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You've made a mess of it</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You&#8217;ve made a mess of it</a></li>
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-10-kconfig-configuration-files">4.3.2.11. Chapter 10: Kconfig configuration files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-11-data-structures">4.3.2.12. Chapter 11: Data structures</a></li>
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-12-macros-enums-and-rtl">4.3.2.13. Chapter 12: Macros, Enums and RTL</a></li>
@@ -708,7 +725,7 @@
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-14-allocating-memory">4.3.2.15. Chapter 14: Allocating memory</a></li>
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-15-the-inline-disease">4.3.2.16. Chapter 15: The inline disease</a></li>
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-16-function-return-values-and-names">4.3.2.17. Chapter 16: Function return values and names</a></li>
-<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don't re-invent the kernel macros</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don&#8217;t re-invent the kernel macros</a></li>
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-18-editor-modelines-and-other-cruft">4.3.2.19. Chapter 18:  Editor modelines and other cruft</a></li>
 <li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#appendix-i-references">4.3.2.20. Appendix I: References</a></li>
 </ul>
@@ -782,7 +799,7 @@
         <li class="b-path-list-item">
           <a href="index.html"
              class="b-path-list-item-url b-ellipsis">
-            Contributor's Guide
+            Contributor&#8217;s Guide
           </a>
         </li>
       
@@ -799,15 +816,15 @@
   <div class="section" id="internals">
 <h1>2. Internals<a class="headerlink" href="#internals" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tarantool-s-binary-protocol">
-<span id="box-protocol-iproto-protocol"></span><h2>2.1. Tarantool's binary protocol<a class="headerlink" href="#tarantool-s-binary-protocol" title="Permalink to this headline">¶</a></h2>
-<p>Tarantool's binary protocol is a binary request/response protocol.</p>
-<div class="section" id="notion-in-diagrams">
-<h3>2.1.1. Notion in diagrams<a class="headerlink" href="#notion-in-diagrams" title="Permalink to this headline">¶</a></h3>
+<span id="box-protocol-iproto-protocol"></span><h2>2.1. Tarantool&#8217;s binary protocol<a class="headerlink" href="#tarantool-s-binary-protocol" title="Permalink to this headline">¶</a></h2>
+<p>Tarantool&#8217;s binary protocol is a binary request/response protocol.</p>
+<div class="section" id="notation-in-diagrams">
+<h3>2.1.1. Notation in diagrams<a class="headerlink" href="#notation-in-diagrams" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none"><div class="highlight"><pre><span></span>0    X
 +----+
 |    | - X bytes
 +----+
- TYPE - type of MsgPack value (if it is MsgPack object)
+ TYPE - type of MsgPack value (if it is a MsgPack object)
 
 +====+
 |    | - Variable size MsgPack object
@@ -847,11 +864,11 @@
 64                  107              127
 </pre></div>
 </div>
-<p>The server begins the dialogue by sending a fixed-size (128 bytes) text greeting
-to the client. The greeting always contains two 64 byte lines of ASCII text, each
-line ending with newline character ('\n'). The first line contains the server
+<p>The server begins the dialogue by sending a fixed-size (128-byte) text greeting
+to the client. The greeting always contains two 64-byte lines of ASCII text, each
+line ending with a newline character (&#8216;\n&#8217;). The first line contains the server
 version and protocol type. The second line contains up to 44 bytes of base64-encoded
-random string, to use in authentication packet, and ends with up to 23 spaces.</p>
+random string, to use in the authentication packet, and ends with up to 23 spaces.</p>
 </div>
 <div class="section" id="unified-packet-structure">
 <h3>2.1.3. Unified packet structure<a class="headerlink" href="#unified-packet-structure" title="Permalink to this headline">¶</a></h3>
@@ -864,9 +881,9 @@ via the same connection</li>
 </ul>
 <p>For data structuring and encoding, the protocol uses msgpack data format, see
 <a class="reference external" href="http://msgpack.org">http://msgpack.org</a></p>
-<p>Tarantool protocol mandates use of a few integer constants serving as keys in
+<p>The Tarantool protocol mandates use of a few integer constants serving as keys in
 maps used in the protocol. These constants are defined in <a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/box/iproto_constants.h">src/box/iproto_constants.h</a></p>
-<p>Let's list them here too:</p>
+<p>We list them here too:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>-- user keys
 &lt;code&gt;          ::= 0x00
 &lt;sync&gt;          ::= 0x01
@@ -893,10 +910,11 @@ maps used in the protocol. These constants are defined in <a class="reference ex
 &lt;replace&gt; ::= 0x03
 &lt;update&gt;  ::= 0x04
 &lt;delete&gt;  ::= 0x05
-&lt;call&gt;    ::= 0x06
+&lt;call_16&gt; ::= 0x06
 &lt;auth&gt;    ::= 0x07
 &lt;eval&gt;    ::= 0x08
 &lt;upsert&gt;  ::= 0x09
+&lt;call&gt;    ::= 0x0a
 -- Admin command codes
 &lt;ping&gt;    ::= 0x40
 
@@ -928,12 +946,12 @@ maps used in the protocol. These constants are defined in <a class="reference ex
                           MP_MAP
 </pre></div>
 </div>
-<p>They only differ in the allowed set of keys and values, the key defines the type
-of value that follows. If a body has no keys, entire msgpack map for the body
-may be missing. Such is the case, for example, in &lt;ping&gt; request. <code class="docutils literal"><span class="pre">schema_id</span></code>
-may be absent in request's header, that means that there'll be no version
+<p>They only differ in the allowed set of keys and values. The key defines the type
+of value that follows. If a body has no keys, the entire msgpack map for the body
+may be missing. Such is the case, for example, for a &lt;ping&gt; request. <code class="docutils literal"><span class="pre">schema_id</span></code>
+may be absent in the request&#8217;s header, meaning that there will be no version
 checking, but it must be present in the response. If <code class="docutils literal"><span class="pre">schema_id</span></code> is sent in
-the header, then it'll be checked.</p>
+the header, then it will be checked.</p>
 </div>
 <div class="section" id="authentication">
 <span id="box-protocol-authentication"></span><h3>2.1.4. Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h3>
@@ -971,9 +989,9 @@ AUTHORIZATION BODY: CODE = 0x07
 </pre></div>
 </div>
 <p><code class="code docutils literal"><span class="pre">&lt;key&gt;</span></code> holds the user name. <code class="code docutils literal"><span class="pre">&lt;tuple&gt;</span></code> must be an array of 2 fields:
-authentication mechanism (&quot;chap-sha1&quot; is the only supported mechanism right now)
+authentication mechanism (&#8220;chap-sha1&#8221; is the only supported mechanism right now)
 and password, encrypted according to the specified mechanism. Authentication in
-Tarantool is optional, if no authentication is performed, session user is 'guest'.
+Tarantool is optional, if no authentication is performed, session user is &#8216;guest&#8217;.
 The server responds to authentication packet with a standard response with 0 tuples.</p>
 </div>
 <div class="section" id="requests">
@@ -1090,7 +1108,7 @@ Update a tuple</li>
                          MP_ARRAY
 </pre></div>
 </div>
-<p>It's an error to specify an argument of a type that differs from expected type.</p>
+<p>It is an error to specify an argument of a type that differs from the expected type.</p>
 <ul class="simple">
 <li>DELETE: CODE - 0x05
 Delete a tuple</li>
@@ -1107,10 +1125,10 @@ Delete a tuple</li>
 </pre></div>
 </div>
 <ul class="simple">
-<li>CALL: CODE - 0x06
-Call a stored function</li>
+<li>CALL_16: CODE - 0x06
+Call a stored function, returning an array of tuples. This is deprecated; CALL (0x0a) is recommended instead.</li>
 </ul>
-<div class="highlight-none"><div class="highlight"><pre><span></span>CALL BODY:
+<div class="highlight-none"><div class="highlight"><pre><span></span>CALL_16 BODY:
 
 +=======================+==================+
 |                       |                  |
@@ -1180,10 +1198,25 @@ Supported operations:
       key (this is validated before performing upsert).
 </pre></div>
 </div>
+<ul class="simple">
+<li>CALL: CODE - 0x0a
+Similar to CALL_16, but &#8211; like EVAL, CALL returns a list of values, unconverted</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>CALL BODY:
+
++=======================+==================+
+|                       |                  |
+|   0x22: FUNCTION_NAME |   0x21: TUPLE    |
+| MP_INT: MP_STRING     | MP_INT: MP_ARRAY |
+|                       |                  |
++=======================+==================+
+                    MP_MAP
+</pre></div>
+</div>
 </div>
 <div class="section" id="response-packet-structure">
 <h3>2.1.6. Response packet structure<a class="headerlink" href="#response-packet-structure" title="Permalink to this headline">¶</a></h3>
-<p>We'll show whole packets here:</p>
+<p>We will show whole packets here:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>OK:    LEN + HEADER + BODY
 
 0      5                                          OPTIONAL
@@ -1212,8 +1245,8 @@ EVAL command returns arbitrary <cite>MP_ARRAY</cite> with arbitrary MsgPack valu
 Where 0xXXX is ERRCODE.
 </pre></div>
 </div>
-<p>Error message is present in the response only if there is an error <code class="code docutils literal"><span class="pre">&lt;error&gt;</span></code>
-expects as value a msgpack string</p>
+<p>An error message is present in the response only if there is an error; <code class="code docutils literal"><span class="pre">&lt;error&gt;</span></code>
+expects as value a msgpack string.</p>
 <p>Convenience macros which define hexadecimal constants for return codes
 can be found in <a class="reference external" href="https://github.com/tarantool/tarantool/blob/1.7/src/box/errcode.h">src/box/errcode.h</a></p>
 </div>
@@ -1311,7 +1344,7 @@ VClock: &lt;vclock_map&gt;\n
 </pre></div>
 </div>
 <p>There are two markers: tuple beginning - <strong>0xd5ba0bab</strong> and EOF marker -
-<strong>0xd510aded</strong>. So, next, between <strong>Header</strong> and EOF marker there's data with
+<strong>0xd510aded</strong>. So, next, between <strong>Header</strong> and EOF marker there&#8217;s data with
 the following schema:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>0            3 4                                         17
 +-------------+========+============+===========+=========+
@@ -1332,7 +1365,7 @@ the following schema:</p>
 </div>
 </div>
 <div class="section" id="data-persistence-and-the-wal-file-format">
-<span id="b-internals"></span><h2>2.2. Data persistence and the WAL file format<a class="headerlink" href="#data-persistence-and-the-wal-file-format" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>2.2. Data persistence and the WAL file format<a class="headerlink" href="#data-persistence-and-the-wal-file-format" title="Permalink to this headline">¶</a></h2>
 <p>To maintain data persistence, Tarantool writes each data change request (INSERT,
 UPDATE, DELETE, REPLACE) into a write-ahead log (WAL) file in the
 <a class="reference internal" href="../reference/configuration/index.html#cfg-basic-wal-dir"><span class="std std-ref">wal_dir</span></a> directory. A new WAL file is created for every
@@ -1341,12 +1374,12 @@ Each data change request gets assigned a continuously growing 64-bit log sequenc
 number. The name of the WAL file is based on the log sequence number of the first
 record in the file, plus an extension <code class="docutils literal"><span class="pre">.xlog</span></code>.</p>
 <p>Apart from a log sequence number and the data change request (its format is the
-same as in <a class="reference internal" href="#box-protocol-iproto-protocol"><span class="std std-ref">Tarantool's binary protocol</span></a>),
+same as in <a class="reference internal" href="#box-protocol-iproto-protocol"><span class="std std-ref">Tarantool&#8217;s binary protocol</span></a>),
 each WAL record contains a header, some metadata, and then the data formatted
 according to <a class="reference external" href="https://en.wikipedia.org/wiki/MessagePack">msgpack</a> rules.
 For example this is what the WAL file looks like after the first INSERT request
-(&quot;s:insert({1})&quot;) for the introductory sandbox exercise
-&quot;<a class="reference internal" href="../book/user_guide_getting_started.html#user-guide-getting-started-first-database"><span class="std std-ref">Starting Tarantool and making your first database</span></a> “.
+(&#8220;s:insert({1})&#8221;) for the introductory sandbox exercise
+&#8220;<a class="reference internal" href="../book/user_guide_getting_started.html#user-guide-getting-started-first-database"><span class="std std-ref">Starting Tarantool and making your first database</span></a> “.
 On the left are the hexadecimal bytes that one would see with:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> hexdump 00000000000000000000.xlog
 </pre></div>
@@ -1372,7 +1405,7 @@ a7 cc 73 7f 00 00 66 39
 </pre></div>
 </div>
 <p>Tarantool processes requests atomically: a change is either accepted and recorded
-in the WAL, or discarded completely. Let's clarify how this happens, using the
+in the WAL, or discarded completely. Let&#8217;s clarify how this happens, using the
 REPLACE request as an example:</p>
 <ol class="arabic simple">
 <li>The server attempts to locate the original tuple by primary key. If found, a
@@ -1394,7 +1427,7 @@ is finished, the server restarts the processing pipeline.</li>
 </ol>
 <p>One advantage of the described algorithm is that complete request pipelining is
 achieved, even for requests on the same value of the primary key. As a result,
-database performance doesn't degrade even if all requests refer to the same
+database performance doesn&#8217;t degrade even if all requests refer to the same
 key in the same space.</p>
 <p>The transaction processor thread communicates with the WAL writer thread using
 asynchronous (yet reliable) messaging; the transaction processor thread, not
@@ -1407,7 +1440,7 @@ with UPDATEs and DELETEs, remains unaffected by disk load.</p>
 variable <a class="reference internal" href="../reference/configuration/index.html#index-wal-mode"><span class="std std-ref">wal_mode</span></a>. It is possible to turn the write-ahead
 log completely off, by setting
 <a class="reference internal" href="../reference/configuration/index.html#cfg-binary-logging-snapshots-wal-mode"><span class="std std-ref">wal_mode</span></a> to <em>none</em>. Even
-without the write-ahead log it's still possible to take a persistent copy of the
+without the write-ahead log it&#8217;s still possible to take a persistent copy of the
 entire data set with the <a class="reference internal" href="../book/administration.html#admin-snapshot"><span class="std std-ref">box.snapshot()</span></a> request.</p>
 <p>An .xlog file always contains changes based on the primary key.
 Even if the client requested an update or delete using
@@ -1416,16 +1449,16 @@ a secondary key, the record in the .xlog file will contain the primary key.</p>
 <div class="section" id="the-snapshot-file-format">
 <h2>2.3. The snapshot file format<a class="headerlink" href="#the-snapshot-file-format" title="Permalink to this headline">¶</a></h2>
 <p>The format of a snapshot .snap file is nearly the same as the format of a WAL .xlog file.
-However, the snapshot header differs: it contains the server's global unique identifier
-and the snapshot file's position in history, relative to earlier snapshot files.
+However, the snapshot header differs: it contains the server&#8217;s global unique identifier
+and the snapshot file&#8217;s position in history, relative to earlier snapshot files.
 Also, the content differs: an .xlog file may contain records for any data-change
 requests (inserts, updates, upserts, and deletes), a .snap file may only contain records
 of inserts to memtx spaces.</p>
-<p>Primarily, the .snap file's records are ordered by space id. Therefore the records of
+<p>Primarily, the .snap file&#8217;s records are ordered by space id. Therefore the records of
 system spaces, such as _schema and _space and _index and _func and _priv and _cluster,
 will be at the start of the .snap file, before the records of any spaces
 that were created by users.</p>
-<p>Secondarily, the .snap file's records are ordered by primary key within space id.</p>
+<p>Secondarily, the .snap file&#8217;s records are ordered by primary key within space id.</p>
 </div>
 <div class="section" id="the-recovery-process">
 <h2>2.4. The recovery process<a class="headerlink" href="#the-recovery-process" title="Permalink to this headline">¶</a></h2>
@@ -1435,12 +1468,12 @@ first time after the Tarantool server starts.</p>
 as of the moment when the server was last shut down. For this it may
 use the latest snapshot file and any WAL files that were written
 after the snapshot. One complicating factor is that Tarantool
-has two engines -- the memtx data must be reconstructed entirely
+has two engines &#8211; the memtx data must be reconstructed entirely
 from the snapshot and the WAL files, while the vinyl data will
 be on disk but might require updating around the time of a checkpoint.
 (When a snapshot happens, Tarantool tells the vinyl engine to
 make a checkpoint, and the snapshot operation is rolled back if
-anything goes wrong, so vinyl's checkpoint is at least as fresh
+anything goes wrong, so vinyl&#8217;s checkpoint is at least as fresh
 as the snapshot file.)</p>
 <dl class="docutils">
 <dt>Step 1</dt>
@@ -1455,7 +1488,7 @@ and <a class="reference internal" href="../reference/configuration/index.html#cf
 databases. Instruct the vinyl engine to recover to the latest checkpoint.</dd>
 </dl>
 <p>There are actually two variations of the reconstruction procedure for the memtx
-databases, depending whether the recovery process is &quot;default&quot;.</p>
+databases, depending whether the recovery process is &#8220;default&#8221;.</p>
 <p>If it is default (<code class="docutils literal"><span class="pre">panic_on_snap_error</span></code> is <code class="docutils literal"><span class="pre">true</span></code> and <code class="docutils literal"><span class="pre">panic_on_wal_error</span></code>
 is <code class="docutils literal"><span class="pre">true</span></code>), memtx can read data in the snapshot with all indexes disabled.
 First, all tuples are read into memory. Then, primary keys are built in bulk,
@@ -1472,32 +1505,32 @@ are only made if an error has occurred.</p>
 <dd>Find the WAL file that was made at the time of, or after, the snapshot file.
 Read its log entries until the log-entry LSN is greater than the LSN of the
 snapshot, or greater than the LSN of the vinyl checkpoint. This is the
-recovery process's &quot;start position&quot;; it matches the current state of the
+recovery process&#8217;s &#8220;start position&#8221;; it matches the current state of the
 engines.</dd>
 <dt>Step 3</dt>
 <dd>Redo the log entries, from the start position to the end of the WAL. The
-engine skips a redo instruction if it is older than the engine's checkpoint.</dd>
+engine skips a redo instruction if it is older than the engine&#8217;s checkpoint.</dd>
 <dt>Step 4</dt>
 <dd>For the memtx engine, re-create all secondary indexes.</dd>
 </dl>
 </div>
 <div class="section" id="server-startup-with-replication">
-<span id="b-internals-replication"></span><h2>2.5. Server startup with replication<a class="headerlink" href="#server-startup-with-replication" title="Permalink to this headline">¶</a></h2>
+<span id="internals-replication"></span><h2>2.5. Server startup with replication<a class="headerlink" href="#server-startup-with-replication" title="Permalink to this headline">¶</a></h2>
 <p>In addition to the recovery process described above, the server must take
 additional steps and precautions if <a class="reference internal" href="../book/administration.html#index-box-replication"><span class="std std-ref">replication</span></a> is
 enabled.</p>
 <p>Once again the startup procedure is initiated by the <code class="docutils literal"><span class="pre">box.cfg{}</span></code> request.
 One of the box.cfg parameters may be
 <a class="reference internal" href="../reference/configuration/index.html#cfg-replication-replication-source"><span class="std std-ref">replication_source</span></a>. We will
-refer to this server, which is starting up due to box.cfg, as the &quot;local&quot; server
+refer to this server, which is starting up due to box.cfg, as the &#8220;local&#8221; server
 to distinguish it from the other servers in a cluster, which we will refer to as
-&quot;distant&quot; servers.</p>
+&#8220;distant&#8221; servers.</p>
 <p><em>If there is no snapshot .snap file and replication_source is empty</em>: <br />
-then the local server assumes it is an unreplicated &quot;standalone&quot; server, or is
+then the local server assumes it is an unreplicated &#8220;standalone&#8221; server, or is
 the first server of a new replication cluster. It will generate new UUIDs for
 itself and for the cluster. The server UUID is stored in the _cluster space; the
 cluster UUID is stored in the _schema space. Since a snapshot contains all the
-data in all the spaces, that means the local server's snapshot will contain the
+data in all the spaces, that means the local server&#8217;s snapshot will contain the
 server UUID and the cluster UUID. Therefore, when the local server restarts on
 later occasions, it will be able to recover these UUIDs when it reads the .snap
 file.</p>
@@ -1506,25 +1539,25 @@ and the _cluster space contains no other server UUIDs</em>: <br />
 then the local server assumes it is not a standalone server, but is not yet part
 of a cluster. It must now join the cluster. It will send its server UUID to the
 first distant server which is listed in replication_source, which will act as a
-master. This is called the &quot;join request&quot;. When a distant server receives a join
+master. This is called the &#8220;join request&#8221;. When a distant server receives a join
 request, it will send back:</p>
 <ol class="arabic simple">
-<li>the distant server's cluster UUID,</li>
-<li>the contents of the distant server's .snap file. <br />
+<li>the distant server&#8217;s cluster UUID,</li>
+<li>the contents of the distant server&#8217;s .snap file. <br />
 When the local server receives this information, it puts the cluster UUID in
-its _schema space, puts the distant server's UUID and connection information
+its _schema space, puts the distant server&#8217;s UUID and connection information
 in its _cluster space, and makes a snapshot containing all the data sent by
 the distant server. Then, if the local server has data in its WAL .xlog
 files, it sends that data to the distant server. The distant server will
-receive this and update its own copy of the data, and add the local server's
+receive this and update its own copy of the data, and add the local server&#8217;s
 UUID to its _cluster space.</li>
 </ol>
 <p><em>If there is no snapshot .snap file and replication_source is not empty
 and the _cluster space contains other server UUIDs</em>: <br />
 then the local server assumes it is not a standalone server, and is already part
 of a cluster. It will send its server UUID and cluster UUID to all the distant
-servers which are listed in replication_source. This is called the &quot;on-connect
-handshake&quot;. When a distant server receives an on-connect handshake: <br /></p>
+servers which are listed in replication_source. This is called the &#8220;on-connect
+handshake&#8221;. When a distant server receives an on-connect handshake: <br /></p>
 <ol class="arabic simple">
 <li>the distant server compares its own copy of the cluster UUID to the one in
 the on-connect handshake. If there is no match, then the handshake fails and
@@ -1538,16 +1571,16 @@ the local server.</li>
 <p>In the end ... the local server knows what cluster it belongs to, the distant
 server knows that the local server is a member of the cluster, and both servers
 have the same database contents.</p>
-<p><em>If there is a snapshot file and replication source is not empty</em>: <br />
+<p id="internals-vector"><em>If there is a snapshot file and replication source is not empty</em>: <br />
 first the local server goes through the recovery process described in the
 previous section, using its own .snap and .xlog files. Then it sends a
-&quot;subscribe&quot; request to all the other servers of the cluster. The subscribe
+&#8220;subscribe&#8221; request to all the other servers of the cluster. The subscribe
 request contains the server vector clock. The vector clock has a collection of
-pairs 'server id, lsn' for every server in the _cluster system space. Each
-distant server, upon receiving a subscribe request, will read its .xlog files'
+pairs &#8216;server id, lsn&#8217; for every server in the _cluster system space. Each
+distant server, upon receiving a subscribe request, will read its .xlog files&#8217;
 requests and send them to the local server if (lsn of .xlog file request) is
 greater than (lsn of the vector clock in the subscribe request). After all the
-other servers of the cluster have responded to the local server's subscribe
+other servers of the cluster have responded to the local server&#8217;s subscribe
 request, the server startup is complete.</p>
 <p>The following temporary limitations apply for version 1.7:</p>
 <ul class="simple">
@@ -1617,11 +1650,11 @@ limit is reached, users may have to reorganize the _cluster space manually.</li>
     </div>
   
 
-      </div>
-    </div>
+        </div>
+        </div>
 
-  <!-- FOOTER > -->
-  
+    <!-- FOOTER > -->
+    
 <footer class="b-footer">
   <div class="b-footer-wrapper">
     <nav class="b-footer_menu">
@@ -1661,8 +1694,9 @@ limit is reached, users may have to reorganize the _cluster space manually.</li>
   </div>
 </footer>
 
-  <!-- < FOOTER -->
-  <div id="mobile-checker"></div>
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </div>
   </body>
 </html>
 

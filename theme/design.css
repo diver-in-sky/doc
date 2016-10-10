@@ -16,6 +16,11 @@ body {
     height:100%;
     background:#FFF;
     margin:0;
+    overflow: hidden;
+}
+.b-scrollview {
+    height: 100%;
+    overflow: auto;
 }
 a, img, input, textarea, select {
     outline:none;
@@ -422,6 +427,7 @@ h1, h2, h3, h4, h5 {
     width:1%;
     vertical-align:middle;
 }
+
 .b-cust_logo {
     display:inline-block;
     position:relative;
@@ -1531,7 +1537,7 @@ div.b-rock-list-item-ico {
 .header-logo {
     height: 80px;
     width: 100%;
-    background: url('tarantool_infinity_logo.png') center no-repeat;
+    background: url('tarantool_infinity_logo.svg') center no-repeat;
 }
 
 .papers a:hover {
@@ -1605,6 +1611,14 @@ ul.b-social_block a:hover {
 }
 
 @media screen and (max-width: 992px) {
+    body.stop-scroll {
+        position: fixed;
+        right: 0;
+        left: 0;
+    }
+    .b-menu-toc>ul {
+        padding-left: 30px;
+    }
     .b-content {
         margin-top: 40px;
     }
@@ -1642,7 +1656,7 @@ ul.b-social_block a:hover {
     }
     .b-menu_mobile__wrapper {
         /* padding: 80px 0px 15px; */
-        padding: 43px 0px 15px;
+        padding: 0px 0px 15px;
         width: 334px;
         /* height: 100vh */;
         height: calc(100vh - 40px);
@@ -1650,7 +1664,7 @@ ul.b-social_block a:hover {
         /* top: 0 */;
         top: 40px;
         left: 0;
-        background: #fff /*url(mobile-logo.svg) 28px 5px no-repeat*/ ;
+        background: #eaeaea /*url(mobile-logo.svg) 28px 5px no-repeat*/ ;
         background-size: 96px 31px;
 
         /*left: -334px;*/
@@ -1987,6 +2001,12 @@ ul.b-social_block a:hover {
     .b-cols_content_left .search {
         display: none;
     }
+    /*
+    .b-cols_content_left .{
+        max-height: calc(100vh - 131px);
+        overflow: auto;
+    }
+    */
     .toggle-navigation {
         padding-left: 25px;
         position: relative;
@@ -2011,7 +2031,7 @@ ul.b-social_block a:hover {
     div.b-cols_content .b-menu-toc {
         position: absolute;
         display: none;
-        left: 0 ;
+         left: 0 ;
         top: 0;
         width: 332px;
         max-width: 100%;
@@ -2022,7 +2042,7 @@ ul.b-social_block a:hover {
     }
     div.b-cols_content .b-menu-toc.active {
         display: block;
-        min-height: 100vh;
+        min-height: calc(100vh - 127px);
         padding-right: 15px;
     }
     .b-menu-toc .b-cols_content_left {
@@ -2332,6 +2352,10 @@ ul.b-social_block a:hover {
     .b-block-wrapper {
         padding: 30px 15px;
     }
+    div.b-cols_content .b-menu-toc.active {
+        display: block;
+        min-height: calc(100vh - 110px);
+    }
     .b-header {
         padding: 0 15px;
     }
@@ -2464,6 +2488,12 @@ ul.b-social_block a:hover {
     }
     .b-menu_mobile__wrapper .b-header_menu li.p-active {
         border-top: 0px solid black;
+    }
+    .b-cols_content .b-cols_content_left {
+        position: relative;
+        padding: 15px 0 0 0;
+        margin: 0;
+        overflow: initial;
     }
 }
 

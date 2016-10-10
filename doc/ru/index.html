@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:       '',
-        VERSION:        '1.7.1',
+        VERSION:        '1.7.2',
         COLLAPSE_INDEX:  false,
         FILE_SUFFIX:    '.html',
         HAS_SOURCE:      true
@@ -41,8 +41,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/stacktable.min.js"></script>
     <script type="text/javascript" src="_static/headers.js"></script>
-    <script type="text/javascript" src="_static/jquery.sticky-kit.min.js"></script>
     <script type="text/javascript" src="/js/menu.js"></script>
     <script type="text/javascript" src="/js/mobile_menu.js"></script>
     <link rel="stylesheet" href="/theme/font-awesome.min.css">
@@ -88,9 +88,10 @@
   
   <body class="b-main b-doc-index">
   
-    <div class="b-wrapper">
-      <!-- HEADER > -->
-      
+    <div class="b-scrollview">
+        <div class="b-wrapper">
+        <!-- HEADER > -->
+        
   <header class="b-header">
     <div class="b-header_menu_mobile">
       <div class="b-burger-button">
@@ -171,10 +172,10 @@
     </div>
   </header>
 
-      <!-- < HEADER -->
+        <!-- < HEADER -->
 
-      <div class="b-content b-clearbox">
-        
+        <div class="b-content b-clearbox">
+            
   <section class="b-lightgray_block b-documentation_top b-clearbox p-documentation_in">
     <div class="b-block-wrapper">
       <h2
@@ -225,39 +226,41 @@
 <h1>Документация<a class="headerlink" href="#documentation" title="Ссылка на этот заголовок">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">Что нового?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whats_new.html#what-s-new-in-tarantool-1-7">Что нового в Tarantool 1.7?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Общие сведения</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#database-features">Database features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#an-application-server-together-with-a-database-manager">Сервер приложений + СУБД</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#database-features">Возможности СУБД</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">Вопросы и ответы</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/lua_tutorials.html">1. Lua tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/c_tutorial.html">2. C tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Практикум</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/lua_tutorials.html">1. Практические задания на Lua</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/c_tutorial.html">2. Практическое задание на C</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="book/index.html">User's Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="book/index.html">Руководство пользователя</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="book/intro.html">1. Предисловие</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/user_guide_getting_started.html">2. Начало работы</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/box/index.html">3. Функционал СУБД</a></li>
-<li class="toctree-l2"><a class="reference internal" href="book/app_server.html">4. Application server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/app_server.html">4. Сервер приложений</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/administration.html">5. Администрирование серверной части</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/connectors/index.html">6. Коннекторы</a></li>
-<li class="toctree-l2"><a class="reference internal" href="book/app/a_errcodes.html">7. Приложение A. Коды ошибок</a></li>
-<li class="toctree-l2"><a class="reference internal" href="book/app/g_changes.html">8. Appendix B. Version-specific changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/faq.html">7. Вопросы и ответы</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_lua/index.html">1. Library reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_rock/index.html">2. Rocks reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/configuration/index.html">3. Configuration reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Справочники</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/reference_lua/index.html">1. Справочник по встроенной библиотеке</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/reference_rock/index.html">2. Справочник по сторонним библиотекам</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/configuration/index.html">3. Справочник по настройке</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev_guide/index.html">Contributor's Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_guide/reference_capi/index.html">1. C API reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_guide/internals_index.html">2. Internals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_guide/build_contribute_index.html">3. Build and contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_guide/guidelines_index.html">4. Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guide/index.html">Руководство участника проекта</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide/reference_capi/index.html">1. Справочник по C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide/internals_index.html">2. Детали реализации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide/build_contribute_index.html">3. Сборка и участие в проекте</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_guide/guidelines_index.html">4. Соглашения по разработке</a></li>
 </ul>
 </li>
 </ul>
@@ -276,11 +279,11 @@
     </section>
   
 
-      </div>
-    </div>
+        </div>
+        </div>
 
-  <!-- FOOTER > -->
-  
+    <!-- FOOTER > -->
+    
 <footer class="b-footer">
   <div class="b-footer-wrapper">
     <nav class="b-footer_menu">
@@ -320,8 +323,9 @@
   </div>
 </footer>
 
-  <!-- < FOOTER -->
-  <div id="mobile-checker"></div>
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </div>
   </body>
 </html>
 

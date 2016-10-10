@@ -1,3 +1,4 @@
+/* register global replication tab function */
 window['register_replication_tab'] = function (id) {
     $(document).on({
         click: function(event) {
@@ -75,6 +76,7 @@ $(document).ready(function () {
     }
   );
 
+  /* Base admonition function */
   function admonition_icon(name) {
     return function(i, el) {
       var icon = $('<i class="fa"></i>').addClass(name);
@@ -122,6 +124,7 @@ $(document).ready(function () {
     }
   );
 
+  /* startsWith string prototype (for JS before ECMAScript6) */
   if (!String.prototype.startsWith) {
     Object.defineProperty(String.prototype, 'startsWith', {
         enumerable: false,
@@ -134,6 +137,7 @@ $(document).ready(function () {
     });
   }
 
+  /* menu active selection */
   $(function() {
     $("ul.b-menu a").each(function() {
       if (($(this).attr('href') === window.location.pathname) ||
@@ -146,6 +150,7 @@ $(document).ready(function () {
     });
   });
 
+  /* Search additions for sphinx */
   $(function() {
     $(".b-header-search input").focusin(function() {
       $(this).attr("placeholder", "Search this manual");
@@ -156,16 +161,10 @@ $(document).ready(function () {
     $(".b-doc-search .b-header-search input").focus();
   });
 
-  $("html").click(function() {
-    $(".b-menu-toc").removeClass("active");
-    $(".toggle-navigation").removeClass("active");
-  });
-
-  $("b-cols_content_left").click(function() {
-    event.stopPropagation();
-  });
-
+  /* Recursive sliding menu with plus/minus icons for toggling */
   function toggle_recursive() {
+    var is_mobile = ($("#mobile-checker").css("display") == "none");
+
     var menu = $(this)
     if (menu.is('li')) {
       var ul = menu.children("ul");
@@ -173,46 +172,100 @@ $(document).ready(function () {
       if (ul.length > 0) {
         var link = menu.children("a");
         link.css("position", "relative").css("left", "-12px").before(
-          $('<i class="fa fa-minus-square-o fa-1"></i>')
+          $('<i class="fa fa-plus-square-o fa-1"></i>')
         );
         link.siblings("i").click(function(event) {
-          event.stopPropagation();
+          if (is_mobile) {
+            event.stopPropagation();
+          }
           menu.children("ul").slideToggle();
           $(this).toggleClass("fa-plus-square-o").toggleClass("fa-minus-square-o");
-          $(".b-cols_content_left").trigger("sticky_kit:stick")
-          $(".b-cols_content_left").trigger("sticky_kit:recalc")
-          $(".b-cols_content_left").trigger("sticky_kit:unstick")
-        }).css("position", "relative").css("left", "-17px").click();
+        }).css("position", "relative").css("left", "-17px");
         ul.children("li").each(toggle_recursive);
+        menu.children("ul").css('display', 'none');
       }
     }
   }
 
+  /* Some hacks for sliding TOC and pinned left menu */
+  $(window).load(function() {
+    var is_mobile = ($("#mobile-checker").css("display") == "none");
+
+    $(".b-cols_content_left").each(function() {
+      // console.log("cols-left ready");
+      $(this).css('display', 'none');
+
+      if (is_mobile) {
+        $(this).find("li.toctree-l3 ul").remove()
+        $(this).find("li.toctree-l2:not(.current) ul").remove()
+      }
+      $(this).find("li.toctree-l1").each(toggle_recursive)
+      $(this).find("a.current").each(function() {
+        $(this).siblings("i").click();
+        $(this).parents("ul.current").prev().siblings("i").click();
+      });
+
+      $(this).css('display', 'block');
+
+      $(this).find("a").click(function() {
+        $(".b-menu-toc").removeClass('active');
+        $(".toggle-navigation").removeClass('active');
+      });
+
+      var b_scroll_view = $('.b-scrollview');
+      var b_cols_content = $('.b-cols_content');
+      var b_footer = $('.b-footer');
+      var b_cols_content_left = $('.b-cols_content_left');
+
+      /* disable page scrolling while mouse is in TOC */
+      b_cols_content_left.mouseenter(function() {
+        b_scroll_view.css('overflow', 'hidden');
+      }).mouseleave(function() {
+        b_scroll_view.css('overflow', '');
+      });
+
+      function layout_tok() {
+        var scroll_top = b_scroll_view.scrollTop();
+        var window_h = $(window).height();
+        var y1 = b_cols_content.offset().top;
+        var y2 = b_footer.offset().top;
+        var target = b_cols_content_left;
+        if ($(window).width() < 992) {
+          target.removeClass('b-cols_content_left_stuck');
+          target.css('max-height', '');
+          return;
+        }
+        /* adjust max-height s.t. it matches the portion of TOC clipped
+         * by viewport*/
+        var max_height = Math.min(window_h, y2);
+        if (y1 >= 0) {
+          max_height = Math.min(max_height, window_h - y1, y2 - y1);
+          target.removeClass('b-cols_content_left_stuck');
+        } else {
+          target.addClass('b-cols_content_left_stuck');
+        }
+        /* -15 to compensate for padding-top */
+        target.css('max-height', Math.floor(max_height - 15) + 'px');
+      }
+
+      b_scroll_view.scroll(layout_tok);
+      $(window).resize(layout_tok);
+      layout_tok();
+
+    }).click(function(event) {
+      if (is_mobile) {
+        event.stopPropagation();
+      }
+    });
+  });
+
   $(function() {
-    var is_mobile = $("#mobile-checker").css("display") == "none";
-
-    if (is_mobile) {
-      $(".b-cols_content_left li.toctree-l3 ul").remove()
-      $(".b-cols_content_left li.toctree-l2:not(.current) ul").remove()
-    }
-    $(".b-cols_content_left li.toctree-l1").each(toggle_recursive)
-    $(".b-cols_content_left a.current").each(function() {
-      $(this).siblings("i").click();
-      $(this).parents("ul.current").prev().siblings("i").click();
-    });
-    $(".b-cols_content_left a").click(function() {
-      $(".b-menu-toc").removeClass('active');
-      $(".toggle-navigation").removeClass('active');
-    });
-
-    $(".b-cols_content_left").stick_in_parent({
-      parent: ".b-cols_content",
-      spacer: false
-    });
-
-    $(".b-cols_content_left").trigger("sticky_kit:stick");
-    $(".b-cols_content_left").trigger("sticky_kit:recalc");
-    $(".b-cols_content_left").trigger("sticky_kit:unstick");
+      if ($('thead').length) {
+          $('thead').parents('table').cardtable();
+      }
+      if ($('#details-about-index-field-types').length) {
+          $('#details-about-index-field-types table').stacktable();
+      }
   });
 });
 

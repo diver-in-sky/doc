@@ -48,9 +48,10 @@ _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
 
   </head>
   <body class="p-main">
-    <div class="b-wrapper">
-      <!-- HEADER > -->
-        <header class="b-header">
+    <div class="b-scrollview">
+      <div class="b-wrapper">
+        <!-- HEADER > -->
+          <header class="b-header">
     <div class="b-header_menu_mobile">
       <div class="b-burger-button">
         <span></span>
@@ -70,7 +71,7 @@ _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
         <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
       </li>
       <li class="b-menu-item">
-        <a href="/doc/" class="b-menu-item-url">Documentation</a>
+        <a href="/doc.html" class="b-menu-item-url">Documentation</a>
       </li>
       <li class="b-menu-item">
         <a href="/download.html" class="b-menu-item-url">Download</a>
@@ -96,7 +97,7 @@ _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
         <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
       </li>
       <li class="b-menu-item">
-        <a href="/doc/" class="b-menu-item-url">Documentation</a>
+        <a href="/doc.html" class="b-menu-item-url">Documentation</a>
       </li>
       <li class="b-menu-item">
         <a href="/download.html" class="b-menu-item-url">Download</a>
@@ -113,9 +114,9 @@ _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
     </div>
   </header>
 
-      <!-- < HEADER -->
+        <!-- < HEADER -->
 
-      <div class="b-content b-clearbox">
+        <div class="b-content b-clearbox">
 <section class="b-gray_block">
   <div class="b-block-wrapper b-downloads-tlist_block">
       <ul class="b-download-tlist">
@@ -372,8 +373,8 @@ sudo yum -y install tarantool
       </li>
       <li class="b-download-list-item">
         <a href="#" class="b-download-list-item-url">Snappy package</a>
-        <div class="b-download-list-item-drop"><p>You can install Tarantool 1.7.2 (Alpha) from a Snappy package:</p>
-<div class="highlight"><pre><span></span>$ snap install tarantool --channel<span class="o">=</span>edge
+        <div class="b-download-list-item-drop"><p>You can install Tarantool 1.7.2 (Beta) from a Snappy package:</p>
+<div class="highlight"><pre><span></span>$ snap install tarantool --channel<span class="o">=</span>beta
 </pre></div>
 <p>Snaps are universal Linux packages which can be installed across
 a range of Linux distributions.</p>
@@ -463,11 +464,11 @@ Please consult with the Tarantool documentation for
     </ul>
   </div>
 </section>
+        </div>
       </div>
-    </div>
 
-  <!-- FOOTER > -->
-  <footer class="b-footer">
+      <!-- FOOTER > -->
+      <footer class="b-footer">
   <div class="b-footer-wrapper">
     <nav class="b-footer_menu">
         <ul class="b-menu">
@@ -478,7 +479,7 @@ Please consult with the Tarantool documentation for
         <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
       </li>
       <li class="b-menu-item">
-        <a href="/doc/" class="b-menu-item-url">Documentation</a>
+        <a href="/doc.html" class="b-menu-item-url">Documentation</a>
       </li>
       <li class="b-menu-item">
         <a href="/download.html" class="b-menu-item-url">Download</a>
@@ -498,7 +499,8 @@ Please consult with the Tarantool documentation for
   </div>
 </footer>
 
-  <!-- < FOOTER -->
+      <!-- < FOOTER -->
+    </div>
   </body>
 </html>
 

@@ -1,5 +1,5 @@
 ================================================================================
-Library reference
+Built-in library reference
 ================================================================================
 
 This reference covers Tarantool's built-in Lua modules.
@@ -25,15 +25,14 @@ This reference covers Tarantool's built-in Lua modules.
     box_error
     fiber
     fiber_ipc
+    fiber_cond
     fio
     fun
-    jit
     json
     log
     msgpack
     net_box
     box_once
-    os
     pickle
     socket
     strict
@@ -42,3 +41,4 @@ This reference covers Tarantool's built-in Lua modules.
     uuid
     yaml
     other
+    errcodes
