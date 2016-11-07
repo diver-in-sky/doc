@@ -1,0 +1,1010 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+  <link rel="icon" type="image/png" sizes="16x16" href=../../../_static/favicon/favicon-16x16.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=../../../_static/favicon/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="96x96" href=../../../_static/favicon/favicon-96x96.png>
+
+    <title>1.27. Miscellaneous</title>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/js/menu.js"></script>
+      <script type="text/javascript" src="../../../_static/js/mobile_menu.js"></script>
+      <script type="text/javascript" src="../../../_static/js/stacktable.min.js"></script>
+      <script type="text/javascript" src="../../../_static/js/headers.js"></script>
+      <script type="text/javascript" src="../../../_static/js/dropdown.js"></script>
+      <script type="text/javascript" src="../../../_static/js/jquery.sticky-kit.min.js"></script>
+      <link rel="stylesheet" href="../../../_static/design.css">
+
+    
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:       '',
+        VERSION:        '1.7.2',
+        COLLAPSE_INDEX:  false,
+        FILE_SUFFIX:    '.html',
+        HAS_SOURCE:      true
+      };
+      
+      
+      var disqus_config = function () {
+          this.page.identifier = "doc/reference/reference_lua/other";
+          this.language        = "en"
+      };
+    </script>
+    
+
+  </head>
+  <body class="p-cols_design b-doc-doc/reference/reference_lua/other">
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      
+  <header class="b-header">
+    <div class="b-header_menu_mobile">
+      <div class="b-burger-button">
+        <span></span>
+      </div>
+      <form role="search" class="b-header-search" action="../../../search.html" method="get">
+        <input name="q" type="search">
+      </form>
+    </div>
+    <div class="b-menu_mobile">
+      <div class="b-menu_mobile__wrapper">
+        <nav class="b-header_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="../../../index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../../doc.html" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../../download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../../careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+        </nav>
+      </div>
+    </div>
+    <div class="b-header-wrapper">
+      <nav class="b-header_menu">
+        
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="../../../index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../../doc.html" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../../download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../../careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      </nav>
+    </div>
+  </header>
+
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  
+    <section class="b-block-lightgray b-documentation_top b-clearbox p-documentation_in">
+      <div class="b-block-wrapper">
+        <h2 class="b-section-title b-ellipsis toggle-navigation" title="1.27. Miscellaneous"> 1.27. Miscellaneous </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="#" class="b-doc-language_selector-item-url p-active"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../../ru/doc/reference/reference_lua/other.html
+  
+"
+           class="b-doc-language_selector-item-url"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+    </section>
+    
+      <div class="b-cols_content b-clearbox">
+        <div class="b-cols_content_left">
+          <div class="b-menu-toc">
+            
+<form id="searchbox" role="search" class="search b-search" action="../../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../whats_new.html">What&#8217;s new?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../whats_new.html#what-s-new-in-tarantool-1-7">What&#8217;s new in Tarantool 1.7?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro.html#database-features">Database features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/lua_tutorials.html">1. Lua tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#insert-one-million-tuples-with-a-lua-stored-procedure">1.1. Insert one million tuples with a Lua stored procedure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#configure">1.1.1. Configure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#delimiter">1.1.2. Delimiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#create-a-function-that-returns-a-string">1.1.3. Create a function that returns a string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#create-a-function-that-calls-another-function-and-sets-a-variable">1.1.4. Create a function that calls another function and sets a variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#modify-the-function-so-it-returns-a-one-letter-random-string">1.1.5. Modify the function so it returns a one-letter random string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#modify-the-function-so-it-returns-a-ten-letter-random-string">1.1.6. Modify the function so it returns a ten-letter random string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#make-a-tuple-out-of-a-number-and-a-string">1.1.7. Make a tuple out of a number and a string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-tuple-into-the-database">1.1.8. Modify main_function to insert a tuple into the database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-million-tuples-into-the-database">1.1.9. Modify main_function to insert a million tuples into the database</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#sum-a-json-field-for-all-tuples">1.2. Sum a JSON field for all tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/lua_tutorials.html#indexed-pattern-search">1.3. Indexed pattern search</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/c_tutorial.html">2. C tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/c_tutorial.html#c-stored-procedures">2.1. C stored procedures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/index.html">User&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../book/intro.html">1. Preface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/intro.html#how-to-read-the-documentation">1.1. How to read the documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/intro.html#getting-in-touch-with-the-tarantool-community">1.2. Getting in touch with the Tarantool community</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/user_guide_getting_started.html">2. Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/user_guide_getting_started.html#downloading-and-installing-a-binary-package">2.1. Downloading and installing a binary package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/user_guide_getting_started.html#starting-tarantool-and-making-your-first-database">2.2. Starting Tarantool and making your first database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/user_guide_getting_started.html#connecting-remotely">2.3. Connecting remotely</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/box/index.html">3. Database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#data-model">3.1. Data model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#space">3.1.1. Space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#tuple-set">3.1.2. Tuple set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#index">3.1.3. Index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#data-types">3.1.4. Data types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#operations">3.1.5. Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#persistence">3.1.6. Persistence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#data-manipulation">3.1.7. Data manipulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#index-operations">3.1.8. Index operations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#transaction-control">3.2. Transaction control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#cooperative-multitasking-environment">3.2.1. Cooperative multitasking environment</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#example">3.2.1.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#implicit-yields">3.2.2. Implicit yields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#access-control">3.3. Access control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#passwords">3.3.1. Passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#users-and-the-user-space">3.3.2. Users and the _user space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#privileges-and-the-priv-space">3.3.3. Privileges and the _priv space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#functions-and-the-func-space">3.3.4. Functions and the _func space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#box-session-and-security">3.3.5. box.session and security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#roles">3.3.6. Roles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#example-showing-a-role-within-a-role">3.3.6.1. Example showing a role within a role</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#triggers">3.4. Triggers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#connection-triggers">3.4.1. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#id3">3.4.1.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#authentication-triggers">3.4.2. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#lua-module.box.space">3.4.3. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#id4">3.4.3.1. Example</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#another-example">3.4.3.2. Another example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#getting-a-list-of-triggers">3.4.4. Getting a list of triggers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#limitations">3.5. Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/box/index.html#vinyl-storage-engine">3.6. Vinyl storage engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.6.1. Differences between memtx and vinyl storage engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#vinyl-features">3.6.2. Vinyl features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/index.html#under-the-hood">3.6.3. Under the hood</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-first-200-000-keys">3.6.3.1. Inserting the first 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-next-300-000-keys">3.6.3.2. Inserting the next 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-next-200-000-keys">3.6.3.3. Inserting the next 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#inserting-the-last-300-000-keys">3.6.3.4. Inserting the last 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/index.html#reading-million-keys">3.6.3.5. Reading million keys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/app_server.html">4. Application server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#about-modules-rocks">4.1. About modules/rocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#installing-an-existing-module">4.2. Installing an existing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#creating-a-new-lua-module-locally">4.3. Creating a new Lua module locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#creating-a-new-c-c-module-locally">4.4. Creating a new C/C++ module locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#creating-a-mixed-lua-c-module-locally">4.5. Creating a mixed Lua/C module locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#tips-for-special-situations">4.6. Tips for special situations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/app_server.html#cookbook-recipes">4.7. Cookbook recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#hello-world-lua">4.7.1. hello_world.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#console-start-lua">4.7.2. console_start.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#fio-read-lua">4.7.3. fio_read.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#fio-write-lua">4.7.4. fio_write.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#ffi-printf-lua">4.7.5. ffi_printf.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#ffi-gettimeofday-lua">4.7.6. ffi_gettimeofday.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#ffi-zlib-lua">4.7.7. ffi_zlib.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#ffi-meta-lua">4.7.8. ffi_meta.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#print-arrays-lua">4.7.9. print_arrays.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#count-array-lua">4.7.10. count_array.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#count-array-with-nils-lua">4.7.11. count_array_with_nils.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#count-array-with-nulls-lua">4.7.12. count_array_with_nulls.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#count-map-lua">4.7.13. count_map.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#swap-lua">4.7.14. swap.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#uri-lua">4.7.15. uri.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#class-lua">4.7.16. class.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#garbage-lua">4.7.17. garbage.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#fiber-producer-and-consumer-lua">4.7.18. fiber_producer_and_consumer.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#socket-tcpconnect-lua">4.7.19. socket_tcpconnect.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#socket-tcp-echo-lua">4.7.20. socket_tcp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#getaddrinfo-lua">4.7.21. getaddrinfo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#socket-udp-echo-lua">4.7.22. socket_udp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#http-get-lua">4.7.23. http_get.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#http-send-lua">4.7.24. http_send.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#http-server-lua">4.7.25. http_server.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/app_server.html#http-generate-html-lua">4.7.26. http_generate_html.lua</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/administration.html">5. Server administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#using-tarantool-as-a-client">5.1. Using tarantool as a client</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#conventions-used-in-this-section">5.1.1. Conventions used in this section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#options-when-starting-client-from-the-command-line">5.1.2. Options when starting client from the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#tokens-requests-and-special-key-combinations">5.1.3. Tokens, requests, and special key combinations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#requests">5.1.4. Requests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#utility-tarantoolctl">5.2. Utility tarantoolctl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#configuration-for-tarantoolctl">5.2.1. Configuration for tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#commands-for-tarantoolctl">5.2.2. Commands for tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#typical-code-snippets-for-tarantoolctl">5.2.3. Typical code snippets for tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#a-detailed-example-for-tarantoolctl">5.2.4. A detailed example for tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#an-example-for-tarantoolctl-connect">5.2.5. An example for tarantoolctl connect</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#administrative-ports">5.3. Administrative ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#administrative-requests">5.4. Administrative requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#server-introspection">5.5. Server introspection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#replication">5.6. Replication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#replication-architecture">5.6.1. Replication architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#setting-up-a-master">5.6.2. Setting up a master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#setting-up-a-replica">5.6.3. Setting up a replica</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#recovering-from-a-degraded-state">5.6.4. Recovering from a degraded state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#quick-startup-of-a-new-simple-two-server-cluster">5.6.5. Quick startup of a new simple two-server cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica&#8217;s actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#preventing-duplicate-actions">5.6.7. Preventing duplicate actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#master-master-replication">5.6.8. Master-master replication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#all-the-what-if-questions">5.6.9. All the &#8220;What If?&#8221; questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#hands-on-replication-tutorial">5.6.10. Hands-on replication tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#backups">5.7. Backups</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#cold-backup">5.7.1. Cold backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#continuous-remote-backup">5.7.2. Continuous remote backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#hot-backup">5.7.3. Hot backup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#updates-upgrades">5.8. Updates/upgrades</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#updating-tarantool-in-production">5.8.1. Updating Tarantool in production</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#upgrading-a-tarantool-database">5.8.2. Upgrading a Tarantool database</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#server-signal-handling">5.9. Server signal handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#process-title">5.10. Process title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#system-specific-administration-notes">5.11. System-specific administration notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#debian-gnu-linux-and-ubuntu">5.11.1. Debian GNU/Linux and Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#fedora-rhel-centos">5.11.2. Fedora, RHEL, CentOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#freebsd">5.11.3. FreeBSD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#mac-os-x">5.11.4. Mac OS X</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/administration.html#notes-for-systemd-users">5.12. Notes for systemd users</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#instance-management">5.12.1. Instance management</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#creating-instances">5.12.1.1. Creating instances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#starting-instances">5.12.1.2. Starting instances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#monitoring-instances">5.12.1.3. Monitoring instances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#attaching-to-instances">5.12.1.4. Attaching to instances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#checking-logs">5.12.1.5. Checking logs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/administration.html#stopping-instances">5.12.1.6. Stopping instances</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#daemon-supervision">5.12.2. Daemon supervision</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#customizing-the-service-file">5.12.3. Customizing the service file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#debugging">5.12.4. Debugging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#precautions">5.12.5. Precautions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#limitations">5.12.6. Limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/administration.html#sysvinit-systemd-conversion">5.12.7. sysvinit -&gt; systemd conversion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/connectors/index.html">6. Connectors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#protocol">6.1. Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#packet-example">6.2. Packet example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#setting-up-the-server-for-connector-examples">6.3. Setting up the server for connector examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#java">6.4. Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#go">6.5. Go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#r">6.6. R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#perl">6.7. Perl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#php">6.8. PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#python">6.9. Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#c">6.10. C</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/connectors/index.html#example-1">6.10.1. Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/connectors/index.html#example-2">6.10.2. Example 2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../book/connectors/index.html#interpreting-function-return-values">6.11. Interpreting function return values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../book/faq.html">7. FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">1. Built-in library reference</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="box.html">1.1. Module <cite>box</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_schema.html">1.1.1. Submodule <cite>box.schema</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_space.html">1.1.2. Submodule <cite>box.space</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_space.html#example-use-box-space-functions-to-read-space-tuples">1.1.2.1. Example: use box.space functions to read _space tuples</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_space.html#example-use-box-space-functions-to-organize-a-space-tuple">1.1.2.2. Example: use box.space functions to organize a _space tuple</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_index.html">1.1.3. Submodule <cite>box.index</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_index.html#example-showing-use-of-the-box-functions">1.1.3.1. Example showing use of the box functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_index.html#example-showing-a-user-defined-iterator">1.1.3.2. Example showing a user-defined iterator</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_index.html#submodule-box-index-with-index-type-rtree-for-spatial-searches">1.1.3.3. Submodule <cite>box.index</cite> with index type = RTREE for spatial searches</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_session.html">1.1.4. Submodule <cite>box.session</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_session.html#example">1.1.4.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_tuple.html">1.1.5. Submodule <cite>box.tuple</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../book/box/box_tuple.html#example">1.1.5.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_cfg.html">1.1.6. Submodule <cite>box.cfg</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_slab.html">1.1.7. Submodule <cite>box.slab</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_info.html">1.1.8. Submodule <cite>box.info</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../book/box/box_stat.html">1.1.9. Submodule <cite>box.stat</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">1.2. Module <cite>clock</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="console.html">1.3. Module <cite>console</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html">1.4. Module <cite>crypto</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="crypto.html#incremental-methods-in-the-crypto-module">1.4.1. Incremental methods in the crypto module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="crypto.html#getting-the-same-results-from-digest-and-crypto-modules">1.4.2. Getting the same results from digest and crypto modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="csv.html">1.5. Module <cite>csv</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="digest.html">1.6. Module <cite>digest</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="digest.html#incremental-methods-in-the-digest-module">1.6.1. Incremental methods in the digest module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digest.html#example">1.6.2. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="errno.html">1.7. Module <cite>errno</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="box_error.html">1.8. Submodule <cite>box.error</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fiber.html">1.9. Module <cite>fiber</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fiber.html#example-of-fiber-use">1.9.1. Example Of Fiber Use</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fiber_ipc.html">1.10. Submodule <cite>fiber-ipc</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fiber_ipc.html#example">1.10.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fiber_cond.html">1.11. Submodule <cite>fiber-cond</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fiber_cond.html#example">1.11.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fio.html">1.12. Module <cite>fio</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fio.html#common-pathname-manipulations">1.12.1. Common pathname manipulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fio.html#common-file-manipulations">1.12.2. Common file manipulations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fun.html">1.13. Module <cite>fun</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="json.html">1.14. Module <cite>json</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="json.html#configuration-settings">1.14.1. Configuration settings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="log.html">1.15. Module <cite>log</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="log.html#example">1.15.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="msgpack.html">1.16. Module <cite>msgpack</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="msgpack.html#example">1.16.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="net_box.html">1.17. Module <cite>net.box</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="net_box.html#example">1.17.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="box_once.html">1.18. Function <cite>box.once</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pickle.html">1.19. Module <cite>pickle</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="socket.html">1.20. Module <cite>socket</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="socket.html#examples">1.20.1. Examples</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="socket.html#use-of-a-tcp-socket-over-the-internet">1.20.1.1. Use of a TCP socket over the Internet</a></li>
+<li class="toctree-l5"><a class="reference internal" href="socket.html#use-of-a-udp-socket-on-localhost">1.20.1.2. Use of a UDP socket on localhost</a></li>
+<li class="toctree-l5"><a class="reference internal" href="socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.20.1.3. Use tcp_server to accept file contents sent with socat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="strict.html">1.21. Module <cite>strict</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tap.html">1.22. Module <cite>tap</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tap.html#example">1.22.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tarantool.html">1.23. Module <cite>tarantool</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="uuid.html">1.24. Module <cite>uuid</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uuid.html#example">1.24.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="xlog.html">1.25. Module <cite>xlog</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html">1.26. Module <cite>yaml</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#example">1.26.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.27. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="errcodes.html">1.28. Database error codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="errcodes.html#handling-errors">1.29. Handling errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference_rock/index.html">2. Rocks reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference_rock/dbms.html">2.1. SQL DBMS Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/dbms.html#mysql-example">2.1.1. MySQL Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#installation">2.1.1.1. Installation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../reference_rock/dbms.html#with-luarocks">2.1.1.1.1. With LuaRocks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../reference_rock/dbms.html#with-github">2.1.1.1.2. With GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#connecting">2.1.1.2. Connecting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#how-to-ping">2.1.1.3. How to ping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#executing-a-statement">2.1.1.4. Executing a statement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#closing-connection">2.1.1.5. Closing connection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#example">2.1.1.6. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/dbms.html#postgresql-example">2.1.2. PostgreSQL Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id1">2.1.2.1. Installation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../reference_rock/dbms.html#id2">2.1.2.1.1. With LuaRocks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../reference_rock/dbms.html#id3">2.1.2.1.2. With GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id4">2.1.2.2. Connecting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id5">2.1.2.3. How to ping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id6">2.1.2.4. Executing a statement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id7">2.1.2.5. Closing connection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference_rock/dbms.html#id8">2.1.2.6. Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_rock/expirationd.html">2.2. Module <cite>expirationd</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_rock/shard.html">2.3. Module <cite>shard</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/shard.html#example-shard-init-syntax-for-one-shard">2.3.1. Example: shard.init syntax for one shard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/shard.html#example-shard-init-syntax-for-three-shards">2.3.2. Example: shard.init syntax for three shards</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/shard.html#example-shard-minimal-configuration">2.3.3. Example: Shard, Minimal Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/shard.html#example-shard-scaling-out">2.3.4. Example: Shard, Scaling Out</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_rock/tdb.html">2.4. Module <cite>tdb</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/tdb.html#debugger-commands">2.4.1. Debugger Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_rock/tdb.html#example-session">2.4.2. Example Session</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">3. Configuration reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html#command-options">3.1. Command options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html#uri">3.2. URI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html#initialization-file">3.3. Initialization file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html#configuration-parameters">3.4. Configuration parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#basic-parameters">3.4.1. Basic parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#configuring-the-storage">3.4.2. Configuring the storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#snapshot-daemon">3.4.3. Snapshot daemon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#binary-logging-and-snapshots">3.4.4. Binary logging and snapshots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#replication">3.4.5. Replication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#networking">3.4.6. Networking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration/index.html#logging">3.4.7. Logging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guide/index.html">Contributor&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/reference_capi/index.html">1. C API reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/box.html">1.1. Module <cite>box</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/clock.html">1.2. Module <cite>clock</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/coio.html">1.3. Module <cite>coio</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/error.html">1.4. Module <cite>error</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/fiber.html">1.5. Module <cite>fiber</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/box_index.html">1.6. Module <cite>index</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/latch.html">1.7. Module <cite>latch</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/utils.html">1.8. Module <cite>lua/utils</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/say.html">1.9. Module <cite>say</cite> (logging)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/schema.html">1.10. Module <cite>schema</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/trivia.html">1.11. Module <cite>trivia/config</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/tuple.html">1.12. Module <cite>tuple</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/reference_capi/txn.html">1.13. Module <cite>txn</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/internals_index.html">2. Internals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool&#8217;s binary protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#notation-in-diagrams">2.1.1. Notation in diagrams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#greeting-packet">2.1.2. Greeting packet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#unified-packet-structure">2.1.3. Unified packet structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#authentication">2.1.4. Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#requests">2.1.5. Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#response-packet-structure">2.1.6. Response packet structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#replication-packet-structure">2.1.7. Replication packet structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/internals_index.html#xlog-snap">2.1.8. XLOG / SNAP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#data-persistence-and-the-wal-file-format">2.2. Data persistence and the WAL file format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#the-snapshot-file-format">2.3. The snapshot file format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#the-recovery-process">2.4. The recovery process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/internals_index.html#server-startup-with-replication">2.5. Server startup with replication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/build_contribute_index.html">3. Build and contribute</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/building_from_source.html">3.1. Building from source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/building_documentation.html">3.2. Building documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/release_management.html">3.3. Release management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/release_management.html#how-to-make-a-minor-release">3.3.1. How to make a minor release</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev_guide/guidelines_index.html">4. Guidelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/developer_guidelines.html">4.1. Developer guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/developer_guidelines.html#how-to-work-on-a-bug">4.1.1. How to work on a bug</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html">4.2. Documentation guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#markup-issues">4.2.1. Markup issues</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#wrapping-text">4.2.1.1. Wrapping text</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#formatting-code-snippets">4.2.1.2. Formatting code snippets</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#using-separated-links">4.2.1.3. Using separated links</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#creating-labels-for-local-links">4.2.1.4. Creating labels for local links</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#making-comments">4.2.1.5. Making comments</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#language-and-style-issues">4.2.2. Language and style issues</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#us-vs-british-spelling">4.2.2.1. US vs British spelling</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#examples-and-templates">4.2.3. Examples and templates</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#module-and-function">4.2.3.1. Module and function</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/documentation_guidelines.html#module-class-and-method">4.2.3.2. Module, class and method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/c_style_guide.html">4.3. C Style Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#general-guidelines">4.3.1. General guidelines</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#commenting-style">4.3.1.1. Commenting style</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#header-files">4.3.1.2. Header files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#allocating-memory">4.3.1.3. Allocating memory</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#other">4.3.1.4. Other</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/c_style_guide.html#linux-kernel-coding-style">4.3.2. Linux kernel coding style</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-1-indentation">4.3.2.1. Chapter 1: Indentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-2-breaking-long-lines-and-strings">4.3.2.2. Chapter 2: Breaking long lines and strings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-3-placing-braces-and-spaces">4.3.2.3. Chapter 3: Placing Braces and Spaces</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-3-1-spaces">4.3.2.4. Chapter 3.1:  Spaces</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-4-naming">4.3.2.5. Chapter 4: Naming</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-5-typedefs">4.3.2.6. Chapter 5: Typedefs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-6-functions">4.3.2.7. Chapter 6: Functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-7-centralized-exiting-of-functions">4.3.2.8. Chapter 7: Centralized exiting of functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-8-commenting">4.3.2.9. Chapter 8: Commenting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You&#8217;ve made a mess of it</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-10-kconfig-configuration-files">4.3.2.11. Chapter 10: Kconfig configuration files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-11-data-structures">4.3.2.12. Chapter 11: Data structures</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-12-macros-enums-and-rtl">4.3.2.13. Chapter 12: Macros, Enums and RTL</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-13-printing-kernel-messages">4.3.2.14. Chapter 13: Printing kernel messages</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-14-allocating-memory">4.3.2.15. Chapter 14: Allocating memory</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-15-the-inline-disease">4.3.2.16. Chapter 15: The inline disease</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-16-function-return-values-and-names">4.3.2.17. Chapter 16: Function return values and names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don&#8217;t re-invent the kernel macros</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#chapter-18-editor-modelines-and-other-cruft">4.3.2.19. Chapter 18:  Editor modelines and other cruft</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/c_style_guide.html#appendix-i-references">4.3.2.20. Appendix I: References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev_guide/python_style_guide.html">4.4. Python Style Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#introduction">4.4.1. Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#a-foolish-consistency-is-the-hobgoblin-of-little-minds">4.4.2. A Foolish Consistency is the Hobgoblin of Little Minds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#code-lay-out">4.4.3. Code lay-out</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#indentation">4.4.3.1. Indentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#tabs-or-spaces">4.4.3.2. Tabs or Spaces?</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#maximum-line-length">4.4.3.3. Maximum Line Length</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#blank-lines">4.4.3.4. Blank Lines</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#encodings-pep-263">4.4.3.5. Encodings (PEP 263)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#imports">4.4.3.6. Imports</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#whitespace-in-expressions-and-statements">4.4.4. Whitespace in Expressions and Statements</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#pet-peeves">4.4.4.1. Pet Peeves</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#other-recommendations">4.4.4.2. Other Recommendations</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#comments">4.4.5. Comments</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#block-comments">4.4.5.1. Block Comments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#inline-comments">4.4.5.2. Inline Comments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#documentation-strings">4.4.5.3. Documentation Strings</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#version-bookkeeping">4.4.6. Version Bookkeeping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#naming-conventions">4.4.7. Naming Conventions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#descriptive-naming-styles">4.4.7.1. Descriptive: Naming Styles</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../dev_guide/python_style_guide.html#prescriptive-naming-conventions">4.4.7.2. Prescriptive: Naming Conventions</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#names-to-avoid">4.4.7.2.1. Names to Avoid</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#package-and-module-names">4.4.7.2.2. Package and Module Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#class-names">4.4.7.2.3. Class Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#exception-names">4.4.7.2.4. Exception Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#global-variable-names">4.4.7.2.5. Global Variable Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#function-names">4.4.7.2.6. Function Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#function-and-method-arguments">4.4.7.2.7. Function and method arguments</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#method-names-and-instance-variables">4.4.7.2.8. Method Names and Instance Variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#constants">4.4.7.2.9. Constants</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../dev_guide/python_style_guide.html#designing-for-inheritance">4.4.7.2.10. Designing for inheritance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#references">4.4.8. References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../dev_guide/python_style_guide.html#copyright">4.4.9. Copyright</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+        <div class="b-cols_content_right">
+          <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="../index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Reference
+          </a>
+        </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            1. Built-in library reference
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="1.27. Miscellaneous" class="b-path_current b-ellipsis">
+          1.27. Miscellaneous
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <article class="b-article">
+    
+    <div class="section" id="miscellaneous">
+<h1>1.27. Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="other-tonumber64"></span><dl class="function">
+<dt id="lua-function.tonumber64">
+<em class="property"> </em><code class="descname">tonumber64</code><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#lua-function.tonumber64" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a string or a Lua number to a 64-bit integer. The result can be
+used in arithmetic, and the arithmetic will be 64-bit integer arithmetic
+rather than floating-point arithmetic. (Operations on an unconverted Lua
+number use floating-point arithmetic.) The <code class="docutils literal"><span class="pre">tonumber64()</span></code> function is
+added by Tarantool; the name is global.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">123456789012345</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">tonumber64</span><span class="p">(</span><span class="mi">123456789012345</span><span class="p">))</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">number</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">number</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">tonumber64</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">1000000000&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">^</span> <span class="mi">2</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">number</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">500000000</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">999999998</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">2000000000</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1000000002</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1000000000000000000</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lua-function.dostring">
+<em class="property"> </em><code class="descname">dostring</code><big>(</big><em>lua-chunk-string</em><span class="optional">[</span>, <em>lua-chunk-string-argument ...</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#lua-function.dostring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse and execute an arbitrary chunk of Lua code. This function is mainly
+useful to define and run Lua code without having to introduce changes to
+the global Lua environment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lua-chunk-string</strong> (<em>string</em>) &#8211; Lua code</li>
+<li><strong>lua-chunk-string-argument</strong> (<em>lua-value</em>) &#8211; zero or more scalar values
+which will be appended to, or substitute for,
+items in the Lua chunk.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">whatever is returned by the Lua code chunk.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Possible errors: If there is a compilation error, it is raised as a Lua error.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-tarantoolsession"><div class="highlight"><pre><span></span><span class="gp">tarantool&gt; </span><span class="n">dostring</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">abc&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="l l-Scalar l-Scalar-Plain">error</span><span class="p p-Indicator">:</span> <span class="s">&#39;[string</span><span class="nv"> </span><span class="s">&quot;abc&quot;]:1:</span><span class="nv"> </span><span class="se">&#39;&#39;</span><span class="s">=</span><span class="se">&#39;&#39;</span><span class="nv"> </span><span class="s">expected</span><span class="nv"> </span><span class="s">near</span><span class="nv"> </span><span class="se">&#39;&#39;</span><span class="s">&lt;eof&gt;</span><span class="se">&#39;&#39;</span><span class="s">&#39;</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">dostring</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">return 1&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">dostring</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">return ...&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">hello&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s">world&#39;</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hello</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">world</span>
+<span class="nn">...</span>
+<span class="gp">tarantool&gt; </span><span class="n">dostring</span><span class="p">(</span><span class="s">[[</span>
+<span class="gp">         &gt; </span><span class="s">  local f = function(key)</span>
+<span class="gp">         &gt; </span><span class="s">    local t = box.space.tester:select{key}</span>
+<span class="gp">         &gt; </span><span class="s">    if t ~= nil then</span>
+<span class="gp">         &gt; </span><span class="s">      return t[1]</span>
+<span class="gp">         &gt; </span><span class="s">    else</span>
+<span class="gp">         &gt; </span><span class="s">      return nil</span>
+<span class="gp">         &gt; </span><span class="s">    end</span>
+<span class="gp">         &gt; </span><span class="s">  end</span>
+<span class="gp">         &gt; </span><span class="s">  return f(...)]]</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+  </article>
+
+            
+            
+            
+  
+    
+      <div class="b-page_over-tail">
+    
+    
+      <div class="b-page_over-prev">
+        <a href="yaml.html"
+           class="b-prev b-ellipsis"
+           title="1.26. Module &lt;cite&gt;yaml&lt;/cite&gt;">1.26. Module <cite>yaml</cite></a>
+      </div>
+    
+    <div class="b-page_over-lang">
+      <ul class="b-page_over-lang-list">
+        <li class="b-page_over-lang-item">
+          <a href="../../../_sources/doc/reference/reference_lua/other.txt"
+             class="b-page_over-lang-url"> Source </a>
+        </li>
+      </ul>
+    </div>
+    
+      <div class="b-page_over-next">
+        <a href="errcodes.html"
+           class="b-next b-ellipsis"
+           title="1.28. Database error codes">1.28. Database error codes</a>
+      </div>
+    
+    </div>
+  
+</div>
+        </div>
+      </div>
+    
+  
+
+      </div>
+    </div>
+    <!-- FOOTER > -->
+    
+<footer class="b-footer">
+  <div class="b-footer-wrapper">
+    <nav class="b-footer_menu">
+      
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="../../../index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../../doc.html" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../../download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../../careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      <div class="b-footer-other">
+        <a href="http://15.tarantool.org">1.5 web site and downloads</a>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </body>
+</html>
+

@@ -1,0 +1,358 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+  <link rel="icon" type="image/png" sizes="16x16" href=_static/favicon/favicon-16x16.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=_static/favicon/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="96x96" href=_static/favicon/favicon-96x96.png>
+
+    <title>Tarantool - Documentation</title>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="_static/js/menu.js"></script>
+      <script type="text/javascript" src="_static/js/mobile_menu.js"></script>
+      <script type="text/javascript" src="_static/js/stacktable.min.js"></script>
+      <script type="text/javascript" src="_static/js/headers.js"></script>
+      <script type="text/javascript" src="_static/js/dropdown.js"></script>
+      <script type="text/javascript" src="_static/js/jquery.sticky-kit.min.js"></script>
+      <link rel="stylesheet" href="_static/design.css">
+
+    
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:       '',
+        VERSION:        '1.7.2',
+        COLLAPSE_INDEX:  false,
+        FILE_SUFFIX:    '.html',
+        HAS_SOURCE:      true
+      };
+      
+      
+      var disqus_config = function () {
+          this.page.identifier = "doc";
+          this.language        = "ru"
+      };
+    </script>
+    
+
+  </head>
+  <body class="p-main">
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      
+  <header class="b-header">
+    <div class="b-header_menu_mobile">
+      <div class="b-burger-button">
+        <span></span>
+      </div>
+      <form role="search" class="b-header-search" action="search.html" method="get">
+        <input name="q" type="search">
+      </form>
+    </div>
+    <div class="b-menu_mobile">
+      <div class="b-menu_mobile__wrapper">
+        <nav class="b-header_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="#" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+        </nav>
+      </div>
+    </div>
+    <div class="b-header-wrapper">
+      <nav class="b-header_menu">
+        
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="#" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      </nav>
+    </div>
+  </header>
+
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  
+    <div class="section" id="tarantool-documentation">
+<h1>Tarantool - Documentation<a class="headerlink" href="#tarantool-documentation" title="Ссылка на этот заголовок">¶</a></h1>
+<section class="b-block-lightgray b-downloads-top">
+<div class="b-block-wrapper">
+<h2 class="b-section-title">
+Tarantool manual
+</h2>
+<p>Here is a <strong>complete Tarantool manual</strong>. It embraces all aspects of using
+Tarantool: from introductory information and excercises for beginners
+&#8211; to advanced instructions and detailed references for power users and
+contributors.</p>
+<p>A single-page version of this manual is available <a class="reference external" href="doc/singlehtml.html">here</a>.</p>
+
+</div>
+</section>
+<section class="b-block b-downloads">
+<div class="b-block-wrapper">
+<ul class="dropdown-list">
+<li class="dropdown-list-item">
+<a class="dropdown-list-item-url dropdown-close reference external" href="#">What&#8217;s new?</a><div class="dropdown-list-item-content container">
+<ul class="simple">
+<li><a class="reference external" href="doc/whats_new.html">What&#8217;s new in Tarantool 1.7?</a></li>
+</ul>
+</div>
+
+</li>
+<li class="dropdown-list-item">
+<a class="dropdown-list-item-url dropdown-close reference external" href="#">Overview</a><div class="dropdown-list-item-content container">
+<ul class="simple">
+<li><a class="reference external" href="doc/intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
+<li><a class="reference external" href="doc/intro.html#database-features">Database features</a></li>
+</ul>
+</div>
+
+</li>
+<li class="dropdown-list-item">
+<a class="dropdown-list-item-url dropdown-close reference external" href="#">Tutorials</a><div class="dropdown-list-item-content container">
+<ul class="simple">
+<li><a class="reference external" href="doc/tutorials/lua_tutorials.html">Lua tutorials</a></li>
+<li><a class="reference external" href="doc/tutorials/c_tutorial.html">C tutorial</a></li>
+</ul>
+</div>
+
+</li>
+<li class="dropdown-list-item">
+<a class="dropdown-list-item-url dropdown-close reference external" href="#">User&#8217;s Guide</a><div class="dropdown-list-item-content container">
+<ul class="simple">
+<li><a class="reference external" href="doc/book/intro.html">Preface</a></li>
+<li><a class="reference external" href="doc/book/box/index.html">Database</a></li>
+<li><a class="reference external" href="doc/book/app_server.html">Application server</a></li>
+<li><a class="reference external" href="doc/book/administration.html">Server administration</a></li>
+<li><a class="reference external" href="doc/book/connectors/index.html">Connectors</a></li>
+<li><a class="reference external" href="doc/book/faq.html">FAQ</a></li>
+</ul>
+</div>
+
+</li>
+<li class="dropdown-list-item">
+<a class="dropdown-list-item-url dropdown-close reference external" href="#">Reference</a><div class="dropdown-list-item-content container">
+<ul class="simple">
+<li><a class="reference external" href="doc/reference/reference_lua/index.html">Built-in library reference</a></li>
+<li><a class="reference external" href="doc/reference/reference_rock/index.html">Rocks reference</a></li>
+<li><a class="reference external" href="doc/reference/configuration/index.html">Configuration reference</a></li>
+</ul>
+</div>
+
+</li>
+<li class="dropdown-list-item">
+<a class="dropdown-list-item-url dropdown-close reference external" href="#">Contributor&#8217;s Guide</a><div class="dropdown-list-item-content container">
+<ul class="simple">
+<li><a class="reference external" href="doc/dev_guide/reference_capi/index.html">C API reference</a></li>
+<li><a class="reference external" href="doc/dev_guide/internals_index.html">Internals</a></li>
+<li><a class="reference external" href="doc/dev_guide/build_contribute_index.html">Build and contribute</a></li>
+<li><a class="reference external" href="doc/dev_guide/guidelines_index.html">Guidelines</a></li>
+</ul>
+</div>
+
+</li>
+
+</ul>
+
+</div>
+</section>
+<section class="b-block-lightgray b-downloads-top">
+<div class="b-block-wrapper">
+<h2 class="b-section-title">
+Other sources
+</h2>
+Here are other sources &#8211; besides the manual &#8211; where you can get more
+information about Tarantool.
+</div>
+</section>
+<section class="b-block b-downloads">
+<div class="b-block-wrapper">
+<ul class="dropdown-list">
+<li class="dropdown-list-item">
+<a class="dropdown-list-item-url dropdown-close reference external" href="#">Discussion boards</a><div class="dropdown-list-item-content container">
+<ul class="simple">
+<li><a class="reference external" href="https://groups.google.com/forum/#!forum/tarantool">English</a></li>
+<li><a class="reference external" href="https://googlegroups.com/group/tarantool-ru">Russian</a></li>
+</ul>
+</div>
+
+</li>
+<li class="dropdown-list-item">
+<a class="dropdown-list-item-url dropdown-close reference external" href="#">Telegram chat</a><div class="dropdown-list-item-content container">
+tl;dr? ;-) Feel free to ask your question in our <a class="reference external" href="http://telegram.me/tarantool">telegram chat</a>.</div>
+
+</li>
+
+</ul>
+
+</div>
+</section>
+</div>
+
+  
+
+      </div>
+    </div>
+    <!-- FOOTER > -->
+    
+<footer class="b-footer">
+  <div class="b-footer-wrapper">
+    <nav class="b-footer_menu">
+      
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="#" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      <div class="b-footer-other">
+        <a href="http://15.tarantool.org">1.5 web site and downloads</a>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </body>
+</html>
+

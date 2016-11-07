@@ -1,0 +1,342 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+  <link rel="icon" type="image/png" sizes="16x16" href=_static/favicon/favicon-16x16.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=_static/favicon/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="96x96" href=_static/favicon/favicon-96x96.png>
+
+    <title>Tarantool - Benchmarks (YCSB)</title>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="_static/js/menu.js"></script>
+      <script type="text/javascript" src="_static/js/mobile_menu.js"></script>
+      <script type="text/javascript" src="_static/js/stacktable.min.js"></script>
+      <script type="text/javascript" src="_static/js/headers.js"></script>
+      <script type="text/javascript" src="_static/js/dropdown.js"></script>
+      <script type="text/javascript" src="_static/js/jquery.sticky-kit.min.js"></script>
+      <link rel="stylesheet" href="_static/design.css">
+
+    
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:       '',
+        VERSION:        '1.7.2',
+        COLLAPSE_INDEX:  false,
+        FILE_SUFFIX:    '.html',
+        HAS_SOURCE:      true
+      };
+      
+      
+      var disqus_config = function () {
+          this.page.identifier = "benchmark";
+          this.language        = "ru"
+      };
+    </script>
+    
+
+  </head>
+  <body class="p-main">
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      
+  <header class="b-header">
+    <div class="b-header_menu_mobile">
+      <div class="b-burger-button">
+        <span></span>
+      </div>
+      <form role="search" class="b-header-search" action="search.html" method="get">
+        <input name="q" type="search">
+      </form>
+    </div>
+    <div class="b-menu_mobile">
+      <div class="b-menu_mobile__wrapper">
+        <nav class="b-header_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="doc.html" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+        </nav>
+      </div>
+    </div>
+    <div class="b-header-wrapper">
+      <nav class="b-header_menu">
+        
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="doc.html" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      </nav>
+    </div>
+  </header>
+
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  
+    <div class="section" id="tarantool-benchmarks-ycsb">
+<h1>Tarantool - Benchmarks (YCSB)<a class="headerlink" href="#tarantool-benchmarks-ycsb" title="Ссылка на этот заголовок">¶</a></h1>
+<section class="b-block-lightgray b-benchmark-top b-clearbox">
+<div class="b-block-wrapper">
+<h2 class="b-section-title">
+YCSB - Benchmark results
+</h2>
+
+</div>
+</section>
+<section class="b-block b-benchmark b-benchmark-page">
+<div class="b-block-wrapper">
+<h2 class="b-section-title">
+Preface
+</h2>
+<p>There are lies, then there is statistics, but the first place in
+misrepresenting the truth is undoubtedly owned by benchmarks.</p>
+<p>Comparing Tarantool with other systems, apples to apples, is not strictly
+correct: the server networking subsystem is fully asynchronous and it&#8217;s
+possible to proxy all clients via a single socket. In this case, responses
+to queries are sent as soon as they are ready. Most production applications
+use asynchronous and batched I/O with Tarantool.</p>
+<p>As long as the overhead of system calls and context switches is the single
+largest contributor to the cost of serving a single request, use of batched
+and multiplexed I/O produces an order of magnitude better results, when
+compared with traditional multi-threaded workloads. A tool we developed for
+our own use, <a class="reference external" href="http://github.com/tarantool/nosqlbench">nosqlbench</a>,
+utilizes this approach at full.</p>
+<p>However, to compare with the rest of the world, a standardized benchmarking
+kit is more appropriate. This is why <a class="reference external" href="http://github.com/brianfrankcooper/YCSB">Yahoo! Cloud Serving Benchmark |copy|</a> was used to produce the charts
+below. Since YCSB was developed to compare cloud key/value servers, it
+provides a very narrow view at performance of a tested server. For example,
+performance of secondary keys or overhead of locking (which Tarantool
+doesn&#8217;t have) is not tested at all.</p>
+
+</div>
+</section>
+<section class="b-block b-benchmark b-benchmark-page">
+<div class="b-block-wrapper">
+<h2 class="b-section-title">
+What is YCSB
+</h2>
+<p>Yahoo! Cloud Serving Benchmark (c) consists of two components:</p>
+<ul class="simple">
+<li>the client, which generates the load according to a workload type and
+analyzes latency and throughput,</li>
+<li>workload files, which define a single benchmark by describing the size of
+the data set, the total amount of requests, the ratio of read and write
+queries.</li>
+</ul>
+<p>There are 6 major workload types in YCSB:</p>
+<ul class="simple">
+<li>workload <strong>A</strong>, 50/50 update/read ratio, size of the data set is 2 000 000
+key/value pairs,</li>
+<li>workload <strong>B</strong>, 5/95 update/read ratio, the same size of the data set,</li>
+<li>workload <strong>C</strong> is 100% read-only,</li>
+<li>workload <strong>D</strong> 5/95 insert/read ratio, the read load is skewed towards the
+end of the key range,</li>
+<li>workload <strong>E</strong>, 5/95 ratio of insert/reads over a range of 10 records,</li>
+<li>workload <strong>F</strong>, 95% read/modify/write, 5% read.</li>
+</ul>
+<p>For additional information on YCSB and workload types, please visit
+<a class="reference external" href="http://github.com/brianfrankcooper/YCSB">YCSB official page on Github</a>.</p>
+<p>All charts below were measured using 5M queries per test, averaged over 8
+consecutive test runs.</p>
+<p>Configuration files for the tested systems can be found <a class="reference external" href="https://github.com/bigbes/autoycsb/tree/master/configs">on its Github page</a>.</p>
+<div class="b-block-wrapper_bench">
+  <div class="b-benchmark-catalog">
+    <ul class="b-switcher">
+      <li class="b-switcher-item"><a href="#" class="b-switcher-item-url p-active">A</a></li>
+      <li class="b-switcher-item"><a href="#" class="b-switcher-item-url">B</a></li>
+      <li class="b-switcher-item"><a href="#" class="b-switcher-item-url">C</a></li>
+      <li class="b-switcher-item"><a href="#" class="b-switcher-item-url">D</a></li>
+      <li class="b-switcher-item"><a href="#" class="b-switcher-item-url">E</a></li>
+      <li class="b-switcher-item"><a href="#" class="b-switcher-item-url">F</a></li>
+      <li class="b-switcher-item"><a href="#" class="b-switcher-item-url">MEM</a></li>
+    </ul>
+  </div>
+  <div class="b-benchmark-type">
+    <h3 class="b-benchmark-type-title">Workload A</h3>
+  </div>
+</div>
+<div class="b-benchmark-grapf"><div id="b-benchmark-grapf-image_1"></div></div>
+<div class="b-block-wrapper_bench">
+  <div class="b-benchmark-type">
+    <ul class="b-switcher">
+      <li class="b-switcher-item">
+        <a href="#" class="b-switcher-item-url p-active">READ Latency</a>
+      </li>
+      <li class="b-switcher-item">
+        <a href="#" class="b-switcher-item-url">UPDATE Latency</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="b-benchmark-grapf"><div id="b-benchmark-grapf-image_2"></div></div>
+</div>
+</section>
+</div>
+
+  
+
+      </div>
+    </div>
+    <!-- FOOTER > -->
+    
+<footer class="b-footer">
+  <div class="b-footer-wrapper">
+    <nav class="b-footer_menu">
+      
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="doc.html" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      <div class="b-footer-other">
+        <a href="http://15.tarantool.org">1.5 web site and downloads</a>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </body>
+</html>
+

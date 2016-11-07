@@ -1,0 +1,1637 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+  <link rel="icon" type="image/png" sizes="16x16" href=../../_static/favicon/favicon-16x16.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=../../_static/favicon/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="96x96" href=../../_static/favicon/favicon-96x96.png>
+
+    <title>4.4. Python Style Guide</title>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="../../_static/js/menu.js"></script>
+      <script type="text/javascript" src="../../_static/js/mobile_menu.js"></script>
+      <script type="text/javascript" src="../../_static/js/stacktable.min.js"></script>
+      <script type="text/javascript" src="../../_static/js/headers.js"></script>
+      <script type="text/javascript" src="../../_static/js/dropdown.js"></script>
+      <script type="text/javascript" src="../../_static/js/jquery.sticky-kit.min.js"></script>
+      <link rel="stylesheet" href="../../_static/design.css">
+
+    
+    <!--[if lt IE 9]>
+      <script src="/js/ie8.js"></script>
+      <link rel="stylesheet" href="/theme/ie8.css" />
+    <![endif]-->
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22120502-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+  var _tmr = _tmr || [];
+  _tmr.push({id: "2284916", type: "pageView", start: (new Date()).getTime()});
+  (function (d, w) {
+    var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+    ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+    var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+    if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+  })(document, window);
+</script>
+<noscript>
+  <div style="position:absolute;left:-10000px;">
+    <img src="//top-fwz1.mail.ru/counter?id=2284916;js=na" style="border:0;"
+         height="1" width="1" alt="Рейтинг@Mail.ru" />
+  </div>
+</noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:       '',
+        VERSION:        '1.7.2',
+        COLLAPSE_INDEX:  false,
+        FILE_SUFFIX:    '.html',
+        HAS_SOURCE:      true
+      };
+      
+      
+      var disqus_config = function () {
+          this.page.identifier = "doc/dev_guide/python_style_guide";
+          this.language        = "ru"
+      };
+    </script>
+    
+
+  </head>
+  <body class="p-cols_design b-doc-doc/dev_guide/python_style_guide">
+    <div class="b-wrapper">
+      <!-- HEADER > -->
+      
+  <header class="b-header">
+    <div class="b-header_menu_mobile">
+      <div class="b-burger-button">
+        <span></span>
+      </div>
+      <form role="search" class="b-header-search" action="../../search.html" method="get">
+        <input name="q" type="search">
+      </form>
+    </div>
+    <div class="b-menu_mobile">
+      <div class="b-menu_mobile__wrapper">
+        <nav class="b-header_menu">
+          
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="../../index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../doc.html" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+        </nav>
+      </div>
+    </div>
+    <div class="b-header-wrapper">
+      <nav class="b-header_menu">
+        
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="../../index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../doc.html" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      </nav>
+    </div>
+  </header>
+
+      <!-- < HEADER -->
+
+      <div class="b-content b-clearbox">
+        
+  
+    <section class="b-block-lightgray b-documentation_top b-clearbox p-documentation_in">
+      <div class="b-block-wrapper">
+        <h2 class="b-section-title b-ellipsis toggle-navigation" title="4.4. Python Style Guide"> 4.4. Python Style Guide </h2>
+  <div class="b-doc-language_selector">
+    <ul class="b-doc-language_selector-list">
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="
+  
+    ../../en/doc/dev_guide/python_style_guide.html
+  
+"
+           class="b-doc-language_selector-item-url"> En </a>
+      
+      </li>
+    
+      <li class="b-doc-language_selector-item">
+      
+        <a href="#" class="b-doc-language_selector-item-url p-active"> Ru </a>
+      
+      </li>
+    
+    </ul>
+  </div>
+</div>
+    </section>
+    
+      <div class="b-cols_content b-clearbox">
+        <div class="b-cols_content_left">
+          <div class="b-menu-toc">
+            
+<form id="searchbox" role="search" class="search b-search" action="../../search.html" method="get">
+  <input class="b-search-text" name="q" type="text"/ placeholder="Search the manual">
+  <input class="b-search-but" type="submit" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s new?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../whats_new.html#what-s-new-in-tarantool-1-7">What&#8217;s new in Tarantool 1.7?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro.html#an-application-server-together-with-a-database-manager">An application server together with a database manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro.html#database-features">Database features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/lua_tutorials.html">1. Lua tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#insert-one-million-tuples-with-a-lua-stored-procedure">1.1. Insert one million tuples with a Lua stored procedure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#configure">1.1.1. Configure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#delimiter">1.1.2. Delimiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#create-a-function-that-returns-a-string">1.1.3. Create a function that returns a string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#create-a-function-that-calls-another-function-and-sets-a-variable">1.1.4. Create a function that calls another function and sets a variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#modify-the-function-so-it-returns-a-one-letter-random-string">1.1.5. Modify the function so it returns a one-letter random string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#modify-the-function-so-it-returns-a-ten-letter-random-string">1.1.6. Modify the function so it returns a ten-letter random string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#make-a-tuple-out-of-a-number-and-a-string">1.1.7. Make a tuple out of a number and a string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-tuple-into-the-database">1.1.8. Modify main_function to insert a tuple into the database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/lua_tutorials.html#modify-main-function-to-insert-a-million-tuples-into-the-database">1.1.9. Modify main_function to insert a million tuples into the database</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#sum-a-json-field-for-all-tuples">1.2. Sum a JSON field for all tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/lua_tutorials.html#indexed-pattern-search">1.3. Indexed pattern search</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/c_tutorial.html">2. C tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/c_tutorial.html#c-stored-procedures">2.1. C stored procedures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../book/index.html">User&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book/intro.html">1. Preface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../book/intro.html#how-to-read-the-documentation">1.1. How to read the documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/intro.html#getting-in-touch-with-the-tarantool-community">1.2. Getting in touch with the Tarantool community</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../book/user_guide_getting_started.html">2. Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../book/user_guide_getting_started.html#downloading-and-installing-a-binary-package">2.1. Downloading and installing a binary package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/user_guide_getting_started.html#starting-tarantool-and-making-your-first-database">2.2. Starting Tarantool and making your first database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/user_guide_getting_started.html#connecting-remotely">2.3. Connecting remotely</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../book/box/index.html">3. Database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#data-model">3.1. Data model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#space">3.1.1. Space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#tuple-set">3.1.2. Tuple set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#index">3.1.3. Index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#data-types">3.1.4. Data types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#operations">3.1.5. Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#persistence">3.1.6. Persistence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#data-manipulation">3.1.7. Data manipulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#index-operations">3.1.8. Index operations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#transaction-control">3.2. Transaction control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#cooperative-multitasking-environment">3.2.1. Cooperative multitasking environment</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example">3.2.1.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#implicit-yields">3.2.2. Implicit yields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#access-control">3.3. Access control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#passwords">3.3.1. Passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#users-and-the-user-space">3.3.2. Users and the _user space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#privileges-and-the-priv-space">3.3.3. Privileges and the _priv space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#functions-and-the-func-space">3.3.4. Functions and the _func space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#box-session-and-security">3.3.5. box.session and security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#roles">3.3.6. Roles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#example-showing-a-role-within-a-role">3.3.6.1. Example showing a role within a role</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#triggers">3.4. Triggers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#connection-triggers">3.4.1. Connection triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id3">3.4.1.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#authentication-triggers">3.4.2. Authentication triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#lua-module.box.space">3.4.3. Replace triggers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#id4">3.4.3.1. Example</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#another-example">3.4.3.2. Another example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#getting-a-list-of-triggers">3.4.4. Getting a list of triggers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#limitations">3.5. Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/box/index.html#vinyl-storage-engine">3.6. Vinyl storage engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#differences-between-memtx-and-vinyl-storage-engines">3.6.1. Differences between memtx and vinyl storage engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#vinyl-features">3.6.2. Vinyl features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/index.html#under-the-hood">3.6.3. Under the hood</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-first-200-000-keys">3.6.3.1. Inserting the first 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-300-000-keys">3.6.3.2. Inserting the next 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-next-200-000-keys">3.6.3.3. Inserting the next 200.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#inserting-the-last-300-000-keys">3.6.3.4. Inserting the last 300.000 keys</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/index.html#reading-million-keys">3.6.3.5. Reading million keys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../book/app_server.html">4. Application server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#about-modules-rocks">4.1. About modules/rocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#installing-an-existing-module">4.2. Installing an existing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#creating-a-new-lua-module-locally">4.3. Creating a new Lua module locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#creating-a-new-c-c-module-locally">4.4. Creating a new C/C++ module locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#creating-a-mixed-lua-c-module-locally">4.5. Creating a mixed Lua/C module locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#tips-for-special-situations">4.6. Tips for special situations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/app_server.html#cookbook-recipes">4.7. Cookbook recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#hello-world-lua">4.7.1. hello_world.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#console-start-lua">4.7.2. console_start.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#fio-read-lua">4.7.3. fio_read.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#fio-write-lua">4.7.4. fio_write.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-printf-lua">4.7.5. ffi_printf.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-gettimeofday-lua">4.7.6. ffi_gettimeofday.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-zlib-lua">4.7.7. ffi_zlib.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#ffi-meta-lua">4.7.8. ffi_meta.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#print-arrays-lua">4.7.9. print_arrays.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-array-lua">4.7.10. count_array.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-array-with-nils-lua">4.7.11. count_array_with_nils.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-array-with-nulls-lua">4.7.12. count_array_with_nulls.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#count-map-lua">4.7.13. count_map.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#swap-lua">4.7.14. swap.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#uri-lua">4.7.15. uri.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#class-lua">4.7.16. class.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#garbage-lua">4.7.17. garbage.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#fiber-producer-and-consumer-lua">4.7.18. fiber_producer_and_consumer.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#socket-tcpconnect-lua">4.7.19. socket_tcpconnect.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#socket-tcp-echo-lua">4.7.20. socket_tcp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#getaddrinfo-lua">4.7.21. getaddrinfo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#socket-udp-echo-lua">4.7.22. socket_udp_echo.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-get-lua">4.7.23. http_get.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-send-lua">4.7.24. http_send.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-server-lua">4.7.25. http_server.lua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/app_server.html#http-generate-html-lua">4.7.26. http_generate_html.lua</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../book/administration.html">5. Server administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#using-tarantool-as-a-client">5.1. Using tarantool as a client</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#conventions-used-in-this-section">5.1.1. Conventions used in this section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#options-when-starting-client-from-the-command-line">5.1.2. Options when starting client from the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#tokens-requests-and-special-key-combinations">5.1.3. Tokens, requests, and special key combinations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#requests">5.1.4. Requests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#utility-tarantoolctl">5.2. Utility tarantoolctl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#configuration-for-tarantoolctl">5.2.1. Configuration for tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#commands-for-tarantoolctl">5.2.2. Commands for tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#typical-code-snippets-for-tarantoolctl">5.2.3. Typical code snippets for tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#a-detailed-example-for-tarantoolctl">5.2.4. A detailed example for tarantoolctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#an-example-for-tarantoolctl-connect">5.2.5. An example for tarantoolctl connect</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#administrative-ports">5.3. Administrative ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#administrative-requests">5.4. Administrative requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#server-introspection">5.5. Server introspection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#replication">5.6. Replication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#replication-architecture">5.6.1. Replication architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#setting-up-a-master">5.6.2. Setting up a master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#setting-up-a-replica">5.6.3. Setting up a replica</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#recovering-from-a-degraded-state">5.6.4. Recovering from a degraded state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#quick-startup-of-a-new-simple-two-server-cluster">5.6.5. Quick startup of a new simple two-server cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#monitoring-a-replica-s-actions">5.6.6. Monitoring a replica&#8217;s actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#preventing-duplicate-actions">5.6.7. Preventing duplicate actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#master-master-replication">5.6.8. Master-master replication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#all-the-what-if-questions">5.6.9. All the &#8220;What If?&#8221; questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#hands-on-replication-tutorial">5.6.10. Hands-on replication tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#backups">5.7. Backups</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#cold-backup">5.7.1. Cold backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#continuous-remote-backup">5.7.2. Continuous remote backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#hot-backup">5.7.3. Hot backup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#updates-upgrades">5.8. Updates/upgrades</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#updating-tarantool-in-production">5.8.1. Updating Tarantool in production</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#upgrading-a-tarantool-database">5.8.2. Upgrading a Tarantool database</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#server-signal-handling">5.9. Server signal handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#process-title">5.10. Process title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#system-specific-administration-notes">5.11. System-specific administration notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#debian-gnu-linux-and-ubuntu">5.11.1. Debian GNU/Linux and Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#fedora-rhel-centos">5.11.2. Fedora, RHEL, CentOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#freebsd">5.11.3. FreeBSD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#mac-os-x">5.11.4. Mac OS X</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/administration.html#notes-for-systemd-users">5.12. Notes for systemd users</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#instance-management">5.12.1. Instance management</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/administration.html#creating-instances">5.12.1.1. Creating instances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/administration.html#starting-instances">5.12.1.2. Starting instances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/administration.html#monitoring-instances">5.12.1.3. Monitoring instances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/administration.html#attaching-to-instances">5.12.1.4. Attaching to instances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/administration.html#checking-logs">5.12.1.5. Checking logs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/administration.html#stopping-instances">5.12.1.6. Stopping instances</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#daemon-supervision">5.12.2. Daemon supervision</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#customizing-the-service-file">5.12.3. Customizing the service file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#debugging">5.12.4. Debugging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#precautions">5.12.5. Precautions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#limitations">5.12.6. Limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/administration.html#sysvinit-systemd-conversion">5.12.7. sysvinit -&gt; systemd conversion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../book/connectors/index.html">6. Connectors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#protocol">6.1. Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#packet-example">6.2. Packet example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#setting-up-the-server-for-connector-examples">6.3. Setting up the server for connector examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#java">6.4. Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#go">6.5. Go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#r">6.6. R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#perl">6.7. Perl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#php">6.8. PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#python">6.9. Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#c">6.10. C</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/connectors/index.html#example-1">6.10.1. Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/connectors/index.html#example-2">6.10.2. Example 2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../book/connectors/index.html#interpreting-function-return-values">6.11. Interpreting function return values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../book/faq.html">7. FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/reference_lua/index.html">1. Built-in library reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box.html">1.1. Module <cite>box</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/box_schema.html">1.1.1. Submodule <cite>box.schema</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/box_space.html">1.1.2. Submodule <cite>box.space</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/box_space.html#example-use-box-space-functions-to-read-space-tuples">1.1.2.1. Example: use box.space functions to read _space tuples</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/box_space.html#example-use-box-space-functions-to-organize-a-space-tuple">1.1.2.2. Example: use box.space functions to organize a _space tuple</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/box_index.html">1.1.3. Submodule <cite>box.index</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/box_index.html#example-showing-use-of-the-box-functions">1.1.3.1. Example showing use of the box functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/box_index.html#example-showing-a-user-defined-iterator">1.1.3.2. Example showing a user-defined iterator</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/box_index.html#submodule-box-index-with-index-type-rtree-for-spatial-searches">1.1.3.3. Submodule <cite>box.index</cite> with index type = RTREE for spatial searches</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/box_session.html">1.1.4. Submodule <cite>box.session</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/box_session.html#example">1.1.4.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/box_tuple.html">1.1.5. Submodule <cite>box.tuple</cite></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../book/box/box_tuple.html#example">1.1.5.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/box_cfg.html">1.1.6. Submodule <cite>box.cfg</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/box_slab.html">1.1.7. Submodule <cite>box.slab</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/box_info.html">1.1.8. Submodule <cite>box.info</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../book/box/box_stat.html">1.1.9. Submodule <cite>box.stat</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/clock.html">1.2. Module <cite>clock</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/console.html">1.3. Module <cite>console</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/crypto.html">1.4. Module <cite>crypto</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/crypto.html#incremental-methods-in-the-crypto-module">1.4.1. Incremental methods in the crypto module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/crypto.html#getting-the-same-results-from-digest-and-crypto-modules">1.4.2. Getting the same results from digest and crypto modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/csv.html">1.5. Module <cite>csv</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/digest.html">1.6. Module <cite>digest</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/digest.html#incremental-methods-in-the-digest-module">1.6.1. Incremental methods in the digest module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/digest.html#example">1.6.2. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/errno.html">1.7. Module <cite>errno</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box_error.html">1.8. Submodule <cite>box.error</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fiber.html">1.9. Module <cite>fiber</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber.html#example-of-fiber-use">1.9.1. Example Of Fiber Use</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fiber_ipc.html">1.10. Submodule <cite>fiber-ipc</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_ipc.html#example">1.10.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html">1.11. Submodule <cite>fiber-cond</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fiber_cond.html#example">1.11.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fio.html">1.12. Module <cite>fio</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-pathname-manipulations">1.12.1. Common pathname manipulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/fio.html#common-file-manipulations">1.12.2. Common file manipulations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/fun.html">1.13. Module <cite>fun</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/json.html">1.14. Module <cite>json</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/json.html#configuration-settings">1.14.1. Configuration settings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/log.html">1.15. Module <cite>log</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/log.html#example">1.15.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/msgpack.html">1.16. Module <cite>msgpack</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/msgpack.html#example">1.16.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/net_box.html">1.17. Module <cite>net.box</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/net_box.html#example">1.17.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/box_once.html">1.18. Function <cite>box.once</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/pickle.html">1.19. Module <cite>pickle</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/socket.html">1.20. Module <cite>socket</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/socket.html#examples">1.20.1. Examples</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-tcp-socket-over-the-internet">1.20.1.1. Use of a TCP socket over the Internet</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-of-a-udp-socket-on-localhost">1.20.1.2. Use of a UDP socket on localhost</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_lua/socket.html#use-tcp-server-to-accept-file-contents-sent-with-socat">1.20.1.3. Use tcp_server to accept file contents sent with socat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/strict.html">1.21. Module <cite>strict</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tap.html">1.22. Module <cite>tap</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/tap.html#example">1.22.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/tarantool.html">1.23. Module <cite>tarantool</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/uuid.html">1.24. Module <cite>uuid</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/uuid.html#example">1.24.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/xlog.html">1.25. Module <cite>xlog</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/yaml.html">1.26. Module <cite>yaml</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_lua/yaml.html#example">1.26.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/other.html">1.27. Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/errcodes.html">1.28. Database error codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_lua/errcodes.html#handling-errors">1.29. Handling errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/reference_rock/index.html">2. Rocks reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_rock/dbms.html">2.1. SQL DBMS Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_rock/dbms.html#mysql-example">2.1.1. MySQL Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#installation">2.1.1.1. Installation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../reference/reference_rock/dbms.html#with-luarocks">2.1.1.1.1. With LuaRocks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../reference/reference_rock/dbms.html#with-github">2.1.1.1.2. With GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#connecting">2.1.1.2. Connecting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#how-to-ping">2.1.1.3. How to ping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#executing-a-statement">2.1.1.4. Executing a statement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#closing-connection">2.1.1.5. Closing connection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#example">2.1.1.6. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_rock/dbms.html#postgresql-example">2.1.2. PostgreSQL Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#id1">2.1.2.1. Installation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../reference/reference_rock/dbms.html#id2">2.1.2.1.1. With LuaRocks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../reference/reference_rock/dbms.html#id3">2.1.2.1.2. With GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#id4">2.1.2.2. Connecting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#id5">2.1.2.3. How to ping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#id6">2.1.2.4. Executing a statement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#id7">2.1.2.5. Closing connection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../reference/reference_rock/dbms.html#id8">2.1.2.6. Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_rock/expirationd.html">2.2. Module <cite>expirationd</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_rock/shard.html">2.3. Module <cite>shard</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_rock/shard.html#example-shard-init-syntax-for-one-shard">2.3.1. Example: shard.init syntax for one shard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_rock/shard.html#example-shard-init-syntax-for-three-shards">2.3.2. Example: shard.init syntax for three shards</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_rock/shard.html#example-shard-minimal-configuration">2.3.3. Example: Shard, Minimal Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_rock/shard.html#example-shard-scaling-out">2.3.4. Example: Shard, Scaling Out</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/reference_rock/tdb.html">2.4. Module <cite>tdb</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_rock/tdb.html#debugger-commands">2.4.1. Debugger Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/reference_rock/tdb.html#example-session">2.4.2. Example Session</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/configuration/index.html">3. Configuration reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference/configuration/index.html#command-options">3.1. Command options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/configuration/index.html#uri">3.2. URI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/configuration/index.html#initialization-file">3.3. Initialization file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/configuration/index.html#configuration-parameters">3.4. Configuration parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference/configuration/index.html#basic-parameters">3.4.1. Basic parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/configuration/index.html#configuring-the-storage">3.4.2. Configuring the storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/configuration/index.html#snapshot-daemon">3.4.3. Snapshot daemon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/configuration/index.html#binary-logging-and-snapshots">3.4.4. Binary logging and snapshots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/configuration/index.html#replication">3.4.5. Replication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/configuration/index.html#networking">3.4.6. Networking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference/configuration/index.html#logging">3.4.7. Logging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contributor&#8217;s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="reference_capi/index.html">1. C API reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/box.html">1.1. Module <cite>box</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/clock.html">1.2. Module <cite>clock</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/coio.html">1.3. Module <cite>coio</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/error.html">1.4. Module <cite>error</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/fiber.html">1.5. Module <cite>fiber</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/box_index.html">1.6. Module <cite>index</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/latch.html">1.7. Module <cite>latch</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/utils.html">1.8. Module <cite>lua/utils</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/say.html">1.9. Module <cite>say</cite> (logging)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/schema.html">1.10. Module <cite>schema</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/trivia.html">1.11. Module <cite>trivia/config</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/tuple.html">1.12. Module <cite>tuple</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_capi/txn.html">1.13. Module <cite>txn</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="internals_index.html">2. Internals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="internals_index.html#tarantool-s-binary-protocol">2.1. Tarantool&#8217;s binary protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internals_index.html#notation-in-diagrams">2.1.1. Notation in diagrams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals_index.html#greeting-packet">2.1.2. Greeting packet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals_index.html#unified-packet-structure">2.1.3. Unified packet structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals_index.html#authentication">2.1.4. Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals_index.html#requests">2.1.5. Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals_index.html#response-packet-structure">2.1.6. Response packet structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals_index.html#replication-packet-structure">2.1.7. Replication packet structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals_index.html#xlog-snap">2.1.8. XLOG / SNAP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internals_index.html#data-persistence-and-the-wal-file-format">2.2. Data persistence and the WAL file format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals_index.html#the-snapshot-file-format">2.3. The snapshot file format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals_index.html#the-recovery-process">2.4. The recovery process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals_index.html#server-startup-with-replication">2.5. Server startup with replication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="build_contribute_index.html">3. Build and contribute</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="building_from_source.html">3.1. Building from source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building_documentation.html">3.2. Building documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_management.html">3.3. Release management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release_management.html#how-to-make-a-minor-release">3.3.1. How to make a minor release</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="guidelines_index.html">4. Guidelines</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="developer_guidelines.html">4.1. Developer guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer_guidelines.html#how-to-work-on-a-bug">4.1.1. How to work on a bug</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="documentation_guidelines.html">4.2. Documentation guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="documentation_guidelines.html#markup-issues">4.2.1. Markup issues</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="documentation_guidelines.html#wrapping-text">4.2.1.1. Wrapping text</a></li>
+<li class="toctree-l5"><a class="reference internal" href="documentation_guidelines.html#formatting-code-snippets">4.2.1.2. Formatting code snippets</a></li>
+<li class="toctree-l5"><a class="reference internal" href="documentation_guidelines.html#using-separated-links">4.2.1.3. Using separated links</a></li>
+<li class="toctree-l5"><a class="reference internal" href="documentation_guidelines.html#creating-labels-for-local-links">4.2.1.4. Creating labels for local links</a></li>
+<li class="toctree-l5"><a class="reference internal" href="documentation_guidelines.html#making-comments">4.2.1.5. Making comments</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="documentation_guidelines.html#language-and-style-issues">4.2.2. Language and style issues</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="documentation_guidelines.html#us-vs-british-spelling">4.2.2.1. US vs British spelling</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="documentation_guidelines.html#examples-and-templates">4.2.3. Examples and templates</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="documentation_guidelines.html#module-and-function">4.2.3.1. Module and function</a></li>
+<li class="toctree-l5"><a class="reference internal" href="documentation_guidelines.html#module-class-and-method">4.2.3.2. Module, class and method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_style_guide.html">4.3. C Style Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="c_style_guide.html#general-guidelines">4.3.1. General guidelines</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#commenting-style">4.3.1.1. Commenting style</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#header-files">4.3.1.2. Header files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#allocating-memory">4.3.1.3. Allocating memory</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#other">4.3.1.4. Other</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="c_style_guide.html#linux-kernel-coding-style">4.3.2. Linux kernel coding style</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-1-indentation">4.3.2.1. Chapter 1: Indentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-2-breaking-long-lines-and-strings">4.3.2.2. Chapter 2: Breaking long lines and strings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-3-placing-braces-and-spaces">4.3.2.3. Chapter 3: Placing Braces and Spaces</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-3-1-spaces">4.3.2.4. Chapter 3.1:  Spaces</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-4-naming">4.3.2.5. Chapter 4: Naming</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-5-typedefs">4.3.2.6. Chapter 5: Typedefs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-6-functions">4.3.2.7. Chapter 6: Functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-7-centralized-exiting-of-functions">4.3.2.8. Chapter 7: Centralized exiting of functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-8-commenting">4.3.2.9. Chapter 8: Commenting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-9-you-ve-made-a-mess-of-it">4.3.2.10. Chapter 9: You&#8217;ve made a mess of it</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-10-kconfig-configuration-files">4.3.2.11. Chapter 10: Kconfig configuration files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-11-data-structures">4.3.2.12. Chapter 11: Data structures</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-12-macros-enums-and-rtl">4.3.2.13. Chapter 12: Macros, Enums and RTL</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-13-printing-kernel-messages">4.3.2.14. Chapter 13: Printing kernel messages</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-14-allocating-memory">4.3.2.15. Chapter 14: Allocating memory</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-15-the-inline-disease">4.3.2.16. Chapter 15: The inline disease</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-16-function-return-values-and-names">4.3.2.17. Chapter 16: Function return values and names</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-17-don-t-re-invent-the-kernel-macros">4.3.2.18. Chapter 17:  Don&#8217;t re-invent the kernel macros</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#chapter-18-editor-modelines-and-other-cruft">4.3.2.19. Chapter 18:  Editor modelines and other cruft</a></li>
+<li class="toctree-l5"><a class="reference internal" href="c_style_guide.html#appendix-i-references">4.3.2.20. Appendix I: References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.4. Python Style Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">4.4.1. Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-foolish-consistency-is-the-hobgoblin-of-little-minds">4.4.2. A Foolish Consistency is the Hobgoblin of Little Minds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code-lay-out">4.4.3. Code lay-out</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#indentation">4.4.3.1. Indentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#tabs-or-spaces">4.4.3.2. Tabs or Spaces?</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#maximum-line-length">4.4.3.3. Maximum Line Length</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#blank-lines">4.4.3.4. Blank Lines</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#encodings-pep-263">4.4.3.5. Encodings (PEP 263)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#imports">4.4.3.6. Imports</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#whitespace-in-expressions-and-statements">4.4.4. Whitespace in Expressions and Statements</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#pet-peeves">4.4.4.1. Pet Peeves</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#other-recommendations">4.4.4.2. Other Recommendations</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#comments">4.4.5. Comments</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#block-comments">4.4.5.1. Block Comments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#inline-comments">4.4.5.2. Inline Comments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#documentation-strings">4.4.5.3. Documentation Strings</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#version-bookkeeping">4.4.6. Version Bookkeeping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#naming-conventions">4.4.7. Naming Conventions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#descriptive-naming-styles">4.4.7.1. Descriptive: Naming Styles</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#prescriptive-naming-conventions">4.4.7.2. Prescriptive: Naming Conventions</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#names-to-avoid">4.4.7.2.1. Names to Avoid</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#package-and-module-names">4.4.7.2.2. Package and Module Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#class-names">4.4.7.2.3. Class Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#exception-names">4.4.7.2.4. Exception Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#global-variable-names">4.4.7.2.5. Global Variable Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#function-names">4.4.7.2.6. Function Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#function-and-method-arguments">4.4.7.2.7. Function and method arguments</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#method-names-and-instance-variables">4.4.7.2.8. Method Names and Instance Variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#constants">4.4.7.2.9. Constants</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#designing-for-inheritance">4.4.7.2.10. Designing for inheritance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#references">4.4.8. References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copyright">4.4.9. Copyright</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+        <div class="b-cols_content_right">
+          <div class="b-cols_content_right-slot">
+  <div class="b-page_header">
+    <ul class="b-path-list">
+      <li class="b-path-list-item">
+        <a href="../index.html"
+           class="b-path-list-item-url">
+          Documentation
+        </a>
+      </li>
+      
+        <li class="b-path-list-item">
+          <a href="index.html"
+             class="b-path-list-item-url b-ellipsis">
+            Contributor&#8217;s Guide
+          </a>
+        </li>
+      
+        <li class="b-path-list-item">
+          <a href="guidelines_index.html"
+             class="b-path-list-item-url b-ellipsis">
+            4. Guidelines
+          </a>
+        </li>
+      
+      
+      <li class="b-path-list-item">
+        <div title="4.4. Python Style Guide" class="b-path_current b-ellipsis">
+          4.4. Python Style Guide
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+
+  <article class="b-article">
+    
+    <div class="section" id="python-style-guide">
+<h1>4.4. Python Style Guide<a class="headerlink" href="#python-style-guide" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="introduction">
+<h2>4.4.1. Introduction<a class="headerlink" href="#introduction" title="Ссылка на этот заголовок">¶</a></h2>
+<p>This document gives coding conventions for the Python code comprising
+the standard library in the main Python distribution.  Please see the
+companion informational PEP describing style guidelines for the C code
+in the C implementation of Python <a class="footnote-reference" href="#id4" id="id1">[1]</a>.</p>
+<p>This document and PEP 257 (Docstring Conventions) were adapted from
+Guido&#8217;s original Python Style Guide essay, with some additions from
+Barry&#8217;s style guide <a class="footnote-reference" href="#id5" id="id2">[2]</a>.</p>
+</div>
+<div class="section" id="a-foolish-consistency-is-the-hobgoblin-of-little-minds">
+<h2>4.4.2. A Foolish Consistency is the Hobgoblin of Little Minds<a class="headerlink" href="#a-foolish-consistency-is-the-hobgoblin-of-little-minds" title="Ссылка на этот заголовок">¶</a></h2>
+<p>One of Guido&#8217;s key insights is that code is read much more often than
+it is written.  The guidelines provided here are intended to improve
+the readability of code and make it consistent across the wide
+spectrum of Python code.  As PEP 20 says, &#8220;Readability counts&#8221;.</p>
+<p>A style guide is about consistency.  Consistency with this style guide
+is important.  Consistency within a project is more important.
+Consistency within one module or function is the most important.</p>
+<p>But most importantly: know when to be inconsistent &#8211; sometimes the
+style guide just doesn&#8217;t apply.  When in doubt, use your best
+judgment.  Look at other examples and decide what looks best.  And
+don&#8217;t hesitate to ask!</p>
+<p>Two good reasons to break a particular rule:</p>
+<ol class="arabic simple">
+<li>When applying the rule would make the code less readable, even for
+someone who is used to reading code that follows the rules.</li>
+<li>To be consistent with surrounding code that also breaks it (maybe
+for historic reasons) &#8211; although this is also an opportunity to
+clean up someone else&#8217;s mess (in true XP style).</li>
+</ol>
+</div>
+<div class="section" id="code-lay-out">
+<h2>4.4.3. Code lay-out<a class="headerlink" href="#code-lay-out" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="indentation">
+<h3>4.4.3.1. Indentation<a class="headerlink" href="#indentation" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Use 4 spaces per indentation level.</p>
+<p>For really old code that you don&#8217;t want to mess up, you can continue
+to use 8-space tabs.</p>
+<p>Continuation lines should align wrapped elements either vertically
+using Python&#8217;s implicit line joining inside parentheses, brackets and
+braces, or using a hanging indent.  When using a hanging indent the
+following considerations should be applied; there should be no
+arguments on the first line and further indentation should be used to
+clearly distinguish itself as a continuation line.</p>
+<p>Yes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Aligned with opening delimiter</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span>
+                         <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span>
+
+<span class="c1"># More indentation included to distinguish this from the rest.</span>
+<span class="k">def</span> <span class="nf">long_function_name</span><span class="p">(</span>
+        <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span> <span class="n">var_three</span><span class="p">,</span>
+        <span class="n">var_four</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">var_one</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Arguments on first line forbidden when not using vertical alignment</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span>
+    <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span>
+
+<span class="c1"># Further indentation required as indentation is not distinguishable</span>
+<span class="k">def</span> <span class="nf">long_function_name</span><span class="p">(</span>
+    <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span> <span class="n">var_three</span><span class="p">,</span>
+    <span class="n">var_four</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">var_one</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Optional:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Extra indentation is not necessary.</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span>
+  <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span>
+  <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The closing brace/bracket/parenthesis on multi-line constructs may
+either line up under the first non-whitespace character of the last
+line of list, as in:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">some_function_that_takes_arguments</span><span class="p">(</span>
+    <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>or it may be lined up under the first character of the line that
+starts the multi-line construct, as in:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">some_function_that_takes_arguments</span><span class="p">(</span>
+    <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tabs-or-spaces">
+<h3>4.4.3.2. Tabs or Spaces?<a class="headerlink" href="#tabs-or-spaces" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Never mix tabs and spaces.</p>
+<p>The most popular way of indenting Python is with spaces only.  The
+second-most popular way is with tabs only.  Code indented with a
+mixture of tabs and spaces should be converted to using spaces
+exclusively.  When invoking the Python command line interpreter with
+the <code class="docutils literal"><span class="pre">-t</span></code> option, it issues warnings about code that illegally mixes
+tabs and spaces.  When using <code class="docutils literal"><span class="pre">-tt</span></code> these warnings become errors.
+These options are highly recommended!</p>
+<p>For new projects, spaces-only are strongly recommended over tabs.
+Most editors have features that make this easy to do.</p>
+</div>
+<div class="section" id="maximum-line-length">
+<h3>4.4.3.3. Maximum Line Length<a class="headerlink" href="#maximum-line-length" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Limit all lines to a maximum of 79 characters.</p>
+<p>There are still many devices around that are limited to 80 character
+lines; plus, limiting windows to 80 characters makes it possible to
+have several windows side-by-side.  The default wrapping on such
+devices disrupts the visual structure of the code, making it more
+difficult to understand.  Therefore, please limit all lines to a
+maximum of 79 characters.  For flowing long blocks of text (docstrings
+or comments), limiting the length to 72 characters is recommended.</p>
+<p>The preferred way of wrapping long lines is by using Python&#8217;s implied
+line continuation inside parentheses, brackets and braces.  Long lines
+can be broken over multiple lines by wrapping expressions in
+parentheses. These should be used in preference to using a backslash
+for line continuation.</p>
+<p>Backslashes may still be appropriate at times.  For example, long,
+multiple <code class="docutils literal"><span class="pre">with</span></code>-statements cannot use implicit continuation, so
+backslashes are acceptable:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/some/file/you/want/to/read&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_1</span><span class="p">,</span> \
+        <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/some/file/being/written&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_2</span><span class="p">:</span>
+    <span class="n">file_2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_1</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Another such case is with <code class="docutils literal"><span class="pre">assert</span></code> statements.</p>
+<p>Make sure to indent the continued line appropriately.  The preferred
+place to break around a binary operator is <em>after</em> the operator, not
+before it.  Some examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Blob</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">emphasis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span>
+            <span class="n">color</span> <span class="o">==</span> <span class="s1">&#39;red&#39;</span> <span class="ow">and</span> <span class="n">emphasis</span> <span class="o">==</span> <span class="s1">&#39;strong&#39;</span> <span class="ow">or</span>
+            <span class="n">highlight</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;sorry, you lose&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="n">color</span> <span class="o">==</span> <span class="s1">&#39;red&#39;</span> <span class="ow">or</span>
+                                           <span class="n">emphasis</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;I don&#39;t think so -- values are </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+                             <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+        <span class="n">Blob</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span>
+                      <span class="n">color</span><span class="p">,</span> <span class="n">emphasis</span><span class="p">,</span> <span class="n">highlight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="blank-lines">
+<h3>4.4.3.4. Blank Lines<a class="headerlink" href="#blank-lines" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Separate top-level function and class definitions with two blank
+lines.</p>
+<p>Method definitions inside a class are separated by a single blank
+line.</p>
+<p>Extra blank lines may be used (sparingly) to separate groups of
+related functions.  Blank lines may be omitted between a bunch of
+related one-liners (e.g. a set of dummy implementations).</p>
+<p>Use blank lines in functions, sparingly, to indicate logical sections.</p>
+<p>Python accepts the control-L (i.e. ^L) form feed character as
+whitespace; Many tools treat these characters as page separators, so
+you may use them to separate pages of related sections of your file.
+Note, some editors and web-based code viewers may not recognize
+control-L as a form feed and will show another glyph in its place.</p>
+</div>
+<div class="section" id="encodings-pep-263">
+<h3>4.4.3.5. Encodings (PEP 263)<a class="headerlink" href="#encodings-pep-263" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Code in the core Python distribution should always use the ASCII or
+Latin-1 encoding (a.k.a. ISO-8859-1).  For Python 3.0 and beyond,
+UTF-8 is preferred over Latin-1, see PEP 3120.</p>
+<p>Files using ASCII should not have a coding cookie.  Latin-1 (or UTF-8)
+should only be used when a comment or docstring needs to mention an
+author name that requires Latin-1; otherwise, using <code class="docutils literal"><span class="pre">\x</span></code>, <code class="docutils literal"><span class="pre">\u</span></code> or
+<code class="docutils literal"><span class="pre">\U</span></code> escapes is the preferred way to include non-ASCII data in
+string literals.</p>
+<p>For Python 3.0 and beyond, the following policy is prescribed for the
+standard library (see PEP 3131): All identifiers in the Python
+standard library MUST use ASCII-only identifiers, and SHOULD use
+English words wherever feasible (in many cases, abbreviations and
+technical terms are used which aren&#8217;t English). In addition, string
+literals and comments must also be in ASCII. The only exceptions are
+(a) test cases testing the non-ASCII features, and
+(b) names of authors. Authors whose names are not based on the
+latin alphabet MUST provide a latin transliteration of their
+names.</p>
+<p>Open source projects with a global audience are encouraged to adopt a
+similar policy.</p>
+</div>
+<div class="section" id="imports">
+<h3>4.4.3.6. Imports<a class="headerlink" href="#imports" title="Ссылка на этот заголовок">¶</a></h3>
+<ul>
+<li><p class="first">Imports should usually be on separate lines, e.g.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">os</span>
+     <span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">No</span><span class="p">:</span>  <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+</pre></div>
+</div>
+<p>It&#8217;s okay to say this though:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Imports are always put at the top of the file, just after any module
+comments and docstrings, and before module globals and constants.</p>
+<p>Imports should be grouped in the following order:</p>
+<ol class="arabic simple">
+<li>standard library imports</li>
+<li>related third party imports</li>
+<li>local application/library specific imports</li>
+</ol>
+<p>You should put a blank line between each group of imports.</p>
+<p>Put any relevant <code class="docutils literal"><span class="pre">__all__</span></code> specification after the imports.</p>
+</li>
+<li><p class="first">Relative imports for intra-package imports are highly discouraged.
+Always use the absolute package path for all imports.  Even now that
+PEP 328 is fully implemented in Python 2.5, its style of explicit
+relative imports is actively discouraged; absolute imports are more
+portable and usually more readable.</p>
+</li>
+<li><p class="first">When importing a class from a class-containing module, it&#8217;s usually
+okay to spell this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myclass</span> <span class="k">import</span> <span class="n">MyClass</span>
+<span class="kn">from</span> <span class="nn">foo.bar.yourclass</span> <span class="k">import</span> <span class="n">YourClass</span>
+</pre></div>
+</div>
+<p>If this spelling causes local name clashes, then spell them</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">myclass</span>
+<span class="kn">import</span> <span class="nn">foo.bar.yourclass</span>
+</pre></div>
+</div>
+<p>and use &#8220;myclass.MyClass&#8221; and &#8220;foo.bar.yourclass.YourClass&#8221;.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="whitespace-in-expressions-and-statements">
+<h2>4.4.4. Whitespace in Expressions and Statements<a class="headerlink" href="#whitespace-in-expressions-and-statements" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="pet-peeves">
+<h3>4.4.4.1. Pet Peeves<a class="headerlink" href="#pet-peeves" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Avoid extraneous whitespace in the following situations:</p>
+<ul>
+<li><p class="first">Immediately inside parentheses, brackets or braces.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">spam</span><span class="p">(</span><span class="n">ham</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">{</span><span class="n">eggs</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">spam</span><span class="p">(</span> <span class="n">ham</span><span class="p">[</span> <span class="mi">1</span> <span class="p">],</span> <span class="p">{</span> <span class="n">eggs</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Immediately before a comma, semicolon, or colon:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span> <span class="nb">print</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+<span class="n">No</span><span class="p">:</span>  <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span> <span class="p">:</span> <span class="nb">print</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span> <span class="p">;</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="p">,</span> <span class="n">x</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Immediately before the open parenthesis that starts the argument
+list of a function call:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">spam</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">spam</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Immediately before the open parenthesis that starts an indexing or
+slicing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+<span class="n">No</span><span class="p">:</span>  <span class="nb">dict</span> <span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">More than one space around an assignment (or other) operator to
+align it with another.</p>
+<p>Yes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span>             <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span>             <span class="o">=</span> <span class="mi">2</span>
+<span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="other-recommendations">
+<h3>4.4.4.2. Other Recommendations<a class="headerlink" href="#other-recommendations" title="Ссылка на этот заголовок">¶</a></h3>
+<ul>
+<li><p class="first">Always surround these binary operators with a single space on either
+side: assignment (<code class="docutils literal"><span class="pre">=</span></code>), augmented assignment (<code class="docutils literal"><span class="pre">+=</span></code>, <code class="docutils literal"><span class="pre">-=</span></code>
+etc.), comparisons (<code class="docutils literal"><span class="pre">==</span></code>, <code class="docutils literal"><span class="pre">&lt;</span></code>, <code class="docutils literal"><span class="pre">&gt;</span></code>, <code class="docutils literal"><span class="pre">!=</span></code>, <code class="docutils literal"><span class="pre">&lt;&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;=</span></code>,
+<code class="docutils literal"><span class="pre">&gt;=</span></code>, <code class="docutils literal"><span class="pre">in</span></code>, <code class="docutils literal"><span class="pre">not</span> <span class="pre">in</span></code>, <code class="docutils literal"><span class="pre">is</span></code>, <code class="docutils literal"><span class="pre">is</span> <span class="pre">not</span></code>), Booleans (<code class="docutils literal"><span class="pre">and</span></code>,
+<code class="docutils literal"><span class="pre">or</span></code>, <code class="docutils literal"><span class="pre">not</span></code>).</p>
+</li>
+<li><p class="first">If operators with different priorities are used, consider adding
+whitespace around the operators with the lowest priority(ies). Use
+your own judgement; however, never use more than one space, and
+always have the same amount of whitespace on both sides of a binary
+operator.</p>
+<p>Yes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">submitted</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">submitted</span> <span class="o">+=</span><span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Don&#8217;t use spaces around the <code class="docutils literal"><span class="pre">=</span></code> sign when used to indicate a
+keyword argument or a default parameter value.</p>
+<p>Yes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">magic</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">real</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">imag</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">magic</span><span class="p">(</span><span class="n">r</span> <span class="o">=</span> <span class="n">real</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="n">imag</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Compound statements (multiple statements on the same line) are
+generally discouraged.</p>
+<p>Yes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">foo</span> <span class="o">==</span> <span class="s1">&#39;blah&#39;</span><span class="p">:</span>
+    <span class="n">do_blah_thing</span><span class="p">()</span>
+<span class="n">do_one</span><span class="p">()</span>
+<span class="n">do_two</span><span class="p">()</span>
+<span class="n">do_three</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Rather not:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">foo</span> <span class="o">==</span> <span class="s1">&#39;blah&#39;</span><span class="p">:</span> <span class="n">do_blah_thing</span><span class="p">()</span>
+<span class="n">do_one</span><span class="p">();</span> <span class="n">do_two</span><span class="p">();</span> <span class="n">do_three</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">While sometimes it&#8217;s okay to put an if/for/while with a small body
+on the same line, never do this for multi-clause statements.  Also
+avoid folding such long lines!</p>
+<p>Rather not:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">foo</span> <span class="o">==</span> <span class="s1">&#39;blah&#39;</span><span class="p">:</span> <span class="n">do_blah_thing</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">x</span>
+<span class="k">while</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="n">t</span> <span class="o">=</span> <span class="n">delay</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Definitely not:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">foo</span> <span class="o">==</span> <span class="s1">&#39;blah&#39;</span><span class="p">:</span> <span class="n">do_blah_thing</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span> <span class="n">do_non_blah_thing</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span> <span class="n">something</span><span class="p">()</span>
+<span class="k">finally</span><span class="p">:</span> <span class="n">cleanup</span><span class="p">()</span>
+
+<span class="n">do_one</span><span class="p">();</span> <span class="n">do_two</span><span class="p">();</span> <span class="n">do_three</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">argument</span><span class="p">,</span>
+                             <span class="nb">list</span><span class="p">,</span> <span class="n">like</span><span class="p">,</span> <span class="n">this</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">foo</span> <span class="o">==</span> <span class="s1">&#39;blah&#39;</span><span class="p">:</span> <span class="n">one</span><span class="p">();</span> <span class="n">two</span><span class="p">();</span> <span class="n">three</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="comments">
+<h2>4.4.5. Comments<a class="headerlink" href="#comments" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Comments that contradict the code are worse than no comments.  Always
+make a priority of keeping the comments up-to-date when the code
+changes!</p>
+<p>Comments should be complete sentences.  If a comment is a phrase or
+sentence, its first word should be capitalized, unless it is an
+identifier that begins with a lower case letter (never alter the case
+of identifiers!).</p>
+<p>If a comment is short, the period at the end can be omitted.  Block
+comments generally consist of one or more paragraphs built out of
+complete sentences, and each sentence should end in a period.</p>
+<p>You should use two spaces after a sentence-ending period.</p>
+<p>When writing English, Strunk and White apply.</p>
+<p>Python coders from non-English speaking countries: please write your
+comments in English, unless you are 120% sure that the code will never
+be read by people who don&#8217;t speak your language.</p>
+<div class="section" id="block-comments">
+<h3>4.4.5.1. Block Comments<a class="headerlink" href="#block-comments" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Block comments generally apply to some (or all) code that follows
+them, and are indented to the same level as that code.  Each line of a
+block comment starts with a <code class="docutils literal"><span class="pre">#</span></code> and a single space (unless it is
+indented text inside the comment).</p>
+<p>Paragraphs inside a block comment are separated by a line containing a
+single <code class="docutils literal"><span class="pre">#</span></code>.</p>
+</div>
+<div class="section" id="inline-comments">
+<h3>4.4.5.2. Inline Comments<a class="headerlink" href="#inline-comments" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Use inline comments sparingly.</p>
+<p>An inline comment is a comment on the same line as a statement.
+Inline comments should be separated by at least two spaces from the
+statement.  They should start with a # and a single space.</p>
+<p>Inline comments are unnecessary and in fact distracting if they state
+the obvious.  Don&#8217;t do this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c1"># Increment x</span>
+</pre></div>
+</div>
+<p>But sometimes, this is useful:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c1"># Compensate for border</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="documentation-strings">
+<h3>4.4.5.3. Documentation Strings<a class="headerlink" href="#documentation-strings" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Conventions for writing good documentation strings
+(a.k.a. &#8220;docstrings&#8221;) are immortalized in PEP 257.</p>
+<ul>
+<li><p class="first">Write docstrings for all public modules, functions, classes, and
+methods.  Docstrings are not necessary for non-public methods, but
+you should have a comment that describes what the method does.  This
+comment should appear after the <code class="docutils literal"><span class="pre">def</span></code> line.</p>
+</li>
+<li><p class="first">PEP 257 describes good docstring conventions.  Note that most
+importantly, the <code class="docutils literal"><span class="pre">&quot;&quot;&quot;</span></code> that ends a multiline docstring should be
+on a line by itself, and preferably preceded by a blank line, e.g.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Return a foobang</span>
+
+<span class="sd">Optional plotz says to frobnicate the bizbaz first.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">For one liner docstrings, it&#8217;s okay to keep the closing <code class="docutils literal"><span class="pre">&quot;&quot;&quot;</span></code> on
+the same line.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-bookkeeping">
+<h2>4.4.6. Version Bookkeeping<a class="headerlink" href="#version-bookkeeping" title="Ссылка на этот заголовок">¶</a></h2>
+<p>If you have to have Subversion, CVS, or RCS crud in your source file,
+do it as follows.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;$Revision$&quot;</span>
+<span class="c1"># $Source$</span>
+</pre></div>
+</div>
+<p>These lines should be included after the module&#8217;s docstring, before
+any other code, separated by a blank line above and below.</p>
+</div>
+<div class="section" id="naming-conventions">
+<h2>4.4.7. Naming Conventions<a class="headerlink" href="#naming-conventions" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The naming conventions of Python&#8217;s library are a bit of a mess, so
+we&#8217;ll never get this completely consistent &#8211; nevertheless, here are
+the currently recommended naming standards.  New modules and packages
+(including third party frameworks) should be written to these
+standards, but where an existing library has a different style,
+internal consistency is preferred.</p>
+<div class="section" id="descriptive-naming-styles">
+<h3>4.4.7.1. Descriptive: Naming Styles<a class="headerlink" href="#descriptive-naming-styles" title="Ссылка на этот заголовок">¶</a></h3>
+<p>There are a lot of different naming styles.  It helps to be able to
+recognize what naming style is being used, independently from what
+they are used for.</p>
+<p>The following naming styles are commonly distinguished:</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">b</span></code> (single lowercase letter)</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">B</span></code> (single uppercase letter)</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">lowercase</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">lower_case_with_underscores</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">UPPERCASE</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">UPPER_CASE_WITH_UNDERSCORES</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">CapitalizedWords</span></code> (or CapWords, or CamelCase &#8211; so named because
+of the bumpy look of its letters <a class="footnote-reference" href="#id6" id="id3">[3]</a>).  This is also sometimes known
+as StudlyCaps.</p>
+<p>Note: When using abbreviations in CapWords, capitalize all the
+letters of the abbreviation.  Thus HTTPServerError is better than
+HttpServerError.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">mixedCase</span></code> (differs from CapitalizedWords by initial lowercase
+character!)</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">Capitalized_Words_With_Underscores</span></code> (ugly!)</p>
+</li>
+</ul>
+<p>There&#8217;s also the style of using a short unique prefix to group related
+names together.  This is not used much in Python, but it is mentioned
+for completeness.  For example, the <code class="docutils literal"><span class="pre">os.stat()</span></code> function returns a
+tuple whose items traditionally have names like <code class="docutils literal"><span class="pre">st_mode</span></code>,
+<code class="docutils literal"><span class="pre">st_size</span></code>, <code class="docutils literal"><span class="pre">st_mtime</span></code> and so on.  (This is done to emphasize the
+correspondence with the fields of the POSIX system call struct, which
+helps programmers familiar with that.)</p>
+<p>The X11 library uses a leading X for all its public functions.  In
+Python, this style is generally deemed unnecessary because attribute
+and method names are prefixed with an object, and function names are
+prefixed with a module name.</p>
+<p>In addition, the following special forms using leading or trailing
+underscores are recognized (these can generally be combined with any
+case convention):</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">_single_leading_underscore</span></code>: weak &#8220;internal use&#8221; indicator.
+E.g. <code class="docutils literal"><span class="pre">from</span> <span class="pre">M</span> <span class="pre">import</span> <span class="pre">*</span></code> does not import objects whose name starts
+with an underscore.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">single_trailing_underscore_</span></code>: used by convention to avoid
+conflicts with Python keyword, e.g.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Tkinter</span><span class="o">.</span><span class="n">Toplevel</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;ClassName&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">__double_leading_underscore</span></code>: when naming a class attribute,
+invokes name mangling (inside class FooBar, <code class="docutils literal"><span class="pre">__boo</span></code> becomes
+<code class="docutils literal"><span class="pre">_FooBar__boo</span></code>; see below).</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">__double_leading_and_trailing_underscore__</span></code>: &#8220;magic&#8221; objects or
+attributes that live in user-controlled namespaces.
+E.g. <code class="docutils literal"><span class="pre">__init__</span></code>, <code class="docutils literal"><span class="pre">__import__</span></code> or <code class="docutils literal"><span class="pre">__file__</span></code>.  Never invent
+such names; only use them as documented.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="prescriptive-naming-conventions">
+<h3>4.4.7.2. Prescriptive: Naming Conventions<a class="headerlink" href="#prescriptive-naming-conventions" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="names-to-avoid">
+<h4>4.4.7.2.1. Names to Avoid<a class="headerlink" href="#names-to-avoid" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Never use the characters &#8216;l&#8217; (lowercase letter el), &#8216;O&#8217; (uppercase
+letter oh), or &#8216;I&#8217; (uppercase letter eye) as single character variable
+names.</p>
+<p>In some fonts, these characters are indistinguishable from the
+numerals one and zero.  When tempted to use &#8216;l&#8217;, use &#8216;L&#8217; instead.</p>
+</div>
+<div class="section" id="package-and-module-names">
+<h4>4.4.7.2.2. Package and Module Names<a class="headerlink" href="#package-and-module-names" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Modules should have short, all-lowercase names.  Underscores can be
+used in the module name if it improves readability.  Python packages
+should also have short, all-lowercase names, although the use of
+underscores is discouraged.</p>
+<p>Since module names are mapped to file names, and some file systems are
+case insensitive and truncate long names, it is important that module
+names be chosen to be fairly short &#8211; this won&#8217;t be a problem on Unix,
+but it may be a problem when the code is transported to older Mac or
+Windows versions, or DOS.</p>
+<p>When an extension module written in C or C++ has an accompanying
+Python module that provides a higher level (e.g. more object oriented)
+interface, the C/C++ module has a leading underscore
+(e.g. <code class="docutils literal"><span class="pre">_socket</span></code>).</p>
+</div>
+<div class="section" id="class-names">
+<h4>4.4.7.2.3. Class Names<a class="headerlink" href="#class-names" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Almost without exception, class names use the CapWords convention.
+Classes for internal use have a leading underscore in addition.</p>
+</div>
+<div class="section" id="exception-names">
+<h4>4.4.7.2.4. Exception Names<a class="headerlink" href="#exception-names" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Because exceptions should be classes, the class naming convention
+applies here.  However, you should use the suffix &#8220;Error&#8221; on your
+exception names (if the exception actually is an error).</p>
+</div>
+<div class="section" id="global-variable-names">
+<h4>4.4.7.2.5. Global Variable Names<a class="headerlink" href="#global-variable-names" title="Ссылка на этот заголовок">¶</a></h4>
+<p>(Let&#8217;s hope that these variables are meant for use inside one module
+only.)  The conventions are about the same as those for functions.</p>
+<p>Modules that are designed for use via <code class="docutils literal"><span class="pre">from</span> <span class="pre">M</span> <span class="pre">import</span> <span class="pre">*</span></code> should use
+the <code class="docutils literal"><span class="pre">__all__</span></code> mechanism to prevent exporting globals, or use the
+older convention of prefixing such globals with an underscore (which
+you might want to do to indicate these globals are &#8220;module
+non-public&#8221;).</p>
+</div>
+<div class="section" id="function-names">
+<h4>4.4.7.2.6. Function Names<a class="headerlink" href="#function-names" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Function names should be lowercase, with words separated by
+underscores as necessary to improve readability.</p>
+<p>mixedCase is allowed only in contexts where that&#8217;s already the
+prevailing style (e.g. threading.py), to retain backwards
+compatibility.</p>
+</div>
+<div class="section" id="function-and-method-arguments">
+<h4>4.4.7.2.7. Function and method arguments<a class="headerlink" href="#function-and-method-arguments" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Always use <code class="docutils literal"><span class="pre">self</span></code> for the first argument to instance methods.</p>
+<p>Always use <code class="docutils literal"><span class="pre">cls</span></code> for the first argument to class methods.</p>
+<p>If a function argument&#8217;s name clashes with a reserved keyword, it is
+generally better to append a single trailing underscore rather than
+use an abbreviation or spelling corruption.  Thus <code class="docutils literal"><span class="pre">class_</span></code> is better
+than <code class="docutils literal"><span class="pre">clss</span></code>.  (Perhaps better is to avoid such clashes by using a
+synonym.)</p>
+</div>
+<div class="section" id="method-names-and-instance-variables">
+<h4>4.4.7.2.8. Method Names and Instance Variables<a class="headerlink" href="#method-names-and-instance-variables" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Use the function naming rules: lowercase with words separated by
+underscores as necessary to improve readability.</p>
+<p>Use one leading underscore only for non-public methods and instance
+variables.</p>
+<p>To avoid name clashes with subclasses, use two leading underscores to
+invoke Python&#8217;s name mangling rules.</p>
+<p>Python mangles these names with the class name: if class Foo has an
+attribute named <code class="docutils literal"><span class="pre">__a</span></code>, it cannot be accessed by <code class="docutils literal"><span class="pre">Foo.__a</span></code>.  (An
+insistent user could still gain access by calling <code class="docutils literal"><span class="pre">Foo._Foo__a</span></code>.)
+Generally, double leading underscores should be used only to avoid
+name conflicts with attributes in classes designed to be subclassed.</p>
+<p>Note: there is some controversy about the use of __names (see below).</p>
+</div>
+<div class="section" id="constants">
+<h4>4.4.7.2.9. Constants<a class="headerlink" href="#constants" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Constants are usually defined on a module level and written in all
+capital letters with underscores separating words.  Examples include
+<code class="docutils literal"><span class="pre">MAX_OVERFLOW</span></code> and <code class="docutils literal"><span class="pre">TOTAL</span></code>.</p>
+</div>
+<div class="section" id="designing-for-inheritance">
+<h4>4.4.7.2.10. Designing for inheritance<a class="headerlink" href="#designing-for-inheritance" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Always decide whether a class&#8217;s methods and instance variables
+(collectively: &#8220;attributes&#8221;) should be public or non-public.  If in
+doubt, choose non-public; it&#8217;s easier to make it public later than to
+make a public attribute non-public.</p>
+<p>Public attributes are those that you expect unrelated clients of your
+class to use, with your commitment to avoid backward incompatible
+changes.  Non-public attributes are those that are not intended to be
+used by third parties; you make no guarantees that non-public
+attributes won&#8217;t change or even be removed.</p>
+<p>We don&#8217;t use the term &#8220;private&#8221; here, since no attribute is really
+private in Python (without a generally unnecessary amount of work).</p>
+<p>Another category of attributes are those that are part of the
+&#8220;subclass API&#8221; (often called &#8220;protected&#8221; in other languages).  Some
+classes are designed to be inherited from, either to extend or modify
+aspects of the class&#8217;s behavior.  When designing such a class, take
+care to make explicit decisions about which attributes are public,
+which are part of the subclass API, and which are truly only to be
+used by your base class.</p>
+<p>With this in mind, here are the Pythonic guidelines:</p>
+<ul>
+<li><p class="first">Public attributes should have no leading underscores.</p>
+</li>
+<li><p class="first">If your public attribute name collides with a reserved keyword,
+append a single trailing underscore to your attribute name.  This is
+preferable to an abbreviation or corrupted spelling.  (However,
+not withstanding this rule, &#8216;cls&#8217; is the preferred spelling for any
+variable or argument which is known to be a class, especially the
+first argument to a class method.)</p>
+<dl class="docutils">
+<dt>Note 1:</dt>
+<dd><p class="first last">See the argument name recommendation above for class methods.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">For simple public data attributes, it is best to expose just the
+attribute name, without complicated accessor/mutator methods.  Keep
+in mind that Python provides an easy path to future enhancement,
+should you find that a simple data attribute needs to grow
+functional behavior.  In that case, use properties to hide
+functional implementation behind simple data attribute access
+syntax.</p>
+<dl class="docutils">
+<dt>Note 1:</dt>
+<dd><p class="first last">Properties only work on new-style classes.</p>
+</dd>
+<dt>Note 2:</dt>
+<dd><p class="first last">Try to keep the functional behavior side-effect free,
+although side-effects such as caching are generally fine.</p>
+</dd>
+<dt>Note 3:</dt>
+<dd><p class="first last">Avoid using properties for computationally expensive operations;
+the attribute notation makes the caller believe that access is
+(relatively) cheap.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">If your class is intended to be subclassed, and you have attributes
+that you do not want subclasses to use, consider naming them with
+double leading underscores and no trailing underscores.  This
+invokes Python&#8217;s name mangling algorithm, where the name of the
+class is mangled into the attribute name.  This helps avoid
+attribute name collisions should subclasses inadvertently contain
+attributes with the same name.</p>
+<dl class="docutils">
+<dt>Note 1:</dt>
+<dd><p class="first last">Note that only the simple class name is used in the mangled
+name, so if a subclass chooses both the same class name and
+attribute name, you can still get name collisions.</p>
+</dd>
+<dt>Note 2:</dt>
+<dd><p class="first last">Name mangling can make certain uses, such as debugging and
+<code class="docutils literal"><span class="pre">__getattr__()</span></code>, less convenient.  However the name mangling
+algorithm is well documented and easy to perform manually.</p>
+</dd>
+<dt>Note 3:</dt>
+<dd><p class="first last">Not everyone likes name mangling.  Try to balance the
+need to avoid accidental name clashes with potential use by
+advanced callers.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>4.4.8. References<a class="headerlink" href="#references" title="Ссылка на этот заголовок">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://www.python.org/dev/peps/pep-0007/">PEP 7, Style Guide for C Code, van Rossum</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://barry.warsaw.us/software/STYLEGUIDE.txt">Barry&#8217;s GNU Mailman style guide</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="http://www.wikipedia.com/wiki/CamelCase">CamelCase Wikipedia page</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="copyright">
+<h2>4.4.9. Copyright<a class="headerlink" href="#copyright" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Author:</p>
+<ul class="simple">
+<li>Guido van Rossum &lt;<a class="reference external" href="mailto:guido&#37;&#52;&#48;python&#46;org">guido<span>&#64;</span>python<span>&#46;</span>org</a>&gt;</li>
+<li>Barry Warsaw &lt;<a class="reference external" href="mailto:barry&#37;&#52;&#48;python&#46;org">barry<span>&#64;</span>python<span>&#46;</span>org</a>&gt;</li>
+</ul>
+</div>
+</div>
+
+  </article>
+
+            
+            
+            
+  
+</div>
+        </div>
+      </div>
+    
+  
+
+      </div>
+    </div>
+    <!-- FOOTER > -->
+    
+<footer class="b-footer">
+  <div class="b-footer-wrapper">
+    <nav class="b-footer_menu">
+      
+  <ul class="b-menu">
+    
+      <li class="b-menu-item">
+        <a href="../../index.html" class="b-menu-item-url">Overview</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../doc.html" class="b-menu-item-url">Documentation</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../download.html" class="b-menu-item-url">Download</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="../../careers.html" class="b-menu-item-url">Careers</a>
+      </li>
+    
+      <li class="b-menu-item">
+        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      </li>
+    
+  </ul>
+
+      <div class="b-footer-other">
+        <a href="http://15.tarantool.org">1.5 web site and downloads</a>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+    <!-- < FOOTER -->
+    <div id="mobile-checker"></div>
+  </body>
+</html>
+
