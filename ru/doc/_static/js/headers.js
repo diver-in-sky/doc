@@ -135,6 +135,7 @@ $(document).ready(function () {
   }
 
   /* menu active selection */
+  /*
   $(function() {
     $("ul.b-menu a").each(function() {
       if (($(this).attr('href') === window.location.pathname) ||
@@ -146,7 +147,7 @@ $(document).ready(function () {
       }
     });
   });
-
+  */
   /* Search additions for sphinx */
   $(function() {
     $(".b-header-search input").focusin(function() {

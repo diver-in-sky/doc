@@ -378,8 +378,8 @@ Tarantool - Downloads
           - Nginx Upstream module, `<https://github.com/tarantool/nginx_upstream_module>`_
 
 .. |packagecloud| image:: packagecloud.png
-    :height: 12
-    :width: 89
+    :height: 1em
+    :target: https://packagecloud.io/
 
 .. _DR\:Tarantool:              http://search.cpan.org/~unera/DR-Tarantool-0.42/lib/DR/Tarantool.pm
 .. _Maven repository:           http://github.com/tarantool/tarantool-java

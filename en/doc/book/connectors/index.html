@@ -120,28 +120,40 @@
           
   <ul class="b-menu">
     
+      
       <li class="b-menu-item">
+      
         <a href="../../../index.html" class="b-menu-item-url">Overview</a>
       </li>
     
+      
       <li class="b-menu-item">
-        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      
+        <a href="../../../try.html" class="b-menu-item-url">Try</a>
       </li>
     
-      <li class="b-menu-item">
+      
+      <li class="b-menu-item p-active">
+      
         <a href="../../../doc.html" class="b-menu-item-url">Documentation</a>
       </li>
     
+      
       <li class="b-menu-item">
+      
         <a href="../../../download.html" class="b-menu-item-url">Download</a>
       </li>
     
+      
       <li class="b-menu-item">
+      
         <a href="../../../careers.html" class="b-menu-item-url">Careers</a>
       </li>
     
+      
       <li class="b-menu-item">
-        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      
+        <a href="../../../rocks.html" class="b-menu-item-url">Rocks</a>
       </li>
     
   </ul>
@@ -154,28 +166,40 @@
         
   <ul class="b-menu">
     
+      
       <li class="b-menu-item">
+      
         <a href="../../../index.html" class="b-menu-item-url">Overview</a>
       </li>
     
+      
       <li class="b-menu-item">
-        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      
+        <a href="../../../try.html" class="b-menu-item-url">Try</a>
       </li>
     
-      <li class="b-menu-item">
+      
+      <li class="b-menu-item p-active">
+      
         <a href="../../../doc.html" class="b-menu-item-url">Documentation</a>
       </li>
     
+      
       <li class="b-menu-item">
+      
         <a href="../../../download.html" class="b-menu-item-url">Download</a>
       </li>
     
+      
       <li class="b-menu-item">
+      
         <a href="../../../careers.html" class="b-menu-item-url">Careers</a>
       </li>
     
+      
       <li class="b-menu-item">
-        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      
+        <a href="../../../rocks.html" class="b-menu-item-url">Rocks</a>
       </li>
     
   </ul>
@@ -453,15 +477,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#java">6.4. Java</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#go">6.5. Go</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#r">6.6. R</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#perl">6.7. Perl</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#php">6.8. PHP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python">6.9. Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#c">6.10. C</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#example-1">6.10.1. Example 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-2">6.10.2. Example 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#erlang">6.7. Erlang</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perl">6.8. Perl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#php">6.9. PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python">6.10. Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-js">6.11. node.js</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c">6.12. C</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1">6.12.1. Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-2">6.12.2. Example 2</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#interpreting-function-return-values">6.11. Interpreting function return values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interpreting-function-return-values">6.13. Interpreting function return values</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html">7. FAQ</a></li>
@@ -929,7 +955,7 @@ exist for drivers for Perl, Python, PHP, and so on.</p>
 <div class="section" id="setting-up-the-server-for-connector-examples">
 <span id="index-connector-setting"></span><h2>6.3. Setting up the server for connector examples<a class="headerlink" href="#setting-up-the-server-for-connector-examples" title="Permalink to this headline">¶</a></h2>
 <p>This chapter has examples that show how to connect to the Tarantool server via
-the Perl, PHP, Python, and C connectors. The examples contain hard code that
+the Perl, PHP, Python, node.js, and C connectors. The examples contain hard code that
 will work if and only if the following conditions are met:</p>
 <ul class="simple">
 <li>the server (tarantool) is running on localhost (127.0.0.1) and is listening on
@@ -961,8 +987,12 @@ script:</p>
 <h2>6.6. R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://github.com/thekvs/tarantoolr">https://github.com/thekvs/tarantoolr</a>.</p>
 </div>
+<div class="section" id="erlang">
+<h2>6.7. Erlang<a class="headerlink" href="#erlang" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://github.com/stofel/taran">Erlang tarantool driver</a>.</p>
+</div>
 <div class="section" id="perl">
-<h2>6.7. Perl<a class="headerlink" href="#perl" title="Permalink to this headline">¶</a></h2>
+<h2>6.8. Perl<a class="headerlink" href="#perl" title="Permalink to this headline">¶</a></h2>
 <p>The most commonly used Perl driver is
 <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool</a>. It is not
 supplied as part of the Tarantool repository; it must be installed separately.
@@ -1021,7 +1051,7 @@ necessary for good practice. For that, please see
 <a class="reference external" href="http://search.cpan.org/~unera/DR-Tarantool/">DR::Tarantool CPAN repository</a>.</p>
 </div>
 <div class="section" id="php">
-<h2>6.8. PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h2>
+<h2>6.9. PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h2>
 <p>The most commonly used PHP driver is
 <a class="reference external" href="https://github.com/tarantool/tarantool-php">tarantool-php</a>.
 It is not supplied as part of the Tarantool repository; it must be installed
@@ -1059,7 +1089,7 @@ and a <em>mapper</em> for that client
 (see <a class="reference external" href="https://github.com/tarantool-php/mapper">tarantool-php/mapper</a>).</p>
 </div>
 <div class="section" id="python">
-<h2>6.9. Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<h2>6.10. Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <p>Here is a complete Python program that inserts <code class="docutils literal"><span class="pre">[99999,'Value','Value']</span></code> into
 space <code class="docutils literal"><span class="pre">examples</span></code> via the high-level Python API.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
@@ -1088,11 +1118,54 @@ For an example of using Python API with
 <a class="reference external" href="https://github.com/tarantool/queue">queue managers for Tarantool</a>, see
 <a class="reference external" href="https://github.com/tarantool/queue-python">queue-python</a> project at GitHub.</p>
 </div>
+<div class="section" id="node-js">
+<h2>6.11. node.js<a class="headerlink" href="#node-js" title="Permalink to this headline">¶</a></h2>
+<p>The most commonly used node.js driver is the
+<a class="reference external" href="https://github.com/KlonD90/node-tarantool-driver">Node Tarantool driver</a>.
+It is not
+supplied as part of the Tarantool repository; it must be installed separately.
+The most common way to install it is with
+<a class="reference external" href="https://www.sitepoint.com/beginners-guide-node-package-manager/">npm</a>.
+For example, on Ubuntu, the installation could look like this
+after npm has been installed:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ npm install tarantool-driver --global
+</pre></div>
+</div>
+<p>Here is a complete node.js program that inserts <code class="docutils literal"><span class="pre">[99999,'BB']</span></code> into <code class="docutils literal"><span class="pre">space[999]</span></code>
+via the node.js API. Before trying to run, check that the server is listening at
+<code class="docutils literal"><span class="pre">localhost:3301</span></code> and that the space <code class="docutils literal"><span class="pre">examples</span></code> exists, as
+<a class="reference internal" href="#index-connector-setting"><span class="std std-ref">described earlier</span></a>.
+To run, paste the code into a file named <code class="file docutils literal"><span class="pre">example.rs</span></code> and say
+<code class="samp docutils literal"><span class="pre">node</span> <span class="pre">example.rs</span></code>. The program will connect using an application-specific
+definition of the space. The program will open a socket connection with the
+Tarantool server at <code class="docutils literal"><span class="pre">localhost:3301</span></code>, then send an INSERT request, then — if
+all is well — end after saying &#8220;Insert succeeded&#8221;. If Tarantool is not running
+on <code class="docutils literal"><span class="pre">localhost</span></code> with listen port = 3301, the program will print “Connect
+failed”. If user <code class="docutils literal"><span class="pre">guest</span></code> does not have authorization to connect, the program
+will print &#8220;Auth failed&#8221;. If the insert request fails for any reason, for example
+because the tuple already exists, the program will print &#8220;Insert failed&#8221;.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>var TarantoolConnection = require(&#39;tarantool-driver&#39;);
+var conn = new TarantoolConnection({port: 3301});
+var insertTuple = [99999, &quot;BB&quot;];
+conn.connect().then(function(){
+    conn.auth(&quot;guest&quot;, &quot;&quot;).then(function(){
+        conn.insert(999, insertTuple).then(function(){
+            console.log(&quot;Insert succeeded&quot;);
+            process.exit(0);
+    }, function(e){ console.log(&quot;Insert failed&quot;); process.exit(1); });
+    }, function(e){ console.log(&quot;Auth failed&quot;); process.exit(1); });
+    }, function(e){ console.log(&quot;Connect failed&quot;); process.exit(1); });
+</pre></div>
+</div>
+<p>The example program only shows one request and does not show all that&#8217;s
+necessary for good practice. For that, please see
+<a class="reference external" href="https://github.com/KlonD90/node-tarantool-driver">The node.js driver repository</a>.</p>
+</div>
 <div class="section" id="c">
-<h2>6.10. C<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
+<h2>6.12. C<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
 <p>Here follow two examples of using Tarantool&#8217;s high-level C API.</p>
 <div class="section" id="example-1">
-<h3>6.10.1. Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<h3>6.12.1. Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
 <p>Here is a complete C program that inserts <code class="code docutils literal"><span class="pre">[99999,'B']</span></code> into
 space <code class="code docutils literal"><span class="pre">examples</span></code> via the high-level C API.</p>
 <div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
@@ -1249,7 +1322,7 @@ void tnt_stream_free(struct tnt_stream *s)
 </pre>
 </div>
 <div class="section" id="example-2">
-<h3>6.10.2. Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<h3>6.12.2. Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
 <p>Here is a complete C program that selects, using index key <code class="docutils literal"><span class="pre">[99999]</span></code>, from
 space <code class="docutils literal"><span class="pre">examples</span></code> via the high-level C API.
 To display the results, the program uses functions in the
@@ -1334,7 +1407,7 @@ necessary for good practice. See more in the
 </div>
 </div>
 <div class="section" id="interpreting-function-return-values">
-<h2>6.11. Interpreting function return values<a class="headerlink" href="#interpreting-function-return-values" title="Permalink to this headline">¶</a></h2>
+<h2>6.13. Interpreting function return values<a class="headerlink" href="#interpreting-function-return-values" title="Permalink to this headline">¶</a></h2>
 <p>For all connectors, calling a function via Tarantool causes a return in the
 MsgPack format. If the function is called using the connector&#8217;s API, some
 conversions may occur. All scalar values are returned as tuples (with a MsgPack
@@ -1465,28 +1538,40 @@ table <a class="reference internal" href="../../reference/reference_lua/msgpack.
       
   <ul class="b-menu">
     
+      
       <li class="b-menu-item">
+      
         <a href="../../../index.html" class="b-menu-item-url">Overview</a>
       </li>
     
+      
       <li class="b-menu-item">
-        <a href="http://try.tarantool.org" class="b-menu-item-url">Try</a>
+      
+        <a href="../../../try.html" class="b-menu-item-url">Try</a>
       </li>
     
-      <li class="b-menu-item">
+      
+      <li class="b-menu-item p-active">
+      
         <a href="../../../doc.html" class="b-menu-item-url">Documentation</a>
       </li>
     
+      
       <li class="b-menu-item">
+      
         <a href="../../../download.html" class="b-menu-item-url">Download</a>
       </li>
     
+      
       <li class="b-menu-item">
+      
         <a href="../../../careers.html" class="b-menu-item-url">Careers</a>
       </li>
     
+      
       <li class="b-menu-item">
-        <a href="http://rocks.tarantool.org" class="b-menu-item-url">Rocks</a>
+      
+        <a href="../../../rocks.html" class="b-menu-item-url">Rocks</a>
       </li>
     
   </ul>
